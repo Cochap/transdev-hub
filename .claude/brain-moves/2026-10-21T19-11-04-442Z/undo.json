@@ -1,0 +1,710 @@
+{
+ "moves": [
+  {
+   "from": "C:\\TRANSDEV HUB\\docs",
+   "to": "C:\\TRANSDEV HUB\\1-boulon\\docs"
+  },
+  {
+   "from": "C:\\TRANSDEV HUB\\tests",
+   "to": "C:\\TRANSDEV HUB\\1-boulon\\tests"
+  },
+  {
+   "from": "C:\\TRANSDEV HUB\\hq",
+   "to": "C:\\TRANSDEV HUB\\1-boulon\\hq"
+  },
+  {
+   "from": "C:\\TRANSDEV HUB\\data",
+   "to": "C:\\TRANSDEV HUB\\1-boulon\\data"
+  },
+  {
+   "from": "C:\\TRANSDEV HUB\\mir",
+   "to": "C:\\TRANSDEV HUB\\1-boulon\\mir"
+  }
+ ],
+ "modified": [
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\hooks\\session-start.js",
+   "backup": "C__TRANSDEV HUB_.claude_hooks_session-start.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\hooks\\skill-model-route.js",
+   "backup": "C__TRANSDEV HUB_.claude_hooks_skill-model-route.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\hooks\\sync-skill-routing.js",
+   "backup": "C__TRANSDEV HUB_.claude_hooks_sync-skill-routing.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\settings.json",
+   "backup": "C__TRANSDEV HUB_.claude_settings.json"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\audit\\history.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_audit_history.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\audit\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_audit_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\boulon-agent-testing\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_boulon-agent-testing_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\boulon-approval-package\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_boulon-approval-package_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\boulon-data\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_boulon-data_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\boulon-end-of-day\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_boulon-end-of-day_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\boulon-greg-steps\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_boulon-greg-steps_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\boulon-hq-update\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_boulon-hq-update_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\boulon-morning-check\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_boulon-morning-check_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\boulon-read-pdf\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_boulon-read-pdf_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\boulon-report-pipeline\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_boulon-report-pipeline_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\check-understanding\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_check-understanding_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\digest-data\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_digest-data_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\learn\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_learn_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\learning-data\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_learning-data_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\level-up\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_level-up_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\link\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_link_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\motion-data\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_motion-data_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\onboard\\assets\\aios-intake.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_onboard_assets_aios-intake.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\onboard\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_onboard_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\start-learning\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_start-learning_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\.claude\\skills\\zbb-data\\SKILL.md",
+   "backup": "C__TRANSDEV HUB_.claude_skills_zbb-data_SKILL.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\aios-intake.md",
+   "backup": "C__TRANSDEV HUB_aios-intake.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\bookmark-ui.ps1",
+   "backup": "C__TRANSDEV HUB_bookmark-ui.ps1"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\boulon-hq.html",
+   "backup": "C__TRANSDEV HUB_boulon-hq.html"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\CLAUDE.md",
+   "backup": "C__TRANSDEV HUB_CLAUDE.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\connections.md",
+   "backup": "C__TRANSDEV HUB_connections.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\data\\routing\\skills-raw.json",
+   "backup": "C__TRANSDEV HUB_data_routing_skills-raw.json"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\adr\\0001-paid-search-tier-basic.md",
+   "backup": "C__TRANSDEV HUB_docs_adr_0001-paid-search-tier-basic.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\adr\\0002-phase2-cmms-diagnosis.md",
+   "backup": "C__TRANSDEV HUB_docs_adr_0002-phase2-cmms-diagnosis.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\adr\\0003-tier-rescoped-for-phase2.md",
+   "backup": "C__TRANSDEV HUB_docs_adr_0003-tier-rescoped-for-phase2.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\agent-instructions.md",
+   "backup": "C__TRANSDEV HUB_docs_agent-instructions.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\continuity-log.md",
+   "backup": "C__TRANSDEV HUB_docs_continuity-log.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\cutover-runbook.md",
+   "backup": "C__TRANSDEV HUB_docs_cutover-runbook.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\d4-tier-decision.md",
+   "backup": "C__TRANSDEV HUB_docs_d4-tier-decision.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\ecc-value-report.md",
+   "backup": "C__TRANSDEV HUB_docs_ecc-value-report.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\geotab-launch-film-prompt.md",
+   "backup": "C__TRANSDEV HUB_docs_geotab-launch-film-prompt.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\hq-control-room.md",
+   "backup": "C__TRANSDEV HUB_docs_hq-control-room.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\index-facts.md",
+   "backup": "C__TRANSDEV HUB_docs_index-facts.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\it-requests\\2026-09-24-azure-search-plan.md",
+   "backup": "C__TRANSDEV HUB_docs_it-requests_2026-09-24-azure-search-plan.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\it-requests\\2026-09-24-mir-access.md",
+   "backup": "C__TRANSDEV HUB_docs_it-requests_2026-09-24-mir-access.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\lessons-2026-09-23.md",
+   "backup": "C__TRANSDEV HUB_docs_lessons-2026-09-23.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\lessons-2026-09-24.md",
+   "backup": "C__TRANSDEV HUB_docs_lessons-2026-09-24.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\lessons-2026-09-30.md",
+   "backup": "C__TRANSDEV HUB_docs_lessons-2026-09-30.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\lessons-2026-10-06.md",
+   "backup": "C__TRANSDEV HUB_docs_lessons-2026-10-06.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\lessons-2026-10-07.md",
+   "backup": "C__TRANSDEV HUB_docs_lessons-2026-10-07.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\manuals-inventory-2026-09-23.md",
+   "backup": "C__TRANSDEV HUB_docs_manuals-inventory-2026-09-23.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\meeting-2026-09-24-pierre.md",
+   "backup": "C__TRANSDEV HUB_docs_meeting-2026-09-24-pierre.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\multimodal-rag-review-2026-10-07.md",
+   "backup": "C__TRANSDEV HUB_docs_multimodal-rag-review-2026-10-07.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\orchestration-plan.md",
+   "backup": "C__TRANSDEV HUB_docs_orchestration-plan.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\over-budget-plan.md",
+   "backup": "C__TRANSDEV HUB_docs_over-budget-plan.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\phase2-plan-cmms.md",
+   "backup": "C__TRANSDEV HUB_docs_phase2-plan-cmms.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\phase2-scope-sizing-2026-09-24.md",
+   "backup": "C__TRANSDEV HUB_docs_phase2-scope-sizing-2026-09-24.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\plan-to-oct16.md",
+   "backup": "C__TRANSDEV HUB_docs_plan-to-oct16.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\project-brief-551.md",
+   "backup": "C__TRANSDEV HUB_docs_project-brief-551.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\research-2026-10-07\\a-cheaper-ingestion.md",
+   "backup": "C__TRANSDEV HUB_docs_research-2026-10-07_a-cheaper-ingestion.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\research-2026-10-07\\c-copilot-studio-integration.md",
+   "backup": "C__TRANSDEV HUB_docs_research-2026-10-07_c-copilot-studio-integration.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\research-2026-10-07\\d2-tools-datasets-and-beyond.md",
+   "backup": "C__TRANSDEV HUB_docs_research-2026-10-07_d2-tools-datasets-and-beyond.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\research-2026-10-15\\diy-vs-azure-stack.md",
+   "backup": "C__TRANSDEV HUB_docs_research-2026-10-15_diy-vs-azure-stack.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\resume-transdev-section.md",
+   "backup": "C__TRANSDEV HUB_docs_resume-transdev-section.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\review-architecture.md",
+   "backup": "C__TRANSDEV HUB_docs_review-architecture.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\specs-and-costs.html",
+   "backup": "C__TRANSDEV HUB_docs_specs-and-costs.html"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\test-ledger.md",
+   "backup": "C__TRANSDEV HUB_docs_test-ledger.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\timeline-master.md",
+   "backup": "C__TRANSDEV HUB_docs_timeline-master.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\timeline.md",
+   "backup": "C__TRANSDEV HUB_docs_timeline.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\docs\\viability-check-2026-10-06.md",
+   "backup": "C__TRANSDEV HUB_docs_viability-check-2026-10-06.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\EXPANSIONS.md",
+   "backup": "C__TRANSDEV HUB_EXPANSIONS.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\hq\\hq-local.js",
+   "backup": "C__TRANSDEV HUB_hq_hq-local.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\hq\\server.js",
+   "backup": "C__TRANSDEV HUB_hq_server.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\mir\\make-fixtures.js",
+   "backup": "C__TRANSDEV HUB_mir_make-fixtures.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\mir\\README.md",
+   "backup": "C__TRANSDEV HUB_mir_README.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\rebuild\\v1-citation-fix\\apply-citation-fields.js",
+   "backup": "C__TRANSDEV HUB_rebuild_v1-citation-fix_apply-citation-fields.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\rebuild\\v1-citation-fix\\backup-index.js",
+   "backup": "C__TRANSDEV HUB_rebuild_v1-citation-fix_backup-index.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\rebuild\\v1-citation-fix\\rebuild-index-with-links.js",
+   "backup": "C__TRANSDEV HUB_rebuild_v1-citation-fix_rebuild-index-with-links.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\rebuild\\v2\\README.md",
+   "backup": "C__TRANSDEV HUB_rebuild_v2_README.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\routers\\boulon.md",
+   "backup": "C__TRANSDEV HUB_routers_boulon.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\routers\\brain.config.json",
+   "backup": "C__TRANSDEV HUB_routers_brain.config.json"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\routers\\career.md",
+   "backup": "C__TRANSDEV HUB_routers_career.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\routers\\digest.md",
+   "backup": "C__TRANSDEV HUB_routers_digest.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\routers\\learning.md",
+   "backup": "C__TRANSDEV HUB_routers_learning.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\routers\\media.md",
+   "backup": "C__TRANSDEV HUB_routers_media.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\routers\\workspace.md",
+   "backup": "C__TRANSDEV HUB_routers_workspace.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\routers\\zbb.md",
+   "backup": "C__TRANSDEV HUB_routers_zbb.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\scripts\\brain-move.js",
+   "backup": "C__TRANSDEV HUB_scripts_brain-move.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\scripts\\brain.js",
+   "backup": "C__TRANSDEV HUB_scripts_brain.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\scripts\\build-skill-manifest.ps1",
+   "backup": "C__TRANSDEV HUB_scripts_build-skill-manifest.ps1"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\scripts\\classify-all-skills.ps1",
+   "backup": "C__TRANSDEV HUB_scripts_classify-all-skills.ps1"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\scripts\\eod-gather-sessions.js",
+   "backup": "C__TRANSDEV HUB_scripts_eod-gather-sessions.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\scripts\\model-router.ps1",
+   "backup": "C__TRANSDEV HUB_scripts_model-router.ps1"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\scripts\\setup-openrouter.ps1",
+   "backup": "C__TRANSDEV HUB_scripts_setup-openrouter.ps1"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\scripts\\sync-skill-routing.ps1",
+   "backup": "C__TRANSDEV HUB_scripts_sync-skill-routing.ps1"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\tests\\ask-agent.ps1",
+   "backup": "C__TRANSDEV HUB_tests_ask-agent.ps1"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\tests\\check-citations.js",
+   "backup": "C__TRANSDEV HUB_tests_check-citations.js"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\tests\\run-golden.ps1",
+   "backup": "C__TRANSDEV HUB_tests_run-golden.ps1"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\tests\\run-pilot-tests.ps1",
+   "backup": "C__TRANSDEV HUB_tests_run-pilot-tests.ps1"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\undefined\\tmp\\skillaudit.json",
+   "backup": "C__TRANSDEV HUB_undefined_tmp_skillaudit.json"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\CLAUDE.md",
+   "backup": "C__TRANSDEV HUB_wiki_CLAUDE.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\concepts\\boulon-testing.md",
+   "backup": "C__TRANSDEV HUB_wiki_concepts_boulon-testing.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\concepts\\claude-operating-model.md",
+   "backup": "C__TRANSDEV HUB_wiki_concepts_claude-operating-model.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\concepts\\phase-2-architecture.md",
+   "backup": "C__TRANSDEV HUB_wiki_concepts_phase-2-architecture.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\concepts\\skills-catalog.md",
+   "backup": "C__TRANSDEV HUB_wiki_concepts_skills-catalog.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\alex-dumenne.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_alex-dumenne.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\azure-search-index.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_azure-search-index.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\boulon-hq-control-room.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_boulon-hq-control-room.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\company-it-constraints.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_company-it-constraints.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\ecc-plugin.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_ecc-plugin.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\geotab-launch-film.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_geotab-launch-film.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\greg-riley.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_greg-riley.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\henri.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_henri.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\hexagone-a-tune.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_hexagone-a-tune.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\mir-cmms.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_mir-cmms.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\pierre-zivec.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_pierre-zivec.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\rebuild-v2-pipeline.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_rebuild-v2-pipeline.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\samir-macarem.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_samir-macarem.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\entities\\transdev-quebec.md",
+   "backup": "C__TRANSDEV HUB_wiki_entities_transdev-quebec.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\index.md",
+   "backup": "C__TRANSDEV HUB_wiki_index.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\log.md",
+   "backup": "C__TRANSDEV HUB_wiki_log.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\overview.md",
+   "backup": "C__TRANSDEV HUB_wiki_overview.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\projects\\boulon.md",
+   "backup": "C__TRANSDEV HUB_wiki_projects_boulon.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\projects\\geotab-launch-film-project.md",
+   "backup": "C__TRANSDEV HUB_wiki_projects_geotab-launch-film-project.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\projects\\launch-plan-oct16.md",
+   "backup": "C__TRANSDEV HUB_wiki_projects_launch-plan-oct16.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\projects\\phase-2-cmms-diagnosis.md",
+   "backup": "C__TRANSDEV HUB_wiki_projects_phase-2-cmms-diagnosis.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\rules\\feedback-french-requests.md",
+   "backup": "C__TRANSDEV HUB_wiki_rules_feedback-french-requests.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\rules\\greg-working-style.md",
+   "backup": "C__TRANSDEV HUB_wiki_rules_greg-working-style.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\rules\\rules-index.md",
+   "backup": "C__TRANSDEV HUB_wiki_rules_rules-index.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\claude-md-root.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_claude-md-root.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\geotab-launch-film-prompt.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_geotab-launch-film-prompt.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\howto-email-digest.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_howto-email-digest.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\hq-control-room.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_hq-control-room.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\phase2-scope-sizing-2026-09-24.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_phase2-scope-sizing-2026-09-24.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\project-brief-551.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_project-brief-551.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\rebuild-v2-readme.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_rebuild-v2-readme.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\resume-2026-09-24.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_resume-2026-09-24.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\skill-boulon-agent-testing.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_skill-boulon-agent-testing.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\skill-boulon-approval-package.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_skill-boulon-approval-package.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\skill-boulon-end-of-day.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_skill-boulon-end-of-day.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\skill-boulon-greg-steps.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_skill-boulon-greg-steps.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\skill-boulon-hq-update.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_skill-boulon-hq-update.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\skill-boulon-morning-check.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_skill-boulon-morning-check.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\skill-boulon-report-pipeline.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_skill-boulon-report-pipeline.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\skill-ecc-operating-notes.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_skill-ecc-operating-notes.md"
+  },
+  {
+   "file": "C:\\TRANSDEV HUB\\wiki\\sources\\skill-transdev-pc-shell-quirks.md",
+   "backup": "C__TRANSDEV HUB_wiki_sources_skill-transdev-pc-shell-quirks.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\concepts\\budget-calculation-v2.md",
+   "backup": "C__ZBB_wiki_concepts_budget-calculation-v2.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\concepts\\project-goals-and-requirements.md",
+   "backup": "C__ZBB_wiki_concepts_project-goals-and-requirements.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\syntheses\\defect-list.md",
+   "backup": "C__ZBB_wiki_syntheses_defect-list.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\syntheses\\fair-test-method-vs-data.md",
+   "backup": "C__ZBB_wiki_syntheses_fair-test-method-vs-data.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\syntheses\\links-to-boulon.md",
+   "backup": "C__ZBB_wiki_syntheses_links-to-boulon.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\syntheses\\matteo-extraction-comparison.md",
+   "backup": "C__ZBB_wiki_syntheses_matteo-extraction-comparison.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\syntheses\\model-audit.md",
+   "backup": "C__ZBB_wiki_syntheses_model-audit.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\syntheses\\planned-vs-unplanned-reason-codes.md",
+   "backup": "C__ZBB_wiki_syntheses_planned-vs-unplanned-reason-codes.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\syntheses\\voyago-export-value-for-engine.md",
+   "backup": "C__ZBB_wiki_syntheses_voyago-export-value-for-engine.md"
+  },
+  {
+   "file": "C:\\ZBB\\wiki\\syntheses\\voyago-pooling-test.md",
+   "backup": "C__ZBB_wiki_syntheses_voyago-pooling-test.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\aios-kit-install.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_aios-kit-install.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\company-it-constraints.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_company-it-constraints.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\feedback-approval-gate.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_feedback-approval-gate.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\feedback-learning-tutor-style.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_feedback-learning-tutor-style.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\feedback-track-every-progress.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_feedback-track-every-progress.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\greg-approvals-data.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_greg-approvals-data.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\greg-working-style.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_greg-working-style.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\live-log-doc.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_live-log-doc.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\motion-library-purpose.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_motion-library-purpose.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\playwright-film-setup.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_playwright-film-setup.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\project-resume-section.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_project-resume-section.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\projects\\C--TRANSDEV-HUB\\memory\\project-source-of-truth-brief-551.md",
+   "backup": "C__Users_rilg01_.claude_projects_C--TRANSDEV-HUB_memory_project-source-of-truth-brief-551.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\scheduled-tasks\\boulon-end-of-day-routine\\SKILL.md",
+   "backup": "C__Users_rilg01_.claude_scheduled-tasks_boulon-end-of-day-routine_SKILL.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\skills\\azure-search-index-projection-parent-fields\\SKILL.md",
+   "backup": "C__Users_rilg01_.claude_skills_azure-search-index-projection-parent-fields_SKILL.md"
+  },
+  {
+   "file": "C:\\Users\\rilg01\\.claude\\skills\\synced\\46aa3309-8afb-44c3-88a4-fdea11316a5c_95cacff1-283e-4a9d-861c-6a3054ee6cab\\pptx\\scripts\\apply_theme.js",
+   "backup": "C__Users_rilg01_.claude_skills_synced_46aa3309-8afb-44c3-88a4-fdea11316a5c_95cacff1-283e-4a9d-861c-6a3054ee6cab_pptx_scripts_apply_theme.js"
+  }
+ ]
+}

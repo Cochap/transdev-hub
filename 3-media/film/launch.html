@@ -1,0 +1,325 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Geotab x Transdev launch film</title>
+<style>html,body{margin:0;background:#1a1020}canvas{display:block;width:100vw;height:auto}</style>
+</head><body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script>
+// One render(t) function draws every frame. No timers, no carried state: the same t always gives the same frame.
+// 120 BPM, 32 beats = 16 s. Transdev palette pulled from transdev.ca (red accent, purple secondary,
+// salmon + mint + teal from their flat, grainy illustrations).
+const W = 1920, H = 1080, DUR = 16, BEAT = 0.5;
+const C = {
+  red: '#DB0717', purple: '#392150', salmon: '#F3A58E', peach: '#F8CDB8', paper: '#FBEBDD',
+  mint: '#A8D7C6', mintDk: '#86C2B0', teal: '#2E8A87', tealDk: '#1F5F63', ink: '#2A1733', cream: '#FFF7EF'
+};
+const FONT = '"Karbon","Segoe UI","Helvetica Neue",Arial,sans-serif';
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+
+// ---------- deterministic helpers ----------
+function rng(seed) { return () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }; }
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+// Closed-form spring: 0 before t0, settles to 1 with a tiny overshoot (zeta 0.82).
+function sp(t, t0, f = 3.2) {
+  const x = t - t0; if (x <= 0) return 0;
+  const z = 0.82, w = 2 * Math.PI * f, wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * x) * (Math.cos(wd * x) + (z * w / wd) * Math.sin(wd * x));
+}
+const on = (t, a, b, f) => sp(t, a, f) - sp(t, b, f);            // in at a, out at b
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const mix = (a, b, k) => { const A = hex(a), B = hex(b); k = clamp(k); return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * k)).join(',')})`; };
+
+// "Boil": hand-drawn lines re-jitter 8 times a second, like redrawn animation cels.
+const boil = t => Math.floor(t * 8) % 3;
+function jit(i, b, amp) { const r = rng(i * 7919 + b * 104729 + 17); r(); return (r() - 0.5) * 2 * amp; }
+
+// Wobbly polyline / closed shape, drawn as if by hand.
+function handPath(pts, closed, b, amp = 1.6, seed = 1) {
+  ctx.beginPath();
+  pts.forEach((p, i) => {
+    const x = p[0] + jit(seed + i * 2, b, amp), y = p[1] + jit(seed + i * 2 + 1, b, amp);
+    i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+  });
+  if (closed) ctx.closePath();
+}
+function rrPts(x, y, w, h, r, n = 6) {
+  r = Math.min(r, w / 2, h / 2); const pts = [];
+  const corner = (cx, cy, a0) => { for (let i = 0; i <= n; i++) { const a = a0 + (Math.PI / 2) * (i / n); pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]); } };
+  corner(x + w - r, y + r, -Math.PI / 2); corner(x + w - r, y + h - r, 0);
+  corner(x + r, y + h - r, Math.PI / 2); corner(x + r, y + r, Math.PI);
+  return pts;
+}
+function handRR(x, y, w, h, r, fill, b, seed, stroke) {
+  handPath(rrPts(x, y, w, h, r), true, b, 1.2, seed);
+  ctx.fillStyle = fill; ctx.fill();
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 3; ctx.stroke(); }
+}
+
+// ---------- textures (built once from a fixed seed, so they are assets, not state) ----------
+function makeGrain(seed, density, dark) {
+  const g = document.createElement('canvas'); g.width = W; g.height = H;
+  const x = g.getContext('2d'), img = x.createImageData(W, H), r = rng(seed);
+  for (let i = 0; i < img.data.length; i += 4) {
+    const v = r();
+    if (v < density) { const c = dark ? 40 : 255; img.data[i] = c; img.data[i + 1] = c * (dark ? 0.6 : 1); img.data[i + 2] = c * (dark ? 0.8 : 0.95); img.data[i + 3] = 40 + r() * 120; }
+  }
+  x.putImageData(img, 0, 0); return g;
+}
+// Paper fibres: faint long strokes.
+function makeFibres(seed) {
+  const g = document.createElement('canvas'); g.width = W; g.height = H;
+  const x = g.getContext('2d'), r = rng(seed);
+  for (let i = 0; i < 900; i++) {
+    const px = r() * W, py = r() * H, a = r() * Math.PI, l = 10 + r() * 40;
+    x.strokeStyle = r() < 0.5 ? 'rgba(90,40,60,0.05)' : 'rgba(255,255,255,0.07)';
+    x.lineWidth = 0.6 + r(); x.beginPath(); x.moveTo(px, py);
+    x.quadraticCurveTo(px + Math.cos(a) * l * 0.5 + (r() - 0.5) * 6, py + Math.sin(a) * l * 0.5, px + Math.cos(a) * l, py + Math.sin(a) * l); x.stroke();
+  }
+  return g;
+}
+// Stipple shading pattern (the dotted shadow on Transdev's illustrations).
+function makeStipple(seed, col) {
+  const g = document.createElement('canvas'); g.width = 256; g.height = 256;
+  const x = g.getContext('2d'), r = rng(seed); x.fillStyle = col;
+  for (let i = 0; i < 2600; i++) { x.globalAlpha = 0.25 + r() * 0.5; x.fillRect(r() * 256, r() * 256, 1 + r() * 1.4, 1 + r() * 1.4); }
+  return g;
+}
+const GRAIN = [makeGrain(11, 0.06, true), makeGrain(23, 0.06, true), makeGrain(37, 0.06, true)];
+const SPECK = makeGrain(51, 0.025, false), FIB = makeFibres(77);
+const STIP = ctx.createPattern(makeStipple(5, '#3a1a40'), 'repeat');
+const STIP_L = ctx.createPattern(makeStipple(9, '#ffffff'), 'repeat');
+
+// Shade the lower-right part of the current path with stipple dots (light from top-left).
+// Uses a scratch canvas so the fade mask never touches what is already drawn.
+const SCR = document.createElement('canvas'); SCR.width = 700; SCR.height = 900; const sx = SCR.getContext('2d');
+const STIP_SRC = makeStipple(5, '#3a1a40');
+function stippleShade(x, y, w, h, alpha = 0.35) {
+  const W2 = Math.ceil(w) + 4, H2 = Math.ceil(h) + 4; if (W2 > SCR.width || H2 > SCR.height) return;
+  sx.globalCompositeOperation = 'source-over'; sx.clearRect(0, 0, W2, H2);
+  sx.fillStyle = sx.createPattern(STIP_SRC, 'repeat'); sx.fillRect(0, 0, W2, H2);
+  const gr = sx.createLinearGradient(0, 0, W2, H2);
+  gr.addColorStop(0.45, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,1)');
+  sx.globalCompositeOperation = 'destination-in'; sx.fillStyle = gr; sx.fillRect(0, 0, W2, H2);
+  ctx.save(); ctx.clip(); ctx.globalAlpha *= alpha; ctx.drawImage(SCR, 0, 0, W2, H2, x - 2, y - 2, W2, H2); ctx.restore();
+}
+
+// ---------- the map (card-local coordinates, card = 1640 x 880) ----------
+const CW = 1640, CH = 880;
+const ROADS = [
+  [[-40, 250], [300, 230], [560, 300], [820, 260], [1100, 330], [1300, 300], [1700, 360]],
+  [[-40, 620], [260, 600], [520, 650], [760, 560], [1000, 600], [1300, 540], [1700, 590]],
+  [[220, -40], [250, 200], [300, 420], [260, 640], [320, 920]],
+  [[640, -40], [610, 240], [700, 470], [650, 700], [700, 920]],
+  [[1020, -40], [1060, 200], [990, 420], [1080, 680], [1040, 920]],
+];
+const RIVER = [[-40, 470], [200, 430], [420, 500], [600, 440], [900, 480], [1150, 420], [1400, 470], [1700, 430]];
+const PARKS = [[120, 300, 160, 110], [760, 330, 190, 110], [1150, 660, 170, 120], [420, 700, 150, 110]];
+function along(poly, u) {
+  let L = 0; const seg = []; for (let i = 1; i < poly.length; i++) { const d = Math.hypot(poly[i][0] - poly[i - 1][0], poly[i][1] - poly[i - 1][1]); seg.push(d); L += d; }
+  let s = ((u % 1) + 1) % 1 * L;
+  for (let i = 0; i < seg.length; i++) { if (s <= seg[i]) { const k = s / seg[i], a = poly[i], b = poly[i + 1]; return [lerp(a[0], b[0], k), lerp(a[1], b[1], k), Math.atan2(b[1] - a[1], b[0] - a[0])]; } s -= seg[i]; }
+  return [...poly[poly.length - 1], 0];
+}
+const BUSES = (() => { const r = rng(4127), out = []; for (let i = 0; i < 24; i++) { const road = i % 5, k = Math.floor(i / 5), n = road < 4 ? 5 : 4; out.push({ road, u0: 0.06 + (k + 0.3 * r()) / n * 0.9, v: (road % 2 ? -1 : 1) * 0.004, id: 4100 + i }); } out[7].id = 4127; return out; })();
+const HERO = 7;
+function busPos(i, t) { const b = BUSES[i]; return along(ROADS[b.road], b.u0 + b.v * t); }
+
+function drawMap(t, bb) {
+  ctx.fillStyle = C.mint; ctx.fillRect(0, 0, CW, CH);
+  // city blocks: slightly lighter tiles
+  const r = rng(99);
+  for (let i = 0; i < 40; i++) {
+    const x = r() * CW, y = r() * CH, w = 90 + r() * 140, h = 60 + r() * 100;
+    handRR(x, y, w, h, 14, 'rgba(255,255,255,0.18)', bb, 300 + i);
+  }
+  PARKS.forEach((p, i) => { handRR(p[0], p[1], p[2], p[3], 40, C.mintDk, bb, 500 + i); stippleShade(p[0], p[1], p[2], p[3], 0.25); });
+  // river
+  ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  handPath(RIVER, false, bb, 2.5, 700); ctx.strokeStyle = C.teal; ctx.lineWidth = 58; ctx.stroke();
+  handPath(RIVER, false, bb, 2.5, 701); ctx.strokeStyle = '#5FB3B0'; ctx.lineWidth = 44; ctx.stroke();
+  // roads: teal outline, salmon fill, like the Transdev grab-handle drawings
+  ROADS.forEach((rd, i) => { handPath(rd, false, bb, 2, 800 + i * 20); ctx.strokeStyle = C.tealDk; ctx.lineWidth = 34; ctx.stroke(); });
+  ROADS.forEach((rd, i) => { handPath(rd, false, bb, 2, 800 + i * 20); ctx.strokeStyle = C.salmon; ctx.lineWidth = 26; ctx.stroke(); });
+  ROADS.forEach((rd, i) => { handPath(rd, false, bb, 2, 810 + i * 20); ctx.strokeStyle = 'rgba(255,255,255,0.55)'; ctx.setLineDash([10, 18]); ctx.lineWidth = 3; ctx.stroke(); ctx.setLineDash([]); });
+}
+
+function drawBus(x, y, ang, s, fill, ring, bb, i) {
+  if (s <= 0.001) return;
+  ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.scale(s, s);
+  if (ring > 0.01) { ctx.beginPath(); ctx.arc(0, 0, 30, 0, Math.PI * 2); ctx.strokeStyle = C.purple; ctx.globalAlpha = ring; ctx.lineWidth = 5; ctx.stroke(); ctx.globalAlpha = 1; }
+  handRR(-22, -12, 44, 24, 8, fill, bb, 900 + i * 3, C.ink);
+  handPath(rrPts(-22, -12, 44, 24, 8), true, bb, 1.2, 900 + i * 3); stippleShade(-22, -12, 44, 24, 0.4);
+  ctx.fillStyle = C.cream; ctx.fillRect(8, -7, 9, 14);                 // windscreen
+  ctx.restore();
+}
+
+// ---------- UI pieces ----------
+function text(s, x, y, size, col, weight = 700, align = 'left', a = 1) {
+  if (a <= 0.01) return; ctx.globalAlpha = clamp(a); ctx.fillStyle = col; ctx.font = `${weight} ${size}px ${FONT}`; ctx.textAlign = align; ctx.textBaseline = 'middle'; ctx.fillText(s, x, y); ctx.globalAlpha = 1;
+}
+function chip(x, y, w, h, fill, label, sub, a, bb, seed, icon) {
+  if (a <= 0.01) return;
+  ctx.save(); ctx.globalAlpha = clamp(a); ctx.translate(x, y + (1 - clamp(a)) * 24);
+  handRR(0, 0, w, h, h / 2 > 30 ? 22 : h / 2, fill, bb, seed);
+  handPath(rrPts(0, 0, w, h, 22), true, bb, 1.2, seed); stippleShade(0, 0, w, h, 0.3);
+  if (icon) { ctx.beginPath(); ctx.arc(34, h / 2, 16, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,0.22)'; ctx.fill(); text(icon, 34, h / 2 + 1, 20, '#fff', 800, 'center'); }
+  text(label, icon ? 62 : 24, sub ? h / 2 - 12 : h / 2, 24, '#fff', 800);
+  if (sub) text(sub, icon ? 62 : 24, h / 2 + 16, 18, 'rgba(255,255,255,0.85)', 600);
+  ctx.restore();
+}
+function drawCursor(x, y, press) {
+  ctx.save(); ctx.translate(x, y); const s = 1 - 0.18 * press; ctx.scale(s, s);
+  ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, 38); ctx.lineTo(10, 29); ctx.lineTo(18, 46); ctx.lineTo(25, 43); ctx.lineTo(17, 26); ctx.lineTo(30, 26); ctx.closePath();
+  ctx.fillStyle = '#fff'; ctx.fill(); ctx.strokeStyle = C.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.stroke();
+  ctx.restore();
+  if (press > 0.02) { ctx.beginPath(); ctx.arc(x, y, 18 + 26 * press, 0, Math.PI * 2); ctx.strokeStyle = `rgba(219,7,23,${0.6 * (1 - press)})`; ctx.lineWidth = 3; ctx.stroke(); }
+}
+
+let LOGO = null;
+window.ready = new Promise(res => { const im = new Image(); im.onload = () => { LOGO = im; res(); }; im.onerror = () => res(); im.src = 'logo_blanc.svg'; });
+
+// ---------- beat timeline (seconds; 1 beat = 0.5 s) ----------
+const T = {
+  toMap: 1.0, fleet: 2.0, selStart: 2.9, click: 3.5, panel: 3.6,
+  ev1: 5.0, ev2: 5.5, ev3: 6.0, coach: 6.75, lassoA: 8.0, lassoB: 9.25, rule: 9.3,
+  fault: 10.0, woPanel: 11.0, wo: 11.5, rem: 13.0, report: 14.5, toLogo: 15.0
+};
+// Cursor: a sum of springs, one per move. Starts and ends at the same rest point.
+const REST = [1560, 930];
+function cursorAt(t, bb) {
+  const hero = heroScreen(T.click, bb);
+  const moves = [
+    [2.9, hero[0] + 6, hero[1] + 6], [7.6, 330, 250], [10.6, 520, 190], [11.7, 1660, 430], [14.1, 960, 880], [15.2, REST[0], REST[1]]
+  ];
+  let x = REST[0], y = REST[1], px = REST[0], py = REST[1];
+  for (const [t0, tx, ty] of moves) { const k = sp(t, t0, 1.6); x += (tx - px) * k; y += (ty - py) * k; px = tx; py = ty; }
+  // Lasso: cursor traces the loop between lassoA and lassoB.
+  const lk = clamp((t - T.lassoA) / (T.lassoB - T.lassoA));
+  if (lk > 0 && lk < 1) { const p = lassoPt(lk); const w = Math.sin(Math.PI * lk) ** 0.5; x = lerp(x, p[0], w); y = lerp(y, p[1], w); }
+  return [x, y];
+}
+function lassoPt(k) {  // screen-space loop around the fleet (map area)
+  const a = -Math.PI * 0.9 + k * Math.PI * 2.1, cx = 690, cy = 540;
+  return [cx + Math.cos(a) * (560 + 30 * Math.sin(a * 3)), cy + Math.sin(a) * (360 + 20 * Math.cos(a * 2))];
+}
+function cardRect(t) {
+  const m = sp(t, T.toMap, 2.4) - sp(t, T.toLogo, 2.4);
+  const w = lerp(420, CW, m), h = lerp(420, CH, m);
+  return { x: 960 - w / 2, y: 540 - h / 2, w, h, r: lerp(56, 30, m), m };
+}
+function heroScreen(t, bb) { const c = cardRect(3.5); const p = busPos(HERO, t); return [c.x + p[0], c.y + p[1]]; }
+
+// ---------- render(t): the only drawing entry point ----------
+function render(t) {
+  t = ((t % DUR) + DUR) % DUR;
+  const bb = boil(t);
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none';
+
+  // warm canvas with a soft salmon band, like the site's hero illustration
+  ctx.fillStyle = C.paper; ctx.fillRect(0, 0, W, H);
+  handPath([[0, 820], [480, 790], [980, 835], [1500, 800], [1920, 830], [1920, 1080], [0, 1080]], true, bb, 3, 40);
+  ctx.fillStyle = C.peach; ctx.fill();
+
+  const c = cardRect(t);
+  // drop shadow = offset flat purple shape (print-style, no blur/glow)
+  handRR(c.x + 12, c.y + 14, c.w, c.h, c.r, 'rgba(57,33,80,0.9)', bb, 20);
+  // the one container
+  handPath(rrPts(c.x, c.y, c.w, c.h, c.r), true, bb, 1.4, 10);
+  ctx.fillStyle = mix(C.red, C.mint, c.m); ctx.fill();
+  ctx.save(); ctx.clip();
+
+  // --- logo content (in until the morph starts, back after it ends) ---
+  const logoA = 1 - clamp(sp(t, T.toMap - 0.1, 4) * 1.4) + clamp(sp(t, T.toLogo + 0.25, 4));
+  if (logoA > 0.01) {
+    ctx.save(); ctx.globalAlpha = clamp(logoA); ctx.filter = `blur(${(1 - clamp(logoA)) * 10}px)`;
+    const lw = 330, lh = lw * 124.5 / 419.5;
+    if (LOGO) ctx.drawImage(LOGO, 960 - lw / 2, 540 - lh / 2 - 20, lw, lh); else text('transdev', 960, 520, 64, '#fff', 800, 'center');
+    ctx.filter = 'none';
+    text('×  GEOTAB', 960, 610, 26, 'rgba(255,255,255,0.92)', 800, 'center', clamp(logoA));
+    ctx.restore();
+  }
+
+  // --- map content ---
+  const mapA = clamp(sp(t, T.toMap + 0.15, 3)) - clamp(sp(t, T.toLogo - 0.05, 4));
+  if (mapA > 0.01) {
+    ctx.save(); ctx.globalAlpha = clamp(mapA); ctx.filter = `blur(${(1 - clamp(mapA)) * 12}px)`;
+    ctx.translate(c.x + (c.w - CW) / 2, c.y + (c.h - CH) / 2);
+    drawMap(t, bb);
+    ctx.filter = 'none';
+    // fleet appears all at once
+    const fs = sp(t, T.fleet, 2.6);
+    const ruleK = clamp(sp(t, T.rule, 3));
+    BUSES.forEach((b, i) => {
+      const p = busPos(i, t);
+      const hero = i === HERO; const sel = hero ? on(t, T.click, T.rule - 0.3, 3) : 0;
+      drawBus(p[0], p[1], p[2], fs * (1 + 0.35 * sel), hero && sel > 0.5 ? C.purple : C.red, Math.max(ruleK * (1 - clamp(sp(t, T.fault, 2))), sel), bb, i);
+    });
+    // lasso line
+    const lk = clamp((t - T.lassoA) / (T.lassoB - T.lassoA)), lf = 1 - clamp(sp(t, T.rule + 0.4, 3));
+    if (lk > 0 && lf > 0.01) {
+      const ox = c.x + (c.w - CW) / 2, oy = c.y + (c.h - CH) / 2;
+      const pts = []; for (let k = 0; k <= lk; k += 0.01) { const p = lassoPt(k); pts.push([p[0] - ox, p[1] - oy]); }
+      ctx.globalAlpha = lf; handPath(pts, false, bb, 1.5, 1200); ctx.strokeStyle = C.purple; ctx.lineWidth = 6; ctx.setLineDash([16, 12]); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+    }
+    ctx.restore();
+
+    // --- side panel (same card, grows from its right edge) ---
+    const pk = on(t, T.panel, T.toLogo - 0.1, 2.8);
+    if (pk > 0.01) {
+      const pw = 470 * clamp(pk, 0, 1.05), px = c.x + c.w - pw - 24, py = c.y + 24, ph = c.h - 48;
+      handRR(px, py, pw, ph, 24, C.cream, bb, 60, C.ink);
+      ctx.save(); handPath(rrPts(px, py, pw, ph, 24), true, bb, 1.2, 60); ctx.clip();
+      const x0 = px + 34;
+      // page 1: selected bus (beats 8-21)
+      const p1 = on(t, T.panel + 0.25, T.woPanel - 0.1, 4);
+      if (p1 > 0.01) {
+        ctx.save(); ctx.filter = `blur(${(1 - clamp(p1)) * 8}px)`;
+        text('BUS 4127', x0, py + 50, 22, C.red, 800, 'left', p1);
+        text('52 km/h', x0, py + 112, 66, C.purple, 800, 'left', p1);
+        text('Boul. Laurier, Québec', x0, py + 168, 24, C.ink, 600, 'left', p1);
+        ctx.filter = 'none'; ctx.restore();
+        chip(x0, py + 220, 400, 70, C.red, 'Speeding', '68 km/h in a 50 zone', on(t, T.ev1, T.woPanel - 0.1, 4), bb, 61, '!');
+        chip(x0, py + 305, 400, 70, C.red, 'Harsh braking', 'Rue Saint-Jean', on(t, T.ev2, T.woPanel - 0.1, 4), bb, 62, '!');
+        chip(x0, py + 390, 400, 70, C.red, 'Seat belt', 'Unbuckled at 30 km/h', on(t, T.ev3, T.woPanel - 0.1, 4), bb, 63, '!');
+        chip(x0, py + 500, 400, 70, C.purple, 'AI coaching sent', 'to the driver, in French', on(t, T.coach, T.woPanel - 0.1, 4), bb, 64, '✓');
+        chip(x0, py + 610, 400, 70, C.teal, '1 rule → 24 buses', 'Speed alert, 50 km/h zones', on(t, T.rule, T.woPanel - 0.1, 4), bb, 65, '✓');
+      }
+      // page 2: mechanics' queue (beats 22-30)
+      const p2 = on(t, T.woPanel + 0.1, T.toLogo - 0.1, 4);
+      if (p2 > 0.01) {
+        text("MECHANICS' QUEUE", x0, py + 50, 22, C.red, 800, 'left', p2);
+        text('Work orders', x0, py + 104, 44, C.purple, 800, 'left', p2);
+        chip(x0, py + 150, 400, 80, C.red, 'WO-2291 · Bus 4127', 'Engine fault P0217, from Geotab', on(t, T.wo, T.toLogo - 0.1, 3.4), bb, 70, '⚙');
+        const ids = ['4103', '4118', '4136', '4152', '4171'];
+        text('Maintenance due', x0, py + 290, 26, C.ink, 800, 'left', on(t, T.rem - 0.2, T.toLogo - 0.1, 4));
+        ids.forEach((id, i) => chip(x0, py + 320 + i * 72, 400, 60, C.teal, `Bus ${id}`, null, on(t, T.rem + i * 0.25, T.toLogo - 0.1, 3.4), bb, 80 + i, '⏲'));
+      }
+      ctx.restore();
+    }
+
+    // toasts (top of the card)
+    const fa = on(t, T.fault, T.wo, 3.2);
+    chip(c.x + 40, c.y + 36, 520, 76, C.red, 'Engine fault code', 'Bus 4127 · P0217 · coolant temp', fa, bb, 90, '⚠');
+    const ra = on(t, T.report, T.toLogo + 0.1, 3.2);
+    chip(c.x + 40, c.y + c.h - 112, 440, 76, C.purple, 'Report link copied', 'Weekly fleet report', ra, bb, 91, '⧉');
+  }
+  ctx.restore();   // end card clip
+
+  // cursor + click rings
+  const cur = cursorAt(t, bb);
+  const press = Math.max(on(t, T.click, T.click + 0.12, 6), on(t, 11.35, 11.45, 6), on(t, 14.4, 14.5, 6));
+  drawCursor(cur[0], cur[1], clamp(press));
+
+  // print texture over everything: animated grain, paper fibres, white specks
+  ctx.globalCompositeOperation = 'multiply'; ctx.globalAlpha = 0.55; ctx.drawImage(GRAIN[bb], 0, 0);
+  ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1; ctx.drawImage(FIB, 0, 0);
+  ctx.globalAlpha = 0.6; ctx.drawImage(SPECK, (bb * 37) % 11 - 5, (bb * 53) % 9 - 4); ctx.globalAlpha = 1;
+}
+window.render = render;
+window.seek = t => render(t);
+window.ready.then(() => {
+  if (location.hash === '#still') return;
+  const t0 = performance.now(); const loop = () => { render(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); }; loop();
+});
+</script>
+</body></html>

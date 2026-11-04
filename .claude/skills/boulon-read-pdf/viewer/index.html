@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><title>pdf</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>body{margin:0;background:#888}canvas{display:block;margin:0 auto 8px;background:#fff}</style></head><body>
+<div id="st">loading</div><div id="out"></div>
+<script>
+(async()=>{try{
+const w=await (await fetch('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js')).text();
+pdfjsLib.GlobalWorkerOptions.workerSrc=URL.createObjectURL(new Blob([w],{type:'text/javascript'}));
+const pdf=await pdfjsLib.getDocument('/sot.pdf').promise;
+const want=+(new URLSearchParams(location.search).get('p')||0);
+document.getElementById('st').textContent='pages '+pdf.numPages;
+for(let i=1;i<=pdf.numPages;i++){ if(want&&i!==want)continue;
+ const pg=await pdf.getPage(i);const vp=pg.getViewport({scale:+(new URLSearchParams(location.search).get("s")||1.25)});
+ const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;c.id='p'+i;document.getElementById('out').appendChild(c);
+ await pg.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;}
+document.getElementById('st').textContent+=' rendered';
+}catch(e){document.getElementById('st').textContent='ERR '+e.message}})();
+</script></body></html>

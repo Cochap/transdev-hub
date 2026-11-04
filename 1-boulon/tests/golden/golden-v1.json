@@ -1,0 +1,385 @@
+{
+ "version": "v1",
+ "created": "2026-09-24",
+ "note": "Index-side golden set v1 (v0 items kept verbatim). requiresV2 = only meaningful on the v2 index. checkFields (G12) = field checks on the top hit, not yet supported by run-golden.ps1. Slice tags: TORQUE, SAFETY, CROSS-LANGUAGE, ABSTAIN. 'expect' = regex that must appear in a top-5 passage. 'manual' = text that must appear in that passage's file name. 'abstain' = the right answer is 'I don't have that information', so the index must NOT return the value.",
+ "questions": [
+  {
+   "id": "G1",
+   "slice": "EN / part number / FR manual",
+   "ask": "In the Baultar seat manual, what is the part number for the left advance-lock cylinder assembly?",
+   "expect": "HK98-0021",
+   "manual": "AS98-5005",
+   "answer": "HK98-0021 (AS98-5005 section 3.9.1)"
+  },
+  {
+   "id": "G2",
+   "slice": "EN / torque / text",
+   "ask": "What torque should the nuts be tightened to when replacing the Motor Control Unit (MCU)?",
+   "expect": "17[.,]4",
+   "manual": "MCU",
+   "answer": "17.4 ft-lb (23.5 Nm), step 21, p.10"
+  },
+  {
+   "id": "G3",
+   "slice": "EN / torque / text",
+   "ask": "What torque is used for the wiper motor crank on the Vicinity?",
+   "expect": "22\\s*[-–~to]+\\s*27",
+   "manual": "Vicinity",
+   "answer": "22-27 Nm (16-20 lb-ft)"
+  },
+  {
+   "id": "G4",
+   "slice": "FR / part number / FR manual",
+   "ask": "Quel est le numéro de pièce du cylindre d'ajustement d'angle du dossier du siège Baultar?",
+   "expect": "HK98-0062",
+   "manual": "AS98-5005",
+   "answer": "HK98-0062 (AS98-5005 section 3.10.1)"
+  },
+  {
+   "id": "G5",
+   "slice": "EN / part number / diagram",
+   "ask": "What is METRI-PACK connector 12052641 used for in the ProHeat manual?",
+   "expect": "12052641",
+   "manual": "ProHeat",
+   "answer": "AUX connector keying on the G-I PCM"
+  },
+  {
+   "id": "G6",
+   "slice": "EN / safety / text",
+   "ask": "What are the safety precautions before replacing the BTMS compressor?",
+   "expect": "(?i)chock",
+   "manual": "RP-01-13",
+   "answer": "Starter switch OFF, parking brake set, tires chocked, trained/certified technicians only"
+  },
+  {
+   "id": "G7",
+   "slice": "EN / torque / TABLE (flattened)",
+   "ask": "What is the recommended assembly torque for an M6 Class 12.9 bolt per the Vicinity manual's torque table?",
+   "expect": "12[.,]9",
+   "manual": "Vicinity",
+   "answer": "15 Nm (PDF p.22). Stress test: the table is flattened, so the agent may read the wrong column"
+  },
+  {
+   "id": "G8",
+   "slice": "EN / cross-language / FR manual",
+   "ask": "How do I replace the left advance lock cylinder on the driver seat?",
+   "expect": "HK98-0021|3\\.9",
+   "manual": "AS98-5005",
+   "answer": "Procedure in AS98-5005 section 3.9 (the English question must find the French procedure)"
+  },
+  {
+   "id": "A1",
+   "slice": "ABSTAIN / manual not indexed",
+   "ask": "What's the part number for the pipe fitting in the Orion manual, part 080808082?",
+   "expect": "080808082",
+   "abstain": true,
+   "answer": "I don't have that information (no Orion manual indexed)"
+  },
+  {
+   "id": "A2",
+   "slice": "ABSTAIN / off-fleet vehicle",
+   "ask": "What is the torque spec for the wheel lug nuts on a Tesla Model 3?",
+   "expect": "(?i)tesla",
+   "abstain": true,
+   "answer": "I don't have that information, and no number"
+  },
+  {
+   "id": "G11",
+   "slice": "EN / TORQUE / TABLE (markdown) / SAFETY",
+   "requiresV2": true,
+   "ask": "recommended assembly torque M6 Class 12.9 bolt",
+   "expect": "\\|\\s*M6\\s*\\|\\s*1[.,]00\\s*\\|\\s*12[.,]7\\s*\\|\\s*15\\s*\\|",
+   "manual": "Vicinity",
+   "answer": "Row | M6 | 1.00 | 12.7 | 15 | in one chunk (v2 markdown table). Red flag: M61.0012.715 or row split"
+  },
+  {
+   "id": "G12",
+   "slice": "EN / CITATION FIELDS",
+   "requiresV2": true,
+   "ask": "recommended assembly torque M6 Class 12.9 bolt",
+   "expect": "(?i)M6",
+   "manual": "Vicinity",
+   "checkFields": {
+    "title": "^(?!.*\\.pdf$).+",
+    "url": "^https://.+\\.pdf$",
+    "page_number": 22
+   },
+   "answer": "Top hit: title without .pdf, url https://...pdf, page_number 22"
+  },
+  {
+   "id": "G13",
+   "slice": "EN / part number / FR manual",
+   "ask": "What is the part number for the lumbar air bladder on the Baultar driver seat?",
+   "expect": "HK98-0018",
+   "manual": "AS98-5005",
+   "answer": "HK98-0018 (AS98-5005 section 3.4.1)"
+  },
+  {
+   "id": "G14",
+   "slice": "FR / part number / FR manual",
+   "ask": "Quel est le numéro de pièce du ballon d'appui-tête du siège Baultar?",
+   "expect": "HK98-0016",
+   "manual": "AS98-5005",
+   "answer": "HK98-0016, collet Oetiker #5-7 inclus (section 3.1.1)"
+  },
+  {
+   "id": "G15",
+   "slice": "EN / CROSS-LANGUAGE / part number / FR manual",
+   "ask": "What is the part number of the right-hand advance lock cylinder on the driver seat?",
+   "expect": "HK98-0028",
+   "manual": "AS98-5005",
+   "answer": "HK98-0028 (section 3.9.1, French manual)"
+  },
+  {
+   "id": "G16",
+   "slice": "FR / CROSS-LANGUAGE / EN manual",
+   "ask": "Quelle est l'épaisseur minimale des plaquettes de frein sur le Vicinity avant de les remplacer?",
+   "expect": "2\\s*mm",
+   "manual": "Vicinity",
+   "answer": "2 mm (0.08 in) or less on any pad: replace all pads"
+  },
+  {
+   "id": "G17",
+   "slice": "FR / CROSS-LANGUAGE / EN manual",
+   "ask": "Quelle est la pression de la pompe à carburant du chauffage ProHeat?",
+   "expect": "7\\s*-\\s*10\\s*PSI",
+   "manual": "ProHeat",
+   "answer": "7-10 PSI (internal relief valve)"
+  },
+  {
+   "id": "G18",
+   "slice": "EN / spec / text",
+   "ask": "What is the recommended coolant flow rate through the ProHeat M80 heater?",
+   "expect": "7\\s*\\(26[.,]5\\)",
+   "manual": "ProHeat",
+   "answer": "7 US gpm (26.5 lpm); M50 = 5 gpm (19 lpm)"
+  },
+  {
+   "id": "G19",
+   "slice": "EN / diagnostic code / text",
+   "ask": "What does ProHeat diagnostic code 3 (3 flashes) mean?",
+   "expect": "(?i)coolant flow",
+   "manual": "ProHeat",
+   "answer": "Coolant Flow: coolant reached 185F (85C) within 90 s of ignition, flow too low"
+  },
+  {
+   "id": "G20",
+   "slice": "EN / diagnostic code / text",
+   "ask": "What triggers the ProHeat OVERHEAT diagnostic code 4?",
+   "expect": "230",
+   "manual": "ProHeat",
+   "answer": "Heat exchanger surface 230F (110C) within 60 s after entering Cool Down (Purge)"
+  },
+  {
+   "id": "G21",
+   "slice": "EN / fault code / text",
+   "ask": "When is EMP cooling fan fault code 06-NN (motor speed low) set?",
+   "expect": "75%",
+   "manual": "emp-cooling-fans",
+   "answer": "Reported fan speed < 75% of commanded speed for 20 seconds"
+  },
+  {
+   "id": "G22",
+   "slice": "EN / part number / text",
+   "ask": "What steering shaft nut and bolt kit part number is listed for the steering box replacement?",
+   "expect": "14800181",
+   "manual": "RP-01-34-00-00-004",
+   "answer": "P/N 14800181 (consumables, RP-01-34-00-00-004)"
+  },
+  {
+   "id": "G23",
+   "slice": "EN / spec / text",
+   "ask": "What voltage does the Braun RA400 wheelchair ramp run on?",
+   "expect": "24\\s*volt",
+   "manual": "Wheelchair Ramp",
+   "answer": "24 volt single electrical feed"
+  },
+  {
+   "id": "G24",
+   "slice": "EN / spec / text",
+   "ask": "How much freon is needed when refilling the BTMS with three BMW batteries?",
+   "expect": "7[.,]9\\s*lb",
+   "manual": "RP-01-13-00-00-010",
+   "answer": "7.9 lb (3.58 kg) for three batteries; 8 lb (3.63 kg) for four"
+  },
+  {
+   "id": "G25",
+   "slice": "EN / spec / text",
+   "ask": "What minimum clearance is required between the deployed RA400 ramp and the vehicle floor?",
+   "expect": "1/8",
+   "manual": "Wheelchair Ramp",
+   "answer": "Minimum 1/8 in clearance"
+  },
+  {
+   "id": "T1",
+   "slice": "EN / TORQUE / SAFETY / text",
+   "ask": "What torque for the castle nut on the Pitman arm drag link?",
+   "expect": "163\\s*to\\s*230\\s*Nm",
+   "manual": "Pitman",
+   "answer": "120 to 169.6 ft-lb (163 to 230 Nm); never back off below minimum to fit the cotter pin"
+  },
+  {
+   "id": "T2",
+   "slice": "EN / TORQUE / SAFETY / text",
+   "ask": "What torque for the longitudinal torque rod nut at the front spring hanger when replacing the rear leaf suspension?",
+   "expect": "180\\s*ft-lb|244\\s*Nm",
+   "manual": "RP-01-36-01-00-003",
+   "answer": "180 ft-lb (244 Nm), step 26"
+  },
+  {
+   "id": "T3",
+   "slice": "EN / TORQUE / text",
+   "ask": "What torque for the BTMS compressor mounting bolts?",
+   "expect": "6\\s*ft-lb\\s*\\(8\\s*Nm\\)",
+   "manual": "RP-01-13-00-00-006",
+   "answer": "6 ft-lb (8 Nm), step 13"
+  },
+  {
+   "id": "T4",
+   "slice": "EN / TORQUE / SAFETY / text",
+   "ask": "What tightening torque for the brake disc to hub bolts on the Vicinity front brakes?",
+   "expect": "440\\s*Nm",
+   "manual": "Vicinity",
+   "answer": "12 bolts at 440 Nm (325 lb-ft)"
+  },
+  {
+   "id": "T5",
+   "slice": "FR / CROSS-LANGUAGE / TORQUE / SAFETY",
+   "ask": "Quel couple de serrage pour les boulons de l'étrier de frein avant du Vicinity?",
+   "expect": "580\\s*Nm",
+   "manual": "Vicinity",
+   "answer": "6 bolts at 580 Nm (428 lb-ft)"
+  },
+  {
+   "id": "T6",
+   "slice": "EN / SAFETY / text",
+   "ask": "What must be done before working under the vehicle when replacing a wheel?",
+   "expect": "(?i)jack stands",
+   "manual": "RP-01-33-00-00-002",
+   "answer": "Starter OFF, parking brake set, tires chocked, jack stands under frame rails; 1000 Vdc rated tools"
+  },
+  {
+   "id": "T7",
+   "slice": "EN / SAFETY / text",
+   "ask": "Can I put grease on the wheel nuts when installing a wheel on the Lion bus?",
+   "expect": "(?i)never use oil or grease",
+   "manual": "RP-01-33-00-00-002",
+   "answer": "No: never use oil or grease on bolts and nuts (nuts may loosen, wheel may come off). Note: Vicinity manual says lubricate studs with engine oil, a conflict the agent must not blend"
+  },
+  {
+   "id": "T8",
+   "slice": "EN / SAFETY / text",
+   "ask": "What pressure should a tire be inflated to for seating the beads, and what safety equipment is used?",
+   "expect": "100\\s*psi",
+   "manual": "RP-01-33-00-00-001",
+   "answer": "100 psi (689.4 kPa) in a safety cage, then adjust to manufacturer pressure"
+  },
+  {
+   "id": "T9",
+   "slice": "FR / CROSS-LANGUAGE / SAFETY",
+   "ask": "Quelles précautions de sécurité avant de remplacer la pompe de liquide de refroidissement Spheros?",
+   "expect": "(?i)splash hazard|personal protective",
+   "manual": "Spheros",
+   "answer": "Splash hazard when disconnecting coolant hose: wear PPE; pinch-off pliers on conduits"
+  },
+  {
+   "id": "T10",
+   "slice": "EN / SAFETY / text",
+   "ask": "Who is allowed to work on the BTMS refrigerant system?",
+   "expect": "(?i)trained and certified",
+   "manual": "RP-01-13-00-00-006",
+   "answer": "Only trained and certified technicians; deactivate high voltage first (MP-01-05-00-00-002)"
+  },
+  {
+   "id": "A3",
+   "slice": "ABSTAIN / manual not indexed",
+   "ask": "What is the torque for the rear axle U-bolts on a New Flyer XD40?",
+   "expect": "(?i)new flyer",
+   "abstain": true,
+   "answer": "I don't have that information (no New Flyer manual)"
+  },
+  {
+   "id": "A4",
+   "slice": "ABSTAIN / manual not indexed",
+   "ask": "What is the brake chamber part number on the Nova Bus LFS?",
+   "expect": "(?i)nova\\s*bus|\\bLFS\\b",
+   "abstain": true,
+   "answer": "I don't have that information"
+  },
+  {
+   "id": "A5",
+   "slice": "ABSTAIN / manual not indexed",
+   "ask": "How do I reset the kneeling system fault on a Gillig Low Floor bus?",
+   "expect": "(?i)gillig",
+   "abstain": true,
+   "answer": "I don't have that information (no Gillig manual)"
+  },
+  {
+   "id": "A6",
+   "slice": "ABSTAIN / nonexistent part",
+   "ask": "What is Baultar seat part HK98-9999 used for?",
+   "expect": "HK98-9999",
+   "abstain": true,
+   "answer": "I don't have that information; must not invent a part"
+  },
+  {
+   "id": "A7",
+   "slice": "ABSTAIN / wrong model",
+   "ask": "What is the fuel consumption of the ProHeat M120 heater?",
+   "expect": "M120",
+   "abstain": true,
+   "answer": "Manual covers M50/M80 only; must not give a number for M120"
+  },
+  {
+   "id": "A8",
+   "slice": "ABSTAIN / off-fleet vehicle / TORQUE / SAFETY",
+   "ask": "What are the lug nut torque specs for a Ford Transit 350?",
+   "expect": "(?i)ford transit",
+   "abstain": true,
+   "answer": "I don't have that information, and no number"
+  },
+  {
+   "id": "A9",
+   "slice": "ABSTAIN / wrong model",
+   "ask": "What is the rated load of the Braun RA500 ramp?",
+   "expect": "RA500",
+   "abstain": true,
+   "answer": "Only RA400 indexed; no number"
+  },
+  {
+   "id": "A10",
+   "slice": "FR / CROSS-LANGUAGE / ABSTAIN",
+   "ask": "Quel est l'intervalle de vidange d'huile du moteur Cummins du Orion VII?",
+   "expect": "(?i)orion",
+   "abstain": true,
+   "answer": "Je n'ai pas cette information (aucun manuel Orion)"
+  },
+  {
+   "id": "L1",
+   "slice": "T4 legacy parts list / Valeo (not yet indexed)",
+   "ask": "What is Valeo part number 2711011A?",
+   "expect": "2711011A",
+   "manual": "Valeo ETL Thermo Plus.pdf",
+   "answer": "Switch assy, cpl. 24V (Valeo ETL Thermo Plus, p.12)",
+   "requiresV2": true
+  },
+  {
+   "id": "L2",
+   "slice": "T4 legacy parts list / Valeo (not yet indexed)",
+   "ask": "What is Valeo part number 20818B?",
+   "expect": "20818B",
+   "manual": "Valeo ETL Thermo Plus.pdf",
+   "answer": "Splash guard (Valeo ETL Thermo Plus, p.5)",
+   "requiresV2": true
+  },
+  {
+   "id": "L3",
+   "slice": "T4 legacy parts list / Valeo (not yet indexed)",
+   "ask": "What is Valeo part number 11113052A?",
+   "expect": "11113052A",
+   "manual": "Valeo ETL Thermo Plus.pdf",
+   "answer": "Combustion air elbow, spare parts kit (Valeo ETL Thermo Plus, p.5)",
+   "requiresV2": true
+  }
+ ]
+}

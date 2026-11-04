@@ -1,0 +1,296 @@
+{
+  "name": "boulon-v2-skillset",
+  "description": "BOULON v2. Skill 1 = layout in MARKDOWN mode (keeps tables as rows/columns, chunks by heading). Skill 2 = Split long sections. Skill 3 = embeddings. Skills 4-7 = image path kept from v1 (layout TEXT mode, images only; verbalize; embed; shape).",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Util.DocumentIntelligenceLayoutSkill",
+      "name": "layout-markdown",
+      "description": "Markdown output: tables become | pipe | rows |, sections follow headings h1-h3. locationMetadata requested for page numbers (see README: page number in markdown mode UNVERIFIED).",
+      "context": "/document",
+      "outputMode": "oneToMany",
+      "outputFormat": "markdown",
+      "markdownHeaderDepth": "h3",
+      "extractionOptions": [
+        "locationMetadata"
+      ],
+      "inputs": [
+        {
+          "name": "file_data",
+          "source": "/document/file_data"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "markdown_document",
+          "targetName": "markdownDocument"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.SplitSkill",
+      "name": "split-sections",
+      "description": "Only splits sections longer than 4000 chars. Large limit so a torque table stays in one chunk.",
+      "context": "/document/markdownDocument/*",
+      "defaultLanguageCode": "en",
+      "textSplitMode": "pages",
+      "maximumPageLength": 4000,
+      "pageOverlapLength": 400,
+      "unit": "characters",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/markdownDocument/*/content"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "textItems",
+          "targetName": "pages"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.AzureOpenAIEmbeddingSkill",
+      "name": "embed-text",
+      "context": "/document/markdownDocument/*/pages/*",
+      "resourceUri": "<AOAI_ENDPOINT>",
+      "apiKey": "<AOAI_KEY>",
+      "deploymentId": "text-embedding-3-small",
+      "modelName": "text-embedding-3-small",
+      "dimensions": 1536,
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/markdownDocument/*/pages/*"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "embedding",
+          "targetName": "text_vector"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Util.DocumentIntelligenceLayoutSkill",
+      "name": "layout-images",
+      "description": "Text mode is the only mode that outputs normalized_images. Used ONLY for images; its text_sections are not projected.",
+      "context": "/document",
+      "outputMode": "oneToMany",
+      "outputFormat": "text",
+      "extractionOptions": [
+        "images",
+        "locationMetadata"
+      ],
+      "chunkingProperties": {
+        "unit": "characters",
+        "maximumLength": 2000,
+        "overlapLength": 200
+      },
+      "inputs": [
+        {
+          "name": "file_data",
+          "source": "/document/file_data"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "normalized_images",
+          "targetName": "normalized_images"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Custom.ChatCompletionSkill",
+      "name": "verbalize-image",
+      "context": "/document/normalized_images/*",
+      "uri": "<AOAI_CHAT_COMPLETIONS_URI>",
+      "apiKey": "<AOAI_KEY>",
+      "inputs": [
+        {
+          "name": "systemMessage",
+          "source": "='You generate concise, accurate descriptions of images, figures, diagrams or charts in vehicle maintenance manuals. Describe components, labels, part numbers and how elements connect. For tables in images, reproduce every row and column exactly. No colors, styles or layout details.'"
+        },
+        {
+          "name": "userMessage",
+          "source": "='Please describe this image.'"
+        },
+        {
+          "name": "image",
+          "source": "/document/normalized_images/*/data"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "targetName": "verbalizedImage"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.AzureOpenAIEmbeddingSkill",
+      "name": "embed-image-text",
+      "context": "/document/normalized_images/*",
+      "resourceUri": "<AOAI_ENDPOINT>",
+      "apiKey": "<AOAI_KEY>",
+      "deploymentId": "text-embedding-3-small",
+      "modelName": "text-embedding-3-small",
+      "dimensions": 1536,
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/normalized_images/*/verbalizedImage"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "embedding",
+          "targetName": "verbalizedImage_vector"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Util.ShaperSkill",
+      "name": "shape-image-path",
+      "context": "/document/normalized_images/*",
+      "inputs": [
+        {
+          "name": "normalized_images",
+          "source": "/document/normalized_images/*"
+        },
+        {
+          "name": "imagePath",
+          "source": "='manuals-images/'+$(/document/normalized_images/*/imagePath)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "targetName": "new_normalized_images"
+        }
+      ]
+    }
+  ],
+  "cognitiveServices": {
+    "@odata.type": "#Microsoft.Azure.Search.AIServicesByKey",
+    "description": "Key-based billing (option A, decided 2026-09-25) to the NEW pay-per-use AIServices resource in Canada Central (same region as the search service, required for key billing; Document Intelligence is not sold in Canada East). boulon-pilot-ai (Canada East) keeps the embedding/chat models via resourceUri.",
+    "key": "<AI_SERVICES_KEY>",
+    "subdomainUrl": "<AI_SERVICES_ENDPOINT>"
+  },
+  "knowledgeStore": {
+    "storageConnectionString": "<STORAGE_CONNECTION>",
+    "projections": [
+      {
+        "tables": [],
+        "objects": [],
+        "files": [
+          {
+            "storageContainer": "manuals-images",
+            "generatedKeyName": "manuals-imagesKey",
+            "source": "/document/normalized_images/*"
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "synthesizeGeneratedKeyName": true
+    }
+  },
+  "indexProjections": {
+    "selectors": [
+      {
+        "targetIndexName": "boulon-v2-index",
+        "parentKeyFieldName": "text_document_id",
+        "sourceContext": "/document/markdownDocument/*/pages/*",
+        "mappings": [
+          {
+            "name": "content_text",
+            "source": "/document/markdownDocument/*/pages/*"
+          },
+          {
+            "name": "content_embedding",
+            "source": "/document/markdownDocument/*/pages/*/text_vector"
+          },
+          {
+            "name": "title",
+            "source": "/document/metadata_storage_name"
+          },
+          {
+            "name": "document_title",
+            "source": "/document/metadata_storage_name"
+          },
+          {
+            "name": "url",
+            "source": "/document/metadata_storage_path"
+          },
+          {
+            "name": "vehicle_family",
+            "source": "/document/vehicle_family"
+          },
+          {
+            "name": "header_1",
+            "source": "/document/markdownDocument/*/sections/h1"
+          },
+          {
+            "name": "header_2",
+            "source": "/document/markdownDocument/*/sections/h2"
+          },
+          {
+            "name": "header_3",
+            "source": "/document/markdownDocument/*/sections/h3"
+          },
+          {
+            "name": "page_number",
+            "source": "/document/markdownDocument/*/locationMetadata/pageNumber"
+          }
+        ]
+      },
+      {
+        "targetIndexName": "boulon-v2-index",
+        "parentKeyFieldName": "image_document_id",
+        "sourceContext": "/document/normalized_images/*",
+        "mappings": [
+          {
+            "name": "content_text",
+            "source": "/document/normalized_images/*/verbalizedImage"
+          },
+          {
+            "name": "content_embedding",
+            "source": "/document/normalized_images/*/verbalizedImage_vector"
+          },
+          {
+            "name": "content_path",
+            "source": "/document/normalized_images/*/new_normalized_images/imagePath"
+          },
+          {
+            "name": "title",
+            "source": "/document/metadata_storage_name"
+          },
+          {
+            "name": "document_title",
+            "source": "/document/metadata_storage_name"
+          },
+          {
+            "name": "url",
+            "source": "/document/metadata_storage_path"
+          },
+          {
+            "name": "vehicle_family",
+            "source": "/document/vehicle_family"
+          },
+          {
+            "name": "page_number",
+            "source": "/document/normalized_images/*/locationMetadata/pageNumber"
+          },
+          {
+            "name": "locationMetadata",
+            "source": "/document/normalized_images/*/locationMetadata"
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "projectionMode": "skipIndexingParentDocuments"
+    }
+  }
+}

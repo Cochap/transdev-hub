@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "name": "Divine Beauty by Anouk Design System",
+    "version": "0.1.0-draft",
+    "built": "2026-10-01",
+    "controllingSource": "ZERO Cloud Handoff 2026-10-01 (Cochap/zero-shadowmind, 03 Projects/Divine Beauty by Anouk). It overrides older briefs marked 'locked'.",
+    "structure": "Sections mirror Material 3 Styles: color, typography, shape, spacing, elevation, icons, motion.",
+    "statusKey": {
+      "user-reference": "Named by Greg or Anouk in the handoff.",
+      "candidate": "Value taken from the existing ZERO animated design sheet. Production tokens are not final.",
+      "hypothesis": "Range proposed in ZERO Motion Lab Options v1, to be compared in the lab.",
+      "borrowed-m3": "Published on m3.material.io (read 2026-10-01). Structure and curves, not the Google look.",
+      "proposed": "Added by this build to complete the system. Needs review.",
+      "open": "Undecided. Left empty on purpose."
+    },
+    "boundaries": [
+      "The Seasons font files and web licence are not acquired. A system serif fallback is used.",
+      "Active website, Next.js rebuild, library installs and the Motion Lab are NOT authorized by this file.",
+      "No illustrated feminine character. No diary/journal theme. Older orange, turquoise, amethyst, gold-only and zebra directions are retired."
+    ]
+  },
+  "color": {
+    "plum": { "value": "#1D001D", "status": "user-reference", "note": "Deep plum, shown by Greg and Anouk." },
+    "wine": { "value": "#550527", "status": "user-reference", "note": "Wine plum, shown by Greg and Anouk." },
+    "olive": { "value": "#5F642E", "status": "candidate", "note": "Approximates reference NCS S 6030-G70Y. Not converted or verified." },
+    "olive-dark": { "value": "#44481F", "status": "candidate" },
+    "magenta": { "value": "#C91867", "status": "candidate", "note": "Satin magenta; brighter than the plum references." },
+    "brown": { "value": "#4A2D25", "status": "candidate" },
+    "ivory": { "value": "#F5EDDF", "status": "candidate", "note": "Warm reading surface, proposed in the handoff." },
+    "ink": { "value": "#24151D", "status": "candidate" },
+    "white": { "value": "#FFFFFF", "status": "proposed" },
+    "error": { "value": "#B3261E", "status": "proposed", "note": "Functional colour, not brand." },
+    "success": { "value": "#2F6B3B", "status": "proposed", "note": "Functional colour, not brand." }
+  },
+  "colorRoles": {
+    "background": "ivory",
+    "on-background": "ink",
+    "surface": "white",
+    "on-surface": "ink",
+    "surface-variant": "ivory",
+    "outline": "brown",
+    "primary": "magenta",
+    "on-primary": "white",
+    "secondary": "olive",
+    "on-secondary": "ivory",
+    "tertiary": "wine",
+    "on-tertiary": "ivory",
+    "inverse-surface": "plum",
+    "inverse-on-surface": "ivory",
+    "error": "error",
+    "on-error": "white",
+    "success": "success",
+    "on-success": "white"
+  },
+  "contrastPairs": [
+    ["on-background", "background"],
+    ["on-surface", "surface"],
+    ["on-primary", "primary"],
+    ["on-secondary", "secondary"],
+    ["on-tertiary", "tertiary"],
+    ["inverse-on-surface", "inverse-surface"],
+    ["on-error", "error"],
+    ["on-success", "success"],
+    ["primary", "background"],
+    ["primary", "secondary"]
+  ],
+  "typography": {
+    "family": {
+      "value": "\"The Seasons\", \"Iowan Old Style\", \"Palatino Linotype\", Palatino, Georgia, serif",
+      "status": "user-reference",
+      "note": "The Seasons for headings, body, navigation and buttons. Fallback stack is a preview only, not a substitute for the licensed font."
+    },
+    "weightsConfirmed": false,
+    "scale": {
+      "display-large":   { "size": "clamp(54px, 8.5vw, 134px)", "line": "0.8",  "weight": 400, "tracking": "-0.065em", "status": "candidate" },
+      "display-medium":  { "size": "clamp(40px, 6vw, 88px)",    "line": "0.9",  "weight": 400, "tracking": "-0.05em",  "status": "proposed" },
+      "display-small":   { "size": "clamp(32px, 4.4vw, 56px)",  "line": "1",    "weight": 400, "tracking": "-0.04em",  "status": "proposed" },
+      "headline-large":  { "size": "40px", "line": "1.1",  "weight": 400, "tracking": "-0.03em", "status": "proposed" },
+      "headline-medium": { "size": "32px", "line": "1.15", "weight": 400, "tracking": "-0.02em", "status": "proposed" },
+      "headline-small":  { "size": "26px", "line": "1.2",  "weight": 400, "tracking": "-0.01em", "status": "proposed" },
+      "title-large":     { "size": "22px", "line": "1.3",  "weight": 400, "tracking": "0",       "status": "proposed" },
+      "title-medium":    { "size": "18px", "line": "1.35", "weight": 600, "tracking": "0",       "status": "proposed" },
+      "title-small":     { "size": "16px", "line": "1.4",  "weight": 600, "tracking": "0",       "status": "proposed" },
+      "body-large":      { "size": "clamp(18px, 2vw, 22px)", "line": "1.35", "weight": 400, "tracking": "0", "status": "candidate" },
+      "body-medium":     { "size": "17px", "line": "1.5",  "weight": 400, "tracking": "0",       "status": "proposed" },
+      "body-small":      { "size": "15px", "line": "1.5",  "weight": 400, "tracking": "0",       "status": "proposed" },
+      "label-large":     { "size": "13px", "line": "1.2",  "weight": 600, "tracking": "0.12em",  "case": "uppercase", "status": "candidate" },
+      "label-medium":    { "size": "12px", "line": "1.2",  "weight": 600, "tracking": "0.14em",  "case": "uppercase", "status": "proposed" },
+      "label-small":     { "size": "12px", "line": "1.2",  "weight": 600, "tracking": "0.18em",  "case": "uppercase", "status": "proposed", "note": "The existing sheet uses 10px labels; this system sets 12px as the floor." }
+    }
+  },
+  "shape": {
+    "none": { "value": 0, "status": "proposed" },
+    "xs":   { "value": 4, "status": "proposed" },
+    "s":    { "value": 8, "status": "proposed" },
+    "m":    { "value": 12, "status": "proposed" },
+    "l":    { "value": 20, "status": "proposed" },
+    "xl":   { "value": 28, "status": "proposed" },
+    "full": { "value": 999, "status": "candidate", "note": "Pill buttons and circular orchid frames in the existing sheet." }
+  },
+  "spacing": {
+    "1": 4, "2": 8, "3": 12, "4": 16, "5": 24, "6": 32, "7": 48, "8": 64, "9": 96, "10": 128,
+    "status": "proposed",
+    "page-gutter": { "value": "clamp(18px, 5vw, 74px)", "status": "candidate" },
+    "section-y":   { "value": "clamp(54px, 8vw, 120px)", "status": "candidate" }
+  },
+  "elevation": {
+    "0": { "value": "none", "status": "proposed" },
+    "1": { "value": "0 2px 8px rgba(29,0,29,0.10)", "status": "proposed" },
+    "2": { "value": "0 10px 30px rgba(29,0,29,0.14)", "status": "proposed" },
+    "3": { "value": "0 30px 70px rgba(29,0,29,0.22)", "status": "candidate", "note": "Hero bloom shadow in the existing sheet." }
+  },
+  "icons": {
+    "style": { "value": "", "status": "open", "note": "No icon direction is documented. Hairline 1px rules are the only line language in the sheet. Decide with Anouk." },
+    "minTouchTarget": { "value": 44, "status": "proposed" }
+  },
+  "motion": {
+    "duration": {
+      "short1": 50, "short2": 100, "short3": 150, "short4": 200,
+      "medium1": 250, "medium2": 300, "medium3": 350, "medium4": 400,
+      "long1": 450, "long2": 500, "long3": 550, "long4": 600,
+      "extra-long1": 700, "extra-long2": 800, "extra-long3": 900, "extra-long4": 1000,
+      "status": "borrowed-m3"
+    },
+    "easing": {
+      "enter":   { "value": "cubic-bezier(0.16, 1, 0.3, 1)", "status": "hypothesis", "note": "soft-ease-enter: quick recognition, long smooth settle." },
+      "move":    { "value": "cubic-bezier(0.65, 0, 0.35, 1)", "status": "hypothesis", "note": "soft-ease-move: symmetric repositioning." },
+      "exit":    { "value": "cubic-bezier(0.3, 0, 1, 1)", "status": "borrowed-m3", "note": "M3 standard-accelerate. The lab proposal gives no exit curve." },
+      "sheet-default": { "value": "cubic-bezier(0.22, 0.9, 0.24, 1)", "status": "candidate", "note": "Used in the existing animated sheet." }
+    },
+    "role": {
+      "soft-micro":   { "token": "short4",       "ms": 200,  "range": [180, 240],  "use": "Underline, arrow, icon, focus response", "status": "hypothesis" },
+      "soft-ui":      { "token": "medium3",      "ms": 350,  "range": [300, 420],  "use": "Accordion, filter, small layout response", "status": "hypothesis" },
+      "soft-reveal":  { "token": "extra-long1",  "ms": 700,  "range": [600, 850],  "use": "Headline, image curtain, section entrance", "status": "hypothesis" },
+      "soft-ambient": { "token": null,           "ms": 8000, "range": [6000, 10000], "use": "Orchid sway or light breathing", "status": "hypothesis", "note": "Outside the M3 ladder; ambient only." }
+    },
+    "stagger": { "ms": 80, "range": [60, 100], "maxItems": 5, "status": "hypothesis" },
+    "distance": {
+      "xs": { "px": 5,  "range": [4, 6],   "status": "hypothesis" },
+      "sm": { "px": 12, "range": [8, 16],  "status": "hypothesis" }
+    },
+    "scale-in": { "value": 0.97, "range": [0.97, 1], "status": "hypothesis" },
+    "spring-ui": { "value": "high damping, zero or near-zero bounce", "status": "hypothesis" },
+    "reducedMotion": {
+      "rule": "Replace transforms with a short opacity change, no stagger, no parallax, no autoplay.",
+      "ms": 150,
+      "status": "hypothesis"
+    },
+    "principles": [
+      "Glide, do not snap.",
+      "Settle, do not bounce.",
+      "Breathe, do not drift.",
+      "Layer, do not scatter: one leading movement and at most one supporting movement.",
+      "Travel less: usually 4 to 16 px.",
+      "Preserve reading: body copy and prices do not move while being read.",
+      "Respond quietly: hover and press feedback is prompt but low in amplitude.",
+      "Rest between moments."
+    ],
+    "reject": [
+      "Elastic, rubbery or repeated bounce",
+      "Large overshoot",
+      "Fast alternating directions",
+      "Surprise rotation",
+      "Continuous parallax behind readable content",
+      "Blur-heavy entrances that stay soft too long",
+      "Long stagger chains",
+      "Simultaneous motion across unrelated sections",
+      "Autoplay that cannot be stopped at the specimen level"
+    ]
+  },
+  "regions": [
+    { "name": "Navigation and booking button", "default": "Satin underline", "tokens": "soft-micro, enter", "reduced": "Immediate colour or underline state" },
+    { "name": "Opening identity and wordmark", "default": "Editorial line reveal", "tokens": "soft-reveal, enter, stagger", "reduced": "One 150 ms opacity change" },
+    { "name": "Doorway handoff to the scroll film", "default": "Breath then handoff", "tokens": "ambient, move", "reduced": "Still frame, content and booking at once" },
+    { "name": "Scroll film playback", "default": "Direct scrub with damped progress", "tokens": "spring-ui", "reduced": "Static keyframe, normal content flow" },
+    { "name": "Orchid and botanical system", "default": "Stem sway and light travel", "tokens": "soft-ambient", "reduced": "Static orchid, final lighting" },
+    { "name": "Services list and pricing", "default": "Silk accordion", "tokens": "soft-ui, move, distance-sm", "reduced": "Instant swap, focus kept" },
+    { "name": "Portfolio filter and viewer", "default": "Editorial reflow, shared-layout lens", "tokens": "soft-ui, move", "reduced": "Instant filter, opacity-only dialog" },
+    { "name": "About and trust", "default": "Quiet proof sequence", "tokens": "soft-reveal, stagger", "reduced": "All proof visible at once" },
+    { "name": "FAQ", "default": "Precise accordion", "tokens": "soft-micro to soft-ui", "reduced": "Instant toggle, icon state still changes" },
+    { "name": "Booking calls to action", "default": "Magnetic arrow, stable button", "tokens": "soft-micro, distance-xs", "reduced": "Colour and underline only" },
+    { "name": "Section transitions", "default": "Colour-field handoff, two moments only", "tokens": "soft-reveal, move", "reduced": "No transition" }
+  ]
+}

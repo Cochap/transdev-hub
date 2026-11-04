@@ -1,0 +1,642 @@
+{
+   "checksum": "a5d8634d664f529c7bd5f5df2316d20b",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13255327606885919",
+            "date_last_used": "13429035604658052",
+            "guid": "a9968f5f-8930-4184-9801-8ca875d085f5",
+            "id": "49",
+            "name": "YouTube",
+            "type": "url",
+            "url": "https://www.youtube.com/?hl=fr&gl=CA"
+         }, {
+            "date_added": "13220215087818991",
+            "date_last_used": "13421393305745825",
+            "guid": "f2b7d99b-130e-409e-af83-8af49a7e1324",
+            "id": "50",
+            "name": "Warframe Market | Most recent Buy and Sell orders",
+            "type": "url",
+            "url": "https://warframe.market/"
+         }, {
+            "children": [ {
+               "children": [  ],
+               "date_added": "13426749476801690",
+               "date_last_used": "0",
+               "date_modified": "13426749476801690",
+               "guid": "21d64e56-3ac4-4820-b292-a47954fef3da",
+               "id": "52",
+               "name": "New folder",
+               "type": "folder"
+            } ],
+            "date_added": "13369978221162567",
+            "date_last_used": "0",
+            "date_modified": "13369978221162567",
+            "guid": "b1f67b2d-95d5-4813-9d0c-a3753cc50f30",
+            "id": "51",
+            "name": "New folder",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "children": [ {
+                  "date_added": "13369978221162982",
+                  "date_last_used": "0",
+                  "guid": "17851583-e280-4e41-a73b-c3a14f16b2e9",
+                  "id": "55",
+                  "name": "Student Planner",
+                  "type": "url",
+                  "url": "https://www.notion.so/Student-Planner-88ad61a1bb1449a4b4c0c29cf2c29be3?p=7a9ce872a17e42d0b144b87d4c1a584b&pm=c"
+               }, {
+                  "date_added": "13369978221163291",
+                  "date_last_used": "0",
+                  "guid": "b10b32cf-7d35-409a-8587-e225875ca90d",
+                  "id": "56",
+                  "name": "Student Planner",
+                  "type": "url",
+                  "url": "https://www.notion.so/Student-Planner-88ad61a1bb1449a4b4c0c29cf2c29be3?p=d220b610f3b040a8a749cdb8780976e0&pm=s"
+               }, {
+                  "date_added": "13369978221163405",
+                  "date_last_used": "0",
+                  "guid": "3b8bf43d-e20e-4dc2-8754-10cb88189f4c",
+                  "id": "57",
+                  "name": "Akarius Prime Blueprint - Buy and Sell orders | Warframe Market",
+                  "type": "url",
+                  "url": "https://warframe.market/items/akarius_prime_blueprint"
+               }, {
+                  "date_added": "13369978221163463",
+                  "date_last_used": "0",
+                  "guid": "858df3fe-fb98-46a5-896b-c79c79a117fe",
+                  "id": "58",
+                  "name": "Course: COMM 211 G 2242 (Fall 2024) | Moodle",
+                  "type": "url",
+                  "url": "https://moodle.concordia.ca/moodle/course/view.php?id=170052"
+               }, {
+                  "date_added": "13369978221163508",
+                  "date_last_used": "0",
+                  "guid": "e73f46e3-cbe2-4c51-8bef-cf9818d2b04f",
+                  "id": "59",
+                  "name": "eConcordia - Activate your course(s)",
+                  "type": "url",
+                  "url": "https://www.econcordia.com/home/store/basket.aspx"
+               }, {
+                  "date_added": "13369978221163547",
+                  "date_last_used": "0",
+                  "guid": "2d946d54-026e-47f0-812e-fa4bf64b1a87",
+                  "id": "60",
+                  "name": "New Tab",
+                  "type": "url",
+                  "url": "chrome://newtab/"
+               }, {
+                  "date_added": "13369978221163589",
+                  "date_last_used": "0",
+                  "guid": "41bd2444-37ba-4ab4-ab7c-e900270c1766",
+                  "id": "61",
+                  "name": "Color code in calendar view : r/Notion",
+                  "type": "url",
+                  "url": "https://www.reddit.com/r/Notion/comments/k7rp2o/color_code_in_calendar_view/"
+               } ],
+               "date_added": "13369978221162918",
+               "date_last_used": "0",
+               "date_modified": "13369978221163589",
+               "guid": "57fe9c3c-bc2d-42bf-9749-51e201f13c87",
+               "id": "54",
+               "name": "1",
+               "type": "folder"
+            }, {
+               "date_added": "13371184710427585",
+               "date_last_used": "0",
+               "guid": "d1d8ddc1-7f40-4065-a905-34ee9fce18bd",
+               "id": "62",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "COMM 226 EC (Fall 2024): L2 Technology Guide: Networks and the Cloud | eConcordia",
+               "type": "url",
+               "url": "https://moodle.econcordia.com/mod/scorm/player.php?a=21428&currentorg=articulate_rise&scoid=45280"
+            } ],
+            "date_added": "13369978221162786",
+            "date_last_used": "0",
+            "date_modified": "13371184710427585",
+            "guid": "e9ed62c2-f15d-4273-903d-7f13b1025b34",
+            "id": "53",
+            "name": "1",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13386127761727535",
+               "date_last_used": "0",
+               "guid": "30abbfd7-f8fd-4393-82cf-9785f9f09f02",
+               "id": "64",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Powerful Real Estate Virtual Tour Statistics in 2025",
+               "type": "url",
+               "url": "https://www.photoup.net/learn/real-estate-virtual-tour-statistics#real-estate-virtual-tour-statistics-for-2023"
+            }, {
+               "date_added": "13386137648222463",
+               "date_last_used": "0",
+               "guid": "e1b91152-2a1c-4953-974f-d91aefe7f1e4",
+               "id": "65",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Powerful Real Estate Virtual Tour Statistics in 2025",
+               "type": "url",
+               "url": "https://www.photoup.net/learn/real-estate-virtual-tour-statistics"
+            }, {
+               "date_added": "13386137654071936",
+               "date_last_used": "0",
+               "guid": "d38ae91e-6b7e-40b2-b429-92d0409cd659",
+               "id": "66",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "LEVERAGING AI-DRIVEN DIGITAL MARKETING.pdf",
+               "type": "url",
+               "url": "file:///C:/Users/Cocha/Downloads/LEVERAGING%20AI-DRIVEN%20DIGITAL%20MARKETING.pdf"
+            }, {
+               "date_added": "13386137658526349",
+               "date_last_used": "0",
+               "guid": "382e0e56-9826-48ef-84bb-d14be6c902f7",
+               "id": "67",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "9 Virtual Tour Statistics You Need to Know",
+               "type": "url",
+               "url": "https://www.lcpmedia.com/blog/virtual-tours-statistics"
+            }, {
+               "date_added": "13386140909439974",
+               "date_last_used": "0",
+               "guid": "d391a176-243c-43c5-a58d-8472a58c2b92",
+               "id": "68",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Impact of Search Engine Optimization as a Marketing Tool",
+               "type": "url",
+               "url": "file:///C:/Users/Cocha/Downloads/bhandari-bansal-2018-impact-of-search-engine-optimization-as-a-marketing-tool.pdf"
+            }, {
+               "children": [ {
+                  "date_added": "13386141027894674",
+                  "date_last_used": "0",
+                  "guid": "85f79d0b-5e3c-4d0b-998d-b64340c25fb8",
+                  "id": "70",
+                  "name": "Proptech: Everything You Need to Know (With 27 Examples) | Built In",
+                  "type": "url",
+                  "url": "https://builtin.com/articles/proptech"
+               }, {
+                  "date_added": "13386141027894935",
+                  "date_last_used": "0",
+                  "guid": "a801d618-33b0-41ef-bb55-5d2b15314cf5",
+                  "id": "71",
+                  "name": "(1) New message",
+                  "type": "url",
+                  "url": "https://ascendixtech.com/proptech-real-estate-definition/#:~:text=PropTech%2C%20refers%20to%20the%20intersection,home%20integration%2C%20and%20virtual%20tours."
+               }, {
+                  "date_added": "13386141027895023",
+                  "date_last_used": "0",
+                  "guid": "ddb994ad-fe0b-494b-a871-915834d9f00e",
+                  "id": "72",
+                  "name": "What Is Ad Copy? (With Types and Helpful Examples) | Indeed.com Canada",
+                  "type": "url",
+                  "url": "https://ca.indeed.com/career-advice/career-development/what-is-ad-copy"
+               }, {
+                  "date_added": "13386141027895092",
+                  "date_last_used": "0",
+                  "guid": "6a00cfc4-e777-4c9c-b518-e75fb89f5796",
+                  "id": "73",
+                  "name": "An Analytical Study of Importance of SEO for Real Estate Websites for Nagpur Based Real Estate Owners by Monika Jain, Dr. Sujit G. Metre, Sameer Jain :: SSRN",
+                  "type": "url",
+                  "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3345476"
+               }, {
+                  "date_added": "13386141027895184",
+                  "date_last_used": "0",
+                  "guid": "2009a1f2-66b9-4d35-8df1-8cd7fe2bd00a",
+                  "id": "74",
+                  "name": "Impact of Search Engine Optimization as a Marketing Tool",
+                  "type": "url",
+                  "url": "https://journals.sagepub.com/doi/epub/10.1177/2278682117754016"
+               }, {
+                  "date_added": "13386141027895253",
+                  "date_last_used": "0",
+                  "guid": "77f642ed-c105-4130-a99a-8de4eb90649b",
+                  "id": "75",
+                  "name": "Virtual 3D Tour Assistance in Real Estate Management - ProQuest",
+                  "type": "url",
+                  "url": "https://www.proquest.com/docview/3155008370/D2F4988A749D4ECAPQ/1?accountid=10246&sourcetype=Scholarly%20Journals"
+               } ],
+               "date_added": "13386141027891254",
+               "date_last_used": "0",
+               "date_modified": "13386141027895253",
+               "guid": "5fe02501-1f53-49d8-9e24-6fe88584afd3",
+               "id": "69",
+               "name": "New folder",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13386141043801530",
+                  "date_last_used": "0",
+                  "guid": "aaebac28-39be-4e4f-9a0b-b3e46c066e78",
+                  "id": "77",
+                  "name": "Industry Trends Research Report: AI & Social Media Marketing",
+                  "type": "url",
+                  "url": "file:///C:/Users/Cocha/Downloads/Industry%20Trends%20Research%20Report_%20AI%20&%20Social%20Media%20Marketing%20(3).pdf"
+               }, {
+                  "date_added": "13386141043801610",
+                  "date_last_used": "0",
+                  "guid": "8e4dd616-62d0-4242-8f6d-4afda6202373",
+                  "id": "78",
+                  "name": "Digitization in real estate brokerage: proptech's relationship with the internet and social media | Request PDF",
+                  "type": "url",
+                  "url": "https://www.researchgate.net/publication/348266551_Digitization_in_real_estate_brokerage_proptech's_relationship_with_the_internet_and_social_media"
+               }, {
+                  "date_added": "13386141043801826",
+                  "date_last_used": "0",
+                  "guid": "8e0cf469-a0f1-487e-b8ea-c8cf889188e2",
+                  "id": "79",
+                  "name": "Digital real estate: a review of the technologies and tools transforming the industry and society",
+                  "type": "url",
+                  "url": "file:///C:/Users/Cocha/Downloads/s44268-023-00016-0.pdf"
+               }, {
+                  "date_added": "13386141043801896",
+                  "date_last_used": "0",
+                  "guid": "7c276da2-fe8b-4b41-93ee-c2747060b67f",
+                  "id": "80",
+                  "name": "Digital real estate: a review of the technologies and tools transforming the industry and society | Smart Construction and Sustainable Cities",
+                  "type": "url",
+                  "url": "https://link.springer.com/article/10.1007/s44268-023-00016-0"
+               } ],
+               "date_added": "13386141043801393",
+               "date_last_used": "0",
+               "date_modified": "13386141043801896",
+               "guid": "473aca08-b7a0-4f39-a6fe-b90c6b890892",
+               "id": "76",
+               "name": "New folder",
+               "type": "folder"
+            }, {
+               "date_added": "13386141051646688",
+               "date_last_used": "0",
+               "guid": "dc475a34-06ab-4445-b302-b6fe869e925c",
+               "id": "81",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "2023-GBATA-READINGS-BOOK-THEME-EMBRACING-THE-POSITIVE-IMPACT-OF-DISRUPTION-IN-THE-FIELD-OF-FUTURISM-GBATA-2023-ReadingsBook-pages-445-to-454-Title-of-the-Paper-Corporate-Fraud-at-the-Small-Enterprise.pdf",
+               "type": "url",
+               "url": "https://www.researchgate.net/profile/Azwihangwisi-Mphidi/publication/384355329_2023_GBATA_READINGS_BOOK_THEME_EMBRACING_THE_POSITIVE_IMPACT_OF_DISRUPTION_IN_THE_FIELD_OF_FUTURISM_GBATA-2023-ReadingsBook_pages_445_to_454_Title_of_the_Paper_Corporate_Fraud_at_the_Small_Enterprise_/links/66f54cdb553d245f9e35a3ca/2023-GBATA-READINGS-BOOK-THEME-EMBRACING-THE-POSITIVE-IMPACT-OF-DISRUPTION-IN-THE-FIELD-OF-FUTURISM-GBATA-2023-ReadingsBook-pages-445-to-454-Title-of-the-Paper-Corporate-Fraud-at-the-Small-Enterprise.pdf#page=278"
+            }, {
+               "date_added": "13386221925936069",
+               "date_last_used": "0",
+               "guid": "dc6517ad-a8a1-4632-a208-c9aacfaf5500",
+               "id": "82",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "(PDF) LEVERAGING AI-DRIVEN DIGITAL MARKETING STRATEGIES TO AUTOMATE THE LEAD GENERATION MECHANISM OF THE REAL ESTATE INDUSTRY IN THE UNITED STATES",
+               "type": "url",
+               "url": "https://www.researchgate.net/publication/373014630_LEVERAGING_AI-DRIVEN_DIGITAL_MARKETING_STRATEGIES_TO_AUTOMATE_THE_LEAD_GENERATION_MECHANISM_OF_THE_REAL_ESTATE_INDUSTRY_IN_THE_UNITED_STATES"
+            }, {
+               "date_added": "13386221939920118",
+               "date_last_used": "0",
+               "guid": "07e88b41-010e-4c74-91bc-feb0826a0bdf",
+               "id": "83",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "CRM Case Study for Focus Real Estate",
+               "type": "url",
+               "url": "https://assets.ctfassets.net/l6o0o2yu98mw/Wge6jGUnQP2wLBkxrCVZt/b2fc9eff3e2ffdf88ccea66e45ee086f/Watermark_Focus_Case_Study.pdf"
+            }, {
+               "date_added": "13386221946912675",
+               "date_last_used": "0",
+               "guid": "a9a15155-8fd6-4c03-bae6-52b912416107",
+               "id": "84",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "(PDF) Artificial intelligence (AI)-empowered customer relationship management",
+               "type": "url",
+               "url": "https://www.researchgate.net/publication/363416975_Artificial_intelligence_AI-empowered_customer_relationship_management"
+            }, {
+               "date_added": "13390898322085690",
+               "date_last_used": "0",
+               "guid": "32a99d03-9212-4054-be52-65ee82f2d8a2",
+               "id": "85",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "(42) Baldur's Gate 3: The Hexblade Get Insanely OP Early Build | Patch 8 Min-Maxed Guide - YouTube",
+               "type": "url",
+               "url": "https://www.youtube.com/watch?v=VZCKE2e9BPw"
+            }, {
+               "date_added": "13391301657183679",
+               "date_last_used": "0",
+               "guid": "7e8c4c9d-176e-4464-b934-2cd01976b331",
+               "id": "86",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Solo Leveling - Reawakening - Minecraft Modpacks - CurseForge",
+               "type": "url",
+               "url": "https://www.curseforge.com/minecraft/modpacks/solo-leveling-reawakening"
+            } ],
+            "date_added": "13386127750683192",
+            "date_last_used": "0",
+            "date_modified": "13391301657183679",
+            "guid": "b23cc5d6-ac8f-4d45-a543-45b4ef342bcb",
+            "id": "63",
+            "name": "5 PAGE REPORT",
+            "type": "folder"
+         }, {
+            "date_added": "13395010772207634",
+            "date_last_used": "0",
+            "guid": "861cd62e-35c2-4be4-8913-b6ba546f5524",
+            "id": "87",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "submagic - Google Search",
+            "type": "url",
+            "url": "https://www.google.com/search?q=submagic&rlz=1C1RXQR_enCA1132CA1132&oq=submagic&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORixAxiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDE1MDdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
+         }, {
+            "date_added": "13401563909203284",
+            "date_last_used": "13429925196436119",
+            "guid": "c8fc8454-618e-447a-abd3-db20ba74ba39",
+            "id": "88",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Concordia Co-op - My Account - Jobs",
+            "type": "url",
+            "url": "https://icope.concordia.ca/myAccount/coopjobs.htm"
+         }, {
+            "date_added": "13401574013519307",
+            "date_last_used": "13420864263048694",
+            "guid": "d41d8aa5-e488-448c-82c1-c65063848b8e",
+            "id": "89",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "My CU Account | Student Hub - Concordia University",
+            "type": "url",
+            "url": "https://hub.concordia.ca/students/account.html"
+         }, {
+            "date_added": "13402096796127090",
+            "date_last_used": "0",
+            "guid": "01cd60ab-549e-4470-92f7-8b1cb3efcab1",
+            "id": "90",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Dashboard | Moodle",
+            "type": "url",
+            "url": "https://moodle.concordia.ca/moodle/my/"
+         }, {
+            "date_added": "13403305119242232",
+            "date_last_used": "13408433858863604",
+            "guid": "db5a180a-44e8-4c30-91a1-0d75d5171087",
+            "id": "91",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "(5) FALL 2025",
+            "type": "url",
+            "url": "https://www.notion.so/FALL-2025-2626604f5305800dae3bfab7d52aaf82"
+         }, {
+            "children": [ {
+               "date_added": "13426749448205169",
+               "date_last_used": "0",
+               "guid": "a8fb8e00-125d-4430-886e-225bf95ca60a",
+               "id": "93",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "21st.dev — Crafted React components and templates that fight AI slop | 21st",
+               "type": "url",
+               "url": "https://21st.dev/home"
+            }, {
+               "date_added": "13426749880724558",
+               "date_last_used": "0",
+               "guid": "b87fbd16-59a2-47e4-8633-a2461eb6fb6f",
+               "id": "94",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "llm-wiki · GitHub",
+               "type": "url",
+               "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f"
+            }, {
+               "date_added": "13428048719764389",
+               "date_last_used": "0",
+               "guid": "a8649e04-39fa-40d8-9f89-cb5a47d33e95",
+               "id": "95",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "recent.design/?ref=godly",
+               "type": "url",
+               "url": "https://recent.design/?ref=godly"
+            }, {
+               "date_added": "13428050584885799",
+               "date_last_used": "13435103953147388",
+               "guid": "1eca07ed-4cd5-4042-b3ca-7619308e1011",
+               "id": "96",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "MotionSites — Premium AI Hero Prompts & Design Library",
+               "type": "url",
+               "url": "https://motionsites.ai/?prompt=pulse-3d"
+            } ],
+            "date_added": "13426749476801788",
+            "date_last_used": "0",
+            "date_modified": "13428050584885799",
+            "guid": "ef94ccc0-0e96-481b-8cf2-e778b5d1e355",
+            "id": "92",
+            "name": "INSPIRATION",
+            "type": "folder"
+         } ],
+         "date_added": "13435868266778747",
+         "date_last_used": "0",
+         "date_modified": "13403305119242232",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "32",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13429731883889286",
+               "date_last_used": "0",
+               "guid": "6e117052-96eb-4477-a3f2-000e58766e98",
+               "id": "36",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Forex Academy's First Site",
+               "type": "url",
+               "url": "https://forex-academy.mykajabi.com/library"
+            }, {
+               "date_added": "13430289478097765",
+               "date_last_used": "0",
+               "guid": "ffeabbd5-b5a7-40e9-8741-4feb9b492ac4",
+               "id": "37",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "GitHub trending history — every repository that ever trended | Trendshift",
+               "type": "url",
+               "url": "https://trendshift.io/github-trending-repositories"
+            }, {
+               "date_added": "13431104950346025",
+               "date_last_used": "0",
+               "guid": "57e8623f-20b1-4ff5-9165-651c92af7a53",
+               "id": "38",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "diegosouzapw/OmniRoute: Never stop coding. Free MIT AI gateway: one endpoint, 330+ providers (90+ free), 1200+ models — Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 320+ contributors",
+               "type": "url",
+               "url": "https://github.com/diegosouzapw/OmniRoute"
+            }, {
+               "date_added": "13433286214742793",
+               "date_last_used": "0",
+               "guid": "f7d587ba-1b73-44b2-942c-29a58022ab1d",
+               "id": "39",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "(8) HOW TO RESELL CHINASIDE [GUIDE 2026] | Looksmax.org - Men's Self-Improvement & Aesthetics",
+               "type": "url",
+               "url": "https://looksmax.org/threads/how-to-resell-chinaside-guide-2026.2374395/"
+            }, {
+               "date_added": "13434131318496085",
+               "date_last_used": "0",
+               "guid": "0329214d-293c-4f8e-b626-6d05aa2f6f5f",
+               "id": "40",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "localhost:20128/api/v1",
+               "type": "url",
+               "url": "http://localhost:20128/api/v1"
+            } ],
+            "date_added": "13429731905967322",
+            "date_last_used": "0",
+            "date_modified": "13434131318496085",
+            "guid": "88921f89-bae2-44dc-b807-784c3d48df82",
+            "id": "35",
+            "name": "BROKEN MATRIX",
+            "type": "folder"
+         }, {
+            "date_added": "13383256867097789",
+            "date_last_used": "0",
+            "guid": "89e6e1ea-88fc-4528-ae50-f3815089a175",
+            "id": "41",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "linkedin outbound - Recherche Google",
+            "type": "url",
+            "url": "https://www.google.com/search?q=linkedin+outbound&rlz=1C1RXQR_enCA1132CA1132&oq=linkedin+outbound&gs_lcrp=EgZjaHJvbWUyCwgAEEUYExg5GIAEMgkIARAAGBMYgAQyCQgCEAAYExiABDIJCAMQABgTGIAEMgoIBBAAGBMYFhgeMgoIBRAAGBMYFhgeMgwIBhAAGAoYExgWGB4yCggHEAAYExgWGB4yCggIEAAYExgWGB4yCggJEAAYExgWGB7SAQgyNDkyajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8"
+         }, {
+            "date_added": "13383543905941343",
+            "date_last_used": "0",
+            "guid": "a003e3f0-b00d-415c-a13f-25e1fdda1da3",
+            "id": "42",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "ChatGPT",
+            "type": "url",
+            "url": "https://chatgpt.com/?temporary-chat=true"
+         }, {
+            "date_added": "13384404960009380",
+            "date_last_used": "0",
+            "guid": "01d222a0-2bb5-445c-9cea-3d5d8304f93c",
+            "id": "43",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "The power of generative AI in real estate | McKinsey",
+            "type": "url",
+            "url": "https://www.mckinsey.com/industries/real-estate/our-insights/generative-ai-can-change-real-estate-but-the-industry-must-change-to-reap-the-benefits#/"
+         }, {
+            "date_added": "13384409548277178",
+            "date_last_used": "0",
+            "guid": "94ec2832-b767-4497-917e-b50b893fa037",
+            "id": "44",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "PropTech Market Size, Share, Trends | Forecast Report [2032]",
+            "type": "url",
+            "url": "https://www.fortunebusinessinsights.com/proptech-market-108634"
+         }, {
+            "date_added": "13384410088673794",
+            "date_last_used": "0",
+            "guid": "ce2a8aa8-fb54-4be9-9c80-48cc575c4077",
+            "id": "45",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Generative AI is transforming commercial real estate | EY - US",
+            "type": "url",
+            "url": "https://www.ey.com/en_us/insights/real-estate-hospitality-construction/generative-ai-in-real-estate?utm_source=chatgpt.com"
+         }, {
+            "date_added": "13384411322652971",
+            "date_last_used": "0",
+            "guid": "429bc0a0-6086-433d-9868-0a55c88f5e0a",
+            "id": "46",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "2023 Proptech in Canada Report_Proptech Collective.pptx",
+            "type": "url",
+            "url": "https://static1.squarespace.com/static/5f8d08dd6f25aa7caf32494b/t/655536604b877566aeeb8a19/1700083305960/2023+Proptech+in+Canada+Report_Proptech+Collective.pdf"
+         }, {
+            "date_added": "13384464720473134",
+            "date_last_used": "0",
+            "guid": "1bf8c77b-510c-4089-8241-9ceba092fac7",
+            "id": "47",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Real Estate Marketing Statistics and Facts (2025)",
+            "type": "url",
+            "url": "https://electroiq.com/stats/real-estate-marketing-statistics/?utm_source=chatgpt.com"
+         }, {
+            "children": [  ],
+            "date_added": "13426749476801848",
+            "date_last_used": "0",
+            "date_modified": "13426749476801848",
+            "guid": "5f65a01d-15c2-4f6e-8048-b820fd9263b7",
+            "id": "48",
+            "name": "New folder",
+            "type": "folder"
+         } ],
+         "date_added": "13435868266778747",
+         "date_last_used": "0",
+         "date_modified": "13384464720473134",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "33",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13435868266778747",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "34",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CswCCqsCCIiBAhKkAiAAkgGPAgqMAgoOY2hyb21lX3N5bmNfYm0SBTUxIWJtGhIJctLekkNdBgARctLekkNdBgAiNAloRK6SQ10GABADGYMJNzTO9vbLIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEiNAloRK6SQ10GABADGYMJNzTO9vbLIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEiNAloRK6SQ10GABADGYMJNzTO9vbLIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEiNAloRK6SQ10GABADGYMJNzTO9vbLIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEpBtnfkkNdBgDqAQwI7Iaa1gYQ4O3d9QESACoYUTNBSVVBcWx6YldFV1owTWtEWElldz09SAMS7AEILBLnAQocRTVRZWVSRkszelJucWV2ckkrNmtiWU5OVU5zPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0WDhvZ1NDT25MdWd2R0ovbTRhWWtTb3haaTA3MkVESkI3VERleHdJajlLZXZ2VjViZ2NhamdUS3FHZGxsdkhiK1VRTXlyZz09GAAgACgAMJf4hMLmzosDOPW7juLRMkD1u47i0TJKHFEyVTl3WmVaMDliT3d0UDk3Rkt2WWEwSGQzTT1aHyId+mtUQW5tdjZZVzZQYTduK3RGOWtFTXpHZHJVZz1lyzEK4BLrAQhBEuYBChwya0YxZmxVTytoOW91UHY5SnR0VVZ4RjJaNlE9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRWaGtBU2FHUk9hYy9xT3hLT20wd0dodHhZZ3RhRGZGdEhoS0l4NEVUUkV1czVCeS9PeHVqcXZ2M0puUERtNzcyS0ZUT0V3PT0YACAAKAAw49vpmIyBjAM44KiRmtgyQOCokZrYMkocdm5ST3hOWmFhYmhMRWxMWUpXem5hVnJaRjJBPVoeIhxwS1B2QWZxOFNTamg3amZKeGIwQURISXNNUjA9ZdRULU8S7QEIMBLoAQocY000RXRQUE9JVUl5UnlCdElXL2kyVGxVb3IwPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0SUxCRXNqUk04WUV2dTlYTEFHSk5SbllmUmhEMXdLNUp2UlNhRm91bjE0UGJPUDZnV093dDhHSWdUUU1Xc1FLMnNlcHNEdz09GAAgACgAMMnplYWHn5UDOMHPrr/vM0DBz66/7zNKHG9YMTU2aDZpV2tGZnhObEgzSlQ2bzAxRzkvVT1aICIe/7RiNVNZUXJFeFBFZVE4WTBBSUMweTR3clZndnM9ZQAAAAAS7AEIVBLnAQocN0JGcmw5STM4bUJlYXQ5MWJ5WTZUNTQzUHJzPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0RFRkMFp5ZW9mYnRSb3RScnRzbHlNSlNGTk1vdXk1dmtoTEY3UTh0K0QrV3h2VFJ0VHZWeWIvT0VCOGZNWFBpMmVRaUw3QT09GAAgACgAMM2Yq5zGg4wDOKHAqsLYMkChwKrC2DJKHFNrT1p4M0NKdDBaRURxSzYyaFFEREVWdXdCdz1aHyId/3IzRFRjUWJ1TWhzek1HWm8rNWJneEVoazJkbz1ldaBahhKpAQggEqQBChx5eEovNmZ2a2VjcjdrcDVFUXpCNHRXTHBkYkU9Ek5aOkFEcXRBWnozMFVWcThnZ2ZJTFFCS1paZUpmbm1sT1NnZEtROFN2NVJaYmE2TWJXUmtYQm1NMTZqU2puK3IyYkpEMnNXSENraFhobVEYACAAKAAw6Ii5lbmolwM4AEAAShxhUkNXTGdoRjliNUlucUtJRHZ1Si9qdlFrRmM9ZQAAAAASwQEIIRK8AQocWWNTVG9udkVTUHdxQ3M0TDJjclZodjY4TDk4PRJmWjpBRHF0QVp4ZVBwMlFNczRTaGx5eEVCbHkrSFRDbFhGT3kra2hMSmZaZzVrZEptN0JaWGhhbm8ybnFlMzVMRTRvRUpPU2xCSFVaM01xZUJnVjM3OXZsUlJ0VitSL0FuajdZdz09GAAgACgAMOiIuZW5qJcDOABAAEocb1BWa2h3QlJiVjY1S0NXUjIrSU9OSFdvT3U4PWUAAAAAEusBCDYS5gEKHEV4bnRjc2dKWnBFd2xET1VLdGZZcmhyMDFITT0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNHNMbTZhdVcrMTBvMi9kcE1HN2p6eGZ4TmY2RnE5ZEVrbDFnS0NyazNlT3JRWE00UnZlMTV2QUNBUHYvSytBWXhRQUJselE9PRgAIAAoADDB1I3R5aqIAzjqlNyAnDJA6pTcgJwyShxoU3Uxalp4QkNrZU1NVWY3RENrR21lUWlmWlU9Wh4iHGtCMytTU0JjcDk0eVNkR2lWcmpVLzlNYWk5Zz1lAAAAABLsAQgoEucBChxsT1NBeHcvNzROSXByeVBmak90cW5xckFHNTg9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRMVTVjSVp5cGtvMWNKRTU4WHZiZm1Uc25WdjNQUlNKN25td2F3UTNrSHBrS2dPNGhrUzZnMFA0aitVSFh4aDllWUtwbGN3PT0YACAAKAAwherRxfL1lgM44r2m/4o0QOK9pv+KNEocUFdRcS9FdzUwbVF0eDI3bFl6ZWt6dC9hOUswPVofIh32YzIwOUpzN29EeHNyaCtqeEtQdmRGbE81WDBNPWVEISB3EusBCCQS5gEKHDdVUmJYQ0hHYkRxVXAwbWxmamt5TnhaZE5Ibz0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNENyQTlzdEVyZHpXeUUyaS9UcGw3Z094dk5TVE5DKzZiN3pHMDVkK1dWT2R6SmZscm84TVpjWVB5ZFR0RXNpRmVXeG4xV0E9PRgAIAAoADDYrpLC7fWVAzjzpr7N+jNA86a+zfozShx4NXFuOXJvZDRFQjNWMStxeDZtSnRTR1hPelU9Wh4iHGxWWG1YRW5JaWk3QUlMamRINUFsbjNBZFY5dz1lIAqdGhLsAQhKEucBChxIRUszSW54TFZaaFRZVUJNbkM0dFlxRk50dE09EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRNTWZQV0J2N2ZWcWY0dG45aTJWV3VGYXYzRkJHN2RGR0psclJMSnpnd01mVkF1b1pSbjhTekJaaExqSWRMRE8reVpSbTJBPT0YACAAKAAw87b2pv2EjAM4t8zfm9gyQLfM35vYMkocbFYzQmlzazhTZk8zNjFVdHd0UFBYYXVFZjRVPVofIh3eUUZob3IyYy9PbHRqd1czNmRzSS9Sb2hVMC9BPWWmudhwEusBCF4S5gEKHGc5Rm54ZFJEUU9qTHdFeG5qR2J0eitieVcwWT0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNElTNk9tRWwyT3N1OXpqYXB3S3VXU2lTVUE1QmJCamNMWmFtMVNGVW1GRTdQUXdxTVc2RVdYRVQweXBHSVlHcGtXOFoxbWc9PRgAIAAoADDwi+fFiJ+VAziWo8e/7zNAlqPHv+8zShxSZUQ3VE8wYi9FVlVlZ3N5TURkT21QNXVhYmM9Wh4iHHpsQldWb1dTZlhKTWJGYkhiYnBCSnhaeFQ0Zz1l15E9ORLsAQgqEucBChxVNDIzUnU2V2R6NXFQby9SUFRIUW13ZzFkMzQ9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRsVDhDdk5BYnJWdEd3Z3c3Nnp1OFhseHpyNmRXdjE1T3o5WGNBU2xvOGJEYTBhY1hpYnNTN3lDUnRtdUp2ZU9UUGRPRndRPT0YACAAKAAwquuC35WDlAM4le2rxc4yQJXtq8XOMkocc2Jha01uZnRiK0duNWlLdFVjUFNTZUNpNTJrPVofIh3qK3RNTmhiN3R6N09mZks0UTVXbVJWYzZqcFhzPWWGpdjIEuwBCCYS5wEKHDlNZkVjL3VGMEZjekdlQ2hLc2x1dW9PdVNJdz0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNEptang4YXg2ODVEd2hDN04rc1JTOFFDalQ4Z3RHK3lHTVhMYWJXTWNmT0Q2RHpsa2RqSEtCdmd6eVlEK0dMUFVXVVBaYkE9PRgAIAAoADD6uei46J2WAzjK0Jvc/zNAytCb3P8zShxVOGRYVHlzd00yMGxGM2tuenl4N2U0K0RjcjQ9Wh8iHdsrU0o3LzNUdFY1WG95OEVzK2g0RWQ5bXI3aVE9ZdeRPTkS7AEIKxLnAQocR3VwbnZqNGdvRmpUdkNUeklpUk1XWWFHSS9BPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0VG1tV214N0lYYmhrdDV2bVRCTVNMWUxvSitOTjhYQTMwOVFnQWZWNzJFVERBRks0NEcybmN5aHkyb0x3aXRmRkRidFR2Zz09GAAgACgAMK3Nk7bVzosDOIm29t/RMkCJtvbf0TJKHGRQQ3VRMmo1ekNVOWxVQ091dkx1Z0lnYmlUYz1aHyId9TlsSTZpWDltcFJBcmFDcmsxWjdBUFdkT0p2QT1lEP6dAxLsAQgnEucBChw0VFhaQWs2aTRYbHd6ajlGdjdKTFozY0loaHM9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRKM0xnRnBVTjJzZGlPQ0o1TGQzZnlIR20zUjVGZ1hneHFVK1UrNXZ6YWlsYnRMTlR2WnZ4K2duKzVFQ1VGbEpLeGovVFVBPT0YACAAKAAw9qa7pKbdlgM42rip7Ic0QNq4qeyHNEocZEhiVytDc1EwVmNReUY0ZkxtVkFoQ3N3bCtBPVofIh3tNGVRbEE5TkVTM0Zidk5VZHZhUklLbWJyb0NzPWU+H4TzEuwBCD4S5wEKHDk3NlRmTHZsUXlMRmRQSk1lZDM3T1JTZ0NjYz0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNFljUnIxeUN5VGxFN2pSQ3gvZ0EyNG9NZWNLbzNnei9NZDZCUE5qdUhMRW05SFMzOFNxd3VTemJDclNkRllUY1RpdFZ2WlE9PRgAIAAoADCJhN6S9M2IAzibtoLAoDJAm7aCwKAyShx6NzFBbjBOTkNzUDU4S0JQNGw3eGtlQ3liMXc9Wh8iHbUzcGhrZHNxUHB4L3IyOGk4TEtBUDVjZ0k0Uzg9ZX+iJQYS7AEILhLnAQocWDFvTjFmSkRhMllQYjJNUlNoSTlCa25HcWRVPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0ZUxtSTQ5TTB5a2dTSy9UbVRDU3d2V2QxNS9mSFg0b2dGOWxMci9pVGZwZG8vVGtEMkpwbmJPMGVla214ZlVRUEZIZmNDQT09GAAgACgAMKeOkJDtzosDOJ3i+uLRMkCd4vri0TJKHHhSOWF4U0tjUTlKMlF6L3VOUlJTZ3BLVXB5Yz1aHyId/mV0d3pjbFdrbUV0bEt1aUt5Ty8yVTNMZGtzdz1lAAAAABLsAQhCEucBChxPM3ZuN0xYdlJTZnF3SUlOU1hIZkZKWVBVdUU9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRzMmNYanB6VDA5V0xoRElwdThSMTRwclFmZmFpYmxDOHJ2ZlZETUpHL3ZBL0VWNXUxNkh4MEdOQkFZL1pWTllSN3orZTF3PT0YACAAKAAw4M7Nm4yBjAM4uNaRmtgyQLjWkZrYMkocNVpJK2YzanplV3BFcCtMQndMSEI5cHYwT0VBPVofIh24SFNSWWlzaS90MEdXNE5INDh6d0tQdDhOS0NNPWUAAAAAEusBCEYS5gEKHFZubkxoYWIzS21TMko1b2JOREh0WTRQZGhJRT0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNDlXdW00SmFycmMwckxMNldzWFhremNSNHNVRjZEK2FFTGJwcUNYUHl1bnpML0lNQlU5RkVQTUFNMm1YT0JTYmt0L2E2d2c9PRgAIAAoADCVr7bkmIGMAzi2zN+b2DJAtszfm9gyShxJVjg0Q2EzWmlxRTZ4Y0I5amFmdFVDU2FiRm89Wh4iHFdET0VwTk96WVBNY2J5Q3VYY21PMGFmQVgzMD1ldtYScBLsAQgvEucBChxma0lrZ3F3YXk0bUo0V296NzllQzc5K2xBNjg9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRFZmprZ2ZWTFRWZ0g0bG9NUjBzdGN3R3lhUTFTbDlnTmdFUzhJWURlZHRRUjdwSFI3a1ZqVjlGVHY2Q29acGR3ekNzZm9BPT0YACAAKAAws765hLTQiwM42vS1/NEyQNr0tfzRMkocNTUwTktBc2RSbkRsa3d2dXQ3U0ErdVQrQ3JNPVofIh3/aDVsRlpQQ2w4RHltc0hRenZmMlpuRmp4T05vPWWyO8dVEuwBCFIS5wEKHE9LdUlaMm04Q25qdFlMUmk1K2I0WS9oVDJYUT0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNFNxT2FLRlZySzVzM2p4ZjlkbTN3L0VnN1pIMEZScjhwd1lSSzE0azA1Z2Z4U3ZuTzIrMndnSU9kT1VuQ3JSSXk4MlZ5T1E9PRgAIAAoADD+lruSxoOMAzi0nKnC2DJAtJypwtgyShxCaFo1eUhBa3puaENBTm42WmlVMVNNbGhNV289Wh8iHf41dHF0bFVyMjE0YktiNDg2QVl5TmRvSW9GUkU9ZXWgWoYS6wEIOBLmAQocWGFEdUd3R3pDaEplR1pZeCtBSEwyTGZSVTFnPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0S2huQWN3S3Z4YmtpOGg3bjBQeFNOSGpua0ZQekFuS2JndmtLOVZnZDhMb21rK0NMT2UzeTBzdER3WTZjaHZNMWJqalZXUT09GAAgACgAMOnEnfeKzowDOOuU3ICcMkDrlNyAnDJKHFpJakVXMkYvelFKMHhISitXUzRaekFPdGhMST1aHiIcS3NQUExtSGhuQ0pDS2Fia0drL3lqU2NYQkdNPWXpuFeEEq0CCDESqAIKHHMza0lmRkpzRmV6UnBvNzhrbis4TmJVckpIVT0SpgFaOkFEcXRBWnlEa2Z5c3d2aTh1MDhlWGJIUCs1d013Nk5qK2tCUDdrdVhMN3Fmam1kNDdkMHdQU1lvbmZSYVZydnd0QnRiZ1loL0ovb3RqaFVLSzZEMXlZdWJ2ekpXaUNOMXN3aE5MR0pmV0JkQXNZd0dTN2hmTWtqUWFzWFVIMWhhemwxNnc4YUg4ZUROOXp0RE80U3hHeFdCa1F6MVBabTNnZz09GAAgACgAMLzticXL4ZUDOOaAhvPwLkDmgIbz8C5KHCszTEdyMGJJdUkzNm9JalBBSFlrR3Zqa2dlQT1aHyIdPi9rVW1sU0E4QUZFQWozU2ZYMmxzNjBZblRGWT1lUELD0hLsAQhMEucBChxVRE9qRjJYM3lweDE2ZndkOVpLLytvUVozK1U9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRSejVROUxmbGY0a2NYQTBSWUFMSkIvUExyaEZ1b1J6c1J6THFkS2s5bWdNLzl0OEE5Q01aYjMyaW93c2VMMTAvM1Y3QTF3PT0YACAAKAAw3oL965iBjAM42cjgm9gyQNnI4JvYMkocclNvc1o2eHdhTzV2S3RlVDBZN2pXUUk4aXhvPVofIh37a0YxdUExSUxtRGhxc3BtY2Y4TmRJODJLbllJPWUAAAAAEu0BCDUS6AEKHC9VaFRpWVZNM1laVnkzMUxXc1NJeVpVQTRjcz0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNFl6ZWwxdkRTVHNmV0tyeWhqZnFFSkxpRkZvL3VXUUpkZDRHQndsaWI1Z1JkWEtIdEpPS0V3K21odVoySGFUNE8zWkdaWmc9PRgAIAAoADDB1I3R5aqIAzjqlNyAnDJA6pTcgJwyShxSZEsweVpycGp2U2dHczVld1cyVys3T3g0aEk9WiAiHv/cK0tZMG5YaWs0aGdpRDJYWU94M1AwakppMHVBPWUAAAAAEu0BCFoS6AEKHGNETit3UlBuSks4bjNPbzRES3lRNnBVMDA1Yz0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNE5DdkpKcmx1UU4xZ1NoQ0xyY044Nkk3TGI0dU5yL2pZTmdKK0tzUDFTYUhQSlF4amdtbzA4bXppdEMvajBoRGgwckpLNkE9PRgAIAAoADDehIzTyNGPAzjfs4bUkzNA37OG1JMzShxETzJRcUhaV3R3VnV2VGZzTUNNODZJQ1d3cnM9WiAiHv/+RVZtU2hqT2M0T3hqWVZoL0dGcVhGZkdvazdnPWUwo4cLEusBCCMS5gEKHHZVbzh2WUtxWXRtQWY5TXc4Mk0xUVoyYnhsST0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNGtZWHVZZmRFTEFwSFQwellvdmViOUs5VkpjMEZZektPMzZ6QjZ2eXJNd1RGY2dUbW1qRkdFdGZPbk9DcjBFd2RQeGd3NkE9PRgAIAAoADD7mbO/7fWVAziv07/N+jNAr9O/zfozShw0V0kwZHRsWDZ4NTNsc0tyVXREK21IYUNxdWs9Wh4iHGwxM0ZraHJYZFc5S0sxZHZzQ0pWWGsvS0N4VT1lAAAAABLrAQg5EuYBChxPUW1kRkZiLzZkQ0hvTVJKN3Y0QjZCWk1sRk09EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRYMGVRa2UrbC84NmFzVHVPQUYxVkpPVEhhNGxCZ2tuelB6aXB4Z3ZNNitLYzFBQ3FDS1ZsdmllQ21EU2FPOE5TSnlQeXFnPT0YACAAKAAwpevop/HYlQM465TcgJwyQOuU3ICcMkocSEE2VitjSVNCblJLQmtnU2JtT1hPWVA0ZCswPVoeIhxQbG1XWGxQNk9lUHBEUjJxS21tWTgwYXRlaUk9ZQoYtjYS7AEIKRLnAQoceEJKczZUOHBoRWtlR2V3RVBqM1BQY3ROREs0PRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0WnVtelIrNDQyTFRiRXlwOVk0Vk9naWpSQ1pGOWJTT1huQk0rRk1jYWlFenF4MEgxM1gyWU5velVlWEhEaHdpUjcwS3NGUT09GAAgACgAMLmZhpSiwo8DOJmyvLzNMkCZsry8zTJKHGkwUUd4RXYwWG9yT25ta2N5L0xnb3FtdzRZYz1aHyId1WhSMlB5Y2lHV05xd0p6MmZZZXc1Ri9GaWRYST1l2mneXRLsAQhTEucBChxEZGJub3FaR3FTdDFtSnVOMGpIa2ZheGVLU3M9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRKalFLTEQ3blgvVTNsSmdzOGdpMEk5aElwdFIrNVhxdEFReitOenppQk12bXVpOHpYSjN4aGNyMnlsZndIQTJJSW05d2t3PT0YACAAKAAwmo2AmcaDjAM40ImqwtgyQNCJqsLYMkocQ3h1NVZWeTR0c20zdHlqMmxVN1JYNjlHTnprPVofIh3/L0ppMzdEVmxPcUIvbFRoSEpoYmJGKzEzaUZZPWU95RDAEuwBCDwS5wEKHHV5KzBLVWlqN2FhNWUrVUJ5S0FzSmY1WkZmZz0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNDEwYWlxUnhoMWhjbFJDN1htSk1TZVNhaW5kSDNZWTdHRE9DQUdpSmIrSmhzY2EwNC9BNXVVcGVyaitEZ0IrdmtlMmlWbGc9PRgAIAAoADCl6+in8diVAzjrlNyAnDJA65TcgJwyShw4ZHdVU0JQTkJMZldObVZoRXFSM01QUEZiMlU9Wh8iHdkyWUMrSXJXUUN6UTQwZjhuNi9jU3U1bFpPMTg9ZTR2n6AS7AEISxLnAQocV1RPdDhUeG5nYTJwZjVZWTArSXRPOUVSbm1rPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0MGltcnM4aFdPNnBPZk43bjBUSnphbGJUZWVYYU5ZOHRaQUtZSzc2L3JhM2crcTM0d2duT0p2V3FEREh4eW0zV0FkMHFOZz09GAAgACgAMJWvtuSYgYwDOLfM35vYMkC3zN+b2DJKHDZMUHRVOTd6OHEzMi9US1hsRWN4NG9xNHJoWT1aHyId7zlzUFdtbUlXbmhXbkdodHNxNXhTRlYrTThPWT1l/F0wIRLrAQg6EuYBChxZTVVJVjhjbzJiL0lSbGdmK3FTTlQwOFhrdkk9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRLR2E4eUhYR1VhdUowbk9Rdkp4MzkwOXFlMHRvV1p2SURxQzZEWG4vOHRzcGxFUE8zMTVWcS8wN3dHSy8rQ0RxWTd2TXVnPT0YACAAKAAwtuyIrpWBkAM465TcgJwyQOuU3ICcMkocOTYrbHEyQjFVUFBacHhxWHR3c2pYYjB1RjdrPVoeIhxkTjBiMlJ2MHFPSXZTZ2FSa2VwS2tvYk0ydTg9ZTCjhwsS7AEIJRLnAQocYlc3TlBjQ0lMWUVtSmZMS0VNU1F0Rm1RclRzPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0SmU3MHp2WlllWXg4a3d3Q3cvWC9sQWRmSEx4NmtBeklHMDFWS3FzVUFtQmJtOXVkM05TbnZSK3FsQmo3TGdzSEN4L2p6dz09GAAgACgAMKekrMmKhpYDONGTr9f8M0DRk6/X/DNKHHdsa2FMYlRhLzE2NDhnUitzTmhKMzdKTm5TWT1aHyIdtll2MFRTTmx6bG9GWFIxTGNjUG9pZnpBdnpRbz1lkGHcDhLtAQgzEugBChwwMnBWTk9FK1k3UnhqZ2Y4TE9JeWZUanR6VHM9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDR1Z3FSOGdadEZ4ZGtmK1Z3SWVad2NoZGlzd0hBdlRkSEN0R2ZPZHNhbWhQRElnUEpadkxsdFA5c1ZCNWZXb2UwQmpET0x3PT0YACAAKAAwwdSN0eWqiAM46pTcgJwyQOqU3ICcMkocWDVxVkhocTdLbG9GZVZ0ZzY0SVF3Ync3MUVvPVogIh7/uDBrbTFsNWNZcmJGZEZEekdBc25mZDJuRldJbz1lAAAAABLsAQg7EucBChxEVlcrcGZ5anAxcUpKZE80ZTFzYk1ra3pXSGs9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRqcDZtYVYyZS9mb3NTVVFnZHdmZmpzNkljNE1MaWNuazQ3QmVvcUs4K2d2YTJ1WXdrb3hDWWtjdS8weVcxeWFaZ05FNUtnPT0YACAAKAAwpevop/HYlQM465TcgJwyQOuU3ICcMkocc1lQQjRpMkFOV3ovUkM0U1g3d0twODJ2TThnPVofIh2yUEdyTTd1bzdJbzhETUc3eDNDc3diRldBT3NzPWWuHKKFEu0BCD8S6AEKHHZueXVnQXl2d3ZjK0hGN0x4MWxTR2RzYjlqQT0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNEpmQWxFWmJpcmE0U3ViT05xNkdqYmpiWGxZR1JzNjV6T20ySytsbnEvcUxZRDJWNFFUR0VrcGhPR1pNZVlTNG5XV2x4M3c9PRgAIAAoADCDi6Wp54CMAzibnLWV2DJAm5y1ldgyShxHSjh5bkVTbGkrQ1lySC81YzJVRTBUVVREc009WiAiHv/uYk9saE1FNWpnWjBPTU1zNC9NRkpHMXRnOEtFPWUAAAAAEuwBCEUS5wEKHFFseTVrUU03ajZyTG1tV3hJRmNQQTl2Wm1xbz0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNGtidFZCSWswR3JMcG9seE13WFNGRTZBUE1xalpUR3VocThyZ2YrMnR1L3pEQ0dLMDRkT012MHhOYjlGSDVjbzFxbnpBVXc9PRgAIAAoADCVr7bkmIGMAzi2zN+b2DJAtszfm9gyShxvSEF0RzZ6RStvandLbFFtUm9pbjd2dllFN0E9Wh8iHfd6ZHlsRU5ncGx4YW8yS2dQWWFOY2FjT3h3Vjg9ZQAAAAAS7AEIXxLnAQocYWhUOHFNcVZJTzRTaE45T0hYaUEwOHNVUHFJPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0UU5RUG95NjBXY3lJanZrR001SnhjWi9VbTJianhxOVFSQXZ2TXVMUTRwRnlPcllYbVFnOTc2S3ZZSnNDZUMyRFFNS3N2UT09GAAgACgAMIrdtozvxJUDOJSP8qr0M0CUj/Kq9DNKHG1Ga2F5Q2lLUXVvdlIyVkx1QkZzWEhTc0ZvVT1aHyIdvTBzVmJrdmVxY3d6b0ozMVpSUWk0TGpQd1Q0ST1lBycHoBLrAQhAEuYBChwzem5wTU5aM1BoRFppZFNZSGVjMUlsUVVoK0k9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRmczI0NmphNG1jNDJQdW9mK1F0RlMzb3E1K0VabXhUQkpkM0xHQnJ4Nnh2cHlnVWRrT1IxRXR3ZTI4TlE2dGtwNkw2MDlRPT0YACAAKAAwp9yHsOeAjAM4v/K1ldgyQL/ytZXYMkocbkcvUGJlY2ROK0hGcis0RmpQUEZYNy9RZ1hZPVoeIhxldGxxMjNwRHNkczVaR3UrczNoTFVrMm5zL0k9ZdRULU8S7AEIYBLnAQocUFhHTWNWTm5ldVFPRkRoQUtyb2pOcFRlODAwPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0RHUxWjlOdVh6NTNTck5FQXBZZGJCUXZiYjUzY29WaWJneUhGTzdlcmZCWmRTVGhUQlloaXU5WkxFN0ZMK3U0eVRLK2F5UT09GAAgACgAMM303PqZkpcDOLb646v0M0C2+uOr9DNKHDVkclh2RExXL09rVGFiL1RrcWwwYk5QOE5jST1aHyId3mVrUDlML1FzaG5TZlBGS1R2eEpoOFFhNCt4cz1l4qw7URLsAQhDEucBChxmVWVpbWErYnEwRjI0dlVNMkRsdmRnVm90ZXc9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRPRlJGbFlleWFTSGM0Rmprcis2WDhwYnliL05VSC9PNy9UdEZuRTJpSWZ3Y0pKRytUYTkxU2JsSkdzL2dpajNKZk5rWlFnPT0YACAAKAAwq8HqnYyBjAM4nvmRmtgyQJ75kZrYMkocSm9NbW81cDlRUnRMOUxLemFLZ01RYmlxWmZvPVofIh3cZzYzOW02NTRVS1FIM08wUk54alBVQSttWnVBPWVow/W1EusBCDQS5gEKHFcyMEhNNUF3aEVQSDNBSlliWThvOEdXWVBhYz0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNGR3Z3pJSG9VeWgyUTFFanlwUnZsYm13dE0xU3JqTWJPcG8rSksrcy9zdVF6L1VKYnlFdG1VMzZqTm9uMU1hcUl5WXFWMEE9PRgAIAAoADDJ6ZWFh5+VAzjBz66/7zNAwc+uv+8zShx6M2ZxSTROc3dMQVIrak05clRmZDdBNzViSW89Wh4iHEhSMTd5WGZRaGRrWXlZMVRLd1ZZVE5lVWZvdz1lAAAAABLsAQhREucBChw4bHJIaEx2VVF5M0NuYk1ucURGaFQ4Qi82czA9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRuNXFLcnN1OHNPdTE2RGk3NDNLTndUbjFCNGR1Q1RNTmM0czJoV2dVY3dqWk9POHluc0VxdkhPWFJFUzN1cjlnUk9McGtBPT0YACAAKAAw/oja75iBjAM4/4Xhm9gyQP+F4ZvYMkocTVJkU25saGQ4aFl0a3FmSUxjNTUzbTFlODV3PVofIh39S0hqM2JmMmRYMUw4cjhNRURqVTRpRzJVdE1VPWV1oFqGEuwBCEQS5wEKHGZLVlN6S2pWY2pUQzN1WWNhZTZ0MDFid2daMD0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNHU1eDlKSElkNzk1b3ZVSU4yb0trVDdxRUpyTmRxK0p2VW1Vcm53Mkd6cFpKVFlBbTZxck0rVXJDb2xnWkhEK0xSTk5rVFE9PRgAIAAoADCfzfKrmIGMAziEr9ib2DJAhK/Ym9gyShxreUExcUpkWGRveWNIamwzdm5GcmMzMXR5Tlk9Wh8iHe5PbUQ2clUyVGxrc2JwL1h3Rm0ydlBxVEVOYjQ9ZQAAAAAS7QEIWRLoAQocNmtFTEVCQ0dkSGpUMi85UlRMUXUyb05ITWprPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0SVFqNzRWa1RUTVpvQjhOaWx6a2NjcThoTXdMQVJhdFpra0JmdS9KTWZOUkV2dUhVQmU3Z1pXOUUxdGNGdXU1amJRN3NwZz09GAAgACgAMNK62vfi85MDOM+k4tqRM0DPpOLakTNKHHAwSmJVVnhxeEVYb0prNVYvQW9CelhRbUZrUT1aICIe//1rSkNZMmtkeUFBd3lqQm5nakVBWk1BTDNYY289ZXsM7rQS7AEILRLnAQocenJxejUvWGFYQ2hPbkNkWEpZWDZwUVJEN3JRPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0SE8xak1iaTZyUlZldWZTcnEyKzVveU5teUduaHV5U3NSamZIUkJpNndWZHFXWUlaeFlLZDVmNHZCZlJ5UWRsVGt5RUhZUT09GAAgACgAMMTN28PozosDOOG5r+LRMkDhua/i0TJKHHgxRWpuckRqM2dIUFdKRjkreFUwdEJaWU1jOD1aHyId/UtoMUxYYm1mN05oMHVHd3Z5LytWWTNHbjROaz1lrzn3ixLrAQhIEuYBChxneW85M3UreFZZeWRCa3ZCb2dUS2c1T3o0QXM9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRRdXVJY01vbzhXZjJsQkpKTEZyNDIwTFU5Q2IwOEttaEs5MWs1S2ltSTNXeUhTcHhHaDdLTmdUbWhmVDYxY3hiRSswck93PT0YACAAKAAwla+25JiBjAM4t8zfm9gyQLfM35vYMkocY1hwSnN4SUFWeDM3R09YdEEwQUpXeVhOMGVVPVoeIhx4R2ZySzVNUTRTbFdiUTIreXM2VjBWVzZDM2c9ZSeVpFQSrQIIMhKoAgocRlJsK3g3K3pBUWJ3WHFIbFFCVmJ1SE5GQ2FRPRKmAVo6QURxdEFaeURrZnlzd3ZpOHUwOGVYYkhQKzV3TXc2Tmora0JQN2t1WEw3cWZqbWQ0N2VFa0hmVVRDb0ZZbEp6WDBuY2pwZ3M3VlVmWllKU0h0Q0FEZE5GOHNSWlBqRVZXakhGODBQcmRjSUNxbkNldHY2UjV5V3Q3M0M5aStMbUI4NXhEMXZQMDJFakYyRzk0Z2gwL1YydVQ2TFZyK1V4NVR3PT0YACAAKAAwlNKi4JWDlAM4zPWLjO4tQMz1i4zuLUoceFZUajNZbmxaWXU4OHdIbzZEdHg3Mm5FQmprPVofIh3Sb2RGdk9LUVY0OEs5QXVPb3F0YmhncGNsYjZNPWUKGLY2EsEBCCISvAEKHG5qZ0R1ODhlQ3J2WHA4NnBEN2ZIR2NxRnA4OD0SZlo6QURxdEFaekVTeDBOaWV0ZDZXQzF0ZVZ0RGhlNnBVOGJzMkVsSXRaaENzVXFGc2pSNHFTWHV4dEcweGtTQzY0d2wxdkRTdGNJa0pNRk9GL1RPQkpOQml0RktuUHpzVmZJbGc9PRgAIAAoADDoiLmVuaiXAzgAQABKHHl6TkIwMWNuNTRBN2NSVTB1VCsvUGdtVHRVbz1lAAAAABLrAQhNEuYBChxUQUtTQlFKcVRjekJXckwxU1pqRldmaHBnQWc9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRmcWMwWjY1cGVBMGZ6ckdWcDBTeFJNR29zekhrY29yK2w4a2VqcENpRS81WTRabG9QcmpkTU5HK2haN3RlMHJGcHgydFB3PT0YACAAKAAw3oL965iBjAM42cjgm9gyQNnI4JvYMkocZzU4R2lReEViR09RTFdQczhzVUgzV1Ftakd3PVoeIhxJellWK3FMTEQ3NS91alNuWkRkNEdQV3Z5Y0k9ZQAAAAAS6wEIThLmAQocSUFQZ2NmK0Y0K3hoYWozME4vSEhtYWt4Mk00PRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0cGJuUWJ5Ym5XaUFTMHRTd1pHa0ZRSVhENHAwWFhjZENuQkxFdjRxTjI4b1lMZ0dZQ0tFM05oR1RHNkhxTHp3WFU1YTA0dz09GAAgACgAMN6C/euYgYwDONnI4JvYMkDZyOCb2DJKHGFNb3UxOVV5N1ozSkxDV0lYREI5OERDS2huND1aHiIcZ1pMVTNwL2ZFQUNLSkpmRXVtVFZ6RFNHa3JJPWV1oFqGEusBCEcS5gEKHDQ3bEgzUVZCSnljckZ3ang3TE5xQnZEZTN6ND0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNDd1RWZWbU01NTRXeXlKajhmVi9ZY1JNY3JNTmI4eEt4MFZRL0VacjEwT0dBRGdVMi9yd25NbXZjZTJkU1ZpczhaT2tSYVE9PRgAIAAoADCVr7bkmIGMAzi3zN+b2DJAt8zfm9gyShxjQVkyU2RtQW1nenpKcE1vYlIvcE93dUxlems9Wh4iHGxoYmhLdzFHMkxMVEdSYVE5aXk0NzJiRzVqND1lj5/ZaxLrAQhPEuYBChxhVGdDbFFrd3pkZEdyaW5uNkphR0d6Ti8xSjg9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRHTWtPZm9OalNNRFprZVhtc0YyM1Z6SUFuSmtiMnMzc0hDbWJBVHAvYmxLc2tmVWljdDEzWERIeDNiSnZlL1doOVZsa0xRPT0YACAAKAAw3oL965iBjAM42cjgm9gyQNnI4JvYMkoccmV3c0tKVVhpTEpyVnQzQ2JiQVNqMWlSaGlrPVoeIhxsYVFOelBZYk5jN2FsSFBkWkU2UzJKQ3Era0k9ZQAAAAAS7QEIWxLoAQocbFVRYTcwTHNoZUFaKzVacWZHK1YzYTRVZHpBPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0SlJmNE5lcjB6RGU1Z3RZQ1FSeTFXZEhSQ2lGemIzcTJTN3dlTlpveTY0aEUya0pwRHV1TzRKNE53WkZta1Y5eE4yL2I4Zz09GAAgACgAMJD92oHUhZYDOIrMnJSYM0CKzJyUmDNKHGhHWisxTkU3TzJjcnhTYnByLzFCVEZyZGx3Zz1aICIe//94bUcwdmdFbThIU2xiUUhCR3hKNlFQQUdGejg9ZRfoHukS6wEIUBLmAQocMWhReldoRFB0Y0gzOVRMOEQ4MkdFUktRdXA4PRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0YXE4VUx5Y2xmbGwxV2ZrUmtPbGxJU1N3ZEJ4bDk3aU4wQ3hrMU4rcnZXa0U0Qzc1QUwvazZpOEJ4UVNUa2pWRXJmTlljUT09GAAgACgAMN6C/euYgYwDONnI4JvYMkDZyOCb2DJKHFRNdFhRbEhVSDB4bUZaWHVWQUgxY3dQNlJmQT1aHiIcb3lHVjhxa1E4dzJBbjJOTEdaeEl6VlprSnBnPWXsZgvoEusBCDcS5gEKHFVScUhCS3BBNDFjUHNqV1R4alFuTy90eHUyTT0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNGd4UjNuL0tZUkpEOFZsRGhKclROTWtwK3haaTBvaUdxK2k2NGg3WmMxZmc0a2RjVG5PY0JLVjkxQU5UWlI1cmlINjd5Unc9PRgAIAAoADDB1I3R5aqIAzjrlNyAnDJA65TcgJwyShxBekd0VGhOZUg5ekFFaDNrUlhWaURTSW9OWjg9Wh4iHCs1VGhLaWtielFKWWtmdDBhdXZaK3hsazVRZz1lhXkJ6hLsAQhJEucBChxqWUh1YUdJekFMaHZVUFo5ZnBCeS94L0JvZk09EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRvdlRIbTdMYW9NclJWb1QvdTZGU2lFWVlUNVQxSUlJUXBEV3VKZW41eXlMbUN3YjdvYmVVRVBGWmR6THU5aUFGR0lpWXpBPT0YACAAKAAwla+25JiBjAM4t8zfm9gyQLfM35vYMkocZDRHMkxQQjBsWVVGSzRDVEFJY1N1bUxaVjVvPVofIh28U3dlcUNCSFpCdjh5TTM5ZlIxa2VZSGFJN3VjPWVN/G1HEu0BCFUS6AEKHHd5bG5WZUFsTThrQXBoL1BVK2ZwMUhRdG1jND0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNFh6UWJWRHZEc2EwcFArUVhZRWtEZ0VDU25wRFpDSUpocm81N0ZvYkxPTUp1U09KcTdTTDN1bzFFWU9HUktrRmdUQzdRc0E9PRgAIAAoADD39PGK04uNAzim5Zn46TJApuWZ+OkyShxPQ09jWjVOd2VGWkhiODlneWVJRkRseG9vY3M9WiAiHv+5MU5tVXZXeXZQUHNkYlJHcGVTNEpFZDJYNTRzPWX9nIxKEu0BCFgS6AEKHFBHMWRhS0lGOXF5bkd6NFpISUtreGpCRDNPZz0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNHpvVjZDSmJXMlJBaTVnaGczQWxuQXNQYkhMWVh2ZU11Z1hqOVluRjJUMG5wMWNYWm1TL0ZhcmdQc2Nubm43dnRWc094TGc9PRgAIAAoADC3vIXGyvuVAzjTyPnVkTNA08j51ZEzShxTeFZzRVAvRTNqSlZxUTVGWGpGVUJWa3liRDQ9WiAiHv/7NklnejEwSlFMUDkxbnBXRXd0bnNsL09haHhvPWUAAAAAEusBCF0S5gEKHDlYYTY4Nmp6enF6L21Ya3A5VUt5OVZMdmRoND0SZlo6QURxdEFaelA5ejR3QkxWZkNja21mMjBtQjBMNEhnakM0UUdsRkR6TVJFT1oxRjd0OWRjOVFKL0lBems0MjRrRWkzejFGMUxXSlQyejRpTmUwd2ZyMlJjWkdxY2pGRU9qc1E9PRgAIAAoADDmuO7HhJKXAziN8Ky/7zNAjfCsv+8zShwybWR5NUxJZHhjRFBRRmM0NFdFUVlINnkxNzA9Wh4iHHNRajlmOW1Va28yeFo3RnIrSkNxYy9nYTNGUT1lGx3/rRLtAQhWEugBChxiNG1kN2tOeGxKZGg2SS9Ya1UzUXhmV3l1cGs9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRkek5lMXZMdXNUcmVjMDNyZVozZExqSjJ6Q3FIdVk0VEhxYVllU0kxRUpjeGRPK0U5cEcrQ0QxQS9Ma2ZGeHdwck93azdnPT0YACAAKAAwpOXumO/YlQM45LTDuOsyQOS0w7jrMkocNTFKQ1BzZjEwN1BPSExPZEc5c0trNUxZUjQ0PVogIh7/3FNzdXJobmhxcXpGeURXclcwbHQ4bGhobnZPTT1l1ZXaExLuAQhcEukBChxGaTl3a0hFTlBrQks2RWVVd2lwTmF5dWhMbUk9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDRudlVhSHpIeUk2cklZcTg1R2t5ZGtYSDRwcEs1SzRmdTlxK2dtZFcrYnErUGMrZ3JqaVcwVFRxVXVTQ1oyT0JoODBYVDZ3PT0YACAAKAAwyemVhYeflQM4wc+uv+8zQMHPrr/vM0ocTEFpOUVxMVdBdXh4SWtHS3JSRnB4VVdIcVM4PVohIh///941bGpZK2VLa3k0R0UrL3ZrcHdHZExCd0MwNlU9ZQAAAAAS7AEIPRLnAQocb0ROUmprTEhhcWJqejNTb1c3YXk2S1pGQ0VVPRJmWjpBRHF0QVp6UDl6NHdCTFZmQ2NrbWYyMG1CMEw0WVBJb3dGZFlqODA3VStwTEFRM3ZaMVFEVmF4SFBRQVNjTEN0SWZ5MGh2VVJaajNRMU5GMVlmWVRYRWY4RGdEREhyeGh4Zz09GAAgACgAMMTS0a647ZEDOOuU3ICcMkDrlNyAnDJKHHRxL0k1ekxPQXBnSUY0MUJsQ2F4RHRGVGxtdz1aHyId7Ed4dG9TenZJK1NtT1YzUkZCTTZmYVBCNUI0Yz1lUIBwHRLtAQhXEugBChwyZHhUVDEwM0l1RGhwMmtidDBvSWRrNTlSVXc9EmZaOkFEcXRBWnpQOXo0d0JMVmZDY2ttZjIwbUIwTDQ4dmxhYVNsSUgxaSt2OXA3eVRkZ1hkV2N2dUI5b3pJTTBmNXpiRjVxMnI5V21reVREOTFkM2laczhwMklTcXA3eHg0RzZRPT0YACAAKAAwysK/3oiWjwM48OmVofkyQPDplaH5MkocZWxUTkJ5cXpWdXZuVDk1c1I2OEdrKzJVa1F3PVogIh7/92wxcjhtc3F0MVJISDJlQTlRUnVBeVd3eEUydz1lYumySTABOAA=",
+   "version": 1
+}

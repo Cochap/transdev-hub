@@ -1,0 +1,803 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Greg HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Brand: Transdev red = primary action/focus only. Semantic good/warn/bad are separate; "bad" is a deeper magenta-red and always ships with an icon + label. */
+:root{
+  --ground:#F2F3F5; --panel:#FFFFFF; --ink:#1A1F29; --muted:#5A6270; --line:#DCDFE4; --soft:#F7F8F9;
+  --brand:#E2001A; --brand-ink:#FFFFFF; --brand-text:#C00016; --brand-tint:#FDE8EA;
+  --hero:#1D2330; --hero-ink:#F5F6F8; --hero-muted:#AEB5C2; --hero-line:rgba(255,255,255,.16);
+  --good:#1B7F47; --good-bg:#E2F2E8; --warn:#9A5B00; --warn-bg:#FFF1D6; --bad:#9C1457; --bad-bg:#F8E3EE;
+  --focus:#E2001A;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ground:#11151C; --panel:#1A202A; --ink:#E9ECF1; --muted:#9AA3B1; --line:#2C3441; --soft:#202733;
+  --brand:#E2001A; --brand-ink:#FFFFFF; --brand-text:#FF5A6B; --brand-tint:#3A1419;
+  --hero:#232B39; --hero-ink:#F5F6F8; --hero-muted:#AEB5C2; --hero-line:rgba(255,255,255,.14);
+  --good:#56C585; --good-bg:#15301F; --warn:#F0B43C; --warn-bg:#33290D; --bad:#F07AB3; --bad-bg:#3A1829;
+  --focus:#FF5A6B; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --ground:#11151C; --panel:#1A202A; --ink:#E9ECF1; --muted:#9AA3B1; --line:#2C3441; --soft:#202733;
+  --brand:#E2001A; --brand-ink:#FFFFFF; --brand-text:#FF5A6B; --brand-tint:#3A1419;
+  --hero:#232B39; --hero-ink:#F5F6F8; --hero-muted:#AEB5C2; --hero-line:rgba(255,255,255,.14);
+  --good:#56C585; --good-bg:#15301F; --warn:#F0B43C; --warn-bg:#33290D; --bad:#F07AB3; --bad-bg:#3A1829;
+  --focus:#FF5A6B; color-scheme:dark;}
+*{box-sizing:border-box}
+html,body{background:var(--ground)}
+body{margin:0;color:var(--ink);font:16px/1.55 "Source Sans 3",system-ui,sans-serif;padding:20px 16px 56px;overflow-x:hidden}
+.wrap{max-width:880px;margin:0 auto;display:grid;gap:24px;min-width:0}
+.wrap>*{min-width:0}
+h1,h2,h3,.num{font-family:"Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.01em;text-wrap:balance;margin:0}
+code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.88em;overflow-wrap:anywhere}
+a{color:inherit;text-decoration-color:var(--brand);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+/* header */
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:28px;letter-spacing:.04em;display:flex;align-items:center}
+.brand span{background:var(--brand);color:var(--brand-ink);padding:0 7px;margin-right:7px}
+.stamp{color:var(--muted);font-size:14px}
+/* level switcher */
+.levels{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px;width:100%;max-width:420px}
+.levels button{font:700 14px "Source Sans 3",sans-serif;letter-spacing:.04em;text-transform:uppercase;border:0;background:transparent;color:var(--muted);padding:8px 6px;border-radius:6px;cursor:pointer}
+.levels button[aria-selected="true"]{background:var(--hero);color:var(--hero-ink);box-shadow:inset 0 -3px 0 var(--brand)}
+.levels button:hover:not([aria-selected="true"]){color:var(--ink);background:var(--soft)}
+/* headline + progress (goal gradient) */
+.headline{font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.1;font-family:"Barlow Condensed",sans-serif;text-wrap:balance}
+.progress{display:grid;gap:6px}
+.bar{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brand);border-radius:5px}
+.plabel{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.plabel b{color:var(--ink)}
+/* hero: the one move (focal point) */
+.move{background:var(--hero);color:var(--hero-ink);border-radius:10px;padding:24px 22px;display:grid;gap:16px;border-top:6px solid var(--brand)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#FF6B7A}
+.move h2{font-size:32px;font-weight:800;line-height:1.05}
+.meta{font-size:14px;color:var(--hero-muted)}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:10px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
+ol.steps li::before{content:counter(s);font:800 16px "Barlow Condensed",sans-serif;background:var(--brand);color:var(--brand-ink);width:26px;height:26px;border-radius:50%;display:grid;place-items:center}
+.paste{background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.35);border-radius:6px;padding:10px 12px;display:grid;gap:8px}
+.paste p{margin:0;font-size:15px}
+button.act{font:600 14px "Source Sans 3",sans-serif;border:0;border-radius:6px;padding:8px 14px;cursor:pointer;background:var(--brand);color:var(--brand-ink);justify-self:start}
+button.act:hover{filter:brightness(1.08)}
+.move :focus-visible{outline-color:#FFFFFF}
+.pass{display:grid;gap:4px;font-size:15px;border-top:1px solid var(--hero-line);padding-top:12px}
+.pass b{color:#FFFFFF}
+@media (prefers-reduced-motion:no-preference){
+  .move.enter{animation:rise .45s ease-out both}
+  @keyframes rise{from{transform:translateY(8px)}to{transform:none}}
+  .bar i{transition:width .7s ease}
+}
+/* sections */
+section.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:12px;min-width:0}
+section.card h2{font-size:22px;font-weight:800}
+.sub{color:var(--muted);font-size:14px;margin:-6px 0 0}
+.decisions{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.dec{border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:6px;align-content:start}
+.dec .id{font:800 18px "Barlow Condensed",sans-serif;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.dec p{margin:0;font-size:15px}
+.pill{display:inline-flex;align-items:center;gap:4px;font:700 12px "Source Sans 3",sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.pill.good{background:var(--good-bg);color:var(--good)} .pill.warn{background:var(--warn-bg);color:var(--warn)} .pill.bad{background:var(--bad-bg);color:var(--bad)}
+.pill.bad::before{content:"!";font-weight:800}
+.pill.good::before{content:"\2713"}
+.score{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{border:1px solid var(--line);border-radius:8px;padding:12px}
+.tile .num{font-size:34px;font-weight:800;line-height:1}
+.tile small{color:var(--muted);display:block}
+.tile .flag{font-size:12px;font-weight:700;color:var(--bad);text-transform:uppercase;letter-spacing:.06em}
+.tbl{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:15px}
+td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.feed{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.feed li{display:grid;grid-template-columns:56px 1fr;gap:10px;font-size:15px}
+.feed time{color:var(--muted);font-variant-numeric:tabular-nums}
+details summary{cursor:pointer;font-weight:600;color:var(--muted)}
+/* timeline (Today) */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:64px 22px 1fr;gap:10px;align-items:start;padding:8px 0}
+.tl time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:15px;padding-top:1px}
+.tl .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);background:var(--panel);display:grid;place-items:center;font-size:11px;font-weight:800;margin-top:3px}
+.tl .done .dot{background:var(--good);border-color:var(--good);color:#fff}
+.tl .done .what{color:var(--muted)}
+.tl .now{background:var(--brand-tint);border-radius:8px;padding:10px 8px;margin:4px -8px;border-left:4px solid var(--brand)}
+.tl .now .dot{border-color:var(--brand);background:var(--brand)}
+.tl .now .what b{font-size:18px}
+.tl .who{display:block;font-size:13px;color:var(--muted)}
+.tag-now{font:700 11px "Source Sans 3",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-text);margin-left:6px}
+.donegroup summary{padding:6px 0}
+/* week */
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.day{all:unset;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:6px;align-content:start;cursor:pointer;background:var(--panel);min-width:0}
+.day:hover{border-color:var(--muted)}
+.day:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.day.today{border:2px solid var(--brand)}
+.day .dname{font:800 20px "Barlow Condensed",sans-serif}
+.day .dname small{font:600 13px "Source Sans 3",sans-serif;color:var(--muted);margin-left:4px}
+.day p{margin:0;font-size:14px}
+.detail{border-left:4px solid var(--brand);background:var(--soft);border-radius:6px;padding:12px 14px;display:grid;gap:6px}
+.detail h3{font-size:20px}
+.detail ul{margin:0;padding-left:18px}
+/* phases */
+.phases{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.phase{all:unset;box-sizing:border-box;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:12px;cursor:pointer;width:100%;background:var(--panel)}
+.phase:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.phase .pn{font:800 22px "Barlow Condensed",sans-serif;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--line)}
+.phase.done .pn{background:var(--good);border-color:var(--good);color:#fff}
+.phase.current{border:2px solid var(--brand)}
+.phase.current .pn{background:var(--brand);border-color:var(--brand);color:#fff}
+.phase .pt{font:800 19px "Barlow Condensed",sans-serif;display:block}
+.phase .pd{font-size:14px;color:var(--muted)}
+.gate{font:700 12px "Source Sans 3",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:right;white-space:nowrap}
+.phase.current .gate{color:var(--brand-text)}
+.view[hidden]{display:none}
+/* top 3 + projects */
+.top3{display:grid;gap:8px;list-style:none;margin:0;padding:0;counter-reset:t}
+.top3 li{counter-increment:t;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--panel)}
+.top3 li::before{content:counter(t);font:800 16px "Barlow Condensed",sans-serif;background:var(--brand);color:var(--brand-ink);width:26px;height:26px;border-radius:50%;display:grid;place-items:center}
+.top3 b{display:block}
+.top3 small{color:var(--muted);display:block}
+.top3 .who{font:700 11px "Source Sans 3",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-text);margin-right:6px}
+.projgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.proj{all:unset;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:6px;align-content:start;cursor:pointer;background:var(--panel);min-width:0}
+.proj:hover{border-color:var(--muted)}
+.proj:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.proj h3{font-size:20px}
+.proj p{margin:0;font-size:14px}
+.proj .first{font-size:14px;border-top:1px solid var(--line);padding-top:6px}
+.back{all:unset;cursor:pointer;color:var(--brand-text);font-weight:600;font-size:14px}
+@media (max-width:640px){.week{grid-template-columns:1fr}.score{grid-template-columns:1fr}}
+@media (max-width:420px){.phase{grid-template-columns:34px 1fr}.gate{grid-column:2;text-align:left}.move{padding:20px 16px}.tl li{grid-template-columns:52px 20px 1fr;gap:8px}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span>GREG</span>HQ</div>
+    <div class="stamp" id="stamp"></div>
+  </header>
+
+  <div class="levels" role="tablist" aria-label="Zoom level" id="levels">
+    <button role="tab" id="t-projects" data-l="projects" aria-controls="v-projects">Projects</button>
+    <button role="tab" id="t-now" data-l="now" aria-controls="v-now">Now</button>
+    <button role="tab" id="t-today" data-l="today" aria-controls="v-today">Today</button>
+    <button role="tab" id="t-week" data-l="week" aria-controls="v-week">Week</button>
+    <button role="tab" id="t-phase" data-l="phase" aria-controls="v-phase">Phase</button>
+  </div>
+
+  <div class="headline" id="headline"></div>
+  <div class="progress">
+    <div class="plabel"><span id="plabel"></span><span id="pcount"></span></div>
+    <div class="bar"><i id="pbar" style="width:0"></i></div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="view wrap" id="v-projects" role="tabpanel" aria-labelledby="t-projects" hidden style="gap:24px">
+    <div id="projBody"></div>
+  </div>
+
+  <!-- NOW -->
+  <div class="view wrap" id="v-now" role="tabpanel" aria-labelledby="t-now" style="gap:24px">
+    <article class="move" id="move"></article>
+    <section class="card"><h2>Decisions</h2><div class="decisions" id="decisions"></div></section>
+    <section class="card"><h2>Scoreboard</h2><div class="score" id="tiles"></div><div class="tbl"><table id="tests"></table></div></section>
+    <section class="card"><h2>Coming up</h2><div class="tbl"><table id="later"></table></div></section>
+    <section class="card">
+      <h2>What Claude just did</h2>
+      <ul class="feed" id="feed"></ul>
+      <details><summary>Where the full history lives</summary>
+        <p>Every decision and dated entry is in <code>1-boulon/docs/continuity-log.md</code>; the plan to sign-off is <code>1-boulon/docs/orchestration-plan.md</code>; the D4 memo is <code>1-boulon/docs/d4-tier-decision.md</code>. You don't need to read these; this page is your daily view.</p>
+      </details>
+    </section>
+  </div>
+
+  <!-- TODAY -->
+  <div class="view" id="v-today" role="tabpanel" aria-labelledby="t-today" hidden>
+    <section class="card"><h2 id="todayTitle">Today</h2><p class="sub" id="todaySub"></p><div id="todayBody"></div></section>
+  </div>
+
+  <!-- WEEK -->
+  <div class="view" id="v-week" role="tabpanel" aria-labelledby="t-week" hidden>
+    <section class="card"><h2>This week</h2><p class="sub">Tap a day to open it.</p><div class="week" id="week"></div><div id="weekDetail"></div></section>
+  </div>
+
+  <!-- PHASE -->
+  <div class="view" id="v-phase" role="tabpanel" aria-labelledby="t-phase" hidden>
+    <section class="card"><h2>Road to Henri sign-off</h2><p class="sub" id="phaseSub"></p><ul class="phases" id="phases"></ul><div id="phaseDetail"></div></section>
+  </div>
+</div>
+
+<script>
+/* HQ SCOPE (why these levels)
+   1. NOW   - the one thing Greg does next, in full clicks. Rewritten every exchange. The focal point.
+   2. TODAY - the day to 17:00 as a timeline; Claude only flips state (done/now/next), cheap to keep true.
+   3. WEEK  - Mon-Fri, one outcome line per day; edited once a day at 16:30, so it will not rot.
+   4. PHASE - phases 0-5 and gates G0-G4 to Henri sign-off; changes only when a phase or gate moves.
+   No "Month" level: the phase list already covers the 8 weeks, and a 5th level would go stale. */
+
+/* ===== Claude updates this block after every exchange ===== */
+const S = {
+  "updated": "Tue 2026-11-03 · 16:35 (end of day)",
+  "headline": "New BOULON scope: the MVP chatbot reads only school-bus manuals (MIR type 15). The DIX30 meeting is being transcribed in French; notes and the project charter come next. Segmentation: one guided workbook with medal thresholds set; the Pierre message is yours to send.",
+  "progress": {
+    "label": "From-zero segment + medal proposal for the next call: council, system 07, questionnaire, test bench v2, medal example, Pierre's curve data, call prep",
+    "done": 5,
+    "total": 7
+  },
+  "move": {
+    "urgency": "Tomorrow morning (Wed 11-04)",
+    "title": "Check the DIX30 transcript finished, then start the notes and the charter",
+    "meta": "Takes 2 minutes. The transcription ran on the PC overnight; Claude does the rest.",
+    "steps": [
+      "Open File Explorer and go to C:\\TRANSDEV HUB\\2-projects\\transcripts\\.",
+      "Look for « Quartier DIX30 2.txt ». Open it and check the first lines read as French sentences.",
+      "In Claude, type: resume DIX30 transcription — organize the notes and draft the project charter.",
+      "Then send Pierre the French message from session « Segmentation progress and schedule » in Teams."
+    ],
+    "paste": "resume DIX30 transcription — organize the notes and draft the project charter",
+    "pasteLabel": "Copy the request for Claude",
+    "pass": "The .txt file exists and reads as French text of the meeting.",
+    "fail": "If the folder is empty, the PC slept or restarted: tell Claude \"rerun DIX30\"; it takes about 1 to 1.5 hours and the model is already downloaded.",
+    "report": "Tell Claude \"transcript is there\" or \"folder empty\"."
+  },
+  "decisions": [
+    {
+      "id": "D34",
+      "state": "warn",
+      "tag": "Source of truth",
+      "text": "Project brief 551 (4 May 2026) ingested. It changes four things: (1) scope is 3 workshops, Beloeil QC, Sudbury ON, Kitimat BC, 15 users, but our measured library is the Quebec folder only; (2) French, English AND Spanish; (3) its budget, CAD 5,510.50 over a 3-month licence, has no Azure Search line, so Basic and the page reading sit outside it; (4) the usage target is 7 requests per location per day, about 21 a day, so running cost is tiny and ingestion is the cost. \"Greg Boulon\" is the assistant name. Details: 1-boulon/docs/project-brief-551.md."
+    },
+    {
+      "id": "D38",
+      "state": "warn",
+      "tag": "Cost, verified",
+      "text": "Content Understanding (Azure's newer PDF reader) is CAD 7.08 per 1,000 pages vs 13.86 for the current one (Azure price list, Canada Central, checked today). Whole library about CAD 933 reading, about CAD 1,150 all-in. Not yet tested: whether its tables keep torque values right. Tested first on the Vicinity manual when the ticket clears."
+    },
+    {
+      "id": "D37",
+      "state": "good",
+      "tag": "Decided 10-07",
+      "text": "GPUs, self-hosting and installs are no longer ruled out: each option comes with cost, effort and a defense you can use for approval. Key-rotation rules are gone. Budget CAD 5,000 and no ticket update still stand."
+    },
+    {
+      "id": "D36",
+      "state": "good",
+      "tag": "Decided 10-07",
+      "text": "No ticket update. Start with what the ticket already asks for (Basic, one-time about CAD 650, ceiling 1,200) and stretch it as far as it goes: load brand by brand, most-used first, test 1 reading pass. Only if we still need more after doing everything we can, we stop and re-evaluate the direction together. Nothing is spent beyond the ceiling."
+    },
+    {
+      "id": "D32",
+      "state": "warn",
+      "tag": "Cost, measured",
+      "text": "The ENTIRE Manuels folder is the scope: 2,785 files, 131,756 pages (measured). The ticket assumed about 20,000 pages (CAD 650, ceiling 1,200). Full folder at list price: about CAD 1,830 (1 pass) to 3,650 (2 passes), so the 1,200 ceiling covers roughly 60,000 pages at 1 pass or 30,000 at 2. We load most-used brands first and see how far it gets. Capacity (15 GB storage, 5 GB vector memory per partition) is handled by Claude: 8-bit vectors, tested."
+    },
+    {
+      "id": "D30",
+      "state": "good",
+      "tag": "You said yes",
+      "text": "3-page price test (about CAD 0.05) and the picture-description sample (free) approved 2026-10-07. The sample needs the search key; the price test needs a PDF-reading key later. The price test may also be refused in the pilot region (nothing charged)."
+    },
+    {
+      "id": "D29",
+      "state": "warn",
+      "tag": "Your call",
+      "text": "pdf-lib = a free toolbox that cuts a PDF into pieces, like a paper guillotine. Only in the C:TRANSDEV HUB folder, no admin. Needed only if Basic is chosen: its limit is 16 MB and 512,000 characters per file. Vicinity Service Manual Final 2013 is 99 MB, so about 7 pieces. Citations still point to the original PDF and page. Alternative: S1 (about CAD 340/month) fits it whole. Yes only pre-approves."
+    }
+  ],
+  "tiles": [
+    {
+      "num": "22/36",
+      "label": "failure tests pass after v2b (was 17); high-severity fails 4 (was 7)",
+      "state": "good"
+    },
+    {
+      "num": "~39/41",
+      "label": "retrieval questions correct after v2b (was ~37)",
+      "state": "good"
+    },
+    {
+      "num": "2 worse",
+      "label": "M6 \"25 Nm, right?\" now says 12.7; \"Order part\" hits a system message",
+      "state": "bad"
+    }
+  ],
+  "tests": [
+    [
+      "M6 \"25 Nm, right?\"",
+      "Fail",
+      "Says 12.7 Nm; should correct to 15 Nm (p.22). Regression"
+    ],
+    [
+      "Brake disc bolts, Vicinity",
+      "Pass",
+      "12 bolts at 440 Nm; fixed by v2b"
+    ],
+    [
+      "Caliper bolts (French)",
+      "Fail",
+      "Generic class 10.9 table, English; should be 6 bolts at 580 Nm"
+    ],
+    [
+      "ProHeat M120 fuel",
+      "Fail",
+      "Gave M50/M80 values instead of stopping"
+    ],
+    [
+      "New Flyer M6",
+      "Safe",
+      "Pass: says not available; fixed by v2b"
+    ]
+  ],
+  "later": [
+    [
+      "Anytime",
+      "Greg: who holds the manuals of the Sudbury and Kitimat workshops? Which brands per site?",
+      "Greg"
+    ],
+    [
+      "Now",
+      "Claude: 10 table tests, page triage with pdftotext, skillset edits ready",
+      "Claude"
+    ],
+    [
+      "When ticket clears",
+      "One-manual test: new reader vs current reader (pass = M6 row 15 Nm, page number, French question)",
+      "Claude"
+    ],
+    [
+      "Only if it fails",
+      "GPU rental, parser install, Legal check (you decide)",
+      "Greg"
+    ]
+  ],
+  "feed": [
+    ["Tue 16:35","End of day (automated, first run with the new lock and short form): 5 sessions read. Routed: digest, timeline, lessons 11-03, ideas W45, CLAUDE.md map rows (school-bus MVP, transcripts, Geotab film), hand-off 11-03, INDEX, RESUME. Audit 0 unrouted, 0 stale, 0 map gaps."],
+    [
+      "Mon 17:00",
+      "End of day (automated): 6 sessions read. Routed to the hand-off, RESUME, timeline, lessons 11-02, ideas W45, memory (done-means-working, 2nd time), improvements (3 proposals, 3 hop tests at 2 opens or fewer). Audit 0 unrouted, 0 stale, 0 map gaps. Skills used: boulon-end-of-day, boulon-hq-update."
+    ],
+    [
+      "Mon PM",
+      "Workshop ID card: web app city search fixed and published live on the same link; PowerPoint rebuilt from the OneDrive original (backgrounds, values, French units) and tested EN/FR/print with its macros. Test bench labels renamed. RAG radar run: 13 new, 12 updated. Routine recos: 4 cards. Marketing add-ons listed."
+    ],
+    [
+      "Thu 17:30",
+      "End of day (automated): 9 sessions read (4 Sonnet helper digests). Routed to the hand-off, RESUME, timeline, lessons, segmentation status, continuity log, ideas W44, memory (3 new), improvements (5 proposals). Audit 0 unrouted, 0 map gaps (1 transient Office lock file). Skills used: boulon-end-of-day, boulon-hq-update."
+    ],
+    [
+      "Thu PM",
+      "Check-in held. Built after it: council verdict, system 07, grid copy v2 GR, questionnaire travaux sur place, test bench v2 (12/12), medal example (120 practices), proposal page v6. ID card: bilingual PowerPoint and web app changes, change list. RAG radar live with the last30days lane; wm certificate fix."
+    ],
+    [
+      "Thu 12:00",
+      "Segmentation prep from the compte rendu: results/05 (no-stock scenario: Chateauguay goes S1 as expected; 6 depots sit exactly on 60/70), results/06 (input dictionary; stock is in euros, targets are self-assessments), compte rendu v0.2 corrections, brief with agenda. Nothing changed in the workbook."
+    ],
+    [
+      "Thu",
+      "Greg decided: harsher conditions and higher complexity both mean a lower segment; AI use is not a factor. Stock reply re-read: Pierre doubts stock as a criterion, so no revert; plan is to take stock out of Resources. Brief and status file updated."
+    ],
+    [
+      "Thu",
+      "Check-in brief written in French: 2-projects/workshop-segmentation/brief-checkin-2026-10-29.md (opening line, 4 decisions to get, questions to confirm, what to bring)."
+    ],
+    [
+      "Thu 09:50",
+      "Morning check: hand-off, digest and open sessions read; v2 workbook diffed against the repo (only two titles changed, stock still per bus); garbled transcript path in the map fixed; inbox empty; search service up. Skills used: boulon-morning-check, boulon-hq-update."
+    ],
+    [
+      "Wed 17:15",
+      "End of day: 4 work sessions read (helpers: 4 haiku digests). Routed to the hand-off, RESUME, segmentation status and wiki, memory (5 files corrected), decision log, improvements backlog. Audit 0 unrouted, 0 stale, 0 map gaps. Skills used: boulon-end-of-day, boulon-hq-update."
+    ],
+  ],
+  "today": {
+    "date": "2026-11-03",
+    "label": "Tuesday 3 November",
+    "items": [
+      {
+        "t": "09:20",
+        "what": "Morning brief: segmentation status + today's plan",
+        "who": "Claude",
+        "state": "done"
+      },
+      {
+        "t": "09:30",
+        "what": "ID card: make one FR card on the live link, then send Henri link + PowerPoint, ask for logos",
+        "who": "Greg",
+        "state": "now"
+      },
+      {
+        "t": "10:00",
+        "what": "Segmentation: open banc-essai-segmentation-v2.xlsx once in Excel, check Tests = 12/12, save",
+        "who": "Greg",
+        "state": "next"
+      },
+      {
+        "t": "10:15",
+        "what": "Segmentation: send Pierre (staffing-curve data) and Gabriel (<50-word summary) drafts; say if the 10-30/Mon call happened and who Eckern is",
+        "who": "Greg",
+        "state": "next"
+      },
+      {
+        "t": "10:30",
+        "what": "Segmentation: draft bronze/silver/gold thresholds + redo grid question count (67 vs 78)",
+        "who": "Claude",
+        "state": "next"
+      },
+      {
+        "t": "13:30",
+        "what": "Review medal thresholds with Claude (15 min); yes/no on repo commit",
+        "who": "Greg + Claude",
+        "state": "next"
+      },
+      {
+        "t": "PM",
+        "what": "Tick routines on 5-brain/routines/recos/2026-11-02.html; pick a marketing option",
+        "who": "Greg",
+        "state": "next"
+      },
+      {
+        "t": "Waiting",
+        "what": "IT ticket 77048 (BOULON, day 39)",
+        "who": "IT",
+        "state": "next"
+      }
+    ]
+  },
+  "week": [
+    {
+      "date": "2026-11-02",
+      "d": "Mon",
+      "outcome": "ID card ready for Henri: web app live, PowerPoint rebuilt and tested. Test bench labels renamed; RAG radar run; routine recos.",
+      "state": "done",
+      "notes": [
+        "DONE: web app city fix + live publish; PowerPoint rebuild (E2E via macros); test bench renaming; RAG radar 13 new; 4 routine cards; marketing options.",
+        "OPEN: live card test + send to Henri; recalc test bench; Pierre/Gabriel drafts; routine and marketing picks."
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "d": "Tue",
+      "outcome": "Send Henri the ID card link + PowerPoint; send Pierre/Gabriel drafts; medal thresholds (Claude).",
+      "state": "now"
+    },
+    {
+      "date": "2026-11-04",
+      "d": "Wed",
+      "outcome": "Segmentation: call one-pager in S1/S2/S3 wording; commit results to the private repo.",
+      "state": "next"
+    },
+    {
+      "date": "2026-11-05",
+      "d": "Thu",
+      "outcome": "Fold in Henri's logos if received; BOULON custom-grader try on the golden set.",
+      "state": "next"
+    },
+    {
+      "date": "2026-11-06",
+      "d": "Fri",
+      "outcome": "Routine suggester (Fri); week review.",
+      "state": "next"
+    }
+  ],
+  "top3": [
+    {
+      "who": "Greg",
+      "what": "Test one card on the live ID card link, then send Henri the link + PowerPoint",
+      "why": "Both are ready since 11-02; only the live page has not generated a full card yet. Henri then sends his logos.",
+      "p": "seg"
+    },
+    {
+      "who": "Greg",
+      "what": "Send Pierre the staffing-curve request and Gabriel the < 50-word summary (drafts in session Good morning (fork))",
+      "why": "The from-zero proposal rests on the real curve behind slide 52.",
+      "p": "seg"
+    },
+    {
+      "who": "Greg",
+      "what": "Decide the ZBB hourly rate ($65 or $75) and sign off the young-bus gap",
+      "why": "Open since 10-22; it blocks the ZBB demo numbers.",
+      "p": "zbb"
+    },
+    {
+      "who": "Greg",
+      "what": "Give your top 3 bus brands and the mechanics' language",
+      "why": "Open since 10-21; it sets which manuals BOULON loads first when the ticket clears.",
+      "p": "boulon"
+    }
+  ],
+  "projects": [
+    {
+      "id": "seg",
+      "name": "Workshop segmentation",
+      "state": "now",
+      "status": "Check-in held 10-29: segment = factual constraints, medal = quality, rebuilt from zero; target segments ignored. Working hypothesis: type of work on site (slide 41) + staffing curve (slide 52). Questionnaire, test bench v2 (12/12) and medal example built; nothing committed yet.",
+      "where": "2-projects/workshop-segmentation/project-status.md",
+      "moves": [
+        {
+          "who": "Greg",
+          "what": "Send the Pierre (curve data) and Gabriel (< 50 words) drafts",
+          "why": "Drafted in session Good morning (fork), not sent."
+        },
+        {
+          "who": "Greg",
+          "what": "Say who \"Eckern\" is in the check-in transcript",
+          "why": "One session reads Pierre, another reads Henri; the proposal's audience depends on it."
+        },
+        {
+          "who": "Claude",
+          "what": "Prep the one-page from-zero proposal for the call (S1/S2/S3 wording only)",
+          "why": "Next call Fri 10-30 (30 min) or Mon."
+        }
+      ]
+    },
+    {
+      "id": "boulon",
+      "name": "BOULON (maintenance AI)",
+      "state": "wait",
+      "status": "Waiting on IT ticket 77048 (day 34). Last agent run: 22 of 36 failure tests pass.",
+      "where": "1-boulon/docs/continuity-log.md",
+      "moves": [
+        {
+          "who": "Greg",
+          "what": "Give your top 3 bus brands and the mechanics' language",
+          "why": "Sets the manual load order for the cutover."
+        },
+        {
+          "who": "Claude",
+          "what": "Fix the M6 torque regression (says 12.7 Nm, should be 15 Nm)",
+          "why": "Free, no ticket needed; a wrong torque is the worst failure type."
+        },
+        {
+          "who": "Greg",
+          "what": "Check ticket 77048 on the IT portal",
+          "why": "Everything in Gate B waits on it."
+        }
+      ]
+    },
+    {
+      "id": "zbb",
+      "name": "ZBB budget tool",
+      "state": "wait",
+      "status": "Power BI review and two sign-offs waiting on Greg since 10-22.",
+      "where": "C:/ZBB",
+      "moves": [
+        {
+          "who": "Greg",
+          "what": "Decide the hourly rate: $65 or $75",
+          "why": "Feeds every labour line in the model."
+        },
+        {
+          "who": "Greg",
+          "what": "Sign off the young-bus gap",
+          "why": "Open since 10-22."
+        },
+        {
+          "who": "Greg",
+          "what": "Open the Power BI Desktop window and say whether pages load",
+          "why": "Confirms the dashboard before the demo."
+        }
+      ]
+    },
+    {
+      "id": "digest",
+      "name": "Daily Digest (World Monitor)",
+      "state": "next",
+      "status": "wm fixed 10-29 (10 source errors were the company certificate; launchers now trust Windows certificates). Modes (tech, good news, finance) only in the web app for now.",
+      "where": "C:/Users/rilg01/DAILY DIGEST",
+      "moves": [
+        {
+          "who": "Greg",
+          "what": "Say which data sources matter to you",
+          "why": "Decides which keys are worth setting."
+        },
+        {
+          "who": "Greg",
+          "what": "List the wm features that fail",
+          "why": "Each one gets a check against the creator's docs."
+        },
+        {
+          "who": "Greg",
+          "what": "Set each needed key yourself as a Windows user variable",
+          "why": "Keys never go in chat."
+        }
+      ]
+    },
+    {
+      "id": "learn",
+      "name": "Learning (AI engineering)",
+      "state": "next",
+      "status": "Phase 1 lessons 1-7 done; Lesson 8 restarted with a 45-slide from-zero deck.",
+      "where": "4-learning/LEARNING.md",
+      "moves": [
+        {
+          "who": "Greg",
+          "what": "Finish Lesson 8 with the from-zero deck",
+          "why": "Restarted 10-21, not finished."
+        },
+        {
+          "who": "Greg",
+          "what": "Run the Phase 1 quiz (check-understanding)",
+          "why": "Locks in lessons 1-7 before moving on."
+        },
+        {
+          "who": "Claude",
+          "what": "Add Lesson 8 to the cheat sheet once done",
+          "why": "Keeps the cheat sheet the single reference."
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "n": "T",
+      "name": "Tier 1 · Agent behavior loop (daily, no ticket needed)",
+      "dates": "daily",
+      "gate": "Baseline today",
+      "state": "now",
+      "steps": [
+        "1 Save the live instructions",
+        "2 Baseline: 36 failure tests + 41 retrieval questions on the real agent",
+        "3 Change ONE thing (1-boulon/docs/agent-instructions.md)",
+        "4 Rerun; keep it only if nothing that passed now fails; log it"
+      ]
+    },
+    {
+      "n": "A",
+      "name": "Tier 1 · Gate A: citations + torque",
+      "dates": "planned Oct 1",
+      "gate": "4 of 5 parts",
+      "state": "next",
+      "steps": [
+        "Citation names the manual (done)",
+        "Page in the label (done)",
+        "Short label that fits the chip (done)",
+        "Link opens the manual at the page (done)",
+        "Torque table + 0 failed files (the 2 big Vicinity files were never indexed; need Basic)"
+      ]
+    },
+    {
+      "n": "B",
+      "name": "Tier 1 · Gate B: full library searchable",
+      "dates": "planned Oct 9",
+      "gate": "Needs Basic",
+      "state": "next",
+      "steps": [
+        "1-file Basic trial on Vicinity",
+        "Index the 23 pilot manuals + patch + checks",
+        "Full library from the fleet list",
+        "Four pass targets met"
+      ]
+    },
+    {
+      "n": "C",
+      "name": "Tier 1 · Gate C: soft launch",
+      "dates": "planned Oct 16",
+      "gate": "Not started",
+      "state": "next",
+      "steps": [
+        "Mechanics-only sign-in",
+        "Free service deleted",
+        "2-day soft launch, 3-5 mechanics",
+        "Greg decides the launch"
+      ]
+    },
+    {
+      "n": "*",
+      "name": "Basic cutover day (any day)",
+      "dates": "",
+      "gate": "8 steps",
+      "state": "next",
+      "steps": [
+        "1 Claude: confirm the new service and region",
+        "2 Greg: paste the new keys into .env (click path given that day)",
+        "3 Claude: 1-file Vicinity trial: whole file indexed, page numbers on text chunks, tables kept, label + link built, your click lands on the right page",
+        "4 Decide: split Vicinity (pdf-lib) or a bigger tier",
+        "5 Claude: index the 23 manuals, run the patch, citation check, golden set",
+        "6 Greg: re-point the Copilot Studio knowledge source to the new service with the read-only key, republish, click test",
+        "7 Load the full library from your fleet list",
+        "8 Claude: delete the Free service"
+      ]
+    },
+    {
+      "n": "P",
+      "name": "Tier 2 · PARKED",
+      "dates": "",
+      "gate": "Parked by Greg",
+      "state": "next",
+      "steps": [
+        "Work orders were added to scope",
+        "Nothing is designed, indexed or sized until Greg opens it"
+      ]
+    }
+  ]
+};
+/* ===== end of update block ===== */
+
+const $=id=>document.getElementById(id);
+const LEVELS=["projects","now","today","week","phase"];
+/* TOP 3: one renderer, shown on every level */
+const pname=id=>(S.projects.find(p=>p.id===id)||{}).name||"";
+const top3=(list,title,showProj)=>`<section class="card"><h2>${title}</h2><ol class="top3">${list.slice(0,3).map(m=>`<li><span><b><span class="who">${m.who}</span>${m.what}</b><small>${m.why}${showProj&&m.p?" · "+pname(m.p):""}</small></span></li>`).join("")}</ol></section>`;
+const stLabel={now:'<span class="pill warn">Active</span>',wait:'<span class="pill bad">Waiting</span>',next:'<span class="pill" style="background:var(--soft);color:var(--muted)">Next</span>'};
+function renderProjects(id){
+  const p=id&&S.projects.find(x=>x.id===id);
+  if(!p){
+    $("projBody").innerHTML=top3(S.top3,"Top 3 next moves, all projects",true)
+      +`<section class="card"><h2>Projects</h2><p class="sub">Tap a project to open its top 3.</p><div class="projgrid">${S.projects.map(x=>`<button type="button" class="proj" data-id="${x.id}"><h3>${x.name}</h3>${stLabel[x.state]||""}<p>${x.status}</p><p class="first"><b>Next:</b> ${x.moves[0].what}</p></button>`).join("")}</div></section>`;
+  } else {
+    $("projBody").innerHTML=`<button type="button" class="back" data-id="">&larr; All projects</button>`
+      +`<section class="card"><h2>${p.name}</h2>${stLabel[p.state]||""}<p>${p.status}</p><p class="sub">Files: <code>${p.where}</code></p></section>`
+      +top3(p.moves,"Top 3 next moves, "+p.name,false);
+  }
+}
+$("projBody").addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(b)renderProjects(b.dataset.id)});
+renderProjects();
+["v-now","v-today","v-week","v-phase"].forEach(v=>$(v).insertAdjacentHTML("afterbegin",top3(S.top3,"Top 3 next moves",true)));
+$("stamp").textContent="Updated "+S.updated;
+$("headline").textContent=S.headline;
+$("plabel").innerHTML="<b>"+S.progress.label+"</b>";
+$("pcount").textContent=S.progress.done+" of "+S.progress.total+" done";
+requestAnimationFrame(()=>{$("pbar").style.width=(100*S.progress.done/S.progress.total)+"%"});
+
+/* NOW */
+const m=S.move;
+$("move").innerHTML=`<div class="eyebrow">Your move · ${m.urgency||"now"}</div><h2>${m.title}</h2><div class="meta">${m.meta}</div>
+<ol class="steps">${m.steps.map(s=>`<li><span>${s}</span></li>`).join("")}</ol>
+${m.paste?`<div class="paste"><p class="mono" id="pastetext">${m.paste}</p><button class="act" id="copybtn" type="button">${m.pasteLabel||"Copy the line"}</button></div>`:""}
+${m.test?`<div class="paste"><p>Test question: <span class="mono" id="testtext">${m.test}</span></p><button class="act" id="copytest" type="button">Copy the question</button></div>`:""}
+<div class="pass"><div><b>Pass:</b> ${m.pass}</div><div><b>Red flag:</b> ${m.fail}</div><div><b>Then:</b> ${m.report}</div></div>`;
+function sel(el){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+[["copybtn","pastetext"],["copytest","testtext"]].forEach(([b,t])=>{const B=$(b),T=$(t);if(!B)return;const l=B.textContent;
+  B.addEventListener("click",()=>{const done=()=>{B.textContent="Copied";setTimeout(()=>B.textContent=l,1500)};
+  navigator.clipboard?navigator.clipboard.writeText(T.textContent).then(done,()=>sel(T)):sel(T)})});
+$("decisions").innerHTML=S.decisions.map(d=>`<div class="dec"><div class="id">${d.id} <span class="pill ${d.state}">${d.tag}</span></div><p>${d.text}</p></div>`).join("");
+$("tiles").innerHTML=S.tiles.map(t=>`<div class="tile"><div class="num" style="color:var(--${t.state})">${t.num}</div><small>${t.label}</small>${t.state==="bad"?'<span class="flag">! Needs fix</span>':""}</div>`).join("");
+const cls=v=>/^Pass|^Safe/.test(v)?"good":/^Fail/.test(v)?"bad":"warn";
+$("tests").innerHTML="<tr><th>Test</th><th>Answer</th><th>Citation / wording</th></tr>"+S.tests.map(r=>`<tr><td>${r[0]}</td><td><span class="pill ${cls(r[1])}">${r[1]}</span></td><td>${r[2]}</td></tr>`).join("");
+$("later").innerHTML="<tr><th>When</th><th>What</th><th>Who</th></tr>"+S.later.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("");
+$("feed").innerHTML=S.feed.map(f=>`<li><time>${f[0]}</time><span>${f[1]}</span></li>`).join("");
+
+/* TODAY */
+function renderToday(){
+  const it=S.today.items, done=it.filter(i=>i.state==="done");
+  $("todayTitle").textContent=S.today.label;
+  $("todaySub").textContent=done.length+" of "+it.length+" done · to 17:00";
+  const row=i=>`<li class="${i.state}"><time>${i.t}</time><span class="dot" aria-hidden="true">${i.state==="done"?"✓":""}</span><span class="what">${i.state==="now"?"<b>"+i.what+"</b><span class='tag-now'>Now</span>":i.what}<span class="who">${i.who}${i.state==="done"?" · done":""}</span></span></li>`;
+  $("todayBody").innerHTML=(done.length?`<details class="donegroup"><summary>${done.length} done earlier today</summary><ul class="tl">${done.map(row).join("")}</ul></details>`:"")
+    +`<ul class="tl">${it.filter(i=>i.state!=="done").map(row).join("")}</ul>`;
+}
+renderToday();
+
+/* WEEK */
+const stPill=s=>s==="done"?'<span class="pill good">Done</span>':s==="now"?'<span class="pill warn">Today</span>':'<span class="pill" style="background:var(--soft);color:var(--muted)">Planned</span>';
+$("week").innerHTML=S.week.map((w,i)=>`<button type="button" class="day${w.state==="now"?" today":""}" data-i="${i}"><span class="dname">${w.d}<small>${w.date.slice(5).replace("-","/")}</small></span>${stPill(w.state)}<p>${w.outcome}</p></button>`).join("");
+$("week").addEventListener("click",e=>{const b=e.target.closest(".day");if(!b)return;const w=S.week[b.dataset.i];
+  if(w.date===S.today.date){go("today");return}
+  $("weekDetail").innerHTML=`<div class="detail"><h3>${w.d} ${w.date}</h3><p>${w.outcome}</p>${w.notes?`<ul>${w.notes.map(n=>`<li>${n}</li>`).join("")}</ul>`:""}</div>`});
+
+/* PHASE */
+const cur=S.phases.find(p=>p.state==="now");
+$("phaseSub").textContent=(cur?"You are in Phase "+cur.n+" ("+cur.name+"). ":"")+"Planned dates are internal and slip with ticket #77048. Tier 1 = manuals, tier 2 = work orders. Tap a gate for its steps.";
+$("phases").innerHTML=S.phases.map((p,i)=>`<li><button type="button" class="phase ${p.state==="now"?"current":p.state}" data-i="${i}"><span class="pn">${p.state==="done"?"✓":p.n}</span><span><span class="pt">${p.name}</span><span class="pd">${p.dates}</span></span><span class="gate">${p.state==="now"?"You are here":p.gate||""}</span></button></li>`).join("");
+$("phases").addEventListener("click",e=>{const b=e.target.closest(".phase");if(!b)return;const p=S.phases[b.dataset.i];
+  if(p.state==="now"&&e.detail>1){go("week");return}
+  $("phaseDetail").innerHTML=`<div class="detail"><h3>Phase ${p.n}: ${p.name}</h3><p>${p.dates}${p.gate?" · gate "+p.gate:""}</p><ul>${p.steps.map(s=>`<li>${s}</li>`).join("")}</ul>${p.state==="now"?'<button type="button" class="act" id="toWeek">Open this week</button>':""}</div>`;
+  const tw=$("toWeek");if(tw)tw.addEventListener("click",()=>go("week"))});
+
+/* LEVEL SWITCHING: hash (#now/#today/#week/#phase) > localStorage > "now" */
+function go(l,push){if(!LEVELS.includes(l))l="now";
+  LEVELS.forEach(x=>{$("v-"+x).hidden=x!==l;const t=$("t-"+x);t.setAttribute("aria-selected",x===l);t.tabIndex=x===l?0:-1});
+  try{localStorage.setItem("boulonhq-level",l)}catch(e){}
+  if(location.hash!=="#"+l)history.replaceState(null,"","#"+l);
+  if(l==="now"){const mv=$("move");mv.classList.remove("enter");void mv.offsetWidth;mv.classList.add("enter")}}
+$("levels").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.l)});
+$("levels").addEventListener("keydown",e=>{const i=LEVELS.indexOf(document.activeElement.dataset.l);if(i<0)return;
+  let n=e.key==="ArrowRight"?i+1:e.key==="ArrowLeft"?i-1:e.key==="Home"?0:e.key==="End"?LEVELS.length-1:null;if(n===null)return;
+  e.preventDefault();n=(n+LEVELS.length)%LEVELS.length;go(LEVELS[n]);$("t-"+LEVELS[n]).focus()});
+window.addEventListener("hashchange",()=>go(location.hash.slice(1)));
+let start=location.hash.slice(1);
+if(!LEVELS.includes(start)){try{start=localStorage.getItem("boulonhq-level")||"now"}catch(e){start="now"}}
+go(start);
+</script>
+
+</body></html>

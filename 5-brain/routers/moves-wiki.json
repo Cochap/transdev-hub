@@ -1,0 +1,55 @@
+{
+  "moves": [
+    {
+      "from": "wiki",
+      "to": "1-boulon/wiki"
+    }
+  ],
+  "skip": [
+    "references",
+    "logs/eod",
+    "tests/results",
+    "hq/runs",
+    "chrome-full-backup-20261007-162721",
+    "film/node_modules",
+    "motion-library/research",
+    ".claude/skills/3d-brain",
+    ".claude/skills/resume-tailoring",
+    ".claude/brain-moves"
+  ],
+  "external": [
+    {
+      "dir": "C:/ZBB/CLAUDE.md",
+      "absOnly": true
+    },
+    {
+      "dir": "C:/ZBB/wiki",
+      "absOnly": true
+    },
+    {
+      "dir": "C:/ZBB/docs",
+      "absOnly": true
+    },
+    {
+      "dir": "C:/Users/rilg01/.claude/projects/C--TRANSDEV-HUB/memory"
+    },
+    {
+      "dir": "C:/Users/rilg01/.claude/scheduled-tasks"
+    },
+    {
+      "dir": "C:/Users/rilg01/.claude/skills"
+    }
+  ],
+  "smoke": [
+    "node scripts/brain.js audit",
+    "node scripts/eod-gather-sessions.js 2099-01-01",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/model-router.ps1 -Switch status"
+  ],
+  "cleanup": [
+    "logs/eod/2099-01-01"
+  ],
+  "rmdirEmpty": [
+    "learning",
+    "worldmonitor"
+  ]
+}

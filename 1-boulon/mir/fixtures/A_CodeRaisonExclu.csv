@@ -1,0 +1,13 @@
+﻿ID_CodeRaisonExclu;CRACode;CRADescription;CRAExclu
+1;USU;Usure normale;Non
+2;DEF;Defaut de piece;Non
+3;BRI;Bris;Non
+4;COR;Corrosion;Non
+5;ENT;Entretien preventif;Non
+6;ACC;Accident;Oui
+7;VAN;Vandalisme;Oui
+8;MAL;Mauvaise utilisation;Non
+9;ELE;Defaillance electrique;Non
+10;FUI;Fuite;Non
+11;REG;Reglage requis;Non
+12;INC;Inconnu;Non

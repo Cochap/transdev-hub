@@ -1,0 +1,117 @@
+{
+  "assembled": "2026-09-20",
+  "repositories": [
+    {
+      "repo": "https://github.com/nateherkai/AIS-OS",
+      "commit": "ce9cb93a1145da5daba84ea37208ec35fd03606e",
+      "files": 96
+    },
+    {
+      "repo": "https://github.com/nateherkai/scroll-craft",
+      "commit": "0b816225945e45380397d6a0487efa3c98916858",
+      "files": 34
+    },
+    {
+      "repo": "https://github.com/nateherkai/hyperframes-student-kit",
+      "commit": "b1afdb1dcbcad39dd27638ea699f132fe44ce6df",
+      "files": 1023
+    }
+  ],
+  "handouts": [
+    {
+      "file": "guides/First-Client-SOP.pdf",
+      "title": "SOP: Land Your First AI Automation Client (Beginner Playbook)",
+      "format": "PDF export of the original Google Doc",
+      "pages": 8,
+      "public_landing": "https://app.aiautomationsociety.ai/optin/first-client-SOP/"
+    },
+    {
+      "file": "guides/AI-Pricing-Masterclass.pdf",
+      "title": "How to Price AI Solutions: The Complete Masterclass",
+      "format": "Original published resource PDF",
+      "pages": 27
+    }
+  ],
+  "higgsfield": {
+    "source": "Nate Herk student distribution",
+    "files": 8
+  },
+  "links": [
+    {
+      "title": "Free AI Automation Society",
+      "url": "https://www.skool.com/ai-automation-society/about"
+    },
+    {
+      "title": "The First Client SOP",
+      "url": "https://app.aiautomationsociety.ai/optin/first-client-SOP/"
+    },
+    {
+      "title": "AIOS Starter Kit",
+      "url": "https://github.com/nateherkai/AIS-OS"
+    },
+    {
+      "title": "Karpathy LLM Wiki Instructions",
+      "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f"
+    },
+    {
+      "title": "Nate's Second YouTube Channel",
+      "url": "https://www.youtube.com/@nateherkelman"
+    },
+    {
+      "title": "Higgsfield API",
+      "url": "https://higgsfield.ai/s/api-nateherk-oTgVXA"
+    },
+    {
+      "title": "Higgsfield API Console",
+      "url": "https://console.higgsfield.ai"
+    },
+    {
+      "title": "Scrollcraft",
+      "url": "https://github.com/nateherkai/scroll-craft"
+    },
+    {
+      "title": "Hyperframes Student Kit",
+      "url": "https://github.com/nateherkai/hyperframes-student-kit"
+    },
+    {
+      "title": "Hyperframes Framework",
+      "url": "https://github.com/heygen-com/hyperframes"
+    },
+    {
+      "title": "Hyperagent Course Offer",
+      "url": "https://www.hyperagent.com/nate100"
+    },
+    {
+      "title": "Agency Roadmap / OPAA",
+      "url": "https://app.aiautomationsociety.ai/opaa-ads-optin"
+    },
+    {
+      "title": "AIS Live",
+      "url": "https://app.aiautomationsociety.ai/ais-live/10-26/"
+    },
+    {
+      "title": "Codex",
+      "url": "https://openai.com/codex/"
+    },
+    {
+      "title": "ElevenLabs",
+      "url": "https://elevenlabs.io"
+    },
+    {
+      "title": "Trigger.dev",
+      "url": "https://trigger.dev"
+    },
+    {
+      "title": "GitHub",
+      "url": "https://github.com"
+    },
+    {
+      "title": "Godly",
+      "url": "https://godly.design"
+    },
+    {
+      "title": "21st.dev",
+      "url": "https://21st.dev"
+    }
+  ]
+}

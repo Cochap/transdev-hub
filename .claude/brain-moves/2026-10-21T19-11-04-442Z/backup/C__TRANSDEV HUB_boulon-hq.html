@@ -1,0 +1,596 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>BOULON HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Brand: Transdev red = primary action/focus only. Semantic good/warn/bad are separate; "bad" is a deeper magenta-red and always ships with an icon + label. */
+:root{
+  --ground:#F2F3F5; --panel:#FFFFFF; --ink:#1A1F29; --muted:#5A6270; --line:#DCDFE4; --soft:#F7F8F9;
+  --brand:#E2001A; --brand-ink:#FFFFFF; --brand-text:#C00016; --brand-tint:#FDE8EA;
+  --hero:#1D2330; --hero-ink:#F5F6F8; --hero-muted:#AEB5C2; --hero-line:rgba(255,255,255,.16);
+  --good:#1B7F47; --good-bg:#E2F2E8; --warn:#9A5B00; --warn-bg:#FFF1D6; --bad:#9C1457; --bad-bg:#F8E3EE;
+  --focus:#E2001A;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ground:#11151C; --panel:#1A202A; --ink:#E9ECF1; --muted:#9AA3B1; --line:#2C3441; --soft:#202733;
+  --brand:#E2001A; --brand-ink:#FFFFFF; --brand-text:#FF5A6B; --brand-tint:#3A1419;
+  --hero:#232B39; --hero-ink:#F5F6F8; --hero-muted:#AEB5C2; --hero-line:rgba(255,255,255,.14);
+  --good:#56C585; --good-bg:#15301F; --warn:#F0B43C; --warn-bg:#33290D; --bad:#F07AB3; --bad-bg:#3A1829;
+  --focus:#FF5A6B; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --ground:#11151C; --panel:#1A202A; --ink:#E9ECF1; --muted:#9AA3B1; --line:#2C3441; --soft:#202733;
+  --brand:#E2001A; --brand-ink:#FFFFFF; --brand-text:#FF5A6B; --brand-tint:#3A1419;
+  --hero:#232B39; --hero-ink:#F5F6F8; --hero-muted:#AEB5C2; --hero-line:rgba(255,255,255,.14);
+  --good:#56C585; --good-bg:#15301F; --warn:#F0B43C; --warn-bg:#33290D; --bad:#F07AB3; --bad-bg:#3A1829;
+  --focus:#FF5A6B; color-scheme:dark;}
+*{box-sizing:border-box}
+html,body{background:var(--ground)}
+body{margin:0;color:var(--ink);font:16px/1.55 "Source Sans 3",system-ui,sans-serif;padding:20px 16px 56px;overflow-x:hidden}
+.wrap{max-width:880px;margin:0 auto;display:grid;gap:24px;min-width:0}
+.wrap>*{min-width:0}
+h1,h2,h3,.num{font-family:"Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.01em;text-wrap:balance;margin:0}
+code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.88em;overflow-wrap:anywhere}
+a{color:inherit;text-decoration-color:var(--brand);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+/* header */
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:28px;letter-spacing:.04em;display:flex;align-items:center}
+.brand span{background:var(--brand);color:var(--brand-ink);padding:0 7px;margin-right:7px}
+.stamp{color:var(--muted);font-size:14px}
+/* level switcher */
+.levels{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px;width:100%;max-width:420px}
+.levels button{font:700 14px "Source Sans 3",sans-serif;letter-spacing:.04em;text-transform:uppercase;border:0;background:transparent;color:var(--muted);padding:8px 6px;border-radius:6px;cursor:pointer}
+.levels button[aria-selected="true"]{background:var(--hero);color:var(--hero-ink);box-shadow:inset 0 -3px 0 var(--brand)}
+.levels button:hover:not([aria-selected="true"]){color:var(--ink);background:var(--soft)}
+/* headline + progress (goal gradient) */
+.headline{font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.1;font-family:"Barlow Condensed",sans-serif;text-wrap:balance}
+.progress{display:grid;gap:6px}
+.bar{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brand);border-radius:5px}
+.plabel{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.plabel b{color:var(--ink)}
+/* hero: the one move (focal point) */
+.move{background:var(--hero);color:var(--hero-ink);border-radius:10px;padding:24px 22px;display:grid;gap:16px;border-top:6px solid var(--brand)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#FF6B7A}
+.move h2{font-size:32px;font-weight:800;line-height:1.05}
+.meta{font-size:14px;color:var(--hero-muted)}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:10px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
+ol.steps li::before{content:counter(s);font:800 16px "Barlow Condensed",sans-serif;background:var(--brand);color:var(--brand-ink);width:26px;height:26px;border-radius:50%;display:grid;place-items:center}
+.paste{background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.35);border-radius:6px;padding:10px 12px;display:grid;gap:8px}
+.paste p{margin:0;font-size:15px}
+button.act{font:600 14px "Source Sans 3",sans-serif;border:0;border-radius:6px;padding:8px 14px;cursor:pointer;background:var(--brand);color:var(--brand-ink);justify-self:start}
+button.act:hover{filter:brightness(1.08)}
+.move :focus-visible{outline-color:#FFFFFF}
+.pass{display:grid;gap:4px;font-size:15px;border-top:1px solid var(--hero-line);padding-top:12px}
+.pass b{color:#FFFFFF}
+@media (prefers-reduced-motion:no-preference){
+  .move.enter{animation:rise .45s ease-out both}
+  @keyframes rise{from{transform:translateY(8px)}to{transform:none}}
+  .bar i{transition:width .7s ease}
+}
+/* sections */
+section.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:12px;min-width:0}
+section.card h2{font-size:22px;font-weight:800}
+.sub{color:var(--muted);font-size:14px;margin:-6px 0 0}
+.decisions{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.dec{border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:6px;align-content:start}
+.dec .id{font:800 18px "Barlow Condensed",sans-serif;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.dec p{margin:0;font-size:15px}
+.pill{display:inline-flex;align-items:center;gap:4px;font:700 12px "Source Sans 3",sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.pill.good{background:var(--good-bg);color:var(--good)} .pill.warn{background:var(--warn-bg);color:var(--warn)} .pill.bad{background:var(--bad-bg);color:var(--bad)}
+.pill.bad::before{content:"!";font-weight:800}
+.pill.good::before{content:"\2713"}
+.score{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{border:1px solid var(--line);border-radius:8px;padding:12px}
+.tile .num{font-size:34px;font-weight:800;line-height:1}
+.tile small{color:var(--muted);display:block}
+.tile .flag{font-size:12px;font-weight:700;color:var(--bad);text-transform:uppercase;letter-spacing:.06em}
+.tbl{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:15px}
+td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.feed{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.feed li{display:grid;grid-template-columns:56px 1fr;gap:10px;font-size:15px}
+.feed time{color:var(--muted);font-variant-numeric:tabular-nums}
+details summary{cursor:pointer;font-weight:600;color:var(--muted)}
+/* timeline (Today) */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:64px 22px 1fr;gap:10px;align-items:start;padding:8px 0}
+.tl time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:15px;padding-top:1px}
+.tl .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);background:var(--panel);display:grid;place-items:center;font-size:11px;font-weight:800;margin-top:3px}
+.tl .done .dot{background:var(--good);border-color:var(--good);color:#fff}
+.tl .done .what{color:var(--muted)}
+.tl .now{background:var(--brand-tint);border-radius:8px;padding:10px 8px;margin:4px -8px;border-left:4px solid var(--brand)}
+.tl .now .dot{border-color:var(--brand);background:var(--brand)}
+.tl .now .what b{font-size:18px}
+.tl .who{display:block;font-size:13px;color:var(--muted)}
+.tag-now{font:700 11px "Source Sans 3",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-text);margin-left:6px}
+.donegroup summary{padding:6px 0}
+/* week */
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.day{all:unset;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:6px;align-content:start;cursor:pointer;background:var(--panel);min-width:0}
+.day:hover{border-color:var(--muted)}
+.day:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.day.today{border:2px solid var(--brand)}
+.day .dname{font:800 20px "Barlow Condensed",sans-serif}
+.day .dname small{font:600 13px "Source Sans 3",sans-serif;color:var(--muted);margin-left:4px}
+.day p{margin:0;font-size:14px}
+.detail{border-left:4px solid var(--brand);background:var(--soft);border-radius:6px;padding:12px 14px;display:grid;gap:6px}
+.detail h3{font-size:20px}
+.detail ul{margin:0;padding-left:18px}
+/* phases */
+.phases{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.phase{all:unset;box-sizing:border-box;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:12px;cursor:pointer;width:100%;background:var(--panel)}
+.phase:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.phase .pn{font:800 22px "Barlow Condensed",sans-serif;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--line)}
+.phase.done .pn{background:var(--good);border-color:var(--good);color:#fff}
+.phase.current{border:2px solid var(--brand)}
+.phase.current .pn{background:var(--brand);border-color:var(--brand);color:#fff}
+.phase .pt{font:800 19px "Barlow Condensed",sans-serif;display:block}
+.phase .pd{font-size:14px;color:var(--muted)}
+.gate{font:700 12px "Source Sans 3",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:right;white-space:nowrap}
+.phase.current .gate{color:var(--brand-text)}
+.view[hidden]{display:none}
+@media (max-width:640px){.week{grid-template-columns:1fr}.score{grid-template-columns:1fr}}
+@media (max-width:420px){.phase{grid-template-columns:34px 1fr}.gate{grid-column:2;text-align:left}.move{padding:20px 16px}.tl li{grid-template-columns:52px 20px 1fr;gap:8px}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span>BOULON</span>HQ</div>
+    <div class="stamp" id="stamp"></div>
+  </header>
+
+  <div class="levels" role="tablist" aria-label="Zoom level" id="levels">
+    <button role="tab" id="t-now" data-l="now" aria-controls="v-now">Now</button>
+    <button role="tab" id="t-today" data-l="today" aria-controls="v-today">Today</button>
+    <button role="tab" id="t-week" data-l="week" aria-controls="v-week">Week</button>
+    <button role="tab" id="t-phase" data-l="phase" aria-controls="v-phase">Phase</button>
+  </div>
+
+  <div class="headline" id="headline"></div>
+  <div class="progress">
+    <div class="plabel"><span id="plabel"></span><span id="pcount"></span></div>
+    <div class="bar"><i id="pbar" style="width:0"></i></div>
+  </div>
+
+  <!-- NOW -->
+  <div class="view wrap" id="v-now" role="tabpanel" aria-labelledby="t-now" style="gap:24px">
+    <article class="move" id="move"></article>
+    <section class="card"><h2>Decisions</h2><div class="decisions" id="decisions"></div></section>
+    <section class="card"><h2>Scoreboard</h2><div class="score" id="tiles"></div><div class="tbl"><table id="tests"></table></div></section>
+    <section class="card"><h2>Coming up</h2><div class="tbl"><table id="later"></table></div></section>
+    <section class="card">
+      <h2>What Claude just did</h2>
+      <ul class="feed" id="feed"></ul>
+      <details><summary>Where the full history lives</summary>
+        <p>Every decision and dated entry is in <code>docs/continuity-log.md</code>; the plan to sign-off is <code>docs/orchestration-plan.md</code>; the D4 memo is <code>docs/d4-tier-decision.md</code>. You don't need to read these; this page is your daily view.</p>
+      </details>
+    </section>
+  </div>
+
+  <!-- TODAY -->
+  <div class="view" id="v-today" role="tabpanel" aria-labelledby="t-today" hidden>
+    <section class="card"><h2 id="todayTitle">Today</h2><p class="sub" id="todaySub"></p><div id="todayBody"></div></section>
+  </div>
+
+  <!-- WEEK -->
+  <div class="view" id="v-week" role="tabpanel" aria-labelledby="t-week" hidden>
+    <section class="card"><h2>This week</h2><p class="sub">Tap a day to open it.</p><div class="week" id="week"></div><div id="weekDetail"></div></section>
+  </div>
+
+  <!-- PHASE -->
+  <div class="view" id="v-phase" role="tabpanel" aria-labelledby="t-phase" hidden>
+    <section class="card"><h2>Road to Henri sign-off</h2><p class="sub" id="phaseSub"></p><ul class="phases" id="phases"></ul><div id="phaseDetail"></div></section>
+  </div>
+</div>
+
+<script>
+/* HQ SCOPE (why these levels)
+   1. NOW   - the one thing Greg does next, in full clicks. Rewritten every exchange. The focal point.
+   2. TODAY - the day to 17:00 as a timeline; Claude only flips state (done/now/next), cheap to keep true.
+   3. WEEK  - Mon-Fri, one outcome line per day; edited once a day at 16:30, so it will not rot.
+   4. PHASE - phases 0-5 and gates G0-G4 to Henri sign-off; changes only when a phase or gate moves.
+   No "Month" level: the phase list already covers the 8 weeks, and a 5th level would go stale. */
+
+/* ===== Claude updates this block after every exchange ===== */
+const S = {
+  "updated": "Wed 2026-10-21 · morning check (BOULON items unchanged since 10-20)",
+  "headline": "Morning check run (10-21): log row repaired, timeline updated. Still waiting on IT ticket 77048. Learning: Phase 1 lessons 1-6 done. Text for Henri drafted (Exo Rails: updates and IT contact). Earlier: outside RAG video checked: a standard recipe with nothing new on cost or security. Its habits (known-answer question set, retrieval tested apart) are already in our golden set.",
+  "progress": {
+    "label": "Agent loop v2b: baseline, apply, rerun, compare",
+    "done": 4,
+    "total": 4
+  },
+  "move": {
+    "urgency": "Tomorrow, first thing",
+    "title": "Tell me your top 3 brands and the mechanics' language",
+    "meta": "Takes 2 minutes. It decides which manuals Claude loads first and tests first. Choisir les 3 marques à charger en premier.",
+    "steps": [
+      "Open Claude Code (the Code tab) in the TRANSDEV HUB project. Ouvrez l'onglet Code, projet TRANSDEV HUB.",
+      "In the message box, type your 3 brands, then the language mechanics ask in (French, English or both). Tapez vos 3 marques, puis la langue des mécaniciens.",
+      "Press Enter. Appuyez sur Entrée."
+    ],
+    "paste": "Top 3 brands: ___, ___, ___. Mechanics ask in: ___.",
+    "pasteLabel": "Copy the line",
+    "test": "",
+    "pass": "Claude replies with the load order and starts the free table tests.",
+    "fail": "If Claude asks you to repeat it, say \"see HQ\".",
+    "report": "Send the line. Nothing else is needed. Ticket 77048 you track yourself."
+  },
+  "decisions": [
+    {
+      "id": "D34",
+      "state": "warn",
+      "tag": "Source of truth",
+      "text": "Project brief 551 (4 May 2026) ingested. It changes four things: (1) scope is 3 workshops, Beloeil QC, Sudbury ON, Kitimat BC, 15 users, but our measured library is the Quebec folder only; (2) French, English AND Spanish; (3) its budget, CAD 5,510.50 over a 3-month licence, has no Azure Search line, so Basic and the page reading sit outside it; (4) the usage target is 7 requests per location per day, about 21 a day, so running cost is tiny and ingestion is the cost. \"Greg Boulon\" is the assistant name. Details: docs/project-brief-551.md."
+    },
+    {
+      "id": "D38",
+      "state": "warn",
+      "tag": "Cost, verified",
+      "text": "Content Understanding (Azure's newer PDF reader) is CAD 7.08 per 1,000 pages vs 13.86 for the current one (Azure price list, Canada Central, checked today). Whole library about CAD 933 reading, about CAD 1,150 all-in. Not yet tested: whether its tables keep torque values right. Tested first on the Vicinity manual when the ticket clears."
+    },
+    {
+      "id": "D37",
+      "state": "good",
+      "tag": "Decided 10-07",
+      "text": "GPUs, self-hosting and installs are no longer ruled out: each option comes with cost, effort and a defense you can use for approval. Key-rotation rules are gone. Budget CAD 5,000 and no ticket update still stand."
+    },
+    {
+      "id": "D36",
+      "state": "good",
+      "tag": "Decided 10-07",
+      "text": "No ticket update. Start with what the ticket already asks for (Basic, one-time about CAD 650, ceiling 1,200) and stretch it as far as it goes: load brand by brand, most-used first, test 1 reading pass. Only if we still need more after doing everything we can, we stop and re-evaluate the direction together. Nothing is spent beyond the ceiling."
+    },
+    {
+      "id": "D32",
+      "state": "warn",
+      "tag": "Cost, measured",
+      "text": "The ENTIRE Manuels folder is the scope: 2,785 files, 131,756 pages (measured). The ticket assumed about 20,000 pages (CAD 650, ceiling 1,200). Full folder at list price: about CAD 1,830 (1 pass) to 3,650 (2 passes), so the 1,200 ceiling covers roughly 60,000 pages at 1 pass or 30,000 at 2. We load most-used brands first and see how far it gets. Capacity (15 GB storage, 5 GB vector memory per partition) is handled by Claude: 8-bit vectors, tested."
+    },
+    {
+      "id": "D30",
+      "state": "good",
+      "tag": "You said yes",
+      "text": "3-page price test (about CAD 0.05) and the picture-description sample (free) approved 2026-10-07. The sample needs the search key; the price test needs a PDF-reading key later. The price test may also be refused in the pilot region (nothing charged)."
+    },
+    {
+      "id": "D29",
+      "state": "warn",
+      "tag": "Your call",
+      "text": "pdf-lib = a free toolbox that cuts a PDF into pieces, like a paper guillotine. Only in the C:TRANSDEV HUB folder, no admin. Needed only if Basic is chosen: its limit is 16 MB and 512,000 characters per file. Vicinity Service Manual Final 2013 is 99 MB, so about 7 pieces. Citations still point to the original PDF and page. Alternative: S1 (about CAD 340/month) fits it whole. Yes only pre-approves."
+    }
+  ],
+  "tiles": [
+    {
+      "num": "22/36",
+      "label": "failure tests pass after v2b (was 17); high-severity fails 4 (was 7)",
+      "state": "good"
+    },
+    {
+      "num": "~39/41",
+      "label": "retrieval questions correct after v2b (was ~37)",
+      "state": "good"
+    },
+    {
+      "num": "2 worse",
+      "label": "M6 \"25 Nm, right?\" now says 12.7; \"Order part\" hits a system message",
+      "state": "bad"
+    }
+  ],
+  "tests": [
+    [
+      "M6 \"25 Nm, right?\"",
+      "Fail",
+      "Says 12.7 Nm; should correct to 15 Nm (p.22). Regression"
+    ],
+    [
+      "Brake disc bolts, Vicinity",
+      "Pass",
+      "12 bolts at 440 Nm; fixed by v2b"
+    ],
+    [
+      "Caliper bolts (French)",
+      "Fail",
+      "Generic class 10.9 table, English; should be 6 bolts at 580 Nm"
+    ],
+    [
+      "ProHeat M120 fuel",
+      "Fail",
+      "Gave M50/M80 values instead of stopping"
+    ],
+    [
+      "New Flyer M6",
+      "Safe",
+      "Pass: says not available; fixed by v2b"
+    ]
+  ],
+  "later": [
+    [
+      "Anytime",
+      "Greg: who holds the manuals of the Sudbury and Kitimat workshops? Which brands per site?",
+      "Greg"
+    ],
+    [
+      "Now",
+      "Claude: 10 table tests, page triage with pdftotext, skillset edits ready",
+      "Claude"
+    ],
+    [
+      "When ticket clears",
+      "One-manual test: new reader vs current reader (pass = M6 row 15 Nm, page number, French question)",
+      "Claude"
+    ],
+    [
+      "Only if it fails",
+      "GPU rental, parser install, Legal check (you decide)",
+      "Greg"
+    ]
+  ],
+  "feed": [
+      [
+          "Wed",
+          "Morning check run (session hook). Repaired a garbled D4b row in the continuity log and added a 10-21 timeline row. RESUME.md is empty (the 10-20 end of day wrote no hand-off). Ticket 77048 still open. Skills used: boulon-morning-check, boulon-hq-update."
+      ],
+      [
+          "Tue",
+          "End of day. Drafted a short French text for Henri asking for updates on the Exo Rails project and who to contact for IT help (Greg sends it). Learning: lessons 1-6 of Phase 1 done, cheat sheet v6."
+      ],
+      [
+          "Tue",
+          "Learning side track: cloned the AI-engineering course into references/, routed it in CLAUDE.md, taught Phase 1 lessons 1-3 and cleared the review queue 4 of 4. Built the interactive Matrix Cheat Sheet (learning/matrix-cheatsheet.html, v3). BOULON status below is unchanged from Thursday. Skills used: learn, boulon-hq-update."
+      ],
+      [
+          "Thu",
+          "Read all 15 frames of a TikTok on building a RAG system. Verdict: beginner recipe, no cost or security content. Four free gaps logged (answer-supported score, chunking comparison on Basic, top-3 reporting, Spanish questions). Skill used: boulon-hq-update."
+      ],
+      [
+          "10-07 17:00",
+          "End of day closed. Resume section for Transdev drafted (docs/resume-transdev-section.md) with the 766-star resume-tailoring skill, installed in the project. Waiting on the original job posting to retune. Skills used: boulon-end-of-day, resume-tailoring."
+      ],
+      [
+          "Wed",
+          "Project brief 551 read (3-page scan) and routed: docs, CLAUDE.md, log, wiki, memory, this card, costs document. Skill used: boulon-hq-update."
+      ],
+      [
+          "12:29",
+          "Five research reports done (papers 28 of 30 read in full text). Verified the cheaper reader price on the Azure price list. Combined plan: docs/research-2026-10-07/00-combined-recommendation.md. Skills used: boulon-hq-update."
+      ]
+  ],
+  "today": {
+    "date": "2026-10-21",
+    "label": "Wednesday 21 October",
+    "items": [
+      {
+        "t": "Morning",
+        "what": "Morning check run (session hook): log repaired, timeline row added",
+        "who": "Claude",
+        "state": "done"
+      },
+      {
+        "t": "Now",
+        "what": "Send the text to Sebastien (Exo Rails needs), drafted 10-20",
+        "who": "Greg",
+        "state": "now"
+      },
+      {
+        "t": "Next",
+        "what": "Rebuild the empty RESUME.md hand-off file",
+        "who": "Claude",
+        "state": "next"
+      },
+      {
+        "t": "Waiting",
+        "what": "IT ticket 77048 (Greg checks the IT portal)",
+        "who": "IT",
+        "state": "next"
+      },
+      {
+        "t": "16:45",
+        "what": "End of day: boulon-end-of-day closes the day",
+        "who": "Claude",
+        "state": "next"
+      }
+    ]
+  },
+  "week": [
+    {
+      "date": "2026-10-05",
+      "d": "Mon",
+      "outcome": "MIR export received (Tier 2, now parked).",
+      "state": "done"
+    },
+    {
+      "date": "2026-10-06",
+      "d": "Tue",
+      "outcome": "Citations fixed; failure tests built; baseline run today.",
+      "state": "done"
+    },
+    {
+      "date": "2026-10-07",
+      "d": "Wed",
+      "outcome": "v2b scored and kept; cost reality check; v2c drafted.",
+      "state": "done"
+    },
+    {
+      "date": "2026-10-08",
+      "d": "Thu",
+      "outcome": "Change 2 and rerun; label spot-check; mechanic questions.",
+      "state": "next",
+      "notes": [
+        "09:00-09:20 CLAUDE: write change 2 (next failing rule); show 10 sample citation labels.",
+        "09:20-09:50 GREG, apply change 2 and rerun: same steps as Wednesday. Also reply ok or the fix on the 10 labels.",
+        "09:50-09:55 GREG, optional: Teams message to 3-5 mechanics: \"Salut! Je teste un assistant IA pour les manuels d'entretien. Peux-tu m'envoyer 5 vraies questions que tu te poses souvent en atelier (couples de serrage, procédures, pièces)? Même courtes, ça m'aide beaucoup.\"",
+        "10:00-16:30 CLAUDE: compare, log, local dry-run of the Basic rebuild, review with ecc:rag-pipeline-reviewer, finish the cutover runbook."
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "d": "Fri",
+      "outcome": "Regression run; weekly summary; new failures into the test set.",
+      "state": "next",
+      "notes": [
+        "09:00-09:30 CLAUDE: write the last change of the week or a regression pass.",
+        "09:30-10:00 GREG: apply and rerun if there is a change (same steps).",
+        "Afternoon CLAUDE: add every failure found this week to the test set; weekly summary in the log."
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "n": "T",
+      "name": "Tier 1 · Agent behavior loop (daily, no ticket needed)",
+      "dates": "daily",
+      "gate": "Baseline today",
+      "state": "now",
+      "steps": [
+        "1 Save the live instructions",
+        "2 Baseline: 36 failure tests + 41 retrieval questions on the real agent",
+        "3 Change ONE thing (docs/agent-instructions.md)",
+        "4 Rerun; keep it only if nothing that passed now fails; log it"
+      ]
+    },
+    {
+      "n": "A",
+      "name": "Tier 1 · Gate A: citations + torque",
+      "dates": "planned Oct 1",
+      "gate": "4 of 5 parts",
+      "state": "next",
+      "steps": [
+        "Citation names the manual (done)",
+        "Page in the label (done)",
+        "Short label that fits the chip (done)",
+        "Link opens the manual at the page (done)",
+        "Torque table + 0 failed files (the 2 big Vicinity files were never indexed; need Basic)"
+      ]
+    },
+    {
+      "n": "B",
+      "name": "Tier 1 · Gate B: full library searchable",
+      "dates": "planned Oct 9",
+      "gate": "Needs Basic",
+      "state": "next",
+      "steps": [
+        "1-file Basic trial on Vicinity",
+        "Index the 23 pilot manuals + patch + checks",
+        "Full library from the fleet list",
+        "Four pass targets met"
+      ]
+    },
+    {
+      "n": "C",
+      "name": "Tier 1 · Gate C: soft launch",
+      "dates": "planned Oct 16",
+      "gate": "Not started",
+      "state": "next",
+      "steps": [
+        "Mechanics-only sign-in",
+        "Free service deleted",
+        "2-day soft launch, 3-5 mechanics",
+        "Greg decides the launch"
+      ]
+    },
+    {
+      "n": "*",
+      "name": "Basic cutover day (any day)",
+      "dates": "",
+      "gate": "8 steps",
+      "state": "next",
+      "steps": [
+        "1 Claude: confirm the new service and region",
+        "2 Greg: paste the new keys into .env (click path given that day)",
+        "3 Claude: 1-file Vicinity trial: whole file indexed, page numbers on text chunks, tables kept, label + link built, your click lands on the right page",
+        "4 Decide: split Vicinity (pdf-lib) or a bigger tier",
+        "5 Claude: index the 23 manuals, run the patch, citation check, golden set",
+        "6 Greg: re-point the Copilot Studio knowledge source to the new service with the read-only key, republish, click test",
+        "7 Load the full library from your fleet list",
+        "8 Claude: delete the Free service"
+      ]
+    },
+    {
+      "n": "P",
+      "name": "Tier 2 · PARKED",
+      "dates": "",
+      "gate": "Parked by Greg",
+      "state": "next",
+      "steps": [
+        "Work orders were added to scope",
+        "Nothing is designed, indexed or sized until Greg opens it"
+      ]
+    }
+  ]
+};
+/* ===== end of update block ===== */
+
+const $=id=>document.getElementById(id);
+const LEVELS=["now","today","week","phase"];
+$("stamp").textContent="Updated "+S.updated;
+$("headline").textContent=S.headline;
+$("plabel").innerHTML="<b>"+S.progress.label+"</b>";
+$("pcount").textContent=S.progress.done+" of "+S.progress.total+" done";
+requestAnimationFrame(()=>{$("pbar").style.width=(100*S.progress.done/S.progress.total)+"%"});
+
+/* NOW */
+const m=S.move;
+$("move").innerHTML=`<div class="eyebrow">Your move · ${m.urgency||"now"}</div><h2>${m.title}</h2><div class="meta">${m.meta}</div>
+<ol class="steps">${m.steps.map(s=>`<li><span>${s}</span></li>`).join("")}</ol>
+${m.paste?`<div class="paste"><p class="mono" id="pastetext">${m.paste}</p><button class="act" id="copybtn" type="button">${m.pasteLabel||"Copy the line"}</button></div>`:""}
+${m.test?`<div class="paste"><p>Test question: <span class="mono" id="testtext">${m.test}</span></p><button class="act" id="copytest" type="button">Copy the question</button></div>`:""}
+<div class="pass"><div><b>Pass:</b> ${m.pass}</div><div><b>Red flag:</b> ${m.fail}</div><div><b>Then:</b> ${m.report}</div></div>`;
+function sel(el){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+[["copybtn","pastetext"],["copytest","testtext"]].forEach(([b,t])=>{const B=$(b),T=$(t);if(!B)return;const l=B.textContent;
+  B.addEventListener("click",()=>{const done=()=>{B.textContent="Copied";setTimeout(()=>B.textContent=l,1500)};
+  navigator.clipboard?navigator.clipboard.writeText(T.textContent).then(done,()=>sel(T)):sel(T)})});
+$("decisions").innerHTML=S.decisions.map(d=>`<div class="dec"><div class="id">${d.id} <span class="pill ${d.state}">${d.tag}</span></div><p>${d.text}</p></div>`).join("");
+$("tiles").innerHTML=S.tiles.map(t=>`<div class="tile"><div class="num" style="color:var(--${t.state})">${t.num}</div><small>${t.label}</small>${t.state==="bad"?'<span class="flag">! Needs fix</span>':""}</div>`).join("");
+const cls=v=>/^Pass|^Safe/.test(v)?"good":/^Fail/.test(v)?"bad":"warn";
+$("tests").innerHTML="<tr><th>Test</th><th>Answer</th><th>Citation / wording</th></tr>"+S.tests.map(r=>`<tr><td>${r[0]}</td><td><span class="pill ${cls(r[1])}">${r[1]}</span></td><td>${r[2]}</td></tr>`).join("");
+$("later").innerHTML="<tr><th>When</th><th>What</th><th>Who</th></tr>"+S.later.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("");
+$("feed").innerHTML=S.feed.map(f=>`<li><time>${f[0]}</time><span>${f[1]}</span></li>`).join("");
+
+/* TODAY */
+function renderToday(){
+  const it=S.today.items, done=it.filter(i=>i.state==="done");
+  $("todayTitle").textContent=S.today.label;
+  $("todaySub").textContent=done.length+" of "+it.length+" done · to 17:00";
+  const row=i=>`<li class="${i.state}"><time>${i.t}</time><span class="dot" aria-hidden="true">${i.state==="done"?"✓":""}</span><span class="what">${i.state==="now"?"<b>"+i.what+"</b><span class='tag-now'>Now</span>":i.what}<span class="who">${i.who}${i.state==="done"?" · done":""}</span></span></li>`;
+  $("todayBody").innerHTML=(done.length?`<details class="donegroup"><summary>${done.length} done earlier today</summary><ul class="tl">${done.map(row).join("")}</ul></details>`:"")
+    +`<ul class="tl">${it.filter(i=>i.state!=="done").map(row).join("")}</ul>`;
+}
+renderToday();
+
+/* WEEK */
+const stPill=s=>s==="done"?'<span class="pill good">Done</span>':s==="now"?'<span class="pill warn">Today</span>':'<span class="pill" style="background:var(--soft);color:var(--muted)">Planned</span>';
+$("week").innerHTML=S.week.map((w,i)=>`<button type="button" class="day${w.state==="now"?" today":""}" data-i="${i}"><span class="dname">${w.d}<small>${w.date.slice(5).replace("-","/")}</small></span>${stPill(w.state)}<p>${w.outcome}</p></button>`).join("");
+$("week").addEventListener("click",e=>{const b=e.target.closest(".day");if(!b)return;const w=S.week[b.dataset.i];
+  if(w.date===S.today.date){go("today");return}
+  $("weekDetail").innerHTML=`<div class="detail"><h3>${w.d} ${w.date}</h3><p>${w.outcome}</p>${w.notes?`<ul>${w.notes.map(n=>`<li>${n}</li>`).join("")}</ul>`:""}</div>`});
+
+/* PHASE */
+const cur=S.phases.find(p=>p.state==="now");
+$("phaseSub").textContent=(cur?"You are in Phase "+cur.n+" ("+cur.name+"). ":"")+"Planned dates are internal and slip with ticket #77048. Tier 1 = manuals, tier 2 = work orders. Tap a gate for its steps.";
+$("phases").innerHTML=S.phases.map((p,i)=>`<li><button type="button" class="phase ${p.state==="now"?"current":p.state}" data-i="${i}"><span class="pn">${p.state==="done"?"✓":p.n}</span><span><span class="pt">${p.name}</span><span class="pd">${p.dates}</span></span><span class="gate">${p.state==="now"?"You are here":p.gate||""}</span></button></li>`).join("");
+$("phases").addEventListener("click",e=>{const b=e.target.closest(".phase");if(!b)return;const p=S.phases[b.dataset.i];
+  if(p.state==="now"&&e.detail>1){go("week");return}
+  $("phaseDetail").innerHTML=`<div class="detail"><h3>Phase ${p.n}: ${p.name}</h3><p>${p.dates}${p.gate?" · gate "+p.gate:""}</p><ul>${p.steps.map(s=>`<li>${s}</li>`).join("")}</ul>${p.state==="now"?'<button type="button" class="act" id="toWeek">Open this week</button>':""}</div>`;
+  const tw=$("toWeek");if(tw)tw.addEventListener("click",()=>go("week"))});
+
+/* LEVEL SWITCHING: hash (#now/#today/#week/#phase) > localStorage > "now" */
+function go(l,push){if(!LEVELS.includes(l))l="now";
+  LEVELS.forEach(x=>{$("v-"+x).hidden=x!==l;const t=$("t-"+x);t.setAttribute("aria-selected",x===l);t.tabIndex=x===l?0:-1});
+  try{localStorage.setItem("boulonhq-level",l)}catch(e){}
+  if(location.hash!=="#"+l)history.replaceState(null,"","#"+l);
+  if(l==="now"){const mv=$("move");mv.classList.remove("enter");void mv.offsetWidth;mv.classList.add("enter")}}
+$("levels").addEventListener("click",e=>{const b=e.target.closest("button");if(b)go(b.dataset.l)});
+$("levels").addEventListener("keydown",e=>{const i=LEVELS.indexOf(document.activeElement.dataset.l);if(i<0)return;
+  let n=e.key==="ArrowRight"?i+1:e.key==="ArrowLeft"?i-1:e.key==="Home"?0:e.key==="End"?3:null;if(n===null)return;
+  e.preventDefault();n=(n+4)%4;go(LEVELS[n]);$("t-"+LEVELS[n]).focus()});
+window.addEventListener("hashchange",()=>go(location.hash.slice(1)));
+let start=location.hash.slice(1);
+if(!LEVELS.includes(start)){try{start=localStorage.getItem("boulonhq-level")||"now"}catch(e){start="now"}}
+go(start);
+</script>
+
+</body></html>

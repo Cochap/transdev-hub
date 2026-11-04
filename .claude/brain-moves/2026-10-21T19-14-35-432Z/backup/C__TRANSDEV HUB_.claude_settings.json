@@ -1,0 +1,40 @@
+{
+  "enabledPlugins": {
+    "ecc@ecc": true
+  },
+  "permissions": {
+    "defaultMode": "bypassPermissions"
+  },
+  "env": {
+    "MCP_TIMEOUT": "120000",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet",
+    "GATEGUARD_BASH_ROUTINE_DISABLED": "1",
+    "GATEGUARD_EXEMPT_GLOBS": "docs/**,tests/**,rebuild/**,hq/**,requests/**,**/*.md,*.html,.claude/hooks/**,.claude/skills/**,C:/Users/rilg01/.claude/session-data/**,C:/Users/rilg01/.claude/projects/C--TRANSDEV-HUB/memory/**,C:/Users/rilg01/.claude/skills/**"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.js\"", "timeout": 20 },
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/sync-skill-routing.js\"", "timeout": 5 }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/skill-model-route.js\"", "timeout": 30 }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/eod-reminder.js\"" }
+        ]
+      }
+    ]
+  }
+}

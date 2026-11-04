@@ -1,0 +1,105 @@
+{
+ "synthetic": true,
+ "rows": {
+  "TBONS": 3060,
+  "Plainte": null,
+  "PlainteDet": 4485,
+  "TBONSDET": 4011,
+  "VEHICUL": 120,
+  "TBONSMEC": 5783,
+  "A_CodeReparationExclu": 25,
+  "A_CodeRaisonExclu": 12
+ },
+ "workOrders": 3060,
+ "complaintLines": 4485,
+ "dateRange": "2025-10-01 to 2026-09-30",
+ "orphanComplaints": 0,
+ "text": {
+  "PlainteDet.PDESC": {
+   "rows": 4485,
+   "empty": 90,
+   "trivial": 135,
+   "short": 0,
+   "usable": 4260
+  },
+  "PlainteDet.PSymptome": {
+   "rows": 4485,
+   "empty": 449,
+   "trivial": 224,
+   "short": 449,
+   "usable": 3363
+  },
+  "PlainteDet.PCAUSE": {
+   "rows": 4485,
+   "empty": 673,
+   "trivial": 673,
+   "short": 449,
+   "usable": 2690
+  },
+  "PlainteDet.PCORRECTIF": {
+   "rows": 4485,
+   "empty": 673,
+   "trivial": 673,
+   "short": 449,
+   "usable": 2690
+  },
+  "TBONS.DESC_80": {
+   "rows": 3060,
+   "empty": 153,
+   "trivial": 153,
+   "short": 0,
+   "usable": 2754
+  },
+  "TBONSDET.DESC_80": {
+   "rows": 4011,
+   "empty": 0,
+   "trivial": 0,
+   "short": 1203,
+   "usable": 2808
+  },
+  "TBONSMEC.DESC_80": {
+   "rows": 5783,
+   "empty": 578,
+   "trivial": 578,
+   "short": 0,
+   "usable": 4627
+  }
+ },
+ "closed": {
+  "closedWorkOrders": 2815,
+  "closedWithComplaint": 2815,
+  "closedWithUsableCauseAndFix": 1288,
+  "usableCases": 1493,
+  "perModel": {
+   "Orion VII": 340,
+   "XD40": 282,
+   "Citaro": 269,
+   "D4500": 123,
+   "Nova LFS": 479
+  },
+  "pairsAtBar": 0
+ },
+ "CREExclu": [
+  "INS-01",
+  "CAR-01",
+  "DIV-01"
+ ],
+ "CRAExclu": [
+  "VAN",
+  "ACC"
+ ],
+ "repeat": {
+  "events": 4282,
+  "repeats": 712
+ },
+ "vector": {
+  "records": 7545
+ },
+ "ignoredPersonColumns": {
+  "TBONSMEC": [
+   "NOMFULL",
+   "SALAIRE"
+  ]
+ },
+ "missing": {}
+}

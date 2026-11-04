@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motion Library</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#14171f;--mute:#5b6473;--line:#e3e6ec;--accent:#6d4aff;--accent2:#ff5c8a;--chip:#eceefd}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1117;--card:#181b24;--ink:#eef0f6;--mute:#9aa3b5;--line:#272b38;--accent:#9d86ff;--accent2:#ff7fa4;--chip:#252a44}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,Segoe UI,sans-serif}
+header{padding:32px 16px 8px;max-width:1200px;margin:auto}
+h1{margin:0;font-size:clamp(28px,5vw,44px);letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+.sub{color:var(--mute);margin:6px 0 18px}
+.bar{position:sticky;top:0;background:var(--bg);padding:10px 16px;z-index:5;border-bottom:1px solid var(--line)}
+.bar>div{max-width:1200px;margin:auto}
+input[type=search]{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:99px;cursor:pointer;font-size:14px}
+.chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.count{color:var(--mute);font-size:14px;margin-top:8px}
+main{max-width:1200px;margin:auto;padding:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.top{display:flex;justify-content:space-between;gap:8px;align-items:start}
+.top a{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.top a:hover{color:var(--accent)}
+.star{background:none;border:0;font-size:22px;cursor:pointer;color:var(--mute);line-height:1}
+.star.on{color:#f5b301}
+.what{margin:0}.best{margin:0;color:var(--mute);font-size:14px}.best b{color:var(--ink)}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.tag{font-size:12px;background:var(--chip);padding:2px 8px;border-radius:99px}
+.free{background:#d9f5e3;color:#0b6b33}.freemium{background:#fff1cc;color:#7a5600}.paid{background:#ffe0e0;color:#8a1c1c}
+@media (prefers-color-scheme:dark){.free{background:#0e3b22;color:#7ee0a5}.freemium{background:#403000;color:#ffd670}.paid{background:#471616;color:#ff9c9c}}
+.startwrap{max-width:1200px;margin:16px auto 0;padding:0 16px}
+.startwrap h2,.allh{font-size:18px;margin:8px 0;max-width:1200px}
+.allh{margin:24px auto 0;padding:0 16px}
+.startgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.fl{display:flex;flex-direction:column;gap:4px;background:var(--card);border:2px solid var(--accent);border-radius:14px;padding:12px;text-decoration:none;color:var(--ink)}
+.fl b{font-size:16px}.fl span{color:var(--mute);font-size:13px}
+.ai,.fl .ai{font-size:12px;background:var(--accent);color:#fff;border-radius:99px;padding:2px 8px;align-self:flex-start}
+.aitxt{font-size:13px;color:var(--mute);margin:0}
+footer{max-width:1200px;margin:auto;padding:8px 16px 40px;color:var(--mute);font-size:14px}
+</style>
+</head>
+<body>
+<header><h1>Motion <span>Library</span></h1>
+<p class="sub">Animation engines, component kits, video tools and inspiration in one place. Star what you use.</p></header>
+<div class="bar"><div>
+<input type="search" id="q" placeholder="Search name, use, tag (e.g. lottie, scroll, explainer)">
+<div class="chips" id="groups"></div>
+<div class="chips" id="cats"></div>
+<div class="count" id="count"></div>
+</div></div>
+<section class="startwrap" id="start"></section>
+<h2 class="allh">Everything</h2>
+<main id="grid"></main>
+<footer>Add entries in <code>data/added.json</code>, then run <code>build.ps1</code>. Prices and descriptions are unchecked summaries; confirm on each site before relying on them. Generated __DATE__.</footer>
+<script>
+const DATA=__DATA__;
+const GROUPS={web:"Websites",video:"Video & explainers",inspiration:"Inspiration & systems"};
+let group="all",cat="all",onlyStar=false;
+let stars={};try{stars=JSON.parse(localStorage.getItem("ml-stars")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("ml-stars",JSON.stringify(stars))}catch(e){}};
+const $=id=>document.getElementById(id);
+function chip(label,on,fn){const b=document.createElement("button");b.className="chip"+(on?" on":"");b.textContent=label;b.onclick=fn;return b}
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function render(){
+  const q=$("q").value.toLowerCase().trim();
+  const g=$("groups");g.innerHTML="";
+  g.append(chip("All",group==="all",()=>{group="all";cat="all";render()}));
+  for(const k in GROUPS)g.append(chip(GROUPS[k],group===k,()=>{group=k;cat="all";render()}));
+  g.append(chip("★ Starred",onlyStar,()=>{onlyStar=!onlyStar;render()}));
+  const pool=DATA.filter(d=>group==="all"||d.group===group);
+  const cats=[...new Set(pool.map(d=>d.category))].sort();
+  const c=$("cats");c.innerHTML="";
+  c.append(chip("All types",cat==="all",()=>{cat="all";render()}));
+  cats.forEach(x=>c.append(chip(x,cat===x,()=>{cat=x;render()})));
+  const list=pool.filter(d=>(cat==="all"||d.category===cat)&&(!onlyStar||stars[d.url])&&(!q||[d.name,d.what,d.best_for,d.category,(d.tags||[]).join(" ")].join(" ").toLowerCase().includes(q)))
+    .sort((a,b)=>(stars[b.url]?1:0)-(stars[a.url]?1:0)||a.name.localeCompare(b.name));
+  $("count").textContent=list.length+" of "+DATA.length+" sources";
+  const seen={};
+  const fl=DATA.filter(d=>d.flagship&&!seen[d.name]&&(seen[d.name]=1)).sort((a,b)=>(b.ai_access?1:0)-(a.ai_access?1:0)||a.name.localeCompare(b.name));
+  $("start").style.display=(q||group!=="all"||cat!=="all"||onlyStar)?"none":"block";
+  $("start").innerHTML=`<h2>Start here</h2><div class="startgrid">`+fl.map(d=>`<a class="fl" href="${esc(d.url)}" target="_blank" rel="noopener"><b>${esc(d.name)}</b><span>${esc(d.best_for)}</span>${d.ai_access?'<span class="ai">AI can connect</span>':""}</a>`).join("")+`</div>`;
+  $("grid").innerHTML=list.map(d=>`<article class="card"><div class="top"><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.name)}</a><button class="star${stars[d.url]?" on":""}" data-u="${esc(d.url)}" aria-label="Star">${stars[d.url]?"★":"☆"}</button></div>
+  <p class="what">${esc(d.what)}</p>${d.ai_access?`<p class="aitxt"><span class="ai">AI can connect</span> ${esc(d.ai_access)}</p>`:""}<p class="best"><b>Best for:</b> ${esc(d.best_for)}</p>
+  <div class="meta"><span class="tag ${esc(d.pricing)}">${esc(d.pricing)}</span><span class="tag">${esc(d.category)}</span>${d.framework&&d.framework!=="n/a"?`<span class="tag">${esc(d.framework)}</span>`:""}${(d.tags||[]).slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></article>`).join("");
+  document.querySelectorAll(".star").forEach(b=>b.onclick=()=>{const u=b.dataset.u;stars[u]?delete stars[u]:stars[u]=1;save();render()});
+}
+$("q").oninput=render;render();
+</script>
+</body>
+</html>

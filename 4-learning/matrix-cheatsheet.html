@@ -1,0 +1,711 @@
+<title>Matrix Cheat Sheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: exam-sheet reference. Sticky contents on the left, one anatomy per entry (definition, rule, worked example, mistake, AI link).
+   Colour: cool graphite neutrals with Transdev red as the only accent. Type: Plex Sans for words, Plex Mono for every number and symbol. */
+:root {
+  --bg: #F3F5F8; --surface: #FFFFFF; --ink: #131820; --muted: #566070; --line: #DCE1E8;
+  --accent: #DB0717; --accent-ink: #FFFFFF; --shape-fill: rgba(219,7,23,.13); --grid: #E6EAF0; --hl: #FFE9EB; --hl2: #FFD0D5;
+  --good: #1B7A4B; --good-bg: #E3F4EA; --warn: #8A5200; --warn-bg: #FFF1D6; --bad: #B3061A; --bad-bg: #FDE6E8;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1217; --surface: #171C23; --ink: #ECEFF4; --muted: #9AA4B3; --line: #2A313B;
+    --accent: #FF4757; --accent-ink: #12060A; --shape-fill: rgba(255,71,87,.2); --grid: #232A33; --hl: #3A1A20; --hl2: #5A2530;
+    --good: #5FD08F; --good-bg: #12301F; --warn: #F2B24C; --warn-bg: #33270F; --bad: #FF7A86; --bad-bg: #3A1218;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1217; --surface: #171C23; --ink: #ECEFF4; --muted: #9AA4B3; --line: #2A313B;
+  --accent: #FF4757; --accent-ink: #12060A; --shape-fill: rgba(255,71,87,.2); --grid: #232A33; --hl: #3A1A20; --hl2: #5A2530;
+  --good: #5FD08F; --good-bg: #12301F; --warn: #F2B24C; --warn-bg: #33270F; --bad: #FF7A86; --bad-bg: #3A1218;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-block: 26px 60px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1180px; margin: 0 auto; }
+h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.1; margin: 0 0 8px; font-weight: 600; letter-spacing: -.01em; }
+h2.part { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 34px 0 4px; font-weight: 600; scroll-margin-top: 70px; }
+h2.part + p { margin: 0 0 12px; color: var(--muted); max-width: 70ch; }
+h3 { font-size: 18px; margin: 0; font-weight: 600; }
+p { margin: 0 0 10px; }
+.lede { color: var(--muted); max-width: 66ch; }
+code, .mono { font-family: var(--font-mono); font-size: 13.5px; }
+.layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 30px; align-items: start; margin-top: 18px; }
+.toc { position: sticky; top: 14px; max-height: calc(100vh - 28px); overflow-y: auto; font-size: 13.5px; padding-right: 6px; }
+.toc b { display: block; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 14px 0 4px; font-weight: 600; }
+.toc a { display: block; color: var(--ink); text-decoration: none; padding: 2px 0 2px 9px; border-left: 2px solid var(--line); }
+.toc a:hover, .toc a:focus-visible { border-left-color: var(--accent); outline: none; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .toc { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); max-height: none; display: flex; gap: 6px; overflow-x: auto; padding: 8px 0; white-space: nowrap; }
+  .toc b { display: none; }
+  .toc a { border: 1px solid var(--line); border-radius: 999px; padding: 4px 11px; background: var(--surface); }
+}
+/* test data */
+.data { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+.data h3 { font-size: 16px; }
+.data-row { display: flex; flex-wrap: wrap; gap: 14px 26px; margin: 12px 0; }
+.dm .cap { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+.dm .cells { display: grid; gap: 4px; }
+input[type=number] { font: inherit; font-family: var(--font-mono); font-size: 14px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 4px 5px; width: 3.6em; text-align: center; }
+button { font: inherit; font-size: 13px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 5px 11px; cursor: pointer; }
+button:hover, button:focus-visible { border-color: var(--accent); outline: none; }
+button.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input[type=range] { accent-color: var(--accent); width: 100%; }
+/* entries */
+.ent { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin: 0 0 14px; scroll-margin-top: 70px; min-width: 0; }
+.ent-h { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 10px; }
+.sym { font-family: var(--font-mono); font-size: 15px; font-weight: 500; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 2px 9px; min-width: 2.4em; text-align: center; }
+.badges { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
+.bd { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; }
+.bd.next { border-style: dashed; }
+.ent-b { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px 24px; }
+.ent-b > div { min-width: 0; }
+.rule { font-family: var(--font-mono); font-size: 13px; background: var(--bg); border-left: 3px solid var(--accent); padding: 7px 11px; margin: 8px 0; border-radius: 0 6px 6px 0; line-height: 1.6; }
+.mist, .ai { font-size: 13.5px; margin: 8px 0 0; }
+.mist b { color: var(--bad); font-weight: 600; }
+.ai b { color: var(--good); font-weight: 600; }
+.exh { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; font-weight: 600; }
+.ex { overflow-x: auto; padding-bottom: 4px; }
+/* matrices */
+table.m { border-collapse: separate; border-spacing: 0; border-left: 2px solid var(--ink); border-right: 2px solid var(--ink); border-radius: 5px; display: inline-table; vertical-align: middle; margin: 2px 3px; }
+table.m td { padding: 2px 7px; text-align: center; font-family: var(--font-mono); font-size: 14px; min-width: 2em; }
+table.m td.hl { background: var(--hl); }
+table.m td.hl2 { background: var(--hl2); font-weight: 600; }
+table.m td.lab { color: var(--muted); font-size: 11px; }
+.eqr { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 4px; margin: 6px 0; }
+.op { font-family: var(--font-mono); font-size: 16px; padding: 0 4px; color: var(--muted); }
+.ln { font-family: var(--font-mono); font-size: 13px; margin: 3px 0; }
+.ln b { color: var(--accent); font-weight: 500; }
+.cap { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+.trio { display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: flex-end; }
+.big { font-family: var(--font-mono); font-size: 28px; }
+.chip { display: inline-block; font-size: 12.5px; font-weight: 500; padding: 2px 10px; border-radius: 999px; margin: 4px 0; }
+.chip.good { background: var(--good-bg); color: var(--good); }
+.chip.warn { background: var(--warn-bg); color: var(--warn); }
+.chip.bad { background: var(--bad-bg); color: var(--bad); }
+.picker { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; align-items: center; font-size: 13px; }
+.ctl { display: grid; grid-template-columns: 74px 1fr 52px; gap: 8px; align-items: center; font-family: var(--font-mono); font-size: 13px; margin-bottom: 6px; }
+/* plots */
+svg.plot { width: 100%; max-width: 300px; height: auto; display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; margin-top: 8px; }
+.plot .g { stroke: var(--grid); stroke-width: 1; }
+.plot .ax { stroke: var(--muted); stroke-width: 1.3; }
+.plot .c1 { stroke: var(--accent); fill: var(--accent); }
+.plot .c2 { stroke: var(--ink); fill: var(--ink); }
+.plot .c3 { stroke: var(--muted); fill: var(--muted); }
+.plot .arr { stroke-width: 2.5; }
+.plot .shape { fill: var(--shape-fill); stroke: var(--accent); stroke-width: 2; }
+.plot .ghost { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.plot .dash { stroke: var(--ink); stroke-width: 1.4; stroke-dasharray: 3 4; fill: none; }
+.plot .lbl { font: 12px var(--font-mono); fill: var(--ink); stroke: none; }
+/* tables */
+.tbl { overflow-x: auto; }
+table.t { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+table.t th, table.t td { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.t th { font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+/* ahead */
+.ahead { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 10px; }
+.ah { border: 1px dashed var(--line); border-radius: 8px; padding: 10px 12px; font-size: 13.5px; color: var(--muted); }
+.ah b { color: var(--ink); font-weight: 600; display: block; }
+/* review */
+.q { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 8px 0; background: var(--bg); }
+.q-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.q p { margin: 6px 0 0; font-size: 14px; }
+.tl { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
+.tl li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: start; }
+.dotm { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); margin-top: 6px; }
+.tl li.next { color: var(--muted); } .tl li.next .dotm { background: transparent; border: 2px dashed var(--muted); }
+@media (prefers-reduced-motion: no-preference) { .ent { animation: rise .3s ease-out both; } @keyframes rise { from { transform: translateY(8px); } to { transform: none; } } }
+</style>
+
+<div class="wrap">
+  <h1>Matrix Cheat Sheet</h1>
+  <p class="lede">A study sheet for Phase 1, built the way an exam cheat sheet is: every symbol, every operation, each with a rule, a worked example and the mistake people make. It starts at "what is a matrix" and grows toward the topics from later lessons. The examples below all use <b>your test data</b>, so change a number and watch every example recompute.</p>
+
+  <div class="data" id="data">
+    <h3>Your test data</h3>
+    <div class="data-row" id="dataRow"></div>
+    <div class="picker"><button type="button" id="reset">Reset to start values</button><button type="button" id="rand">Try random numbers</button><span class="cap">Random numbers sometimes make a determinant 0. That is worth seeing.</span></div>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" id="toc" aria-label="Contents"></nav>
+    <main id="content"></main>
+  </div>
+</div>
+
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function f(n, d) { var v = Math.abs(n) < 1e-9 ? 0 : n; var s = v.toFixed(d === undefined ? 2 : d); if (s.indexOf('.') >= 0) s = s.replace(/0+$/, '').replace(/\.$/, ''); return s === '-0' ? '0' : s; }
+
+  /* ---------- data ---------- */
+  var START = { A: [[2, 1], [1, 2]], B: [[1, 2], [3, 4]], C: [[1, 2, 3], [4, 5, 6]], u: [3, 4], v: [1, 2] };
+  var S = JSON.parse(JSON.stringify(START));
+
+  /* ---------- maths helpers ---------- */
+  function mmul(X, Y) { return X.map(function (r) { return Y[0].map(function (_, j) { return r.reduce(function (s, x, k) { return s + x * Y[k][j]; }, 0); }); }); }
+  function mT(X) { return X[0].map(function (_, j) { return X.map(function (r) { return r[j]; }); }); }
+  function mAdd(X, Y, sg) { return X.map(function (r, i) { return r.map(function (x, j) { return x + (sg || 1) * Y[i][j]; }); }); }
+  function mSc(X, c) { return X.map(function (r) { return r.map(function (x) { return x * c; }); }); }
+  function mHad(X, Y) { return X.map(function (r, i) { return r.map(function (x, j) { return x * Y[i][j]; }); }); }
+  function det2(M) { return M[0][0] * M[1][1] - M[0][1] * M[1][0]; }
+  function inv2(M) { var d = det2(M); if (Math.abs(d) < 1e-9) return null; return [[M[1][1] / d, -M[0][1] / d], [-M[1][0] / d, M[0][0] / d]]; }
+  function dotv(a, b) { return a[0] * b[0] + a[1] * b[1]; }
+  function mag(a) { return Math.hypot(a[0], a[1]); }
+  function app(M, p) { return [M[0][0] * p[0] + M[0][1] * p[1], M[1][0] * p[0] + M[1][1] * p[1]]; }
+  function eigen(M) {
+    var a = M[0][0], b = M[0][1], c = M[1][0], d = M[1][1], tr = a + d, dt = a * d - b * c, disc = tr * tr / 4 - dt;
+    if (disc < -1e-9) return null;
+    disc = Math.sqrt(Math.max(0, disc));
+    var l1 = tr / 2 + disc, l2 = tr / 2 - disc;
+    function vec(l) {
+      var v; if (Math.abs(b) > 1e-9) v = [b, l - a]; else if (Math.abs(c) > 1e-9) v = [l - d, c]; else v = Math.abs(l - a) < 1e-9 ? [1, 0] : [0, 1];
+      var n = Math.hypot(v[0], v[1]) || 1; return [v[0] / n, v[1] / n];
+    }
+    if (Math.abs(l1 - l2) < 1e-9) { if (Math.abs(b) < 1e-9 && Math.abs(c) < 1e-9) return [{ l: l1, v: [1, 0] }, { l: l2, v: [0, 1] }]; return [{ l: l1, v: vec(l1) }]; }
+    return [{ l: l1, v: vec(l1) }, { l: l2, v: vec(l2) }];
+  }
+
+  /* ---------- html helpers ---------- */
+  function mt(M, hl) {
+    var h = '<table class="m">';
+    M.forEach(function (r, i) { h += '<tr>'; r.forEach(function (x, j) { var c = hl && hl(i, j); h += '<td' + (c ? ' class="' + c + '"' : '') + '>' + (typeof x === 'number' ? f(x) : x) + '</td>'; }); h += '</tr>'; });
+    return h + '</table>';
+  }
+  function vt(v, hl) { return mt(v.map(function (x) { return [x]; }), hl); }
+  function ln(s) { return '<div class="ln">' + s + '</div>'; }
+  function op(s) { return '<span class="op">' + s + '</span>'; }
+  function eqr() { return '<div class="eqr">' + Array.prototype.join.call(arguments, '') + '</div>'; }
+  function chip(k, t) { return '<span class="chip ' + k + '">' + t + '</span>'; }
+  function lab(M) { // matrix with row and column labels
+    var h = '<table class="m"><tr><td class="lab"></td>' + M[0].map(function (_, j) { return '<td class="lab">col ' + (j + 1) + '</td>'; }).join('') + '</tr>';
+    M.forEach(function (r, i) { h += '<tr><td class="lab">row ' + (i + 1) + '</td>' + r.map(function (x) { return '<td>' + f(x) + '</td>'; }).join('') + '</tr>'; });
+    return h + '</table>';
+  }
+  function plot(items) {
+    var m = 1;
+    items.forEach(function (it) { [it.x0, it.x1, it.y0, it.y1].forEach(function (v) { if (typeof v === 'number') m = Math.max(m, Math.abs(v)); }); (it.pts || []).forEach(function (p) { m = Math.max(m, Math.abs(p[0]), Math.abs(p[1])); }); });
+    var half = Math.max(3, Math.ceil(m) + 1), size = 280, s = size / (2 * half), c = size / 2, step = half > 8 ? 2 : 1;
+    function X(v) { return c + v * s; } function Y(v) { return c - v * s; }
+    var h = '<svg class="plot" viewBox="0 0 280 280" role="img" aria-label="Diagram on a grid, one square is one unit">';
+    for (var i = -half; i <= half; i += step) {
+      var k = i === 0 ? 'ax' : 'g';
+      h += '<line class="' + k + '" x1="' + X(i) + '" y1="0" x2="' + X(i) + '" y2="' + size + '"/><line class="' + k + '" x1="0" y1="' + Y(i) + '" x2="' + size + '" y2="' + Y(i) + '"/>';
+    }
+    items.forEach(function (it) {
+      if (it.t === 'p') h += '<polygon class="' + it.k + '" points="' + it.pts.map(function (p) { return X(p[0]) + ',' + Y(p[1]); }).join(' ') + '"/>';
+      else if (it.t === 'l') h += '<line class="' + (it.k || 'dash') + '" x1="' + X(it.x0) + '" y1="' + Y(it.y0) + '" x2="' + X(it.x1) + '" y2="' + Y(it.y1) + '"/>';
+      else if (it.t === 'a') {
+        var x0 = X(it.x0), y0 = Y(it.y0), x1 = X(it.x1), y1 = Y(it.y1), ang = Math.atan2(y1 - y0, x1 - x0), hd = 9;
+        h += '<line class="' + it.c + ' arr" x1="' + x0 + '" y1="' + y0 + '" x2="' + x1 + '" y2="' + y1 + '"/>';
+        if (Math.hypot(x1 - x0, y1 - y0) > 3) h += '<polygon class="' + it.c + '" points="' + x1 + ',' + y1 + ' ' + (x1 - hd * Math.cos(ang - .4)) + ',' + (y1 - hd * Math.sin(ang - .4)) + ' ' + (x1 - hd * Math.cos(ang + .4)) + ',' + (y1 - hd * Math.sin(ang + .4)) + '"/>';
+        if (it.l) h += '<text class="lbl" x="' + Math.max(4, Math.min(262, x1 + 6)) + '" y="' + Math.max(12, Math.min(274, y1 - 6)) + '">' + it.l + '</text>';
+      }
+    });
+    return h + '</svg>';
+  }
+
+  /* ---------- blocks (worked examples, computed from S) ---------- */
+  var B = {};
+  B.types = { html: function () { return '<div class="trio"><div><div class="cap">scalar</div><div class="big">7</div></div><div><div class="cap">vector u, 2 numbers</div>' + vt(S.u) + '</div><div><div class="cap">matrix A, 2 × 2</div>' + mt(S.A) + '</div></div>'; } };
+  B.index = {
+    controls: '<div class="picker"><span class="cap">Pick an entry of A:</span><button type="button" data-ij="0,0">A₁₁</button><button type="button" data-ij="0,1">A₁₂</button><button type="button" data-ij="1,0">A₂₁</button><button type="button" data-ij="1,1">A₂₂</button></div>',
+    wire: function (h, redo) { h._s = { i: 0, j: 1 }; h.querySelectorAll('[data-ij]').forEach(function (b) { b.addEventListener('click', function () { var p = b.dataset.ij.split(','); h._s = { i: +p[0], j: +p[1] }; redo(); }); }); },
+    html: function (h) { var i = h._s.i, j = h._s.j; h.querySelectorAll('[data-ij]').forEach(function (b) { b.classList.toggle('on', b.dataset.ij === i + ',' + j); }); return eqr(mt(S.A, function (r, c) { return r === i && c === j ? 'hl2' : r === i || c === j ? 'hl' : null; })) + ln('A<sub>' + (i + 1) + (j + 1) + '</sub> = <b>' + f(S.A[i][j]) + '</b>  (row ' + (i + 1) + ', column ' + (j + 1) + ')') + ln('In Python: A[' + i + '][' + j + ']'); }
+  };
+  B.shape = { html: function () { return eqr(lab(S.C)) + ln('2 rows, 3 columns: shape <b>2 × 3</b>') + ln('A is ' + S.A.length + ' × ' + S.A[0].length + ' (square: same number of rows and columns)'); } };
+  B.special = { html: function () {
+    var A = S.A, sym = Math.abs(A[0][1] - A[1][0]) < 1e-9, dg = Math.abs(A[0][1]) < 1e-9 && Math.abs(A[1][0]) < 1e-9, idn = dg && Math.abs(A[0][0] - 1) < 1e-9 && Math.abs(A[1][1] - 1) < 1e-9, zr = dg && A[0][0] === 0 && A[1][1] === 0;
+    return '<div class="trio"><div><div class="cap">zero</div>' + mt([[0, 0], [0, 0]]) + '</div><div><div class="cap">identity I</div>' + mt([[1, 0], [0, 1]]) + '</div><div><div class="cap">diagonal</div>' + mt([[3, 0], [0, 5]]) + '</div><div><div class="cap">symmetric</div>' + mt([[2, 7], [7, 4]]) + '</div></div>' +
+      ln('Your A: symmetric? <b>' + (sym ? 'yes' : 'no') + '</b>, diagonal? <b>' + (dg ? 'yes' : 'no') + '</b>, identity? <b>' + (idn ? 'yes' : 'no') + '</b>, zero? <b>' + (zr ? 'yes' : 'no') + '</b>');
+  } };
+  B.symbols = { html: function () {
+    var A = S.A, u = S.u, v = S.v;
+    var rows = [
+      ['a, v, u', '"vector a"', 'a list of numbers', 'u = [' + f(u[0]) + ', ' + f(u[1]) + ']'],
+      ['A, B, C', '"matrix A"', 'a grid of numbers', 'A has shape 2 × 2'],
+      ['A<sub>ij</sub>', '"A i j"', 'entry in row i, column j', 'A<sub>12</sub> = ' + f(A[0][1])],
+      ['m × n', '"m by n"', 'rows × columns', 'C is 2 × 3'],
+      ['Aᵀ', '"A transpose"', 'rows and columns swapped', 'first row of Aᵀ = [' + f(A[0][0]) + ', ' + f(A[1][0]) + ']'],
+      ['A⁻¹', '"A inverse"', 'the matrix that undoes A', inv2(A) ? 'exists (det = ' + f(det2(A)) + ')' : 'does not exist (det = 0)'],
+      ['I', '"identity"', 'the do-nothing matrix', 'A·I = A'],
+      ['u·v', '"u dot v"', 'dot product, one number', 'u·v = ' + f(dotv(u, v))],
+      ['|v|  or  ‖v‖', '"length of v"', 'magnitude', '|u| = ' + f(mag(u))],
+      ['AB  or  A@B', '"A times B"', 'matrix product (row by column)', 'AB₁₁ = ' + f(mmul(A, S.B)[0][0])],
+      ['A ⊙ B  or  A*B', '"element-wise"', 'multiply matching positions', '(A⊙B)₁₁ = ' + f(A[0][0] * S.B[0][0])],
+      ['det(A)  or  |A|', '"determinant"', 'area scaling number', 'det(A) = ' + f(det2(A))],
+      ['λ', '"lambda"', 'eigenvalue (a stretch factor)', 'see Eigenvalues below'],
+      ['θ', '"theta"', 'an angle', 'angle(u, v) = ' + f(Math.acos(Math.max(-1, Math.min(1, dotv(u, v) / (mag(u) * mag(v) || 1)))) * 180 / Math.PI, 1) + '°'],
+      ['f′(x)', '"f prime of x"', 'derivative: the slope of f at x', 'for f = x² at x = 3: 6'],
+      ['∂f/∂x', '"partial f, partial x"', 'slope when only x is nudged', 'for f = x² + 3xy + y² at u: ' + f(2 * u[0] + 3 * u[1])],
+      ['∇f', '"gradient"', 'list of all the partial slopes', 'points uphill; −∇f points downhill'],
+      ['H', '"Hessian"', 'grid of curvatures (second slopes)', 'N weights → N × N numbers'],
+      ['x₁, x₂', '"x sub one, x sub two"', 'two separate numbers; the small ₁ ₂ are only labels', 'x₁ = ' + f(u[0]) + ', x₂ = ' + f(u[1])],
+      ['·', '"dot" or "times"', 'multiply: x₁ · x₂ means x₁ × x₂', f(u[0]) + ' · ' + f(u[1]) + ' = ' + f(u[0] * u[1])],
+      ['relu(z)', '"ReLU of z"', 'keep z if it is positive, otherwise 0 (max(0, z))', 'relu(−3) = 0, relu(21) = 21'],
+      ['∂y/∂x₂', '"partial y over partial x₂"', 'how much y changes when only x₂ goes up a little', 'for y = x₁ · x₂: ∂y/∂x₂ = x₁'],
+      ['+=', '"plus equals"', 'add to what is already stored: a += 3 means a = a + 3', 'a = 2, a += 3 → a = 5'],
+      ['P(A)', '"P of A"', 'probability of A, a number from 0 to 1', 'P(even die roll) = 0.5'],
+      ['eᶻ  or exp(z)', '"e to the z"', 'e ≈ 2.718 raised to the power z; always positive', 'e² ≈ 7.39'],
+      ['log(q)', '"log of q" (natural log)', 'the power e must be raised to in order to get q', 'log(0.1) ≈ −2.30'],
+      ['logit', '"logit"', 'a raw score from a network before softmax', '[2, 1, 0]'],
+      ['P(A | B)', '"P of A given B"', 'chance of A once you know B happened', 'P(spam | "lottery") = 0.955'],
+      ['MLE · MAP', '"max likelihood" · "max a posteriori"', 'best setting from the data only · from the data plus a prior', '3 heads in 3 flips: MLE 1, MAP 0.71'],
+      ['Beta(a, b)', '"Beta a b"', 'a belief about a chance; heads add to a, tails add to b', 'Beta(1, 1) + 7 heads, 3 tails = Beta(8, 4)'],
+      ['Σ', '"sigma"', '"add up all of these"', 'Σ uᵢ = ' + f(u[0] + u[1])]
+    ];
+    return '<div class="tbl"><table class="t"><tr><th>Symbol</th><th>Say it</th><th>Means</th><th>With your data</th></tr>' + rows.map(function (r) { return '<tr><td class="mono">' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td><td class="mono">' + r[3] + '</td></tr>'; }).join('') + '</table></div>';
+  } };
+  B.vadd = { html: function () {
+    var u = S.u, v = S.v, s = [u[0] + v[0], u[1] + v[1]], d = [u[0] - v[0], u[1] - v[1]];
+    return eqr(vt(u), op('+'), vt(v), op('='), vt(s)) + ln('[' + f(u[0]) + '+' + f(v[0]) + ', ' + f(u[1]) + '+' + f(v[1]) + ']') + eqr(vt(u), op('−'), vt(v), op('='), vt(d)) +
+      plot([{ t: 'a', x0: 0, y0: 0, x1: u[0], y1: u[1], c: 'c2', l: 'u' }, { t: 'a', x0: u[0], y0: u[1], x1: s[0], y1: s[1], c: 'c3', l: 'v' }, { t: 'a', x0: 0, y0: 0, x1: s[0], y1: s[1], c: 'c1', l: 'u+v' }]) + '<div class="cap">Walk along u, then along v. You end at u+v.</div>';
+  } };
+  B.vscale = { html: function () {
+    var v = S.v, a = mSc([v], 2)[0], b = mSc([v], -1)[0], c = mSc([v], 0.5)[0];
+    return eqr(op('2 ·'), vt(v), op('='), vt(a), op('&nbsp;&nbsp;−1 ·'), vt(v), op('='), vt(b)) + ln('0.5 · v = [' + f(c[0]) + ', ' + f(c[1]) + ']') +
+      plot([{ t: 'a', x0: 0, y0: 0, x1: a[0], y1: a[1], c: 'c3', l: '2v' }, { t: 'a', x0: 0, y0: 0, x1: v[0], y1: v[1], c: 'c2', l: 'v' }, { t: 'a', x0: 0, y0: 0, x1: b[0], y1: b[1], c: 'c1', l: '−v' }]);
+  } };
+  B.mag = { html: function () { var u = S.u; return ln('u = [' + f(u[0]) + ', ' + f(u[1]) + ']') + ln('|u| = √(' + f(u[0]) + '² + ' + f(u[1]) + '²)') + ln('    = √(' + f(u[0] * u[0]) + ' + ' + f(u[1] * u[1]) + ') = √' + f(u[0] * u[0] + u[1] * u[1])) + ln('    = <b>' + f(mag(u), 3) + '</b>') + ln('Unit vector: u / |u| = [' + f(u[0] / (mag(u) || 1), 3) + ', ' + f(u[1] / (mag(u) || 1), 3) + ']  (length 1)'); } };
+  B.dot = { html: function () {
+    var u = S.u, v = S.v, d = dotv(u, v), c = mag(u) * mag(v) ? d / (mag(u) * mag(v)) : 0;
+    return ln('u·v = ' + f(u[0]) + '×' + f(v[0]) + ' + ' + f(u[1]) + '×' + f(v[1])) + ln('    = ' + f(u[0] * v[0]) + ' + ' + f(u[1] * v[1]) + ' = <b>' + f(d) + '</b>') +
+      (Math.abs(c) < 0.02 ? chip('warn', 'Zero: unrelated (right angle)') : d > 0 ? chip('good', 'Positive: pointing the same general way') : chip('bad', 'Negative: pointing opposite ways')) +
+      plot([{ t: 'a', x0: 0, y0: 0, x1: u[0], y1: u[1], c: 'c2', l: 'u' }, { t: 'a', x0: 0, y0: 0, x1: v[0], y1: v[1], c: 'c3', l: 'v' }]);
+  } };
+  B.cos = { html: function () {
+    var u = S.u, v = S.v, nu = mag(u), nv = mag(v), d = dotv(u, v);
+    if (!nu || !nv) return ln('One vector is all zeros, so it has no direction.');
+    var c = d / (nu * nv);
+    return ln('u·v = ' + f(d) + ',  |u| = ' + f(nu, 3) + ',  |v| = ' + f(nv, 3)) + ln('cos θ = ' + f(d) + ' / (' + f(nu, 3) + ' × ' + f(nv, 3) + ') = <b>' + f(c, 4) + '</b>') + ln('θ = <b>' + f(Math.acos(Math.max(-1, Math.min(1, c))) * 180 / Math.PI, 1) + '°</b>') + ln('1 = same direction, 0 = right angle, −1 = opposite');
+  } };
+  B.proj = { html: function () {
+    var u = S.u, v = S.v, vv = dotv(v, v); if (!vv) return ln('v is all zeros: nothing to project onto.');
+    var k = dotv(u, v) / vv, p = [k * v[0], k * v[1]], r = [u[0] - p[0], u[1] - p[1]];
+    return ln('k = (u·v) / (v·v) = ' + f(dotv(u, v)) + ' / ' + f(vv) + ' = ' + f(k, 3)) + ln('proj = k · v = [' + f(p[0], 3) + ', ' + f(p[1], 3) + ']') + ln('leftover = u − proj = [' + f(r[0], 3) + ', ' + f(r[1], 3) + ']') + ln('leftover · v = <b>' + f(dotv(r, v), 3) + '</b>  (0 = right angle)') +
+      plot([{ t: 'l', x0: -4 * v[0], y0: -4 * v[1], x1: 4 * v[0], y1: 4 * v[1], k: 'dash' }, { t: 'a', x0: 0, y0: 0, x1: u[0], y1: u[1], c: 'c2', l: 'u' }, { t: 'l', x0: p[0], y0: p[1], x1: u[0], y1: u[1], k: 'dash' }, { t: 'a', x0: 0, y0: 0, x1: p[0], y1: p[1], c: 'c1', l: 'proj' }]);
+  } };
+  B.madd = { html: function () { var A = S.A, Bm = S.B; return eqr(mt(A), op('+'), mt(Bm), op('='), mt(mAdd(A, Bm))) + eqr(mt(A), op('−'), mt(Bm), op('='), mt(mAdd(A, Bm, -1))) + ln('Each entry uses only its own position.'); } };
+  B.mscale = { html: function () { var A = S.A; return eqr(op('3 ·'), mt(A), op('='), mt(mSc(A, 3))) + ln('det(A) = ' + f(det2(A)) + ',  det(3A) = <b>' + f(det2(mSc(A, 3))) + '</b> = 3² × ' + f(det2(A))); } };
+  B.had = { html: function () { var A = S.A, Bm = S.B; return eqr(mt(A), op('⊙'), mt(Bm), op('='), mt(mHad(A, Bm))) + ln('Compare with the matrix product AB:') + eqr(mt(A), op('@'), mt(Bm), op('='), mt(mmul(A, Bm))); } };
+  B.transpose = { html: function () {
+    var A = S.A, Bm = S.B, C = S.C, l = mT(mmul(A, Bm)), r = mmul(mT(Bm), mT(A)), w = mmul(mT(A), mT(Bm));
+    return eqr(mt(C), op('→'), mt(mT(C))) + ln('C is 2×3, Cᵀ is <b>3×2</b>. Row 1 [' + C[0].map(function (x) { return f(x); }).join(', ') + '] became column 1.') + eqr(mt(A), op('→'), mt(mT(A))) +
+      ln('Check (AB)ᵀ = BᵀAᵀ with your A and B:') + eqr('(AB)ᵀ =', mt(l), op('&nbsp;&nbsp;BᵀAᵀ ='), mt(r)) + ln('AᵀBᵀ would give [' + w.map(function (x) { return x.map(function (y) { return f(y); }).join(', '); }).join(' | ') + '] (usually different).');
+  } };
+  B.matvec = { html: function () {
+    var A = S.A, v = S.v, r = app(A, v);
+    return eqr(mt(A), vt(v), op('='), vt(r)) + ln('row 1 · v = ' + f(A[0][0]) + '×' + f(v[0]) + ' + ' + f(A[0][1]) + '×' + f(v[1]) + ' = <b>' + f(r[0]) + '</b>') + ln('row 2 · v = ' + f(A[1][0]) + '×' + f(v[0]) + ' + ' + f(A[1][1]) + '×' + f(v[1]) + ' = <b>' + f(r[1]) + '</b>');
+  } };
+  B.matmul = {
+    controls: '<div class="picker"><span class="cap">Which entry of AB?</span><button type="button" data-ij="0,0">(1,1)</button><button type="button" data-ij="0,1">(1,2)</button><button type="button" data-ij="1,0">(2,1)</button><button type="button" data-ij="1,1">(2,2)</button></div>',
+    wire: function (h, redo) { h._s = { i: 0, j: 0 }; h.querySelectorAll('[data-ij]').forEach(function (b) { b.addEventListener('click', function () { var p = b.dataset.ij.split(','); h._s = { i: +p[0], j: +p[1] }; redo(); }); }); },
+    html: function (h) {
+      var i = h._s.i, j = h._s.j, A = S.A, Bm = S.B, P = mmul(A, Bm), Q = mmul(Bm, A), same = P.every(function (r, a) { return r.every(function (x, b) { return Math.abs(x - Q[a][b]) < 1e-9; }); });
+      h.querySelectorAll('[data-ij]').forEach(function (b) { b.classList.toggle('on', b.dataset.ij === i + ',' + j); });
+      return eqr(mt(A, function (r) { return r === i ? 'hl' : null; }), op('@'), mt(Bm, function (r, c) { return c === j ? 'hl' : null; }), op('='), mt(P, function (r, c) { return r === i && c === j ? 'hl2' : null; })) +
+        ln('AB(' + (i + 1) + ',' + (j + 1) + ') = row ' + (i + 1) + ' of A · column ' + (j + 1) + ' of B') + ln('= ' + f(A[i][0]) + '×' + f(Bm[0][j]) + ' + ' + f(A[i][1]) + '×' + f(Bm[1][j]) + ' = <b>' + f(P[i][j]) + '</b>') +
+        eqr('BA =', mt(Q)) + (same ? chip('warn', 'AB equals BA for these numbers. That is unusual. Try other numbers.') : chip('bad', 'AB ≠ BA: order matters'));
+    }
+  };
+  B.shaperule = { html: function () {
+    var AC = mmul(S.A, S.C);
+    return ln('A is 2×2, C is 2×3:') + ln('(2×<b>2</b>) @ (<b>2</b>×3) → inner 2 = 2 ✓ result <b>2×3</b>') + eqr(mt(S.A), op('@'), mt(S.C), op('='), mt(AC)) + ln('C @ A: (2×<b>3</b>) @ (<b>2</b>×2) → 3 ≠ 2 ✗ <b>cannot multiply</b>') + ln('Rule: (m×n)@(n×p) = m×p');
+  } };
+  B.broadcast = { html: function () {
+    var C = S.C, b = [10, 20, 30];
+    return eqr(mt(C), op('+'), mt([b]), op('='), mt(C.map(function (r) { return r.map(function (x, j) { return x + b[j]; }); }))) + ln('The 1×3 row b is copied down both rows of C, then added.');
+  } };
+  B.identity = { html: function () { var A = S.A, I = [[1, 0], [0, 1]]; return eqr(mt(A), op('@'), mt(I), op('='), mt(mmul(A, I))) + eqr(mt(I), op('@'), mt(A), op('='), mt(mmul(I, A))) + ln('Like multiplying a number by 1.'); } };
+  B.det = { html: function () {
+    var A = S.A, d = det2(A);
+    return eqr(mt(A, function (r, c) { return r === c ? 'hl' : null; })) + ln('det = (' + f(A[0][0]) + '×' + f(A[1][1]) + ') − (' + f(A[0][1]) + '×' + f(A[1][0]) + ')') + ln('    = ' + f(A[0][0] * A[1][1]) + ' − ' + f(A[0][1] * A[1][0]) + ' = <b>' + f(d) + '</b>') +
+      (Math.abs(d) < 1e-9 ? chip('bad', 'Zero: crushes area to nothing, no inverse') : d < 0 ? chip('warn', 'Area × ' + f(Math.abs(d)) + ' and flipped (mirror)') : chip('good', 'Area × ' + f(d)));
+  } };
+  B.inverse = { html: function () {
+    var A = S.A, d = det2(A), iv = inv2(A);
+    if (!iv) return ln('det(A) = 0, so <b>A has no inverse</b>. Stop here.') + ln('Change a number in A above to make det ≠ 0.');
+    return ln('swap the diagonal, flip the other two signs, divide by det = ' + f(d)) + eqr('A⁻¹ =', mt(iv)) + ln('Check A @ A⁻¹:') + eqr(mt(mmul(A, iv).map(function (r) { return r.map(function (x) { return Math.round(x * 1e6) / 1e6; }); })));
+  } };
+  B.indep = { html: function () {
+    var A = S.A, c1 = [A[0][0], A[1][0]], c2 = [A[0][1], A[1][1]], d = det2(A);
+    return ln('column 1 = [' + f(c1[0]) + ', ' + f(c1[1]) + '],  column 2 = [' + f(c2[0]) + ', ' + f(c2[1]) + ']') + ln('det = ' + f(d)) + (Math.abs(d) < 1e-9 ? chip('bad', 'Dependent: one column is a multiple of the other') : chip('good', 'Independent: both columns add new information')) +
+      plot([{ t: 'a', x0: 0, y0: 0, x1: c1[0], y1: c1[1], c: 'c2', l: 'col 1' }, { t: 'a', x0: 0, y0: 0, x1: c2[0], y1: c2[1], c: 'c3', l: 'col 2' }]);
+  } };
+  B.rank = { html: function () {
+    var A = S.A, d = det2(A), zero = A.every(function (r) { return r.every(function (x) { return Math.abs(x) < 1e-9; }); }), rk = zero ? 0 : Math.abs(d) > 1e-9 ? 2 : 1;
+    return ln('det = ' + f(d)) + ln('rank(A) = <b>' + rk + '</b>') + ln(rk === 2 ? 'Full rank: nothing is lost.' : rk === 1 ? 'Rank 1: everything lands on one line.' : 'Rank 0: everything lands on one point.') + ln('Try [[1,2],[2,4]] to see rank 1.');
+  } };
+  B.move = { html: function () {
+    var A = S.A, sq = [[0, 0], [1, 0], [1, 1], [0, 1]], im = sq.map(function (p) { return app(A, p); });
+    return ln('"right" [1,0] lands at column 1 = (' + f(A[0][0]) + ', ' + f(A[1][0]) + ')') + ln('"up" [0,1] lands at column 2 = (' + f(A[0][1]) + ', ' + f(A[1][1]) + ')') +
+      plot([{ t: 'p', pts: sq, k: 'ghost' }, { t: 'p', pts: im, k: 'shape' }, { t: 'a', x0: 0, y0: 0, x1: A[0][0], y1: A[1][0], c: 'c2', l: 'col 1' }, { t: 'a', x0: 0, y0: 0, x1: A[0][1], y1: A[1][1], c: 'c3', l: 'col 2' }]) + '<div class="cap">Dashed square: start. Red: where A sends it.</div>';
+  } };
+  B.fourmoves = {
+    controls: '<div class="ctl"><label for="th">θ</label><input id="th" type="range" min="-180" max="180" step="15" value="90"><output id="tho">90°</output></div>',
+    wire: function (h, redo) { h._s = { th: 90 }; h.querySelector('input').addEventListener('input', function (e) { h._s.th = +e.target.value; h.querySelector('output').textContent = e.target.value + '°'; redo(); }); },
+    html: function (h) {
+      var t = h._s.th * Math.PI / 180, v = S.v, M = [
+        ['Rotate by θ', [[Math.cos(t), -Math.sin(t)], [Math.sin(t), Math.cos(t)]]],
+        ['Stretch (2, 0.5)', [[2, 0], [0, 0.5]]], ['Shear (k = 1)', [[1, 1], [0, 1]]], ['Reflect (y-axis)', [[-1, 0], [0, 1]]]];
+      return '<div class="tbl"><table class="t"><tr><th>Move</th><th>Matrix</th><th>v → result</th><th>det</th></tr>' + M.map(function (m) { var r = app(m[1], v); return '<tr><td>' + m[0] + '</td><td>' + mt(m[1]) + '</td><td class="mono">(' + f(v[0]) + ', ' + f(v[1]) + ') → <b>(' + f(r[0], 2) + ', ' + f(r[1], 2) + ')</b></td><td class="mono">' + f(det2(m[1])) + '</td></tr>'; }).join('') + '</table></div>' +
+        plot([{ t: 'a', x0: 0, y0: 0, x1: v[0], y1: v[1], c: 'c3', l: 'v' }, { t: 'a', x0: 0, y0: 0, x1: app(M[0][1], v)[0], y1: app(M[0][1], v)[1], c: 'c1', l: 'rotated' }]);
+    }
+  };
+  B.compose = { html: function () {
+    var A = S.A, Bm = S.B, v = S.v, bv = app(Bm, v), abv = app(A, bv), av = app(A, v), bav = app(Bm, av), same = Math.hypot(abv[0] - bav[0], abv[1] - bav[1]) < 1e-9;
+    return ln('Start v = (' + f(v[0]) + ', ' + f(v[1]) + ')') + ln('B first, then A: (' + f(bv[0]) + ', ' + f(bv[1]) + ') → <b>(' + f(abv[0]) + ', ' + f(abv[1]) + ')</b>  = (A@B)v') + ln('A first, then B: (' + f(av[0]) + ', ' + f(av[1]) + ') → <b>(' + f(bav[0]) + ', ' + f(bav[1]) + ')</b>  = (B@A)v') + (same ? chip('warn', 'Same here. Try other numbers.') : chip('bad', 'Different results: order matters'));
+  } };
+  function sameLine(p, q) { return Math.abs(p[0] * q[1] - p[1] * q[0]) < 1e-9; }
+  function arrowRows(M, arrows) {
+    return arrows.map(function (a) {
+      var r = app(M, a), same = sameLine(a, r) && (Math.abs(a[0]) > 1e-9 || Math.abs(a[1]) > 1e-9), k = Math.abs(a[0]) > 1e-9 ? r[0] / a[0] : r[1] / a[1];
+      return ln('[' + f(a[0]) + ', ' + f(a[1]) + '] → [' + f(r[0]) + ', ' + f(r[1]) + ']  ' + (same ? chip('good', 'same line: eigenvector, eigenvalue ' + f(k, 3)) : chip('bad', 'turned: not an eigenvector')));
+    }).join('');
+  }
+  /* ---------- calculus blocks ---------- */
+  function sl(label, min, max, step, val, key) { return '<div class="ctl"><label>' + label + '</label><input type="range" data-k="' + key + '" min="' + min + '" max="' + max + '" step="' + step + '" value="' + val + '"><output data-o="' + key + '">' + val + '</output></div>'; }
+  function wireSl(h, init, redo) { h._s = init; h.querySelectorAll('input[data-k]').forEach(function (inp) { inp.addEventListener('input', function () { h._s[inp.dataset.k] = +inp.value; h.querySelector('[data-o="' + inp.dataset.k + '"]').textContent = inp.value; redo(); }); }); }
+  function human(b) { var u = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB'], i = 0; while (b >= 1000 && i < u.length - 1) { b /= 1000; i++; } return f(b, b < 10 ? 1 : 0) + ' ' + u[i]; }
+  B.deriv = { controls: sl('x', -5, 5, 0.5, 3, 'x'), wire: function (h, redo) { wireSl(h, { x: 3 }, redo); },
+    html: function (h) {
+      var x = h._s.x, sp = 2 * x, hh = 0.01, num = (Math.pow(x + hh, 2) - Math.pow(x - hh, 2)) / (2 * hh);
+      return ln('f(x) = x² = ' + f(x * x)) + ln('slope = 2x = <b>' + f(sp) + '</b>') + ln('arithmetic check: (f(' + f(x + hh) + ') − f(' + f(x - hh) + ')) / 0.02 = ' + f(num, 3)) +
+        (sp > 0 ? chip('warn', 'Uphill to the right: move LEFT to go down') : sp < 0 ? chip('warn', 'Downhill to the right: move RIGHT to go down') : chip('good', 'Flat: the bottom of the bowl'));
+    } };
+  B.cdiff = { controls: sl('x', -5, 5, 0.5, 3, 'x') + '<div class="picker"><span class="cap">step h:</span><button type="button" data-h="1">1</button><button type="button" data-h="0.5">0.5</button><button type="button" data-h="0.1">0.1</button><button type="button" data-h="0.01">0.01</button></div>',
+    wire: function (h, redo) { wireSl(h, { x: 3, h: 0.1 }, redo); h.querySelectorAll('[data-h]').forEach(function (b) { b.addEventListener('click', function () { h._s.h = +b.dataset.h; redo(); }); }); },
+    html: function (h) {
+      h.querySelectorAll('[data-h]').forEach(function (b) { b.classList.toggle('on', +b.dataset.h === h._s.h); });
+      var x = h._s.x, st = h._s.h, a = Math.pow(x + st, 2), b = Math.pow(x - st, 2), est = (a - b) / (2 * st), one = (a - x * x) / st;
+      return ln('f(x+h) = ' + f(a, 4) + ',  f(x−h) = ' + f(b, 4)) + ln('both sides: (' + f(a, 4) + ' − ' + f(b, 4) + ') / (2×' + f(st) + ') = <b>' + f(est, 4) + '</b>') + ln('one side only: (f(x+h) − f(x)) / h = ' + f(one, 4)) + ln('true slope 2x = ' + f(2 * x, 4)) + '<div class="cap">The both-sides version stays accurate even for a big h.</div>';
+    } };
+  B.gradient = { html: function () {
+    var x = S.u[0], y = S.u[1], fx = function (a, b) { return a * a + 3 * a * b + b * b; }, g = [2 * x + 3 * y, 3 * x + 2 * y], lr = 0.01, n = [x - lr * g[0], y - lr * g[1]];
+    return ln('f(x, y) = x² + 3xy + y²   at the point u = (' + f(x) + ', ' + f(y) + ')') + ln('∂f/∂x = 2x + 3y = <b>' + f(g[0]) + '</b>') + ln('∂f/∂y = 3x + 2y = <b>' + f(g[1]) + '</b>') + ln('gradient ∇f = [' + f(g[0]) + ', ' + f(g[1]) + ']  (points uphill)') +
+      ln('one step downhill, rate 0.01: (' + f(n[0], 3) + ', ' + f(n[1], 3) + ')') + ln('f went from <b>' + f(fx(x, y), 3) + '</b> to <b>' + f(fx(n[0], n[1]), 3) + '</b>') + '<div class="cap">Change u in your test data to move the point.</div>';
+  } };
+  B.gd = { controls: sl('start x', -6, 6, 0.5, 5, 'x0') + sl('rate', 0.01, 1.2, 0.01, 0.1, 'lr'), wire: function (h, redo) { wireSl(h, { x0: 5, lr: 0.1 }, redo); },
+    html: function (h) {
+      var x = h._s.x0, lr = h._s.lr, rows = '<tr><th>step</th><th>x</th><th>slope 2x</th><th>new x</th><th>f = x²</th></tr>';
+      for (var i = 0; i < 10; i++) { var sp = 2 * x, nx = x - lr * sp; rows += '<tr class="mono"><td>' + i + '</td><td>' + f(x, 3) + '</td><td>' + f(sp, 3) + '</td><td>' + f(nx, 3) + '</td><td>' + f(x * x, 3) + '</td></tr>'; x = nx; }
+      var r = h._s.x0 ? Math.abs(x) / Math.abs(h._s.x0) : 0;
+      var c = !h._s.x0 ? chip('good', 'Started at the bottom') : r > 1.05 ? chip('bad', 'Blew up: the rate is too big, each step overshoots further') : r > 0.95 ? chip('warn', 'Bouncing back and forth: not getting anywhere') : Math.abs(x) < 0.05 ? chip('good', 'Reached the bottom') : chip('warn', 'Still rolling: the rate is small, it needs more steps');
+      return '<div class="tbl"><table class="t">' + rows + '</table></div>' + c + ln('Try rate 1.1 (blows up) and 0.01 (crawls).');
+    } };
+  B.hessian = { controls: '<div class="picker"><span class="cap">Number of weights N:</span><button type="button" data-n="2">2</button><button type="button" data-n="100">100</button><button type="button" data-n="1000">1,000</button><button type="button" data-n="1000000">1,000,000</button></div>',
+    wire: function (h, redo) { h._s = { n: 1000 }; h.querySelectorAll('[data-n]').forEach(function (b) { b.addEventListener('click', function () { h._s.n = +b.dataset.n; redo(); }); }); },
+    html: function (h) {
+      var n = h._s.n, e = n * n; h.querySelectorAll('[data-n]').forEach(function (b) { b.classList.toggle('on', +b.dataset.n === n); });
+      return ln('Hessian has N × N = <b>' + e.toLocaleString('en-US') + '</b> numbers') + ln('at 4 bytes each: ' + human(e * 4)) + (e > 1e8 ? chip('bad', 'Too big to store or use: why models use slope-only methods') : chip('good', 'Fine at this size')) +
+        ln('<br>Newton on f(x) = x² from x = 5: slope 10, curvature 2') + ln('new x = 5 − 10/2 = <b>0</b>  (the bottom, in one step)') + ln('<br>Bowl x² + y²: H = [[2,0],[0,2]], eigenvalues 2, 2 → bottom') + ln('Saddle x² − y²: H = [[2,0],[0,−2]], eigenvalues 2, −2 → saddle');
+    } };
+  /* ---------- lesson 5 blocks ---------- */
+  B.chain = { controls: sl('x', -3, 3, 0.5, 1, 'x'), wire: function (h, redo) { wireSl(h, { x: 1 }, redo); },
+    html: function (h) {
+      var x = h._s.x, u = 3 * x + 1, y = u * u, hh = 0.01, nu = (Math.pow(3 * (x + hh) + 1, 2) - Math.pow(3 * (x - hh) + 1, 2)) / (2 * hh);
+      return ln('y = (3x + 1)², split into two links:') + ln('link 1: u = 3x + 1 = ' + f(u) + '   (its slope is 3)') + ln('link 2: y = u² = ' + f(y) + '   (its slope is 2u = ' + f(2 * u) + ')') + ln('chain rule: dy/dx = 2u × 3 = <b>' + f(6 * u) + '</b>') + ln('nudge check: ' + f(nu, 3));
+    } };
+  B.graph = { controls: sl('x₁', -5, 5, 1, 4, 'x1') + sl('x₂', -5, 5, 1, 5, 'x2') + sl('b', -9, 9, 1, 1, 'b'), wire: function (h, redo) { wireSl(h, { x1: 4, x2: 5, b: 1 }, redo); },
+    html: function (h) {
+      var x1 = h._s.x1, x2 = h._s.x2, b = h._s.b, a = x1 * x2, c = a + b, y = Math.max(0, c), g = c > 0 ? 1 : 0, hh = 0.01;
+      var num = (Math.max(0, x1 * (x2 + hh) + b) - Math.max(0, x1 * (x2 - hh) + b)) / (2 * hh);
+      return ln('y = relu(x₁ · x₂ + b)') + ln('<b>Forward:</b> a = ' + f(x1) + ' · ' + f(x2) + ' = ' + f(a) + ',  c = ' + f(a) + ' + ' + f(b) + ' = ' + f(c) + ',  y = relu(' + f(c) + ') = ' + f(y)) +
+        ln('<b>Backward:</b> relu slope = ' + g + ' (c is ' + (g ? 'positive' : 'not positive') + ')') + ln('∂y/∂b  = ' + g + ' × 1 = <b>' + f(g) + '</b>') + ln('∂y/∂x₁ = ' + g + ' × 1 × x₂ = <b>' + f(g * x2) + '</b>') + ln('∂y/∂x₂ = ' + g + ' × 1 × x₁ = <b>' + f(g * x1) + '</b>') +
+        ln('nudge check for ∂y/∂x₂: ' + f(num, 3)) + (g ? '' : chip('warn', 'relu is switched off here, so every slope is 0'));
+    } };
+  B.boxrules = { html: function () {
+    return '<div class="tbl"><table class="t"><tr><th>Box</th><th>Input</th><th>Slope</th></tr>' +
+      '<tr><td class="mono">anything</td><td>input not in the box</td><td class="mono"><b>0</b></td></tr>' +
+      '<tr><td class="mono">p + q</td><td>p or q</td><td class="mono"><b>1</b></td></tr>' +
+      '<tr><td class="mono">p − q</td><td>p, then q</td><td class="mono"><b>1</b>, then <b>−1</b></td></tr>' +
+      '<tr><td class="mono">p × q</td><td>p, then q</td><td class="mono"><b>q</b>, then <b>p</b> (the other factor)</td></tr>' +
+      '<tr><td class="mono">relu(z)</td><td>z</td><td class="mono"><b>1</b> if z &gt; 0, else <b>0</b></td></tr>' +
+      '<tr><td class="mono">x²</td><td>x</td><td class="mono"><b>2x</b></td></tr></table></div>' +
+      '<p class="exh" style="margin-top:12px">The 4 steps, every time</p><ol style="margin:0;padding-left:18px;font-size:13.5px"><li>Name the boxes, one operation each.</li><li>Forward pass: put the numbers in and write each box\'s value.</li><li>Backward pass: start at y with slope 1, move box by box toward the input you want, and multiply by each box\'s slope from the table.</li><li>If the input appears in several places, add the results of every path.</li></ol>';
+  } };
+  B.accum = { controls: sl('x', -4, 4, 0.5, 2, 'x'), wire: function (h, redo) { wireSl(h, { x: 2 }, redo); },
+    html: function (h) {
+      var x = h._s.x, hh = 0.01, fn = function (t) { return t * t + t; }, num = (fn(x + hh) - fn(x - hh)) / (2 * hh);
+      return ln('y = x · x + x,  boxes: p = x · x,  y = p + x') + ln('forward: p = ' + f(x * x) + ',  y = ' + f(fn(x))) + ln('Path A: y → p → first x:  1 × ' + f(x) + ' = <b>' + f(x) + '</b>') + ln('Path B: y → p → second x: 1 × ' + f(x) + ' = <b>' + f(x) + '</b>') + ln('Path C: y → x directly:  <b>1</b>') + ln('add them: ' + f(x) + ' + ' + f(x) + ' + 1 = <b>' + f(2 * x + 1) + '</b>') + ln('nudge check: ' + f(num, 3));
+    } };
+  B.gradcheck = { controls: sl('x', -3, 3, 0.5, 2, 'x') + '<div class="picker"><span class="cap">step h:</span><button type="button" data-h="1">1</button><button type="button" data-h="0.5">0.5</button><button type="button" data-h="0.1">0.1</button><button type="button" data-h="0.01">0.01</button></div>',
+    wire: function (h, redo) { wireSl(h, { x: 2, h: 0.1 }, redo); h.querySelectorAll('[data-h]').forEach(function (b) { b.addEventListener('click', function () { h._s.h = +b.dataset.h; redo(); }); }); },
+    html: function (h) {
+      h.querySelectorAll('[data-h]').forEach(function (b) { b.classList.toggle('on', +b.dataset.h === h._s.h); });
+      var x = h._s.x, st = h._s.h, fn = function (t) { return t * t * t + 2 * t + 1; }, auto = 3 * x * x + 2, num = (fn(x + st) - fn(x - st)) / (2 * st), d = Math.abs(auto - num);
+      return ln('f(x) = x³ + 2x + 1') + ln('backward pass (autodiff): 3x² + 2 = <b>' + f(auto, 4) + '</b>') + ln('nudge and measure, step ' + f(st) + ': <b>' + f(num, 4) + '</b>') + ln('difference: ' + f(d, 6)) + (d < 1e-3 ? chip('good', 'They agree: the backward pass checks out') : chip('warn', 'The step h is too big for a close match. Try a smaller h.'));
+    } };
+  B.fwdrev = { controls: '<div class="picker"><span class="cap">Number of inputs N:</span><button type="button" data-n="3">3</button><button type="button" data-n="1000">1,000</button><button type="button" data-n="1000000">1,000,000</button></div>',
+    wire: function (h, redo) { h._s = { n: 1000000 }; h.querySelectorAll('[data-n]').forEach(function (b) { b.addEventListener('click', function () { h._s.n = +b.dataset.n; redo(); }); }); },
+    html: function (h) {
+      var n = h._s.n; h.querySelectorAll('[data-n]').forEach(function (b) { b.classList.toggle('on', +b.dataset.n === n); });
+      return ln('One error number (the loss) at the end.') + ln('Forward mode: one pass per input = <b>' + n.toLocaleString('en-US') + '</b> passes') + ln('Reverse mode: <b>1</b> backward pass, all ' + n.toLocaleString('en-US') + ' slopes') + (n > 100 ? chip('good', 'Reverse mode wins by a huge margin') : chip('warn', 'With very few inputs the difference is small'));
+    } };
+  /* ---------- lesson 6 blocks ---------- */
+  function sm(z) { var m = Math.max.apply(null, z), e = z.map(function (v) { return Math.exp(v - m); }), t = e.reduce(function (a, b) { return a + b; }, 0); return e.map(function (v) { return v / t; }); }
+  B.dist = { controls: sl('P(cat)', 0, 1, 0.05, 0.7, 'a') + sl('P(dog)', 0, 1, 0.05, 0.2, 'b'), wire: function (h, redo) { wireSl(h, { a: 0.7, b: 0.2 }, redo); },
+    html: function (h) {
+      var a = h._s.a, b = h._s.b, c = 1 - a - b;
+      return ln('P(cat) + P(dog) + P(bird) = 1') + ln('P(bird) = 1 − ' + f(a) + ' − ' + f(b) + ' = <b>' + f(c, 2) + '</b>') + (c < -1e-9 ? chip('bad', 'The first two already add to more than 1: not a valid distribution') : chip('good', 'Valid: all three add to 1')) +
+        ln('<br>Fair die: six outcomes, each 1/6, and 6 × 1/6 = 1') + ln('P(even) = P(2) + P(4) + P(6) = 3/6 = 0.5');
+    } };
+  B.pmfpdf = { html: function () {
+    return '<div class="tbl"><table class="t"><tr><th></th><th>PMF (discrete)</th><th>PDF (continuous)</th></tr>' +
+      '<tr><td>Outcomes</td><td>separate: 1, 2, 3 … or cat, dog, bird</td><td>any value on a line, such as a height 1.7342…</td></tr>' +
+      '<tr><td>What you read off</td><td>the probability itself: P(X = 2) = 1/6</td><td>a density; probability comes from the area over an interval</td></tr>' +
+      '<tr><td>Can it exceed 1?</td><td>no, at most 1</td><td>yes: it is a density, not a probability</td></tr>' +
+      '<tr><td>Adds up to 1 by</td><td>summing (Σ)</td><td>the total area under the curve = 1</td></tr></table></div>' +
+      ln('<br>Uniform on [0, 0.5]: the density is 1 ÷ 0.5 = <b>2</b> (above 1, and that is fine)') + ln('its area over [0, 0.5] is 2 × 0.5 = 1 ✓') + ln('Bell curve (mean 0, spread 1): density at 0 = <b>' + f(1 / Math.sqrt(2 * Math.PI), 3) + '</b>');
+  } };
+  B.expect = { html: function () {
+    var v = [1, 2, 3, 4, 5, 6], p = 1 / 6, e = v.reduce(function (s, x) { return s + x * p; }, 0), va = v.reduce(function (s, x) { return s + p * (x - e) * (x - e); }, 0);
+    return ln('Fair die, each face has probability 1/6') + ln('E[X] = 1×1/6 + 2×1/6 + … + 6×1/6 = <b>' + f(e, 3) + '</b>') + ln('Var(X) = average of (x − 3.5)² = <b>' + f(va, 3) + '</b>') + ln('standard deviation = √Var = <b>' + f(Math.sqrt(va), 3) + '</b>') + ln('Expected value is the weighted average; variance is how spread out the outcomes are.');
+  } };
+  B.softmax = { controls: sl('z₁', -5, 5, 0.5, 2, 'a') + sl('z₂', -5, 5, 0.5, 1, 'b') + sl('z₃', -5, 5, 0.5, 0, 'c') + sl('shift', -20, 20, 1, 0, 's') + '<div class="picker"><button type="button" data-big="1">Use 1000, 1001, 1002</button><button type="button" data-big="0">Use my sliders</button></div>',
+    wire: function (h, redo) { wireSl(h, { a: 2, b: 1, c: 0, s: 0, big: 0 }, redo); h.querySelectorAll('[data-big]').forEach(function (b) { b.addEventListener('click', function () { h._s.big = +b.dataset.big; redo(); }); }); },
+    html: function (h) {
+      h.querySelectorAll('[data-big]').forEach(function (b) { b.classList.toggle('on', +b.dataset.big === h._s.big); });
+      var z = h._s.big ? [1000, 1001, 1002] : [h._s.a, h._s.b, h._s.c], s = h._s.s, zs = z.map(function (v) { return v - s; });
+      var e = zs.map(function (v) { return Math.exp(v); }), t = e.reduce(function (a, b) { return a + b; }, 0), naive = e.map(function (v) { return v / t; }), safe = sm(z);
+      function row(a) { return '[' + a.map(function (v) { return isNaN(v) ? 'NaN' : f(v, 3); }).join(', ') + ']'; }
+      var bad = naive.some(function (v) { return isNaN(v); });
+      return ln('scores z = ' + row(z) + (s ? ',  minus ' + s + ' = ' + row(zs) : '')) + ln('step 1, press eᶻ: ' + row(e.map(function (v) { return isFinite(v) ? v : Infinity; }))) + ln('step 2, divide by the total: ' + row(naive)) + ln('with the trick (subtract the max first): <b>' + row(safe) + '</b>') +
+        (bad ? chip('bad', 'Overflow: eᶻ is too big to store, so the plain method breaks. The trick still works.') : chip('good', 'Plain method and trick agree. Try changing "shift": nothing changes.'));
+    } };
+  B.logce = { controls: sl('q', 0.01, 1, 0.01, 0.66, 'q'), wire: function (h, redo) { wireSl(h, { q: 0.66 }, redo); },
+    html: function (h) {
+      var q = h._s.q;
+      return ln('q = the probability given to the correct answer = ' + f(q)) + ln('log(q) = ' + f(Math.log(q), 3)) + ln('loss = −log(q) = <b>' + f(-Math.log(q), 3) + '</b>') + (q > 0.8 ? chip('good', 'Confident and right: small loss') : q > 0.3 ? chip('warn', 'Unsure: medium loss') : chip('bad', 'The correct answer got a low probability: large loss')) +
+        ln('<br>Model A gives the right answer 0.9: loss ' + f(-Math.log(0.9), 2) + '.  Model B gives 0.1: loss ' + f(-Math.log(0.1), 2) + '.');
+    } };
+  B.logsum = { controls: sl('words', 1, 400, 1, 50, 'n') + '<div class="picker"><span class="cap">probability of each word:</span><button type="button" data-p="0.5">0.5</button><button type="button" data-p="0.1">0.1</button><button type="button" data-p="0.01">0.01</button></div>',
+    wire: function (h, redo) { wireSl(h, { n: 50, p: 0.01 }, redo); h.querySelectorAll('[data-p]').forEach(function (b) { b.addEventListener('click', function () { h._s.p = +b.dataset.p; redo(); }); }); },
+    html: function (h) {
+      h.querySelectorAll('[data-p]').forEach(function (b) { b.classList.toggle('on', +b.dataset.p === h._s.p); });
+      var n = h._s.n, p = h._s.p, raw = 1; for (var i = 0; i < n; i++) raw *= p; var lg = n * Math.log(p);
+      return ln('each word has probability ' + f(p) + ',  ' + n + ' words') + ln('multiplied together: ' + (raw === 0 ? '<b>0</b>' : raw.toExponential(2))) + ln('added as logs: ' + n + ' × ' + f(Math.log(p), 3) + ' = <b>' + f(lg, 2) + '</b>') +
+        (raw === 0 ? chip('bad', 'Underflow: the product is too small to store, so the computer writes 0. The log sum is still fine.') : chip('good', 'Product still fits. Add more words to see it break.'));
+    } };
+  /* ---------- lesson 7 blocks ---------- */
+  B.bayescount = { controls: sl('sick %', 0.01, 20, 0.01, 0.01, 'p') + sl('catch %', 50, 100, 1, 99, 'c') + sl('false %', 0, 20, 0.5, 1, 'f'), wire: function (h, redo) { wireSl(h, { p: 0.01, c: 99, f: 1 }, redo); },
+    html: function (h) {
+      var N = 10000, sick = N * h._s.p / 100, healthy = N - sick, tp = sick * h._s.c / 100, fp = healthy * h._s.f / 100, all = tp + fp, post = all ? tp / all : 0;
+      return ln('Imagine 10,000 people take the test.') + ln('sick: <b>' + f(sick, 1) + '</b>,  healthy: ' + f(healthy, 1)) + ln('sick who test positive: ' + f(sick, 1) + ' × ' + h._s.c + '% = <b>' + f(tp, 1) + '</b>') + ln('false alarms: ' + f(healthy, 1) + ' × ' + h._s.f + '% = <b>' + f(fp, 1) + '</b>') + ln('all who test positive: ' + f(tp, 1) + ' + ' + f(fp, 1) + ' = <b>' + f(all, 1) + '</b>') +
+        ln('chance sick given positive = ' + f(tp, 1) + ' ÷ ' + f(all, 1) + ' = <b>' + f(post * 100, 1) + '%</b>') + (post < 0.2 ? chip('bad', 'Most positives are false alarms: the rare disease dominates') : post < 0.7 ? chip('warn', 'About even odds') : chip('good', 'A positive is strong evidence'));
+    } };
+  B.bayesform = { controls: sl('P(A)', 0, 1, 0.01, 0.3, 'pa') + sl('P(B|A)', 0, 1, 0.005, 0.05, 'l') + sl('P(B|¬A)', 0, 1, 0.001, 0.001, 'ln'), wire: function (h, redo) { wireSl(h, { pa: 0.3, l: 0.05, ln: 0.001 }, redo); },
+    html: function (h) {
+      var pa = h._s.pa, l = h._s.l, ln2 = h._s.ln, pb = l * pa + ln2 * (1 - pa), post = pb ? l * pa / pb : 0;
+      return ln('prior P(A) = ' + f(pa, 3) + ',  likelihood P(B | A) = ' + f(l, 3) + ',  P(B | not A) = ' + f(ln2, 3)) + ln('evidence P(B) = ' + f(l, 3) + ' × ' + f(pa, 3) + ' + ' + f(ln2, 3) + ' × ' + f(1 - pa, 3) + ' = <b>' + f(pb, 5) + '</b>') + ln('posterior P(A | B) = ' + f(l * pa, 5) + ' ÷ ' + f(pb, 5) + ' = <b>' + f(post, 4) + '</b>') + '<div class="cap">Defaults are the spam word "lottery": 30% → 95.5%.</div>';
+    } };
+  B.laplace = { controls: sl('count', 0, 50, 1, 0, 'c'), wire: function (h, redo) { wireSl(h, { c: 0 }, redo); },
+    html: function (h) {
+      var c = h._s.c, raw = c / 100, sm1 = (c + 1) / 1100, rest = 0.2 * 0.1;
+      return ln('a word seen ' + c + ' times among 100 spam words, vocabulary 1,000') + ln('plain count: ' + c + ' ÷ 100 = <b>' + f(raw, 4) + '</b>') + ln('Laplace: (' + c + ' + 1) ÷ (100 + 1000) = <b>' + f(sm1, 5) + '</b>') + ln('<br>With two other words (0.2 and 0.1), the product is:') + ln('plain: 0.2 × 0.1 × ' + f(raw, 4) + ' = <b>' + f(rest * raw, 6) + '</b>') + ln('smoothed: 0.2 × 0.1 × ' + f(sm1, 5) + ' = <b>' + f(rest * sm1, 7) + '</b>') + (c === 0 ? chip('bad', 'Unseen word: the plain product is 0 and wipes out the whole score') : chip('good', 'Word seen: both versions are non-zero'));
+    } };
+  B.mlemap = { controls: sl('heads', 0, 20, 1, 3, 'h') + sl('tails', 0, 20, 1, 0, 't') + sl('pretend', 0, 10, 1, 2, 'k'), wire: function (h, redo) { wireSl(h, { h: 3, t: 0, k: 2 }, redo); },
+    html: function (h) {
+      var a = h._s.h, b = h._s.t, k = h._s.k, n = a + b, mle = n ? a / n : NaN, d = n + 2 * k, map = d ? (a + k) / d : NaN;
+      return ln(a + ' heads and ' + b + ' tails') + ln('MLE = heads ÷ flips = ' + (n ? a + ' ÷ ' + n + ' = <b>' + f(mle, 3) + '</b>' : 'no flips yet')) + ln('MAP with ' + k + ' pretend heads and ' + k + ' pretend tails: (' + a + ' + ' + k + ') ÷ (' + n + ' + ' + (2 * k) + ') = ' + (d ? '<b>' + f(map, 3) + '</b>' : 'no data')) +
+        (n && (mle === 1 || mle === 0) ? chip('warn', 'MLE says "always" or "never" from this little data. MAP pulls it back toward 0.5.') : chip('good', 'With more flips the two get closer: the data outweighs the prior'));
+    } };
+  B.beta = { controls: sl('heads', 0, 30, 1, 7, 'h') + sl('tails', 0, 30, 1, 3, 't') + sl('+heads', 0, 30, 1, 2, 'h2') + sl('+tails', 0, 30, 1, 0, 't2'), wire: function (h, redo) { wireSl(h, { h: 7, t: 3, h2: 2, t2: 0 }, redo); },
+    html: function (h) {
+      var s = h._s, a1 = 1 + s.h, b1 = 1 + s.t, a2 = a1 + s.h2, b2 = b1 + s.t2;
+      return ln('start: Beta(1, 1), "no opinion"') + ln('after ' + s.h + ' heads and ' + s.t + ' tails: Beta(1 + ' + s.h + ', 1 + ' + s.t + ') = <b>Beta(' + a1 + ', ' + b1 + ')</b>,  average ' + f(a1 / (a1 + b1), 3)) +
+        ln('then ' + s.h2 + ' more heads and ' + s.t2 + ' more tails: <b>Beta(' + a2 + ', ' + b2 + ')</b>,  average ' + f(a2 / (a2 + b2), 3)) + ln('same as doing all at once: Beta(1 + ' + (s.h + s.h2) + ', 1 + ' + (s.t + s.t2) + ') = Beta(' + a2 + ', ' + b2 + ') ✓') + '<div class="cap">Today\'s posterior is tomorrow\'s prior.</div>';
+    } };
+  B.eigenintro = { html: function () {
+    var M = [[3, 0], [0, 1]];
+    return ln('Matrix M, which triples x and keeps y:') + eqr(mt(M)) + arrowRows(M, [[1, 0], [0, 1], [1, 1], [2, 0]]) +
+      ln('<br>Now your A:') + eqr(mt(S.A)) + arrowRows(S.A, [[1, 0], [1, 1], [1, -1]]) + '<div class="cap">Test: is the result a multiple of the starting arrow?</div>';
+  } };
+  B.lora = { html: function () {
+    var u = S.u, v = S.v, P = [[u[0] * v[0], u[0] * v[1]], [u[1] * v[0], u[1] * v[1]]];
+    return eqr(vt(u), op('@'), mt([v]), op('='), mt(P)) + ln('2×1 @ 1×2 = 2×2: a <b>rank 1</b> grid built from just ' + 4 + ' numbers (u and v).') + ln('det = ' + f(det2(P)) + ' (always 0 for a rank-1 2×2)') +
+      ln('<br>Scaled up: m = n = 1000, r = 8') + ln('full matrix: 1000 × 1000 = <b>1,000,000</b> numbers') + ln('two thin ones: 1000×8 + 8×1000 = <b>16,000</b> numbers');
+  } };
+  B.eigen = { html: function () {
+    var A = S.A, tr = A[0][0] + A[1][1], dt = det2(A), ev = eigen(A);
+    var h = ln('trace = ' + f(A[0][0]) + ' + ' + f(A[1][1]) + ' = ' + f(tr) + ',  det = ' + f(dt)) + ln('Solve λ² − (' + f(tr) + ')λ + (' + f(dt) + ') = 0');
+    if (!ev) return h + chip('warn', 'No real solutions: every direction turns (rotation-like). No real eigenvectors.');
+    ev.forEach(function (e, k) { var Av = app(A, e.v); h += ln('<b>λ' + (k + 1) + ' = ' + f(e.l, 3) + '</b>, direction (' + f(e.v[0], 3) + ', ' + f(e.v[1], 3) + ')') + ln('  A·v = (' + f(Av[0], 3) + ', ' + f(Av[1], 3) + ')  =  λ·v = (' + f(e.l * e.v[0], 3) + ', ' + f(e.l * e.v[1], 3) + ') ✓'); });
+    var items = []; ev.forEach(function (e) { items.push({ t: 'l', x0: -4 * e.v[0], y0: -4 * e.v[1], x1: 4 * e.v[0], y1: 4 * e.v[1], k: 'dash' }); });
+    items.push({ t: 'p', pts: [[0, 0], [1, 0], [1, 1], [0, 1]].map(function (p) { return app(A, p); }), k: 'shape' }, { t: 'p', pts: [[0, 0], [1, 0], [1, 1], [0, 1]], k: 'ghost' });
+    return h + plot(items) + '<div class="cap">Dashed lines: the eigenvector directions.</div>';
+  } };
+  B.decomp = { html: function () {
+    var A = S.A, ev = eigen(A); if (!ev || ev.length < 2) return ln('This matrix has fewer than 2 real eigenvector directions, so no eigendecomposition.');
+    var V = [[ev[0].v[0], ev[1].v[0]], [ev[0].v[1], ev[1].v[1]]], D = [[ev[0].l, 0], [0, ev[1].l]], Vi = inv2(V); if (!Vi) return ln('The eigenvectors are not independent: no eigendecomposition.');
+    return eqr('V =', mt(V.map(function (r) { return r.map(function (x) { return Math.round(x * 1000) / 1000; }); })), op('D ='), mt(D)) + ln('V holds the eigenvectors as columns, D the eigenvalues on the diagonal.') + ln('V @ D @ V⁻¹ gives back A:') + eqr(mt(mmul(mmul(V, D), Vi).map(function (r) { return r.map(function (x) { return Math.round(x * 1e6) / 1e6; }); })));
+  } };
+
+  /* ---------- content ---------- */
+  var PARTS = [
+    { id: 'p0', t: 'Part 0 · Read the notation', d: 'Before any operation: what the letters, subscripts and shapes mean.' },
+    { id: 'p1', t: 'Part 1 · Vector operations', d: 'A vector is a list of numbers. These are the moves you can make with one or two of them.' },
+    { id: 'p2', t: 'Part 2 · Matrix operations', d: 'A matrix is a grid. The same ideas, one dimension up.' },
+    { id: 'p3', t: 'Part 3 · Numbers that summarize a matrix', d: 'One number can tell you whether a matrix loses information.' },
+    { id: 'p4', t: 'Part 4 · Matrices as moves', d: 'A matrix moves every point in space. This is the picture behind eigenvectors and, later, PCA.' },
+    { id: 'p5c', t: 'Part 5 · Calculus: slopes and learning', d: 'How a model works out which way to turn each weight. Every example here has a slider or buttons you can move.' },
+    { id: 'p6c', t: 'Part 6 · Probability: describing uncertainty', d: 'A model never says one answer. It says how likely each answer is. These are the pieces behind that, and how a model gets graded on it.' },
+    { id: 'p7c', t: 'Part 7 · Bayes: updating beliefs', d: 'How to change how likely something is when new evidence arrives. Counting a crowd is the easiest way in.' }
+  ];
+  var E = [
+    ['p0', 'symbols', 'Aᵢⱼ', 'Symbol decoder', 'Foundation', 'L1–3', 'Every symbol on this sheet in one table. Use it like a legend.', '', '', 'Nearly every AI paper uses these exact symbols.', 'symbols'],
+    ['p0', 'types', 'a · v · A', 'Scalar, vector, matrix', 'Foundation', 'L1', 'A <b>scalar</b> is one number. A <b>vector</b> is a list of numbers. A <b>matrix</b> is a grid of numbers. Lowercase letters name scalars and vectors; capitals name matrices.', 'scalar: 7 &nbsp; vector: [3, 4] &nbsp; matrix: rows × columns', 'A vector is just a matrix with one column. Here a 2-number vector is also a 2×1 matrix.', 'A word\'s meaning is a vector of about 1,000 numbers. A model\'s weights are matrices.', 'types'],
+    ['p0', 'index', 'Aᵢⱼ', 'Entry: row i, column j', 'Foundation', 'L2', 'A<sub>ij</sub> is the number in row i, column j. Rows first, then columns.', 'i counts down, j counts across', 'Maths counts from 1. Python counts from 0, so A<sub>12</sub> on paper is A[0][1] in code.', 'Code like weights[i][j] reads exactly this.', 'index'],
+    ['p0', 'shape', 'm × n', 'Shape', 'Foundation', 'L2', 'Rows × columns, said "m by n". A 2×3 matrix has 2 rows and 3 columns.', 'rows first, columns second', '2×3 and 3×2 are different shapes.', 'A layer with 784 inputs and 128 outputs is a 128×784 weight matrix.', 'shape'],
+    ['p0', 'special', '0 · I · D', 'Special matrices', 'Foundation', 'L2', '<b>Zero:</b> all 0s. <b>Identity I:</b> 1s on the diagonal, 0s elsewhere. <b>Diagonal:</b> only the diagonal is non-zero. <b>Symmetric:</b> equal to its own transpose.', 'I·M = M·I = M', 'The identity is always square (same number of rows and columns).', 'The identity is the shortcut path inside "residual connections" in deep models.', 'special'],
+
+    ['p1', 'vadd', 'u ± v', 'Add and subtract', 'Foundation', 'L1', 'Add or subtract matching positions. Picture: walk along u, then along v.', '(u + v)ᵢ = uᵢ + vᵢ<br>both need the same length', 'You cannot add a 2-number vector to a 3-number vector.', 'A famous embedding trick: king − man + woman lands near queen.', 'vadd'],
+    ['p1', 'vscale', 'c·v', 'Scale a vector', 'Foundation', 'L1', 'Multiply every entry by the number c. c &gt; 1 stretches, between 0 and 1 shrinks, negative flips the direction.', '(c·v)ᵢ = c × vᵢ', 'Scaling changes length, not the line the vector lies on. A negative c flips it.', 'Learning rate × slope is a scaling step: how big a move to make.', 'vscale'],
+    ['p1', 'mag', '|v|', 'Length (magnitude)', 'Foundation', 'L1', 'The length of the arrow: square each entry, add, take the square root. The 3-4-5 triangle gives |[3,4]| = 5.', '|v| = √(v₁² + v₂² + …)', 'Square first, then add, then root. It is not 3 + 4.', 'Normalizing an embedding means dividing it by its length so it has length 1.', 'mag'],
+    ['p1', 'dot', 'u·v', 'Dot product', 'Core', 'L1', 'Multiply matching positions and add. One number comes out. It measures how aligned two vectors are.', 'u·v = u₁v₁ + u₂v₂ + …<br>&gt; 0 alike · 0 unrelated · &lt; 0 opposite', 'The answer is a single number, not a vector.', 'Search ranks manual passages by dot products between the question and each passage.', 'dot'],
+    ['p1', 'cos', 'cos θ', 'Cosine similarity and angle', 'Core', 'L1', 'The dot product divided by both lengths. It runs from −1 to 1 whatever the sizes.', 'cos θ = u·v / (|u| |v|)', 'Cosine ignores length; the raw dot product does not.', 'This is the score behind "how close is this passage to the question".', 'cos'],
+    ['p1', 'proj', 'proj', 'Projection', 'Core', 'L1', 'The part of u that lies along v. What is left over sits at a right angle to v.', 'proj<sub>v</sub>(u) = (u·v / v·v) · v', 'Divide by v·v, not by |v|, because the result is multiplied by v again.', 'Least-squares fitting and PCA are built on projections.', 'proj'],
+
+    ['p2', 'madd', 'A ± B', 'Add and subtract', 'Foundation', 'L2', 'Both matrices need the same shape. Add or subtract matching entries.', '(A + B)ᵢⱼ = Aᵢⱼ + Bᵢⱼ', 'Different shapes cannot be added, except by broadcasting (below).', 'Adding the bias after a layer.', 'madd'],
+    ['p2', 'mscale', 'cA', 'Scale a matrix', 'Foundation', 'L2', 'Multiply every entry by c.', '(cA)ᵢⱼ = c × Aᵢⱼ<br>det(cA) = c² det(A) for 2×2', 'Scaling by c multiplies the 2×2 determinant by c², not c.', 'Learning rate × slope matrix is how weights get nudged.', 'mscale'],
+    ['p2', 'had', 'A ⊙ B', 'Element-wise product', 'Foundation', 'L2', 'Multiply matching positions. This is <b>not</b> the matrix product.', '(A ⊙ B)ᵢⱼ = Aᵢⱼ × Bᵢⱼ<br>same shape required', 'In Python, * is element-wise and @ is the matrix product.', 'Gates inside some models multiply values position by position.', 'had'],
+    ['p2', 'transpose', 'Aᵀ', 'Transpose', 'Foundation', 'L2', 'Swap rows and columns. Row i becomes column i.', '(Aᵀ)ᵢⱼ = Aⱼᵢ<br>m×n becomes n×m<br>(Aᵀ)ᵀ = A &nbsp; (AB)ᵀ = BᵀAᵀ', '(AB)ᵀ reverses the order: BᵀAᵀ, not AᵀBᵀ.', 'Backpropagation, the learning step, uses transposed weight matrices.', 'transpose'],
+    ['p2', 'matvec', 'A v', 'Matrix times vector', 'Core', 'L2', 'Each output number is one row of A dotted with v.', '(Av)ᵢ = row i of A · v<br>A is m×n, v has n numbers, answer has m', 'The vector\'s length must equal the number of columns of A.', 'One layer of a network, before the bias and activation.', 'matvec'],
+    ['p2', 'matmul', 'AB', 'Matrix times matrix', 'Core', 'L2', 'Entry (i, j) of AB is row i of A dotted with column j of B. Pick an entry below and follow the highlights.', '(AB)ᵢⱼ = row i of A · column j of B<br>(m×n)@(n×p) = m×p', 'AB and BA are usually different.', 'Stacked layers are a chain of matrix products.', 'matmul'],
+    ['p2', 'shaperule', 'm×n @ n×p', 'Shape check', 'Foundation', 'L2', 'The inner two numbers must match and cancel. The outer two give the result\'s shape.', '(m × <b>n</b>) @ (<b>n</b> × p) = m × p', 'Check shapes before multiplying. Most "shape mismatch" errors are this rule breaking.', 'A pipeline fails here when an embedding has the wrong size.', 'shaperule'],
+    ['p2', 'broadcast', 'M + b', 'Broadcasting', 'Core', 'L2', 'A shorter row is copied down every row of the matrix so the shapes match, then added.', 'allowed when the sizes match or one of them is 1', 'It only stretches along a direction whose size is 1.', 'How one bias vector is added to a whole batch of outputs.', 'broadcast'],
+    ['p2', 'identity', 'AI = A', 'Identity in action', 'Foundation', 'L2', 'Multiplying by the identity changes nothing, like multiplying a number by 1.', 'A·I = I·A = A', 'Only matching sizes work: a 2×2 identity pairs with a 2×2.', 'Residual connections add the input back through an identity path.', 'identity'],
+
+    ['p3', 'det', 'det(A)', 'Determinant', 'Core', 'L2–3', 'One number: how much A scales area. 0 means the area is crushed flat and the move cannot be undone.', '2×2: det = ad − bc<br>for A = [[a, b], [c, d]]', 'Diagonal products: top-left × bottom-right, minus top-right × bottom-left. The order matters.', 'A zero determinant means information is lost, and no inverse exists.', 'det'],
+    ['p3', 'inverse', 'A⁻¹', 'Inverse', 'Core', 'L2', 'The matrix that undoes A. Multiply A by its inverse and you get the identity.', '2×2: A⁻¹ = (1/det) · [[d, −b], [−c, a]]<br>A · A⁻¹ = I', 'Swap the diagonal, flip the signs of the other two, divide by det. If det = 0, stop.', 'Solving for weights in regression uses inverses (or safer tricks like them).', 'inverse'],
+    ['p3', 'indep', 'indep.', 'Linear independence', 'Core', 'L1', 'Columns are independent if none is a mix of the others. For a 2×2 matrix this means det ≠ 0.', 'independent ⟺ det ≠ 0 (2×2)', 'Three vectors in 3D are not automatically independent.', 'A feature that is a mix of other features adds nothing and confuses regression.', 'indep'],
+    ['p3', 'rank', 'rank(A)', 'Rank', 'Core', 'L1', 'The number of independent columns: how many dimensions of information the matrix keeps.', 'rank ≤ min(rows, columns)', 'Full rank means nothing is lost; lower rank means some directions are squashed.', 'LoRA fine-tuning works with low-rank updates: two thin matrices that carry few dimensions.', 'rank'],
+
+    ['p3', 'lora', 'u vᵀ', 'Low rank and LoRA', 'Stretch', 'L1', 'A big grid can be built by multiplying a tall thin grid by a short wide one. Such a grid is <b>low rank</b>. <b>LoRA</b> fine-tunes a model by learning the <i>change</i> to a frozen weight matrix as two thin matrices instead of one huge one.', '(m × r) @ (r × n) = m × n<br>numbers trained: r(m + n) instead of m·n', 'The thin matrices share a small size r (the rank). If r is large, the saving disappears.', 'A 1000×1000 weight matrix has 1,000,000 numbers. LoRA with r = 8 trains 16,000.', 'lora'],
+    ['p4', 'move', 'A as a move', 'Reading a matrix as a move', 'Core', 'L3', 'Column 1 shows where "right" [1,0] lands. Column 2 shows where "up" [0,1] lands. Every other point follows from those two.', 'A·[1,0] = column 1<br>A·[0,1] = column 2', 'Read the columns, not the rows.', 'A layer reshapes the whole cloud of data points this way.', 'move'],
+    ['p4', 'fourmoves', 'R · S · Sh · F', 'Rotate, stretch, shear, reflect', 'Core', 'L3', 'Four building-block moves. Slide θ to change the rotation.', 'R(θ) = [[cos θ, −sin θ], [sin θ, cos θ]]<br>S = [[sx, 0], [0, sy]] &nbsp; Sh = [[1, k], [0, 1]]', 'Rotation keeps lengths (det 1). A reflection has det −1.', 'Image augmentation rotates and flips training pictures this way.', 'fourmoves'],
+    ['p4', 'compose', 'AB', 'Combining moves', 'Core', 'L3', 'Doing B first and then A is the single matrix AB. The order is a real choice.', '(AB)v = A(Bv)<br>the matrix on the right acts first', 'The right-hand matrix acts first, which feels backwards.', 'Layers act in a fixed order; shuffle them and you get a different model.', 'compose'],
+    ['p4', 'eigenintro', 'λ, v', 'Eigenvectors, step by step', 'Foundation', 'L3', 'Start here before the formula. Push a few arrows through a matrix. An arrow that <b>keeps pointing along the same line</b> is an <b>eigenvector</b>. The number it was stretched by is its <b>eigenvalue</b> ("eigen" is German for "own": the matrix\'s own directions).', 'arrow → M·arrow<br>same line? yes: eigenvector, stretch = eigenvalue<br>no: the matrix turned it', 'Length does not decide it. Only whether the result lies on the same line as the original.', 'These directions are what PCA keeps when it compresses data.', 'eigenintro'],
+    ['p4', 'eigen', 'λ, v', 'Eigenvalues and eigenvectors', 'Stretch', 'L3', 'An <b>eigenvector</b> is a direction the matrix only stretches, never turns. Its <b>eigenvalue</b> λ is the stretch factor.', 'A·v = λ·v<br>2×2: solve λ² − tr(A)·λ + det(A) = 0', 'The zero vector never counts as an eigenvector.', 'PCA keeps the eigenvector directions with the largest eigenvalues. An eigenvalue above 1 makes repeated steps explode.', 'eigen'],
+    ['p4', 'decomp', 'VDV⁻¹', 'Eigendecomposition', 'Stretch', 'L3', 'Split A into three steps: switch to the eigenvector directions, stretch each by its eigenvalue, switch back.', 'A = V · D · V⁻¹<br>V: eigenvectors as columns · D: eigenvalues on the diagonal', 'Not every matrix has one. A pure rotation has no real eigenvectors.', 'It explains PCA and makes repeated multiplication cheap.', 'decomp'],
+    ['p5c', 'deriv', 'f′(x)', 'Derivative: the slope', 'Foundation', 'L4', 'The derivative is the slope of the ground at a point: how fast the height changes when you nudge x. For the bowl f(x) = x² the slope is 2x.', 'f′(x) = 2x for f(x) = x²<br>positive: uphill to the right<br>negative: downhill · zero: flat', 'A slope of 0 means flat, which could be a bottom or a top.', 'A model\'s training signal is a slope: how much the error changes when one weight is nudged.', 'deriv'],
+    ['p5c', 'cdiff', '(f(x+h)−f(x−h))/2h', 'Checking a slope with arithmetic', 'Foundation', 'L4', 'Measure a slope by stepping a tiny amount to both sides and dividing the rise by the width. No formula needed.', 'f′(x) ≈ (f(x+h) − f(x−h)) / (2h)', 'Use both sides. A one-sided step is less accurate.', 'Used to double-check the exact slope formulas in training code.', 'cdiff'],
+    ['p5c', 'gradient', '∇f', 'Partial derivatives and the gradient', 'Core', 'L4', 'With many inputs, a <b>partial derivative</b> is the slope when you nudge one input and hold the others still. The <b>gradient</b> is the list of all of them. It points straight uphill; its negative points downhill.', '∇f = [∂f/∂x, ∂f/∂y, …]<br>f = x² + 3xy + y²: ∂f/∂x = 2x + 3y, ∂f/∂y = 3x + 2y', 'The gradient points uphill. Learning steps go the opposite way, with a minus sign.', 'A model with a million weights has a gradient with a million numbers.', 'gradient'],
+    ['p5c', 'gd', 'x − lr·f′', 'Gradient descent and the learning rate', 'Core', 'L4', 'Walk downhill: new x = old x − learning rate × slope, then repeat. The <b>learning rate</b> is the step size you choose.', 'w ← w − lr × dL/dw<br>too big: overshoots and blows up<br>too small: crawls', 'A bigger learning rate is not always faster. Past a point it diverges.', 'This is how every model, including the one behind BOULON, gets trained.', 'gd'],
+    ['p5c', 'hessian', 'H', 'Curvature, the Hessian and Newton\'s method', 'Stretch', 'L4', 'The slope says which way is downhill. The <b>curvature</b> says how sharply the ground bends. Newton\'s method uses both and can jump to the bottom in one step. The <b>Hessian</b> is the N × N grid of curvatures for N weights.', 'Newton step: x − slope / curvature<br>all Hessian eigenvalues positive: bottom<br>mixed signs: saddle', 'Newton looks great on small problems. The N × N grid is why it does not scale to millions of weights.', 'Training tricks like Adam approximate curvature cheaply instead.', 'hessian'],
+    ['p5c', 'chain', 'dy/dx = dy/du · du/dx', 'The chain rule', 'Core', 'L5', 'When one function feeds into another, the slope of the whole chain is the <b>product of the slopes of each link</b>, like gears: if A turns B twice as fast and B turns C three times as fast, A turns C 2 × 3 = 6 times as fast.', 'y = f(g(x))<br>dy/dx = f′(g(x)) · g′(x)', 'Multiply the link slopes. Do not add them.', 'A model is a long chain of links, so its slopes are products along the chain.', 'chain'],
+    ['p5c', 'graph', '∂y/∂x₂', 'Computation graph: forward and backward pass', 'Core', 'L5', 'Write a formula as a flowchart with one operation per box. <b>Forward pass:</b> put numbers in and compute each box left to right. <b>Backward pass:</b> start at the output with slope 1, walk right to left, multiplying each box\'s own slope. ∂y/∂x₂ means "how much y changes when only x₂ goes up a little".', 'forward: a = x₁ · x₂, c = a + b, y = relu(c)<br>backward: multiply the box slopes along the path from y to the input', 'Mixing up the two directions. Values are computed forward; slopes are computed backward.', 'This backward walk is backpropagation. Autodiff (PyTorch\'s .backward()) does it for every weight automatically.', 'graph'],
+    ['p5c', 'boxrules', '0 · 1 · other', 'Slope rules for each box', 'Foundation', 'L5', 'Every box\'s slope is 0, 1, −1, or the other factor. Check in this order: not in the box → 0; added → 1; subtracted → −1; multiplied → the other thing; relu → 1 if positive, 0 otherwise.', 'the only slope that is not 0 or 1 is the number a variable is multiplied by', 'Forgetting the relu switch: when relu\'s input is negative, every slope behind it becomes 0.', 'Autodiff engines are just this table applied box by box.', 'boxrules'],
+    ['p5c', 'accum', '+=', 'Slopes add up when a value is reused', 'Core', 'L5', 'If the same number feeds into several places, each path gives a slope contribution, and you <b>add</b> them. In code this is <b>+=</b> ("add to what is already stored"), not = (which would overwrite).', 'dy/dx = (sum over every path from y to x) of the product of box slopes<br>y = x · x + x: 2x + 1', 'Counting only one path. Every place the value is used counts.', 'A weight reused in several places gets one slope per use, summed.', 'accum'],
+    ['p5c', 'gradcheck', 'auto vs nudge', 'Gradient checking', 'Core', 'L5', 'Test a backward pass by comparing its slopes with the nudge-and-measure slopes from Lesson 4. If they agree to many decimals, the backward pass is right.', '(f(x + h) − f(x − h)) / (2h) ≈ autodiff slope', 'Using a step h that is too big. The match improves as h shrinks.', 'Run it whenever you write a new backward step, before trusting a training run.', 'gradcheck'],
+    ['p5c', 'fwdrev', 'forward vs reverse', 'Reverse mode vs forward mode', 'Stretch', 'L5', '<b>Forward mode</b> pushes slopes from the inputs and needs one pass per input. <b>Reverse mode</b> pulls slopes back from the output and gets every input\'s slope in one pass. Models have millions of inputs and one loss, so they use reverse mode.', 'many inputs, one output → reverse mode<br>one input, many outputs → forward mode', 'Thinking forward mode is wrong. It is just slower for models with many weights.', 'This is why training a model costs about two passes, not millions.', 'fwdrev'],
+    ['p6c', 'dist', 'P(A)  ·  Σ pᵢ = 1', 'Probability and distributions', 'Foundation', 'L6', 'A <b>probability</b> is a number from 0 (impossible) to 1 (certain). A <b>distribution</b> lists the probability of every possible outcome, and they must <b>add up to exactly 1</b>.', 'P(A) is between 0 and 1<br>Σ pᵢ = 1 over all outcomes<br>P(A | B) = P(A and B) / P(B)', 'Probabilities that add to more than 1 are not a valid distribution.', 'A model never answers "X". It outputs a distribution: 91% X, 6% Y, 3% Z.', 'dist'],
+    ['p6c', 'pmfpdf', 'PMF · PDF', 'Discrete vs continuous: PMF and PDF', 'Core', 'L6', 'A <b>PMF</b> (probability mass function) gives the exact probability of each separate outcome. A <b>PDF</b> (probability density function) gives a density for a continuous quantity; probability comes from the area over an interval.', 'PMF: P(X = k), the values add to 1<br>PDF: f(x), the total area is 1, and P(a ≤ X ≤ b) = area over [a, b]', 'A PDF value can be bigger than 1. It is a density, not a probability.', 'Class outputs are PMFs; continuous latent spaces (VAEs) use PDFs.', 'pmfpdf'],
+    ['p6c', 'expect', 'E[X] · Var(X)', 'Expected value and variance', 'Core', 'L6', 'The <b>expected value</b> is the weighted average of the outcomes. The <b>variance</b> measures how spread out they are around it, and its square root is the standard deviation.', 'E[X] = Σ xᵢ · P(xᵢ)<br>Var(X) = E[(X − E[X])²]', 'The expected value does not have to be a possible outcome: a fair die has E[X] = 3.5.', 'The loss you minimize is an expected value over the data. High variance in the slopes means noisy training.', 'expect'],
+    ['p6c', 'softmax', 'softmax(zᵢ)', 'Softmax and the max-subtraction trick', 'Core', 'L6', 'The network\'s raw scores (<b>logits</b>) become probabilities in two steps: press the eᶻ button on every score, then divide each by the total. The <b>trick</b>: subtract the biggest score first, so eᶻ never overflows. The answer is identical.', 'softmax(zᵢ) = eᶻⁱ / Σ eᶻʲ<br>softmax(z − c) = softmax(z) for any constant c', 'Forgetting the trick: scores like 1000 make eᶻ overflow and the result is NaN.', 'This is the last step of nearly every classifier and of every language model\'s next-word choice.', 'softmax'],
+    ['p6c', 'logce', '−log(q)', 'Log and cross-entropy loss', 'Core', 'L6', 'The model\'s grade on one example is <b>−log(q)</b>, where q is the probability it gave to the <b>correct</b> answer. The lower q is, the higher the loss.', 'loss = −log(q(true class))<br>q = 1 → 0 · q = 0.5 → 0.69 · q = 0.1 → 2.30', 'Using the largest probability instead of the one for the true answer.', 'Training pushes q for the right answer up, which pushes this loss down.', 'logce'],
+    ['p6c', 'logsum', 'log(a · b) = log a + log b', 'Log probabilities and underflow', 'Core', 'L6', 'A sentence\'s probability is a product of many small probabilities, and it quickly gets smaller than the computer can store (<b>underflow</b>, rounded to 0). Taking logs turns the product into a sum of ordinary negative numbers.', 'log(a × b) = log(a) + log(b)<br>log probabilities are ≤ 0; more negative = less likely', 'Adding the raw probabilities instead of their logs, or forgetting one log per word.', 'Language models score text in log probabilities for exactly this reason.', 'logsum'],
+    ['p7c', 'bayescount', 'P(A | B)', 'Bayes by counting', 'Foundation', 'L7', 'The easiest way to see Bayes: imagine a crowd and count. Of everyone who shows the evidence, how many really have the thing? A "99% accurate" test for a very rare disease still gives mostly false alarms.', 'chance = (people with the thing who show the evidence) ÷ (everyone who shows the evidence)', 'Dividing by the wrong group. The bottom of the fraction is everyone who tested positive, not the sick, not the whole crowd.', 'A diagnosis from a symptom is this reasoning: how likely is each cause, given what we see?', 'bayescount'],
+    ['p7c', 'bayesform', 'P(A|B) = P(B|A)·P(A) / P(B)', 'Bayes\' theorem', 'Core', 'L7', 'The counting recipe written in symbols. <b>Prior</b> P(A): belief before the evidence. <b>Likelihood</b> P(B | A): how likely the evidence is if A is true. <b>Evidence</b> P(B): how often the evidence appears overall. <b>Posterior</b> P(A | B): the updated belief.', 'P(A | B) = P(B | A) · P(A) / P(B)<br>P(B) = P(B | A) · P(A) + P(B | not A) · P(not A)', 'Forgetting to divide by P(B). Without it you answer "how many of ALL cases have both", not "how many of the cases with B".', 'Every spam filter and diagnostic tool uses this update.', 'bayesform'],
+    ['p7c', 'laplace', '(count + 1) ÷ (total + V)', 'Naive Bayes and Laplace smoothing', 'Core', 'L7', '<b>Naive Bayes</b> scores a class by multiplying each word\'s chance given that class. A word never seen in training has a count of 0, so its chance is 0 and the whole product becomes 0. <b>Laplace smoothing</b> adds 1 to every count (and the vocabulary size V to the total) so nothing is ever exactly 0.', 'P(word | class) = (count + 1) ÷ (total words in class + vocabulary size)', 'Adding 1 to the top but forgetting to add the vocabulary size to the bottom, so the chances no longer add to 1.', 'Any text classifier built on counts needs this, or one rare word breaks it.', 'laplace'],
+    ['p7c', 'mlemap', 'MLE · MAP', 'MLE versus MAP', 'Core', 'L7', '<b>MLE</b> picks the setting that makes the data most likely, using the data only (just counting). <b>MAP</b> also uses a prior belief, which pulls the answer toward what you expected. A prior on the settings is the same thing as <b>regularization</b>.', 'MLE: heads ÷ flips<br>MAP with k pretend heads and k pretend tails: (heads + k) ÷ (flips + 2k)', 'Trusting MLE on tiny data: 3 heads in 3 flips says "always heads".', 'The L2 penalty used to train models is a Gaussian prior on the weights.', 'mlemap'],
+    ['p7c', 'beta', 'Beta(a, b)', 'Beta update (sequential Bayes)', 'Stretch', 'L7', 'A <b>Beta(a, b)</b> distribution is a belief about a chance p. Start at Beta(1, 1), "no opinion". Each head adds 1 to a and each tail adds 1 to b. Today\'s result becomes tomorrow\'s starting belief.', 'Beta(a, b) + h heads and t tails → Beta(a + h, b + t)<br>average = a ÷ (a + b)', 'Mixing up the order: heads go to the first number, tails to the second.', 'A/B tests update this way as results arrive, with no need to redo old data.', 'beta']
+  ];
+  var AHEAD = [
+    ['Optimization', 'L8', 'Walking downhill step by step to find better settings.'],
+    ['Information theory', 'L9', 'Measuring surprise and how much a message tells you.'],
+    ['Dimensionality reduction (PCA)', 'L10', 'Squeezing 1,000 numbers into a few that keep most of the story.'],
+    ['Singular value decomposition', 'L11', 'Eigendecomposition\'s big sibling: works on any grid, not just square ones.'],
+    ['Tensor operations', 'L12', 'Grids with more than two dimensions, such as a batch of embeddings.'],
+    ['Numerical stability', 'L13', 'Keeping rounding errors from blowing up.'],
+    ['Norms and distances', 'L14', 'Different ways to measure length and "how far apart".'],
+    ['Statistics for ML', 'L15', 'Averages, spread and correlation.'],
+    ['Sampling methods', 'L16', 'Drawing random examples to estimate things.'],
+    ['Linear systems', 'L17', 'Solving Ax = b: find the input that gives a known output.'],
+    ['Convex optimization', 'L18', 'Problems with a single bottom, so downhill always works.'],
+    ['Complex numbers', 'L19', 'Numbers with a built-in rotation.'],
+    ['Fourier transform', 'L20', 'Splitting a signal into simple waves.'],
+    ['Graph theory', 'L21', 'Things and the links between them.'],
+    ['Stochastic processes', 'L22', 'Random things unfolding over time.']
+  ];
+
+  /* ---------- build page ---------- */
+  var content = $('content'), toc = $('toc'), tocHtml = '', html = '';
+  PARTS.forEach(function (p) {
+    tocHtml += '<b>' + p.t.split(' · ')[0] + '</b>';
+    html += '<h2 class="part" id="' + p.id + '">' + p.t + '</h2><p>' + p.d + '</p>';
+    E.filter(function (e) { return e[0] === p.id; }).forEach(function (e) {
+      tocHtml += '<a href="#' + e[1] + '">' + e[3] + '</a>';
+      html += '<article class="ent" id="' + e[1] + '"><div class="ent-h"><span class="sym">' + e[2] + '</span><h3>' + e[3] + '</h3><span class="badges"><span class="bd">' + e[4] + '</span><span class="bd">Lesson ' + e[5].replace('L', '') + '</span></span></div>' +
+        '<div class="ent-b"><div><p>' + e[6] + '</p>' + (e[7] ? '<div class="rule">' + e[7] + '</div>' : '') + (e[8] ? '<p class="mist"><b>Common mistake.</b> ' + e[8] + '</p>' : '') + '<p class="ai"><b>In AI.</b> ' + e[9] + '</p></div>' +
+        '<div><p class="exh">Worked example, your numbers</p><div class="ex" data-ex="' + e[10] + '"></div></div></div></article>';
+    });
+  });
+  tocHtml += '<b>Part 8</b><a href="#p5">Coming up</a><b>Tracking</b><a href="#review">Review queue</a><a href="#added">Added so far</a>';
+  html += '<h2 class="part" id="p5">Part 8 · Coming up</h2><p>Topics from the rest of Phase 1. They get full entries here, with worked examples, as we reach each lesson. Nothing below has been taught yet.</p><div class="ahead">' +
+    AHEAD.map(function (a) { return '<div class="ah"><b>' + a[0] + ' <span class="bd next">Lesson ' + a[1].replace('L', '') + '</span></b>' + a[2] + '</div>'; }).join('') + '</div>';
+  html += '<h2 class="part" id="review">Review queue</h2><p>Things that did not stick yet. Tap a status to change it (saved in this browser only).</p><div id="rq"></div>';
+  html += '<h2 class="part" id="added">Added so far</h2><ul class="tl"><li><span class="dotm"></span><span><b>Lesson 1, Linear algebra intuition</b> (20 Oct): vectors, dot product, cosine, projection, independence, rank</span></li><li><span class="dotm"></span><span><b>Lesson 2, Vectors and matrices</b> (20 Oct): notation, shapes, add, scale, element-wise, transpose, matrix product, identity, determinant, inverse</span></li><li><span class="dotm"></span><span><b>Lesson 3, Matrix transformations</b> (20 Oct): moves, order, determinant as area, eigenvalues, eigendecomposition</span></li><li><span class="dotm"></span><span><b>Lesson 4, Calculus for ML</b> (20 Oct): slope, gradient, gradient descent, learning rate, central difference, Hessian</span></li><li><span class="dotm"></span><span><b>Lesson 5, Chain rule and autodiff</b> (20 Oct): chain rule, computation graph, forward and backward pass, slope rules, slopes add up, gradient checking, reverse mode</span></li><li><span class="dotm"></span><span><b>Lesson 6, Probability and distributions</b> (20 Oct): distributions, PMF and PDF, expected value, softmax and its trick, cross-entropy, log probabilities</span></li><li><span class="dotm"></span><span><b>Lesson 7, Bayes theorem</b> (21 Oct): Bayes by counting, the formula, Laplace smoothing, MLE versus MAP, the Beta update</span></li><li class="next"><span class="dotm"></span><span><b>Next, Lesson 8, Optimization</b></span></li></ul>';
+  content.innerHTML = html; toc.innerHTML = tocHtml;
+
+  /* ---------- test data panel ---------- */
+  function dataPanel() {
+    var row = $('dataRow'); row.innerHTML = '';
+    [['A', 2, 2], ['B', 2, 2], ['C', 2, 3], ['u', 2, 1], ['v', 2, 1]].forEach(function (m) {
+      var d = document.createElement('div'); d.className = 'dm'; d.innerHTML = '<div class="cap">' + m[0] + (m[0] === 'u' || m[0] === 'v' ? ' (vector)' : ' (' + m[1] + '×' + m[2] + ')') + '</div>';
+      var g = document.createElement('div'); g.className = 'cells'; g.style.gridTemplateColumns = 'repeat(' + m[2] + ', auto)';
+      for (var i = 0; i < m[1]; i++) for (var j = 0; j < m[2]; j++) {
+        var inp = document.createElement('input'); inp.type = 'number'; inp.step = 'any'; inp.setAttribute('aria-label', m[0] + ' row ' + (i + 1) + ' column ' + (j + 1));
+        inp.value = (m[0] === 'u' || m[0] === 'v') ? S[m[0]][i] : S[m[0]][i][j];
+        (function (name, i, j, el) { el.addEventListener('input', function () { var x = parseFloat(el.value); if (isNaN(x)) x = 0; if (name === 'u' || name === 'v') S[name][i] = x; else S[name][i][j] = x; renderAll(); }); })(m[0], i, j, inp);
+        g.appendChild(inp);
+      }
+      d.appendChild(g); row.appendChild(d);
+    });
+  }
+  function ri(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+  $('reset').addEventListener('click', function () { S = JSON.parse(JSON.stringify(START)); dataPanel(); renderAll(); });
+  $('rand').addEventListener('click', function () {
+    S = { A: [[ri(-3, 4), ri(-3, 4)], [ri(-3, 4), ri(-3, 4)]], B: [[ri(-3, 4), ri(-3, 4)], [ri(-3, 4), ri(-3, 4)]], C: [[ri(1, 6), ri(1, 6), ri(1, 6)], [ri(1, 6), ri(1, 6), ri(1, 6)]], u: [ri(-4, 4), ri(-4, 4)], v: [ri(-4, 4), ri(-4, 4)] };
+    dataPanel(); renderAll();
+  });
+
+  /* ---------- render blocks ---------- */
+  function renderBlock(host) {
+    var d = B[host.dataset.ex]; if (!d) return;
+    if (d.controls && !host._init) { host._init = 1; host.innerHTML = d.controls + '<div class="out"></div>'; d.wire && d.wire(host, function () { renderBlock(host); }); }
+    var out = d.controls ? host.querySelector('.out') : host; out.innerHTML = d.html(host);
+  }
+  function renderAll() { document.querySelectorAll('[data-ex]').forEach(renderBlock); }
+
+  /* ---------- review queue ---------- */
+  var RQ = [
+    { id: 'det', t: 'Zero determinant', from: 'Lesson 2', a: 'The matrix crushes space flat, so different points land on the same spot and nothing can undo it. No inverse. Type [[1,2],[2,4]] into A and watch the determinant entry.' },
+    { id: 'ident', t: 'Identity matrix', from: 'Lesson 3 recall', a: 'The do-nothing matrix: 1s on the diagonal, 0s elsewhere. Multiply anything by it and you get the same thing back. See "Identity in action".' },
+    { id: 'eig', t: 'Eigendecomposition', from: 'Lesson 3', a: 'Switch to the special directions, stretch each by its eigenvalue, switch back. With the start values, A stretches 3 times along one direction and keeps the other the same.' },
+    { id: 'lora', t: 'LoRA (low-rank update)', from: 'Lesson 1', a: 'Instead of retraining a huge weight matrix, learn the change as two thin matrices multiplied together. Far fewer numbers to train. See "Rank". Comes back in Phase 11.' }
+  ];
+  var ST = {}; try { ST = JSON.parse(localStorage.getItem('rq-status') || '{}'); } catch (e) { ST = {}; }
+  var LAB = { shaky: ['warn', 'Still shaky'], learning: ['warn', 'Getting there'], got: ['good', 'Got it'] }, CYC = ['shaky', 'learning', 'got'];
+  function renderRQ() {
+    var h = $('rq'); h.innerHTML = '';
+    RQ.forEach(function (q) {
+      var s = ST[q.id] || 'shaky', d = document.createElement('div'); d.className = 'q';
+      d.innerHTML = '<div class="q-top"><b>' + q.t + '</b><span class="bd">' + q.from + '</span></div><p>' + q.a + '</p>';
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'chip ' + LAB[s][0]; b.style.border = '0'; b.textContent = LAB[s][1];
+      b.addEventListener('click', function () { ST[q.id] = CYC[(CYC.indexOf(s) + 1) % 3]; try { localStorage.setItem('rq-status', JSON.stringify(ST)); } catch (e) {} renderRQ(); });
+      d.appendChild(b); h.appendChild(d);
+    });
+  }
+
+  dataPanel(); renderAll(); renderRQ();
+})();
+</script>

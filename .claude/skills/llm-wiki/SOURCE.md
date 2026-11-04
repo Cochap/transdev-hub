@@ -1,0 +1,1 @@
+Copied into the brain on 2026-10-21 from the ZBB project, C:\ZBB\.claude\skills\llm-wiki. It describes the ZBB wiki (raw/ to wiki/, rules in C:\ZBB\CLAUDE.md). The BOULON wiki schema is 1-boulon/wiki/CLAUDE.md. The original is still in ZBB.

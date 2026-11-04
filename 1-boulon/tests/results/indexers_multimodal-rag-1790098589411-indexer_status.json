@@ -1,0 +1,101 @@
+﻿{
+    "@odata.context":  "https://boulon-pilot-search.search.windows.net/$metadata#Microsoft.Azure.Search.V2024_07_01.IndexerExecutionInfo",
+    "name":  "multimodal-rag-1790098589411-indexer",
+    "status":  "running",
+    "lastResult":  {
+                       "status":  "success",
+                       "errorMessage":  null,
+                       "startTime":  "2026-09-22T17:49:56.211Z",
+                       "endTime":  "2026-09-22T18:20:54.055Z",
+                       "itemsProcessed":  23,
+                       "itemsFailed":  0,
+                       "initialTrackingState":  "{\r\n  \"lastFullEnumerationStartTime\": \"0001-01-01T00:00:00Z\",\r\n  \"lastAttemptedEnumerationStartTime\": \"2026-09-22T17:49:56.56Z\",\r\n  \"nameHighWaterMark\": null\r\n}",
+                       "finalTrackingState":  "{\"LastFullEnumerationStartTime\":\"2026-09-22T17:49:26.5605501+00:00\",\"LastAttemptedEnumerationStartTime\":\"2026-09-22T17:49:26.5605501+00:00\",\"NameHighWaterMark\":null}",
+                       "errors":  [
+
+                                  ],
+                       "warnings":  [
+                                        {
+                                            "key":  "localId=Vicinity+Service+Manual.pdf\u0026documentKey=https%3a%2f%2fboulonpilotstorage.blob.core.windows.net%2fmanuals%2fVicinity%2520Service%2520Manual.pdf",
+                                            "name":  "DocumentExtraction.azureblob.Vicinity Service Manual.pdf",
+                                            "message":  "Truncated extracted text to \u0027262144\u0027 characters.",
+                                            "details":  "",
+                                            "documentationLink":  "https://go.microsoft.com/fwlink/?linkid=2110011"
+                                        },
+                                        {
+                                            "key":  "localId=Vicinity+Service+Manual+Final+-+2013.pdf\u0026documentKey=Vicinity+Service+Manual+Final+-+2013.pdf",
+                                            "name":  "DocumentExtraction.blob.Vicinity Service Manual Final - 2013.pdf",
+                                            "message":  "Document is \u0027103915627\u0027 bytes, which exceeds the maximum size \u002716777216\u0027 bytes for document extraction for your current service tier. To ignore this error and continue indexing storage metadata of oversized blobs, set the \u0027indexStorageMetadataOnlyForOversizedDocuments\u0027 configuration parameter to true.",
+                                            "details":  "",
+                                            "documentationLink":  "https://go.microsoft.com/fwlink/?linkid=2104227"
+                                        },
+                                        {
+                                            "key":  "localId=Vicinity+Parts+Manual+2015.pdf\u0026documentKey=Vicinity+Parts+Manual+2015.pdf",
+                                            "name":  "DocumentExtraction.blob.Vicinity Parts Manual 2015.pdf",
+                                            "message":  "Document is \u002723849408\u0027 bytes, which exceeds the maximum size \u002716777216\u0027 bytes for document extraction for your current service tier. To ignore this error and continue indexing storage metadata of oversized blobs, set the \u0027indexStorageMetadataOnlyForOversizedDocuments\u0027 configuration parameter to true.",
+                                            "details":  "",
+                                            "documentationLink":  "https://go.microsoft.com/fwlink/?linkid=2104227"
+                                        },
+                                        {
+                                            "key":  "localId=20180131200843_emp-cooling-fans-service-manual.pdf\u0026documentKey=https%3a%2f%2fboulonpilotstorage.blob.core.windows.net%2fmanuals%2f20180131200843_emp-cooling-fans-service-manual.pdf",
+                                            "name":  "DocumentExtraction.azureblob.20180131200843_emp-cooling-fans-service-manual.pdf",
+                                            "message":  "Truncated extracted text to \u0027262144\u0027 characters.",
+                                            "details":  "",
+                                            "documentationLink":  "https://go.microsoft.com/fwlink/?linkid=2110011"
+                                        }
+                                    ],
+                       "metrics":  null
+                   },
+    "executionHistory":  [
+                             {
+                                 "status":  "success",
+                                 "errorMessage":  null,
+                                 "startTime":  "2026-09-22T17:49:56.211Z",
+                                 "endTime":  "2026-09-22T18:20:54.055Z",
+                                 "itemsProcessed":  23,
+                                 "itemsFailed":  0,
+                                 "initialTrackingState":  "{\r\n  \"lastFullEnumerationStartTime\": \"0001-01-01T00:00:00Z\",\r\n  \"lastAttemptedEnumerationStartTime\": \"2026-09-22T17:49:56.56Z\",\r\n  \"nameHighWaterMark\": null\r\n}",
+                                 "finalTrackingState":  "{\"LastFullEnumerationStartTime\":\"2026-09-22T17:49:26.5605501+00:00\",\"LastAttemptedEnumerationStartTime\":\"2026-09-22T17:49:26.5605501+00:00\",\"NameHighWaterMark\":null}",
+                                 "errors":  [
+
+                                            ],
+                                 "warnings":  [
+                                                  {
+                                                      "key":  "localId=Vicinity+Service+Manual.pdf\u0026documentKey=https%3a%2f%2fboulonpilotstorage.blob.core.windows.net%2fmanuals%2fVicinity%2520Service%2520Manual.pdf",
+                                                      "name":  "DocumentExtraction.azureblob.Vicinity Service Manual.pdf",
+                                                      "message":  "Truncated extracted text to \u0027262144\u0027 characters.",
+                                                      "details":  "",
+                                                      "documentationLink":  "https://go.microsoft.com/fwlink/?linkid=2110011"
+                                                  },
+                                                  {
+                                                      "key":  "localId=Vicinity+Service+Manual+Final+-+2013.pdf\u0026documentKey=Vicinity+Service+Manual+Final+-+2013.pdf",
+                                                      "name":  "DocumentExtraction.blob.Vicinity Service Manual Final - 2013.pdf",
+                                                      "message":  "Document is \u0027103915627\u0027 bytes, which exceeds the maximum size \u002716777216\u0027 bytes for document extraction for your current service tier. To ignore this error and continue indexing storage metadata of oversized blobs, set the \u0027indexStorageMetadataOnlyForOversizedDocuments\u0027 configuration parameter to true.",
+                                                      "details":  "",
+                                                      "documentationLink":  "https://go.microsoft.com/fwlink/?linkid=2104227"
+                                                  },
+                                                  {
+                                                      "key":  "localId=Vicinity+Parts+Manual+2015.pdf\u0026documentKey=Vicinity+Parts+Manual+2015.pdf",
+                                                      "name":  "DocumentExtraction.blob.Vicinity Parts Manual 2015.pdf",
+                                                      "message":  "Document is \u002723849408\u0027 bytes, which exceeds the maximum size \u002716777216\u0027 bytes for document extraction for your current service tier. To ignore this error and continue indexing storage metadata of oversized blobs, set the \u0027indexStorageMetadataOnlyForOversizedDocuments\u0027 configuration parameter to true.",
+                                                      "details":  "",
+                                                      "documentationLink":  "https://go.microsoft.com/fwlink/?linkid=2104227"
+                                                  },
+                                                  {
+                                                      "key":  "localId=20180131200843_emp-cooling-fans-service-manual.pdf\u0026documentKey=https%3a%2f%2fboulonpilotstorage.blob.core.windows.net%2fmanuals%2f20180131200843_emp-cooling-fans-service-manual.pdf",
+                                                      "name":  "DocumentExtraction.azureblob.20180131200843_emp-cooling-fans-service-manual.pdf",
+                                                      "message":  "Truncated extracted text to \u0027262144\u0027 characters.",
+                                                      "details":  "",
+                                                      "documentationLink":  "https://go.microsoft.com/fwlink/?linkid=2110011"
+                                                  }
+                                              ],
+                                 "metrics":  null
+                             }
+                         ],
+    "limits":  {
+                   "maxRunTime":  "PT1H",
+                   "maxDocumentExtractionSize":  16777216,
+                   "maxDocumentContentCharactersToExtract":  262144
+               }
+}
+

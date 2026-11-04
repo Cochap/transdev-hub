@@ -1,0 +1,15 @@
+{
+  "name": "boulon-v2-datasource",
+  "description": "BOULON manuals (PDF) in Blob Storage. Deletion detection needs blob soft delete ON and blob versioning OFF on the storage account.",
+  "type": "azureblob",
+  "credentials": {
+    "connectionString": "<STORAGE_CONNECTION>"
+  },
+  "container": {
+    "name": "<MANUALS_CONTAINER>",
+    "query": null
+  },
+  "dataDeletionDetectionPolicy": {
+    "@odata.type": "#Microsoft.Azure.Search.NativeBlobSoftDeleteDeletionDetectionPolicy"
+  }
+}

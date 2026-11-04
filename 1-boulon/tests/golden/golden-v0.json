@@ -1,0 +1,17 @@
+{
+  "version": "v0",
+  "created": "2026-09-23",
+  "note": "Index-side golden set. 'expect' = regex that must appear in a top-5 passage. 'manual' = text that must appear in that passage's file name. 'abstain' = the right answer is 'I don't have that information', so the index must NOT return the value.",
+  "questions": [
+    { "id": "G1", "slice": "EN / part number / FR manual", "ask": "In the Baultar seat manual, what is the part number for the left advance-lock cylinder assembly?", "expect": "HK98-0021", "manual": "AS98-5005", "answer": "HK98-0021 (AS98-5005 section 3.9.1)" },
+    { "id": "G2", "slice": "EN / torque / text", "ask": "What torque should the nuts be tightened to when replacing the Motor Control Unit (MCU)?", "expect": "17[.,]4", "manual": "MCU", "answer": "17.4 ft-lb (23.5 Nm), step 21, p.10" },
+    { "id": "G3", "slice": "EN / torque / text", "ask": "What torque is used for the wiper motor crank on the Vicinity?", "expect": "22\\s*[-–~to]+\\s*27", "manual": "Vicinity", "answer": "22-27 Nm (16-20 lb-ft)" },
+    { "id": "G4", "slice": "FR / part number / FR manual", "ask": "Quel est le numéro de pièce du cylindre d'ajustement d'angle du dossier du siège Baultar?", "expect": "HK98-0062", "manual": "AS98-5005", "answer": "HK98-0062 (AS98-5005 section 3.10.1)" },
+    { "id": "G5", "slice": "EN / part number / diagram", "ask": "What is METRI-PACK connector 12052641 used for in the ProHeat manual?", "expect": "12052641", "manual": "ProHeat", "answer": "AUX connector keying on the G-I PCM" },
+    { "id": "G6", "slice": "EN / safety / text", "ask": "What are the safety precautions before replacing the BTMS compressor?", "expect": "(?i)chock", "manual": "RP-01-13", "answer": "Starter switch OFF, parking brake set, tires chocked, trained/certified technicians only" },
+    { "id": "G7", "slice": "EN / torque / TABLE (flattened)", "ask": "What is the recommended assembly torque for an M6 Class 12.9 bolt per the Vicinity manual's torque table?", "expect": "12[.,]9", "manual": "Vicinity", "answer": "15 Nm (PDF p.22). Stress test: the table is flattened, so the agent may read the wrong column" },
+    { "id": "G8", "slice": "EN / cross-language / FR manual", "ask": "How do I replace the left advance lock cylinder on the driver seat?", "expect": "HK98-0021|3\\.9", "manual": "AS98-5005", "answer": "Procedure in AS98-5005 section 3.9 (the English question must find the French procedure)" },
+    { "id": "A1", "slice": "ABSTAIN / manual not indexed", "ask": "What's the part number for the pipe fitting in the Orion manual, part 080808082?", "expect": "080808082", "abstain": true, "answer": "I don't have that information (no Orion manual indexed)" },
+    { "id": "A2", "slice": "ABSTAIN / off-fleet vehicle", "ask": "What is the torque spec for the wheel lug nuts on a Tesla Model 3?", "expect": "(?i)tesla", "abstain": true, "answer": "I don't have that information, and no number" }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "intent": "concept",
+  "freshness_mode": "balanced_recent",
+  "cluster_mode": "none",
+  "subqueries": [
+    {
+      "label": "primary",
+      "search_query": "self-hosted RAG local LLM reranker document chat",
+      "ranking_query": "Which self-hosted RAG (retrieval-augmented generation) tools, models and techniques did the community find best for chatting with private documents?",
+      "sources": [
+        "reddit",
+        "x",
+        "youtube",
+        "hackernews",
+        "github",
+        "tiktok",
+        "instagram",
+        "polymarket"
+      ],
+      "weight": 1.0
+    },
+    {
+      "label": "parsing",
+      "search_query": "PDF table parsing chunking RAG table headers docling",
+      "ranking_query": "What works best for parsing PDF manuals with tables so each chunk keeps its table headers and section, for RAG?",
+      "sources": [
+        "reddit",
+        "hackernews",
+        "github",
+        "youtube",
+        "x"
+      ],
+      "weight": 0.8
+    },
+    {
+      "label": "abstain-eval",
+      "search_query": "RAG abstention I don't know evaluation hallucination citation",
+      "ranking_query": "How do people make RAG chatbots say 'I don't know' honestly and grade those abstentions correctly in evaluations, with verified citations?",
+      "sources": [
+        "reddit",
+        "hackernews",
+        "github",
+        "x",
+        "youtube"
+      ],
+      "weight": 0.6
+    },
+    {
+      "label": "x-broad",
+      "search_query": "RAG local LLM",
+      "ranking_query": "What are AI builders on X saying about retrieval-augmented generation with local or open models: new tools, tricks and results?",
+      "sources": [
+        "x"
+      ],
+      "weight": 0.7
+    }
+  ]
+}

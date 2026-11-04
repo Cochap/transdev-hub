@@ -1,0 +1,62 @@
+<title>Library Size Helper</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f5f4;--fg:#1d1b1c;--mut:#6b6668;--line:#dcd8d9;--card:#fff;--src:#8a8587;--cpy:#db0717;--ok:#1f7a4d;--warn:#b26a00;--font:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161415;--fg:#efeced;--mut:#a09a9c;--line:#363233;--card:#1f1c1d;--src:#7d787a;--cpy:#ff4a58;--ok:#4cc38a;--warn:#e5a24a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161415;--fg:#efeced;--mut:#a09a9c;--line:#363233;--card:#1f1c1d;--src:#7d787a;--cpy:#ff4a58;--ok:#4cc38a;--warn:#e5a24a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);padding-inline:16px;padding-block:24px}
+.w{max-width:1000px;margin:auto;display:flex;flex-direction:column;gap:28px}
+h1{font-size:26px;margin:0 0 6px;text-wrap:balance}h2{font-size:14px;margin:0 0 4px;text-transform:uppercase;letter-spacing:.08em}
+p.s{margin:0;color:var(--mut);font-size:13px;max-width:65ch}
+.hero{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px}
+.hero .n{font-family:var(--mono);font-size:38px;font-weight:600;font-variant-numeric:tabular-nums}.hero .l{font-size:12px;color:var(--mut)}
+.hero .c .n{color:var(--cpy)}.hero .ar{font-size:28px;color:var(--mut);text-align:center}.hero .ar small{display:block;font-size:12px;font-family:var(--mono)}
+@media(max-width:560px){.hero{grid-template-columns:1fr}.hero .ar{transform:rotate(90deg)}}
+.k{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.k div{border-top:2px solid var(--line);padding-top:8px}.k b{display:block;font-family:var(--mono);font-size:20px;font-variant-numeric:tabular-nums}.k span{font-size:12px;color:var(--mut)}
+.leg{display:flex;gap:16px;font-size:12px;color:var(--mut);margin:8px 0}.leg i{display:inline-block;width:10px;height:10px;margin-right:6px;border-radius:2px}
+.row{display:grid;grid-template-columns:150px 1fr 170px;gap:12px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px}
+.row .nm{overflow-wrap:anywhere;min-width:0}.row .nm small{display:block;color:var(--mut);font-size:11px}
+.bars{display:flex;flex-direction:column;gap:3px;min-width:0}.bars div{height:8px;border-radius:2px;min-width:2px}
+.b1{background:var(--src)}.b2{background:var(--cpy)}
+.v{font-family:var(--mono);font-size:12px;text-align:right;font-variant-numeric:tabular-nums}.v em{font-style:normal;color:var(--cpy)}
+@media(max-width:560px){.row{grid-template-columns:1fr}.v{text-align:left}}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px;min-width:0}
+.cap{display:flex;flex-direction:column;gap:10px;margin-top:10px}.cap .t{height:14px;background:var(--line);border-radius:2px;position:relative}.cap .f{height:100%;border-radius:2px;background:var(--cpy)}
+.cap .tx{display:flex;justify-content:space-between;font-size:12px;gap:8px}.cap .tx span:last-child{font-family:var(--mono)}
+.mk{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--fg)}
+.fl{font-size:12px;color:var(--mut);margin:0}.fl b{color:var(--fg)}
+.ok{color:var(--ok)}.wn{color:var(--warn)}
+</style>
+<div class="w">
+<div><h1>Library size helper</h1><p class="s">Visual only, not linked to the real files. Source = PDFs in the Manuels folder (measured 2026-10-06, duplicates removed). Searchable copy = what Azure stores after reading and indexing (forecast).</p></div>
+<div class="hero"><div><div class="l">Source PDFs</div><div class="n" id="hs"></div><div class="l" id="hsl"></div></div><div class="ar">→<small>about 1.7×</small></div><div class="c"><div class="l">Searchable copy (forecast, ±25%)</div><div class="n" id="hc"></div><div class="l">of which vectors about 8.3 GB</div></div></div>
+<div class="k" id="kpi"></div>
+<div><h2>By brand folder</h2><p class="s">Pages drive the copy size, not megabytes. Brands under 100 pages left out.</p>
+<div class="leg"><span><i style="background:var(--src)"></i>PDF size</span><span><i style="background:var(--cpy)"></i>Searchable copy</span></div><div id="brands"></div></div>
+<div class="two">
+<div class="box"><h2>Will it fit?</h2><p class="s">Whole-library copy against one Basic partition.</p><div class="cap" id="cap"></div><p class="fl" style="margin-top:12px"><b>Basic holds 5 GB of vectors per partition.</b> Full-size vectors are 8.3 GB, so 2 partitions. With 8-bit compression, about 2.1 GB: 1 partition (kept 93% of top matches in our test).</p></div>
+<div class="box"><h2>Per-file limits (Basic)</h2><p class="s">Intake limit is PDF size (16 MB) or 512,000 characters. Splitting a file fixes it.</p><div class="cap" id="bk"></div><p class="fl" style="margin-top:12px"><b>112 files (4%)</b> break one of the two limits. The other 2,673 go in as they are.</p></div>
+</div>
+<div><h2>Biggest 15 files</h2><p class="s">Big PDFs are not always long: MCI 03-15-3807D is 171 MB but only 125 pages.</p><div class="leg"><span><i style="background:var(--src)"></i>PDF size</span><span><i style="background:var(--cpy)"></i>Copy forecast</span></div><div id="top"></div></div>
+<div class="box"><h2>Proof from the pilot</h2><p class="fl">23 PDFs, about 62 MB on disk, 725 pages gave 2,250 chunks and <b>63.3 MB</b> in the index (about 87 KB per page, 28 KB per chunk). PDF megabytes predict this badly: a 5.1 MB scanned file has 12 pages, a 7.7 MB text file has 157. That is why the forecast counts pages. <span class="wn">New v2 settings may change the per-page figure; the 1-file Basic trial will measure it.</span></p></div>
+</div>
+<script>
+var D={"brands":[{"n":"Nova","files":549,"mb":2725.6,"pages":43022},{"n":"New Flyer","files":198,"mb":1299.3,"pages":36267},{"n":"MCI","files":1708,"mb":1318.3,"pages":32986},{"n":"Prevost","files":165,"mb":399.4,"pages":6423},{"n":"Grande West","files":58,"mb":237.4,"pages":3658},{"n":"Orion","files":3,"mb":97.1,"pages":3492},{"n":"Vicinity","files":13,"mb":125.8,"pages":2422},{"n":"IC Leeds","files":1,"mb":43.7,"pages":1567},{"n":"(root)","files":10,"mb":43.9,"pages":867},{"n":"LION","files":44,"mb":319.6,"pages":696},{"n":"ARBOC","files":4,"mb":10,"pages":122},{"n":"Baultar","files":1,"mb":2.9,"pages":77},{"n":"terminal et connecteur","files":2,"mb":1.1,"pages":50},{"n":"Braun Ability","files":5,"mb":8.9,"pages":45},{"n":"Valeo Thermo 300.002","files":1,"mb":0.8,"pages":19},{"n":"USSC","files":1,"mb":0.4,"pages":18},{"n":"HDX","files":4,"mb":1.6,"pages":7},{"n":"GMC","files":2,"mb":0.4,"pages":6},{"n":"livre de piece","files":5,"mb":1.2,"pages":6},{"n":"Siège Iris","files":1,"mb":0.2,"pages":4},{"n":"Caterpillar","files":1,"mb":1.1,"pages":2},{"n":"Cummins","files":9,"mb":49.9,"pages":0}],"top":[{"n":"03-15-3807D","b":"MCI","mb":171.4,"pages":125,"chars":215053},{"n":"LB90 Transdev Québec Manuel d'entretien","b":"Nova","mb":148.4,"pages":768,"chars":1368430},{"n":"L597 Véolia Transport Québec Manuel d'entretien","b":"Nova","mb":132.8,"pages":588,"chars":1200256},{"n":"LB52 Transdev Québec Manuel d'entretien","b":"Nova","mb":129.1,"pages":630,"chars":1249554},{"n":"03-15-3838E","b":"MCI","mb":123.3,"pages":2654,"chars":2806180},{"n":"LA90 Transdev Québec Manuel d'entretien","b":"Nova","mb":104.7,"pages":530,"chars":1093752},{"n":"LA89 Transdev Québec Manuel d'entretien","b":"Nova","mb":104.5,"pages":528,"chars":1091155},{"n":"LA25 Transdev Québec Manuel d'entretien","b":"Nova","mb":104.5,"pages":576,"chars":1126797},{"n":"L983 Transdev Québec Manuel d'entretien","b":"Nova","mb":104.2,"pages":574,"chars":1124200},{"n":"L780 Transdev Québec Manuel d'entretien","b":"Nova","mb":100.3,"pages":554,"chars":1094527},{"n":"Vicinity Service Manual Final - 2013","b":"Grande West","mb":99.1,"pages":1309,"chars":1599597},{"n":"L756 Transdev Québec Manuel d'entretien","b":"Nova","mb":93.8,"pages":556,"chars":1091252},{"n":"03-15-5445C","b":"MCI","mb":89.6,"pages":4740,"chars":3994059},{"n":"03-15-5074B","b":"MCI","mb":85.6,"pages":355,"chars":407724},{"n":"03-15-5445","b":"MCI","mb":82.2,"pages":2758,"chars":2143493}],"bk":{"<1 MB":2229,"1-16 MB":458,"16-128 MB":94,">128 MB":4},"tot":{"files":2785,"mb":6688.765113830566,"pages":131756,"chars":169786836}};var KB=10.9*1048576/D.tot.pages;
+function gb(mb){return mb>=1024?(mb/1024).toFixed(2)+' GB':mb.toFixed(0)+' MB'}
+function cp(p){return p*KB/1024}
+var t=D.tot;document.getElementById('hs').textContent=(t.mb/1024).toFixed(2)+' GB';document.getElementById('hsl').textContent=t.files.toLocaleString()+' files, '+t.pages.toLocaleString()+' pages';document.getElementById('hc').textContent='≈ '+gb(cp(t.pages));
+document.getElementById('kpi').innerHTML=[[t.files.toLocaleString(),'unique PDFs'],[t.pages.toLocaleString(),'pages'],[(t.chars/1e6).toFixed(0)+' M','characters'],['≈ 83 KB','copy per page'],['98','files over 16 MB'],['4','files over 128 MB']].map(function(x){return'<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>'}).join('');
+var mx=1;
+function row(n,sub,mb,pg){var c=cp(pg);return'<div class="row"><div class="nm">'+n+(sub?'<small>'+sub+'</small>':'')+'</div><div class="bars"><div class="b1" style="width:'+(mb/mx*100)+'%"></div><div class="b2" style="width:'+(c/mx*100)+'%"></div></div><div class="v">'+gb(mb)+' → <em>'+gb(c)+'</em><br>'+pg.toLocaleString()+' pages</div></div>'}
+var bl=D.brands.filter(function(b){return b.pages>=100});
+mx=Math.max.apply(null,bl.map(function(b){return Math.max(b.mb,cp(b.pages))}));
+document.getElementById('brands').innerHTML=bl.map(function(b){return row(b.n,b.files+' files',b.mb,b.pages)}).join('');
+mx=Math.max.apply(null,D.top.map(function(b){return Math.max(b.mb,cp(b.pages))}));
+document.getElementById('top').innerHTML=D.top.map(function(f){return row(f.n,f.b,f.mb,f.pages)}).join('');
+var need=[['Whole library, full vectors',10.9],['Whole library, 8-bit vectors (est.)',10.9-8.3+2.1]];
+document.getElementById('cap').innerHTML=need.map(function(n){return'<div><div class="tx"><span>'+n[0]+'</span><span>'+n[1].toFixed(1)+' GB</span></div><div class="t"><div class="f" style="width:'+Math.min(100,n[1]/15*100)+'%"></div><div class="mk" style="left:'+(5/15*100)+'%"></div></div></div>'}).join('')+'<div class="tx"><span>Marker = 5 GB vector cap. Track end = 15 GB total cap.</span></div>';
+var b=D.bk,bm=b['<1 MB'];
+document.getElementById('bk').innerHTML=Object.keys(b).map(function(k){var ok=k==='<1 MB'||k==='1-16 MB';return'<div><div class="tx"><span>'+k+' <span class="'+(ok?'ok':'wn')+'">'+(ok?'goes in':'split first')+'</span></span><span>'+b[k].toLocaleString()+' files</span></div><div class="t"><div class="f" style="width:'+Math.max(2,b[k]/bm*100)+'%;background:'+(ok?'var(--ok)':'var(--warn)')+'"></div></div></div>'}).join('');
+</script>

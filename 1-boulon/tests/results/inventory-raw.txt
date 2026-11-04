@@ -1,0 +1,136 @@
+files 3052 total 6.95 GB
+{'1-16MB': 531, '16-128MB': 97, '<1MB': 2420, '>128MB': 4}
+Nova                                            724    2982.9 MB
+MCI                                            1715    1325.7 MB
+New Flyer                                       199    1301.6 MB
+Prevost                                         165     399.4 MB
+LION                                             46     386.6 MB
+Grande West                                      60     238.2 MB
+Vicinity                                         77     212.3 MB
+Orion                                             3      97.1 MB
+Cummins                                           9      49.9 MB
+(root)                                           10      43.9 MB
+IC Leeds                                          1      43.7 MB
+ARBOC                                             5      10.0 MB
+Braun Ability                                     5       8.9 MB
+Aide recherche information technique autobus      8       4.2 MB
+Baultar                                           1       2.9 MB
+HDX                                               4       1.6 MB
+livre de piece                                    5       1.2 MB
+terminal et connecteur                            2       1.1 MB
+Caterpillar                                       1       1.1 MB
+Transmission ZF                                   7       0.8 MB
+Valeo Thermo 300.002                              1       0.8 MB
+GMC                                               2       0.4 MB
+USSC                                              1       0.4 MB
+Siège Iris                                        1       0.2 MB
+--- >16MB files
+  171.4 MB .\MCI\E4500 - 2007\OPERATORS\03-15-3807D.pdf
+  148.4 MB .\Nova\Manuel d'entretien\LB90 Transdev Québec Manuel d'entretien.PDF
+  132.8 MB .\Nova\Manuel d'entretien\L597 Véolia Transport Québec Manuel d'entretien.PDF
+  129.1 MB .\Nova\Manuel d'entretien\LB52 Transdev Québec Manuel d'entretien.PDF
+  123.3 MB .\MCI\E4500 - 2007\PARTS\03-15-3838E.pdf
+  104.7 MB .\Nova\Manuel d'entretien\LA90 Transdev Québec Manuel d'entretien.PDF
+  104.5 MB .\Nova\Manuel d'entretien\LA89 Transdev Québec Manuel d'entretien.PDF
+  104.5 MB .\Nova\Manuel d'entretien\LA25 Transdev Québec Manuel d'entretien.PDF
+  104.2 MB .\Nova\Manuel d'entretien\L983 Transdev Québec Manuel d'entretien.PDF
+  100.3 MB .\Nova\Manuel d'entretien\L780 Transdev Québec Manuel d'entretien.PDF
+   99.1 MB .\Grande West\Vicinity Service Manual Final - 2013.pdf
+   93.8 MB .\Nova\Manuel d'entretien\L756 Transdev Québec Manuel d'entretien.PDF
+   89.6 MB .\MCI\D4005D4505 - 2010\Parts\03-15-5445C.pdf
+   85.6 MB .\MCI\D4005D4505 - 2009\OPERATORS\03-15-5074B.pdf
+   82.2 MB .\MCI\D4005D4505 - 2009\PARTS\03-15-5445.pdf
+   78.2 MB .\LION\Schémas_gen3_Updating_QC_2023-12-04.pdf
+   75.0 MB .\MCI\D4005D4505 - 2009\OPERATORS\03-15-4958.pdf
+   73.6 MB .\LION\Manuels d'entretien Lion\Plans Électrique\LionC gen3_ELEC_Schem\LionC gen3_ELEC_Schem.pdf
+   73.0 MB .\MCI\D4005D4505 - 2009\PARTS\03-15-5445B.pdf
+   70.4 MB .\MCI\E4500 - 2007\SCHEMATICS\03-15-3806D.pdf
+   66.6 MB .\LION\Schémas_gen2_REV01_CA.pdf
+   66.6 MB .\LION\Manuels d'entretien Lion\Plans Électrique\Schémas_gen2_REV01_CA.pdf
+   59.7 MB .\Orion\catalogue Orion 2012.pdf
+   59.5 MB .\Nova\Manuel d'entretien\L365 Véolia Transport Québec Manuel d'entretien.PDF
+   57.4 MB .\Nova\Manuels des Fournisseurs\16000 Connecteurs Electrique\Delphi\Delphi Connection Catalog.pdf
+   57.4 MB .\Nova\Manuels des Fournisseurs\516000 Connecteurs Electrique\Delphi\Delphi Connection Catalog.pdf
+   55.1 MB .\New Flyer\SR1865\1865parts.pdf
+   53.9 MB .\Nova\Manuel d'entretien\L143 Transdev Québec Manuel d'entretien.PDF
+   53.4 MB .\New Flyer\Vehicle System Drawings\SR2300_Vehicle_System_Drawings.pdf
+   53.4 MB .\New Flyer\Vehicle System Drawings\SR2254_Vehicle_System_Drawings.pdf
+   51.0 MB .\MCI\D4000D4500\D\SUPP\OPERATORS\OPERATORS.pdf
+   50.9 MB .\Nova\Manuel d'entretien\L292 Véolia Transport Québec   SERVICE MANUALS.PDF
+   46.9 MB .\Nova\Manuel d'entretien\L290 Véolia Transport Québec   SERVICE MANUALS.PDF
+   44.1 MB .\Nova\Manuel de pièces\LB90 Transdev Québec Manuel de pièces.PDF
+   44.0 MB .\Nova\Manuel de pièces\LB52 Transdev Québec Manuel de pièces.PDF
+   43.7 MB .\IC Leeds\IC bus 2016-2024.pdf
+   42.7 MB .\New Flyer\SR2254\2254serv.pdf
+   42.5 MB .\New Flyer\SR2300\2300serv.pdf
+   42.3 MB .\Nova\Manuel de pièces\LA90 Transdev Québec Manuel de pièces.PDF
+   42.0 MB .\Nova\Manuel de pièces\LA89 Transdev Québec Manuel de pièces.PDF
+   41.6 MB .\Nova\Manuel de pièces\LA25 Transdev Québec Manuel de pièces.PDF
+   41.3 MB .\Nova\Manuel de pièces\L983 Transdev Québec Manuel de pièces.PDF
+   40.8 MB .\New Flyer\SR1520\1520parts.pdf
+   40.8 MB .\New Flyer\SR1865\1865serv.pdf
+   40.7 MB .\MCI\D4005D4505 - 2010\MAINTENANCE\3L-15-925R.pdf
+   38.7 MB .\Vicinity\livre piece vicinity 2024\8.2 HVAC Roof Unit.docx
+   38.4 MB .\New Flyer\Vehicle System Drawings\SR1865_Vehicle_Systems_Drawings.pdf
+   35.7 MB .\New Flyer\SR1484\1484parts.pdf
+   33.8 MB .\New Flyer\SR2300\2300parts.pdf
+   33.2 MB .\New Flyer\SR2254\2254parts.pdf
+   32.4 MB .\New Flyer\SR1464\1464parts.pdf
+   32.0 MB .\Nova\Manuel de pièces\L292 Véolia Transport Québec .PDF
+   31.2 MB .\Nova\Manuel de pièces\L290 Véolia Transport Québec .PDF
+   31.0 MB .\Nova\Manuel de pièces\L780 Transdev Québec Manuel de pièces.PDF
+   30.5 MB .\Nova\Manuel de pièces\L365 Véolia Transport Québec Manuel de pièces.PDF
+   30.0 MB .\New Flyer\SR1359\1359parts.pdf
+   29.7 MB .\MCI\D4005D4505 - 2009\MAINTENANCE\3L-15-925P.pdf
+   29.4 MB .\Nova\Manuel de pièces\L756 Transdev Québec Manuel de pièces.PDF
+   29.2 MB .\Vicinity\B21KLS-1 Parts Manual - Copie.pdf
+   29.2 MB .\New Flyer\SR1520\1520serv.pdf
+   29.1 MB .\New Flyer\Vehicle System Drawings\SR1520_Vehicle_Systems_Drawings.pdf
+   28.3 MB .\Nova\Manuel de pièces\L143 Transdev Québec Manuel de pièces.PDF
+   28.2 MB .\GRANDE WEST-2019-partsmanual.pdf
+   28.2 MB .\Vicinity\atuq-2019-partsmanual.pdf
+   28.2 MB .\Nova\Manuel de pièces\L597 Véolia Transport Québec Manuel de pièces.PDF
+   26.9 MB .\New Flyer\Vehicle System Drawings\SR1484_Vehicle_Systems_Drawings.pdf
+   26.8 MB .\MCI\E4500 - 2007\MAINTENANCE\03-15-4093C.pdf
+   24.9 MB .\MCI\D4005D4505 - 2009\MAINTENANCE\3L-15-925N.pdf
+   24.8 MB .\Grande West\Vicinity Parts Manual 2014.pdf
+   23.9 MB .\New Flyer\SR1484\1484serv.pdf
+   23.1 MB .\New Flyer\SR1259\1259parts.pdf
+   22.8 MB .\New Flyer\SR1464\1464serv.pdf
+   22.8 MB .\Vicinity\-parts-manual-2014.pdf
+   22.7 MB .\Grande West\Vicinity Parts Manual 2015.pdf
+   22.4 MB .\Vicinity\2015-parts-manual.pdf
+   22.1 MB .\Orion\Service Manual\Autobus Viens 1185A_Service_Rev_29Apr02.pdf
+   22.1 MB .\New Flyer\SR1207\1207parts.pdf
+   21.5 MB .\Nova\Schémas électrique\EDL170 Rev A.pdf
+   21.0 MB .\New Flyer\SR1359\1359serv.pdf
+   20.7 MB .\Nova\Schémas électrique\EDL203 Rev A.pdf
+   20.3 MB .\New Flyer\Sr890\890serv.pdf
+   20.1 MB .\New Flyer\Sr976\976serv.pdf
+   19.9 MB .\New Flyer\OEMInfo\Voith\Diwa 5\D864.5_Workshop Manual_150.00382115_2011-02-02_IMAGE.pdf
+   19.7 MB .\New Flyer\SR1259\1259serv.pdf
+   19.3 MB .\New Flyer\Vehicle System Drawings\SR1359_Vehicle_Systems_Drawings.pdf
+   18.6 MB .\New Flyer\Sr890\890parts.pdf
+   18.5 MB .\New Flyer\SR1207\1207serv.pdf
+   18.5 MB .\Nova\Manuels des Fournisseurs\04000 Essieu - ZF\4474.751.104Repair Instructions AVN 75,RL 75,RL 80,RL 82,RL 
+   18.4 MB .\Prevost\Manuels Techniques\DATA\oem\audio, video & GPS system\Operating Instructions REI_DVD_PLAYER.pdf
+   18.4 MB .\New Flyer\Sr976\976parts.pdf
+   18.0 MB .\New Flyer\Sr1053\1053serv.pdf
+   17.7 MB .\New Flyer\SR1127\1127parts.pdf
+   17.5 MB .\New Flyer\Sr1053\1053parts.pdf
+   17.3 MB .\Nova\Manuels des Fournisseurs\10100 Transmission - ZF - EcoLife\4181 751 204a EcoLife Repair Instructions Le
+   17.1 MB .\Nova\Manuels des Fournisseurs\04000 Essieu - ZF\4472.751.101 Repair Instructions AV-110 & AV-133.pdf
+   17.1 MB .\New Flyer\SR1127\1127serv.pdf
+   16.5 MB .\MCI\D4000D4500\D\pm55570\descript.pdf
+   16.4 MB .\MCI\D4005D4505 - 2010\OPERATORS\03-15-5074D.pdf
+   16.2 MB .\MCI\D4005D4505 - 2009\PARTS\2972.pdf
+   16.2 MB .\New Flyer\Vehicle System Drawings\SR1259_Vehicle_Systems_Drawings.pdf
+   16.2 MB .\MCI\D4005D4505 - 2009\PARTS\2967.pdf
+--- dirs with >50 pdfs
+674 .\MCI\D4000D4500\D\pm55570\03
+165 .\MCI\Dseries\parts\dmmba000
+162 .\MCI\Dseries\parts
+145 .\MCI\D4000D4500\D\pm55570\07
+93 .\MCI\D4000D4500\D\pm55570\04
+64 .\Vicinity\livre piece vicinity 2024
+63 .\MCI\D4000D4500\D\pm55570\16

@@ -1,0 +1,26 @@
+﻿ID_CodeReparationExclu,CRECode,CREDescription,CREExclu
+1,FRN-01,Freins avant - remplacement des garnitures,0
+2,FRN-02,Freins arriere - remplacement des garnitures,0
+3,FRN-03,Disques et tambours - resurfacage ou remplacement,0
+4,SUS-01,Suspension pneumatique - coussins d'air,0
+5,SUS-02,Amortisseurs - remplacement,0
+6,DIR-01,Direction - rotules et biellettes,0
+7,MOT-01,Moteur - fuite d'huile,0
+8,MOT-02,Moteur - surchauffe,0
+9,MOT-03,Systeme d'admission d'air,0
+10,TRM-01,Transmission - patinage,0
+11,ELE-01,Electrique - alternateur,0
+12,ELE-02,Batterie - remplacement,0
+13,ELE-03,Eclairage exterieur,0
+14,CLM-01,Climatisation - compresseur,0
+15,CLM-02,Chauffage - circuit,0
+16,POR-01,Portes - mecanisme,0
+17,POR-02,Rampe d'acces,0
+18,PNE-01,Pneus - remplacement,0
+19,ECH-01,Echappement - fuite,0
+20,FIL-01,Filtres - remplacement,0
+21,CAR-01,Carrosserie,1
+22,VIT-01,Vitres,0
+23,INS-01,Inspection mecanique,1
+24,DIV-01,Divers,1
+25,REF-01,Refroidissement - radiateur,0

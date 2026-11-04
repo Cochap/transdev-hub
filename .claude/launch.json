@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "id-card",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "http-server", "2-projects/workshop-id-card/dist", "-p", "4791", "-c-1", "--silent"],
+      "port": 4791
+    }
+  ]
+}

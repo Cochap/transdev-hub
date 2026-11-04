@@ -1,0 +1,22 @@
+# Lessons from 2026-09-23: failures and fixes
+Each lesson is now enforced by a memory, a skill or a CLAUDE.md rule, named in the last column.
+
+| # | Failure | Fix | Where it's enforced |
+|---|---|---|---|
+| 1 | Scored T1/T2 as PASS although the citations showed the index name | Pass requires a correct answer AND a citation that names the manual | Constitution; `boulon-agent-testing` |
+| 2 | Left the ECC value report out of the day plan, so the handoff looked incomplete | Read every doc in `docs/` on resume; follow the CLAUDE.md skill map | CLAUDE.md skill map |
+| 3 | Pre-assigned an ECC tool to every schedule slot, creating a bottleneck | Call ECC tools dynamically; report them in the HQ feed | memory `feedback-ecc-dynamic` |
+| 4 | "Fix 2 goes in Fallback": a one-line pointer on a French UI | Full click paths with EN+FR labels | `boulon-greg-steps` |
+| 5 | Recommended the Basic tier based on a wrong size assumption ("100+ manuals") | Measure first: the metadata inventory found 3,052 files, 6.95 GB | `docs/manuals-inventory-2026-09-23.md`; `boulon-approval-package` sourcing rule |
+| 6 | Projected limits without grounding them in our own data | Proved them with pilot evidence: only the 2 files over 16 MB failed, and the 262K-character cut-off | `boulon-approval-package` (no invented numbers) |
+| 7 | Gave "create a paid service" steps with no approval route | Money gate: approval package for Henri first | `boulon-greg-steps` §0; memory `feedback-approval-gate` |
+| 8 | The first cost request was a dense doc only an insider could follow | A story-driven visual page for readers with no context | `boulon-approval-package` |
+| 9 | The report said "3 days", misattributed V0/V4, and showed only 10 tests | Master timeline + 111-test ledger built from all logs; versions only from those files | `docs/timeline-master.md`, `docs/test-ledger.md`, `boulon-report-pipeline` |
+| 10 | Put future dates in a report to Henri | No projections unless he asks | Constitution; `boulon-approval-package` |
+| 11 | Claimed an SLA for Basic, which has none with 1 replica | Verify limits on Microsoft Learn before stating them | CLAUDE.md standing rule |
+| 12 | Didn't explain the cost jump (tables + diagrams = 2 reading passes) | Explain what, why, and one-time vs monthly before quoting a number | `boulon-report-pipeline` |
+| 13 | Told Greg to download Node.js on a locked company PC | IT ticket + justification; never suggest workarounds | memory `company-it-constraints`; `boulon-greg-steps` |
+| 14 | Expected ECC skills to fire on their own | Root causes: 292 skills overflow the skill listing, Node.js is missing so hooks are dead, and there's no routing hook. Fixes: skill map, IT ticket for Node, trim later | CLAUDE.md skill map; `docs/it-requests/` |
+| 15 | Direct Line refused the secret (403) | BOULON's environment uses the Europe endpoint | `tests/ask-agent.ps1`; `boulon-agent-testing` |
+| 16 | Agent tests returned LatestPublishedVersionNotFound, then IntegratedAuthenticationNotSupportedInChannel | Publish first; the sign-in setting blocks Direct Line (Henri decides) | `boulon-agent-testing` |
+| 17 | Some sub-agents (architect, planner, marketing) can't write files | Use general-purpose agents for writing; Claude saves the read-only agents' output | `boulon-report-pipeline` |

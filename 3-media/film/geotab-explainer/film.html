@@ -1,0 +1,393 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Geotab explainer</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=block" rel="stylesheet">
+<style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script>
+// Every frame is a pure function of time: window.seek(t). READY / END / EV are read by render.py.
+const C = document.getElementById('c'), X = C.getContext('2d');
+const INK = '#2b2d42', RED = '#d62828', ORANGE = '#f4a261', PURPLE = '#5b3fa6', GEAR = '#6a4cb6';
+const FONT = '"Montserrat", Arial Black, sans-serif';
+let WORDS, META, BOARDS; const IMG = {};
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const ease = p => 1 - Math.pow(1 - clamp(p, 0, 1), 3);
+const spring = p => p <= 0 ? 0 : p >= 1.6 ? 1 : 1 - Math.exp(-6 * p) * Math.cos(11 * p);
+const hash = n => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
+
+// word lookup by occurrence number: W('one', 2) = start of the second "one"
+function W(word, occ = 1) {
+  let k = 0;
+  for (const w of WORDS) if (w.w.toLowerCase().replace(/[^a-z0-9%']/g, '') === word) { if (++k === occ) return w.s; }
+  throw new Error('word not found: ' + word + ' #' + occ);
+}
+
+// ---------- camera: plate and everything on it share one transform ----------
+let CAM;
+function camera(cx, cy, z) {
+  const s = 0.5 * z, vw = 1920 / s, vh = 1080 / s;
+  cx = clamp(cx, vw / 2, 3840 - vw / 2); cy = clamp(cy, vh / 2, 2160 - vh / 2);
+  CAM = { cx, cy, s };
+  X.setTransform(s, 0, 0, s, 960 - cx * s, 540 - cy * s);
+}
+function drift(t, t0, t1, cx, cy, z, dx = 60, dz = 0.03) {
+  const p = clamp((t - t0) / Math.max(0.5, t1 - t0), 0, 1);
+  camera(cx + dx * (p - .5), cy, z * (1 + dz * p));
+}
+function plate(name) { X.drawImage(IMG[name], 0, 0, 3840, 2160); }
+
+// ---------- typed text on a world rectangle ----------
+function typeOn(rect, text, t0, t, opt = {}) {
+  if (t < t0) return;
+  const [x, y, w, h] = rect, pad = opt.pad ?? 0.1, lines = text.split('\n');
+  const rate = opt.rate ?? 30, ink = opt.ink ?? INK;
+  let size = opt.size || 1e9;
+  X.font = `800 100px ${FONT}`;
+  for (const l of lines) size = Math.min(size, 100 * w * (1 - 2 * pad) / Math.max(1, X.measureText(l).width));
+  size = Math.min(size, h * (1 - 2 * pad) / (lines.length * 1.12));
+  X.font = `800 ${size}px ${FONT}`; X.fillStyle = ink; X.textBaseline = 'middle';
+  let i = 0;
+  lines.forEach((l, li) => {
+    const lw = X.measureText(l).width, ly = y + h / 2 + (li - (lines.length - 1) / 2) * size * 1.12;
+    let lx = x + w / 2 - lw / 2;
+    for (const ch of l) {
+      const ti = t0 + i / rate, p = ease((t - ti) / 0.18), cw = X.measureText(ch).width;
+      if (t >= ti) {
+        const sc = 1.45 - 0.45 * p, ox = 0.7 * size * (1 - p);
+        X.save(); X.translate(lx + cw / 2 + ox, ly); X.scale(sc, sc); X.fillText(ch, -cw / 2, 0); X.restore();
+      }
+      lx += cw; i++;
+    }
+  });
+}
+const typeDur = (text, rate = 30) => text.replace(/\n/g, '').length / rate;
+
+// ---------- marks ----------
+function redX(cx, cy, r, t0, t) {
+  if (t < t0) return;
+  X.save(); X.strokeStyle = RED; X.lineCap = 'round'; X.lineWidth = 30 / CAM.s;
+  [[-1, -1, 1, 1], [1, -1, -1, 1]].forEach((d, k) => {
+    const p = ease((t - t0 - k * 0.11) / 0.11); if (p <= 0) return;
+    X.beginPath(); X.moveTo(cx + d[0] * r, cy + d[1] * r);
+    X.lineTo(cx + d[0] * r + (d[2] - d[0]) * r * p, cy + d[1] * r + (d[3] - d[1]) * r * p); X.stroke();
+  });
+  X.restore();
+}
+function puff(x, y, r, t0, t) {
+  const p = (t - t0) / 0.35; if (p < 0 || p > 1) return;
+  X.save(); X.fillStyle = '#fff';
+  for (let k = 0; k < 7; k++) {
+    const a = k / 7 * Math.PI * 2 + hash(k + x) , d = r * (0.6 + 0.9 * ease(p));
+    X.beginPath(); X.arc(x + Math.cos(a) * d, y + Math.sin(a) * d * .6, r * .35 * (1 - p), 0, 7); X.fill();
+  }
+  X.restore();
+}
+function bang(x, y, t0, t, s = 1) { // "!" pop
+  if (t < t0) return; const k = spring((t - t0) / 0.4) * s;
+  X.save(); X.translate(x, y); X.scale(k, k); X.fillStyle = ORANGE;
+  X.beginPath(); X.arc(0, 0, 70, 0, 7); X.fill(); X.fillStyle = '#fff';
+  X.fillRect(-11, -45, 22, 58); X.beginPath(); X.arc(0, 32, 12, 0, 7); X.fill(); X.restore();
+}
+function popAt(t0, t) { return t < t0 ? 0 : spring((t - t0) / 0.45); }
+
+// ---------- flat icons (no outlines) ----------
+const ICON = {
+  pin(c) { X.fillStyle = '#e2552f'; X.beginPath(); X.arc(0, -20, 50, Math.PI, 0); X.lineTo(0, 70); X.closePath(); X.fill(); X.beginPath(); X.arc(0, -20, 50, 0, 7); X.fill(); X.fillStyle = '#fff'; X.beginPath(); X.arc(0, -20, 20, 0, 7); X.fill(); },
+  gauge(c) { X.fillStyle = '#3d5a80'; X.beginPath(); X.arc(0, 10, 70, Math.PI, 0); X.fill(); X.fillStyle = '#98c1d9'; X.beginPath(); X.arc(0, 10, 50, Math.PI, 0); X.fill(); X.save(); X.rotate(-.6 + .3 * Math.sin(c * 6)); X.fillStyle = RED; X.fillRect(-5, -45, 10, 55); X.restore(); },
+  belt(c) { X.fillStyle = '#5c6b80'; X.save(); X.rotate(-.7); X.fillRect(-90, -14, 180, 28); X.restore(); X.fillStyle = '#c9ccd5'; X.fillRect(-26, -20, 52, 40); X.fillStyle = '#5c6b80'; X.fillRect(-12, -8, 24, 16); },
+  engine(c) { X.fillStyle = '#4a5568'; X.fillRect(-60, -30, 120, 70); X.fillStyle = '#2d3748'; X.fillRect(-40, -55, 80, 25); X.fillRect(60, -5, 20, 30); X.fillRect(-80, -5, 20, 30); X.fillStyle = ORANGE; X.beginPath(); X.arc(0, 5, 14, 0, 7); X.fill(); },
+  wheel(c) { X.fillStyle = '#2d3748'; X.beginPath(); X.arc(0, 0, 65, 0, 7); X.fill(); X.fillStyle = '#e8e3d9'; X.beginPath(); X.arc(0, 0, 45, 0, 7); X.fill(); X.fillStyle = '#2d3748'; X.fillRect(-45, -8, 90, 16); X.fillRect(-8, 0, 16, 45); X.beginPath(); X.arc(0, 0, 16, 0, 7); X.fill(); },
+  wrench(c) { X.save(); X.rotate(-.8); X.fillStyle = '#718096'; X.fillRect(-12, -10, 24, 110); X.beginPath(); X.arc(0, -30, 38, 0, 7); X.fill(); X.fillStyle = '#f4f1ea'; X.fillRect(-12, -75, 24, 40); X.restore(); },
+  antenna(c) { X.fillStyle = '#4a5568'; X.fillRect(-6, -70, 12, 110); X.fillRect(-40, 35, 80, 20); X.fillStyle = '#98c1d9'; for (let k = 1; k < 3; k++) { X.beginPath(); X.arc(0, -70, 20 * k, -2.4, -.7); X.arc(0, -70, 20 * k - 8, -.7, -2.4, true); X.fill(); } },
+  scissors(c) { X.fillStyle = '#718096'; X.save(); X.rotate(.35); X.fillRect(-6, -80, 12, 90); X.restore(); X.save(); X.rotate(-.35); X.fillRect(-6, -80, 12, 90); X.restore(); X.fillStyle = '#e2552f'; X.beginPath(); X.arc(-25, 30, 22, 0, 7); X.arc(25, 30, 22, 0, 7); X.fill(); X.fillStyle = '#e8e3d9'; X.beginPath(); X.arc(-25, 30, 10, 0, 7); X.fill(); X.beginPath(); X.arc(25, 30, 10, 0, 7); X.fill(); },
+  chip(c) { X.fillStyle = '#3d5a80'; X.fillRect(-55, -55, 110, 110); X.fillStyle = '#98c1d9'; X.fillRect(-30, -30, 60, 60); X.fillStyle = '#3d5a80'; for (let k = -2; k <= 2; k++) { X.fillRect(k * 20 - 4, -75, 8, 20); X.fillRect(k * 20 - 4, 55, 8, 20); } },
+};
+function icon(name, x, y, sc, t0, t) {
+  const k = popAt(t0, t); if (k <= 0) return;
+  X.save(); X.translate(x, y); X.scale(sc * k, sc * k); ICON[name](t); X.restore();
+}
+
+// ---------- characters ----------
+function blinkClosed(t, seed) { // 0.14 s blink every 2.7-4.2 s
+  let tb = hash(seed) * 2; for (let k = 0; tb < t + 1; k++) { if (t >= tb && t < tb + 0.14) return true; tb += 2.7 + 1.5 * hash(seed * 13 + k); } return false;
+}
+function ik(sx, sy, tx, ty, L1, L2, bendSign) {
+  let dx = tx - sx, dy = ty - sy, d = Math.hypot(dx, dy); d = clamp(d, Math.abs(L1 - L2) + 1, L1 + L2 - 0.5);
+  const a = Math.atan2(dy, dx), cosA = (L1 * L1 + d * d - L2 * L2) / (2 * L1 * d);
+  const a1 = a + bendSign * Math.acos(clamp(cosA, -1, 1));
+  const ex = sx + Math.cos(a1) * L1, ey = sy + Math.sin(a1) * L1;
+  const a2 = Math.atan2(ty - ey, tx - ex);
+  return [ex, ey, ex + Math.cos(a2) * L2, ey + Math.sin(a2) * L2];
+}
+function tube(x1, y1, x2, y2, w, col) { X.strokeStyle = col; X.lineWidth = w; X.lineCap = 'round'; X.beginPath(); X.moveTo(x1, y1); X.lineTo(x2, y2); X.stroke(); }
+function mitten(x, y, ang, r, skin, pose) {
+  X.save(); X.translate(x, y); X.rotate(ang); X.fillStyle = skin;
+  if (pose === 'fist') { X.beginPath(); X.arc(0, 0, r * .85, 0, 7); X.fill(); }
+  else if (pose === 'point') { X.beginPath(); X.ellipse(r * .2, 0, r * .8, r * .7, 0, 0, 7); X.fill(); X.fillRect(r * .5, -r * .22, r * 1.1, r * .44); X.beginPath(); X.arc(r * 1.6, 0, r * .22, 0, 7); X.fill(); }
+  else { X.beginPath(); X.ellipse(r * .45, 0, r, r * .75, 0, 0, 7); X.fill(); X.beginPath(); X.ellipse(r * .1, -r * .75, r * .25, r * .45, -.5, 0, 7); X.fill(); }
+  X.restore();
+}
+// person(name, x = centre, y = feet, height in world px). arms: {l:[tx,ty,pose], r:[...]} world targets, null = hang
+function person(nm, x, y, H, t, o = {}) {
+  const B = META[nm + '_body'], Hd = META[nm + '_head'], s = H / B.feet, k = H / 918 * 0.55;
+  const bob = Math.sin(t * 2.2 + x) * 6 * s * 4 + (o.jump ? -o.jump : 0);
+  const flip = o.flip ? -1 : 1, sq = o.squash ?? 1;
+  X.save(); X.translate(x, y + bob); X.scale(flip * (o.turn ?? 1), sq); X.translate(-B.w * s / 2, -B.feet * s);
+  // arms behind? draw body first, arms on top
+  X.drawImage(IMG[nm + '_body'], 0, 0, B.w * s, B.h * s);
+  const [l, r, sy] = B.shoulders, sleeve = `rgb(${B.sleeve})`, skin = `rgb(${Hd.skin})`;
+  const toLocal = (wx, wy) => [((wx - x) / (flip * (o.turn ?? 1)) + B.w * s / 2), ((wy - y - bob) / sq + B.feet * s)];
+  [['l', l + 18, -1], ['r', r - 18, 1]].forEach(([side, sx0, sgn]) => {
+    const sx = sx0 * s, syy = (sy + 10) * s, L1 = 118 * k * 1.9, L2 = 112 * k * 1.9, th = 36 * k * 1.9;
+    let tx, ty, pose = 'open';
+    const tgt = o.arms && o.arms[side];
+    if (tgt) { [tx, ty] = toLocal(tgt[0], tgt[1]); pose = tgt[2] || 'open'; }
+    else { tx = sx + sgn * 14 * s * 4 + Math.sin(t * 2 + sgn) * 6; ty = syy + (L1 + L2) * 0.97; }
+    const [ex, ey, hx, hy] = ik(sx, syy, tx, ty, L1, L2, sgn * (ty < syy ? -1 : 1));
+    tube(sx, syy, ex, ey, th, sleeve); tube(ex, ey, hx, hy, th * 0.92, sleeve);
+    mitten(hx, hy, Math.atan2(hy - ey, hx - ex), th * 0.75, skin, pose);
+  });
+  // head: nod ±0.035 rad about the neck, blink
+  const nod = (o.nod ?? 1) * 0.035 * Math.sin(t * 3.1 + x * .01), ny = B.neck * s;
+  X.save(); X.translate(B.w * s / 2, ny); X.rotate(nod); X.translate(-B.w * s / 2, -ny);
+  X.drawImage(IMG[nm + '_head'], 0, 0, Hd.w * s, Hd.h * s);
+  if (blinkClosed(t, x * 0.37 + H)) { X.fillStyle = skin; for (const [ex2, ey2, ew, eh] of Hd.eyes) { X.beginPath(); X.ellipse(ex2 * s, ey2 * s, ew * s * .75, eh * s * .7, 0, 0, 7); X.fill(); X.fillStyle = 'rgb(60,50,70)'; X.fillRect((ex2 - ew * .6) * s, (ey2 - 2) * s, ew * 1.2 * s, 5 * s * 3); X.fillStyle = skin; } }
+  X.restore();
+  X.restore();
+}
+function sprite(nm, x, y, H, o = {}) { // bottom-centre anchored
+  const m = META[nm], s = H / m.h; X.save(); X.translate(x, y); X.rotate(o.rot || 0); X.scale((o.flip ? -1 : 1) * (o.sx ?? 1), o.sy ?? 1);
+  X.drawImage(IMG[nm], -m.w * s / 2, -m.h * s, m.w * s, m.h * s); X.restore();
+}
+function arriveSpring(t, t0) { const k = spring((t - t0) / 0.5); return { sx: 1 + (1 - k) * 0.25, sy: k }; }
+
+// ---------- shots ----------
+const SHOTS = [];
+const shot = (t0, f) => SHOTS.push({ t0, f });
+const EV = []; const ev = (t, type) => EV.push({ t: +t.toFixed(3), type });
+let END;
+
+function build() {
+  const B = BOARDS;
+  // 1 hook: bus stop, broken bus, typed denial, red X
+  const tWithout = W('without', 1), tDoesnt = W("doesn't", 1);
+  ev(tWithout, 'pop'); ev(tWithout, 'type'); ev(tDoesnt, 'hit');
+  shot(0, (t, t1) => {
+    drift(t, 0, t1, 1700, 1000, 1.35);
+    plate('p01-busstop');
+    const shake = Math.sin(t * 40) * 4;
+    sprite('bus', 2650 + shake, 1900, 640);
+    for (let k = 0; k < 6; k++) { const ph = (t * 0.6 + k / 6) % 1; X.fillStyle = `rgba(120,125,140,${0.85 - ph * .6})`; X.beginPath(); X.arc(3330 + ph * 60 + Math.sin(k + t) * 30, 1450 - ph * 600, 50 + ph * 90, 0, 7); X.fill(); }
+    const shrug = clamp((t - 0.3) / 0.3, 0, 1) * (t < 1.6 ? 1 : 0.4);
+    person('viewer', 1350, 1420, 860, t, { arms: { l: [1150, 1060 - 160 * shrug, 'open'], r: [1550, 1060 - 160 * shrug, 'open'] } });
+    const r = B['p01-busstop'][0]; const k = popAt(tWithout - .25, t);
+    X.save(); X.translate(r[0] + r[2] / 2, r[1] + r[3] / 2); X.scale(k, k); X.translate(-(r[0] + r[2] / 2), -(r[1] + r[3] / 2));
+    typeOn(r, 'WITHOUT\nWARNING', tWithout, t, { pad: .07 }); redX(r[0] + r[2] / 2, r[1] + r[3] / 2, r[3] * .45, tDoesnt, t); X.restore();
+  });
+  // 2 stakes: city, counter to 100 billion, icons per word
+  const t2 = W('every', 1), tNum = W('100', 1), tPts = W('points', 1);
+  ev(t2, 'whoosh'); ev(t2 + .1, 'type');
+  const icons2 = [['chip', 'data', 1, 1640, 760], ['pin', 'points', 1, 1790, 1050], ['gauge', 'six', 1, 2520, 1060], ['engine', 'vehicles', 1, 2700, 800]];
+  icons2.forEach(([n, w, o]) => ev(W(w, o), 'pop'));
+  shot(t2, (t, t1) => {
+    drift(t, t2, t1, 2140, 650, 2.3, 50);
+    plate('p02-city');
+    const r = B['p02-city'][0], top = [r[0], r[1] + 10, r[2], r[3] * .38], bot = [r[0], r[1] + r[3] * .4, r[2], r[3] * .55];
+    typeOn(top, 'DATA POINTS A DAY', t2 + .1, t, { pad: .08 });
+    if (t >= tNum) {
+      const p = ease((t - tNum) / (tPts + .3 - tNum)), v = Math.round(Math.pow(p, 3) * 100e9);
+      X.font = `800 ${bot[3] * .5}px ${FONT}`; X.fillStyle = '#e2552f'; X.textAlign = 'center'; X.textBaseline = 'middle';
+      const sc = 1 + 0.08 * Math.max(0, 1 - (t - tPts - .3) / .2) * (t > tPts + .3 ? 1 : 0);
+      X.save(); X.translate(bot[0] + bot[2] / 2, bot[1] + bot[3] / 2); X.scale(sc, sc); X.fillText(v.toLocaleString('en-US'), 0, 0); X.restore(); X.textAlign = 'left';
+    }
+    icons2.forEach(([n, w, o, x, y]) => icon(n, x, y - 120 + Math.sin(t * 3 + x) * 8, 1.1, W(w, o), t));
+  });
+  // 3 reveal: spotlight, GO box, name typed
+  const t3 = W('the', 1), tL = W('listens', 1), tCalled = W('called', 1);
+  ev(t3, 'whoosh'); ev(tL, 'drop'); ev(tCalled, 'pop'); ev(tCalled, 'type');
+  shot(t3, (t, t1) => {
+    drift(t, t3, t1, 1920, 1080, 1.18);
+    plate('p03-stage');
+    const fall = clamp((t - tL) / 0.35, 0, 1), y = 300 + (1520 - 300) * fall * fall;
+    if (t >= tL) { const sq = t > tL + .35 ? arriveSpring(t, tL + .35) : { sx: 1, sy: 1 }; sprite('gobox', 1920, y, 330, { sx: sq.sx, sy: sq.sy }); puff(1920, 1500, 220, tL + .35, t); }
+    const r = B['p03-stage'][0], k = popAt(tCalled - .1, t);
+    if (k > 0) { X.save(); X.translate(r[0] + r[2] / 2, r[1]); X.rotate(Math.sin((t - tCalled) * 5) * .04 * Math.exp(-(t - tCalled) * 1.5)); X.translate(-(r[0] + r[2] / 2), -r[1]); typeOn(r, 'GEOTAB', tCalled, t); X.restore(); }
+  });
+  // 4 the device: diagnostic port, no antennas, no cut wires
+  const t4 = W("it's", 1), tPl = W('plugged', 1), tDiag = W('diagnostic', 1), tAnt = W('antennas', 1), tCut = W('cut', 1);
+  ev(t4, 'whoosh'); ev(tPl + .3, 'pop'); ev(tDiag, 'type'); ev(tAnt, 'pop'); ev(tAnt + .35, 'hit'); ev(tCut, 'pop'); ev(tCut + .3, 'hit');
+  shot(t4, (t, t1) => {
+    drift(t, t4, t1, 2250, 1000, 1.3);
+    plate('p04-port');
+    const p = ease((t - tPl) / 0.4); const bx = 2900 - 590 * p, by = 1250 - 400 * p;
+    if (t >= t4 + .2) sprite('gobox', bx, by + 120, 230, { rot: 0 });
+    puff(2310, 760, 140, tPl + .4, t);
+    typeOn(B['p04-port'][0], 'OBD\nPORT', tDiag, t, { pad: .14 });
+    icon('antenna', 1500, 1500, 1.3, tAnt, t); redX(1500, 1480, 130, tAnt + .35, t);
+    icon('scissors', 1900, 1520, 1.3, tCut, t); redX(1900, 1500, 130, tCut + .3, t);
+  });
+  // 5 the four parts, each landing on its named board
+  const t5 = W('it', 2);
+  const parts = [['pin', 'WHERE', W('where', 1)], ['wheel', 'DRIVING', W('how', 1)], ['engine', 'ENGINE', W('how', 2)], ['wrench', 'SERVICE', W('when', 1)]];
+  ev(t5, 'whoosh'); parts.forEach(p => { ev(p[2], 'drop'); ev(p[2] + .25, 'type'); });
+  shot(t5, (t, t1) => {
+    drift(t, t5, t1, 1900, 1150, 1.0);
+    plate('p05-wall');
+    let cur = -1; parts.forEach((p, i) => { if (t >= p[2] - .2) cur = i; });
+    parts.forEach(([ic, label, ti], i) => {
+      const r = B['p05-wall'][i]; if (t < ti) return;
+      const fall = clamp((t - ti) / .28, 0, 1), y = r[1] + r[3] * .36, yy = -200 + (y + 200) * fall * fall;
+      icon(ic, r[0] + r[2] / 2, yy, 1.8, ti, t); if (fall >= 1) puff(r[0] + r[2] / 2, y + 60, 150, ti + .28, t);
+      typeOn([r[0], r[1] + r[3] * .66, r[2], r[3] * .26], label, ti + .25, t);
+    });
+    const tr = cur >= 0 ? B['p05-wall'][cur] : null;
+    person('mechanic', 3330, 2120, 1150, t, { arms: { l: tr ? [tr[0] + tr[2] / 2, tr[1] + tr[3] / 2, 'point'] : null } });
+  });
+  // wipe + headline
+  const t6 = W('so', 1); ev(t6 - .2, 'whoosh');
+  shot(t6, (t) => {
+    X.setTransform(1, 0, 0, 1, 0, 0); X.fillStyle = PURPLE; X.fillRect(0, 0, 1920, 1080);
+    const z = 1 + 0.03 * (t - t6); X.translate(960, 540); X.scale(z, z); X.translate(-960, -540);
+    gear(330, 820, 240, t * .5); gear(1620, 260, 200, -t * .6); gear(1700, 900, 130, t * .8);
+    CAM = { s: 1 }; typeOn([260, 380, 1400, 200], 'SO HOW DOES IT WORK?', t6, t, { ink: '#fff', size: 94, rate: 34 });
+    [[420, 300], [1500, 300], [1560, 740]].forEach(([x, y], i) => { const k = popAt(t6 + .3 + i * .18, t); if (k > 0) { X.save(); X.translate(x, y); X.scale(k, k); X.rotate(Math.sin(t * 4 + i) * .15); X.font = `800 140px ${FONT}`; X.fillStyle = ORANGE; X.textAlign = 'center'; X.fillText('?', 0, 0); X.restore(); X.textAlign = 'left'; } });
+  });
+  [0, 1, 2].forEach(i => ev(t6 + .3 + i * .18, 'pop'));
+  // 7 dispatch room: live map
+  const t7 = W('over', 1), tSends = W('sends', 1), tLive = W('live', 1);
+  ev(t7, 'whoosh'); ev(tLive, 'type'); ev(tLive, 'ding');
+  shot(t7, (t, t1) => {
+    drift(t, t7, t1, 1950, 1000, 1.12);
+    plate('p06-dispatch');
+    const r = B['p06-dispatch'][0]; X.save(); X.beginPath(); X.rect(r[0], r[1], r[2], r[3]); X.clip();
+    X.strokeStyle = '#3d5a80'; X.lineWidth = 26;
+    for (let k = 0; k < 7; k++) { X.beginPath(); X.moveTo(r[0], r[1] + r[3] * (k + .5) / 7); X.lineTo(r[0] + r[2], r[1] + r[3] * ((k + .5) / 7 + .08 * Math.sin(k))); X.stroke(); }
+    for (let k = 0; k < 9; k++) { X.beginPath(); X.moveTo(r[0] + r[2] * (k + .5) / 9, r[1]); X.lineTo(r[0] + r[2] * ((k + .5) / 9 - .03), r[1] + r[3]); X.stroke(); }
+    for (let k = 0; k < 46; k++) {
+      const td = tSends + k * 0.07; if (t < td) continue;
+      const x = r[0] + 80 + hash(k) * (r[2] - 160) + Math.sin(t * .7 + k) * 30, y = r[1] + 80 + hash(k + 50) * (r[3] - 260) + Math.cos(t * .6 + k) * 20;
+      const kk = spring((t - td) / .4); X.fillStyle = k % 9 === 4 ? '#e2552f' : '#8ee3c8'; X.beginPath(); X.arc(x, y, 22 * kk, 0, 7); X.fill();
+    }
+    X.restore();
+    typeOn([r[0] + r[2] * .3, r[1] + r[3] - 170, r[2] * .4, 150], 'LIVE MAP', tLive, t, { ink: '#fff', pad: .05 });
+    const typing = Math.sin(t * 18) * 8;
+    sprite('dispatcher', 3330, 1850 + Math.abs(typing) * .3, 1000, { flip: true });
+  });
+  for (let k = 0; k < 46; k += 6) ev(tSends + k * .07, 'pop');
+  // 8 cab: coaching on the dash tablet
+  const t8 = W('tailgating', 1), tBr = W('braking', 1), tSeat = W('seatbelt', 1), tCoach = W('coaching', 1);
+  ev(t8, 'whoosh'); [t8, tBr, tSeat].forEach(x => { ev(x, 'type'); }); ev(tCoach - .3, 'ding'); ev(tCoach - .3, 'type');
+  shot(t8, (t, t1) => {
+    drift(t, t8, t1, 1700, 1250, 1.3);
+    plate('p07-cab');
+    const lean = t > tBr && t < tBr + .5 ? Math.sin((t - tBr) / .5 * Math.PI) * 40 : 0;
+    sprite('driver_back', 720, 2200 - lean * .3, 1000, { rot: lean * .001 });
+    const r = B['p07-cab'][0], lab = t >= tCoach - .3 ? ['KEEP YOUR\nDISTANCE', tCoach - .3, '#2a9d8f'] : t >= tSeat ? ['SEAT BELT!', tSeat, RED] : t >= tBr ? ['HARSH\nBRAKING', tBr, RED] : ['TAILGATING', t8, RED];
+    X.fillStyle = '#fff'; X.fillRect(r[0] + 8, r[1] + 8, r[2] - 16, r[3] - 16);
+    typeOn(r, lab[0], lab[1], t, { ink: lab[2], pad: .12 });
+  });
+  // 9 garage chalkboard: fault -> work order -> reminders
+  const t9 = W('an', 1), tF = W('fault', 1), tWo = W('work', 2), tRem = W('reminders', 1);
+  ev(t9, 'whoosh'); [tF, tWo, tRem].forEach(x => ev(x, 'type')); ev(tWo + .5, 'ding');
+  const lines9 = [['FAULT CODE', tF], ['WORK ORDER ✓', tWo], ['SERVICE DUE ×5', tRem]];
+  shot(t9, (t, t1) => {
+    drift(t, t9, t1, 1150, 1150, 1.35);
+    plate('p08-garage');
+    const r = B['p08-garage'][0]; let hand = null;
+    lines9.forEach(([txt, ti], i) => {
+      const rr = [r[0] + 40, r[1] + 40 + i * (r[3] - 80) / 3, r[2] - 80, (r[3] - 80) / 3];
+      typeOn(rr, txt, ti, t, { ink: '#f4f1ea', pad: .08 });
+      if (t >= ti && t < ti + typeDur(txt) + .1) hand = [rr[0] + rr[2] * (0.15 + 0.7 * clamp((t - ti) / typeDur(txt), 0, 1)) + Math.sin(t * 40) * 8, rr[1] + rr[3] * .6 + Math.cos(t * 33) * 8, 'fist'];
+    });
+    person('mechanic', 1900, 2120, 1150, t, { arms: { l: hand || [1480, 1500, 'open'] }, turn: t < tF ? 1 : 1 });
+  });
+  // wipe + 10 depot yard: one rule, every bus
+  const t10 = W('at', 1), tOne = W('one', 2), tEvery = W('every', 2), tMove = W('move', 1);
+  ev(t10 - .2, 'whoosh'); ev(tOne, 'type'); ev(tEvery, 'ding'); ev(tMove, 'pop');
+  shot(t10, (t, t1) => {
+    drift(t, t10, t1, 1920, 1000, 1.35);
+    plate('p09-yard');
+    if (t >= tEvery) for (let row = 0; row < 2; row++) for (let k = 0; k < 9; k++) {
+      const x = row ? 2250 + k * 160 : 200 + k * 165, y = 1080 + k * 6, td = tEvery + k * .04;
+      if (t < td) continue; const on = (Math.floor((t - td) * 4) % 2 === 0); X.fillStyle = on ? ORANGE : '#ffd8a8';
+      X.beginPath(); X.arc(x, y, 26 * spring((t - td) / .3), 0, 7); X.fill();
+    }
+    typeOn(BOARDS['p09-yard'][0], 'ONE RULE.\nEVERY BUS.', tOne, t, { pad: .06 });
+    const j1 = t > tMove && t < tMove + .5 ? Math.sin((t - tMove) / .5 * Math.PI) * 120 : 0;
+    person('viewer', 1400, 2100, 820, t, { jump: j1, arms: { r: t > tMove ? [1650, 1350, 'open'] : null } });
+    person('mechanic', 2500, 2100, 860, t, { jump: j1 * .8, arms: { l: t > tMove ? [2250, 1350, 'fist'] : null } });
+    bang(1400, 1180 - j1, tMove, t); bang(2500, 1140 - j1, tMove + .08, t);
+  });
+  // 11 intersection: up to 40 % fewer collisions (Geotab's claim)
+  const t11 = W('geotab', 3), tCut2 = W('cut', 2), tCol = W('collisions', 1), t40 = W('40%', 1);
+  ev(t11, 'whoosh'); ev(tCut2 - .2, 'whoosh'); ev(t40, 'type');
+  shot(t11, (t, t1) => {
+    drift(t, t11, t1, 1900, 1150, 1.1);
+    plate('p10-cross');
+    const p = ease((t - (tCut2 - .9)) / 0.9), bx = -900 + (1150 + 900) * p;
+    const jump = t > tCol && t < tCol + .5 ? Math.sin((t - tCol) / .5 * Math.PI) * 140 : 0;
+    person('viewer', 2650 + (t > tCol ? 120 * ease((t - tCol) / .4) : 0), 2080, 820, t, { jump, arms: { l: t > tCol ? [2100, 1400, 'open'] : null } });
+    sprite('bus', bx, 1950, 760, { rot: t > tCut2 && t < tCut2 + .3 ? Math.sin((t - tCut2) / .3 * Math.PI) * .015 : 0 });
+    bang(2770, 1150 - jump, tCol, t);
+    const r = BOARDS['p10-cross'][0];
+    typeOn([r[0], r[1], r[2], r[3] * .72], 'UP TO\n40%\nFEWER', t40, t, { ink: '#e2552f', pad: .1 });
+    typeOn([r[0], r[1] + r[3] * .7, r[2], r[3] * .26], 'GEOTAB CLAIM', t40 + .3, t, { pad: .1 });
+  });
+  // 12-13 twist + question: back to the stop
+  const t12 = W('so', 2), tWas = W('was', 1), tW3 = W('warning', 3), tList = W('listening', 1), t13 = W('what', 1);
+  ev(t12, 'whoosh'); ev(tWas, 'type'); ev(tW3, 'pop'); ev(t13, 'type'); ev(t13, 'pop');
+  END = WORDS[WORDS.length - 1].e + 1.6;
+  shot(t12, (t, t1) => {
+    drift(t, t12, END, 1700, 1000, 1.35, 80, 0.04);
+    plate('p01-busstop');
+    sprite('bus', 2650 + Math.sin(t * 30) * 1.5, 1900, 640);
+    const turnP = t < tW3 ? 1 : Math.cos(clamp((t - tW3) / .25, 0, 1) * Math.PI); // flips to face the bus, then back at the question
+    const back = t >= t13 ? ease((t - t13) / .25) : 0, turn = t >= t13 ? -1 + 2 * back : (t >= tW3 ? turnP : 1);
+    person('viewer', 1350, 1420, 860, t, { turn: Math.abs(turn) < .05 ? .05 : turn, nod: t > tList ? 3 : 1, arms: t >= t13 ? { r: [1600, 1000, 'point'] } : null });
+    bang(1350, 420, tW3, t, t < t13 ? 1 : Math.max(0, 1 - (t - t13) / .2));
+    const r = BOARDS['p01-busstop'][0];
+    if (t < t13) typeOn(r, 'IT WAS\nWARNING US', tWas, t, { pad: .07 });
+    else { X.save(); const k = popAt(t13 - .05, t); X.translate(r[0] + r[2] / 2, r[1] + r[3] / 2); X.scale(.9 + .1 * k, .9 + .1 * k); X.translate(-(r[0] + r[2] / 2), -(r[1] + r[3] / 2)); typeOn(r, 'WHAT WOULD\nYOUR BUS\nTELL YOU?', t13, t, { rate: 34, pad: .06 }); X.restore(); }
+  });
+  SHOTS.sort((a, b) => a.t0 - b.t0);
+  window.WIPES = [t6, t10];
+}
+function gear(x, y, r, a) {
+  X.save(); X.translate(x, y); X.rotate(a); X.fillStyle = GEAR;
+  for (let k = 0; k < 10; k++) { X.save(); X.rotate(k / 10 * Math.PI * 2); X.fillRect(-r * .13, -r * 1.18, r * .26, r * .3); X.restore(); }
+  X.beginPath(); X.arc(0, 0, r, 0, 7); X.fill(); X.fillStyle = PURPLE; X.beginPath(); X.arc(0, 0, r * .38, 0, 7); X.fill(); X.restore();
+}
+function splat(t) { // white splat: 0.2 s in, 0.2 s out around each wipe time
+  for (const tw of window.WIPES) {
+    const d = t - tw; if (d < -0.2 || d > 0.2) continue;
+    const p = d < 0 ? ease((d + .2) / .2) : 1 - ease(d / .2);
+    X.setTransform(1, 0, 0, 1, 0, 0); X.fillStyle = '#fff';
+    for (let k = 0; k < 9; k++) { X.beginPath(); X.arc(960 + (hash(k) - .5) * 900, 540 + (hash(k + 9) - .5) * 500, p * (700 + 300 * hash(k + 20)), 0, 7); X.fill(); }
+  }
+}
+function drawFrame(t) {
+  X.setTransform(1, 0, 0, 1, 0, 0); X.fillStyle = '#9fb3c8'; X.fillRect(0, 0, 1920, 1080);
+  let i = 0; while (i + 1 < SHOTS.length && SHOTS[i + 1].t0 <= t) i++;
+  const s = SHOTS[i], t1 = i + 1 < SHOTS.length ? SHOTS[i + 1].t0 : END;
+  X.save(); s.f(t, t1); X.restore(); splat(t);
+}
+// motion blur: n subframes over half a frame, averaged into the visible canvas
+const ACC = document.createElement('canvas'); ACC.width = 1920; ACC.height = 1080; const AX = ACC.getContext('2d');
+window.seek = (t, sub = 1, fps = 60) => {
+  if (sub <= 1) { drawFrame(t); return; }
+  AX.clearRect(0, 0, 1920, 1080);
+  for (let k = 0; k < sub; k++) { drawFrame(t + (k / sub) * (0.5 / fps)); AX.globalAlpha = 1 / (k + 1); AX.drawImage(C, 0, 0); }
+  AX.globalAlpha = 1; X.setTransform(1, 0, 0, 1, 0, 0); X.drawImage(ACC, 0, 0);
+};
+window.frameData = (t, sub) => { window.seek(t, sub); return C.toDataURL('image/png'); };
+
+(async () => {
+  const j = u => fetch(u).then(r => r.json());
+  [WORDS, META, BOARDS] = await Promise.all([j('audio/words.json'), j('cut/meta.json'), j('cut/boards.json')]);
+  const names = ['p01-busstop', 'p02-city', 'p03-stage', 'p04-port', 'p05-wall', 'p06-dispatch', 'p07-cab', 'p08-garage', 'p09-yard', 'p10-cross'];
+  const cut = ['viewer_head', 'viewer_body', 'mechanic_head', 'mechanic_body', 'dispatcher', 'bus', 'driver_back', 'gobox'];
+  await Promise.all([...names.map(n => [n, 'art/' + n + '.png']), ...cut.map(n => [n, 'cut/' + n + '.png'])].map(([n, src]) => new Promise((ok, bad) => { const im = new Image(); im.onload = () => { IMG[n] = im; ok(); }; im.onerror = () => bad(src); im.src = src; })));
+  await document.fonts.load(`800 40px Montserrat`).catch(() => {}); await document.fonts.ready;
+  build(); window.EV = EV.sort((a, b) => a.t - b.t); window.END = END; window.FONT_OK = document.fonts.check('800 40px Montserrat');
+  window.seek(0); window.READY = true;
+})().catch(e => { window.ERROR = String(e); });
+</script></body></html>

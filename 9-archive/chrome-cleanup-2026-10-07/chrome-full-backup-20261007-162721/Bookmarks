@@ -1,0 +1,259 @@
+{
+   "checksum": "9b5055ef46d1ad56f332befa9641e8e3",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13433348684024644",
+               "date_last_used": "13433871360088203",
+               "guid": "7a148e7d-5eb3-421f-8f69-b13b37a1737f",
+               "id": "5",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "C2 ITSM | Prod",
+               "type": "url",
+               "url": "https://app.c2atom.com/portal#/portal-home"
+            }, {
+               "date_added": "13433348720992579",
+               "date_last_used": "13434757345646882",
+               "guid": "5dbc7142-31d4-4cc7-83c8-6517193cfc43",
+               "id": "8",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "C2 ITSM | Prod",
+               "type": "url",
+               "url": "https://app.c2atom.com/portal#/portal-home"
+            }, {
+               "date_added": "13433432900534084",
+               "date_last_used": "13435865984151989",
+               "guid": "cfc54337-1b1a-484c-af70-379cf7f8b13b",
+               "id": "10",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "me@transdev",
+               "type": "url",
+               "url": "https://transdev.csod.com/ui/lms-learner-home/home?"
+            } ],
+            "date_added": "13435878190384000",
+            "date_last_used": "0",
+            "date_modified": "13435878190384000",
+            "guid": "581e91cd-1491-47f8-a9af-1006b1ea1f1d",
+            "id": "97",
+            "name": "Work",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13435856471535832",
+               "date_last_used": "0",
+               "guid": "59526fa9-c51a-4603-8f2c-344c66bf82d4",
+               "id": "31",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "BOULON HQ",
+               "type": "url",
+               "url": "http://127.0.0.1:4777/#now"
+            }, {
+               "date_added": "13433884898695192",
+               "date_last_used": "13435766545518990",
+               "guid": "94766d6a-9303-4680-8195-fa750a6ad4c0",
+               "id": "12",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "COPILOT STUDIO",
+               "type": "url",
+               "url": "https://copilotstudio.microsoft.com/environments/Default-b4518aa8-0d3e-4d10-bc77-4cd7dede3446/bots/546264b0-b306-f111-8406-000d3aaff128/knowledge/a835730b-6574-4650-881f-91cad459e16b/details"
+            } ],
+            "date_added": "13435878190384000",
+            "date_last_used": "0",
+            "date_modified": "13435878190384000",
+            "guid": "3dd7cb58-e5eb-42c7-867d-959756d0d0b3",
+            "id": "98",
+            "name": "AI & Local Tools",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13435188697719875",
+               "date_last_used": "0",
+               "guid": "936ba552-b176-4326-9e47-b1362efb0b9f",
+               "id": "24",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Beauty Salon Website by Purrweb Web Design on Dribbble",
+               "type": "url",
+               "url": "https://dribbble.com/shots/24234623-Beauty-Salon-Website"
+            }, {
+               "date_added": "13435180098151377",
+               "date_last_used": "0",
+               "guid": "3b17c1f1-6981-4d5f-aaa0-9ee45ff63e6a",
+               "id": "19",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Discover Web apps | Mobbin",
+               "type": "url",
+               "url": "https://mobbin.com/discover/apps/web/latest"
+            }, {
+               "date_added": "13435185678934498",
+               "date_last_used": "0",
+               "guid": "3c965af0-274c-4bbe-9cf8-d63175942cb4",
+               "id": "22",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Elements - Awwwards",
+               "type": "url",
+               "url": "https://www.awwwards.com/inspiration/services-soft-touch-post-mastectomy"
+            }, {
+               "date_added": "13435185630792728",
+               "date_last_used": "0",
+               "guid": "17452b79-3929-4d9f-a01e-c3437b76f81d",
+               "id": "21",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Elements - Awwwards",
+               "type": "url",
+               "url": "https://www.awwwards.com/inspiration/services-sadu-media"
+            }, {
+               "date_added": "13435185564161310",
+               "date_last_used": "0",
+               "guid": "fe7e5fe4-561a-4ce6-af17-b1f952c85284",
+               "id": "20",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Elements - Awwwards",
+               "type": "url",
+               "url": "https://www.awwwards.com/inspiration/services-vita-travels"
+            }, {
+               "date_added": "13433957911648493",
+               "date_last_used": "13435166907664550",
+               "guid": "a66de6a6-9fbd-40dd-8768-d844de9ad2de",
+               "id": "14",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Upgrade to Pro – Savee",
+               "type": "url",
+               "url": "https://savee.com/"
+            }, {
+               "date_added": "13435348359318688",
+               "date_last_used": "0",
+               "guid": "9b59bcac-3bb5-4b7d-b306-50f29ea8c3e7",
+               "id": "26",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Velina - Luxury Beauty Salon website by MN Nahid for SquareSoul on Dribbble",
+               "type": "url",
+               "url": "https://dribbble.com/shots/27450634-Velina-Luxury-Beauty-Salon-website"
+            } ],
+            "date_added": "13435878190384000",
+            "date_last_used": "0",
+            "date_modified": "13435878190384000",
+            "guid": "3a56d162-6e97-41a0-bca0-0dcd92081135",
+            "id": "99",
+            "name": "Design Inspiration",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13435185700493752",
+               "date_last_used": "0",
+               "guid": "808c0b2b-33ab-4b87-8097-0f0218fe1314",
+               "id": "23",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Main Page Scroll Experience - Awwwards",
+               "type": "url",
+               "url": "https://www.awwwards.com/inspiration/main-page-scroll-experience-soft-touch-post-mastectomy"
+            }, {
+               "date_added": "13435167509792908",
+               "date_last_used": "0",
+               "guid": "ae490e63-096b-42ea-8161-39ad945dd6aa",
+               "id": "18",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "MOTION LIBRARY",
+               "type": "url",
+               "url": "https://whatships.com/?category=motion"
+            }, {
+               "date_added": "13435351220880813",
+               "date_last_used": "0",
+               "guid": "ec7a78c9-2550-4882-b3b4-db2e256fed0b",
+               "id": "28",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "React Bits - Scroll Float",
+               "type": "url",
+               "url": "https://reactbits.dev/text-animations/scroll-float"
+            }, {
+               "date_added": "13435351225384680",
+               "date_last_used": "0",
+               "guid": "f2ffe031-5961-457a-af5d-37a4043824a2",
+               "id": "29",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "React Bits - Scroll Reveal",
+               "type": "url",
+               "url": "https://reactbits.dev/text-animations/scroll-reveal"
+            }, {
+               "date_added": "13435348478386267",
+               "date_last_used": "0",
+               "guid": "7fb1b36a-af78-4bd6-a390-165813b29e90",
+               "id": "27",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Services scroll interaction by Gil on Dribbble",
+               "type": "url",
+               "url": "https://dribbble.com/shots/21938162-Services-scroll-interaction"
+            } ],
+            "date_added": "13435878190384000",
+            "date_last_used": "0",
+            "date_modified": "13435878190384000",
+            "guid": "8d098327-bbcd-47b8-b4eb-82e4b26fce7e",
+            "id": "100",
+            "name": "Motion & React",
+            "type": "folder"
+         } ],
+         "date_added": "13433347533788551",
+         "date_last_used": "0",
+         "date_modified": "13435878190384000",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13433347533788551",
+         "date_last_used": "0",
+         "date_modified": "13435878190384000",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13433347533788551",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

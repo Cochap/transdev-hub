@@ -1,0 +1,34 @@
+{
+  "claude-plugins-official": {
+    "source": {
+      "source": "git",
+      "url": "https://github.com/anthropics/claude-plugins-official.git"
+    },
+    "installLocation": "C:\\TRANSDEV HUB\\5-brain\\plugins\\marketplaces\\claude-plugins-official",
+    "lastUpdated": "2026-11-04T14:44:34.489Z"
+  },
+  "ecc": {
+    "source": {
+      "source": "git",
+      "url": "https://github.com/affaan-m/ECC.git"
+    },
+    "installLocation": "C:\\TRANSDEV HUB\\5-brain\\plugins\\marketplaces\\ecc",
+    "lastUpdated": "2026-09-24T14:10:07.967Z"
+  },
+  "ponytail": {
+    "source": {
+      "source": "github",
+      "repo": "DietrichGebert/ponytail"
+    },
+    "installLocation": "C:\\TRANSDEV HUB\\5-brain\\plugins\\marketplaces\\ponytail",
+    "lastUpdated": "2026-10-22T13:53:56.634Z"
+  },
+  "last30days-skill": {
+    "source": {
+      "source": "github",
+      "repo": "mvanhorn/last30days-skill"
+    },
+    "installLocation": "C:\\TRANSDEV HUB\\5-brain\\plugins\\marketplaces\\last30days-skill",
+    "lastUpdated": "2026-10-29T14:27:56.648Z"
+  }
+}

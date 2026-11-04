@@ -1,0 +1,39 @@
+﻿{
+    "enabled":  true,
+    "default":  "sonnet",
+    "map":  [
+                {
+                    "match":  "opus|fable|gpt-5(?!.*mini)|o3|o4|gemini.*pro|grok-4|deepseek-r1",
+                    "tier":  "opus"
+                },
+                {
+                    "match":  "haiku|[/-]mini($|[-.])|nano|flash|lite|small|[-/]\\d?[78]b($|[-.])",
+                    "tier":  "haiku"
+                },
+                {
+                    "match":  ".*",
+                    "tier":  "sonnet"
+                }
+            ],
+    "routerModel":  "typesafe/jev-router",
+    "overrides":  {
+                      "boulon-hq-update":  "haiku",
+                      "boulon-greg-steps":  "haiku",
+                      "boulon-skill-finder":  "haiku",
+                      "ecc-operating-notes":  "haiku",
+                      "transdev-pc-shell-quirks":  "haiku",
+                      "boulon-read-pdf":  "haiku",
+                      "link":  "haiku"
+                  },
+    "pinMaxLines":  60,
+    "floors":  [
+                   {
+                       "match":  "^(boulon-approval-package|boulon-report-pipeline)$",
+                       "tier":  "sonnet"
+                   },
+                   {
+                       "match":  "security|review",
+                       "tier":  "sonnet"
+                   }
+               ]
+}

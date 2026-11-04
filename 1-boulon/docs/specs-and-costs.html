@@ -1,0 +1,250 @@
+<title>BOULON Specs and Costs</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one reading column; answer first, then where data lives, limits by tier, the one-time reading cost, year-one scenarios. One accent (Transdev red). */
+:root{
+  --bg:#F2F3F5; --panel:#FFFFFF; --ink:#1A1F29; --muted:#5A6270; --line:#DCDFE4; --soft:#F7F8F9;
+  --accent:#C00016; --accent-ink:#FFFFFF; --accent-tint:#FDE8EA;
+  --good:#1B7F47; --good-bg:#E2F2E8; --warn:#9A5B00; --warn-bg:#FFF1D6; --bad:#9C1457; --bad-bg:#F8E3EE;
+  --bar-a:#5A6270; --bar-b:#1D2330; --bar-c:#C00016;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif; --body:"Source Sans 3",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11151C; --panel:#1A202A; --ink:#E9ECF1; --muted:#9AA3B1; --line:#2C3441; --soft:#202733;
+  --accent:#FF5A6B; --accent-ink:#11151C; --accent-tint:#3A1419;
+  --good:#56C585; --good-bg:#15301F; --warn:#F0B43C; --warn-bg:#33290D; --bad:#F07AB3; --bad-bg:#3A1829;
+  --bar-a:#9AA3B1; --bar-b:#E9ECF1; --bar-c:#FF5A6B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11151C; --panel:#1A202A; --ink:#E9ECF1; --muted:#9AA3B1; --line:#2C3441; --soft:#202733;
+  --accent:#FF5A6B; --accent-ink:#11151C; --accent-tint:#3A1419;
+  --good:#56C585; --good-bg:#15301F; --warn:#F0B43C; --warn-bg:#33290D; --bad:#F07AB3; --bad-bg:#3A1829;
+  --bar-a:#9AA3B1; --bar-b:#E9ECF1; --bar-c:#FF5A6B; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);padding-block:24px 64px;padding-inline:16px}
+.wrap{max-width:880px;margin:0 auto;display:grid;gap:28px;min-width:0}
+.wrap>*{min-width:0}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:.01em}
+h1{font-size:clamp(34px,6vw,52px);font-weight:800;line-height:1}
+h2{font-size:28px;font-weight:800;line-height:1.1}
+h3{font-size:20px;font-weight:800}
+p{margin:0}
+.lede{color:var(--muted);max-width:65ch}
+.tag{display:inline-block;font:700 12px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.t-m{background:var(--good-bg);color:var(--good)} .t-v{background:var(--soft);color:var(--muted);border:1px solid var(--line)} .t-e{background:var(--warn-bg);color:var(--warn)} .t-u{background:var(--bad-bg);color:var(--bad)}
+.legend{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:14px;color:var(--muted)}
+.answer{background:var(--panel);border:1px solid var(--line);border-top:5px solid var(--accent);border-radius:8px;padding:20px;display:grid;gap:12px}
+.answer li{margin-bottom:6px}
+ul{margin:0;padding-left:20px}
+section{display:grid;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:10px}
+.tbl{overflow-x:auto;max-width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--soft)}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sub td{background:var(--soft);font-weight:700}
+.hit{color:var(--bad);font-weight:700} .ok{color:var(--good);font-weight:700}
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:minmax(120px,210px) 1fr auto;gap:10px;align-items:center;font-size:15px}
+.bar .track{height:22px;background:var(--soft);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%}
+.bar .v{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+@media (max-width:560px){.bar{grid-template-columns:1fr auto}.bar .track{grid-column:1/-1}}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.flow div{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;gap:4px;align-content:start}
+.flow b{font:800 18px var(--display)} .flow small{color:var(--muted);font-size:14px}
+.flow .focus{border-color:var(--accent);background:var(--accent-tint)}
+.callout{background:var(--warn-bg);color:var(--ink);border-radius:8px;padding:14px;border-left:4px solid var(--warn)}
+.callout b{color:var(--warn)}
+code{font-family:ui-monospace,monospace;font-size:.9em;overflow-wrap:anywhere}
+footer{color:var(--muted);font-size:14px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+
+<div class="wrap">
+<header style="display:grid;gap:10px">
+  <h1>BOULON Specs and Costs</h1>
+  <p class="lede">What we store, where it lives, what each Azure plan allows, and what it costs. Prepared 6 October 2026 for Greg Riley. Every number carries a label.</p>
+  <div class="legend"><span class="tag t-m">Measured</span> counted on your files or live service <span class="tag t-v">Verified</span> from Microsoft's published tables <span class="tag t-e">Estimate</span> calculated, to be confirmed by the 1-file Basic trial <span class="tag t-u">Unknown</span> not yet checked</div>
+</header>
+
+<div class="answer">
+  <h2>The short answers</h2>
+  <ul>
+    <li><b>The pictures were not left out.</b> All 1,422 pictures in the 23 pilot manuals were extracted, described in words by an AI model, and added to the search as text. The agent reads those descriptions, not the pictures themselves. <span class="tag t-m">Measured</span></li>
+    <li><b>The searchable copy is bigger than the PDFs, not smaller.</b> For the pilot: 59.6 MB of PDFs became a 63.3 MB copy. My earlier "smaller" came from comparing against 181 MB, which included two files that were never indexed. For the whole folder the copy would be about 10.9 GB against 6.5 GB of PDFs. <span class="tag t-m">Measured</span> <span class="tag t-e">Estimate</span></li>
+    <li><b>The total size of the searchable copy is what blocks us.</b> The one-time page reading is a separate cost: it is the price of building that copy, paid once per page. For the whole folder it is about CAD 2,400 to 4,200. <span class="tag t-e">Estimate</span></li>
+    <li><b>Year one for the whole folder:</b> about CAD 3,700 to 5,600, depending on two choices (how pictures are extracted, and compressing vectors). Staging by brand lets you stop at any point.</li>
+  </ul>
+</div>
+
+<section>
+  <h2>Where everything lives</h2>
+  <p class="lede">Four separate places hold four different things. Mixing them up caused most of the confusion.</p>
+  <div class="flow">
+    <div><b>1. Your PDFs</b><small>SharePoint and your OneDrive: 2,785 unique files, 6.53 GB, 131,756 pages. A copy of the 25 pilot files sits in Azure storage (181.4 MB).</small></div>
+    <div><b>2. The reading step</b><small>One-time. An AI service reads each page, finds tables and pictures, and records page numbers.</small></div>
+    <div class="focus"><b>3. The searchable copy</b><small>Held by the Azure AI Search service. This is what has the 50 MB Free cap. Pilot: 63.3 MB.</small></div>
+    <div><b>4. The picture files</b><small>Extracted pictures saved as image files in Azure storage (container manuals-images). Pilot: 1,422 files, 125.6 MB. No size cap that matters.</small></div>
+  </div>
+  <div class="card">
+    <h3>Pilot sizes, to scale</h3>
+    <div class="bars">
+      <div class="bar"><span>23 indexed PDFs</span><span class="track"><span class="fill" style="display:block;width:47%;background:var(--bar-a)"></span></span><span class="v">59.6 MB</span></div>
+      <div class="bar"><span>Searchable copy</span><span class="track"><span class="fill" style="display:block;width:50%;background:var(--bar-c)"></span></span><span class="v">63.3 MB</span></div>
+      <div class="bar"><span>Picture files (separate)</span><span class="track"><span class="fill" style="display:block;width:100%;background:var(--bar-b)"></span></span><span class="v">125.6 MB</span></div>
+    </div>
+    <p class="lede">The Free plan's 50 MB cap applies to the red bar only. It reads 63.3 MB, over the cap, which is why Azure now refuses new writes. <span class="tag t-m">Measured</span></p>
+  </div>
+</section>
+
+<section>
+  <h2>Were the pictures ingested?</h2>
+  <div class="card">
+    <p><b>Yes.</b> For each picture, the pipeline saved the image, asked an AI model (gpt-5-mini) to describe it in words, then stored that description and its numeric fingerprint (vector) in the search. In the pilot: 1,422 pictures, each described in about 400 characters, none left empty. <span class="tag t-m">Measured</span></p>
+    <p>Example from the index: "A handheld optical refractometer shown in isometric view. Main elements: a rear eyepiece on a short tube; a cylindrical focusing/adjustment knob…"</p>
+    <p>Proof it works: asked for the wheelchair ramp wiring diagram, the agent answered with the connector pins, wire sizes and relays, read from those descriptions, and pointed to pages 21, 30 and 31.</p>
+  </div>
+  <div class="callout"><b>Limit.</b> The agent never sees the pixels, only a 400-character description. A description can miss a small label or a part number printed on a drawing. How good the descriptions are on your real diagrams is not yet scored. <span class="tag t-u">Unknown</span> This is a test we can run before Basic, on the pilot's 1,422 pictures.</div>
+</section>
+
+<section>
+  <h2>Why the copy is bigger than the PDF</h2>
+  <p class="lede">The copy is not a shrunken PDF. It is the text, plus a description of every picture, plus a numeric fingerprint (vector) for every piece so that search works by meaning. The fingerprints are the bulk.</p>
+  <div class="tbl"><table>
+    <tr><th>Per page of manual, pilot</th><th class="n">Value</th><th>Label</th></tr>
+    <tr><td>Searchable pieces per page (text 1.14, pictures 1.96)</td><td class="n">3.10</td><td><span class="tag t-m">Measured</span></td></tr>
+    <tr><td>Size per piece in the copy</td><td class="n">28 KB</td><td><span class="tag t-m">Measured</span></td></tr>
+    <tr><td>Size per page in the copy</td><td class="n">87 KB</td><td><span class="tag t-m">Measured</span></td></tr>
+    <tr><td>Of which vectors</td><td class="n">66 KB</td><td><span class="tag t-m">Measured</span></td></tr>
+    <tr><td>Range between manuals (pieces per page)</td><td class="n">2.3 to 4.6</td><td><span class="tag t-m">Measured</span></td></tr>
+  </table></div>
+  <div class="card">
+    <h3>Whole folder, to scale</h3>
+    <div class="bars">
+      <div class="bar"><span>Your PDFs</span><span class="track"><span class="fill" style="display:block;width:60%;background:var(--bar-a)"></span></span><span class="v">6.5 GB</span></div>
+      <div class="bar"><span>Copy, current settings</span><span class="track"><span class="fill" style="display:block;width:100%;background:var(--bar-c)"></span></span><span class="v">10.9 GB</span></div>
+      <div class="bar"><span>Copy, 8-bit vectors</span><span class="track"><span class="fill" style="display:block;width:43%;background:var(--bar-b)"></span></span><span class="v">4.7 GB</span></div>
+    </div>
+    <p class="lede">8-bit compression stores each vector number in 1 byte instead of 4. Tested on your 2,250 real vectors, it kept 93 to 94% of the same best matches without Azure's re-check step. <span class="tag t-m">Measured</span> The real effect on answers is to be confirmed in the Basic trial. <span class="tag t-e">Estimate</span></p>
+  </div>
+</section>
+
+<section>
+  <h2>What each Azure plan allows</h2>
+  <p class="lede">Two different kinds of limit. Per-file limits decide what one PDF may be when it is read. Total capacity limits decide how much the searchable copy can hold in all. Splitting a big PDF solves the first kind only.</p>
+  <div class="tbl"><table>
+    <tr><th>Limit</th><th>Free</th><th>Basic</th><th>S1</th><th>Where we stand</th></tr>
+    <tr class="sub"><td colspan="5">Price (Canada Central) <span class="tag t-v">Verified</span></td></tr>
+    <tr><td>Monthly</td><td>CAD 0</td><td>CAD 112.42 (each extra partition +112.42, up to 3)</td><td>CAD 373.98</td><td>Ticket asks for Basic</td></tr>
+    <tr class="sub"><td colspan="5">Per file, when one PDF is read <span class="tag t-v">Verified</span></td></tr>
+    <tr><td>PDF file size</td><td>16 MB</td><td>16 MB</td><td>128 MB</td><td>Of 2,785 files: 98 exceed 16 MB, 4 exceed 128 MB <span class="tag t-m">Measured</span></td></tr>
+    <tr><td>Text read from one PDF</td><td>256,000 characters</td><td>512,000</td><td>4 million</td><td>80 exceed 512,000; none exceed 4 million. In all, 112 files (4%) need splitting for Basic <span class="tag t-m">Measured</span></td></tr>
+    <tr class="sub"><td colspan="5">Total capacity of the searchable copy <span class="tag t-v">Verified</span></td></tr>
+    <tr><td>Total size</td><td class="hit">50 MB</td><td>15 GB per partition</td><td>160 GB per partition</td><td>Pilot copy 63.3 MB: <span class="hit">over the Free cap</span>. Whole folder about 10.9 GB at current settings <span class="tag t-e">Estimate</span></td></tr>
+    <tr><td>Vector memory</td><td>not published</td><td>5 GB per partition</td><td>35 GB per partition</td><td>Whole folder about 8.3 GB of vectors: 2 Basic partitions, or 1 with 8-bit vectors (about 2.1 GB) <span class="tag t-e">Estimate</span></td></tr>
+    <tr><td>Pages one partition holds, current settings</td><td>about 590</td><td>about 79,000</td><td>about 550,000</td><td>Whole folder 131,756 pages <span class="tag t-e">Estimate</span></td></tr>
+    <tr class="sub"><td colspan="5">Everything else <span class="tag t-v">Verified</span></td></tr>
+    <tr><td>Indexes / indexers</td><td>3 / 3</td><td>15 / 15</td><td>50 / 50</td><td>We use 1 / 1 <span class="tag t-m">Measured</span></td></tr>
+    <tr><td>Upgrade path</td><td>None: needs a new service</td><td>In place to S1 and back</td><td>In place</td><td>Free to Basic means new address and keys</td></tr>
+    <tr><td>Uptime promise</td><td>None; idle service can be deleted</td><td>Yes</td><td>Yes</td><td></td></tr>
+    <tr><td>Meaning-based re-ranking (semantic ranker)</td><td colspan="3">1,000 requests a month free, then CAD 1.39 per 1,000 on Basic and above</td><td>Needed for the English-question-on-French-manual test</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>The one-time page reading</h2>
+  <div class="card">
+    <h3>What it is</h3>
+    <p>The service is called <b>Azure AI Document Intelligence</b>, using its <b>Layout</b> model. Inside Azure AI Search it runs as the <b>Document Layout skill</b>. It is sold under Microsoft Foundry (formerly Azure AI services), and it is billed through an AI Services resource attached to the search. The ticket asks IT for one in Canada Central. <span class="tag t-v">Verified</span></p>
+    <h3>What it does</h3>
+    <p>It looks at each PDF page and returns structured content: headings, paragraphs, tables kept as tables, the page number, and the position of every picture.</p>
+    <h3>Why it is required</h3>
+    <p>Azure's plain text extraction is free but flattens tables, and in the pilot the page numbers came from the Layout step. Two things in your tests depend on the Layout reading: the page numbers in your citations, and torque tables. The pilot already used it, in a mode that flattens tables. That is why the same M6 question gave 15 Nm once and 12.7 Nm another time. The Basic rebuild uses a mode that keeps tables as tables.</p>
+    <h3>When you pay</h3>
+    <p>Once per page, when the manual is first processed. Not per question. If a manual is processed again, you pay again unless caching is switched on, which the rebuild plan includes. <span class="tag t-v">Verified</span></p>
+    <h3>Why two passes</h3>
+    <p>The table-friendly mode cannot extract pictures, so the rebuild design runs a second pass to get them. Azure's built-in picture extraction may do that job more cheaply. This is the largest saving on the table, and it is untested. <span class="tag t-u">Unknown</span> The 1-file Basic trial settles it.</p>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>One-time cost, whole folder</th><th class="n">Quantity</th><th class="n">Rate (CAD)</th><th class="n">2 passes</th><th class="n">1 pass</th></tr>
+    <tr><td>Page reading (Layout) <span class="tag t-v">Verified</span></td><td class="n">131,756 pages</td><td class="n">13.8605 per 1,000 pages</td><td class="n">3,652</td><td class="n">1,826</td></tr>
+    <tr><td>Picture extraction</td><td class="n">about 258,400 pictures</td><td class="n">up to 1.3861 per 1,000</td><td class="n">358</td><td class="n">358</td></tr>
+    <tr><td>Picture descriptions (gpt-5-mini)</td><td class="n">about 258,400</td><td class="n">about 0.00076 each</td><td class="n">196</td><td class="n">196</td></tr>
+    <tr><td>Vectors (embeddings)</td><td class="n">about 408,000 pieces</td><td class="n">about 0.035 per million tokens</td><td class="n">3</td><td class="n">3</td></tr>
+    <tr class="sub"><td>Total <span class="tag t-e">Estimate</span></td><td></td><td></td><td class="n">about 4,209</td><td class="n">about 2,383</td></tr>
+  </table></div>
+  <div class="callout"><b>Why the ticket said CAD 650.</b> It was sized on my assumption of a core library of about 20,000 pages with one picture per page (ceiling 1,200 for about 40,000 pages). I had not measured the folder. Measured: 131,756 pages, and 1.96 pictures per page in the pilot. The picture count for the full folder is carried over from the pilot ratio and may differ.</div>
+  <h3>By brand, if you load in stages (2-pass cost, about CAD 0.032 per page)</h3>
+  <div class="tbl"><table>
+    <tr><th>Brand folder</th><th class="n">Pages</th><th class="n">One-time cost, CAD</th></tr>
+    <tr><td>Nova</td><td class="n">43,022</td><td class="n">1,374</td></tr>
+    <tr><td>New Flyer</td><td class="n">36,267</td><td class="n">1,159</td></tr>
+    <tr><td>MCI</td><td class="n">32,986</td><td class="n">1,054</td></tr>
+    <tr><td>Prevost</td><td class="n">6,423</td><td class="n">205</td></tr>
+    <tr><td>Grande West</td><td class="n">3,658</td><td class="n">117</td></tr>
+    <tr><td>Orion</td><td class="n">3,492</td><td class="n">112</td></tr>
+    <tr><td>Vicinity</td><td class="n">2,422</td><td class="n">77</td></tr>
+    <tr><td>IC Leeds</td><td class="n">1,567</td><td class="n">50</td></tr>
+    <tr><td>Lion</td><td class="n">696</td><td class="n">22</td></tr>
+    <tr class="sub"><td>All brands, including smaller folders</td><td class="n">131,756</td><td class="n">4,209</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Year one, three scenarios</h2>
+  <div class="tbl"><table>
+    <tr><th>Scenario</th><th class="n">Basic, 12 months</th><th class="n">One-time reading</th><th class="n">Year one</th></tr>
+    <tr><td>A. Whole folder, 2 passes, 1 partition (needs 8-bit vectors)</td><td class="n">1,349</td><td class="n">4,209</td><td class="n">about 5,558</td></tr>
+    <tr><td>B. Whole folder, 2 passes, 2 partitions (current vector settings)</td><td class="n">2,698</td><td class="n">4,209</td><td class="n">about 6,907</td></tr>
+    <tr><td>C. Whole folder, 1 pass with built-in picture extraction, 1 partition (both untested)</td><td class="n">1,349</td><td class="n">2,383</td><td class="n">about 3,732</td></tr>
+  </table></div>
+  <p class="lede">Project budget: CAD 5,000. Small extras not in the table: storage for about 22 GB of picture files (rate not yet verified, expected a few dollars a month), the semantic ranker after 1,000 requests a month, and the small cost of looking up each question's vector (not yet priced). Copilot Studio licensing is outside this document.</p>
+</section>
+
+<section>
+  <h2>What the project brief budgets</h2>
+  <p class="lede">The founding brief (4 May 2026, reference 551) estimates the whole project at CAD 5,510.50. It was written before the Azure work and has no Azure AI Search line. Source: <code>1-boulon/docs/project-brief-551.md</code>.</p>
+  <div class="tbl"><table>
+    <tr><th>Brief line</th><th class="n">CAD</th></tr>
+    <tr><td>Copilot Studio licence, Creator, 3 months</td><td class="n">600.00</td></tr>
+    <tr><td>Copilot credits: knowledge 1,100 + files 20 + agent tools 250 + agent flows 15</td><td class="n">1,385.00</td></tr>
+    <tr><td>10% overspend allowance</td><td class="n">198.50</td></tr>
+    <tr><td>Taxes (QST/PST)</td><td class="n">327.00</td></tr>
+    <tr class="sub"><td>Software</td><td class="n">2,510.50</td></tr>
+    <tr><td>Kiosks or equipment (placeholder)</td><td class="n">3,000.00</td></tr>
+    <tr class="sub"><td>Estimated project cost</td><td class="n">5,510.50</td></tr>
+  </table></div>
+  <div class="callout"><b>What this means.</b> Azure AI Search Basic (about CAD 337 for the brief's 3 months, 1,349 for a year) and the one-time page reading (about CAD 2,400 to 4,200, estimates) are not in the brief. They need their own approval. The brief also scopes three workshops (Beloeil QC, Sudbury ON, Kitimat BC) and three languages (French, English, Spanish); the 131,756 pages measured here are the Quebec folder only. Its usage target is 7 requests per location per day, about 21 a day or 630 a month, which stays inside the semantic ranker's 1,000 free requests: serving cost is small, ingestion is the cost. <span class="tag t-e">Estimate</span></div>
+</section>
+
+<section>
+  <h2>What is settled and what the trial settles</h2>
+  <div class="tbl"><table>
+    <tr><th>Item</th><th>Status</th><th>How we settle it</th></tr>
+    <tr><td>Library size: files, pages, characters</td><td><span class="tag t-m">Measured</span></td><td>Done, all 2,976 PDFs read</td></tr>
+    <tr><td>Per-page size of the copy at current settings</td><td><span class="tag t-m">Measured</span></td><td>Done, on the pilot</td></tr>
+    <tr><td>Page reading price per 1,000 pages</td><td><span class="tag t-v">Verified</span></td><td>3-page test of the real price, about CAD 0.05, needs your yes</td></tr>
+    <tr><td>Number of reading passes needed</td><td><span class="tag t-u">Unknown</span></td><td>1-file Basic trial</td></tr>
+    <tr><td>Pictures per page across the whole folder</td><td><span class="tag t-e">Estimate</span></td><td>1-file trial, then a sample of other brands</td></tr>
+    <tr><td>Effect of 8-bit vectors on real answers</td><td><span class="tag t-e">Estimate</span></td><td>1-file trial and the golden test sets</td></tr>
+    <tr><td>Quality of picture descriptions on your diagrams</td><td><span class="tag t-u">Unknown</span></td><td>Score a sample of the pilot's 1,422 descriptions (no cost)</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Terms</h2>
+  <div class="tbl"><table>
+    <tr><th>Term</th><th>Plain meaning</th></tr>
+    <tr><td>Index, searchable copy</td><td>What Azure AI Search stores so it can search fast. Not your PDFs.</td></tr>
+    <tr><td>Piece (chunk)</td><td>A passage of text or one picture description, stored as one searchable item.</td></tr>
+    <tr><td>Vector</td><td>A list of 1,536 numbers that captures a piece's meaning, so a search finds meaning and not only words.</td></tr>
+    <tr><td>Partition</td><td>A unit of storage and capacity inside one search service. Adding one adds capacity and cost, not a second subscription.</td></tr>
+    <tr><td>Page reading, Layout</td><td>The one-time AI step that turns a PDF page into structured content.</td></tr>
+    <tr><td>Embedding</td><td>The step that produces the vector for a piece.</td></tr>
+  </table></div>
+</section>
+
+<footer>Sources: Microsoft Learn service limits and pricing tables and the Azure Retail Prices API for Canada Central, checked 23 and 24 September 2026; counts from the project files <code>1-boulon/tests/results/library-measure-2026-10-06.jsonl</code>, <code>1-boulon/tests/results/agent-baseline-2026-10-06.md</code> and the live search service on 6 October 2026. Decisions and history: <code>1-boulon/docs/continuity-log.md</code>.</footer>
+</div>

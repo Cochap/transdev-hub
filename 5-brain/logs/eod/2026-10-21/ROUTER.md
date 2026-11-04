@@ -1,0 +1,13 @@
+# ROUTER — logs/eod/2026-10-21
+Open only the line you need. Every child of this folder is listed below.
+
+## Contents
+- `_index.json` — JSON data
+- `251b826e.md` — Boulon end of day routine — C--TRANSDEV-HUB — C:\TRANSDEV HUB
+- `2f5384ab.md` — (untitled) — C--Users-rilg01-DAILY-DIGEST-worldmonitor — C:\Users\rilg01\DAILY DIGEST\worldmon…
+- `3580480f.md` — (untitled) — C--TRANSDEV-HUB — C:\TRANSDEV HUB
+- `380b290f.md` — Dify use case exploration — C--TRANSDEV-HUB — C:\TRANSDEV HUB
+- `396b374b.md` — (untitled) — C--Users-rilg01-DAILY-DIGEST-worldmonitor-cli — C:\Users\rilg01\DAILY DIGEST\worl…
+- `7b7afe6d.md` — Repo setup and learning path — C--TRANSDEV-HUB — C:\TRANSDEV HUB\references\ai-engineering-fro…
+- `a2cc2b4f.md` — Continuous learning v2 — C--Users-rilg01-DAILY-DIGEST — C:\Users\rilg01\DAILY DIGEST\tools\pro…
+- `a4fee5b2.md` — Skills model routing optimization — C--TRANSDEV-HUB — C:\TRANSDEV HUB

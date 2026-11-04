@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "plugins": {
+    "ecc@ecc": [
+      {
+        "scope": "project",
+        "projectPath": "C:\\TRANSDEV HUB",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\ecc\\ecc\\2.2.2",
+        "version": "2.2.2",
+        "installedAt": "2026-09-24T13:51:46.215Z",
+        "lastUpdated": "2026-09-24T13:51:46.215Z",
+        "gitCommitSha": "bf70150eb2df8070024e5bdf08e4aa08959e2735"
+      }
+    ],
+    "last30days@last30days-skill": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\last30days-skill\\last30days\\3.31.0",
+        "version": "3.31.0",
+        "installedAt": "2026-10-29T14:28:16.840Z",
+        "lastUpdated": "2026-10-29T14:28:16.840Z",
+        "gitCommitSha": "7efc0ef764765ed9ceff5ce1204462b35b89d680"
+      }
+    ]
+  }
+}

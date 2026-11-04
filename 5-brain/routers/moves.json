@@ -1,0 +1,228 @@
+{
+  "moves": [
+    {
+      "from": "docs",
+      "to": "1-boulon/docs"
+    },
+    {
+      "from": "tests",
+      "to": "1-boulon/tests"
+    },
+    {
+      "from": "hq",
+      "to": "1-boulon/hq"
+    },
+    {
+      "from": "data",
+      "to": "1-boulon/data"
+    },
+    {
+      "from": "mir",
+      "to": "1-boulon/mir"
+    },
+    {
+      "from": "rebuild",
+      "to": "1-boulon/rebuild"
+    },
+    {
+      "from": "recovery",
+      "to": "1-boulon/recovery"
+    },
+    {
+      "from": "requests",
+      "to": "1-boulon/requests"
+    },
+    {
+      "from": "projects",
+      "to": "2-projects"
+    },
+    {
+      "from": "film",
+      "to": "3-media/film"
+    },
+    {
+      "from": "motion-library",
+      "to": "3-media/motion-library"
+    },
+    {
+      "from": "library-size-helper.html",
+      "to": "3-media/library-size-helper.html"
+    },
+    {
+      "from": "LEARNING.md",
+      "to": "4-learning/LEARNING.md"
+    },
+    {
+      "from": "learning/matrix-cheatsheet.html",
+      "to": "4-learning/matrix-cheatsheet.html"
+    },
+    {
+      "from": "references",
+      "to": "4-learning/references"
+    },
+    {
+      "from": "routers",
+      "to": "5-brain/routers"
+    },
+    {
+      "from": "scripts",
+      "to": "5-brain/scripts"
+    },
+    {
+      "from": "logs",
+      "to": "5-brain/logs"
+    },
+    {
+      "from": "context",
+      "to": "5-brain/context"
+    },
+    {
+      "from": "decisions",
+      "to": "5-brain/decisions"
+    },
+    {
+      "from": "audits",
+      "to": "5-brain/audits"
+    },
+    {
+      "from": "brainstorms",
+      "to": "5-brain/brainstorms"
+    },
+    {
+      "from": "aios-intake.md",
+      "to": "5-brain/aios-intake.md"
+    },
+    {
+      "from": "connections.md",
+      "to": "5-brain/connections.md"
+    },
+    {
+      "from": "EXPANSIONS.md",
+      "to": "5-brain/EXPANSIONS.md"
+    },
+    {
+      "from": "undefined",
+      "to": "9-archive/undefined"
+    },
+    {
+      "from": "archives",
+      "to": "9-archive/archives"
+    },
+    {
+      "from": "chrome-full-backup-20261007-162721",
+      "to": "9-archive/chrome-cleanup-2026-10-07/chrome-full-backup-20261007-162721"
+    },
+    {
+      "from": "chrome-before-emojis-20261007-163927.json",
+      "to": "9-archive/chrome-cleanup-2026-10-07/chrome-before-emojis-20261007-163927.json"
+    },
+    {
+      "from": "chrome-bookmark-screen.png",
+      "to": "9-archive/chrome-cleanup-2026-10-07/chrome-bookmark-screen.png"
+    },
+    {
+      "from": "chrome-bookmarks-backup.json",
+      "to": "9-archive/chrome-cleanup-2026-10-07/chrome-bookmarks-backup.json"
+    },
+    {
+      "from": "chrome-bookmarks-before-apply-20261007-162310.json",
+      "to": "9-archive/chrome-cleanup-2026-10-07/chrome-bookmarks-before-apply-20261007-162310.json"
+    },
+    {
+      "from": "chrome-bookmarks-organized.html",
+      "to": "9-archive/chrome-cleanup-2026-10-07/chrome-bookmarks-organized.html"
+    },
+    {
+      "from": "chrome-console-screen.png",
+      "to": "9-archive/chrome-cleanup-2026-10-07/chrome-console-screen.png"
+    },
+    {
+      "from": "chrome-window.png",
+      "to": "9-archive/chrome-cleanup-2026-10-07/chrome-window.png"
+    },
+    {
+      "from": "bookmark-folder-emojis.ps1",
+      "to": "9-archive/chrome-cleanup-2026-10-07/bookmark-folder-emojis.ps1"
+    },
+    {
+      "from": "bookmark-native-edit.ps1",
+      "to": "9-archive/chrome-cleanup-2026-10-07/bookmark-native-edit.ps1"
+    },
+    {
+      "from": "bookmark-native-moves.ps1",
+      "to": "9-archive/chrome-cleanup-2026-10-07/bookmark-native-moves.ps1"
+    },
+    {
+      "from": "bookmark-ui.ps1",
+      "to": "9-archive/chrome-cleanup-2026-10-07/bookmark-ui.ps1"
+    },
+    {
+      "from": "organize-account-bookmarks.ps1",
+      "to": "9-archive/chrome-cleanup-2026-10-07/organize-account-bookmarks.ps1"
+    }
+  ],
+  "skip": [
+    "references",
+    "logs/eod",
+    "tests/results",
+    "hq/runs",
+    "chrome-full-backup-20261007-162721",
+    "film/node_modules",
+    "motion-library/research",
+    ".claude/skills/3d-brain",
+    ".claude/skills/resume-tailoring",
+    ".claude/brain-moves"
+  ],
+  "external": [
+    {
+      "dir": "C:/ZBB/CLAUDE.md",
+      "absOnly": true
+    },
+    {
+      "dir": "C:/ZBB/wiki",
+      "absOnly": true
+    },
+    {
+      "dir": "C:/ZBB/docs",
+      "absOnly": true
+    },
+    {
+      "dir": "C:/Users/rilg01/.claude/projects/C--TRANSDEV-HUB/memory"
+    },
+    {
+      "dir": "C:/Users/rilg01/.claude/scheduled-tasks"
+    },
+    {
+      "dir": "C:/Users/rilg01/.claude/skills"
+    }
+  ],
+  "smoke": [
+    "node scripts/brain.js audit",
+    "node scripts/eod-gather-sessions.js 2099-01-01",
+    "node --check hq/server.js",
+    "node --check tests/check-citations.js",
+    "node --check mir/analyze-export.js",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/model-router.ps1 -Switch status"
+  ],
+  "cleanup": [
+    "logs/eod/2099-01-01"
+  ],
+  "rmdirEmpty": [
+    "learning",
+    "worldmonitor"
+  ],
+  "_deferred": [
+    {
+      "from": "wiki",
+      "to": "1-boulon/wiki",
+      "why": "folder handle held by another program (EPERM) on 2026-10-21; retry later"
+    }
+  ],
+  "_proposed": [
+    {
+      "from": "Scoring test.xlsx",
+      "to": "2-projects/workshop-segmentation/raw/Scoring test.xlsx",
+      "why": "2026-10-29 EOD: referential criteria workbook Greg attached during the segmentation session; landed at the vault root (unmapped). Needs Greg yes; close it in Excel first; then move the entry into moves[] and run brain-move.js plan/apply."
+    }
+  ]
+}

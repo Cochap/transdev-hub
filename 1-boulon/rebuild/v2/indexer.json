@@ -1,0 +1,38 @@
+{
+  "name": "boulon-v2-indexer",
+  "description": "BOULON v2: layout-aware (markdown) chunking, title + PDF URL for citations, strict failure handling.",
+  "dataSourceName": "boulon-v2-datasource",
+  "skillsetName": "boulon-v2-skillset",
+  "targetIndexName": "boulon-v2-index",
+  "disabled": false,
+  "schedule": null,
+  "parameters": {
+    "batchSize": 1,
+    "maxFailedItems": 0,
+    "maxFailedItemsPerBatch": 0,
+    "configuration": {
+      "dataToExtract": "contentAndMetadata",
+      "parsingMode": "default",
+      "allowSkillsetToReadFileData": true
+    }
+  },
+  "fieldMappings": [
+    {
+      "sourceFieldName": "metadata_storage_name",
+      "targetFieldName": "document_title"
+    },
+    {
+      "sourceFieldName": "metadata_storage_name",
+      "targetFieldName": "title",
+      "mappingFunction": {
+        "name": "extractTokenAtPosition",
+        "parameters": { "delimiter": ".pdf", "position": 0 }
+      }
+    },
+    {
+      "sourceFieldName": "metadata_storage_path",
+      "targetFieldName": "url"
+    }
+  ],
+  "outputFieldMappings": []
+}

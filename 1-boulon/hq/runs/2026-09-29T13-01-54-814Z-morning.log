@@ -1,0 +1,19 @@
+[33mWarning: no stdin data received in 3s, proceeding without it. If piping from a slow command, redirect stdin explicitly: < /dev/null to skip, or wait longer.[39m
+  · Skill
+  · PowerShell
+  · PowerShell
+  · PowerShell
+  · Grep
+  · Read
+  · Grep
+  · Edit
+Morning check done; I added a line to the timeline. I couldn't republish BOULON HQ (the page Greg reads daily) because this unattended run has no publish tool, so the page still shows Friday's version.
+
+- **Inbox and ticket:** The overnight email folder is empty, so I don't know the Azure ticket number or whether IT has replied. The digest flow doesn't seem to be producing files yet. Nothing was logged after Friday 09-25, 1:45 PM.
+- **Azure and keys:** The search service is up (it answers 401 without a key). The key in `.env` is a 14-character placeholder, which is fine because no Azure step is planned today.
+- **Housekeeping:** The continuity log tables have no garbled rows. The end-of-day marker holds 09-24, so today's 16:45 reminder will fire. I assumed the ticket is still waiting on IT.
+
+**Next actions**
+1. **Greg:** Check whether IT has replied to the Azure ticket sent 09-25, and tell Claude the ticket number if there is one. This can't be looked up automatically until the email digest works.
+2. **Claude, at the next session:** Republish BOULON HQ using the existing page link so it shows today's date.
+3. **Greg:** Alex Dumenne still owes the MIR answer (how many work orders exist since 2014). Ask him if he's in today, since Tuesday is one of his office days.

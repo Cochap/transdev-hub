@@ -1,0 +1,36 @@
+# --- secrets (never pushed) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.key
+
+# --- tests output ---
+tests/results/*.json
+
+# --- too big for GitHub (100 MB file cap) / build junk ---
+**/.venv/
+**/venv/
+**/node_modules/
+**/__pycache__/
+.ruff_cache/
+1-boulon/data/mir-export/dump/
+2-projects/workshop-segmentation/raw/segmentation documents.zip
+9-archive/undefined/tmp/pdfs/
+
+# --- nested repos with their own GitHub home ---
+.claude/skills/resume-tailoring/
+2-projects/voicestudio/
+2-projects/workshop-segmentation/cloud-repo/
+4-learning/references/ai-engineering-from-scratch/
+4-learning/references/career-ops/
+5-brain/plugins/marketplaces/
+
+# --- local-only runtime ---
+.claude/settings.local.json
+*.lock
+*.tmp
+
+5-brain/plugins/cache/
+5-brain/plugins/synced/

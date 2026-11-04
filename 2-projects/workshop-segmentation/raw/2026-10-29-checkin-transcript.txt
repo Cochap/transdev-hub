@@ -1,0 +1,12 @@
+Check-in segmentation, jeudi 2026-10-29 (après-midi). Intervenants : ECKERN, LECAVALIER (Gabriel). Gregory présent.
+Transcription collée par Greg dans Claude Code le 2026-10-29 ; le texte intégral est dans cette conversation (session "goood morning" du 2026-10-29).
+
+Points clés relevés (résumé Claude, à vérifier contre le texte source) :
+- Segment = factuel (contraintes, chiffres) ; médaille = qualité / niveau.
+- Gabriel : la méthode pondérée est circulaire (« tu joues avec les pondérations jusqu'à ce que tu aies le résultat que tu veux » ; « comme entraîner une IA et chercher la réponse sur le même jeu de données »).
+- Eckern : « Tu changes mon avis là-dessus. » La nature de l'atelier compte : petit atelier spécialisé moteurs = segment 3 ; énorme dépôt qui ne fait que de la petite maintenance = potentiellement segment 1. Les ratios de base (% de réserve = tension, mécaniciens par véhicule = charge) doivent quand même compter.
+- Colonne « Target Segment » : « on s'en fout », à ignorer.
+- Demande : repartir de zéro, proposer comment définir un segment et une médaille dans le segment ; les ateliers existent déjà, le modèle doit donner le segment ; éléments non numériques possibles.
+- Médaille : une stratégie de maintenance écrite = « waouh » en S1, prérequis en S2, minimum en S3.
+- Prochain point : vendredi 10-30 (30 min) ou lundi.
+- Fiche atelier (app web + PowerPoint) : corrections listées dans ../project-status.md (2026-10-29 après-midi).

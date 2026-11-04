@@ -1,0 +1,101 @@
+{
+  "_readme": "Per indexed manual: short = label shown in the citation (kept under ~22 characters so that ' p.NNN' still fits in the 27-character Test-panel label); folder = path under the Manuels folder (same layout on the SharePoint site and in the OneDrive copy). Edit short names freely; folder must match the real location. Built 2026-10-06 from the local Manuels folder.",
+  "spBase": "https://lehub.sharepoint.com/sites/CA-Suivideseffectifs-Qubec/Shared%20Documents/Greg%20Boulon/Manuels%20de%20service/Manuels/",
+  "files": {
+    "20180131200843_emp-cooling-fans-service-manual.pdf": {
+      "short": "EMP cooling fans",
+      "folder": "Grande West/"
+    },
+    "401483 Rev B.pdf": {
+      "short": "Braun 401483 Rev B",
+      "folder": "Braun Ability/"
+    },
+    "PROCEDURE DE MAINTENANCE DU SIEGE AS98-5005.pdf": {
+      "short": "Seat AS98-5005",
+      "folder": "Baultar/"
+    },
+    "ProHeat_service_manual_m50_m80___sl9150.pdf": {
+      "short": "ProHeat SL9150",
+      "folder": "LION/"
+    },
+    "RP- 01-41-00-00-002 Heating System Coolant Pump (Spheros) Replacement (1).pdf": {
+      "short": "Lion heater pump",
+      "folder": "LION/"
+    },
+    "Vicinity Service Manual.pdf": {
+      "short": "Vicinity service",
+      "folder": "Grande West/"
+    },
+    "Wheelchair Ramp.pdf": {
+      "short": "Wheelchair ramp",
+      "folder": "Grande West/rampe handicapé/"
+    },
+    "moteur wiper modification electrique.pdf": {
+      "short": "GMC wiper motor",
+      "folder": "GMC/Plans électriques/"
+    },
+    "systeme moteur chauferette CIRCUIT.pdf": {
+      "short": "Heater motor circuit",
+      "folder": "GMC/Plans électriques/",
+      "file": "systeme moteur chauferette.pdf",
+      "note": "Indexed name has 'CIRCUIT'; the closest file on the site is 'systeme moteur chauferette.pdf'. Unverified match (3 chunks)."
+    },
+    "RP-01-33-00-00-001 Tire Mounting and Dismounting.pdf": {
+      "short": "Lion tire mounting",
+      "folder": "LION/"
+    },
+    "RP-01-33-00-00-002 Wheel Replacement.pdf": {
+      "short": "Lion wheel replace",
+      "folder": "LION/"
+    },
+    "RP-01-33-00-00-003 Replacement of the Wheel Speed Sensor.pdf": {
+      "short": "Lion wheel speed",
+      "folder": "LION/"
+    },
+    "RP-01-34-00-00-004 Replacement of the Steering Gear.pdf": {
+      "short": "Lion steering gear",
+      "folder": "LION/"
+    },
+    "RP-01-34-00-00-002 Pitman Arm Replacement.pdf": {
+      "short": "Lion pitman arm",
+      "folder": "LION/"
+    },
+    "RP-01-11-00-00-002 Motor Control Unit (MCU) Replacement.pdf": {
+      "short": "Lion MCU replace",
+      "folder": "LION/"
+    },
+    "RP-01-13-00-00-010 Adjustment of the BTMS.pdf": {
+      "short": "Lion BTMS adjust",
+      "folder": "LION/"
+    },
+    "RP-01-13-00-00-006 BTMS Compressor Replacement.pdf": {
+      "short": "Lion BTMS compressor",
+      "folder": "LION/"
+    },
+    "RP-01-35-00-00-003 Remplacement of the ABS Control Unit.pdf": {
+      "short": "Lion ABS control unit",
+      "folder": "LION/"
+    },
+    "RP-01-35-00-00-004 Replacement of the Pedal Position Sensor.pdf": {
+      "short": "Lion pedal sensor",
+      "folder": "LION/"
+    },
+    "RP-01-34-00-00-005 Replacement of the Drag Link.pdf": {
+      "short": "Lion drag link",
+      "folder": "LION/"
+    },
+    "RP-01-35-01-00-005 Brakes Pads Replacement (Hydraulic).pdf": {
+      "short": "Lion brake pads",
+      "folder": "LION/"
+    },
+    "RP-01-35-01-00-006 Replacement of the Brake Caliper (Hydraulic).pdf": {
+      "short": "Lion brake caliper",
+      "folder": "LION/"
+    },
+    "RP-01-36-01-00-003 Replacement of the Rear Suspension (Leaf).pdf": {
+      "short": "Lion rear suspension",
+      "folder": "LION/"
+    }
+  },
+  "spBaseNote": "Confirmed 2026-10-06: the site address is spelled 'Qubec' (no accent). Anonymous test: .../CA-Suivideseffectifs-Qubec/... answers 403 (exists, needs sign-in); .../CA-Suivideseffectifs-Quebec/... answers 404 (does not exist). Folder paths are relative to Manuels and match the site layout. Greg shared the Manuels folder view-only with 'Everyone except external users' on 2026-10-06."
+}

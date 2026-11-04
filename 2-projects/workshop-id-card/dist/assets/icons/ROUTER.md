@@ -1,0 +1,47 @@
+# ROUTER — dist/assets/icons
+SVG icons rebuilt 2026-10-29 from the PNGs in the fillable slide. Grey = #A6A6A6, change it in one place per file.
+- `bus.svg`, `hybrid.svg`, `surface.svg`, `bays.svg`, `parking.svg` — fleet/workshop icons
+- `shift-early.svg`, `shift-day.svg`, `shift-late.svg`, `shift-night.svg` — shift icons
+- `gears.svg` — next to Segment
+- `transdev.svg` — Transdev ownership mark (redrawn; replace with the official file from Henri)
+- `hdr-contract.svg` — copied from the fillable slide (already vector)
+- `cond-normal.svg` — copied from the fillable slide (already vector)
+- `cond-severe.svg` — copied from the fillable slide (already vector)
+- `km-gauge.svg` — copied from the fillable slide (already vector)
+- `age-calendar.svg` — copied from the fillable slide (already vector)
+- `models.svg` — copied from the fillable slide (already vector)
+- `energy-diesel.svg` — copied from the fillable slide (already vector)
+- `energy-cng.svg` — copied from the fillable slide (already vector)
+- `energy-electric.svg` — copied from the fillable slide (already vector)
+- `hdr-fleet.svg` — copied from the fillable slide (already vector)
+- `staff.svg` — copied from the fillable slide (already vector)
+- `technician.svg` — copied from the fillable slide (already vector)
+- `hdr-people.svg` — copied from the fillable slide (already vector)
+- `hdr-workshop-tools.svg` — copied from the fillable slide (already vector)
+
+## Contents
+- `age-calendar.svg` — copied from the fillable slide (already vector)
+- `bays.svg` — vector image
+- `bus.svg` — vector image
+- `cond-normal.svg` — copied from the fillable slide (already vector)
+- `cond-severe.svg` — copied from the fillable slide (already vector)
+- `energy-cng.svg` — copied from the fillable slide (already vector)
+- `energy-diesel.svg` — copied from the fillable slide (already vector)
+- `energy-electric.svg` — copied from the fillable slide (already vector)
+- `gears.svg` — next to Segment
+- `hdr-contract.svg` — copied from the fillable slide (already vector)
+- `hdr-fleet.svg` — copied from the fillable slide (already vector)
+- `hdr-people.svg` — copied from the fillable slide (already vector)
+- `hdr-workshop-tools.svg` — copied from the fillable slide (already vector)
+- `hybrid.svg` — vector image
+- `km-gauge.svg` — copied from the fillable slide (already vector)
+- `models.svg` — copied from the fillable slide (already vector)
+- `parking.svg` — vector image
+- `shift-day.svg` — vector image
+- `shift-early.svg` — vector image
+- `shift-late.svg` — vector image
+- `shift-night.svg` — vector image
+- `staff.svg` — copied from the fillable slide (already vector)
+- `surface.svg` — vector image
+- `technician.svg` — copied from the fillable slide (already vector)
+- `transdev.svg` — Transdev ownership mark (redrawn; replace with the official file from Henri)

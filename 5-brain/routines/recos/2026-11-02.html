@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Routine suggestions 2026-11-02</title>
+<style>
+:root{--bg:#f6f4f0;--card:#fff;--ink:#1c1b19;--mute:#6b675f;--line:#e2ded6;--accent:#DB0717;--ok:#1f7a4d;--chip:#efece6}
+@media (prefers-color-scheme:dark){:root{--bg:#161513;--card:#201f1c;--ink:#f1eee8;--mute:#a39f95;--line:#34322d;--accent:#ff4d5a;--ok:#4cc38a;--chip:#2b2925}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 120px}
+h1{font-size:28px;margin:0 0 4px}.sub{color:var(--mute);margin:0 0 24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:0 0 14px;display:grid;grid-template-columns:28px 1fr;gap:12px}
+.card input{width:22px;height:22px;margin-top:3px;accent-color:var(--accent)}
+.card h2{font-size:18px;margin:0 0 6px}.row{margin:2px 0;color:var(--ink)}.row b{color:var(--mute);font-weight:600;margin-right:6px}
+.chips{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}.chip{background:var(--chip);border-radius:999px;padding:2px 10px;font-size:13px;color:var(--mute)}
+.chip.passive{color:var(--ok)}.ev{color:var(--mute);font-size:13px;margin-top:6px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:12px 16px;display:flex;gap:12px;align-items:center;justify-content:center}
+button{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 18px;font-size:16px;font-weight:600;cursor:pointer}
+button:disabled{opacity:.4;cursor:default}.cnt{color:var(--mute)}.empty{padding:40px 0;text-align:center;color:var(--mute)}
+</style></head><body><div class="wrap">
+<h1>Routines I would add</h1>
+<p class="sub">Week of 2026-10-26 to 2026-10-30 (late run on Monday 2026-11-02). Tick the ones you want, press Copy picks, paste the text back to Claude. Nothing is set up until you do.</p>
+<label class="card"><input type="checkbox" data-i="0"><div>
+<h2>HQ freshness watch</h2>
+<div class="row"><b>Does</b>Each morning, checks that the published HQ page matches the local boulon-hq.html and that the Today, Week and Now tabs show this week; pings only if something is stale.</div>
+<div class="row"><b>When</b>Weekdays 08:45</div>
+<div class="row"><b>Saves</b>No more finding out HQ is a week behind; about 3 manual catch-up republishes a week</div>
+<div class="chips"><span class="chip passive">passive: only pings if something needs you</span><span class="chip">model: haiku</span><span class="chip">Estimate: about 15,000 tokens a week</span></div>
+<div class="ev">Seen: 5 times: 10-27 (69b65613, Week tab still on 10-05 plan), 10-28 (017011e7 at 13:41 'a week late', 13:45, 14:36 Now tab outdated), 10-29 (b794cb22 at 09:43 republish)</div></div></label>
+<label class="card"><input type="checkbox" data-i="1"><div>
+<h2>Unsent messages reminder</h2>
+<div class="row"><b>Does</b>Lists the French messages Claude drafted for Pierre, Gabriel or Henri that Greg has not marked as sent yet, so none sit forgotten.</div>
+<div class="row"><b>When</b>Weekdays 09:00, only if at least one draft is waiting</div>
+<div class="row"><b>Saves</b>Keeps drafts from being lost; avoids re-drafting the same message later</div>
+<div class="chips"><span class="chip passive">passive: only pings if something needs you</span><span class="chip">model: haiku</span><span class="chip">Estimate: about 10,000 tokens a week</span></div>
+<div class="ev">Seen: 8 drafts: 10-28 (017011e7, 5 drafts and redrafts for Pierre between 13:03 and 14:30), 10-29 (b794cb22 at 16:26 Gabriel, 16:43 Pierre, 11:12 Pierre); 10-29 digest says 2 still unsent</div></div></label>
+<label class="card"><input type="checkbox" data-i="2"><div>
+<h2>Company-certificate check on new scripts</h2>
+<div class="row"><b>Does</b>Scans scripts and launchers changed this week for Node, pip or uv calls missing the system-certificate setting, and lists any it finds before they fail.</div>
+<div class="row"><b>When</b>Mondays 08:30</div>
+<div class="row"><b>Saves</b>Catches the SELF_SIGNED_CERT_IN_CHAIN failure before it costs a run; it was re-diagnosed 5 times this week</div>
+<div class="chips"><span class="chip passive">passive: only pings if something needs you</span><span class="chip">model: haiku</span><span class="chip">Estimate: about 8,000 tokens a week</span></div>
+<div class="ev">Seen: 5 times: 10-27 (8b4562ac at 11:20, uv), 10-29 (1a951f7a at 10:32 pip, 10:35 Python, 10:48 Node; e8f86a95 at 10:41, 10 of 10 failing in wm.cmd)</div></div></label>
+<label class="card"><input type="checkbox" data-i="3"><div>
+<h2>End-of-day double-run guard</h2>
+<div class="row"><b>Does</b>Before end of day starts, checks whether it already ran or is running today and stops the second copy, so you only get one close.</div>
+<div class="row"><b>When</b>Each time end of day starts (manual or the 16:45 routine)</div>
+<div class="row"><b>Saves</b>No more overlapping or duplicated day-closes; it happened 6 times in 2 days</div>
+<div class="chips"><span class="chip passive">passive: only pings if something needs you</span><span class="chip">model: haiku</span><span class="chip">Estimate: about 2,000 tokens a week</span></div>
+<div class="ev">Seen: 6 runs: 10-27 (13eb95f9 at 16:52, dd697504 at 16:47, 69b65613 at 16:55), 10-28 (456bb36c at 16:36, 4d1d7142 at 16:40, 5f1d0080 at 16:49 scheduled run in parallel)</div></div></label>
+</div>
+<div class="bar"><span class="cnt" id="cnt">0 picked</span><button id="copy" disabled>Copy picks</button></div>
+<script>
+const cards=[{"title":"HQ freshness watch","what":"Each morning, checks that the published HQ page matches the local boulon-hq.html and that the Today, Week and Now tabs show this week; pings only if something is stale.","when":"Weekdays 08:45","saves":"No more finding out HQ is a week behind; about 3 manual catch-up republishes a week","kind":"passive","model":"haiku","cost":"Estimate: about 15,000 tokens a week","evidence":"5 times: 10-27 (69b65613, Week tab still on 10-05 plan), 10-28 (017011e7 at 13:41 'a week late', 13:45, 14:36 Now tab outdated), 10-29 (b794cb22 at 09:43 republish)"},{"title":"Unsent messages reminder","what":"Lists the French messages Claude drafted for Pierre, Gabriel or Henri that Greg has not marked as sent yet, so none sit forgotten.","when":"Weekdays 09:00, only if at least one draft is waiting","saves":"Keeps drafts from being lost; avoids re-drafting the same message later","kind":"passive","model":"haiku","cost":"Estimate: about 10,000 tokens a week","evidence":"8 drafts: 10-28 (017011e7, 5 drafts and redrafts for Pierre between 13:03 and 14:30), 10-29 (b794cb22 at 16:26 Gabriel, 16:43 Pierre, 11:12 Pierre); 10-29 digest says 2 still unsent"},{"title":"Company-certificate check on new scripts","what":"Scans scripts and launchers changed this week for Node, pip or uv calls missing the system-certificate setting, and lists any it finds before they fail.","when":"Mondays 08:30","saves":"Catches the SELF_SIGNED_CERT_IN_CHAIN failure before it costs a run; it was re-diagnosed 5 times this week","kind":"passive","model":"haiku","cost":"Estimate: about 8,000 tokens a week","evidence":"5 times: 10-27 (8b4562ac at 11:20, uv), 10-29 (1a951f7a at 10:32 pip, 10:35 Python, 10:48 Node; e8f86a95 at 10:41, 10 of 10 failing in wm.cmd)"},{"title":"End-of-day double-run guard","what":"Before end of day starts, checks whether it already ran or is running today and stops the second copy, so you only get one close.","when":"Each time end of day starts (manual or the 16:45 routine)","saves":"No more overlapping or duplicated day-closes; it happened 6 times in 2 days","kind":"passive","model":"haiku","cost":"Estimate: about 2,000 tokens a week","evidence":"6 runs: 10-27 (13eb95f9 at 16:52, dd697504 at 16:47, 69b65613 at 16:55), 10-28 (456bb36c at 16:36, 4d1d7142 at 16:40, 5f1d0080 at 16:49 scheduled run in parallel)"}];
+const boxes=[...document.querySelectorAll('input[type=checkbox]')],btn=document.getElementById('copy'),cnt=document.getElementById('cnt');
+const upd=()=>{const n=boxes.filter(b=>b.checked).length;cnt.textContent=n+' picked';btn.disabled=!n};
+boxes.forEach(b=>b.addEventListener('change',upd));
+btn.addEventListener('click',()=>{const picks=boxes.filter(b=>b.checked).map(b=>cards[+b.dataset.i]);
+const txt='Set up only these routines from the 2026-11-02 suggestions. Show me the plan and the cost before you create anything.\n'+picks.map((c,i)=>(i+1)+'. '+c.title+' | '+c.what+' | when: '+c.when+' | '+(c.kind==='passive'?'passive':'active')+' | model: '+(c.model||'haiku')).join('\n')+'\nChange nothing else.';
+navigator.clipboard.writeText(txt).then(()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Copy picks',1500)},()=>{prompt('Copy this:',txt)})});
+</script></body></html>

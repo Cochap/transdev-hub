@@ -1,0 +1,57 @@
+{
+  "page": 45,
+  "skip": [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "Thumbs.db",
+    ".DS_Store"
+  ],
+  "roots": [
+    {
+      "name": "hub",
+      "label": "TRANSDEV HUB (the brain)",
+      "real": "C:/TRANSDEV HUB",
+      "router": "."
+    },
+    {
+      "name": "zbb",
+      "label": "ZBB",
+      "real": "C:/ZBB",
+      "router": "2-projects/zbb"
+    },
+    {
+      "name": "digest",
+      "label": "DAILY DIGEST",
+      "real": "C:/Users/rilg01/DAILY DIGEST",
+      "router": "2-projects/daily-digest"
+    },
+    {
+      "name": "motion",
+      "label": "motion-reel-kit",
+      "real": "C:/Users/rilg01/Downloads/motion-reel-kit",
+      "router": "2-projects/motion-reel"
+    }
+  ],
+  "units": {
+    "hub:4-learning/references/ai-engineering-from-scratch": "third-party course repo (rohitg00), course content in phases/; its own README is its router",
+    "hub:4-learning/references/codex-5-hour-course": "third-party Codex 5-hour course kit incl. kits/aios (AIOS kit source), kits/hyperframes, kits/scrollcraft; its own README is its router",
+    "hub:5-brain/logs/eod": "generated: per-day end-of-day session extracts (one folder per date, _index.json, _digest.md)",
+    "hub:1-boulon/tests/results": "generated: dated test-run output, evidence for Henri",
+    "hub:1-boulon/hq/runs": "generated: HQ control-room run history",
+    "zbb:audit/out": "generated: audit outputs of the ZBB model audit",
+    "digest:worldmonitor": "third-party clone of github.com/koala73/worldmonitor (working copy with Greg's .env and SETUP-FREE-STACK.md); its README.md and ARCHITECTURE.md are its router",
+    "digest:tools/dotnet": "third-party .NET runtime, unpacked from dotnet.zip",
+    "digest:tools/garnet": "third-party Garnet (Redis-compatible store), unpacked from garnet.zip",
+    "motion:videos/geotab-transdev-launch": "generated: the Geotab/Transdev launch film project (frames, renders)",
+    "hub:9-archive/chrome-cleanup-2026-10-07/chrome-full-backup-20261007-162721": "Chrome profile backup from 2026-10-07 bookmark cleanup (personal browsing data, do not open)",
+    "hub:.claude/brain-moves": "generated: one folder per brain-move run (backup of every changed file + undo.json); undo with scripts/brain-move.js undo --run <stamp>",
+    "hub:5-brain/plugins/cache": "installed plugin files (ECC 2.2.2 = 292 skills, agents, hooks); the skill index is .claude/skills/boulon-skill-finder/INDEX.md",
+    "hub:5-brain/plugins/marketplaces": "plugin marketplace clones (ecc, claude-plugins-official); third-party",
+    "hub:5-brain/plugins/synced": "plugin copies synced from claude.ai (shadowed by the local ECC, leave alone)",
+    "hub:5-brain/plugins/data": "plugin data folder"
+  }
+}

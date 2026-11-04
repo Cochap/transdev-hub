@@ -1,0 +1,32 @@
+﻿{
+    "@odata.context":  "https://boulon-pilot-search.search.windows.net/$metadata#indexers/$entity",
+    "@odata.etag":  "\"0x8DF18D63D793465\"",
+    "name":  "multimodal-rag-1790098589411-indexer",
+    "description":  null,
+    "dataSourceName":  "multimodal-rag-1790098589411-datasource",
+    "skillsetName":  "multimodal-rag-1790098589411-skillset",
+    "targetIndexName":  "multimodal-rag-1790098589411",
+    "disabled":  null,
+    "schedule":  null,
+    "parameters":  {
+                       "batchSize":  1,
+                       "maxFailedItems":  -1,
+                       "maxFailedItemsPerBatch":  0,
+                       "base64EncodeKeys":  null,
+                       "configuration":  {
+                                             "allowSkillsetToReadFileData":  true
+                                         }
+                   },
+    "fieldMappings":  [
+                          {
+                              "sourceFieldName":  "metadata_storage_name",
+                              "targetFieldName":  "document_title",
+                              "mappingFunction":  null
+                          }
+                      ],
+    "outputFieldMappings":  [
+
+                            ],
+    "encryptionKey":  null
+}
+

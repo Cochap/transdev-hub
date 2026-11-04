@@ -1,0 +1,45 @@
+{
+  "week": "2026-10-26 to 2026-10-30 (late run on Monday 2026-11-02)",
+  "cards": [
+    {
+      "title": "HQ freshness watch",
+      "what": "Each morning, checks that the published HQ page matches the local boulon-hq.html and that the Today, Week and Now tabs show this week; pings only if something is stale.",
+      "when": "Weekdays 08:45",
+      "saves": "No more finding out HQ is a week behind; about 3 manual catch-up republishes a week",
+      "kind": "passive",
+      "model": "haiku",
+      "cost": "Estimate: about 15,000 tokens a week",
+      "evidence": "5 times: 10-27 (69b65613, Week tab still on 10-05 plan), 10-28 (017011e7 at 13:41 'a week late', 13:45, 14:36 Now tab outdated), 10-29 (b794cb22 at 09:43 republish)"
+    },
+    {
+      "title": "Unsent messages reminder",
+      "what": "Lists the French messages Claude drafted for Pierre, Gabriel or Henri that Greg has not marked as sent yet, so none sit forgotten.",
+      "when": "Weekdays 09:00, only if at least one draft is waiting",
+      "saves": "Keeps drafts from being lost; avoids re-drafting the same message later",
+      "kind": "passive",
+      "model": "haiku",
+      "cost": "Estimate: about 10,000 tokens a week",
+      "evidence": "8 drafts: 10-28 (017011e7, 5 drafts and redrafts for Pierre between 13:03 and 14:30), 10-29 (b794cb22 at 16:26 Gabriel, 16:43 Pierre, 11:12 Pierre); 10-29 digest says 2 still unsent"
+    },
+    {
+      "title": "Company-certificate check on new scripts",
+      "what": "Scans scripts and launchers changed this week for Node, pip or uv calls missing the system-certificate setting, and lists any it finds before they fail.",
+      "when": "Mondays 08:30",
+      "saves": "Catches the SELF_SIGNED_CERT_IN_CHAIN failure before it costs a run; it was re-diagnosed 5 times this week",
+      "kind": "passive",
+      "model": "haiku",
+      "cost": "Estimate: about 8,000 tokens a week",
+      "evidence": "5 times: 10-27 (8b4562ac at 11:20, uv), 10-29 (1a951f7a at 10:32 pip, 10:35 Python, 10:48 Node; e8f86a95 at 10:41, 10 of 10 failing in wm.cmd)"
+    },
+    {
+      "title": "End-of-day double-run guard",
+      "what": "Before end of day starts, checks whether it already ran or is running today and stops the second copy, so you only get one close.",
+      "when": "Each time end of day starts (manual or the 16:45 routine)",
+      "saves": "No more overlapping or duplicated day-closes; it happened 6 times in 2 days",
+      "kind": "passive",
+      "model": "haiku",
+      "cost": "Estimate: about 2,000 tokens a week",
+      "evidence": "6 runs: 10-27 (13eb95f9 at 16:52, dd697504 at 16:47, 69b65613 at 16:55), 10-28 (456bb36c at 16:36, 4d1d7142 at 16:40, 5f1d0080 at 16:49 scheduled run in parallel)"
+    }
+  ]
+}

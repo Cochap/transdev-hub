@@ -1,0 +1,23 @@
+Warning: no stdin data received in 3s, proceeding without it. If piping from a slow command, redirect stdin explicitly: < /dev/null to skip, or wait longer.
+  · Grep
+  · Grep
+  · Grep
+  · Grep
+  · Grep
+Still looking: I searched the docs for a "cost allocation" plan and found nothing by that name. I'm checking what the log says about budget and costs.
+  · Grep
+I couldn't find a "cost allocation plan" in the project files. I searched the docs for allocation, chargeback, cost centre and cost split, and none of them has a plan with that name.
+
+The closest things on file:
+- **Budget:** $5,000 CAD, which Greg allocates as needed (`docs/assumptions-log.md`, Assumption 3).
+- **Search tier comparison** (`docs/azure-limits-pricing-2026-09-23.md`):
+  - Stay on Basic and split oversized PDFs: about $613 over 6 months, about $1,226 over 12.
+  - Move to S1: about $2,040 over 6 months, about $4,080 over 12.
+  - Twelve months on S1 plus Document Intelligence (about $416) would use up nearly the whole budget.
+- **Gap:** `docs/review-architecture.md` (H5) says the full-corpus cost across 100+ manuals was never modelled.
+
+I may have missed a plan that was only discussed in chat, since the log has long lines I couldn't read in full. I haven't changed anything.
+
+**Next actions:**
+1. Tell me if "cost allocation" means splitting the $5,000 across line items or splitting costs between Transdev teams. I'll build exactly that.
+2. If you mean the budget split, I can draft a one-page version from the figures above. Say the word.

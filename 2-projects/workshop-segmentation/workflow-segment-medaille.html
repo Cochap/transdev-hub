@@ -1,0 +1,379 @@
+<title>Segment and Medal Workflow</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Archivo:wght@600;800&display=swap">
+<style>
+/* Layout: one reading column; each step = Excel sheet mock on the left of the explanation, stacked on phones */
+:root{
+  --bg:#f6f7f8; --paper:#ffffff; --ink:#1b232b; --muted:#5d6873; --line:#d7dde2;
+  --accent:#b8101f; --xl:#1d6f42; --xlsoft:#e7f2ec; --input:#fff6c8; --calc:#eceff2;
+  --s1:#4a7a9c; --s2:#7a5ea8; --s3:#b8101f;
+  --bronze:#a4672f; --silver:#7d8a96; --gold:#b48a12; --bad:#b3261e; --good:#1d6f42;
+  --display:"Archivo",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12171c; --paper:#1a2128; --ink:#e6eaee; --muted:#9aa6b1; --line:#2e3841;
+  --accent:#ef5a66; --xl:#5cc08a; --xlsoft:#1d2e25; --input:#3a3418; --calc:#232c34;
+  --s1:#7fb0d3; --s2:#b59ce0; --s3:#ef5a66; --bronze:#d39a62; --silver:#b4c0cb; --gold:#e3bd47; --bad:#f2837b; --good:#5cc08a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12171c; --paper:#1a2128; --ink:#e6eaee; --muted:#9aa6b1; --line:#2e3841;
+  --accent:#ef5a66; --xl:#5cc08a; --xlsoft:#1d2e25; --input:#3a3418; --calc:#232c34;
+  --s1:#7fb0d3; --s2:#b59ce0; --s3:#ef5a66; --bronze:#d39a62; --silver:#b4c0cb; --gold:#e3bd47; --bad:#f2837b; --good:#5cc08a; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--body)}
+.wrap{max-width:960px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:2.1rem;font-weight:800}
+h2{font-size:1.45rem;font-weight:800}
+h3{font-size:1.02rem;font-weight:600}
+p{margin:0;max-width:68ch}
+.lead{color:var(--muted);font-size:1.05rem}
+.eyebrow{font:500 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+header{display:grid;gap:10px}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;align-items:stretch}
+.flow div{background:var(--paper);border:1px solid var(--line);padding:10px;display:grid;gap:4px;font-size:.85rem}
+.flow b{font-family:var(--display);font-size:.95rem}
+.flow .out{border-color:var(--accent)}
+.flow small{color:var(--muted);font-family:var(--mono);font-size:.72rem}
+section{display:grid;gap:14px}
+.step{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start}
+.text{display:grid;gap:10px;min-width:0}
+.text ul,.text ol{margin:0;padding-left:20px;display:grid;gap:4px}
+/* Excel mock */
+.xl{background:var(--paper);border:1px solid var(--line);min-width:0;overflow-x:auto}
+.xlbar{display:flex;gap:8px;align-items:center;background:var(--xl);color:#fff;padding:5px 10px;font:500 .75rem var(--mono)}
+.xlbar span{opacity:.85}
+.fx{display:flex;gap:8px;border-bottom:1px solid var(--line);padding:5px 8px;font:.72rem/1.4 var(--mono);color:var(--muted);background:var(--calc);overflow-x:auto;white-space:nowrap}
+.fx b{color:var(--xl)}
+table{border-collapse:collapse;width:100%;font-size:.82rem;font-variant-numeric:tabular-nums}
+th,td{border:1px solid var(--line);padding:4px 7px;text-align:left;vertical-align:top}
+th{background:var(--xlsoft);font-weight:600;font-size:.76rem}
+td.in{background:var(--input)}
+td.c{background:var(--calc);font-family:var(--mono);font-size:.78rem}
+td.k{font-family:var(--mono);color:var(--muted);font-size:.72rem;width:2.6em}
+.hl td{outline:2px solid var(--accent);outline-offset:-2px}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font:600 .75rem var(--mono);color:#fff}
+.S1{background:var(--s1)}.S2{background:var(--s2)}.S3{background:var(--s3)}
+.Bronze{background:var(--bronze)}.Argent{background:var(--silver)}.Or{background:var(--gold)}.None{background:var(--bad)}
+.note{border-left:3px solid var(--accent);padding:6px 12px;background:var(--paper);font-size:.9rem;color:var(--muted)}
+.note b{color:var(--ink)}
+code{font-family:var(--mono);font-size:.85em;background:var(--calc);padding:0 4px}
+/* simulator */
+.sim{background:var(--paper);border:1px solid var(--line);padding:18px;display:grid;gap:16px}
+.form{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+label{display:grid;gap:3px;font-size:.78rem;color:var(--muted)}
+input,select{font:inherit;font-size:.9rem;padding:5px 7px;border:1px solid var(--line);background:var(--input);color:var(--ink);min-width:0}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.trace{display:grid;gap:4px;font:.82rem/1.5 var(--mono)}
+.trace div{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:6px}
+.trace .n{color:var(--accent)}
+.result{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:var(--display);font-size:1.25rem}
+.seg{display:flex;gap:6px}
+.seg button{font:600 .85rem var(--mono);padding:5px 14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.bars{display:grid;gap:6px}
+.bar{display:grid;grid-template-columns:minmax(0,13em) minmax(0,1fr) 6.5em;gap:8px;align-items:center;font-size:.82rem}
+.track{height:12px;background:var(--calc);position:relative}
+.fill{height:100%;background:var(--ink)}
+.fill.low{background:var(--bad)}
+.tick{position:absolute;top:-4px;bottom:-4px;width:3px;margin-left:-1.5px}
+.tick.b{background:var(--bronze)}.tick.a{background:var(--silver)}.tick.o{background:var(--gold)}
+.bar.total{margin-top:6px;font-weight:600}
+.bar.total .track{height:16px}
+.bar.weak .num{color:var(--bad);font-weight:600}
+.key{display:flex;flex-wrap:wrap;gap:14px;font:.75rem var(--mono);color:var(--muted)}
+.key i{display:inline-block;width:10px;height:10px;margin-right:5px;vertical-align:-1px}
+.need{font:.72rem var(--mono);color:var(--muted);grid-column:2/-1}
+.num{font-family:var(--mono);text-align:right;font-size:.78rem}
+.ladder{display:flex;flex-wrap:wrap;gap:4px;align-items:center;font:.8rem var(--mono)}
+.ladder span{padding:3px 8px;border:1px solid var(--line);background:var(--paper)}
+.ladder i{color:var(--muted);font-style:normal}
+.open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.open div{background:var(--paper);border:1px solid var(--line);padding:12px;display:grid;gap:4px;font-size:.88rem}
+footer{color:var(--muted);font-size:.8rem;display:grid;gap:4px}
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr 1fr}.step{grid-template-columns:1fr}.form{grid-template-columns:1fr 1fr}.open{grid-template-columns:1fr}
+  .bar{grid-template-columns:minmax(0,1fr) 5.5em}.bar .track{grid-column:1/-1;grid-row:2}
+}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Workshop segmentation · Transdev Canada · working draft 2026-11-03</div>
+  <h1>How a workshop gets its segment and its medal</h1>
+  <p class="lead">The process runs in two parts. Part A answers <b>which bar applies</b> (segment S1, S2 or S3, from facts about the work and the staff). Part B answers <b>how well the workshop clears that bar</b> (bronze, silver or gold, from the audit). Each step below shows the Excel sheet that does it, the cells involved, and a real case from the workbooks.</p>
+  <div class="flow" aria-label="Overview">
+    <div><small>1 · questionnaire-travaux-sur-place.xlsx</small><b>Work done on site</b>Oui/Non list → base segment</div>
+    <div><small>2 · banc-essai-…-v2.xlsx · Cas</small><b>Staffing check</b>bus per technician vs curve</div>
+    <div class="out"><small>= result A</small><b>Final segment</b>base, minus 1 step if understaffed</div>
+    <div><small>3 · medaille-exemple.xlsx</small><b>Audit</b>practices required for that segment</div>
+    <div class="out"><small>= result B</small><b>Medal</b>total % and weakest pillar vs thresholds</div>
+  </div>
+</header>
+
+<!-- STEP 1 -->
+<section>
+  <div class="eyebrow">Part A · Step 1</div>
+  <h2>The manager ticks what the workshop does on site</h2>
+  <div class="step">
+    <div class="xl">
+      <div class="xlbar">questionnaire-travaux-sur-place.xlsx <span>· Questionnaire</span></div>
+      <div class="fx"><b>C10</b> =IF(AND(COUNTIF(D38:D41,"Oui")&gt;=2,D42="Oui"),"S3",IF(AND(COUNTIF(D28:D32,"Oui")&gt;=3,D33="Oui"),"S2","S1"))</div>
+      <table>
+        <tr><th></th><th>#</th><th>Travaux / Work</th><th>Fait ici ?</th></tr>
+        <tr><td class="k">17</td><td>S1.1</td><td>Inspection préventive (PM)</td><td class="in">Oui</td></tr>
+        <tr><td class="k">…</td><td>S1.2–6</td><td>Filtres, portes, plaquettes, pare-chocs, tests</td><td class="in">Oui ×5</td></tr>
+        <tr><td class="k">28</td><td>S2.1</td><td>Calibration moteur</td><td class="in">Oui</td></tr>
+        <tr><td class="k">29</td><td>S2.2</td><td>Remplacement d'électronique</td><td class="in">Oui</td></tr>
+        <tr><td class="k">30</td><td>S2.3</td><td>Recharge de gaz de climatisation</td><td class="in">Non</td></tr>
+        <tr><td class="k">31</td><td>S2.4</td><td>Diagnostic avancé par ordinateur</td><td class="in">Oui</td></tr>
+        <tr><td class="k">32</td><td>S2.5</td><td>Paramétrage et tests</td><td class="in">Non</td></tr>
+        <tr class="hl"><td class="k">33</td><td>S2.E</td><td>Équipement S2 : outils spécialisés, diagnostic</td><td class="in">Oui</td></tr>
+        <tr><td class="k">38–41</td><td>S3.1–4</td><td>Démontage complexe, reconditionnement moteur/boîte, calibration complète, reconstruction</td><td class="in">Non ×4</td></tr>
+        <tr><td class="k">42</td><td>S3.E</td><td>Équipement S3 : bancs d'essai, précision</td><td class="in">Non</td></tr>
+        <tr class="hl"><td class="k">10</td><td colspan="2"><b>Segment de base</b></td><td class="c"><span class="pill S2">S2</span></td></tr>
+        <tr><td class="k">11</td><td colspan="2">Cohérence</td><td class="c">OK</td></tr>
+      </table>
+    </div>
+    <div class="text">
+      <p>The list comes from referential page 41. Rule in cell <code>C10</code>, read top-down:</p>
+      <ol>
+        <li><b>S3</b> if at least 2 of the 4 S3 jobs are done here <b>and</b> the S3 equipment is there.</li>
+        <li>Otherwise <b>S2</b> if at least 3 of the 5 S2 jobs <b>and</b> the S2 equipment.</li>
+        <li>Otherwise <b>S1</b>.</li>
+      </ol>
+      <p>In the example: 3 of 5 S2 jobs plus the S2 equipment, no S3 work. Base segment <b>S2</b>.</p>
+      <p>Cell <code>C11</code> catches contradictions, for example “S3 work but no S3 equipment”. It shows <b>« À vérifier »</b> and the technical lead or auditor settles it on site.</p>
+      <div class="note"><b>Answer Oui only if the workshop's own technicians do it.</b> Work sent to a supplier or another workshop counts as Non (row 13 of the form).</div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section>
+  <div class="eyebrow">Part A · Step 2</div>
+  <h2>Staffing check: one step down if the workshop is short of technicians</h2>
+  <div class="step">
+    <div class="xl">
+      <div class="xlbar">banc-essai-segmentation-v2.xlsx <span>· Cas, row 7 (C03) and row 8 (C04)</span></div>
+      <div class="fx"><b>R</b> ="S"&amp;MAX(1, base − IF(O="Non",1,0))</div>
+      <table>
+        <tr><th>Col</th><th>What</th><th>C03 reference</th><th>C04 short-staffed</th></tr>
+        <tr><td class="k">D</td><td>Bus</td><td class="in">100</td><td class="in">100</td></tr>
+        <tr><td class="k">E</td><td>Techniciens</td><td class="in">12</td><td class="in">7</td></tr>
+        <tr><td class="k">F</td><td>Âge du parc (years)</td><td class="in">7</td><td class="in">7</td></tr>
+        <tr><td class="k">G / H</td><td>Conditions / models</td><td class="in">Normales / 6</td><td class="in">Normales / 6</td></tr>
+        <tr><td class="k">L</td><td>Bus par technicien = D/E</td><td class="c">8.3</td><td class="c">14.3</td></tr>
+        <tr><td class="k">M</td><td>Prévu par la courbe = 70/F</td><td class="c">10.0</td><td class="c">10.0</td></tr>
+        <tr><td class="k">N</td><td>Au-dessus du normal de… = L/M−1</td><td class="c">−17 %</td><td class="c">+43 %</td></tr>
+        <tr><td class="k">O</td><td>Assez de techniciens ? (N ≤ 20 %)</td><td class="c">Oui</td><td class="c">Non</td></tr>
+        <tr><td class="k">P</td><td>Base segment (step 1)</td><td class="c">S2</td><td class="c">S2</td></tr>
+        <tr class="hl"><td class="k">R</td><td><b>Final segment</b></td><td class="c"><span class="pill S2">S2</span></td><td class="c"><span class="pill S1">S1</span></td></tr>
+      </table>
+    </div>
+    <div class="text">
+      <p>The staffing curve (referential p. 52) says how many buses one technician can normally look after. Older fleets need more technicians, so fewer buses each.</p>
+      <ul>
+        <li><b>M, expected:</b> 70 ÷ fleet age. A 7-year-old fleet gives 10 buses per technician.</li>
+        <li><b>× 0.8 factor:</b> hard winter or more than 20 bus models means each technician can look after 20 % fewer buses. 10 expected becomes 8.</li>
+        <li><b>N, gap:</b> actual vs expected. Over 20 % above normal means not enough technicians.</li>
+        <li><b>R, final:</b> base segment minus one step. Never more than one step, never below S1.</li>
+      </ul>
+      <p>C04 is C03 with 7 technicians instead of 12: 14.3 buses each, 43 % above normal. It drops from S2 to <b>S1</b>. When C04 hires up to 10 technicians (case C11), it goes back to S2.</p>
+      <div class="note"><b>Provisional values (yellow in Paramètres):</b> the constant 70 and the 20 % tolerance are hypotheses. The 0.8 factor is Claude's, not the referential's. We change them once Pierre sends the real curve.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section>
+  <div class="eyebrow">Part A · Step 3</div>
+  <h2>Test bench: 12 checks that the rule stays logical</h2>
+  <div class="step">
+    <div class="xl">
+      <div class="xlbar">banc-essai-segmentation-v2.xlsx <span>· Tests</span></div>
+      <table>
+        <tr><th>#</th><th>Property</th><th>Cases</th><th>Statut</th></tr>
+        <tr><td>T1</td><td>Small engine shop is S3</td><td>C01</td><td class="c">OK</td></tr>
+        <tr><td>T2</td><td>Huge routine-only depot is S1</td><td>C02</td><td class="c">OK</td></tr>
+        <tr><td>T3</td><td>More technicians never lower the segment</td><td>C04→C11</td><td class="c">OK</td></tr>
+        <tr><td>T4–T6</td><td>Harsher conditions, older fleet, more models never raise it</td><td>C05–C07</td><td class="c">OK</td></tr>
+        <tr><td>T7</td><td>Heavier work never lowers it</td><td>C09→C03→C08</td><td class="c">OK</td></tr>
+        <tr><td>T8</td><td>Size alone changes nothing</td><td>C03→C10</td><td class="c">OK</td></tr>
+        <tr><td>T9–T10</td><td>Never below S1; at most one step down</td><td>C12, all</td><td class="c">OK</td></tr>
+        <tr><td>T11–T12</td><td>Contradictions flagged, consistent cases never flagged</td><td>C15–16, C01–14</td><td class="c">OK</td></tr>
+        <tr class="hl"><td colspan="3"><b>Tests réussis</b> (cell E18)</td><td class="c">12 / 12</td></tr>
+      </table>
+    </div>
+    <div class="text">
+      <p>We have no real workshop data yet, so the bench uses 16 imaginary workshops. Most are “twins” of the reference shop C03 with <b>one thing changed</b>. That way, if the result moves, we know exactly why.</p>
+      <p>Checks T1 and T2 are the two cases from the 10-29 meeting:</p>
+      <ul>
+        <li>The small shop that rebuilds engines must be S3.</li>
+        <li>The huge depot that only does light work must be S1.</li>
+      </ul>
+      <p>The rule passes both because it looks at <b>what work is done</b>, not at size.</p>
+      <div class="note"><b>To do today:</b> labels were renamed on 11-02 and Excel automation is blocked here. Open the file once in Excel so it recalculates, then check that E18 still reads 12 / 12.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section>
+  <div class="eyebrow">Part B · Step 4</div>
+  <h2>The segment decides which practices are required</h2>
+  <div class="step">
+    <div class="xl">
+      <div class="xlbar">medaille-exemple-v2.xlsx <span>· Pratiques (120 rows)</span></div>
+      <div class="fx"><b>G</b> =IF(AND(Dès ≤ segment, segment &lt; Remplacée à partir de),"Oui","—")</div>
+      <table>
+        <tr><th>#</th><th>Pratique</th><th>Dès</th><th>Remplacée</th><th>Exigée (S2)?</th></tr>
+        <tr><td>2</td><td>Short term scheduling weekly</td><td>S1</td><td></td><td class="c">Oui</td></tr>
+        <tr><td>4</td><td>Long term 3-6 months</td><td>S3</td><td></td><td class="c">—</td></tr>
+        <tr><td>39.1</td><td>Yearly inventory only</td><td>S1</td><td>S2</td><td class="c">—</td></tr>
+        <tr class="hl"><td>39.2</td><td>Quarterly on A parts + yearly full</td><td>S2</td><td>S3</td><td class="c">Oui</td></tr>
+        <tr><td>39.3</td><td>Monthly A, quarterly B, yearly full</td><td>S3</td><td></td><td class="c">—</td></tr>
+      </table>
+    </div>
+    <div class="text">
+      <p>The 120 practices come from the referential audit (pp. 17–68). Each one has a <b>Dès</b> column: the first segment that must have it.</p>
+      <p><b>Ladders (x.1 / x.2 / x.3):</b> one practice in three versions, one per segment. Only the version for your segment counts. <b>Remplacée à partir de</b> = the segment where the next version takes over.</p>
+      <p>The five ladders: 30 stock categories, 31 storage layout, 39 inventory counts, 81 organization, 82 manager role.</p>
+      <p>The lists are cumulative. Required practices: <b>S1 = 50</b>, <b>S2 = 96</b>, <b>S3 = 110</b>. Being S3 means meeting S2's list plus more.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section>
+  <div class="eyebrow">Part B · Step 5</div>
+  <h2>Count, then apply the medal rule</h2>
+  <div class="step">
+    <div class="xl">
+      <div class="xlbar">medaille-exemple.xlsx <span>· Résultat, segment C4 = S2</span></div>
+      <div class="fx"><b>E16</b> =IF(AND(total≥H9, weakest≥I9),"Or",IF(AND(total≥H8, weakest≥I8),"Argent",IF(AND(total≥H7, weakest≥I7),"Bronze","Aucun certificat")))</div>
+      <table>
+        <tr><th>Pilier</th><th>Exigées</th><th>En place</th><th>Part</th></tr>
+        <tr><td>Planification</td><td class="c">17</td><td class="c">14</td><td class="c">82 %</td></tr>
+        <tr><td>Pièces</td><td class="c">19</td><td class="c">16</td><td class="c">84 %</td></tr>
+        <tr class="hl"><td>Préparation, exécution, contrôle</td><td class="c">24</td><td class="c">13</td><td class="c">54 %</td></tr>
+        <tr><td>Fiabilité</td><td class="c">7</td><td class="c">7</td><td class="c">100 %</td></tr>
+        <tr><td>Organisation et RH</td><td class="c">14</td><td class="c">10</td><td class="c">71 %</td></tr>
+        <tr><td>Finance</td><td class="c">15</td><td class="c">11</td><td class="c">73 %</td></tr>
+        <tr><td><b>Total</b></td><td class="c">96</td><td class="c">71</td><td class="c">74 %</td></tr>
+        <tr class="hl"><td colspan="3"><b>Médaille</b></td><td class="c"><span class="pill Bronze">Bronze</span></td></tr>
+      </table>
+      <table>
+        <tr><th>Seuils (proposal 11-03)</th><th>Total ≥</th><th>Weakest pillar ≥</th></tr>
+        <tr><td>Or</td><td class="c">90 %</td><td class="c">75 %</td></tr>
+        <tr><td>Argent</td><td class="c">75 %</td><td class="c">60 %</td></tr>
+        <tr><td>Bronze</td><td class="c" colspan="2">everyone below silver</td></tr>
+      </table>
+    </div>
+    <div class="text">
+      <p>For each pillar: practices <b>in place</b> ÷ practices <b>required</b>. Then two numbers decide the medal:</p>
+      <ul>
+        <li><b>Total</b>: 71 / 96 = <b>74 %</b>.</li>
+        <li><b>Weakest pillar</b>: Préparation at <b>54 %</b>.</li>
+      </ul>
+      <p>The rule checks gold first, then silver. The workshop needs <b>both</b> numbers over the line. Everyone below silver is <b>bronze</b>: bronze is the bottom group, not a prize. 74 % misses silver (75 %) by one point and 54 % is under the 60 % floor. Result: <b>S2 bronze</b>.</p>
+      <p>Gold is not 100 %: 90 % total with no pillar under 75 % is demanding but reachable.</p>
+      <p>The weakest-pillar floor matters because a strong pillar can't hide a weak one. One pillar at 20 % blocks the medal, even with a high total.</p>
+      <div class="note"><b>Safety gate (proposal, not in this example file):</b> one safety practice below the bar means no medal at all, whatever the rest. The extract has no safety rows, so the gate does not run here (note in cell G11).</div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATOR -->
+<section>
+  <div class="eyebrow">Try it</div>
+  <h2>The whole workflow on one workshop</h2>
+  <p>Change the yellow inputs: the trace repeats the Excel logic step by step. The audit answers are the sample answers in <code>medaille-exemple.xlsx</code> (drawn at random, not a real workshop).</p>
+  <div class="sim">
+    <div class="form">
+      <label for="s1n">S1 jobs done (of 6)<input id="s1n" type="number" min="0" max="6" value="6"></label>
+      <label for="s2n">S2 jobs done (of 5)<input id="s2n" type="number" min="0" max="5" value="3"></label>
+      <label for="s3n">S3 jobs done (of 4)<input id="s3n" type="number" min="0" max="4" value="0"></label>
+      <label for="eq">Equipment present<select id="eq"><option value="1">S1 only</option><option value="2" selected>S1 + S2</option><option value="3">S1 + S2 + S3</option><option value="x">S3 without S2</option></select></label>
+      <label for="bus">Buses<input id="bus" type="number" min="1" value="100"></label>
+      <label for="tech">Technicians<input id="tech" type="number" min="1" value="12"></label>
+      <label for="age">Fleet age (years)<input id="age" type="number" min="1" value="7"></label>
+      <label for="cond">Conditions / fleet<select id="cond"><option value="0">Normal, ≤ 20 models</option><option value="1">Harsh or &gt; 20 models</option></select></label>
+    </div>
+    <div class="trace" id="trace" aria-live="polite"></div>
+    <div class="result" id="segout"></div>
+    <div>
+      <h3 style="margin-bottom:8px">Medal for that segment (sample audit). Switch segment to compare:</h3>
+      <div class="seg" role="group" aria-label="Segment for the medal"><button type="button" data-s="1">S1</button><button type="button" data-s="2">S2</button><button type="button" data-s="3">S3</button></div>
+    </div>
+    <div class="bars" id="bars"></div>
+    <div class="result" id="medout"></div>
+  </div>
+  <div class="note"><b>Same workshop, three bars:</b> judged as S1 it scores 88 % (silver), as S2 74 % (bronze), as S3 69 % (bronze). A higher segment is harder to medal in, so nobody gains by claiming a higher segment. This fixes the old score, where the same audit scored <i>higher</i> in S3 (55 %) than in S1 (50 %) (results 07, §1).</div>
+  <div class="ladder" aria-label="One continuous scale"><i>One scale:</i><span>S1 bronze</span><span>S1 silver</span><span>S1 gold ≈ S2 bronze</span><span>S2 silver</span><span>S2 gold ≈ S3 bronze</span><span>S3 silver</span><span>S3 gold</span></div>
+</section>
+
+<section>
+  <div class="eyebrow">Still open</div>
+  <h2>What is decided, and what is not</h2>
+  <div class="open">
+    <div><h3>Staffing curve numbers</h3>The constant 70, the 20 % tolerance and the 0.8 factor are placeholders. Waiting on Pierre's real curve; the message to him is drafted, not sent.</div>
+    <div><h3>Medal thresholds</h3>Proposal of Greg and Gabriel (11-03): gold 90 / 75, silver 75 / 60, bronze = everyone below silver. To confirm with Pierre.</div>
+    <div><h3>Tension rule: two versions</h3>The Excel uses the staffing curve only. The 10-30 proposal uses 2 of 3 ratios (buses per mechanic, % spare buses, buses per bay). Pick one before the call.</div>
+    <div><h3>Yes/No vs levels 0–3</h3>The medal file scores practices Oui/Non. The proposal scores each practice 0–3, with the bar rising per segment (S1 = 1, S2 = 2, S3 = 3), in grid copy <code>…Maturity grid - v2 GR.xlsx</code>. The grid's question count (67 vs 78) is still to redo.</div>
+  </div>
+</section>
+
+<footer>
+  <div>Sources: <code>questionnaire-travaux-sur-place.xlsx</code>, <code>banc-essai-segmentation-v2.xlsx</code> (Cas, Paramètres, Tests), <code>medaille-exemple.xlsx</code> (Pratiques, Résultat), <code>proposition-segment-medaille-2026-10-30.md</code>, <code>cloud-repo/results/07-systeme-complet-segment-et-medaille.md</code>.</div>
+  <div>Pillar figures recomputed from the Pratiques tab on 2026-11-03. Proposal for discussion; nothing approved.</div>
+</footer>
+</div>
+
+<script>
+const P={ // from medaille-exemple.xlsx Pratiques, recomputed 2026-11-03: [in place, required]
+ 1:{"Planification":[5,5],"Pièces":[11,11],"Préparation, exécution, contrôle":[9,13],"Fiabilité":[5,5],"Organisation et RH":[6,6],"Finance":[8,10]},
+ 2:{"Planification":[14,17],"Pièces":[16,19],"Préparation, exécution, contrôle":[13,24],"Fiabilité":[7,7],"Organisation et RH":[10,14],"Finance":[11,15]},
+ 3:{"Planification":[15,19],"Pièces":[16,23],"Préparation, exécution, contrôle":[14,28],"Fiabilité":[10,10],"Organisation et RH":[10,15],"Finance":[11,15]}};
+const T=[["Or",.9,.75],["Argent",.75,.6],["Bronze",0,0]], EN={Or:"Gold",Argent:"Silver",Bronze:"Bronze"};
+const $=id=>document.getElementById(id), v=id=>+$(id).value, pct=x=>Math.round(x*100)+" %";
+let medSeg=null;
+function pill(s){return `<span class="pill S${s}">S${s}</span>`}
+function run(){
+  const s2=v("s2n"),s3=v("s3n"),eq=$("eq").value;
+  const e2=eq==="2"||eq==="3", e3=eq==="3"||eq==="x";
+  const base=(s3>=2&&e3)?3:(s2>=3&&e2)?2:1;
+  let coh="OK";
+  if(s3>=2&&!e3)coh="À vérifier : S3 work without S3 equipment";
+  else if(s2>=3&&!e2)coh="À vérifier : S2 work without S2 equipment";
+  else if(e3&&!e2)coh="À vérifier : S3 equipment without S2 equipment";
+  const L=v("bus")/v("tech"), M=70/v("age")*(v("cond")?0.8:1), N=L/M-1, ok=N<=0.2;
+  const fin=Math.max(1,base-(ok?0:1));
+  $("trace").innerHTML=[
+   ["1",`Base segment: S3 work ${s3}/4 (needs 2) + S3 equipment ${e3?"yes":"no"}; S2 work ${s2}/5 (needs 3) + S2 equipment ${e2?"yes":"no"} → S${base}`],
+   ["",`Consistency: ${coh}`],
+   ["2",`Buses per technician L = ${v("bus")}/${v("tech")} = ${L.toFixed(1)}; expected M = 70/${v("age")}${v("cond")?" × 0.8":""} = ${M.toFixed(1)}`],
+   ["",`Above normal by N = ${(N*100).toFixed(0)} % → enough technicians? ${ok?"Oui":"Non (more than 20 %)"}`],
+   ["→",`Final segment = S${base}${ok?"":" − 1"} = S${fin}`]
+  ].map(([n,t])=>`<div><span class="n">${n}</span><span>${t}</span></div>`).join("");
+  $("segout").innerHTML=`Segment: ${pill(fin)} ${fin<base?`<small style="font:400 .85rem var(--body);color:var(--muted)">(S${base} → S${fin}: understaffed, ${(N*100).toFixed(0)} % above normal)</small>`:""}`;
+  medSeg=fin; medal();
+}
+function medal(){
+  const d=P[medSeg]; let a=0,r=0,mn=1,mk="";
+  document.querySelectorAll(".seg button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.s===medSeg));
+  const E=Object.entries(d);
+  E.forEach(([k,[x,y]])=>{a+=x;r+=y;if(x/y<mn){mn=x/y;mk=k}});
+  const tot=a/r, m=T.find(([_,t,w])=>tot>=t&&mn>=w);
+  // cutoffs: pillar floors 50/70/100, total 70/85/100. "need" = practices to add to reach the next cutoff.
+  const ticks=(c)=>c.map(([v,cls,lab])=>`<div class="tick ${cls}" style="left:${v*100}%" title="${lab} ${pct(v)}"></div>`).join("");
+  const nextNeed=(x,y,cuts)=>{const n=cuts.find(([v])=>x/y<v);if(!n)return "gold reached";return `+${Math.ceil(n[0]*y-1e-9)-x} → ${n[2]}`};
+  const PF=[[.6,"a","silver"],[.75,"o","gold"]], TF=[[.75,"a","silver"],[.9,"o","gold"]];
+  const row=(k,x,y,cuts,cls)=>`<div class="bar ${cls}"><span>${k}</span><div class="track"><div class="fill${x/y<cuts[0][0]?" low":""}" style="width:${x/y*100}%"></div>${ticks(cuts)}</div><span class="num">${x}/${y} · ${pct(x/y)}</span><span class="need">${nextNeed(x,y,cuts)}</span></div>`;
+  $("bars").innerHTML=`<div class="key"><span><i style="background:var(--bronze)"></i>bronze</span><span><i style="background:var(--silver)"></i>silver</span><span><i style="background:var(--gold)"></i>gold</span><span>below silver = bronze</span><span>pillar floors 60 · 75 %</span><span>total 75 · 90 %</span></div>`
+    +E.map(([k,[x,y]])=>row(k,x,y,PF,k===mk?"weak":"")).join("")+row("Total",a,r,TF,"total");
+  const name=m?m[0]:"None";
+  $("medout").innerHTML=`Total ${a}/${r} = ${pct(tot)} · weakest ${pct(mn)} (${mk}) → ${pill(medSeg)} <span class="pill ${name}">${m?EN[name]:"No certificate"}</span>`;
+}
+document.querySelectorAll(".form input,.form select").forEach(e=>e.addEventListener("input",run));
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{medSeg=+b.dataset.s;medal()}));
+run();
+</script>

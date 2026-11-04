@@ -1,0 +1,249 @@
+{
+  "name": "boulon-v2-index",
+  "fields": [
+    {
+      "name": "content_id",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": true,
+      "facetable": false,
+      "key": true,
+      "analyzer": "keyword"
+    },
+    {
+      "name": "text_document_id",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "image_document_id",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "title",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": true,
+      "facetable": true,
+      "key": false
+    },
+    {
+      "name": "document_title",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "url",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "vehicle_family",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": true,
+      "key": false
+    },
+    {
+      "name": "header_1",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "header_2",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "header_3",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "page_number",
+      "type": "Edm.Int32",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": true,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "content_text",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "content_embedding",
+      "type": "Collection(Edm.Single)",
+      "searchable": true,
+      "retrievable": true,
+      "stored": true,
+      "dimensions": 1536,
+      "vectorSearchProfile": "boulon-v2-text-profile"
+    },
+    {
+      "name": "content_path",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false
+    },
+    {
+      "name": "locationMetadata",
+      "type": "Edm.ComplexType",
+      "fields": [
+        {
+          "name": "pageNumber",
+          "type": "Edm.Int32",
+          "searchable": false,
+          "filterable": false,
+          "retrievable": true,
+          "stored": true,
+          "sortable": false,
+          "facetable": false
+        },
+        {
+          "name": "boundingPolygons",
+          "type": "Edm.String",
+          "searchable": false,
+          "filterable": false,
+          "retrievable": true,
+          "stored": true,
+          "sortable": false,
+          "facetable": false
+        }
+      ]
+    }
+  ],
+  "vectorSearch": {
+    "algorithms": [
+      {
+        "name": "boulon-v2-hnsw",
+        "kind": "hnsw",
+        "hnswParameters": {
+          "metric": "cosine",
+          "m": 4,
+          "efConstruction": 400,
+          "efSearch": 500
+        }
+      }
+    ],
+    "profiles": [
+      {
+        "name": "boulon-v2-text-profile",
+        "algorithm": "boulon-v2-hnsw",
+        "vectorizer": "boulon-v2-aoai-vectorizer"
+      }
+    ],
+    "vectorizers": [
+      {
+        "name": "boulon-v2-aoai-vectorizer",
+        "kind": "azureOpenAI",
+        "azureOpenAIParameters": {
+          "resourceUri": "<AOAI_ENDPOINT>",
+          "deploymentId": "text-embedding-3-small",
+          "apiKey": "<AOAI_KEY>",
+          "modelName": "text-embedding-3-small"
+        }
+      }
+    ]
+  },
+  "semantic": {
+    "defaultConfiguration": "boulon-v2-index-semantic-configuration",
+    "configurations": [
+      {
+        "name": "boulon-v2-index-semantic-configuration",
+        "prioritizedFields": {
+          "titleField": {
+            "fieldName": "title"
+          },
+          "prioritizedContentFields": [
+            {
+              "fieldName": "content_text"
+            }
+          ],
+          "prioritizedKeywordsFields": [
+            {
+              "fieldName": "header_1"
+            },
+            {
+              "fieldName": "header_2"
+            },
+            {
+              "fieldName": "header_3"
+            },
+            {
+              "fieldName": "document_title"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

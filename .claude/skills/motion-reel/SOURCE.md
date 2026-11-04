@@ -1,0 +1,1 @@
+Copied into the brain on 2026-10-21 from the film kit, C:\Users\rilg01\Downloads\motion-reel-kit\.claude\skills\motion-reel (pointer project 2-projects/motion-reel). Its scripts expect to run from the kit folder, so start film work there or add that folder to the session. The original is still in the kit.

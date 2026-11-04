@@ -1,0 +1,514 @@
+﻿[
+    {
+        "name":  "GSAP",
+        "url":  "https://gsap.com",
+        "category":  "engine",
+        "what":  "Industry-standard JavaScript animation engine with timelines, ScrollTrigger and many plugins.",
+        "best_for":  "Complex timelines and scroll-driven animation",
+        "pricing":  "free",
+        "framework":  "any (vanilla, React, Vue)",
+        "tags":  [
+                     "gsap",
+                     "timeline",
+                     "scrolltrigger"
+                 ]
+    },
+    {
+        "name":  "Motion (Framer Motion)",
+        "url":  "https://motion.dev",
+        "category":  "engine",
+        "what":  "Animation library for React, JavaScript and Vue with springs, gestures and layout animation.",
+        "best_for":  "Declarative UI animation in React",
+        "pricing":  "freemium",
+        "framework":  "React, Vue, vanilla",
+        "tags":  [
+                     "motion",
+                     "framer-motion",
+                     "springs",
+                     "gestures"
+                 ]
+    },
+    {
+        "name":  "Anime.js",
+        "url":  "https://animejs.com",
+        "category":  "engine",
+        "what":  "Lightweight JavaScript animation engine for CSS, SVG and DOM with timelines.",
+        "best_for":  "Small, simple animations without a framework",
+        "pricing":  "free",
+        "framework":  "any (vanilla)",
+        "tags":  [
+                     "animejs",
+                     "svg",
+                     "timeline"
+                 ]
+    },
+    {
+        "name":  "Lenis",
+        "url":  "https://lenis.darkroom.engineering",
+        "category":  "scroll-3d",
+        "what":  "Small smooth-scroll library that gives websites a soft, inertial scrolling feel.",
+        "best_for":  "Smooth scrolling paired with GSAP or Motion",
+        "pricing":  "free",
+        "framework":  "any (vanilla, React, Vue)",
+        "tags":  [
+                     "smooth-scroll",
+                     "lenis"
+                 ]
+    },
+    {
+        "name":  "AutoAnimate",
+        "url":  "https://auto-animate.formkit.com",
+        "category":  "engine",
+        "what":  "One-line drop-in that animates items being added, removed or moved in lists.",
+        "best_for":  "Instant list and layout transitions",
+        "pricing":  "free",
+        "framework":  "any (React, Vue, Svelte, vanilla)",
+        "tags":  [
+                     "autoanimate",
+                     "lists",
+                     "zero-config"
+                 ]
+    },
+    {
+        "name":  "Theatre.js",
+        "url":  "https://www.theatrejs.com",
+        "category":  "engine",
+        "what":  "Motion design toolkit with a visual timeline editor for web and 3D animation.",
+        "best_for":  "Choreographing detailed animation with a visual editor",
+        "pricing":  "free",
+        "framework":  "vanilla, React, Three.js",
+        "tags":  [
+                     "theatre",
+                     "timeline",
+                     "editor"
+                 ]
+    },
+    {
+        "name":  "React Spring",
+        "url":  "https://react-spring.dev",
+        "category":  "engine",
+        "what":  "Spring-physics animation library for React that makes movement feel natural.",
+        "best_for":  "Physics-based motion in React",
+        "pricing":  "free",
+        "framework":  "React",
+        "tags":  [
+                     "springs",
+                     "physics"
+                 ]
+    },
+    {
+        "name":  "Swup",
+        "url":  "https://swup.js.org",
+        "category":  "engine",
+        "what":  "Page transition library that animates navigation between pages of a site.",
+        "best_for":  "Animated page transitions on multi-page sites",
+        "pricing":  "free",
+        "framework":  "vanilla",
+        "tags":  [
+                     "page-transitions"
+                 ]
+    },
+    {
+        "name":  "Barba.js",
+        "url":  "https://barba.js.org",
+        "category":  "engine",
+        "what":  "Page transition library that makes navigation feel like a single-page app.",
+        "best_for":  "Smooth page transitions on static sites",
+        "pricing":  "free",
+        "framework":  "vanilla",
+        "tags":  [
+                     "page-transitions"
+                 ]
+    },
+    {
+        "name":  "tsParticles",
+        "url":  "https://tsparticles.js.org",
+        "category":  "engine",
+        "what":  "Configurable particle, confetti and firework effects for website backgrounds.",
+        "best_for":  "Particle backgrounds and confetti",
+        "pricing":  "free",
+        "framework":  "any (React, Vue, Angular, vanilla)",
+        "tags":  [
+                     "particles",
+                     "confetti",
+                     "background"
+                 ]
+    },
+    {
+        "name":  "Magic UI",
+        "url":  "https://magicui.design",
+        "category":  "component-library",
+        "what":  "Copy-paste animated React components built on Tailwind and Motion, aimed at landing pages.",
+        "best_for":  "Animated landing page sections",
+        "pricing":  "freemium",
+        "framework":  "React, Tailwind",
+        "tags":  [
+                     "shadcn",
+                     "landing-page",
+                     "tailwind"
+                 ]
+    },
+    {
+        "name":  "Aceternity UI",
+        "url":  "https://ui.aceternity.com",
+        "category":  "component-library",
+        "what":  "Copy-paste animated React and Next.js components with striking hero and effect blocks.",
+        "best_for":  "Eye-catching hero sections and effects",
+        "pricing":  "freemium",
+        "framework":  "React, Next.js, Tailwind",
+        "tags":  [
+                     "tailwind",
+                     "motion",
+                     "hero"
+                 ]
+    },
+    {
+        "name":  "React Bits",
+        "url":  "https://reactbits.dev",
+        "category":  "component-library",
+        "what":  "Large collection of animated React components: text effects, backgrounds, cursors, interactions.",
+        "best_for":  "Text animations and animated backgrounds",
+        "pricing":  "free",
+        "framework":  "React (JS/TS, CSS/Tailwind)",
+        "tags":  [
+                     "text-effects",
+                     "backgrounds",
+                     "cursor"
+                 ]
+    },
+    {
+        "name":  "Animata",
+        "url":  "https://animata.design",
+        "category":  "component-library",
+        "what":  "Free, open-source library of hand-crafted animated components for React and Tailwind.",
+        "best_for":  "Small animated UI pieces to copy",
+        "pricing":  "free",
+        "framework":  "React, Tailwind",
+        "tags":  [
+                     "tailwind",
+                     "open-source"
+                 ]
+    },
+    {
+        "name":  "Motion Primitives",
+        "url":  "https://motion-primitives.com",
+        "category":  "component-library",
+        "what":  "Ready-made animated React components (text, carousels, transitions) built with Motion.",
+        "best_for":  "Polished micro-animations in React",
+        "pricing":  "free",
+        "framework":  "React, Tailwind",
+        "tags":  [
+                     "motion",
+                     "text",
+                     "transitions"
+                 ]
+    },
+    {
+        "name":  "Animate UI",
+        "url":  "https://animate-ui.com",
+        "category":  "component-library",
+        "what":  "Animated React component distribution, including icons and primitives, built on Motion.",
+        "best_for":  "Animated shadcn-style components",
+        "pricing":  "free",
+        "framework":  "React, Tailwind",
+        "tags":  [
+                     "shadcn",
+                     "motion",
+                     "icons"
+                 ]
+    },
+    {
+        "name":  "Kokonut UI",
+        "url":  "https://kokonutui.com",
+        "category":  "component-library",
+        "what":  "Copy-paste React and Tailwind components with animated cards, buttons and blocks.",
+        "best_for":  "Ready-made animated UI blocks",
+        "pricing":  "freemium",
+        "framework":  "React, Tailwind",
+        "tags":  [
+                     "shadcn",
+                     "blocks"
+                 ]
+    },
+    {
+        "name":  "Uiverse",
+        "url":  "https://uiverse.io",
+        "category":  "component-library",
+        "what":  "Community gallery of free CSS and Tailwind UI elements with animated buttons and loaders.",
+        "best_for":  "Quick animated buttons, loaders and toggles",
+        "pricing":  "free",
+        "framework":  "HTML/CSS, Tailwind, React",
+        "tags":  [
+                     "css",
+                     "community",
+                     "copy-paste"
+                 ]
+    },
+    {
+        "name":  "Hover.dev",
+        "url":  "https://www.hover.dev",
+        "category":  "component-library",
+        "what":  "Animated React and Tailwind components: buttons, cards, text and backgrounds.",
+        "best_for":  "Fun hover and interaction effects",
+        "pricing":  "freemium",
+        "framework":  "React, Tailwind",
+        "tags":  [
+                     "hover",
+                     "tailwind",
+                     "motion"
+                 ]
+    },
+    {
+        "name":  "HeroUI",
+        "url":  "https://www.heroui.com",
+        "category":  "component-library",
+        "what":  "React UI component library with smooth built-in animation, built on Motion.",
+        "best_for":  "Full apps needing animated, accessible components",
+        "pricing":  "free",
+        "framework":  "React, Tailwind",
+        "tags":  [
+                     "ui-kit",
+                     "motion"
+                 ]
+    },
+    {
+        "name":  "SmoothUI",
+        "url":  "https://smoothui.dev",
+        "category":  "component-library",
+        "what":  "Animated React components with Motion and Tailwind for polished interfaces.",
+        "best_for":  "Smooth animated UI elements",
+        "pricing":  "free",
+        "framework":  "React, Tailwind",
+        "tags":  [
+                     "motion",
+                     "tailwind"
+                 ]
+    },
+    {
+        "name":  "dotLottie",
+        "url":  "https://dotlottie.io",
+        "category":  "lottie-rive",
+        "what":  "Compact Lottie animation format and players for lightweight vector animation on the web.",
+        "best_for":  "Small, fast Lottie playback",
+        "pricing":  "free",
+        "framework":  "any (React, Vue, vanilla)",
+        "tags":  [
+                     "lottie",
+                     "dotlottie",
+                     "vector"
+                 ]
+    },
+    {
+        "name":  "lottie-web",
+        "url":  "https://github.com/airbnb/lottie-web",
+        "category":  "lottie-rive",
+        "what":  "Original Airbnb library that renders After Effects animations exported as JSON.",
+        "best_for":  "Playing After Effects animations in browsers",
+        "pricing":  "free",
+        "framework":  "vanilla",
+        "tags":  [
+                     "lottie",
+                     "after-effects"
+                 ]
+    },
+    {
+        "name":  "Rive",
+        "url":  "https://rive.app",
+        "category":  "lottie-rive",
+        "what":  "Interactive vector animation tool and runtime with state machines for web and apps.",
+        "best_for":  "Interactive animated graphics that react to input",
+        "pricing":  "freemium",
+        "framework":  "React, vanilla, others",
+        "tags":  [
+                     "rive",
+                     "state-machine",
+                     "interactive"
+                 ]
+    },
+    {
+        "name":  "Spline",
+        "url":  "https://spline.design",
+        "category":  "lottie-rive",
+        "what":  "Browser-based 3D design tool that exports interactive scenes for websites.",
+        "best_for":  "Interactive 3D hero scenes without code",
+        "pricing":  "freemium",
+        "framework":  "React, vanilla (embed)",
+        "tags":  [
+                     "3d",
+                     "design-tool"
+                 ]
+    },
+    {
+        "name":  "Animate.css",
+        "url":  "https://animate.style",
+        "category":  "css",
+        "what":  "Classic library of ready-to-use CSS animation classes such as fade, bounce and slide.",
+        "best_for":  "Quick CSS-only entrance animations",
+        "pricing":  "free",
+        "framework":  "any (CSS)",
+        "tags":  [
+                     "css",
+                     "classes"
+                 ]
+    },
+    {
+        "name":  "tailwindcss-animated",
+        "url":  "https://tailwindcss-animated.com",
+        "category":  "css",
+        "what":  "Tailwind plugin adding ready-made animation utility classes.",
+        "best_for":  "Extra animation utilities in Tailwind projects",
+        "pricing":  "free",
+        "framework":  "Tailwind",
+        "tags":  [
+                     "tailwind",
+                     "plugin"
+                 ]
+    },
+    {
+        "name":  "AOS (Animate On Scroll)",
+        "url":  "https://aos.js.org",
+        "category":  "css",
+        "what":  "Tiny library that triggers CSS animations as elements scroll into view.",
+        "best_for":  "Simple scroll-reveal effects",
+        "pricing":  "free",
+        "framework":  "any (vanilla)",
+        "tags":  [
+                     "scroll-reveal"
+                 ]
+    },
+    {
+        "name":  "Scroll-Driven Animations",
+        "url":  "https://scroll-driven-animations.style",
+        "category":  "css",
+        "what":  "Demos and tools for native CSS scroll-driven animation without JavaScript.",
+        "best_for":  "Scroll effects using only CSS",
+        "pricing":  "free",
+        "framework":  "any (CSS)",
+        "tags":  [
+                     "css",
+                     "scroll",
+                     "native"
+                 ]
+    },
+    {
+        "name":  "Three.js",
+        "url":  "https://threejs.org",
+        "category":  "scroll-3d",
+        "what":  "The most widely used JavaScript library for 3D graphics in the browser.",
+        "best_for":  "Custom 3D scenes on the web",
+        "pricing":  "free",
+        "framework":  "any (vanilla)",
+        "tags":  [
+                     "3d",
+                     "webgl"
+                 ]
+    },
+    {
+        "name":  "React Three Fiber",
+        "url":  "https://r3f.docs.pmnd.rs",
+        "category":  "scroll-3d",
+        "what":  "React renderer for Three.js so 3D scenes are built as components.",
+        "best_for":  "3D scenes inside React apps",
+        "pricing":  "free",
+        "framework":  "React",
+        "tags":  [
+                     "3d",
+                     "react",
+                     "three"
+                 ]
+    },
+    {
+        "name":  "Drei",
+        "url":  "https://drei.docs.pmnd.rs",
+        "category":  "scroll-3d",
+        "what":  "Helper collection for React Three Fiber: controls, effects, loaders and scroll tools.",
+        "best_for":  "Speeding up React Three Fiber projects",
+        "pricing":  "free",
+        "framework":  "React",
+        "tags":  [
+                     "3d",
+                     "helpers",
+                     "scroll"
+                 ]
+    },
+    {
+        "name":  "Babylon.js",
+        "url":  "https://www.babylonjs.com",
+        "category":  "scroll-3d",
+        "what":  "Full 3D and game engine for the web with tools and physics.",
+        "best_for":  "Larger 3D experiences and web games",
+        "pricing":  "free",
+        "framework":  "any (vanilla, TypeScript)",
+        "tags":  [
+                     "3d",
+                     "webgl",
+                     "engine"
+                 ]
+    },
+    {
+        "name":  "PixiJS",
+        "url":  "https://pixijs.com",
+        "category":  "scroll-3d",
+        "what":  "Fast 2D rendering engine for interactive graphics and animation on canvas.",
+        "best_for":  "High-performance 2D visual effects",
+        "pricing":  "free",
+        "framework":  "any (vanilla)",
+        "tags":  [
+                     "2d",
+                     "canvas",
+                     "webgl"
+                 ]
+    },
+    {
+        "name":  "Vanta.js",
+        "url":  "https://vanta.js.org",
+        "category":  "scroll-3d",
+        "what":  "Ready-made animated 3D website backgrounds like waves, birds and fog.",
+        "best_for":  "Drop-in animated backgrounds",
+        "pricing":  "free",
+        "framework":  "any (vanilla)",
+        "tags":  [
+                     "background",
+                     "three"
+                 ]
+    },
+    {
+        "name":  "Lordicon",
+        "url":  "https://lordicon.com",
+        "category":  "icons",
+        "what":  "Library of animated icons that play on hover or click, with editor.",
+        "best_for":  "Animated icons for websites",
+        "pricing":  "freemium",
+        "framework":  "any (React, Vue, vanilla)",
+        "tags":  [
+                     "animated-icons",
+                     "lottie"
+                 ]
+    },
+    {
+        "name":  "Lucide Animated",
+        "url":  "https://lucide-animated.com",
+        "category":  "icons",
+        "what":  "Animated versions of the Lucide icon set, ready to copy into React projects.",
+        "best_for":  "Animated icons matching Lucide",
+        "pricing":  "free",
+        "framework":  "React",
+        "tags":  [
+                     "icons",
+                     "lucide"
+                 ]
+    },
+    {
+        "name":  "useAnimations",
+        "url":  "https://useanimations.com",
+        "category":  "icons",
+        "what":  "Free set of small animated Lottie icons for interface elements.",
+        "best_for":  "Free micro-animated icons",
+        "pricing":  "free",
+        "framework":  "any (Lottie)",
+        "tags":  [
+                     "icons",
+                     "lottie"
+                 ]
+    }
+]
