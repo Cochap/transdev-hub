@@ -1968,3 +1968,28 @@
 {"p":"New Flyer/OEMInfo/Voith/Diwa 6/D864_6 Workshop Manual_15001201110_2013_07_18.pdf","bytes":3023609,"chars":86858,"err":0,"hits":{}}
 {"p":"New Flyer/OEMInfo/Voith/Voith.pdf","bytes":450353,"chars":316,"err":0,"hits":{}}
 {"p":"New Flyer/Sr1053/1053oper.pdf","bytes":1574705,"chars":102042,"err":0,"hits":{"vision":1}}
+{"p":"New Flyer/Sr1053/1053parts.pdf","bytes":18400694,"chars":939082,"err":0,"hits":{"ic bus":4}}
+{"p":"New Flyer/Sr1053/1053serv.pdf","bytes":18871606,"chars":1667933,"err":0,"hits":{"ic bus":3,"vision":1}}
+{"p":"New Flyer/SR1127/1127oper.pdf","bytes":1347299,"chars":105611,"err":0,"hits":{"vision":1}}
+{"p":"New Flyer/SR1127/1127parts.pdf","bytes":18515124,"chars":956019,"err":0,"hits":{"ic bus":4}}
+{"p":"New Flyer/SR1127/1127serv.pdf","bytes":17920488,"chars":1670005,"err":0,"hits":{"ic bus":2,"vision":1}}
+{"p":"New Flyer/SR1207/1207oper.pdf","bytes":1351726,"chars":110548,"err":0,"hits":{"vision":1}}
+{"p":"New Flyer/SR1207/1207parts.pdf","bytes":23130604,"chars":1056907,"err":0,"hits":{"ic bus":3}}
+{"p":"New Flyer/SR1207/1207serv.pdf","bytes":19424551,"chars":1702090,"err":0,"hits":{"ic bus":2,"vision":1}}
+{"p":"New Flyer/SR1259/1259oper.pdf","bytes":1475745,"chars":111627,"err":0,"hits":{"vision":1}}
+{"p":"New Flyer/SR1259/1259parts.pdf","bytes":24227258,"chars":1123878,"err":0,"hits":{"ic bus":3}}
+{"p":"New Flyer/SR1259/1259serv.pdf","bytes":20644510,"chars":1712025,"err":0,"hits":{"ic bus":2,"vision":1}}
+{"p":"New Flyer/SR1359/1359oper.pdf","bytes":1667757,"chars":116367,"err":0,"hits":{"vision":5}}
+{"p":"New Flyer/SR1359/1359parts.pdf","bytes":31459376,"chars":1155038,"err":0,"hits":{"ic bus":4}}
+{"p":"New Flyer/SR1359/1359serv.pdf","bytes":22021304,"chars":1731973,"err":0,"hits":{"ic bus":2,"vision":1}}
+{"p":"New Flyer/SR1464/1464oper.pdf","bytes":1662540,"chars":118614,"err":0,"hits":{"vision":1}}
+{"p":"New Flyer/SR1464/1464parts.pdf","bytes":34006402,"chars":1165248,"err":0,"hits":{"ic bus":4}}
+{"p":"New Flyer/SR1464/1464serv.pdf","bytes":23935054,"chars":1755550,"err":0,"hits":{"ic bus":2,"vision":1}}
+{"p":"New Flyer/SR1484/1484oper.pdf","bytes":2230591,"chars":119416,"err":0,"hits":{"vision":1}}
+{"p":"New Flyer/SR1484/1484parts.pdf","bytes":37432381,"chars":1226500,"err":0,"hits":{"ic bus":3,"vision":1}}
+{"p":"New Flyer/SR1484/1484serv.pdf","bytes":25058977,"chars":1779873,"err":0,"hits":{"ic bus":2,"vision":1}}
+{"p":"New Flyer/SR1520/1520oper.pdf","bytes":2977163,"chars":118033,"err":0,"hits":{"vision":1}}
+{"p":"New Flyer/SR1520/1520parts.pdf","bytes":42799350,"chars":1256660,"err":0,"hits":{"ic bus":3,"vision":1}}
+{"p":"New Flyer/SR1520/1520serv.pdf","bytes":30610225,"chars":1886372,"err":0,"hits":{"ic bus":2,"vision":1}}
+{"p":"New Flyer/SR1865/1865oper.pdf","bytes":3189160,"chars":181164,"err":0,"hits":{"ic bus":1,"vision":1}}
+{"p":"New Flyer/SR1865/1865parts.pdf","bytes":57813537,"chars":1614242,"err":0,"hits":{"ic bus":3,"vision":1}}

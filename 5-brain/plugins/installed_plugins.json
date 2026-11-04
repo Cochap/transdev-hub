@@ -21,6 +21,76 @@
         "lastUpdated": "2026-10-29T14:28:16.840Z",
         "gitCommitSha": "7efc0ef764765ed9ceff5ce1204462b35b89d680"
       }
+    ],
+    "azure@azure-skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\azure-skills\\azure\\1.2.111",
+        "version": "1.2.111",
+        "installedAt": "2026-11-04T15:47:35.310Z",
+        "lastUpdated": "2026-11-04T15:47:35.310Z",
+        "gitCommitSha": "33200af2901bce6da01ce37498aa2b68e0c43f7c"
+      }
+    ],
+    "azure-kusto-graph-skills@azure-skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\azure-skills\\azure-kusto-graph-skills\\1.0.34",
+        "version": "1.0.34",
+        "installedAt": "2026-11-04T15:47:41.086Z",
+        "lastUpdated": "2026-11-04T15:47:41.086Z",
+        "gitCommitSha": "33200af2901bce6da01ce37498aa2b68e0c43f7c"
+      }
+    ],
+    "azure-local-skills@azure-skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\azure-skills\\azure-local-skills\\1.0.23",
+        "version": "1.0.23",
+        "installedAt": "2026-11-04T15:47:47.722Z",
+        "lastUpdated": "2026-11-04T15:47:47.722Z",
+        "gitCommitSha": "33200af2901bce6da01ce37498aa2b68e0c43f7c"
+      }
+    ],
+    "foundry-iq-skills@azure-skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\azure-skills\\foundry-iq-skills\\0.2.8",
+        "version": "0.2.8",
+        "installedAt": "2026-11-04T15:48:05.554Z",
+        "lastUpdated": "2026-11-04T15:48:05.554Z",
+        "gitCommitSha": "33200af2901bce6da01ce37498aa2b68e0c43f7c"
+      }
+    ],
+    "azure-cost@azure-skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\azure-skills\\azure-cost\\1.0.18",
+        "version": "1.0.18",
+        "installedAt": "2026-11-04T15:48:15.391Z",
+        "lastUpdated": "2026-11-04T15:48:15.391Z",
+        "gitCommitSha": "33200af2901bce6da01ce37498aa2b68e0c43f7c"
+      }
+    ],
+    "aks-skills@azure-skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\azure-skills\\aks-skills\\1.0.12",
+        "version": "1.0.12",
+        "installedAt": "2026-11-04T15:48:24.460Z",
+        "lastUpdated": "2026-11-04T15:48:24.460Z",
+        "gitCommitSha": "33200af2901bce6da01ce37498aa2b68e0c43f7c"
+      }
+    ],
+    "azure-advisor@azure-skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\azure-skills\\azure-advisor\\1.0.7",
+        "version": "1.0.7",
+        "installedAt": "2026-11-04T15:48:50.424Z",
+        "lastUpdated": "2026-11-04T15:48:50.424Z",
+        "gitCommitSha": "33200af2901bce6da01ce37498aa2b68e0c43f7c"
+      }
     ]
   }
 }

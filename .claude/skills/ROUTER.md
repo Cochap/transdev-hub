@@ -27,6 +27,7 @@ Open only the line you need. Every child of this folder is listed below.
 - `level-up/` — Use when someone asks to level up their AIOS, close an audit gap, find what to automate next, … [unit, 3 files, not entered]
 - `link/` — Use when someone asks to link a project, file, folder, or important context into AGENTS.md or … [unit, 2 files, not entered]
 - `llm-wiki/` — Use when ingesting a source into the wiki, querying the wiki, linting it, or when the user say… [unit, 5 files, not entered]
+- `morning-brief/` — Use when Greg asks for a briefing, learning brief, "what's new", news on his interests, someth… [unit, 1 files, not entered]
 - `motion-data/` — Use when Greg asks where the film renders, frames, audio cues, presets, or motion-library cata… [unit, 1 files, not entered]
 - `motion-reel/` — Produce a beat-synced product launch reel / showreel / promo video in code. The pipeline captu… [unit, 29 files, not entered]
 - `note/` — Park a piece of feedback on a skill without losing your thread. "/note <skill> <what was wrong… [unit, 1 files, not entered]

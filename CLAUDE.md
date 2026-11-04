@@ -28,6 +28,7 @@ This file is a map, not a rulebook. Find your question below, open the file or r
 | Meeting prep (people, numbers, pain points) | `1-boulon/docs/meeting-prep-2026-10-22-ai-maintenance-catalogue.md`, `5-brain/context/people.md` |
 | A decision or "why did we choose X" (approval gate, tier, scope) | `1-boulon/docs/continuity-log.md` (§1 Constitution + History), `1-boulon/docs/adr/`, `5-brain/decisions/log.md`, `1-boulon/wiki/decisions/` |
 | A rule, "how should Claude behave" | `5-brain/routers/workspace.md` (Standing rules), `1-boulon/docs/continuity-log.md` §1 |
+| Greg's interests, learning briefs, lexicons (AI/ML, project management) | `4-learning/interests/interest-map.md` (trunk), `4-learning/interests/lexicon-ai-ml.md`, `4-learning/interests/lexicon-project-management.md`, `4-learning/interests/briefs/`; skill `morning-brief`; wiki `1-boulon/wiki/concepts/greg-interest-map.md` |
 | Greg's preferences / memory | `C:\Users\rilg01\.claude\projects\C--TRANSDEV-HUB\memory\MEMORY.md` (index of all memories) |
 | What happened on a past day / session | `5-brain/logs/eod/`, `1-boulon/docs/timeline.md`, `1-boulon/docs/timeline-master.md`, `1-boulon/docs/lessons-2026-09-23.md` and the other dated `1-boulon/docs/lessons-*.md` |
 | Schedule, Today, Week | `boulon-hq.html` (Today and Week tabs), `1-boulon/hq/`, `1-boulon/docs/hq-control-room.md` |

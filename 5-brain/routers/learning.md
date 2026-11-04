@@ -9,3 +9,4 @@
 | Skills | `learn`, `start-learning`, `check-understanding`, `grill-me`, `level-up` in `.claude/skills/` |
 | Style rules | memory: feedback-learning-tutor-style, feedback-proper-math-symbols, feedback-brainstorm-learning |
 | Numbers | `/learning-data` |
+| Interest map, lexicons, daily briefs | `4-learning/interests/interest-map.md`, `4-learning/interests/lexicon-*.md`, `4-learning/interests/briefs/`; skill `morning-brief` |

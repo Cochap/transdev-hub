@@ -10,6 +10,7 @@ Open only the line you need. Every child of this folder is listed below.
 - `citation-projection.md` — title: Citation projection (showing the real manual name)
 - `claude-operating-model.md` — title: Greg's Claude operating model
 - `golden-set.md` — title: Golden set and test method
+- `greg-interest-map.md` — title: Greg's interest map
 - `lessons-learned.md` — title: Lessons learned (2026-09-23 and 2026-09-24)
 - `phase-2-architecture.md` — title: Phase 2 architecture components
 - `phase-2-evaluation-plan.md` — title: Phase 2 evaluation and go/no-go plan

@@ -12,6 +12,8 @@ sources: []
 - [[open-questions]] — When will IT act on azure-ticket-77048? (Greg checks the portal daily.)
 - [[overview]] — Greg Riley leads BOULON, an AI assistant that helps Transdev Quebec mechanics find manual procedures, and is now extending it t
 
+- [[greg-interest-map]] — the six areas Greg wants to learn deeply (RAG, AI/ML lexicon, orchestration, PM/CI, tools watch, hobbies); grown by the morning-brief skill
+
 ## Projects (7)
 - [[boulon]] — BOULON is an AI maintenance assistant for transdev-quebec mechanics. A copilot-studio-agent (GPT-4.1) answers only from retriev
 - [[geotab-launch-film-project]] — a side workstream (not BOULON) to produce a launch film for Geotab telematics at Transdev Canada. On 2026-09-29 the prompt reac

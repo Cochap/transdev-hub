@@ -28,3 +28,6 @@ Greg's new project (bus maintenance workshop segmentation, Transdev Canada). Raw
 
 ## [2026-10-28] edit | Workshop segmentation status after the analysis day
 End-of-day update of [[workshop-segmentation]]: results 01-04 and the v2 workbook, the transcript finding on harsh conditions (lower expectations, contradicts the typed targets), Pierre's reply as read by Claude (unconfirmed). Source: `5-brain/logs/eod/2026-10-28/_digest.md`.
+
+## [2026-11-04] ingest | Greg interest map
+New concept [[greg-interest-map]] from Greg 2026-11-04; trunk lives in 4-learning/interests/. Hook interest-capture.js + skill morning-brief keep it growing.

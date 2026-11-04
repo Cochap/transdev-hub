@@ -4,8 +4,6 @@ Bus maintenance workshop segmentation for Transdev Canada (ID card, three segmen
 ## Contents
 - `cloud-repo/` — local git repo (workbooks, compte rendu, task briefs, results/) to push to a private GitHub repo so cloud routines can run the analyses → ROUTER.md
 - `raw/` — immutable originals of this project (drop new meeting files, slides, spreadsheets here before ingesting) → ROUTER.md
-- `~$banc-essai-segmentation-v2.xlsx` — Excel workbook
-- `~$segmentation-atelier.xlsx` — Excel workbook
 - `backup-banc-essai-segmentation-v2-2026-10-29.xlsx` — Excel workbook
 - `backup-questionnaire-travaux-sur-place-2026-10-29.xlsx` — Excel workbook
 - `backup-questionnaire-travaux-sur-place-2026-11-03.xlsx` — Excel workbook

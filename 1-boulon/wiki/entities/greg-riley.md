@@ -11,4 +11,5 @@ Project lead and builder of [[boulon]] at [[transdev-quebec]]. Non-technical bac
 Personal working preferences live in [[greg-working-style]]; standing rules in [[rules-index]].
 
 ## Related
+- [[greg-interest-map]] (what Greg wants to learn)
 [[henri]] · [[pierre-zivec]] · [[overview]]
