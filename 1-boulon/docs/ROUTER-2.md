@@ -1,6 +1,7 @@
 # ROUTER — 1-boulon/docs (page 2)
 
 ## Contents (page 2 of 2)
+- `multimodal-rag-review-2026-10-07.md` — BOULON multimodal RAG review, 2026-10-07
 - `mvp-school-bus-2026-11-03.md` — BOULON MVP: school-bus manuals only (scope set 2026-11-03)
 - `orchestration-plan.md` — BOULON Orchestration Plan — today → Henri sign-off
 - `over-budget-plan.md` — Plan for the CAD 1,200 ceiling (rewritten 2026-10-07, decision D36: no ticket changes)

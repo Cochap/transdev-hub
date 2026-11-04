@@ -3,6 +3,7 @@ Open only the line you need. Every child of this folder is listed below.
 
 ## Contents
 - `.eod-done` — file
+- `.eod-running` — file
 - `eod-reminder.js` — UserPromptSubmit hook: from 16:45 on a weekday, push Claude to run the boulon-end-of-day
 - `interest-capture.js` — UserPromptSubmit hook: when Greg states an interest, preference or learning goal,
 - `session-start.js` — SessionStart hook: hand Claude the morning facts before Greg types anything.

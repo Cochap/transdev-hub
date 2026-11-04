@@ -41,11 +41,11 @@ Open only the line you need. Every child of this folder is listed below.
 - `lessons-2026-10-29.md` — Lessons 2026-10-29
 - `lessons-2026-11-02.md` — Lessons 2026-11-02
 - `lessons-2026-11-03.md` — Lessons 2026-11-03
+- `lessons-2026-11-04.md` — Lessons 2026-11-04
 - `manuals-inventory-2026-09-23.md` — Manuals inventory and D4 re-check — 2026-09-23
 - `meeting-2026-09-24-pierre.md` — Meeting 2026-09-24 (Pierre, Henri, Greg): BOULON outcomes
 - `meeting-prep-2026-10-22-ai-maintenance-catalogue.md` — Meeting prep for the "AI maintenance catalogue" call: opener, numbers, pain points, RAG vocabulary (2026-10-22)
 - `memo-henri-cibles-gate-b.md` — Note à Henri : cibles de réussite pour le Gate B
 - `mir-data-map.md` — MIR data map (from Alex's data dictionary)
-- `multimodal-rag-review-2026-10-07.md` — BOULON multimodal RAG review, 2026-10-07
 
 More: `ROUTER-2.md`

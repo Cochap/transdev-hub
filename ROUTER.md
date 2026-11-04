@@ -3,6 +3,7 @@ Open only the line you need. Every child of this folder is listed below.
 
 ## Contents
 - `.claude/` — Claude Code config for this brain: settings, hooks (session start, end-of-day reminder), model routing, 21 project skills → ROUTER.md
+- `.github/` — folder, 4 files → ROUTER.md
 - `1-boulon/` — folder, 208 files → ROUTER.md
 - `2-projects/` — folder, 54 files → ROUTER.md
 - `3-media/` — folder, 45 files → ROUTER.md

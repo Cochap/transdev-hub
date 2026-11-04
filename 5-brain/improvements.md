@@ -54,3 +54,10 @@ Rule: end of day proposes; only safe changes (map rows, router rebuild, memory d
 | 2026-11-02 (EOD) | Which deliverables can I send Henri today? | 1 (`5-brain/ideas/` newest W45 via the weekly-ideas row) + 1 (`2-projects/workshop-id-card/ROUTER.md`) = 2 | no | none needed |
 | 2026-11-02 (EOD) | How is the ID card PowerPoint rebuilt? | 2 (CLAUDE.md segmentation row -> `workshop-id-card/ROUTER.md` -> `powerpoint/ROUTER.md`, `build-fillable-card.ps1`) | no | none needed |
 | 2026-11-02 (EOD) | Where are the city files the web app needs? | 2 (`workshop-id-card/ROUTER.md` -> `artifact-pub/`); not on disk in `dist/`, only on the live artifact | no | note in hand-off; consider copying `cities-N.txt` into `dist/assets/` |
+
+## 2026-11-04 (Wed, end of day, short form)
+- Audit: 0 unrouted, 0 stale; 2 map gaps (`.git`, `.github`) fixed with map rows. Hop test, clutter, memory dedupe, sessions list: deferred to Friday.
+- Calibrate: "No response requested" to a real ask happened 2x today -> memory `feedback-no-empty-reply` (applied). "Work around obstacles, no IT/admin" repeated in 3 sessions; covered by existing memories.
+- First use of close-session digests (f2ecf964): worked, no re-read needed.
+- Open (S): the run started 16:23 and the close ran past 25 min because three long extracts (60k, 25k, 23k chars) needed helpers of ~14-20 min. Proposal: when two extracts are forks of the same title, read only the newer one (067c0a2c and 09e86e57 duplicated today). Needs Greg's yes (skill edit).
+- Open (S): the school-bus scan output was not findable in the vault (digest item i). Map row now points to `1-boulon/tests/results/`? -> add `school-scan.jsonl` to the BOULON map row Friday.

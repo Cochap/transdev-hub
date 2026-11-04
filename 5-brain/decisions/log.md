@@ -71,3 +71,5 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 **Why:** Greg: "he literally said to place them in your claude.md" and "that line is not a hard limitier"; "how come boulon hq is not up to date?"; the 10-28 morning check missed the previous day's context because the save files held only task titles.
 
 - 2026-11-04 — BOULON MVP bus type locked: ZBB class STANDARD SCHOOL (SCOLAIRE + SCOLAIRE ADAPTÉ); MINI SCHOOL and LionC out. Greg. Detail: 1-boulon/docs/mvp-school-bus-2026-11-03.md
+
+- 2026-11-04 — BOULON knowledge base = Transdev SharePoint manuals ONLY; no external / maker-portal manuals, ever. Greg. MVP corpus today = IC Leeds/IC bus 2016-2024.pdf (only STANDARD SCHOOL manual in SharePoint).

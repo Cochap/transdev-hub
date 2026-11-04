@@ -55,3 +55,11 @@ Started Mon 2026-11-02 13:45 from `2026-W44-ideas-and-tasks.md`, `5-brain/handof
 - ✅ Single guided segmentation workbook `segmentation-atelier.xlsx`; medal thresholds set. 🟡 Greg sends the Pierre message; face-to-face on curve points.
 - ✅ Geotab explainer v1 rendered; 🟡 Greg listens to the sound.
 - 🟡 Self-improvement skills inventory (22 skills, Keep proposals): Greg decides. ⬜ Save draft skill scheduled-routine-audit: Greg says yes or no.
+
+## 6. Wed 11-04 (end of day)
+- ✅ MVP class = STANDARD SCHOOL (193 vehicles). Scan done 2,976/2,976: only `IC Leeds/IC bus 2016-2024.pdf` in SharePoint (~136 MB est., > 50 MB Free). 🟡 Greg decides the subscription path (Disabled; #77048 targets it). Rules: complete manual per bus; no maker-website manuals.
+- ✅ Hub on private GitHub `Cochap/transdev-hub`; `cloud-sync.ps1` + 3 Windows tasks. 🟡 GitHub Actions routines wait on Greg: `claude setup-token` -> Actions secret. ⬜ Greg: keep or revoke `HUB_TOKEN`; ⬜ D11 segmentation on GitHub needs an approval answer.
+- ✅ Morning brief skill, interest map, 2 lexicons, 23 wiki pages. ⬜ Greg picks a community skill (`microsoft/skills`, `tech-digest`).
+- ⬜ DIX30: Greg reruns Whisper at home; then notes + charter (Claude).
+- ⬜ Idea (passing): OpenWispr desktop app install, never answered.
+- ✅ VoiceStudio fixed (one launch). ⬜ Greg: permanent `UV_SYSTEM_CERTS=1`?

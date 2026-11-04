@@ -19,3 +19,10 @@ Transcribe the meeting (FR) → organize notes → draft a project charter.
 
 ## From home
 The files live on this work PC only. Leave the PC on (lid open, plugged in, not shut down) so the run finishes; remote in or resume tomorrow.
+
+## Update 2026-11-04 15:50: stopped at work, Greg runs it at home
+- Work-PC run (09:28 to 15:50, PID 8148) stopped by Greg; no output was written (Whisper saves only at the end).
+- Run at home with live progress (`-u` = unbuffered, shows each transcribed line with timestamps out of 76:00):
+  `python -u -m whisper "C:\Users\rilg01\Downloads\Quartier DIX30 2.m4a" --model turbo --language fr --output_dir "C:\TRANSDEV HUB\2-projects\transcripts" --output_format all --fp16 False --verbose True`
+- Progress = the last timestamp shown divided by 76:00. Leave the PC plugged in with sleep off.
+- Then Greg does a quality review; then Claude: notes → project charter (lexicon `4-learning/interests/lexicon-project-management.md`).

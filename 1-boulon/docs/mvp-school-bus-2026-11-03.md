@@ -53,3 +53,4 @@ Already in the pilot index: 16 Lion "RP-01-…" procedure sheets (`1-boulon/docs
 - The 22 other hits are generic component manuals (Bendix, Meritor, Ricon, Proheat, Sportworks) that mention "school bus" or "Blue Bird" once or twice; they are not school-bus manuals.
 - Scan pattern flaws to fix next run: "IC Bus" also matches "electrIC BUS" (52 files), "Vision" matches the word vision (122 files).
 - Index estimate (Estimate, pilot rate 87 KB/page): IC Leeds manual alone about 136 MB, so it does not fit the 50 MB Free index. A Free-tier sample would be about 570 pages (chosen chapters).
+- 2026-11-04: Greg rules out external manuals for good; corpus = SharePoint only. MVP corpus = IC Leeds manual (sample to fit Free 50 MB, rest on Basic).

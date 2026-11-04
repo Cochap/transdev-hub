@@ -52,11 +52,12 @@ This file is a map, not a rulebook. Find your question below, open the file or r
 | Third-party code, course repos, frameworks | `4-learning/references/ROUTER.md` |
 | Router and brain machinery | `ROUTER.md`, `5-brain/routers/ROUTER.md`, `5-brain/routers/brain.config.json`, `5-brain/routers/moves.json`, `5-brain/scripts/brain.js`, `5-brain/scripts/ROUTER.md` |
 | Other agents' entry file | `AGENTS.md` |
+| Hub on GitHub, cloud routines, PC sync | `.github/workflows/routines.yml`, `5-brain/scripts/cloud-sync.ps1`, hand-off `5-brain/handoffs/2026-11-04-eod-handoff.md` |
 | Which skill fits? | skill `boulon-skill-finder` |
 
 ## 3. Every top-level item (nothing in the vault is unmapped)
 - **Numbered homes:** `1-boulon/` (docs, tests, hq, data, mir, wiki, rebuild, recovery, requests) · `2-projects/` (pointer routers: zbb, daily-digest, motion-reel) · `3-media/` (film, motion-library, library-size-helper.html) · `4-learning/` (LEARNING.md, matrix-cheatsheet.html, references/ third-party) · `5-brain/` (routers, scripts, logs, context, decisions, audits, brainstorms, aios-intake.md, connections.md, EXPANSIONS.md) · `9-archive/` (chrome-cleanup-2026-10-07, undefined, archives)
 - **Root files:** `CLAUDE.md` (this map) · `AGENTS.md` · `RESUME.md` hand-off · `boulon-hq.html` HQ page · `ROUTER.md` · `.env`, `.env.example`, `.gitignore` (secrets and git rules; never open `.env`)
-- **Config:** `.claude/` (settings, hooks, skills, model routing)
+- **Config:** `.claude/` (settings, hooks, skills, model routing) · `.git/` (repo, mirrored to private GitHub Cochap/transdev-hub) · `.github/` (Actions routines `.github/workflows/routines.yml`, prompts `.github/routine-prompts/`)
 - **Leftovers:** `.ruff_cache/` cache (ignore) · `Scoring test.xlsx` (segmentation referential criteria, attached 2026-10-29; move to `2-projects/workshop-segmentation/raw/` proposed in `5-brain/routers/moves.json` `_proposed`, waits on Greg)
 - **Moving things:** edit `5-brain/routers/moves.json`, then `node 5-brain/scripts/brain-move.js plan` and `apply` (backs up, relinks every reference, rolls back on failure; `undo --run <id>`)

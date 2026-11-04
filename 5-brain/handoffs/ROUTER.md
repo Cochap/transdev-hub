@@ -10,4 +10,5 @@ THE one place that lists every hand-off, resume note and saved-session file, whe
 - `2026-11-02-eod-handoff.md` — Morning hand-off for 2026-11-03 (written by end of day 2026-11-02)
 - `2026-11-03-dix30-transcription-handoff.md` — Hand-off — Quartier DIX30 meeting transcription (2026-11-03, 16:05)
 - `2026-11-03-eod-handoff.md` — Morning hand-off — written by end of day 2026-11-03 (Tue), for Wed 2026-11-04
+- `2026-11-04-eod-handoff.md` — Morning hand-off — written by end of day 2026-11-04 (Wed)
 - `INDEX.md` — Hand-off index: every hand-off, resume note and saved session, in one table

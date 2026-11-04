@@ -1,12 +1,35 @@
-# RESUME — hand-off (refreshed 2026-11-03 by end of day)
+# RESUME — hand-off (refreshed 2026-11-04 by end of day)
 Start here in a new session. The map is [CLAUDE.md](CLAUDE.md); truth is [1-boulon/docs/continuity-log.md](1-boulon/docs/continuity-log.md); HQ page [boulon-hq.html](boulon-hq.html).
 
-**All hand-offs in one table: [5-brain/handoffs/INDEX.md](5-brain/handoffs/INDEX.md).** Tomorrow's briefing: [5-brain/handoffs/2026-11-03-eod-handoff.md](5-brain/handoffs/2026-11-03-eod-handoff.md). Digest: [5-brain/logs/eod/2026-11-03/_digest.md](5-brain/logs/eod/2026-11-03/_digest.md). Week list: [5-brain/ideas/2026-W45-ideas-and-tasks.md](5-brain/ideas/2026-W45-ideas-and-tasks.md). No activity today: ZBB, Daily Digest, Learning, Workshop ID card.
+**All hand-offs in one table: [5-brain/handoffs/INDEX.md](5-brain/handoffs/INDEX.md).** Tomorrow's briefing: [5-brain/handoffs/2026-11-04-eod-handoff.md](5-brain/handoffs/2026-11-04-eod-handoff.md). Digest: [5-brain/logs/eod/2026-11-04/_digest.md](5-brain/logs/eod/2026-11-04/_digest.md). Week list: [5-brain/ideas/2026-W45-ideas-and-tasks.md](5-brain/ideas/2026-W45-ideas-and-tasks.md) §6. No activity today: ZBB, Daily Digest, Workshop ID card, Media (segmentation only pushed to GitHub).
 
-## Added 2026-11-04 (session "Claude Code explain what went wrong")
-- **VoiceStudio:** runtime setup fixed, backend healthy on :3900. The fix (Windows certificates + direct GitHub) applied to one launch only. Recipe: skill `transdev-pc-shell-quirks`.
-- **Waiting on Greg:** yes/no on making `UV_SYSTEM_CERTS=1` permanent (user env var, no admin needed). Model downloads not tested yet.
+## Where we are (2026-11-04)
+- **BOULON MVP:** class = STANDARD SCHOOL (193 vehicles). Scan done: only `IC Leeds/IC bus 2016-2024.pdf` in SharePoint (~136 MB est., > 50 MB Free). Rules: complete manual per tested bus; no maker-website manuals. **Blocked:** "Azure subscription 1" is Disabled and ticket 77048 targets it.
+- **Hub in the cloud:** private repo `Cochap/transdev-hub`, PC sync every 30 min. GitHub Actions routines written, not run (need Greg's Claude token as a repo secret). PC routines stay on until then.
+- **Learning:** skill `morning-brief`, interest map + 2 lexicons, 23 new wiki pages.
+- **DIX30:** Whisper stopped with no transcript; Greg reruns at home.
+- **VoiceStudio:** fixed for one launch (skill `transdev-pc-shell-quirks`).
 
+## Waiting on Greg (2026-11-04)
+- Pick the subscription path: reactivate "Azure subscription 1" or move ticket 77048 to a company subscription (Pierre approves spend).
+- Run `claude setup-token`, store it as an Actions secret on `Cochap/transdev-hub`; keep or revoke `HUB_TOKEN`.
+- Say if segmentation (D11 confidential) may stay in the private GitHub repo.
+- Run the DIX30 transcription at home.
+- Pick a community skill (`microsoft/skills` or `tech-digest`); yes/no permanent `UV_SYSTEM_CERTS=1`.
+
+## Sessions today (extracts in `C:\TRANSDEV HUB\5-brain\logs\eod\2026-11-04\`)
+| Title | Project | Outcome | Safe to archive |
+|---|---|---|---|
+| Pending tasks checklist | BOULON + learning + DIX30 | STANDARD SCHOOL, scan done, morning-brief, 23 wiki pages | no (index load, DIX30) |
+| Azure subscription free credit expired | BOULON | subscription Disabled; sample rules | no (subscription decision) |
+| Transdev hub cloud migration (09e86e57) | workspace | repo + sync + Actions written | no (token, test run) |
+| Transdev hub cloud migration (067c0a2c) | workspace | earlier fork of the same work | yes (superseded by 09e86e57) |
+| Claude Code explain what went wrong | workspace | VoiceStudio fix; skill edits | yes (closed 16:15) |
+| Azure-skills repository evaluation | BOULON | repo crawled after correction | yes |
+| Whisper setup for French transcription | DIX30 | orphan notification only | yes |
+| Scholar buses chatbot MVP | BOULON | orphan notification only | yes |
+
+---
 ## Where we are (2026-11-03)
 - **BOULON, NEW SCOPE:** MVP = school-bus manuals only (MIR type 15 SCOLAIRE; LionC out; SharePoint only). Text scan of 2,976 PDFs running; final file list not named yet. Plan: replace the Free index with what fits (50 MB), the rest when Basic (#77048) lands. File: [1-boulon/docs/mvp-school-bus-2026-11-03.md](1-boulon/docs/mvp-school-bus-2026-11-03.md).
 - **DIX30 meeting:** French transcription running since 15:17 (Whisper turbo, CPU). Output `2-projects/transcripts/`. Then notes, project charter and the methodology document.
