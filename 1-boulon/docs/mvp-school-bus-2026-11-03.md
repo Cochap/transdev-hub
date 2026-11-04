@@ -40,3 +40,9 @@ Already in the pilot index: 16 Lion "RP-01-…" procedure sheets (`1-boulon/docs
 - **Replace now, fit what fits:** delete the current Free index content and load school-bus files up to the 50 MB cap; the rest goes in when Basic (#77048) lands.
 - "Flotte" (where the guide says Lion info lives): unknown to Greg. Open.
 - Security note: the Thomas and Minibus guides contain portal usernames and passwords in plain text. Not used, not copied.
+
+## Decision 2026-11-04 (Greg): MVP bus type = ZBB class STANDARD SCHOOL
+- Supersedes the 2026-11-03 wording "TYPEVEC 15 SCOLAIRE": same core, now named by the ZBB class (`C:\ZBB\zbb_engine\mir.py` line 40) = MIR TYPEAUTRE `SCOLAIRE` + `SCOLAIRE ADAPTÉ`.
+- Fleet (VEHICUL.csv, all records): Blue Bird Vision 74, Freightliner/Thomas Saf-T-Liner C2 60, IC PB105 48, IC Leeds 7, Lion 3, Blue Bird TC3000 1.
+- Out: MINI SCHOOL (minibus scolaire), E STANDARD SCHOOL (LionC electric).
+- A manual is in scope when its text names one of these makes/models or a component fitted to them (scan `1-boulon/tests/results/school-scan.jsonl`).

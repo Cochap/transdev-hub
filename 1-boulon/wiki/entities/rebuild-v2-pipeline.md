@@ -32,3 +32,5 @@ Source: [[rebuild-v2-readme]].
 
 ## Related
 [[phase-1-manuals-pilot]] · [[decision-d4-paid-search-tier]] · [[launch-plan-oct16]]
+
+**Where this sits in the stack:** the draft pipeline behind [[azure-search-indexer-and-skillset]], [[index-projections]] and [[integrated-vectorization]]; hub [[azure-ai-stack-map]].

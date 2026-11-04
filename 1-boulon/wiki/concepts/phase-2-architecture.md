@@ -18,3 +18,5 @@ sources: [../../docs/phase2-plan-cmms.md, ../../docs/phase2-scope-sizing-2026-09
 
 ## Related
 [[phase-2-cmms-diagnosis]] · [[phase-2-evaluation-plan]] · [[phase-2-sizing-scenarios]] · [[mir-cmms]]
+
+**Where this sits in the stack:** a second agent and index in [[azure-ai-stack-map]]; orchestrator-plus-specialists options are in [[copilot-studio-orchestration]] and [[agent-orchestration-patterns]].

@@ -21,3 +21,5 @@ All existing Azure items sit in resource group BOULON-PILOT-RG, subscription "Az
 
 ## Related
 [[azure-search-index]] · [[decision-d4b-canada-central]] · [[azure-search-tiers]]
+
+**Where this sits in the stack:** the resource list behind [[azure-ai-stack-map]] (search service, AI services, models, Copilot Studio environment).

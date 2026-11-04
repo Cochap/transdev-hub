@@ -31,3 +31,6 @@ End-of-day update of [[workshop-segmentation]]: results 01-04 and the v2 workboo
 
 ## [2026-11-04] ingest | Greg interest map
 New concept [[greg-interest-map]] from Greg 2026-11-04; trunk lives in 4-learning/interests/. Hook interest-capture.js + skill morning-brief keep it growing.
+
+## [2026-11-04] ingest | AI field clusters
+23 concept pages from rag-radar knowledge web, research 2026-10-07 / 2026-10-15, index facts, briefing 2026-11-04. Hubs [[rag-field-map]], [[azure-ai-stack-map]], [[agent-architecture-map]]; 18 existing pages got backlinks. Conflict logged: hybrid 35/41 (10-06) vs 36/41 (09-24).

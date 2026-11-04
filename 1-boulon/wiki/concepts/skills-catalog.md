@@ -28,3 +28,5 @@ Skills carry the project's lessons: for example the approval-package "before cal
 
 ## Related
 [[claude-operating-model]] · [[boulon]] · [[greg-working-style]]
+
+**Where this sits in the stack:** the project instance of [[agent-skills]] (the SKILL.md standard) inside [[agent-architecture-map]].

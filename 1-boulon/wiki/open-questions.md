@@ -72,3 +72,5 @@ Source: [[workshop-segmentation-debrief-v0-1]]; project: [[workshop-segmentation
 - Open: PowerPoint confirmed? print format and units; web app prototype vs PowerPoint ([[workshop-id-card]]) (Q11).
 - Open: which Canadian workshops, data date, validators; maturity revision depth and bronze/silver/gold criteria; no-certificate and one-year rules; mandatory HSE requirements (Q12 to Q15).
 - Open: is year-end ranking still the target, with what resources; who talks to France and when; was a Thursday afternoon follow-up really agreed (only in a garbled transcript) (Q16 to Q18).
+
+- Hybrid search score: 36/41 (2026-09-24, [[golden-set]]) vs 35/41 (2026-10-06, diy-vs-azure-stack.md). Different runs or a typo? See [[hybrid-search]].

@@ -2094,3 +2094,662 @@
 {"p":"Nova/Manuel d'entretien/LA89 Transdev Québec Manuel d'entretien.PDF","bytes":109588675,"chars":1088781,"err":0,"hits":{"vision":10}}
 {"p":"Nova/Manuel d'entretien/LA90 Transdev Québec Manuel d'entretien.PDF","bytes":109821537,"chars":1091359,"err":0,"hits":{"vision":10}}
 {"p":"Nova/Manuel d'entretien/LB52 Transdev Québec Manuel d'entretien.PDF","bytes":135402070,"chars":1246769,"err":0,"hits":{"vision":26,"ic bus":1}}
+{"p":"Nova/Manuel d'entretien/LB90 Transdev Québec Manuel d'entretien.PDF","bytes":155572151,"chars":1366438,"err":0,"hits":{"vision":63,"ic bus":1}}
+{"p":"Nova/Manuel d'opérateur/L290 Cover.pdf","bytes":185512,"chars":1865,"err":0,"hits":{}}
+{"p":"Nova/Manuel d'opérateur/L290.pdf","bytes":3401597,"chars":73662,"err":0,"hits":{"vision":1}}
+{"p":"Nova/Manuel d'opérateur/L292 Cover.pdf","bytes":185217,"chars":1865,"err":0,"hits":{}}
+{"p":"Nova/Manuel d'opérateur/L292.pdf","bytes":3809917,"chars":80452,"err":0,"hits":{"vision":1}}
+{"p":"Nova/manuel de pièce air climatiser BCC/manuel pièceT-348PL.pdf","bytes":7718632,"chars":103695,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L143 Transdev Québec Manuel de pièces.PDF","bytes":29625685,"chars":633132,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L290 0000.pdf","bytes":218067,"chars":14925,"err":0,"hits":{"vision":1}}
+{"p":"Nova/Manuel de pièces/L290 0001.pdf","bytes":117761,"chars":1397,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L290 0002.pdf","bytes":172398,"chars":36267,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L290 Manuel de pièces Cover.pdf","bytes":222640,"chars":112,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L290 Véolia Transport Québec .PDF","bytes":32740775,"chars":549580,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L292 0000.pdf","bytes":218000,"chars":14925,"err":0,"hits":{"vision":1}}
+{"p":"Nova/Manuel de pièces/L292 0001.pdf","bytes":117761,"chars":1397,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L292 0002.pdf","bytes":172398,"chars":36267,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L292 Manuel de pièces Cover.pdf","bytes":222568,"chars":112,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L292 Véolia Transport Québec .PDF","bytes":33516684,"chars":606790,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L365 0000.pdf","bytes":218108,"chars":14925,"err":0,"hits":{"vision":1}}
+{"p":"Nova/Manuel de pièces/L365 0001.pdf","bytes":117761,"chars":1397,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L365 0002.pdf","bytes":172398,"chars":36267,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L365 Manuel de pièces Cover.pdf","bytes":222644,"chars":115,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L365 Véolia Transport Québec Manuel de pièces.PDF","bytes":31996717,"chars":525424,"err":0,"hits":{"ic bus":1}}
+{"p":"Nova/Manuel de pièces/L597 0001 French.pdf","bytes":117761,"chars":1397,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L597 0002 French.pdf","bytes":172398,"chars":36267,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L597 Véolia Transport Québec Manuel de pièces.PDF","bytes":29518153,"chars":507977,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L597 Véolia Transport Québec.pdf","bytes":227779,"chars":14908,"err":0,"hits":{"vision":1}}
+{"p":"Nova/Manuel de pièces/L756 Transdev Québec Manuel de pièces.PDF","bytes":30870478,"chars":519738,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L780 Transdev Québec Manuel de pièces.PDF","bytes":32533686,"chars":573088,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/L983 Transdev Québec Manuel de pièces.PDF","bytes":43262068,"chars":639478,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/LA25 Transdev Québec Manuel de pièces.PDF","bytes":43605716,"chars":645603,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/LA89 Transdev Québec Manuel de pièces.PDF","bytes":44028471,"chars":646008,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/LA90 Transdev Québec Manuel de pièces.PDF","bytes":44399531,"chars":652369,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/LB52 Transdev Québec Manuel de pièces.PDF","bytes":46095773,"chars":655639,"err":0,"hits":{}}
+{"p":"Nova/Manuel de pièces/LB90 Transdev Québec Manuel de pièces.PDF","bytes":46260507,"chars":634888,"err":0,"hits":{}}
+{"p":"Nova/Manuel des politiques et procédures de garantie NovaBus.pdf","bytes":437884,"chars":8,"err":0,"hits":{}}
+{"p":"Nova/Manuel du conducteur/OML983 Cover.pdf","bytes":405521,"chars":1832,"err":0,"hits":{}}
+{"p":"Nova/Manuel du conducteur/OML983.pdf","bytes":4683410,"chars":84442,"err":0,"hits":{"vision":2}}
+{"p":"Nova/Manuel du conducteur/OMLA25 Cover.pdf","bytes":404947,"chars":1831,"err":0,"hits":{}}
+{"p":"Nova/Manuel du conducteur/OMLA25.pdf","bytes":4746763,"chars":84840,"err":0,"hits":{"vision":2}}
+{"p":"Nova/Manuel du conducteur/OMLA89 Cover.pdf","bytes":406947,"chars":1834,"err":0,"hits":{}}
+{"p":"Nova/Manuel du conducteur/OMLA89.pdf","bytes":4726611,"chars":84771,"err":0,"hits":{"vision":2}}
+{"p":"Nova/Manuel du conducteur/OMLA90 Cover.pdf","bytes":436728,"chars":1834,"err":0,"hits":{}}
+{"p":"Nova/Manuel du conducteur/OMLA90.pdf","bytes":4667867,"chars":84242,"err":0,"hits":{"vision":2}}
+{"p":"Nova/Manuel du conducteur/OMLB90.PDF","bytes":4241278,"chars":84931,"err":0,"hits":{"vision":2}}
+{"p":"Nova/manuel maintenance  air climatiser BCC/manuel maintenance T-383.pdf","bytes":9998670,"chars":142728,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Door Reference/Front Door Panel N81420.pdf","bytes":12377,"chars":1635,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Door Reference/Front Door Panel N81421.pdf","bytes":12382,"chars":1646,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Doors reference/DOOR PANEL FRT AFT WIDE AMV_N8142001.pdf","bytes":16355,"chars":1635,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Doors reference/DOOR PANEL FRT FORE WIDE AMV_N8142101.pdf","bytes":16344,"chars":1646,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Doors reference/Doors layout 408602NB1501.pdf","bytes":496761,"chars":2510,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Activair Engine Brochure.pdf","bytes":182832,"chars":2920,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Activair Engine Overhaul Procedure #0013 (Jan-15, Rev.A).pdf","bytes":659915,"chars":10407,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Adj. Procedures Activair vs Conventional Engine_0002 (Dec-09).pdf","bytes":1534833,"chars":23875,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Adj. Procedures Slide Glide Door System_0001 (Jul-09).pdf","bytes":783236,"chars":6596,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Adj. Procedures Swing Door System_2002 (Jan-2012).pdf","bytes":479578,"chars":14729,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor CityViewGlass Removal & Replacement_TB08-16-056 (Oct-10, Rev.A).pdf","bytes":429316,"chars":3653,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Door System Glossary_603 (Jun-06).pdf","bytes":576254,"chars":22238,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Installation & Adj. Procedure Activair Differential Engine_1002A (Jul-09).pdf","bytes":135258,"chars":4342,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Mech. & Proximity Switch Adjustments_6001 (Feb-11).pdf","bytes":334324,"chars":2359,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Pneumatic Cylinder Overhaul Procedure_50510521_0015 (Apr-08).pdf","bytes":240929,"chars":7927,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Pneumatic Engine Overhaul Procedure_50510522_0012 (Apr-12 Rev.D).pdf","bytes":2092849,"chars":10084,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Doors - Vapor/Vapor Service Hints_501 (May-05).pdf","bytes":550752,"chars":8800,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Portes - Vapor/TB08-16-056_rev_A.pdf","bytes":429316,"chars":3653,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Portes - Vapor/Vapor Ad5001.pdf","bytes":481348,"chars":8800,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Portes - Vapor/Vapor TB08-05-095RB CLASS User Manual.pdf","bytes":790952,"chars":46835,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/02000 Portes - Vapor/Vapor TB08-05-097 CLASS Diagnostic.pdf","bytes":1585730,"chars":62941,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/0 Essieu arrière/N84513-03 4472 037 443.pdf","bytes":1371455,"chars":48380,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/0 Essieu avant/4474 085 199 N48027-01.pdf","bytes":1333368,"chars":18938,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/0 Essieu Moyen/4474 085 199 N48027-01.pdf","bytes":1333368,"chars":18938,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/0440000.pdf","bytes":695612,"chars":6191,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/2 Essieu Arrière/4472 036 575 N47995-02.pdf","bytes":2936168,"chars":64143,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/2 Essieu Arrière/N68781-02 4472 040 195.pdf","bytes":1328699,"chars":41589,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/4472 700 026 En.pdf","bytes":8418950,"chars":64025,"err":0,"hits":{"ic bus":1}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/4472.751.101 Repair Instructions AV-110 & AV-133.pdf","bytes":17947973,"chars":99070,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/4472.758.101b Operating Instructions AV-110 & AV-133.pdf","bytes":1316448,"chars":24465,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/4474 085 021 En Front Disc.pdf","bytes":1201475,"chars":20,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/4474.751.104Repair Instructions AVN 75,RL 75,RL 80,RL 82,RL 85 (Nov.2017).pdf","bytes":19378517,"chars":102839,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/5871 201 102 En Front Disc.pdf","bytes":13278496,"chars":13196,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/5871 201 102 Repair Manual RL-85 5th Edition.pdf","bytes":11303147,"chars":22013,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/5871 201 902 En Front Disc.pdf","bytes":579124,"chars":5516,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/5871 201 902 Operating instruction RL-85 2nd Edition.pdf","bytes":1082310,"chars":7492,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/5871 212 122 En Disc All .pdf","bytes":6993385,"chars":33,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/5871 214 002 En Rear Disc.pdf","bytes":2364543,"chars":93271,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/5871 214 002 En.pdf","bytes":3438418,"chars":65690,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/5871 214 902 En Rear Disc.pdf","bytes":383597,"chars":8083,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/5871 214 912 AV132 II T Maintenance Manual.pdf","bytes":923579,"chars":9398,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Bus Axle Installation Instructions 4472_700_026.pdf","bytes":8183019,"chars":64032,"err":0,"hits":{"ic bus":1}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Bus axle_New shaft seal ring (May 2017).pdf","bytes":132942,"chars":9072,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/C16352 EN 005.pdf","bytes":2694764,"chars":78073,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/C16352.pdf","bytes":4240119,"chars":75295,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Check slotted nut hub bolt connection (DEC 2017) .pdf","bytes":361571,"chars":7075,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/KNORR-BENDIX brake assembly checklist.pdf","bytes":845635,"chars":4698,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Lemforder Diagnostics and Assembly 0035_004_SI_Lehrtafel_D+M_Nkw_E.pdf","bytes":93453,"chars":5963,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Lemforder Steering and Suspension Parts for Bus 2013-14.pdf","bytes":4309069,"chars":1591228,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/List of lubricants TE-ML 12 (Apr-2016).pdf","bytes":106528,"chars":40232,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/List of lubricants TE-ML 12.pdf","bytes":119769,"chars":20848,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Liste des lubrifiants TE-ML 12.pdf","bytes":121045,"chars":21378,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Lubrication Improvement on the Hub Carrier Spindle Bus Axles A-AV-AVN-132  81-14e Draft.pdf","bytes":986145,"chars":2159,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Molecular Bearing Maintenance.pdf","bytes":205070,"chars":8712,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Renolit LX-NEP2 Material Safety Data Sheet.pdf","bytes":10090,"chars":15753,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Renolit LX-NEP2.pdf","bytes":86250,"chars":2648,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Renolit LX-NHU2 Material Safety Data Sheet.pdf","bytes":196853,"chars":5,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Renolit LX-NHU2.pdf","bytes":398513,"chars":2168,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Renolit LX-PEP2 Material Safety Data Sheet.pdf","bytes":263261,"chars":6,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Renolit LX-PEP2.pdf","bytes":81765,"chars":2499,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/RL-85 Axial Roller Bearing Design change Rs 44-12e.pdf","bytes":140106,"chars":3684,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/RL-85 King Pin Vertical Clearence Inspection Procedures Rs 85-11e.pdf","bytes":461550,"chars":4456,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/RL85 A Level 1 & 2 Required Tools.pdf","bytes":223188,"chars":463,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/RL_galvanised shim (Sep 2017).pdf","bytes":66053,"chars":4194,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Service Info_Water contamination bus axles.pdf","bytes":230347,"chars":4377,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Systematic Innovation and Efficiency.pdf","bytes":8477518,"chars":37440,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Y006471 EN 003.pdf","bytes":4351177,"chars":81136,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Y006471 FR Disc All.pdf","bytes":2083458,"chars":64751,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Y006471.pdf","bytes":11186654,"chars":98227,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/Y153416 EN 000.pdf","bytes":230909,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/04000 Essieu - ZF/ZFN164-1.pdf","bytes":566431,"chars":27417,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/06000 Accuride/Accuride.pdf","bytes":1625856,"chars":137192,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/06000 Roues - Accuride/Accuride.pdf","bytes":1625856,"chars":137192,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW 24DL Socket Replacement_Service Bulletin #LNK-119.pdf","bytes":47458,"chars":8271,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW 800 6 Preventive Maintenance Guidelines.pdf","bytes":598092,"chars":3432,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Boot Seal Replacement Procedure_Service Bulletin #LNK-100.pdf","bytes":16669,"chars":2662,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW En.pdf","bytes":5944429,"chars":114676,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Flushing & Filling the Steering Sustem_Service Procedure #SRV-100.pdf","bytes":1250620,"chars":6939,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Illustration for Service Seal Kit_Service Bulletin #TAS-122.pdf","bytes":605899,"chars":5885,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Inspection Procedure for TRW Ball Socket Wear_Service Bulletin #LNK-105.pdf","bytes":74669,"chars":2182,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Integral Hydraulic Power Steering Gear.pdf","bytes":7938712,"chars":53277,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Integral power Steering Gear Maintenance Manual.pdf","bytes":2802794,"chars":50508,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Intermediate Column Boot Replacement with Adapter_Service Bulletin #COL-142.pdf","bytes":41799,"chars":2808,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Intermediate Column Boot Replacement with Spacer_Service Bulletin #COL-126.pdf","bytes":36349,"chars":1972,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Intermediate Column Installation_Service Bulletin #COL-105.pdf","bytes":39470,"chars":3853,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Linkage Service Manual.pdf","bytes":3704887,"chars":35622,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Lubrication of TAS Steering Gears_Service Procedure #TAS-103.pdf","bytes":164546,"chars":1871,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW On-Vehicle Intermediate Column Seal Replacement_Service Bulletin #COL-106.pdf","bytes":33279,"chars":2378,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW On-Vehicle Intermidate Column Boot Replacement_Service Bulletin #COL-107.pdf","bytes":37003,"chars":2508,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW On-Vehicle Poppet Readjustment for TAS Steering Gears_Service Procedure #TAS-101.pdf","bytes":813750,"chars":6236,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Service Procedure COL-163 En.pdf","bytes":338532,"chars":2772,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Sliding Seal Replacement Procedure_Service Bulletin #LNK-103.pdf","bytes":11515,"chars":1343,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Steering System Maintenance Schedule_Service Procedure #TAS-108.pdf","bytes":57302,"chars":1847,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW TAS Series Power Steering Gears Specification.pdf","bytes":167000,"chars":887,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW TAS Steering Gear Service Manual Feb-07.pdf","bytes":7151017,"chars":81683,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW Tas102.pdf","bytes":37210,"chars":3485,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Mecanisme de Direction - TRW/TRW800 Steering System Maintenance Guidelines.pdf","bytes":6210875,"chars":66935,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW 24DL Socket Replacement_Service Bulletin #LNK-119.pdf","bytes":47458,"chars":8271,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW 800 6 Preventive Maintenance Guidelines.pdf","bytes":598092,"chars":3432,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Boot Seal Replacement Procedure_Service Bulletin #LNK-100.pdf","bytes":16669,"chars":2662,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Flushing & Filling the Steering Sustem_Service Procedure #SRV-100.pdf","bytes":1250620,"chars":6939,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Illustration for Service Seal Kit_Service Bulletin #TAS-122.pdf","bytes":605899,"chars":5885,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Inspection Procedure for TRW Ball Socket Wear_Service Bulletin #LNK-105.pdf","bytes":74669,"chars":2182,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Integral Hydraulic Power Steering Gear.pdf","bytes":7938712,"chars":53277,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Integral power Steering Gear Maintenance Manual.pdf","bytes":2802794,"chars":50508,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Intermediate Column Boot Replacement with Adapter_Service Bulletin #COL-142.pdf","bytes":41799,"chars":2808,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Intermediate Column Boot Replacement with Spacer_Service Bulletin #COL-126.pdf","bytes":36349,"chars":1972,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Intermediate Column Installation_Service Bulletin #COL-105.pdf","bytes":39470,"chars":3853,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Linkage Service Manual.pdf","bytes":3704887,"chars":35622,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Lubrication of TAS Steering Gears_Service Procedure #TAS-103.pdf","bytes":164546,"chars":1871,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW On-Vehicle Intermediate Column Seal Replacement_Service Bulletin #COL-106.pdf","bytes":33279,"chars":2378,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW On-Vehicle Intermidate Column Boot Replacement_Service Bulletin #COL-107.pdf","bytes":37003,"chars":2508,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Service Procedure COL-163 En.pdf","bytes":338532,"chars":2772,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Sliding Seal Replacement Procedure_Service Bulletin #LNK-103.pdf","bytes":11515,"chars":1343,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Steering System Maintenance Schedule_Service Procedure #TAS-108.pdf","bytes":57302,"chars":1847,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW TAS Series Power Steering Gears Specification.pdf","bytes":167000,"chars":887,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW TAS Steering Gear Service Manual Feb-07.pdf","bytes":7151017,"chars":81683,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW TAS Steering Gear Service Manual Mar-00.pdf","bytes":5944429,"chars":114676,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW Tas102.pdf","bytes":37210,"chars":3485,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07000 Steering - TRW/TRW800 Steering System Maintenance Guidelines.pdf","bytes":6210875,"chars":66935,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/920 Updated Serviceable Parts.PDF","bytes":77062,"chars":2,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/1900000 Knob Kit D10004.pdf","bytes":16002,"chars":1394,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/1900007 Steering Column Grease Kit Service Bulletin D10044.pdf","bytes":33424,"chars":3591,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/1900007 Steering Column Grease Kit Service.pdf","bytes":33424,"chars":3591,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/1900009 Turn Signal Lever Kit D10046.pdf","bytes":65341,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/1MB012 Bracket Kit SER_A.pdf","bytes":109717,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/GHX2E Gaphider Kit GH2-SER.pdf","bytes":388574,"chars":7,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/HBX2R Horn Brush Service Instructions HB2-.pdf","bytes":243127,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/HBX2R Horn Brush Service Instructions HB2-SER.pdf","bytes":243127,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/Instruction TS012-SER.pdf","bytes":214858,"chars":2017,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/TC2 Trough Cover Instruction TC-SER.pdf","bytes":93412,"chars":1569,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/TL2D TiltLever Kit TL2-SER.pdf","bytes":66986,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/TS012 Turn Signal Replacement Instruction .pdf","bytes":214858,"chars":2017,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/TS012 Turn Signal Replacement Instruction TS012-SER.pdf","bytes":214858,"chars":2017,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/TSTP1 Tilt Stop Kit TSTP-SER.pdf","bytes":57503,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/ULC7 Upper-Lower Cover ULC-SER.pdf","bytes":50974,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/WH1 Wire Harness Replacement Instruction W.pdf","bytes":215903,"chars":2209,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07201 Colonne de direction - Douglas Autotech Corp/Service Kit Instructions 9204747/WH1 Wire Harness Replacement Instruction WH-SER_A.pdf","bytes":215903,"chars":2209,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW 24DL Socket Replacement_Service Bulletin #LNK-119.pdf","bytes":47458,"chars":8271,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Boot Seal Replacement Procedure_Service Bulletin #LNK-100.pdf","bytes":16669,"chars":2662,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Illustration for Service Seal Kit_Service Bulletin #TAS-122.pdf","bytes":605899,"chars":5885,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Integral Hydraulic Power Steering Gear.pdf","bytes":7938712,"chars":53277,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Integral power Steering Gear Maintenance Manual.pdf","bytes":2802794,"chars":50508,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Intermediate Column Installation_Service Bulletin #COL-105.pdf","bytes":39470,"chars":3853,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Linkage Service Manual.pdf","bytes":3704887,"chars":35622,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Lubrication of TAS Steering Gears_Service Procedure #TAS-103.pdf","bytes":164546,"chars":1871,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Service Procedure COL-163 En.pdf","bytes":338532,"chars":2772,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Sliding Seal Replacement Procedure_Service Bulletin #LNK-103.pdf","bytes":11515,"chars":1343,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW TAS Series Power Steering Gears Specification.pdf","bytes":167000,"chars":887,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW TAS Steering Gear Service Manual Feb-07.pdf","bytes":7151017,"chars":81683,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW Tas102.pdf","bytes":37210,"chars":3485,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/07000 Mecanisme de Direction - TRW/TRW800 Steering System Maintenance Guidelines.pdf","bytes":6210875,"chars":66935,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/07302 Miter Box - Curtis/N34736 Curtis 941260.pdf","bytes":857826,"chars":2009,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08101 Compresseur Air/Midland Grau L90280.pdf","bytes":21785,"chars":9353,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08101 Compresseur Air/Wabco service manual 3666467 rev 3 En.pdf","bytes":394484,"chars":16128,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08104 Dessiccateur - Haldex/DRYest Air Dryer Installation Maintenance (English-Spanish) L31166 9-02.pdf","bytes":176024,"chars":27894,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08104 Dessiccateur - Haldex/Haldex Consep and ADV Designer Manual 90116.pdf","bytes":176110,"chars":12568,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® - Knorr Brake Assembly Checklist 05 02 2014.pdf","bytes":496650,"chars":4698,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-01-503 D-2™ Governor.pdf","bytes":265940,"chars":15283,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-03-1000 Dual Relay Valve.pdf","bytes":268068,"chars":11974,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-03-1064 R-12™ & R-14™ Relay Valves.pdf","bytes":249897,"chars":14596,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-03-4508 SR-1™ Spring Brake Valve.pdf","bytes":275448,"chars":15891,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-03-817 E-6™ & E-10™ Dual Brake Valves.pdf","bytes":405448,"chars":17814,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-03-901 QRV™ and QR-1™ Quick Release Valves.pdf","bytes":151857,"chars":7375,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-03-904 QR-1C™ Double Check and Quick Release Valve.pdf","bytes":98986,"chars":8811,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-08-2414.pdf","bytes":1623827,"chars":76566,"err":0,"hits":{"school bus":1}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-13-4860 WS-24™ AntiLock Wheel Speed Sensor.pdf","bytes":236362,"chars":11923,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-13-4863 EC-60™ ABS  ATC Controllers.pdf","bytes":5670892,"chars":114340,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08200 Bendix® Service Data/Bendix® SD-13-4870 M-32™ and M-32QR™ AntiLock Modulators.pdf","bytes":309353,"chars":21646,"err":0,"hits":{"bluebird":1}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/13s1425a.pdf","bytes":165213,"chars":8527,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/BW2489_Operators_Manual_ESP_Final.pdf","bytes":566055,"chars":19286,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/BW2499_Operators_Manual_RSP_Final.pdf","bytes":80742,"chars":16397,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/Chuff_Bulletin.pdf","bytes":133138,"chars":4713,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/EC-30_V2.0.pdf","bytes":3754566,"chars":74944,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/EC60_Adv.pdf","bytes":5423334,"chars":169098,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/EC60_Std_Prem.pdf","bytes":1942016,"chars":124182,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/ElectronicControlsBrochure.pdf","bytes":2740334,"chars":13913,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/ESPSellSheet.pdf","bytes":104898,"chars":9163,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/Gen_4_and_5.pdf","bytes":1436685,"chars":90500,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/M-32_(QR).pdf","bytes":309804,"chars":21646,"err":0,"hits":{"bluebird":1}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/M30.pdf","bytes":799320,"chars":19207,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/RDUSellSheet.pdf","bytes":96130,"chars":3852,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/Sensor_Warranty_Bulletin.pdf","bytes":373423,"chars":5534,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/TABS-6SellSheet.pdf","bytes":68430,"chars":8201,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/TRDUSellSheet.pdf","bytes":105002,"chars":5206,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/WS20.pdf","bytes":87975,"chars":9249,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Literature/WS24.pdf","bytes":236361,"chars":11923,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/13s1425a.pdf","bytes":165213,"chars":8527,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/BW2489_Operators_Manual_ESP_Final.pdf","bytes":566055,"chars":19286,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/BW2499_Operators_Manual_RSP_Final.pdf","bytes":80742,"chars":16397,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/Chuff_Bulletin.pdf","bytes":133138,"chars":4713,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/EC-30_V2.0.pdf","bytes":3754566,"chars":74944,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/EC60_Adv.pdf","bytes":5423334,"chars":169098,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/EC60_Std_Prem.pdf","bytes":1942016,"chars":124182,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/ElectronicControlsBrochure.pdf","bytes":2740334,"chars":13913,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/ESPSellSheet.pdf","bytes":104898,"chars":9163,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/Gen_4_and_5.pdf","bytes":1436685,"chars":90500,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/M-32_(QR).pdf","bytes":309804,"chars":21646,"err":0,"hits":{"bluebird":1}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/M30.pdf","bytes":799320,"chars":19207,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/RDUSellSheet.pdf","bytes":96130,"chars":3852,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/Sensor_Warranty_Bulletin.pdf","bytes":373423,"chars":5534,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/TABS-6SellSheet.pdf","bytes":68430,"chars":8201,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/TRDUSellSheet.pdf","bytes":105002,"chars":5206,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/WS20.pdf","bytes":87975,"chars":9249,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/WS24.pdf","bytes":236361,"chars":11923,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/Bendix® Diagnostic Software for ABS User Guide.pdf","bytes":1829672,"chars":55116,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08213 Système de Freinage Antiblocage (ABS 6)/BW-271-PR_2.pdf","bytes":5604896,"chars":249777,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/Catalogue de Pièces Détachées.pdf","bytes":4349015,"chars":30009,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/CPL Grease specs.pdf","bytes":177301,"chars":4585,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/EP-0 pneumatic parts book.PDF","bytes":810421,"chars":5994,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/Groeveld Instruction de Montage FR.pdf","bytes":3477599,"chars":24,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/Groeveld Instructions Générale FR.pdf","bytes":4290694,"chars":28,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/procédure pour purger le système.pdf","bytes":328893,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/TWIN EG1701 Automatic  Greasing System (General Manual) EN.pdf","bytes":3405544,"chars":88905,"err":0,"hits":{"vision":4}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/TWIN EM1701 Workshop Book.pdf","bytes":13386678,"chars":105,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/TWIN EU1701D0 User's Iinstruction EN.pdf","bytes":87539,"chars":5076,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/08505 Système de Graissage Centrale/TWIN OE1301 Pump Parts List.pdf","bytes":379674,"chars":2,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Diagnostic Procedures Manual.pdf","bytes":2974977,"chars":56306,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10511649.pdf","bytes":184388,"chars":9896,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10513665.pdf","bytes":401600,"chars":6826,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10515873.pdf","bytes":138291,"chars":3564,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10515904.pdf","bytes":134451,"chars":2075,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10516591.pdf","bytes":177622,"chars":2883,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10517282.pdf","bytes":139416,"chars":4808,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10517283.pdf","bytes":187613,"chars":3772,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10517284.pdf","bytes":179132,"chars":3696,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10517386.pdf","bytes":150043,"chars":4989,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10517387.pdf","bytes":146601,"chars":3888,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10517388.pdf","bytes":153596,"chars":5335,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10526606.pdf","bytes":297825,"chars":10748,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10527276.pdf","bytes":502823,"chars":13494,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10527277.pdf","bytes":632722,"chars":16045,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet 10529636.pdf","bytes":297815,"chars":6840,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Instruction Sheet _O-Ring Bearing.pdf","bytes":253434,"chars":1817,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Démarreur - Delco Remy/Starter Manual updated Nov 01 rev.pdf","bytes":3666662,"chars":66723,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10511649.pdf","bytes":141631,"chars":8782,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10513665.pdf","bytes":277371,"chars":6094,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10515873.pdf","bytes":87529,"chars":3686,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10516591.pdf","bytes":86762,"chars":2944,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10517282.pdf","bytes":89304,"chars":4802,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10517283.pdf","bytes":87797,"chars":3758,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10517284.pdf","bytes":87922,"chars":3924,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10517386.pdf","bytes":89624,"chars":5086,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10517387.pdf","bytes":88420,"chars":3857,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/10517388.pdf","bytes":89657,"chars":5234,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/1G-188.pdf","bytes":4026868,"chars":19,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Delco Remy TS-50DN-T technical bulletin.pdf","bytes":356860,"chars":12967,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Delco-Remy-50dn.pdf","bytes":138101,"chars":1907,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Delco-Transit-Brochure.pdf","bytes":489238,"chars":6332,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/diagnostic manual.pdf","bytes":2974977,"chars":56306,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Instruction Sheet 10510713_50DN-REPLACING-SHAFT-SEAL-O-RING-10510713.pdf","bytes":142330,"chars":3314,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Instruction Sheet 10510926_50DN-STATOR-WITH-ONE-PIECE-INSULATOR.pdf","bytes":249851,"chars":2548,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Instruction Sheet 10511588_50DN-DIODE-REPLACEMENT.pdf","bytes":154340,"chars":3030,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Instruction Sheet 10511615_50DN-BALL-TO-ROLLER-BEARING-CONVERSION.pdf","bytes":237790,"chars":4768,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Instruction Sheet 10511617_50DN-BEARINGS.pdf","bytes":161987,"chars":2357,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Instruction Sheet 10511621_50DN-RECTIFIER-FRAME.pdf","bytes":144026,"chars":2219,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Instruction Sheet 10511624_50DN-CAST-ALUMINUM-END-COVER-REPLACEMENT.pdf","bytes":188744,"chars":2341,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Instruction Sheet 10524487_50DN-SHAFT-SEAL-REPLACEMENT-10524487.pdf","bytes":230317,"chars":5568,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 L'Alternateur - Delco Remy/Instruction Sheet 10524489_50DN-DE-FRAME-SEAL-UPGRADE-PACKAGE-INSTALLATION-10.pdf","bytes":261023,"chars":8166,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Diagnostic Procedures Manual.pdf","bytes":2974977,"chars":56306,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10511649.pdf","bytes":184388,"chars":9896,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10513665.pdf","bytes":401600,"chars":6826,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10515873.pdf","bytes":138291,"chars":3564,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10515904.pdf","bytes":134451,"chars":2075,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10516591.pdf","bytes":177622,"chars":2883,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10517282.pdf","bytes":139416,"chars":4808,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10517283.pdf","bytes":187613,"chars":3772,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10517284.pdf","bytes":179132,"chars":3696,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10517386.pdf","bytes":150043,"chars":4989,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10517387.pdf","bytes":146601,"chars":3888,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10517388.pdf","bytes":153596,"chars":5335,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10526606.pdf","bytes":297825,"chars":10748,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10527276.pdf","bytes":502823,"chars":13494,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10527277.pdf","bytes":632722,"chars":16045,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet 10529636.pdf","bytes":297815,"chars":6840,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Instruction Sheet _O-Ring Bearing.pdf","bytes":253434,"chars":1817,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09600 Starter - Delco Remy/Starter Manual updated Nov 01 rev.pdf","bytes":3666662,"chars":66723,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09621 Air-Compressor - W-Engine/Midland Grau Preventive M M Schedule L90280.pdf","bytes":21765,"chars":9353,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09621 Air-Compressor - W-Engine/Wabco Installation & Maintenance of Compressors (Feb-05, 2nd Edition).pdf","bytes":178650,"chars":32239,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/09621 Air-Compressor - W-Engine/Wabco Service & Maintenance Manual 3666467 (Jan-00, Rev.3).pdf","bytes":394484,"chars":16128,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10100 Transmission - Allison/Watch 359.pdf","bytes":153507,"chars":20276,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10100 Transmission - ZF - EcoLife/4181 751 204a EcoLife Repair Instructions Level 1 - 2 Fr.pdf","bytes":18176365,"chars":227206,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10100 Transmission - ZF - EcoLife/4181 758 202a EcoLife Operating Instructions fr.pdf","bytes":3978269,"chars":82039,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10100 Transmission - ZF - EcoLife/4181040550 EcoLife ZF 6 AP 1400 B Parts Catalog N87711.pdf","bytes":10614389,"chars":161344,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10100 Transmission - ZF - EcoLife/CONNECTING_TO_AND_REPROGRAMMING_ECOLIFE_WITH_TESTMAN_EXTERNAL.pdf","bytes":1669848,"chars":4003,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10100 Transmission - ZF - EcoLife/EcoLife Hydraulic 1 Poster.pdf","bytes":366874,"chars":1926,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10100 Transmission - ZF - EcoLife/TE-ML 20 ZF EcoLife.pdf","bytes":102096,"chars":3090,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10100 Transmission - ZF - EcoLife/ZF Ecolife - Connectors & Terminals Rev 3.pdf","bytes":1272732,"chars":2975,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10100 Transmission - ZF - EcoLife/ZF Friedrichshafen AG_Testman_MT1_2_help_Equipment.pdf","bytes":663184,"chars":16608,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10500 Arbre D'entrainement - Arvin Merritor/MM-0998.pdf","bytes":1141144,"chars":17071,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10500 Arbre D'entrainement - Arvin Merritor/MM-96147 (2011-10).pdf","bytes":7167897,"chars":112059,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10500 Arbre D'entrainement - Arvin Merritor/MM96147.pdf","bytes":3026961,"chars":101811,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10500 Arbre D'entrainement - Arvin Merritor/PB-9895 Meritor-Driveshaft-and-Yoke-Parts-Manual (2011-09).pdf","bytes":4327191,"chars":549435,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10500 Arbre D'entrainement - Arvin Merritor/TP-8958 Prod. Spec (2007-01).pdf","bytes":1496243,"chars":53671,"err":0,"hits":{"school bus":1,"school buses":1}}
+{"p":"Nova/Manuels des Fournisseurs/10500 Arbre D'entrainement - Arvin Merritor/TP-8958.pdf","bytes":1496243,"chars":53671,"err":0,"hits":{"school bus":1,"school buses":1}}
+{"p":"Nova/Manuels des Fournisseurs/10500 Arbre D'entrainement- Merritor/MM96147.pdf","bytes":3026961,"chars":101811,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/10500 Arbre D'entrainement- Merritor/TP-8958.pdf","bytes":1496243,"chars":53671,"err":0,"hits":{"school bus":1,"school buses":1}}
+{"p":"Nova/Manuels des Fournisseurs/11401 Filtre à Particules Diesel - Shaw Development/TB-2335 Rev A.pdf","bytes":1053481,"chars":11584,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/11401 Filtre à Particules Diesel - Shaw Development/TB-2362 Rev A.pdf","bytes":2356480,"chars":18029,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/11401 Filtre à Particules Diesel - Shaw Development/TB-2462 Rev A.pdf","bytes":1358578,"chars":15561,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/11401 Filtre à Particules Diesel - Shaw Development/TB-2472.pdf","bytes":958902,"chars":11477,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/11509 Fuel Filler Neck - Emco Wheaton/Installation manual_revised December 2015_1.pdf","bytes":366618,"chars":563,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/11509 Fuel Filler Neck - Emco Wheaton/LCV Repair Kit & Repairing Instruction.pdf","bytes":219536,"chars":191,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/11509 Fuel Filler Neck - Emco Wheaton/Poppet Assembly Kit Procedure.pdf","bytes":93113,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/11509 Fuel Filler Neck - Emco Wheaton/Repair Parts for 801524 POSI-LOCK Fueling System.pdf","bytes":117967,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/11509 Fuel Filler Neck - Emco Wheaton/Repair Parts for G1201-004 Dust Cap Assembly.pdf","bytes":58782,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/11509 Fuel Filler Neck - Emco Wheaton/Repair Parts for G2269-001 Pressure Relief Valve.pdf","bytes":80165,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/12600 Siege de Conducteur - Baultar/BAUTAR IT19-1113_R1_PROCEDURE DE MAINTENANCE DU SIEGE AS98-5005.pdf","bytes":3031760,"chars":56808,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/12600 Siege de Conducteur - Baultar/IC00-0013_R2_Catalogue_liste_de_pieces_Ergobus_RTC_#AS98-5015.pdf","bytes":1538967,"chars":18872,"err":0,"hits":{"vision":21}}
+{"p":"Nova/Manuels des Fournisseurs/12600 Siege de Conducteur - Isringhausen/Guide D'Utilisation - ISRI 6832-872.pdf","bytes":292385,"chars":3363,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/12600 Siege de Conducteur - Isringhausen/ISRI Spare Parts Manual.pdf","bytes":2194763,"chars":32,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/12600 Siege de Conducteur - Isringhausen/N66711-02  Instruction Manual 86740-0100.pdf","bytes":174428,"chars":2089,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/12600 Siege de Conducteur - USSC/ALX Standard Seat Manual.pdf","bytes":10525972,"chars":36941,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/12901 Sunvisor - AutoMotion Shade/Instructions for how to stop shade at specific height.pdf","bytes":383706,"chars":56,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/12906 Rampe d'accès - Calmo/1 6 Ramp CMM 7287-01-A1 Sep-13.pdf","bytes":3469165,"chars":143160,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/12906 Rampe d'accès - Calmo/1 6 Ramp CMM 7287-01-A1 Sep-14.pdf","bytes":2742691,"chars":185517,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N00000) Axion Manuel L'utilisateur Série 30 3040597 Rev A.pdf","bytes":1275811,"chars":97639,"err":0,"hits":{"vision":53}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N36263 - N36264) Axion CONSOLE DE COMMANDE 3040614 9000877 Rev A.pdf","bytes":601662,"chars":9715,"err":0,"hits":{"vision":11}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N37027) Axion MANUEL DE PIÈCESl 3040616_9000889-893_FR_ Rev B.pdf","bytes":1973996,"chars":19700,"err":0,"hits":{"vision":21}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N44313) Axion Afficheur Arrière 16X48 Jaune 6 3040821 9001269.pdf","bytes":1315692,"chars":13108,"err":0,"hits":{"vision":18}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N49867) Axion AFFICHEUR CÔTÉ TROTTOIR 3041328 9001606.pdf","bytes":1010041,"chars":15070,"err":0,"hits":{"vision":19}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - Luminator/Luminator 904859.pdf","bytes":15410572,"chars":165893,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - Luminator/Luminator MCU Manual 905447 Rev A.pdf","bytes":3059963,"chars":86425,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - Luminator/Luminator ODK4 904700.pdf","bytes":1046772,"chars":39713,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - Luminator/Luminator ODK4 Configuration File Transfer.pdf","bytes":32326,"chars":1527,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/13000 Girouettes - Luminator/Luminator ODK4 Message File Transfer.pdf","bytes":29418,"chars":1601,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 A-C Compresseur - Carrier/Carrier Compressor parts list 62-11053 Rev.D.pdf","bytes":942911,"chars":39947,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 A-C Compresseur - Carrier/Carrier Compressor Workshop Manual 62-11052 Rev.C.pdf","bytes":874887,"chars":57744,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 A-C Compresseur - Carrier/Compressor Service Tool Catalog 62-03213 Rev J.pdf","bytes":187012,"chars":4045,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Carrier/Carrier Compressor parts list 62-11053.pdf","bytes":1193650,"chars":38252,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Carrier/Carrier Compressor Workshop Manual 62-11052.pdf","bytes":703188,"chars":57479,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Carrier/Carrier Roof unit  parts list (RF353) T-308PL.pdf","bytes":6590847,"chars":148369,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Carrier/Carrier Roof unit operation and service T308.pdf","bytes":1334317,"chars":135033,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Carrier/Pocket Micromate diagnostic tool.pdf","bytes":444968,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Carrier/T-383 AC353 eco.pdf","bytes":4897647,"chars":132259,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/62-10699 MCC Micromate Pocket Card Diagnostic Tool ERROR Codes.pdf","bytes":156647,"chars":6419,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Compressor Service Replacement Parts T-370PL Rev. 09-2016.pdf","bytes":3663510,"chars":41386,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Compressors & Mounts Service Lit & Repl Parts T-373 Rev. 06-2017.pdf","bytes":3103004,"chars":32658,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Compressors & Mounts Service Lit & Repl Parts T-373 Rev042018.pdf","bytes":2792110,"chars":34618,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/MCC-Bitzer Compressor Maintenance_Clutch Replacement.pdf","bytes":319512,"chars":11887,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Operation & Service for 68AC353-102 & Y50-35305 T-383 REV. 04 2018.pdf","bytes":5039230,"chars":132253,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Operation & Service for 68AC353-102_T-348 Rev. 03-2017.pdf","bytes":5380985,"chars":180804,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Operation & Service for 68AC353-102_T-348 Rev. 06-2016.pdf","bytes":4753942,"chars":177205,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Service Parts 68AC353-102 & Y50-35304 & Y50-35305 T-348PL REV. 03 2018.pdf","bytes":12133532,"chars":100251,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Service Parts 68AC353-102 & Y50-35304_T-348PL Rev. 05-2017.pdf","bytes":13056941,"chars":94308,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Service Parts 68AC353-102_T-348PL Rev. 01-2015.pdf","bytes":11049362,"chars":76632,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14100 HVAC - Mobile Climate Control Inc/Service Parts 68H353G4-102_T-363PL Rev. 09-2013.pdf","bytes":2699932,"chars":19585,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14200 Convecteurs - Thermo King/Blower replacement procedure original.pdf","bytes":737766,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14200 Convecteurs - Thermo King/Blower replacement procedure.pdf","bytes":64080,"chars":244,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14200 Convecteurs - Thermo King/Thermoking Convector Range TKV.PDF","bytes":857370,"chars":3626,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14200 Convecteurs - Thermo King/Thermoking Forced Air Convector Parts Manual.PDF","bytes":2139030,"chars":7538,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros/Spheros Error code table FR.pdf","bytes":90319,"chars":6152,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros/Spheros Installation Instructions 230-300-350  EN.pdf","bytes":1539153,"chars":43357,"err":0,"hits":{"vision":1,"ic bus":1}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros/Spheros Manuel d'utilisation et d'entretien FR.pdf","bytes":46205,"chars":12373,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros/Spheros Operating Instructions 2410063A.pdf","bytes":1806881,"chars":41907,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros/Spheros PC diagnostic code FR.pdf","bytes":71015,"chars":5889,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros/Spheros Service and repair EN.pdf","bytes":934763,"chars":128211,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros/Spheros Service Parts List 550031A.pdf","bytes":938336,"chars":40720,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Service Schedule_EN.pdf","bytes":98675,"chars":4250,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Service Schedule_FR.pdf","bytes":101855,"chars":4987,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Spheros Biodiesel Technical Information_10000004A (Feb-10.pdf","bytes":59528,"chars":2604,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Spheros Fuel Pump Installation Instructions_1302616C (Sep-06).pdf","bytes":95119,"chars":1792,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Spheros Fuel Pump Installation Instructions_1302616C (Sep.pdf","bytes":95119,"chars":1792,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Spheros Heated Fuel Filter Installation Inst_2710111A _(Jan-06).pdf","bytes":785235,"chars":9539,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Spheros Heated Fuel Filter Installation Inst_2710111A _).pdf","bytes":785235,"chars":9539,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Spheros Standard Timer Operating Instructions_2710823A (F.pdf","bytes":70394,"chars":12228,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Spheros Standard Timer Operating Instructions_2710823A (Feb-07).pdf","bytes":70394,"chars":12228,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Spheros Thermo 230-300-350 Recommended Scope of Maintenan.pdf","bytes":23170,"chars":1472,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/General Information/Spheros Thermo 230-300-350 Recommended Scope of Maintenance.pdf","bytes":23170,"chars":1472,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo 230-300-350 Installation Instructions_63425F (Dec-11).pdf","bytes":1419450,"chars":124649,"err":0,"hits":{"ic bus":1,"vision":1}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo 230-300-350 Operation Instructions_63420F (Dec-11).pdf","bytes":73490,"chars":10556,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo 230-300-350 Parts List_550031A (Dec-09).pdf","bytes":938336,"chars":40720,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo 230-300-350 Parts List_550031C (Dec-11).pdf","bytes":1294971,"chars":41104,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo 230-300-350 Workshop Manual_9003656D (Dec-11).pdf","bytes":603561,"chars":116562,"err":0,"hits":{"vision":1}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo 300 Parts List specific to New Flyer 300.066_10000005A (Mar-10).pdf","bytes":213166,"chars":15897,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo 300 Parts List specific to New Flyer 300.066_10000005A (Mar-10).pdf.pdf","bytes":213166,"chars":15897,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo 300 Parts List specific to New Flyer 300.066_10000005A (Mar-10.pdf","bytes":213166,"chars":15897,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo Thermo S & GBW300 Test Operating Instructions_11112552B (Dec-.pdf","bytes":3134888,"chars":109041,"err":0,"hits":{"vision":2}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Thermo Thermo S & GBW300 Test Operating Instructions_11112552B (Dec-08).pdf","bytes":3134888,"chars":109041,"err":0,"hits":{"vision":2}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Water Heater Accessories_11113247A (Jun-08).pdf","bytes":1083732,"chars":31635,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros Water Heater Warranty Manual_10000032B (Nov-14).pdf","bytes":301019,"chars":19800,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros_Thermo_Test_Software for GBW, Thermo and Thermo S heaters Ver/Installing Spheros Test Software Help Documentation (1).pdf","bytes":268848,"chars":1118,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros_Thermo_Test_Software for GBW, Thermo and Thermo S heaters Ver/Installing Spheros Test Software Help Documentation (2).pdf","bytes":97347,"chars":1518,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros_Thermo_Test_Software for GBW, Thermo and Thermo S heaters Ver/Spheros Thermo Test Installation instructions.pdf","bytes":24972,"chars":3133,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros_Thermo_Test_Software for GBW, Thermo and Thermo S heaters Version 201/Spheros Thermo Test Installation instructions.pdf","bytes":24972,"chars":3133,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14300 Rechauffeur Auxiliaire - Spheros (Webasto)/Spheros_Thermo_Test_Software for GBW, Thermo and Thermo S heaters Version 2013 (1.2/Spheros Thermo Test Installation instructions.pdf","bytes":24972,"chars":3133,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/14302 Pompe de Recirculation - Rotron Ametek/Rotron Ametek N36420.pdf","bytes":1661220,"chars":17008,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/1-927771-3.pdf","bytes":488334,"chars":2,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/1-967622.pdf","bytes":161762,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/ENG_CAT_124962_0304_566_.pdf","bytes":34501,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/ENG_CAT_65839_1298_6_.pdf","bytes":25499,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/ENG_CD_1355071_A2[2].pdf","bytes":161762,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/ENG_CD_174044_D2.pdf","bytes":37758,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/ENG_CD_963448_E[1].pdf","bytes":82630,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/ENG_SS_411-5883_A.pdf","bytes":202973,"chars":7,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/GER_CD_1355036_J3[1].pdf","bytes":145656,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/GER_CD_1355046_A7[1].pdf","bytes":283672,"chars":2,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/AMP/GER_CD_1355073_D[1].pdf","bytes":183568,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Delphi/Delphi Connection Catalog.pdf","bytes":60186897,"chars":543705,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch 22_J1939-15_Schematic.pdf","bytes":643538,"chars":1736,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch Common Contact System.pdf","bytes":4514363,"chars":20631,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DRB 102.pdf","bytes":1559932,"chars":7812,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DRB 60.pdf","bytes":288143,"chars":4936,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DRC Series.pdf","bytes":1432201,"chars":3494,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DT 2-Way Electronic Package.pdf","bytes":2002439,"chars":12692,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DT Bussed Data Feedback Receptacles.pdf","bytes":354256,"chars":2089,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DT Series.pdf","bytes":1182860,"chars":3230,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DTHD Series.pdf","bytes":405359,"chars":542,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DTM Series.pdf","bytes":1441060,"chars":4486,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DTMN Series.pdf","bytes":353860,"chars":578,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch DTP Product Data Sheet.pdf","bytes":350412,"chars":588,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch Electronic Package.pdf","bytes":2002439,"chars":12692,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch HD30-HDP20 Technical Manual.pdf","bytes":4509141,"chars":9551,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch HDP20 Series - Size 18 Shell Brochure.pdf","bytes":1296154,"chars":3054,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Deutsch/Deutsch J1939 3-wire .pdf","bytes":1185731,"chars":10405,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/JAE (VBEA)/auto_il-ag5.pdf","bytes":96197,"chars":2359,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Tyco/DILAX  APC Overview.pdf","bytes":182242,"chars":5305,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Connecteurs Electrique/Tyco/DILAX Stationary People Counting Overview.pdf","bytes":220087,"chars":3868,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16000 Spécification des couples de serrage pour pièces électriques/EI10-037-F.pdf","bytes":217217,"chars":7864,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16100 Batteries - EAST PENN/Commercial Battery Care  Maintenance - French version.pdf","bytes":555865,"chars":15856,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16100 Batteries - EAST PENN/Valve Regulated Lead Acid Battery-SDS_CANADA-Canadian French.pdf","bytes":48358,"chars":25550,"err":0,"hits":{"vision":9}}
+{"p":"Nova/Manuels des Fournisseurs/16110 Égalisateur - Sure Power N43080/Sure Power 50VR 24V Flat conn 20510 (8600024).pdf","bytes":269859,"chars":9446,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16110 Égalisateur - Sure Power N43080/Sure Power Equalizer and Converter Family (S) rev 003.pdf","bytes":707216,"chars":11089,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/16600 VBEA/Info for WinXP Setup WEB-Browser 3616 eng.pdf","bytes":6965751,"chars":14054,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/17204 Transit Signal Priority (TSP)_Transponder - NOVAX Corp/NOVAX MetroTag TSP Solution (Oct-2003).pdf","bytes":240868,"chars":9232,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/17204 Transit Signal Priority (TSP)_Transponder - NOVAX Corp/NOVAX MetroTag TTC-QX4.pdf","bytes":174117,"chars":3588,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/17204 Transit Signal Priority (TSP)_Transponder - NOVAX Corp/NOVAX WTPS Operation Manual_EDA149-2.0.pdf","bytes":360371,"chars":26003,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/18100 Mirroir Retrovisseur - Lucerix/LucII045 Lucerix Mirror Kit Installation and Adjustment Rev C.pdf","bytes":1548061,"chars":6147,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/18800 Bike Rack Front Bumper - SPORTWORKS/2015_Sportsworks_Parts_Manual-Transit_Racks.pdf","bytes":4835511,"chars":62217,"err":0,"hits":{"blue bird":13,"vision":3}}
+{"p":"Nova/Manuels des Fournisseurs/18800 Bike Rack Front Bumper - SPORTWORKS/2015_Sportworks_User_Manual-Transit_Racks.pdf","bytes":8796358,"chars":145496,"err":0,"hits":{"blue bird":16,"vision":2}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/4472 036 251 n37082-12 en.pdf","bytes":1088827,"chars":58838,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/4472 700 026 En.pdf","bytes":8418950,"chars":64025,"err":0,"hits":{"ic bus":1}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/4474 085 021 En Front Disc.pdf","bytes":1201475,"chars":20,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/4474 085 134 n37081-01 and n37081-03.pdf","bytes":508695,"chars":22179,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/5871 201 102 En Front Disc.pdf","bytes":13278496,"chars":13196,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/5871 201 902 En Front Disc.pdf","bytes":579124,"chars":5516,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/5871 212 122 En Disc All .pdf","bytes":6993385,"chars":33,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/5871 214 002 En Rear Disc.pdf","bytes":2364543,"chars":93271,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/5871 214 902 En Rear Disc.pdf","bytes":383597,"chars":8083,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/504000 Essieu - ZF/Y006471 FR Disc All.pdf","bytes":2083458,"chars":64751,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/507000 Mecanisme de Direction - TRW/TRW En.pdf","bytes":5944429,"chars":114676,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/507000 Mecanisme de Direction - TRW/TRW Linkage Service Manual.pdf","bytes":3704887,"chars":35622,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508101 Compresseur Air/Midland Grau L90280.pdf","bytes":21785,"chars":9353,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508101 Compresseur Air/Wabco service manual 3666467 rev 3 En.pdf","bytes":394484,"chars":16128,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508104 Dessiccateur - Haldex/Haldex Consep and ADV Designer Manual 90116.pdf","bytes":176110,"chars":12568,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508200 Bendix® Service Data/Bendix® SD-01-503 D-2™ Governor.pdf","bytes":265940,"chars":15283,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508200 Bendix® Service Data/Bendix® SD-03-1000 Dual Relay Valve.pdf","bytes":268068,"chars":11974,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508200 Bendix® Service Data/Bendix® SD-03-1064 R-12™ & R-14™ Relay Valves.pdf","bytes":249897,"chars":14596,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508200 Bendix® Service Data/Bendix® SD-03-4508 SR-1™ Spring Brake Valve.pdf","bytes":275448,"chars":15891,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508200 Bendix® Service Data/Bendix® SD-03-817 E-6™ & E-10™ Dual Brake Valves.pdf","bytes":405448,"chars":17814,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508200 Bendix® Service Data/Bendix® SD-03-901 QRV™ and QR-1™ Quick Release Valves.pdf","bytes":151857,"chars":7375,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508200 Bendix® Service Data/Bendix® SD-03-904 QR-1C™ Double Check and Quick Release Valve.pdf","bytes":98986,"chars":8811,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508200 Bendix® Service Data/Bendix® SD-08-2414.pdf","bytes":1623827,"chars":76566,"err":0,"hits":{"school bus":1}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/13s1425a.pdf","bytes":165213,"chars":8527,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/BW2489_Operators_Manual_ESP_Final.pdf","bytes":566055,"chars":19286,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/BW2499_Operators_Manual_RSP_Final.pdf","bytes":80742,"chars":16397,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/Chuff_Bulletin.pdf","bytes":133138,"chars":4713,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/EC-30_V2.0.pdf","bytes":3754566,"chars":74944,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/EC60_Adv.pdf","bytes":5423334,"chars":169098,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/EC60_Std_Prem.pdf","bytes":1942016,"chars":124182,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/ElectronicControlsBrochure.pdf","bytes":2740334,"chars":13913,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/ESPSellSheet.pdf","bytes":104898,"chars":9163,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/Gen_4_and_5.pdf","bytes":1436685,"chars":90500,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/M-32_(QR).pdf","bytes":309804,"chars":21646,"err":0,"hits":{"bluebird":1}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/M30.pdf","bytes":799320,"chars":19207,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/RDUSellSheet.pdf","bytes":96130,"chars":3852,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/Sensor_Warranty_Bulletin.pdf","bytes":373423,"chars":5534,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/TABS-6SellSheet.pdf","bytes":68430,"chars":8201,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/TRDUSellSheet.pdf","bytes":105002,"chars":5206,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/WS20.pdf","bytes":87975,"chars":9249,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix ABS6/Service Literature/WS24.pdf","bytes":236361,"chars":11923,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/Bendix® Diagnostic Software for ABS User Guide.pdf","bytes":1829672,"chars":55116,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/508213 Système de Freinage Antiblocage (ABS 6)/BW-271-PR_2.pdf","bytes":5604896,"chars":249777,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/509600 L'Alternateur - Delco Remy/Delco Remy TS-50DN-T technical bulletin.pdf","bytes":356860,"chars":12967,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/510100 Transmission - ZF/4149 044 800 En.pdf","bytes":523951,"chars":69767,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/510100 Transmission - ZF/4149 765 201 Fr.pdf","bytes":12594531,"chars":339122,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/510100 Transmission - ZF/4182 044 004 N38765.pdf","bytes":2068452,"chars":83115,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/510100 Transmission - ZF/ZF Transmission Cable Connectors.pdf","bytes":411873,"chars":2921,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/510100 Transmission - ZF/ZF Transmission Error Code Manual En.pdf","bytes":4718259,"chars":287278,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/510500 Arbre D'entrainement- Merritor/MM96147.pdf","bytes":3026961,"chars":101811,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/512600 Siege de Conducteur - USSC/USSC Q90 Fr.pdf","bytes":408948,"chars":20193,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/513000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N00000) Axion Manuel L'utilisateur Série 30 3040597 Rev A.pdf","bytes":1275811,"chars":97639,"err":0,"hits":{"vision":53}}
+{"p":"Nova/Manuels des Fournisseurs/513000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N36263 - N36264) Axion CONSOLE DE COMMANDE 3040614 9000877 Rev A.pdf","bytes":601662,"chars":9715,"err":0,"hits":{"vision":11}}
+{"p":"Nova/Manuels des Fournisseurs/513000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N36967) Axion AFFICHEUR ARRIÈRE 12X32 JAUNE 4,5 3040601 9000885 Rev A.pdf","bytes":568512,"chars":14586,"err":0,"hits":{"vision":18}}
+{"p":"Nova/Manuels des Fournisseurs/513000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N37027) Axion FRONT SIGN Parts Manual 3040616_9000889-893_FR_ Rev A.pdf","bytes":1562717,"chars":19261,"err":0,"hits":{"vision":19}}
+{"p":"Nova/Manuels des Fournisseurs/513000 Girouettes - AXION Technologies (BALIOS - POCATEC)/(N37028) Axion CURB SIDE SIGN Parts Manual 3040618_9000890_Fr_Rev A.pdf","bytes":902532,"chars":14786,"err":0,"hits":{"vision":17}}
+{"p":"Nova/Manuels des Fournisseurs/514100 HVAC - Carrier/Carrier Compressor parts list 62-11053.pdf","bytes":1193650,"chars":38252,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/514100 HVAC - Carrier/Carrier Compressor Workshop Manual 62-11052.pdf","bytes":703188,"chars":57479,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/514100 HVAC - Carrier/Carrier Roof unit  parts list T-308PL Rev A.pdf","bytes":4675864,"chars":107973,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/514100 HVAC - Carrier/Carrier Roof unit operation and service T308.pdf","bytes":1237059,"chars":135427,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/514300 Rechauffeur Auxiliaire - Webasto/Webasto 1998-No 907507 En.pdf","bytes":614039,"chars":52609,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/514300 Rechauffeur Auxiliaire - Webasto/Webasto 2001-Ja Fr.pdf","bytes":741860,"chars":134183,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/514300 Rechauffeur Auxiliaire - Webasto/Webasto Installation Instructions 63425.pdf","bytes":1539153,"chars":43357,"err":0,"hits":{"vision":1,"ic bus":1}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/1-927771-3.pdf","bytes":488334,"chars":2,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/1-967622.pdf","bytes":161762,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/ENG_CAT_124962_0304_566_.pdf","bytes":34501,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/ENG_CAT_65839_1298_6_.pdf","bytes":25499,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/ENG_CD_1355071_A2[2].pdf","bytes":161762,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/ENG_CD_174044_D2.pdf","bytes":37758,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/ENG_CD_963448_E[1].pdf","bytes":82630,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/ENG_SS_411-5883_A.pdf","bytes":202973,"chars":7,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/GER_CD_1355036_J3[1].pdf","bytes":145656,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/GER_CD_1355046_A7[1].pdf","bytes":283672,"chars":2,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/AMP/GER_CD_1355073_D[1].pdf","bytes":183568,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Delphi/Delphi Connection Catalog.pdf","bytes":60186897,"chars":543705,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch 22_J1939-15_Schematic.pdf","bytes":643538,"chars":1736,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch Common Contact System.pdf","bytes":4514363,"chars":20631,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DRB 102.pdf","bytes":1559932,"chars":7812,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DRB 60.pdf","bytes":288143,"chars":4936,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DRC Series.pdf","bytes":1432201,"chars":3494,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DT 2-Way Electronic Package.pdf","bytes":2002439,"chars":12692,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DT Bussed Data Feedback Receptacles.pdf","bytes":354256,"chars":2089,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DT Series.pdf","bytes":1182860,"chars":3230,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DTHD Series.pdf","bytes":405359,"chars":542,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DTM Series.pdf","bytes":1441060,"chars":4486,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DTMN Series.pdf","bytes":353860,"chars":578,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch DTP Product Data Sheet.pdf","bytes":350412,"chars":588,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch Electronic Package.pdf","bytes":2002439,"chars":12692,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch HD30-HDP20 Technical Manual.pdf","bytes":4509141,"chars":9551,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch HDP20 Series - Size 18 Shell Brochure.pdf","bytes":1296154,"chars":3054,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Deutsch/Deutsch J1939 3-wire .pdf","bytes":1185731,"chars":10405,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/JAE (VBEA)/auto_il-ag5.pdf","bytes":96197,"chars":2359,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Tyco/DILAX  APC Overview.pdf","bytes":182242,"chars":5305,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516000 Connecteurs Electrique/Tyco/DILAX Stationary People Counting Overview.pdf","bytes":220087,"chars":3868,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/516110 Égalisateur - Vanner/Vanner omvolt_66.pdf","bytes":308054,"chars":39696,"err":0,"hits":{}}
+{"p":"Nova/Manuels des Fournisseurs/L365 Manuel des Fournisseurs Cover.pdf","bytes":222690,"chars":126,"err":0,"hits":{}}
+{"p":"Nova/Rapport de Traçabilité/VRL409.pdf","bytes":20891,"chars":27428,"err":0,"hits":{}}
+{"p":"Nova/Rapport de Traçabilité/VRL830.pdf","bytes":11294,"chars":6398,"err":0,"hits":{}}
+{"p":"Nova/Rapport de Traçabilité/VRL905.pdf","bytes":26683,"chars":38912,"err":0,"hits":{}}
+{"p":"Nova/Rapport de Traçabilité/VRL983.pdf","bytes":14823,"chars":13450,"err":0,"hits":{}}
+{"p":"Nova/Rapport de Traçabilité/VRL984.pdf","bytes":69846,"chars":33716,"err":0,"hits":{}}
+{"p":"Nova/Rapport de Traçabilité/VRLA25.pdf","bytes":9138,"chars":6730,"err":0,"hits":{}}
+{"p":"Nova/Rapport de Traçabilité/VRLA89.pdf","bytes":17144,"chars":33612,"err":0,"hits":{}}
+{"p":"Nova/Rapport de Traçabilité/VRLA90.pdf","bytes":9118,"chars":6727,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PD408616.64.pdf","bytes":39075,"chars":2815,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PD408616.65.PDF","bytes":41197,"chars":2840,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PD408616.97.pdf","bytes":40877,"chars":3021,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL905/Schémas pneumatiques/Layer0_Back_cover_Paper-Lamntd.pdf","bytes":217520,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL905/Schémas pneumatiques/Layer1_Back_Page_Paper.pdf","bytes":245654,"chars":28,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL905/Schémas pneumatiques/Layer2_Acc_trans.pdf","bytes":252702,"chars":168,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL905/Schémas pneumatiques/Layer3_KN_Acc_Trans.pdf","bytes":244892,"chars":221,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL905/Schémas pneumatiques/Layer4_Supply_Trans.pdf","bytes":439893,"chars":366,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL905/Schémas pneumatiques/Layer5_Emrgncy_Trans.pdf","bytes":218954,"chars":212,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL905/Schémas pneumatiques/Layer6_Secdry_Trans.pdf","bytes":222666,"chars":160,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL905/Schémas pneumatiques/Layer7_Primry_Trans.pdf","bytes":301225,"chars":200,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL905/Schémas pneumatiques/Layer8_Front_cover_Paper_Lamntd.pdf","bytes":243732,"chars":28,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Layer0_Back_cover_Paper-Lamntd.pdf","bytes":217520,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Layer1_Back_Page_Paper.pdf","bytes":298794,"chars":153,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Layer2_Acc_trans.pdf","bytes":239158,"chars":184,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Layer3_KN_Acc_Trans.pdf","bytes":273298,"chars":240,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Layer4_Supply_Trans.pdf","bytes":449662,"chars":389,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Layer5_Emrgncy_Trans.pdf","bytes":213100,"chars":213,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Layer6_Secdry_Trans.pdf","bytes":223130,"chars":167,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Layer7_Primry_Trans.pdf","bytes":317236,"chars":224,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Layer8_Front_cover_Paper_Lamntd.pdf","bytes":239091,"chars":28,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL983/Pneumatic_L983.pdf","bytes":1259352,"chars":1562,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/Layer0_Back_cover_Paper-Lamntd.pdf","bytes":217520,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/Layer1_Back_Page_Paper.pdf","bytes":291188,"chars":28,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/Layer2_Acc_trans.pdf","bytes":248380,"chars":203,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/Layer3_KN_Acc_Trans.pdf","bytes":250334,"chars":209,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/Layer4_Supply_Trans.pdf","bytes":449390,"chars":385,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/Layer5_Emrgncy_Trans.pdf","bytes":202694,"chars":218,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/Layer6_Secdry_Trans.pdf","bytes":223473,"chars":160,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/Layer7_Primry_Trans.pdf","bytes":315530,"chars":188,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/Layer8_Front_cover_Paper_Lamntd.pdf","bytes":248154,"chars":28,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDL984/pneumatic_L984.pdf","bytes":1243319,"chars":1382,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Layer0_Back_cover_Paper-Lamntd.pdf","bytes":217520,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Layer1_Back_Page_Paper.pdf","bytes":298577,"chars":153,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Layer2_Acc_trans.pdf","bytes":239158,"chars":184,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Layer3_KN_Acc_Trans.pdf","bytes":273298,"chars":240,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Layer4_Supply_Trans.pdf","bytes":449662,"chars":389,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Layer5_Emrgncy_Trans.pdf","bytes":213100,"chars":213,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Layer6_Secdry_Trans.pdf","bytes":223130,"chars":167,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Layer7_Primry_Trans.pdf","bytes":317236,"chars":224,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Layer8_Front_cover_Paper_Lamntd.pdf","bytes":238741,"chars":28,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA25/Pneumatic_LA25.pdf","bytes":1259468,"chars":1562,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/Layer0_Back_cover_Paper-Lamntd.pdf","bytes":217520,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/Layer1_Back_Page_Paper.pdf","bytes":298457,"chars":153,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/Layer2_Acc_trans.pdf","bytes":239472,"chars":184,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/Layer3_KN_Acc_Trans.pdf","bytes":273823,"chars":240,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/Layer4_Supply_Trans.pdf","bytes":450028,"chars":389,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/Layer5_Emrgncy_Trans.pdf","bytes":271756,"chars":218,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/Layer6_Secdry_Trans.pdf","bytes":223952,"chars":167,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/Layer7_Primry_Trans.pdf","bytes":313125,"chars":224,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/Layer8_Front_cover_Paper_Lamntd.pdf","bytes":239205,"chars":28,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA89/pneumatic_LA89.pdf","bytes":1314230,"chars":1562,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/Layer0_Back_cover_Paper-Lamntd.pdf","bytes":217520,"chars":1,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/Layer1_Back_Page_Paper.pdf","bytes":298481,"chars":153,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/Layer2_Acc_trans.pdf","bytes":239472,"chars":184,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/Layer3_KN_Acc_Trans.pdf","bytes":273823,"chars":240,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/Layer4_Supply_Trans.pdf","bytes":450028,"chars":389,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/Layer5_Emrgncy_Trans.pdf","bytes":271756,"chars":218,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/Layer6_Secdry_Trans.pdf","bytes":223952,"chars":167,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/Layer7_Primry_Trans.pdf","bytes":313125,"chars":224,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/Layer8_Front_cover_Paper_Lamntd.pdf","bytes":251213,"chars":28,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLA90/pneumatic_LA90.pdf","bytes":1314179,"chars":1562,"err":0,"hits":{}}
+{"p":"Nova/Schémas pneumatiques/PDLB90/PD408616117.pdf","bytes":40904,"chars":3053,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/CDW L292 Rev NR.pdf","bytes":10095447,"chars":817597,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/CWD L290 Rev NR.pdf","bytes":10348865,"chars":850291,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/CWD L365 Rev NR.pdf","bytes":10543287,"chars":882918,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/CWD L597 Rev NR.pdf","bytes":8007471,"chars":412319,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/ECL L290 Rev A.pdf","bytes":1867140,"chars":7686,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/ECL L292 Rev A.pdf","bytes":1859511,"chars":7403,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/ECL L365 Rev NR.pdf","bytes":1917764,"chars":7355,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL170 Rev A.pdf","bytes":22516057,"chars":977816,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL171 Rev NR.pdf","bytes":9079724,"chars":819384,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL172 Rev B.pdf","bytes":9282465,"chars":847624,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL203 Rev A.pdf","bytes":21750586,"chars":879262,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL207 Rev NR.pdf","bytes":9050173,"chars":755625,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL227 Rev NR.pdf","bytes":6356341,"chars":365296,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL232 Rev NR.pdf","bytes":9085488,"chars":842867,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL409 Rev A.pdf","bytes":6986188,"chars":364095,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL415 Rev NR.pdf","bytes":6209436,"chars":361919,"err":0,"hits":{}}
+{"p":"Nova/Schémas électrique/EDL462 Rev NR.pdf","bytes":6986462,"chars":366857,"err":0,"hits":{}}

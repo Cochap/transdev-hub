@@ -33,3 +33,5 @@ Also: semantic ranker free plan is 1,000 requests/month; Standard plan USD 1.00 
 
 ## Related
 [[decision-d4-paid-search-tier]] · [[azure-cost-figures]] · [[azure-search-index]] · [[azure-tiers-verified-2026-09-24]]
+
+**Where this sits in the stack:** the service-size layer under everything in [[azure-ai-stack-map]]; the semantic ranker and agentic retrieval are billed on top ([[agentic-retrieval-azure]]).

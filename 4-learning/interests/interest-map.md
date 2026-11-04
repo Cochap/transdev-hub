@@ -13,6 +13,7 @@ Stated 2026-11-04: "deepening my logic around rag". Work link: BOULON (Azure AI 
 - 1.3 Evaluation and failure signals (golden sets, reformulation rate, lineage) `growing` — lexicon: lineage schema
 - 1.4 Chunking, parsing, multimodal manuals `growing` — see `1-boulon/docs/rag-radar/knowledge-web.md`
 - Frontier: why do correct chunks get dropped before the answer? What does "auto" reasoning effort cost on Free/Basic?
+- Wiki field map: `1-boulon/wiki/concepts/rag-field-map.md` (12 concept pages: embeddings, vector database, hybrid search, multimodal retrieval, parsing/OCR, GraphRAG, agentic retrieval, selection gap, context engineering, evaluation, local models)
 - Feeds: `rag-radar` skill (weekly), `1-boulon/docs/rag-radar/knowledge-web.md`
 
 ## 2. AI/ML taxonomy and lexicon `seed`
@@ -28,6 +29,7 @@ Stated 2026-11-04: "orchestrating/hierarchy/architecture/infrastructure best pra
 - 3.2 Agent harness / platform parts (identity, memory, sandbox, schedules) `seed`
 - 3.3 Agent security and sandboxing `seed`
 - 3.4 Skills as packaging (Agent Skills standard, community skill repos) `growing` — this vault's `.claude/skills/`
+- Wiki field maps: `1-boulon/wiki/concepts/agent-architecture-map.md` and `1-boulon/wiki/concepts/azure-ai-stack-map.md` (11 pages: indexer and skillset, integrated vectorization, index projections, Azure agentic retrieval, Copilot Studio orchestration, MCP, orchestration patterns, harness, Agent Skills)
 - Frontier: how should BOULON Phase 1 and Phase 2 split into agents?
 
 ## 4. Project management and continuous improvement `seed`

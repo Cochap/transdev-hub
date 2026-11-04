@@ -18,9 +18,13 @@ sources: [../../../4-learning/interests/interest-map.md, ../../../4-learning/int
 
 **Excluded:** transit and school-bus maintenance industry news (Greg, 2026-11-04).
 
+## Field maps (where each branch lives in the wiki)
+- Branch 1 RAG, and the whole retrieval field: [[rag-field-map]] (embeddings, hybrid search, multimodal retrieval, parsing, GraphRAG, agentic retrieval, selection gap, evaluation, local models)
+- Branches 2-3 vocabulary and architecture: [[agent-architecture-map]] (orchestration patterns, harness, Agent Skills, MCP) and [[azure-ai-stack-map]] (indexer, skillset, vectorization, projections, Copilot Studio orchestration)
+
 ## How it grows
 - A `UserPromptSubmit` hook (`.claude/hooks/interest-capture.js`) catches any stated interest and makes Claude file it the same turn.
 - Each brief adds lexicon terms and new sub-branches.
 
 ## Related
-[[greg-riley]] · [[learning-research-prd-workstream]] · [[boulon]]
+[[greg-riley]] · [[learning-research-prd-workstream]] · [[boulon]] · [[rag-field-map]] · [[azure-ai-stack-map]] · [[agent-architecture-map]]

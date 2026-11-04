@@ -10,3 +10,5 @@ The live chat agent. Model GPT-4.1 (writes the replies). Only knowledge source: 
 
 ## Related
 [[boulon]] · [[henri]]
+
+**Where this sits in the stack:** the Copilot Studio node of [[azure-ai-stack-map]] and the simplest case of [[agent-architecture-map]]; see [[copilot-studio-orchestration]] for orchestrator and specialist options and [[mcp]] for tools.

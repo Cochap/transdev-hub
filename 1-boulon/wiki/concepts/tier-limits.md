@@ -30,3 +30,5 @@ Enrichment limit on Free: 20 transactions per indexer per day; indexer runs capp
 
 ## Related
 [[azure-search-index]] · [[azure-ticket-77048]]
+
+**Where this sits in the stack:** limits that shape the indexer and skillset ([[azure-search-indexer-and-skillset]]); hub [[azure-ai-stack-map]].

@@ -349,3 +349,6 @@ Sep 22, 2026 · maintained by @Greg
 
 ## 2026-11-03 — NEW SCOPE: MVP = school-bus manuals only (Greg)
 After the meeting with Pierre, Seb, Alex, Henri and the new AI consultant: the MVP chatbot is fed ONLY on school-bus manuals and procedures. MVP done = that corpus indexed and answering. Tier 2 work orders for that bus type are optional, at Greg's discretion. Candidate corpus: LION and IC Leeds folders, 45 files, 2,263 pages (Measured); needs Basic (#77048). Details: `1-boulon/docs/mvp-school-bus-2026-11-03.md`. Methodology document to follow, once the transcript is ready.
+
+### 2026-11-04 — MVP bus type locked
+Greg: MVP = ZBB class STANDARD SCHOOL (MIR SCOLAIRE + SCOLAIRE ADAPTÉ, 193 vehicles). MINI SCHOOL and electric LionC excluded. School-bus scan resumed (output now 1-boulon/tests/results/school-scan.jsonl).

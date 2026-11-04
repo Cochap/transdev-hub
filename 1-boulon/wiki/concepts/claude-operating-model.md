@@ -25,3 +25,5 @@ Plain language, click-by-click tutorials with EN+FR labels ([[skill-boulon-greg-
 
 ## Related
 [[skills-catalog]] · [[greg-working-style]] · [[rules-index]]
+
+**Where this sits in the stack:** Claude's own agent harness and orchestration, see [[agent-harness]], [[agent-orchestration-patterns]] and [[agent-architecture-map]].

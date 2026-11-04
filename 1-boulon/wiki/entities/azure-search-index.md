@@ -21,3 +21,5 @@ A v2 rebuild (`1-boulon/rebuild/v2/`) on the paid tier fixes citations (title an
 - Biggest chunk counts: 630, 536, 351, 201, 109, 94. No Orion manual indexed ([[abstention]]).
 - Known defects: torque table flattened ([[torque-tables]]); citations show the index name ([[citation-projection]]); chunking is defaults ([[chunking]]).
 - Superseded: the docs' index name `boulon-pilot-index` (never real). The chunk table sums to 24 files against a stated 23 (recount pending). Library context: [[manuals-library]].
+
+**Where this sits in the stack:** the index node of [[azure-ai-stack-map]]; the pipeline that fills it is [[azure-search-indexer-and-skillset]], with [[integrated-vectorization]], [[index-projections]] and [[agentic-retrieval-azure]] as neighbours.

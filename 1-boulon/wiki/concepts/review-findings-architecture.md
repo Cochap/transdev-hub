@@ -35,3 +35,5 @@ Phase 2 as specialist agents was dropped in favour of one agent plus one index (
 ## Related
 [[review-findings-rag-pipeline]] · [[phase-1-manuals-pilot]]
 See also the seven assumptions it tested: [[assumptions-log]].
+
+**Where this sits in the stack:** review of the design in [[azure-ai-stack-map]]; the orchestrator question is in [[copilot-studio-orchestration]].

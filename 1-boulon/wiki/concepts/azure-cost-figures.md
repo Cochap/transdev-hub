@@ -33,3 +33,5 @@ Per-symptom summaries about USD 10 to 20 one-time; Phase 2 running costs need a 
 
 ## Related
 [[azure-search-tiers]] · [[azure-ticket-77048]] · [[it-request-2026-09-24-azure-search-plan]] · [[pierre-zivec]]
+
+**Where this sits in the stack:** cost lines for the nodes in [[azure-ai-stack-map]]; the reader step is in [[azure-search-indexer-and-skillset]], tool-call credits in [[copilot-studio-orchestration]].
