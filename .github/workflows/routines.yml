@@ -1,0 +1,92 @@
+# TRANSDEV HUB routines, run by GitHub Actions with Greg's Claude subscription.
+# Secret needed: CLAUDE_CODE_OAUTH_TOKEN (from `claude setup-token`).
+# Times are UTC: Toronto EST = UTC-5 (shift by -1h when daylight saving starts in March).
+name: routines
+
+on:
+  schedule:
+    - cron: "15 13 * * 1"     # Mon 08:15 Toronto  -> RAG radar
+    - cron: "30 20 * * 5"     # Fri 15:30 Toronto  -> routine suggester
+    - cron: "10 21 * * 1-5"   # Mon-Fri 16:10 Toronto -> end of day
+  workflow_dispatch:
+    inputs:
+      routine:
+        description: "Routine to run"
+        type: choice
+        options: [rag-radar, end-of-day, routine-recos]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hub-routines
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Pick routine
+        id: pick
+        run: |
+          R="${{ github.event.inputs.routine }}"
+          if [ -z "$R" ]; then
+            case "${{ github.event.schedule }}" in
+              "15 13 * * 1")   R=rag-radar ;;
+              "30 20 * * 5")   R=routine-recos ;;
+              "10 21 * * 1-5") R=end-of-day ;;
+            esac
+          fi
+          echo "routine=$R" >> "$GITHUB_OUTPUT"
+          echo "today=$(TZ=America/Toronto date +%F)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Strip Windows-only hooks for this run
+        run: |
+          jq 'del(.hooks)' .claude/settings.json > /tmp/s.json && cp /tmp/s.json .claude/settings.json
+
+      - name: Load prompt
+        id: prompt
+        run: |
+          {
+            echo "text<<PROMPT_EOF"
+            sed "s/<today>/${{ steps.pick.outputs.today }}/g" ".github/routine-prompts/${{ steps.pick.outputs.routine }}.md"
+            echo "PROMPT_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Run Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: ${{ steps.prompt.outputs.text }}
+          claude_args: >-
+            --model claude-sonnet-5-5
+            --max-turns 200
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Agent,TodoWrite"
+
+      - name: Commit and push to main
+        if: always()
+        run: |
+          git checkout .claude/settings.json
+          git config user.name "RILEY (routine)"
+          git config user.email "gregory.riley@transdev.ca"
+          git add -A
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "${{ steps.pick.outputs.routine }} ${{ steps.pick.outputs.today }} (GitHub routine)"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && exit 0
+            sleep 10
+          done
+          exit 1
