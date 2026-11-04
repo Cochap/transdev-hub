@@ -1,0 +1,125 @@
+<title>Greg's Morning Brief</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column, four sections (picks, news, lexicon, skills); tables scroll in place */
+:root{--bg:#f6f7f9;--surface:#ffffff;--fg:#1b2230;--muted:#5b6577;--line:#dfe3ea;--accent:#c4122f;--tag:#e9edf4;
+--display:"Fraunces",Georgia,serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11151c;--surface:#181e28;--fg:#e6e9ef;--muted:#9aa4b5;--line:#2a3240;--accent:#ff5a6e;--tag:#232b38;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11151c;--surface:#181e28;--fg:#e6e9ef;--muted:#9aa4b5;--line:#2a3240;--accent:#ff5a6e;--tag:#232b38;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.6 var(--body)}
+.wrap{max-width:860px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:40px}
+h1{font:600 2.1rem/1.15 var(--display);margin:0;text-wrap:balance}
+h2{font:600 1.35rem/1.2 var(--display);margin:0 0 12px;text-wrap:balance}
+.eyebrow{font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lede{color:var(--muted);max-width:65ch;margin:8px 0 0}
+a{color:var(--accent)}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.pick{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}
+.pick b{display:block;margin-bottom:4px}
+.news{display:grid;gap:14px}
+.item{border-top:1px solid var(--line);padding-top:14px;min-width:0}
+.item h3{font:600 1rem/1.35 var(--body);margin:0}
+.meta{font:.75rem var(--mono);color:var(--muted)}
+.item p{margin:6px 0 0;max-width:68ch}
+.why{color:var(--muted)}
+.term{display:inline-block;background:var(--tag);border-radius:4px;padding:2px 8px;font:.8rem var(--mono);margin-top:6px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{font:500 .72rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td:first-child{font-weight:600;white-space:nowrap}
+.flag{color:var(--muted);font-size:.82rem}
+.rec{color:var(--accent);font:500 .75rem var(--mono)}
+</style>
+
+<div class="wrap">
+<header>
+<div class="eyebrow">Brief · Wed 2026-11-04 · window 10-21 → 11-04</div>
+<h1>Greg's Morning Brief</h1>
+<p class="lede">Filtered to your profile: RAG depth, AI/ML lexicon, orchestration and infra practice, plus what today's tasks need (the DIX30 project charter). Every item was opened at its link by the research agents; older items are marked.</p>
+</header>
+
+<section>
+<h2>Three to read first</h2>
+<div class="picks">
+<div class="pick"><b>Retrieval's bottleneck moved to selecting</b>Half of failed answers had the right chunk found, then dropped before the answer. Points at top-k and reranking, not the index. <a href="https://www.kapa.ai/blog/retrieval-bottleneck">kapa.ai, 10-26</a></div>
+<div class="pick"><b>PMI: how to write a project charter</b>The one page you need before drafting the DIX30 charter today. <a href="https://www.pmi.org/blog/project-charter">pmi.org</a></div>
+<div class="pick"><b>Copilot Studio orchestrator + specialists</b>Microsoft's own blueprint for splitting one bot into a router agent and narrow agents, with fallback rules. <a href="https://learn.microsoft.com/en-us/power-platform/architecture/reference-architectures/modernize-hr-support">Microsoft Learn, 10-13</a></div>
+</div>
+</section>
+
+<section>
+<h2>RAG and agent architecture</h2>
+<div class="news">
+<div class="item"><h3><a href="https://www.kapa.ai/blog/retrieval-bottleneck">Retrieval's bottleneck is moving from finding to selecting</a></h3><div class="meta">kapa.ai · 2026-10-26</div>
+<p>34% of correct chunks never reached the answer model. Top-5 → top-10 raised recall 14% but cost precision.</p><p class="why">For BOULON: test the agent's top-k and reranker before blaming the index.</p><span class="term">Selection gap = right chunks retrieved, then dropped before the prompt</span></div>
+
+<div class="item"><h3><a href="https://learn.microsoft.com/azure/search/whats-new">Azure AI Search: agentic retrieval knobs</a></h3><div class="meta">Microsoft Learn · Aug 2026 (older, not in Monday's radar)</div>
+<p>Reasoning effort "auto" (light pass first, LLM query planning only when grounding is weak), per-source reranking, streamed results, citation URLs.</p><p class="why">This is the Azure-side cost vs quality switch for the school-bus MVP.</p><span class="term">Retrieval reasoning effort = how much LLM planning per question</span></div>
+
+<div class="item"><h3><a href="https://arxiv.org/abs/2610.30423">When agentic retrieval fails silently (LARA)</a></h3><div class="meta">arXiv · 2026-10-21</div>
+<p>Score retrieval, engagement and outcome separately; users rephrase 44% of the time when answers are weak.</p><p class="why">Counting rephrased questions in Copilot Studio transcripts is a free failure signal.</p><span class="term">Lineage schema = IDs tying an outcome to the retrieval that caused it</span></div>
+
+<div class="item"><h3><a href="https://arxiv.org/abs/2610.36444">RouteDRAG: when to run the full agent</a></h3><div class="meta">arXiv · 2026-10-27</div>
+<p>A small router sends easy questions down a short path and only the hard ones through the agent loop; better scores, fewer calls.</p><p class="why">Argues against multi-step retrieval on every question.</p><span class="term">Adaptive routing = a classifier picks heavy or light path per query</span></div>
+
+<div class="item"><h3><a href="https://learn.microsoft.com/en-us/power-platform/architecture/reference-architectures/modernize-hr-support">Copilot Studio multi-agent reference architecture</a></h3><div class="meta">Microsoft Learn · 2026-10-13 (just before window)</div>
+<p>Orchestrator classifies, routes to five specialists, owns out-of-scope and fallback; actions run as the signed-in user.</p><p class="why">The shape for Phase 1 (manuals) + Phase 2 (diagnosis) as separate agents.</p><span class="term">On-behalf-of = calls run with the user's own permissions</span></div>
+
+<div class="item"><h3><a href="https://langchain.com/blog/context-engineering-starts-with-retrieval">Context engineering starts with retrieval</a></h3><div class="meta">LangChain · 2026-10-23</div>
+<p>Search before reading; offload big results to files and pass pointers; treat retrieved text as untrusted.</p><span class="term">Offloading = store big output outside the prompt, pass a pointer</span></div>
+
+<div class="item"><h3><a href="https://langchain.com/blog/components-building-company-harness">Five parts of a company agent harness</a></h3><div class="meta">LangChain · 2026-10-24</div>
+<p>Channel, identity, memory, sandboxed code, schedules. Identity and UX were the hardest.</p><span class="term">Ambient agent = triggered by events or a schedule, not a message</span></div>
+
+<div class="item"><h3><a href="https://langchain.com/blog/managed-deep-agents-browser-use-and-asynchronous-subagents">Async subagents</a></h3><div class="meta">LangChain · 2026-10-29</div>
+<p>Subagents run in the background; the parent starts, checks or cancels them. Same pattern this session used for today's research.</p><span class="term">Asynchronous subagent = a worker the parent doesn't wait on</span></div>
+
+<div class="item"><h3><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation">Agent Skills move to the Linux Foundation</a></h3><div class="meta">Anthropic · 2026-10-22</div>
+<p>SKILL.md becomes an open standard, adopted by 70+ platforms. Copilot Studio support not stated.</p><span class="term">Agent Skill = a folder of instructions loaded only when needed</span></div>
+</div>
+</section>
+
+<section>
+<h2>Project charter lexicon (for the DIX30 work)</h2>
+<p class="lede">You write a <b>charte de projet</b> right after a kickoff: short, high-level, signed by the sponsor. The detailed <b>énoncé de la portée</b> comes after, in planning. French terms are common Quebec usage; the OQLF dictionary does not confirm most of them.</p>
+<div class="scroll"><table>
+<tr><th>English</th><th>Français</th><th>Plain meaning</th></tr>
+<tr><td>Project charter</td><td>charte de projet</td><td>Authorizes the project and names the PM; signed by the sponsor</td></tr>
+<tr><td>Sponsor</td><td>commanditaire</td><td>The person who authorizes and funds it</td></tr>
+<tr><td>Scope statement</td><td>énoncé de la portée</td><td>Detailed in / out list, written after the charter</td></tr>
+<tr><td>In / out of scope</td><td>dans / hors portée</td><td>The fence that stops scope creep</td></tr>
+<tr><td>Deliverable</td><td>livrable</td><td>A concrete result handed over</td></tr>
+<tr><td>Milestone</td><td>jalon</td><td>Key checkpoint date with an owner</td></tr>
+<tr><td>Assumption / constraint</td><td>hypothèse / contrainte</td><td>Taken as true / a hard limit (time, money, people)</td></tr>
+<tr><td>Stakeholder register</td><td>registre des parties prenantes</td><td>Who is affected, their role and interest</td></tr>
+<tr><td>RACI</td><td>matrice RACI</td><td>Per task: who does, who owns, who is consulted, who is told</td></tr>
+<tr><td>WBS</td><td>structure de répartition du travail</td><td>All the work broken into small packages</td></tr>
+<tr><td>Risk register</td><td>registre des risques</td><td>Running list of risks and responses</td></tr>
+<tr><td>SMART objective</td><td>objectif SMART</td><td>Specific, measurable, achievable, relevant, dated</td></tr>
+<tr><td>KPI / baseline</td><td>ICP / situation de référence</td><td>The measure, and its value before you change anything</td></tr>
+<tr><td>Change control</td><td>gestion des changements</td><td>Formal yes/no on scope changes</td></tr>
+<tr><td>A3</td><td>rapport A3</td><td>Lean one-pager: problem, analysis, countermeasures, plan</td></tr>
+<tr><td>SIPOC</td><td>SIPOC</td><td>Suppliers, inputs, process, outputs, customers on one line</td></tr>
+<tr><td>DMAIC</td><td>DMAIC</td><td>Define, measure, analyze, improve, control; charter lives in Define</td></tr>
+<tr><td>PDCA</td><td>PDCA (roue de Deming)</td><td>Plan, do, check, act: test small, then adopt</td></tr>
+<tr><td>Gemba / kaizen</td><td>terrain / amélioration continue</td><td>Go see the real work / improve it in small steps</td></tr>
+<tr><td>Lessons learned</td><td>leçons apprises</td><td>What the team learned, captured at closing</td></tr>
+</table></div>
+<p class="flag">Charter headings to use today: title and version · problem · SMART objectives with KPIs · in/out of scope · deliverables · stakeholders and roles · assumptions and constraints · milestones · top risks · budget · sponsor approval. Choose an A3 instead only for a small single-problem improvement. Read: <a href="https://asq.org/quality-resources/dmaic">ASQ DMAIC</a>, <a href="https://www.lean.org/the-lean-post/articles/understanding-the-many-facets-of-the-a3/">LEI on the A3</a>.</p>
+</section>
+
+<section>
+<h2>Community skills to plug in</h2>
+<div class="scroll"><table>
+<tr><th>Repo</th><th>What it gives you</th><th>Locked-PC check</th></tr>
+<tr><td><a href="https://github.com/microsoft/skills">microsoft/skills</a></td><td><span class="rec">BOULON pick</span> Azure AI Search SDK skills, Foundry knowledge bases, M365 agents · 3.2k★ · MIT</td><td class="flag">Work in progress; review its bundled MCP configs first</td></tr>
+<tr><td><a href="https://github.com/microsoft/azure-skills">microsoft/azure-skills</a></td><td>Official Azure plugin: 28 skills + Azure MCP (deploy, cost, diagnostics) · 1.6k★ · MIT</td><td class="flag">Needs Node and <code>az login</code>; turn telemetry off</td></tr>
+<tr><td><a href="https://github.com/mvanhorn/last30days-skill">last30days</a></td><td><span class="rec">Already installed</span> Reddit, HN, GitHub, arXiv, X in one ranked brief · 66.6k★</td><td class="flag">X and Perplexity need keys; free sources work</td></tr>
+<tr><td><a href="https://github.com/camilleroux/tech-digest">tech-digest</a></td><td><span class="rec">Briefing pick</span> HN + any RSS feeds you list, scored, daily digest · MIT</td><td class="flag">Safest: no keys, standard Python only</td></tr>
+<tr><td><a href="https://github.com/draco-agent/tech-news-digest">tech-news-digest</a></td><td>216 ready sources (RSS, X, GitHub) scored into a digest · MIT</td><td class="flag">Built for OpenClaw; Claude install not verified</td></tr>
+</table></div>
+<p class="flag">Rising on GitHub this week: <a href="https://github.com/thedotmack/claude-mem">claude-mem</a> (agent memory over hybrid search, +8k★), <a href="https://github.com/NVIDIA/OpenShell">NVIDIA OpenShell</a> (sandboxed agent runtime), <a href="https://github.com/google-research/harness2">harness2</a> (tunes prompts and tools around a fixed model, a method for the golden set).</p>
+</section>
+</div>
