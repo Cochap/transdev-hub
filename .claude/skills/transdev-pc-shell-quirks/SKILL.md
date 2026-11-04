@@ -29,6 +29,11 @@ Ordinary commands fail or hang here for machine-specific reasons, and each one c
 
 Never print keys while diagnosing. Show only length, key names, or HTTP status.
 
+## Added 2026-11-04 (VoiceStudio runtime setup)
+- `uv` fails with `invalid peer certificate: UnknownIssuer`: uv uses its own Mozilla roots, not the Windows store. Set `UV_SYSTEM_CERTS=1`.
+- VoiceStudio region "auto" checks `github.com` with Node `fetch`. That check fails here because of TLS inspection, so the app thinks the network is "restricted" and switches to the `gh-proxy.com` China mirror. Override with `UV_PYTHON_INSTALL_MIRROR=https://github.com/astral-sh/python-build-standalone/releases/download`.
+- Fix used: launch `C:\Users\rilg01\AppData\Local\Programs\VoiceStudio\VoiceStudio.exe` with both variables set for that process only. Setup resumes on its own and the backend reports healthy on :3900.
+
 ## When to Use
 Any failing or hanging shell, network or scripted file edit on this PC, before retrying the same command.
 

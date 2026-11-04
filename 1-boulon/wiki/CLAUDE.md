@@ -34,7 +34,7 @@ Then: a one-paragraph plain-language summary, details, a **Related** section of 
 
 ## Rules of the wiki
 - **Plain language first.** Explain any technical term in the same page the first time it appears (Greg's standing rule).
-- **Cite.** Every factual claim names its raw source (path in `sources:` frontmatter or inline). No source → mark `(unverified)`.
+- **Cite the ORIGINAL source (Greg, 2026-11-04: "ALWAYS"). Every factual claim links the original article, repo, doc URL or raw file path inline, never only a summary page. Every factual claim names its raw source (path in `sources:` frontmatter or inline). No source → mark `(unverified)`.
 - **Never invent.** Do not add legal, privacy, compliance, approval or IT-process requirements unless Greg or a named Transdev person stated them, or an official source is cited. (Greg's correction, 2026-09-29.)
 - **Keys and secrets never go in the wiki.**
 - **Contradictions:** never silently overwrite. Keep the newer fact, move the old one to a "Superseded" line with its date and source, and list it in `open-questions.md` if unresolved.

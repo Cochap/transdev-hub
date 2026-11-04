@@ -3,6 +3,10 @@ Start here in a new session. The map is [CLAUDE.md](CLAUDE.md); truth is [1-boul
 
 **All hand-offs in one table: [5-brain/handoffs/INDEX.md](5-brain/handoffs/INDEX.md).** Tomorrow's briefing: [5-brain/handoffs/2026-11-03-eod-handoff.md](5-brain/handoffs/2026-11-03-eod-handoff.md). Digest: [5-brain/logs/eod/2026-11-03/_digest.md](5-brain/logs/eod/2026-11-03/_digest.md). Week list: [5-brain/ideas/2026-W45-ideas-and-tasks.md](5-brain/ideas/2026-W45-ideas-and-tasks.md). No activity today: ZBB, Daily Digest, Learning, Workshop ID card.
 
+## Added 2026-11-04 (session "Claude Code explain what went wrong")
+- **VoiceStudio:** runtime setup fixed, backend healthy on :3900. The fix (Windows certificates + direct GitHub) applied to one launch only. Recipe: skill `transdev-pc-shell-quirks`.
+- **Waiting on Greg:** yes/no on making `UV_SYSTEM_CERTS=1` permanent (user env var, no admin needed). Model downloads not tested yet.
+
 ## Where we are (2026-11-03)
 - **BOULON, NEW SCOPE:** MVP = school-bus manuals only (MIR type 15 SCOLAIRE; LionC out; SharePoint only). Text scan of 2,976 PDFs running; final file list not named yet. Plan: replace the Free index with what fits (50 MB), the rest when Basic (#77048) lands. File: [1-boulon/docs/mvp-school-bus-2026-11-03.md](1-boulon/docs/mvp-school-bus-2026-11-03.md).
 - **DIX30 meeting:** French transcription running since 15:17 (Whisper turbo, CPU). Output `2-projects/transcripts/`. Then notes, project charter and the methodology document.
