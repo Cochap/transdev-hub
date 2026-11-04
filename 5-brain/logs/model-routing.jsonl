@@ -485,3 +485,4 @@
 {"ts":"2026-11-04T09:46:02","skill":"schedule","mode":"routed","tier":"sonnet","model":"openai/gpt-6.1-sol","ms":4018,"cost_usd":0.000186,"reason":"jev-router picked openai/gpt-6.1-sol (size before floor: sonnet)"}
 {"ts":"2026-11-04T11:41:30","skill":"transdev-pc-shell-quirks","mode":"pinned","tier":"haiku","model":null,"ms":51,"cost_usd":0,"reason":"fixed-step skill, pinned to smallest size"}
 {"ts":"2026-11-04T11:43:47","skill":"voicestudio","mode":"routed","tier":"sonnet","model":"openai/gpt-6.1-sol","ms":4830,"cost_usd":0.000192,"reason":"jev-router picked openai/gpt-6.1-sol (size before floor: sonnet)"}
+{"ts":"2026-11-04T14:42:49","skill":"boulon-skill-finder","mode":"pinned","tier":"haiku","model":null,"ms":66,"cost_usd":0,"reason":"fixed-step skill, pinned to smallest size"}
