@@ -1,0 +1,11 @@
+# Scholar buses chatbot MVP — C--TRANSDEV-HUB — C:\TRANSDEV HUB
+session be1ed6ea-8ff9-4ce9-ac1d-950afbe42252
+
+[09:34] GREG: <task-notification>
+<task-id>b1hy9aze4</task-id>
+<task-id>b2lgq9no5</task-id>
+<task-id>__orphan_summary__:shell</task-id>
+<status>stopped</status>
+<summary>2 background shell command tasks didn't finish before the previous session ended. Task ids: b1hy9aze4, b2lgq9no5.</summary>
+<note>No completion record was found for them in the previous session. They may have been stopped (via the UI, Monitor timeout, or agent teardown — these leave no transcript marker), or they may have been running when the previous Claude Code process exited. They have been marked stopped. Task ids in this notification beginning with "__orphan_summary" are internal scan markers, not tasks.</note>
+</task-notification>
