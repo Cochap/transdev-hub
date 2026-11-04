@@ -18,3 +18,5 @@ Contrast: Karpathy's LLM Wiki (this wiki) compiles knowledge once in advance; RA
 - Not chosen: a knowledge graph (too costly to build) and fine-tuning (poor for exact numbers; redo every revision) ([[rag-plan-reference]]).
 - Nothing removes hallucination completely; the design target is cited answers or an honest refusal ([[abstention]]).
 - Building blocks explained for Henri: [[explainer-for-henri]]. Key parts: [[chunking]], [[semantic-reranker]], [[citation-projection]], [[torque-tables]].
+
+See also in the field: [[rag-field-map]] (the whole retrieval field as a tree) · [[embeddings]] · [[hybrid-search]] · [[agentic-retrieval]] · [[rag-evaluation]] · [[greg-interest-map]]

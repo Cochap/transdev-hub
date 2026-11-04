@@ -19,3 +19,5 @@ Plain words: a 600-page manual is too big to hand to an AI whole, so it is broke
 
 ## Related
 [[torque-tables]] · [[citation-projection]]
+
+See also in the field: [[rag-field-map]] · [[document-parsing-and-ocr]] (how pages become text and tables before chunking) · [[retrieval-selection-gap]] · [[greg-interest-map]]

@@ -24,7 +24,9 @@ Never include topics the map marks excluded (transit / school-bus industry news)
 6. **File back (required).**
    - Append new terms to `4-learning/interests/lexicon-ai-ml.md` or `lexicon-project-management.md` (or create `lexicon-<branch>.md` for a new branch). Update a line instead of duplicating.
    - Update `interest-map.md`: new sub-branches as `seed`, bump status, refresh frontier questions, add a row to "Briefs that grew this map".
-   - Wiki: refresh `1-boulon/wiki/concepts/greg-interest-map.md` if branches changed; append to `1-boulon/wiki/log.md`.
+   - **Promote high-signal terms to the wiki** (rules in `1-boulon/wiki/CLAUDE.md`). A term is high-signal when ANY holds: it appears in 2+ independent sources (this run or earlier briefs / rag-radar runs / research docs), it changes a BOULON setting or decision, or it opens a new sub-branch. Then create or update `1-boulon/wiki/concepts/<term>.md`: definition **as the sources define it** (cite each URL; never Greg's or Claude's guess), how it shows up in BOULON, tools that implement it, "Go deeper" links, and Related links to its hub (`rag-field-map`, `azure-ai-stack-map` or `agent-architecture-map`), its siblings, and `greg-interest-map`. Each new source item that changes an existing concept updates that page (newer fact wins; old one goes to "Superseded" with date). Add the page to its hub tree and to `index.md`.
+   - Low-signal terms stay in the lexicon only, with a `wiki: —` marker; promote them later when a second source mentions them.
+   - Refresh `1-boulon/wiki/concepts/greg-interest-map.md` if branches changed; append every page touched to `1-boulon/wiki/log.md`.
    - Run `node 5-brain/scripts/brain.js build` then `audit`.
 7. **Reply.** Link, the 3 reads, branches that grew, terms added. End with summary + next actions.
 

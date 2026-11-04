@@ -17,3 +17,5 @@ A fixed list of questions with known right answers, rerun after every index or a
 - Golden v1 on 2026-09-24: G11 (torque table structure) and G12 (citation fields) are skipped until v2; L1 to L3 (legacy Valeo part rows) must pass once the full library is loaded.
 - Retest 2026-09-24 13:38 after test-script fixes: T1 to T3 PASS; keyword 30/41, hybrid 36/41, semantic 41/41, 0 errors.
 - Why semantic matters: [[semantic-reranker]]. Pass rules: [[abstention]], [[citation-projection]], [[torque-tables]].
+
+See also in the field: [[rag-evaluation]] (graders, abstention scoring, numeric checks) · [[rag-field-map]] · [[greg-interest-map]]

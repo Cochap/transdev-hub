@@ -20,3 +20,5 @@ Whether Copilot Studio actually uses the re-ranker is unverified; the check was 
 
 ## Related
 [[azure-search-index]] · [[tier-limits]]
+
+See also in the field: [[hybrid-search]] (keyword, vector and reranking together, other rerankers) · [[retrieval-selection-gap]] · [[rag-field-map]] · [[greg-interest-map]]

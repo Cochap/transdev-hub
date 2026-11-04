@@ -19,3 +19,5 @@ Plain words: each chunk must carry the name of the manual (and page) it came fro
 
 ## Related
 [[phase-1-manuals-pilot]] · [[chunking]]
+
+See also in the field: [[rag-field-map]] · [[document-parsing-and-ocr]] · [[rag-evaluation]] · [[greg-interest-map]]

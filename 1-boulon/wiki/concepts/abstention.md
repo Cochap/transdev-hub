@@ -21,3 +21,5 @@ Plain words: the AI is not allowed to fill gaps from general knowledge, because 
 
 ## Related
 [[copilot-studio-agent]] · [[rag]]
+
+See also in the field: [[rag-evaluation]] (DeclineCraft: rewriting, reranking and iterative search can lower correct "I don't know") · [[agentic-retrieval]] · [[rag-field-map]] · [[greg-interest-map]]
