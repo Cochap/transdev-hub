@@ -46,3 +46,10 @@ Already in the pilot index: 16 Lion "RP-01-…" procedure sheets (`1-boulon/docs
 - Fleet (VEHICUL.csv, all records): Blue Bird Vision 74, Freightliner/Thomas Saf-T-Liner C2 60, IC PB105 48, IC Leeds 7, Lion 3, Blue Bird TC3000 1.
 - Out: MINI SCHOOL (minibus scolaire), E STANDARD SCHOOL (LionC electric).
 - A manual is in scope when its text names one of these makes/models or a component fitted to them (scan `1-boulon/tests/results/school-scan.jsonl`).
+
+## Scan result 2026-11-04 15:45 (source: `1-boulon/tests/results/school-scan.jsonl`, 2,976 PDFs, 15 unreadable)
+- Only ONE SharePoint manual is a STANDARD SCHOOL vehicle manual: `IC Leeds/IC bus 2016-2024.pdf` (names PB105; 2,938k text chars, about 1,567 pages, PDF 46 MB per the 2026-10-06 measure).
+- No Blue Bird, Thomas or Freightliner Saf-T-Liner C2 vehicle manual is in SharePoint (they are on the makers' portals, as the guides in `Manuels\Aide recherche information technique autobus\` say). Those makes are 135 of the 193 STANDARD SCHOOL vehicles.
+- The 22 other hits are generic component manuals (Bendix, Meritor, Ricon, Proheat, Sportworks) that mention "school bus" or "Blue Bird" once or twice; they are not school-bus manuals.
+- Scan pattern flaws to fix next run: "IC Bus" also matches "electrIC BUS" (52 files), "Vision" matches the word vision (122 files).
+- Index estimate (Estimate, pilot rate 87 KB/page): IC Leeds manual alone about 136 MB, so it does not fit the 50 MB Free index. A Free-tier sample would be about 570 pages (chosen chapters).
