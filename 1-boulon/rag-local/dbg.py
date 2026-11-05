@@ -1,3 +1,3 @@
 from rag import *; e=Engine(load_pages())
-for q in ["Dans quel bloc et quelle position est le relais du bras d'arrêt (stop arm) sur le panneau électrique?",'calibre du fusible des feux de détresse','fuse ratting for hazzard lights']:
-  print(expand_query(q)); a=e.answer(q,mode='bm25'); print('->',a['status'],a.get('route'),a.get('rows',[])[:3])
+for q in ["Which circuit is on cavity 1 of connector 10175?","Quel fil sur la cavité 3 du connecteur 10177?"]:
+    a=e.answer(q,mode='bm25'); print(q); [print('  ',r) for r in a['rows'][:4]]; print('  cite:',a['citation'][:160])

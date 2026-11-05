@@ -37,6 +37,22 @@ def page_record(d,i):
     chap=int(m.group(1)) if m else None
     fig=re.search(r'Figure (\d+)\s+(.*)',raw); printed=L[-1] if L and L[-1].isdigit() else None
     tabs=extract(p)
+    # bind each table to its own connector label: nearest '(#####)' word left of / above the table top
+    W=p.get_text('words'); LAB=[w for w in W if re.fullmatch(r'[@%#&*!^]*\(?\d{5}[A-Z]?\)?',w[4]) and '(' in w[4]]
+    for t in tabs:
+        x0,y0,x1,y1=t['bbox']
+        def hd(w):
+            c=(w[0]+w[2])/2
+            return 0 if x0-10<=c<=x1+10 else (x0-c if c<x0 else 1e9)
+        cand=[w for w in LAB if w[1]<=y0+40 and w[1]>=y0-320 and hd(w)<260]
+        if cand:
+            lab=min(cand,key=lambda w:hd(w)*0.6+abs(w[1]-y0))
+            cid=re.search(r'\d{5}[A-Z]?',lab[4]).group(0)
+            above=[w for w in W if abs((w[0]+w[2])/2-(lab[0]+lab[2])/2)<90 and lab[1]-30<=w[1]<lab[1]-1]
+            name=' '.join(w[4] for w in sorted(above,key=lambda w:(round(w[1]),w[0])))[:80]
+            if 'RESTRICTED' in name or 'NAVISTAR' in name: name=''
+            loc=' '.join(w[4] for w in W if abs((w[0]+w[2])/2-(lab[0]+lab[2])/2)<110 and lab[3]<w[1]<=lab[3]+22)[:90]
+            t['connector']=cid; t['md']=f'Connector {cid}: {name} {loc}'.strip()+chr(10)+t['md']
     comps=sorted(set(re.sub(r'\s+',' ',x) for x in re.findall(r'([A-Z][A-Z0-9 /&.-]{2,40})\s*\n?\((\d{4,5}[A-Z]?[^)]*)\)',raw) and [f'{a.strip()} ({b})' for a,b in re.findall(r'([A-Z][A-Z0-9/&.\- ]{2,40})\n\((\d{4,5}[A-Z]?[^)\n]*)\)',raw)]))
     body='\n'.join(l for l in L if l not in BOILER)
     flat=re.sub(r'\n',' ',body)

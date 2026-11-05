@@ -62,8 +62,15 @@ def extract(p):
                 if rh is None and not innotes: rh=gap
                 if gap>max(rh or 8,6)*2.6: break
                 txt=' '.join(w[4] for w in ins)
-                if innotes or ins[0][4].startswith(NOTE) or txt.startswith(('NOTE','AND ','W/','N/')) or (cols[0]=='CAV' and not CAVRE.match(ins[0][4]) and ins[0][4] not in ('-','–')):
-                    innotes=True; notes.append(txt); lasty=r2['yc']
+                wide=[w for w in r2['w'] if left-40<=w[0]<=(nxt-3 if nxt else g[-1][2]+320)]
+                cut=[wide[0]] if wide else []
+                for w in wide[1:]:
+                    if w[0]-cut[-1][2]>25: break
+                    cut.append(w)
+                wide=cut or ins
+                wtxt=' '.join(w[4] for w in wide)
+                if innotes or wide[0][4].startswith(NOTE) or ins[0][4].startswith(NOTE) or wtxt.startswith(('NOTE','AND ','W/','N/')) or (cols[0]=='CAV' and not CAVRE.match(ins[0][4]) and ins[0][4] not in ('-','–')):
+                    innotes=True; notes.append(wtxt); lasty=r2['yc']
                     if len(notes)>8: break
                     continue
                 if not body and cols[0]=='CAV' and not CAVRE.match(ins[0][4]): continue

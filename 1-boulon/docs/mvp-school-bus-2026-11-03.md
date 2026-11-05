@@ -65,3 +65,28 @@ Already in the pilot index: 16 Lion "RP-01-…" procedure sheets (`1-boulon/docs
 - **$0 path with page citations (verified on Microsoft Learn 2026-11-05):** in Copilot Studio, Add knowledge > **SharePoint** > Browse items (the "Upload files > SharePoint" path). The file is copied into Dataverse, up to 512 MB per file, and "PDFs added through this path support page-level citations" (https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-unstructured-data). No Azure needed. It uses Dataverse storage and Copilot credits (already in brief 551). Document libraries are not supported; single files and folders are. Sensitivity-labelled PDFs show "Ready" but never answer.
 - **Fallback:** direct file upload (512 MB, document-level citations only).
 - **IC file content (opened 2026-11-05):** `IC Leeds/IC bus 2016-2024.pdf` is the **"MY 2016-2024 IC Bus BE / CE Series and Electric CE Bus — Electrical Circuit Diagram Manual"**, revision 7, March 2024, 1,567 pages, 45.9 MB, not encrypted. It is circuit diagrams, fuse and relay charts, not a full service manual. Demo questions must be electrical: fuses, relays, circuit numbers, wire colours, connector locations. The mapping of MIR "IC PB105" to the BE/CE series is not checked.
+
+## 2026-11-05 pivot: Azure-free multimodal pipeline
+**Why.** The $0 fallback above (Copilot Studio knowledge from SharePoint/Dataverse) is text-only RAG. The maintenance documents are rich (tables, diagrams), so it cannot meet the multimodal MVP requirement (raised by Greg, agreed). The target architecture (layout extraction + image verbalization + Azure AI Search) does not change. The Azure subscription is still Disabled and needs a payment method (Pierre).
+
+**What was built (code: `1-boulon/rag-local/`).** Local, offline, deterministic ingestion of the IC BE/CE Electrical Circuit Diagram Manual (1,567 pages, vector drawings, no scanned images), about 2 min on laptop CPU:
+- Tables rebuilt from word coordinates + PDF ruling lines, merged cells filled, option-marker legends attached: 1,529 tables, ~12,600 rows; 777 bound to their own connector ID.
+- Fuse/relay charts (sheets 2.24-2.34, PDF p.64-74) captured after a gap was found (the first "100% fuse" score covered a tiny slice).
+- Relay-panel graphic (p.64) verbalized spatially: 36/36 slots correct vs the rendered image.
+- Diagram pages: components (name + ID), wires (circuit + gauge/colour), sheet cross-refs CHx_y.
+- Independent poppler `pdftotext -layout` text per page as a fallback chunk.
+
+**Reference engine (`rag.py`).** BM25 code-aware + title boost + RRF with multilingual embeddings; structured routes that add rows (connector+cavity, fuse chart, relay slot); FR-EN glossary; scope guard (other makes abstain, which answers the "Thomas 2016 page 712" case honestly); injection refusal; out-of-domain gate only when no electrical term; value-evidence gate; citations = section + printed page + PDF page.
+
+**Results (honest).**
+| Test | Result | Caveat |
+|---|---|---|
+| Self-generated golden (190 q, EN/FR) | 98% answer rows, 10/10 abstain | Built from our own extraction: self-consistency only |
+| Fidelity vs poppler | 95.6% row agreement | Weak: "GAUGE" connector tables ~67%, some fuse-description tables (partly poppler layout splits); visual review ongoing |
+| Blind set (45 q, 21 FR / 24 EN, from page images only) | 53% untuned -> 82% | Odd ids dev, even ids held out, reported once at the end |
+| Must-answer (electrical words like oil/pressure/bypass) | false refusals 5/15 -> 1/15 | Known leak: one refuse case (sensor ohms) answered |
+| Latency | 5-100 ms per question | Engine only, no LLM generation |
+
+**Scale path.** The same per-page enriched output (tables as markdown, verbalized graphics) feeds (a) Copilot Studio knowledge files now, (b) Azure AI Search when the subscription is reactivated, (c) the GB10 128 GB machine for a local vision model on the remaining pure-graphic pages.
+
+**Open.** Answer generation (LLM) in Copilot Studio not tested end-to-end; IC PB105 <-> BE/CE mapping unverified; Saint-Jean test day with Mario's team and senior validation (D4) to schedule. Formal plan: `plan-projet-boulon-poc-scolaire-v1.1.docx` (decision D7).

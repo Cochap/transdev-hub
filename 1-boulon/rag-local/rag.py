@@ -180,7 +180,7 @@ class Engine:
             seen.add(part); rows.append(f"{part}  [PDF p.{p}]")
             if len(rows) >= 4: break
         rrows = [x for r_ in routes for x in r_['rows']]
-        rows = list(dict.fromkeys(rrows + rows))[:8]
+        rows = [self.annotate(x) for x in list(dict.fromkeys(rrows + rows))[:8]]
         top = hits[0]; r = self.pages[top['pdf_page']]
         cite = f"{MANUAL}, §{r['section']} « {r['title']} », page imprimée {r['printed_page']} (PDF p. {r['pdf_page']})"
         return dict(status="answer", rows=rows, citation=cite, hits=hits, route="+".join(r_['route'] for r_ in routes) or None)
@@ -188,6 +188,22 @@ class Engine:
     UNITS = {"ohm": r"\d\s*(?:OHMS?|Ω|K?OHM)", "ohms": r"\d\s*(?:OHMS?|Ω)", "résistance": r"\d\s*(?:OHMS?|Ω)", "resistance": r"\d\s*(?:OHMS?|Ω)",
              "volt": r"\d\s*V(?:OLTS?|DC)?\b", "volts": r"\d\s*V(?:OLTS?|DC)?\b", "voltage": r"\d\s*V(?:OLTS?|DC)?\b", "tension": r"\d\s*V(?:OLTS?|DC)?\b",
              "°c": r"\d\s*°?\s*C\b", "degrees": r"\d\s*°"}
+    def annotate(self, row):
+        """Variant rows: append the legend meaning of the option marker(s) in the first cell (e.g. '1!' -> '! = W/ADDITIONAL BACK UP LT...')."""
+        m = re.search(r"\[PDF p\.(\d+)\]", row)
+        if not m or not row.startswith("|"): return row
+        first = row.strip("|").split("|")[0].strip(); mk = re.sub(r"^[A-Z]{0,2}\d{0,3}[A-Z]?", "", first)
+        if not mk: return row
+        body = row[:m.start()].strip()
+        for (p, kind, txt) in self.chunks:
+            if p != int(m.group(1)) or kind != "table" or body not in txt: continue
+            leg = next((l for l in txt.split(chr(10)) if l.startswith("Legend:")), "")
+            items = [s.strip() for s in leg[len("Legend:"):].split(" ; ")]
+            hit = [s for s in items if s.split(" ")[0] == mk]
+            if hit: return f"{row}  (option {mk} = {hit[0][len(mk):].strip()})"
+            return f"{row}  (option {mk}: see legend under the table)"
+        return row
+
     def unit_evidence(self, q, hits, routes):
         """Value questions (ohms, volts, temperatures): the unit must be printed near a query term in retrieved context; else abstain."""
         ql = q.lower(); need = [rx for u, rx in self.UNITS.items() if re.search(r"(?<![a-zà-ÿ])" + re.escape(u) + r"(?![a-zà-ÿ])", ql)]
@@ -210,7 +226,10 @@ class Engine:
         for (p, kind, txt) in self.chunks:
             if kind != "table": continue
             title = self.pages[p]['title']
-            if not any(i in title for i in ids) or "CONNECTOR" not in title.upper(): continue
+            cm = re.search(r"^Connector (\d{5})[A-Z]?:", txt, re.M)   # table bound to its own connector label
+            if cm:
+                if cm.group(1) not in ids: continue
+            elif not any(i in title for i in ids) or "CONNECTOR" not in title.upper(): continue
             for line in txt.split(chr(10)):
                 if not line.startswith("|") or line.startswith("|---") or line.startswith("| CAV"): continue
                 cells = [c.strip() for c in line.strip("|").split("|")]
