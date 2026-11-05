@@ -217,28 +217,29 @@ details summary{cursor:pointer;font-weight:600;color:var(--muted)}
 
 /* ===== Claude updates this block after every exchange ===== */
 const S = {
-  "updated": "Tue 2026-11-03 · 16:35 (end of day)",
-  "headline": "New BOULON scope: the MVP chatbot reads only school-bus manuals (MIR type 15). The DIX30 meeting is being transcribed in French; notes and the project charter come next. Segmentation: one guided workbook with medal thresholds set; the Pierre message is yours to send.",
+  "updated": "Wed 2026-11-04 · 17:20 (end of day)",
+  "headline": "BOULON MVP is now one bus class, STANDARD SCHOOL (193 buses). The scan found one complete manual in SharePoint (IC, ~136 MB, too big for Free), and the Azure subscription is Disabled, so the MVP waits on your subscription choice. The hub is on private GitHub; cloud routines need your Claude token.",
   "progress": {
     "label": "From-zero segment + medal proposal for the next call: council, system 07, questionnaire, test bench v2, medal example, Pierre's curve data, call prep",
     "done": 5,
     "total": 7
   },
   "move": {
-    "urgency": "Tomorrow morning (Wed 11-04)",
-    "title": "Check the DIX30 transcript finished, then start the notes and the charter",
-    "meta": "Takes 2 minutes. The transcription ran on the PC overnight; Claude does the rest.",
+    "urgency": "Tomorrow morning (Thu 11-05)",
+    "title": "Choose how to bring the Azure subscription back",
+    "meta": "Takes 5 minutes to look. Nothing is paid until you choose. Pierre approves any spend.",
     "steps": [
-      "Open File Explorer and go to C:\\TRANSDEV HUB\\2-projects\\transcripts\\.",
-      "Look for « Quartier DIX30 2.txt ». Open it and check the first lines read as French sentences.",
-      "In Claude, type: resume DIX30 transcription — organize the notes and draft the project charter.",
-      "Then send Pierre the French message from session « Segmentation progress and schedule » in Teams."
+      "Open https://portal.azure.com and sign in with your Transdev account.",
+      "In the top search bar type « Subscriptions » (Abonnements) and open it.",
+      "Click « Azure subscription 1 ». Read the State (État) line: it should say Disabled (Désactivé).",
+      "Open « Overview » (Vue d'ensemble) and note the Offer (Offre) name, e.g. Free Trial or Pay-As-You-Go.",
+      "Tell Claude the Offer name and one choice: A = reactivate this subscription (Pierre approves spend), B = move ticket 77048 to a company subscription."
     ],
-    "paste": "resume DIX30 transcription — organize the notes and draft the project charter",
-    "pasteLabel": "Copy the request for Claude",
-    "pass": "The .txt file exists and reads as French text of the meeting.",
-    "fail": "If the folder is empty, the PC slept or restarted: tell Claude \"rerun DIX30\"; it takes about 1 to 1.5 hours and the model is already downloaded.",
-    "report": "Tell Claude \"transcript is there\" or \"folder empty\"."
+    "paste": "Azure subscription 1 offer is: ___ . My choice: A / B",
+    "pasteLabel": "Copy the answer for Claude",
+    "pass": "You see State = Disabled and an Offer name.",
+    "fail": "If you cannot open the subscription (no access), tell Claude \"no access\"; Claude drafts a French note to Henri.",
+    "report": "Paste the filled line into Claude."
   },
   "decisions": [
     {
@@ -351,7 +352,10 @@ const S = {
     ]
   ],
   "feed": [
-    ["Tue 16:35","End of day (automated, first run with the new lock and short form): 5 sessions read. Routed: digest, timeline, lessons 11-03, ideas W45, CLAUDE.md map rows (school-bus MVP, transcripts, Geotab film), hand-off 11-03, INDEX, RESUME. Audit 0 unrouted, 0 stale, 0 map gaps."],
+    [
+      "Tue 16:35",
+      "End of day (automated, first run with the new lock and short form): 5 sessions read. Routed: digest, timeline, lessons 11-03, ideas W45, CLAUDE.md map rows (school-bus MVP, transcripts, Geotab film), hand-off 11-03, INDEX, RESUME. Audit 0 unrouted, 0 stale, 0 map gaps."
+    ],
     [
       "Mon 17:00",
       "End of day (automated): 6 sessions read. Routed to the hand-off, RESUME, timeline, lessons 11-02, ideas W45, memory (done-means-working, 2nd time), improvements (3 proposals, 3 hop tests at 2 opens or fewer). Audit 0 unrouted, 0 stale, 0 map gaps. Skills used: boulon-end-of-day, boulon-hq-update."
@@ -388,6 +392,10 @@ const S = {
       "Wed 17:15",
       "End of day: 4 work sessions read (helpers: 4 haiku digests). Routed to the hand-off, RESUME, segmentation status and wiki, memory (5 files corrected), decision log, improvements backlog. Audit 0 unrouted, 0 stale, 0 map gaps. Skills used: boulon-end-of-day, boulon-hq-update."
     ],
+    [
+      "Wed 17:20",
+      "End of day: 8 sessions read (3 sonnet helpers; 1 closed session via its digest). Routed: timeline, lessons 11-04, ideas W45 §6, memory (new: no empty replies), continuity log §3, hand-off 2026-11-04, INDEX, RESUME. Audit 0/0/0 after 2 map rows (.git, .github). Flag: D11 segmentation now in the private GitHub repo. Skills used: boulon-end-of-day, boulon-hq-update."
+    ]
   ],
   "today": {
     "date": "2026-11-03",
@@ -458,19 +466,19 @@ const S = {
       "date": "2026-11-03",
       "d": "Tue",
       "outcome": "Send Henri the ID card link + PowerPoint; send Pierre/Gabriel drafts; medal thresholds (Claude).",
-      "state": "now"
+      "state": "done"
     },
     {
       "date": "2026-11-04",
       "d": "Wed",
-      "outcome": "Segmentation: call one-pager in S1/S2/S3 wording; commit results to the private repo.",
-      "state": "next"
+      "outcome": "STANDARD SCHOOL class chosen; scan done (only IC manual); subscription Disabled; hub on GitHub; morning-brief skill + 23 wiki pages.",
+      "state": "done"
     },
     {
       "date": "2026-11-05",
       "d": "Thu",
-      "outcome": "Fold in Henri's logos if received; BOULON custom-grader try on the golden set.",
-      "state": "next"
+      "outcome": "Your choice on the Azure subscription; Claude token as GitHub secret; DIX30 transcript at home.",
+      "state": "now"
     },
     {
       "date": "2026-11-06",
