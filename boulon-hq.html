@@ -217,26 +217,26 @@ details summary{cursor:pointer;font-weight:600;color:var(--muted)}
 
 /* ===== Claude updates this block after every exchange ===== */
 const S = {
-  "updated": "Thu 2026-11-05 · 10:25",
-  "headline": "DIX30 meeting done: transcript, French minutes and the project-plan proposal Dominique asked for are ready for your review. Nothing has been sent. February group presentation is the one firm date; the Azure blocker is the critical path.",
+  "updated": "Thu 2026-11-05 · 11:05",
+  "headline": "BOULON plan rewritten as a formal project plan v1.0 (Word, 11 pages): no minutes, no transcript traces, every plan-driving fact kept. Ready for your read; nothing sent.",
   "progress": {
-    "label": "DIX30: transcript, war room, minutes, plan proposal, review and send",
+    "label": "DIX30: transcript, war room, draft, formal plan v1.0, your review",
     "done": 4,
     "total": 5
   },
   "move": {
     "urgency": "Before noon (Thu 11-05)",
-    "title": "Review the plan proposal, then say who gets it first",
-    "meta": "About 15 minutes. Nothing is sent until you say yes.",
+    "title": "Read the formal plan v1.0",
+    "meta": "About 15 minutes. Close the old draft Word file first.",
     "steps": [
-      "Open C:\\TRANSDEV HUB\\1-boulon\\docs\\proposition-plan-projet-2026-11.docx (Word copy, no internal paths).",
-      "Read section 7 (phases and timing) and section 12 (decisions for Pierre).",
-      "Optional: listen to the flagged timestamps in the minutes (table at the end of 1-boulon\\docs\\meeting-2026-11-03-dix30.md).",
-      "Tell Claude: OK to send, or the changes you want, and who gets it first (Dominique, Henri, or both)."
+      "Close « proposition-plan-projet-2026-11.docx » in Word (old draft, to be deleted).",
+      "Open C:\\TRANSDEV HUB\\1-boulon\\docs\\plan-projet-boulon-poc-scolaire-v1.0.docx.",
+      "Read sections 1 (summary), 8 (schedule) and 12 (decisions).",
+      "Tell Claude what to change, or OK."
     ],
-    "paste": "Plan: OK / changes: ___ . First recipient: Dominique / Henri / both",
+    "paste": "Plan v1.0: OK / changes: ___",
     "pasteLabel": "Copy the answer for Claude",
-    "pass": "The Word file opens and sections 1 to 13 are there.",
+    "pass": "The file opens with a title page, a contents page and 14 sections.",
     "fail": "If the file does not open, tell Claude \"docx broken\"; the .md version is next to it.",
     "report": "Paste the filled line into Claude."
   },
@@ -352,6 +352,10 @@ const S = {
   ],
   "feed": [
     [
+      "Thu 11:05",
+      "Plan rewritten as a formal project plan v1.0 in Word (docx-js, TOC refreshed in Word): document control, RACI, KPIs, schedule from T0, budget, risks, decisions D1-D6. Checked: 0 transcript traces, 44 key facts present. Skill used: docx."
+    ],
+    [
       "Thu 10:25",
       "DIX30 done: faster-whisper turbo on 3 parallel workers (whisper alone stalled 6 h on 11-04); 926 segments, 4 unclear windows re-run at higher accuracy. War room of 3 reviewers (sponsor, method, delivery) plus advisor review. Wrote the French plan proposal + Word copy, minutes, MVP transcript check; 5 brief-551 conflicts logged as proposed changes. Audit 0 unrouted."
     ],
@@ -366,10 +370,6 @@ const S = {
     [
       "Mon PM",
       "Workshop ID card: web app city search fixed and published live on the same link; PowerPoint rebuilt from the OneDrive original (backgrounds, values, French units) and tested EN/FR/print with its macros. Test bench labels renamed. RAG radar run: 13 new, 12 updated. Routine recos: 4 cards. Marketing add-ons listed."
-    ],
-    [
-      "Thu 17:30",
-      "End of day (automated): 9 sessions read (4 Sonnet helper digests). Routed to the hand-off, RESUME, timeline, lessons, segmentation status, continuity log, ideas W44, memory (3 new), improvements (5 proposals). Audit 0 unrouted, 0 map gaps (1 transient Office lock file). Skills used: boulon-end-of-day, boulon-hq-update."
     ]
   ],
   "today": {

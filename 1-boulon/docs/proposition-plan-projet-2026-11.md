@@ -1,4 +1,6 @@
-# BOULON — Proposition de plan de projet (squelette v0.1)
+# BOULON — Proposition de plan de projet (squelette v0.1) — BROUILLON INTERNE
+
+> **Remplacé par la version formelle 1.0 :** `1-boulon/docs/plan-projet-boulon-poc-scolaire-v1.0.docx` (2026-11-05). Ce brouillon est conservé pour la traçabilité : chaque fait y renvoie à son repère dans la transcription. Ne pas diffuser.
 
 **Assistant virtuel Greg Boulon : preuve de concept « véhicules scolaires »**
 Version 0.1, 2026-11-05. Rédigé par Grégory Riley, à affiner en duo avec Dominique (consultant).
