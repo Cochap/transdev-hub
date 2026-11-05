@@ -61,3 +61,8 @@ Rule: end of day proposes; only safe changes (map rows, router rebuild, memory d
 - First use of close-session digests (f2ecf964): worked, no re-read needed.
 - Open (S): the run started 16:23 and the close ran past 25 min because three long extracts (60k, 25k, 23k chars) needed helpers of ~14-20 min. Proposal: when two extracts are forks of the same title, read only the newer one (067c0a2c and 09e86e57 duplicated today). Needs Greg's yes (skill edit).
 - Open (S): the school-bus scan output was not findable in the vault (digest item i). Map row now points to `1-boulon/tests/results/`? -> add `school-scan.jsonl` to the BOULON map row Friday.
+
+## 2026-11-05 (end of day, short form)
+- Audit: 0 unrouted, 0 stale, 0 map gaps (build added 148 entries / 6 new routers, mostly `1-boulon/rag-local/`). Map row added: ThinkStation PGX. Hop test, clutter, memory/rules, sessions checks: deferred to Friday (full form 11-06).
+- Open (S): add `python -P` + PYTHONPATH and Windows code-page/UTF-8 edit rule to skill `transdev-pc-shell-quirks` (2 sessions hit them 11-05). Evidence: `5-brain/logs/eod/2026-11-05/_digest.md`. Needs Greg's yes (skill edit).
+- Open (S): morning check missed on "good morning" twice (10-21, 11-05) — consider making the SessionStart hook run it unconditionally. Needs Greg's yes.

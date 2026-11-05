@@ -9,5 +9,14 @@
 {"id":"C28","answer":"B3-G (bloc 10304-B3) : rating entry = NOTE 20 (la valeur en ampères est dans la note de la feuille AE08090653_032, pas sur cette page), alimentation MD1, description BOOSTER PUMP.\nSource : manuel IC BE/CE, § 2.27, page imprimée 27 (PDF p. 67)"},
 {"id":"C29","answer":"Dans le PDM2 (batterie), le fusible F3F est de 20 A (circuit K14Q 16RD).\nSource : manuel IC BE/CE, § 27.3, page imprimée 1423 (PDF p. 1467)"},
 {"id":"C30","answer":"I don't have that information in the IC manual."},
-{"id":"C31","answer":"I don't have that information in the IC manual."}
+{"id":"C31","answer":"I don't have that information in the IC manual."},
+{"id":"C32","answer":"Au connecteur Bendix AIR ABS (9512, situé au rail de cadre gauche à l'ABS), cavité D2 : circuit R94A, calibre 16, couleur DKBL (bleu foncé). Marqueur @ : commun avec/sans bloc MTA, moteur F-2017 ISB / F-2021 B6.7.\nSource : manuel IC BE/CE, § 22.19, page imprimée 1090 (PDF p. 1134)"},
+{"id":"C33","answer":"I don't have that information in the IC manual."},
+{"id":"C34","answer":"Je n'ai pas cette information dans le manuel IC."},
+{"id":"C35","answer":"I don't have that information in the IC manual."},
+{"id":"C36","answer":"Je n'ai pas cette information dans le manuel IC."},
+{"id":"C37","answer":"I don't have that information in the IC manual."},
+{"id":"C38","answer":"Je n'ai pas cette information dans le manuel IC."},
+{"id":"C39","answer":"I don't have that information in the IC manual."},
+{"id":"C40","answer":"Je n'ai pas cette information dans le manuel IC."}
 ]}

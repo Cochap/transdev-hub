@@ -182,7 +182,7 @@ class Engine:
             if part in seen: continue
             seen.add(part); rows.append(f"{part}  [PDF p.{p}]")
             if len(rows) >= 4: break
-        rrows = [x for r_ in routes for x in r_['rows']]
+        rrows = [x for r_ in routes for x in r_['rows']] + self.link_fuses(hits[:3])
         rows = [self.annotate(x) for x in list(dict.fromkeys(rrows + rows))[:8]]
         top = hits[0]; r = self.pages[top['pdf_page']]
         cite = f"{MANUAL}, §{r['section']} « {r['title']} », page imprimée {r['printed_page']} (PDF p. {r['pdf_page']})"
@@ -282,6 +282,27 @@ class Engine:
         pages = list(dict.fromkeys(p for p, _ in rows))
         return dict(status="answer", route="connector_name", rows=[r_ for _, r_ in rows][:6],
                     hits=[dict(pdf_page=p, score=1.0, chunk="", kind="table", bm25=None) for p in pages])
+
+    def link_fuses(self, hits):
+        """Multi-hop: fuse IDs printed on retrieved diagram pages (e.g. 'FUSE B12-A (10305)') -> their fuse-chart rows (rating, feed, description)."""
+        if not hasattr(self, "_fidx"):
+            self._fidx = {}
+            for (p, kind, txt) in self.chunks:
+                if kind != "table" or "| R/D | FUSE/RELAY" not in txt: continue
+                for line in txt.split(chr(10)):
+                    if line.startswith("|") and not line.startswith(("|---", "| R/D")):
+                        c = [x.strip() for x in line.strip("|").split("|")]
+                        if len(c) >= 5:
+                            blk = c[0].split("-")[-1] if "-" in c[0] else ""
+                            key = f"{blk}-{c[1].split('-')[-1]}" if blk and c[1].startswith(blk[:1]) and "-" in c[1] else c[1]
+                            self._fidx.setdefault(key, []).append((p, line))
+        out = []
+        for h in hits:
+            txt = "\n".join(t for p, k, t in self.chunks if p == h['pdf_page'])
+            for fid in dict.fromkeys(re.findall(r"FUSE\s+([A-Z]\d{1,2}-[A-Z]{1,2})\b", txt)):
+                for p, line in self._fidx.get(fid, [])[:2]:
+                    out.append(f"{line}  [fuse chart for FUSE {fid}, PDF p.{p}]")
+        return list(dict.fromkeys(out))[:6]
 
     def route_fuse(self, q):
         """Fuse-chart lookup: fuzzy match of query terms against FUSE DESCRIPTION rows (typo tolerant, FR via glossary)."""

@@ -290,12 +290,9 @@
 "id": "C16",
 "type": "multipage",
 "lang": "fr",
-"ok": false,
+"ok": true,
 "page": true,
-"miss": [
-"7.5/10A",
-"MD3"
-],
+"miss": [],
 "got": [
 70,
 310,
@@ -487,11 +484,9 @@
 "id": "C26",
 "type": "multipage",
 "lang": "en",
-"ok": false,
+"ok": true,
 "page": true,
-"miss": [
-"NOTE 4"
-],
+"miss": [],
 "got": [
 1239,
 718,
@@ -569,12 +564,9 @@
 "id": "C30",
 "type": "multipage",
 "lang": "en",
-"ok": false,
+"ok": true,
 "page": true,
-"miss": [
-"POST TRIP INSPECTION",
-"NOTE 7"
-],
+"miss": [],
 "got": [
 1242,
 816,

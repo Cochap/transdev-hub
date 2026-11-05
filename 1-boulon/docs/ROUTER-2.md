@@ -1,15 +1,26 @@
 # ROUTER — 1-boulon/docs (page 2)
 
 ## Contents (page 2 of 2)
+- `meeting-2026-09-24-pierre.md` — Meeting 2026-09-24 (Pierre, Henri, Greg): BOULON outcomes
+- `meeting-2026-11-03-dix30.md` — Compte rendu (FR) of the 2026-11-03 DIX30 meeting: decisions D1-D6, actions, open questions, timestamps to re-listen
+- `meeting-prep-2026-10-22-ai-maintenance-catalogue.md` — Meeting prep for the "AI maintenance catalogue" call: opener, numbers, pain points, RAG vocabulary (2026-10-22)
+- `memo-henri-cibles-gate-b.md` — Note à Henri : cibles de réussite pour le Gate B
+- `mir-data-map.md` — MIR data map (from Alex's data dictionary)
 - `multimodal-rag-review-2026-10-07.md` — BOULON multimodal RAG review, 2026-10-07
 - `mvp-school-bus-2026-11-03.md` — BOULON MVP: school-bus manuals only (scope set 2026-11-03)
 - `orchestration-plan.md` — BOULON Orchestration Plan — today → Henri sign-off
 - `over-budget-plan.md` — Plan for the CAD 1,200 ceiling (rewritten 2026-10-07, decision D36: no ticket changes)
+- `pgx-beginner-guide.md` — ThinkStation PGX — beginner guide, step by step
+- `pgx-integration-plan-2026-11-05.md` — ThinkStation PGX (GB10, 128 GB) — integration plan, 2026-11-05
 - `phase2-plan-cmms.md` — Phase 2 plan: diagnosis help from maintenance history (CMMS / GMAO)
 - `phase2-protocole-test-alex.md` — Protocole de test : aide au diagnostic à partir de l'historique MIR
 - `phase2-scope-sizing-2026-09-24.md` — BOULON: Phase 1 + Phase 2 scope and plan-size review (2026-09-24)
+- `plan-projet-boulon-poc-scolaire-v1.0.docx` — CURRENT formal project plan v1.0 (FR, Word, 11 p.): school-bus proof of concept, scope, deliverables, method, KPIs, schedule from Azure restart (T0), RACI, budget, risks, decisions D1-D6, alignment with brief 551. Built by `2-projects/transcripts/dix30-work/build-plan-docx.js`
+- `plan-projet-boulon-poc-scolaire-v1.1.docx` — Word document
 - `plan-to-oct16.md` — BOULON: plan to launch by Fri 2026-10-16
 - `project-brief-551.md` — Project brief 551: "Assistant virtuel Greg Boulon" (Note de projet)
+- `proposition-plan-projet-2026-11.docx` — Word document
+- `proposition-plan-projet-2026-11.md` — INTERNAL working draft v0.1 of the plan with transcript timestamps for traceability; superseded by the v1.0 .docx, do not send
 - `rag-plan-reference.md` — BOULON: Building a Real Multi-Skill Assistant with Copilot Studio + Azure AI Search
 - `report-copy-final.md` — BOULON progress report: final copy (plain-language writer + Claude edits)
 - `report-copy-technical.md` — BOULON progress report + cost request: technical copy deck

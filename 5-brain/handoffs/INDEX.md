@@ -4,11 +4,12 @@ Hand-written (the router build does not touch this file). Open the row for the p
 ## Newest hand-off per area (read these on "resume from yesterday")
 | Area | Newest hand-off | Also read |
 |---|---|---|
-| Morning hand-off (resume-session format, written by end of day; read FIRST) | `5-brain/handoffs/<date>-eod-handoff.md` (newest: 2026-11-04) | `5-brain/logs/eod/<date>/_digest.md` and the extracts beside it |
+| Morning hand-off (resume-session format, written by end of day; read FIRST) | `5-brain/handoffs/<date>-eod-handoff.md` (newest: 2026-11-05) | `5-brain/logs/eod/<date>/_digest.md` and the extracts beside it |
 | Whole workspace (status, waiting on Greg, next steps) | `C:\TRANSDEV HUB\RESUME.md` (rewritten by every end of day) | `1-boulon/docs/continuity-log.md` Status, `1-boulon/docs/timeline.md` tail |
-| BOULON MVP school-bus manuals (STANDARD SCHOOL, 2026-11-04) | `5-brain/handoffs/2026-11-04-eod-handoff.md` "BOULON" block | `1-boulon/docs/mvp-school-bus-2026-11-03.md` |
+| BOULON MVP school-bus manuals (IC manual, Azure-free Phase 0, 2026-11-05) | `5-brain/handoffs/2026-11-05-eod-handoff.md` "BOULON" block | `1-boulon/docs/mvp-school-bus-2026-11-03.md`, `1-boulon/rag-local/README.md` |
+| ThinkStation PGX (arrived 2026-11-05) | `5-brain/handoffs/2026-11-05-eod-handoff.md` "ThinkStation PGX" block | `1-boulon/docs/pgx-beginner-guide.md`, `1-boulon/docs/pgx-integration-plan-2026-11-05.md` |
 | Hub in the cloud (GitHub repo, Actions routines) | `5-brain/handoffs/2026-11-04-eod-handoff.md` "Workspace — hub in the cloud" block | `5-brain/scripts/cloud-sync.ps1`, `.github/workflows/routines.yml` |
-| DIX30 meeting transcript → plan proposal (DONE 11-05: transcript, minutes, plan v0.1) | `5-brain/handoffs/2026-11-03-dix30-transcription-handoff.md` | `1-boulon/docs/proposition-plan-projet-2026-11.md` |
+| DIX30 meeting transcript → plan proposal (DONE 11-05: transcript, minutes, plan v1.0 + v1.1 .docx, not sent) | `5-brain/handoffs/2026-11-05-eod-handoff.md` "DIX30" block, then `5-brain/handoffs/2026-11-03-dix30-transcription-handoff.md` | `1-boulon/docs/proposition-plan-projet-2026-11.md` |
 | Second-brain build (skills consolidation, moves, plugins) | `5-brain/handoffs/2026-10-21-second-brain-build-handoff.md` | `5-brain/improvements.md` |
 | ZBB (budget tool) | `C:\ZBB\docs\HANDOFF-2026-10-21.md` (pending request, next command, known limits) | `C:\ZBB\docs\HANDOFF-2026-10-20.md` (older, French), last 5 entries of `C:\ZBB\wiki\log.md`, `C:\ZBB\wiki\index.md` |
 | Daily Digest | `5-brain/handoffs/2026-10-29-eod-handoff.md` "Daily Digest / World Monitor" block (`wm` certificate fix 10-29; modes only in the web app) | `2-projects/daily-digest/ROUTER.md`, `C:\Users\rilg01\DAILY DIGEST\LAUNCH.md` |

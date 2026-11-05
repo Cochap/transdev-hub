@@ -10,14 +10,16 @@ Open only the line you need. Every child of this folder is listed below.
 - `research-2026-10-15/` — folder, 1 files → ROUTER.md
 - `research-prds/` — folder, 1 files → ROUTER.md
 - `source-of-truth/` — folder, 1 files → ROUTER.md
+- `~$an-projet-boulon-poc-scolaire-v1.0.docx` — Word document
+- `~$an-projet-boulon-poc-scolaire-v1.1.docx` — Word document
 - `agent-instructions-live-2026-10-06.txt` — text file
 - `agent-instructions-v2b-paste.txt` — text file
 - `agent-instructions.md` — BOULON agent: answer structure and instruction changes (Tier 1 only)
 - `assumptions-log.md` — Phase 0 — Design Assumptions Log
+- `azure-copilot-skills-findings-2026-11-04.md` — what microsoft/azure-skills (installed, 7 plugins) and microsoft/skills (not installed; Azure AI Search + Copilot Studio client skills) offer BOULON, what works, what fails, fixes not tried
 - `azure-limits-pricing-2026-09-23.md` — Azure AI Search limits & pricing for BOULON — research notes (2026-09-23)
 - `azure-region-check-2026-09-24.md` — Azure region and compatibility check for the Basic search ticket (2026-09-24, ~16:10)
 - `azure-tiers-verified-2026-09-24.md` — Azure AI Search tiers: verified limits and prices (2026-09-24)
-- `azure-copilot-skills-findings-2026-11-04.md` — what microsoft/azure-skills (installed, 7 plugins) and microsoft/skills (not installed; Azure AI Search + Copilot Studio client skills) offer BOULON, what works, what fails, fixes not tried
 - `boulon-scale-story-2026-10-22.html` — BOULON Scale Story
 - `cloud-ai-architecture-brief-2026-10-22.md` — BOULON: cloud AI architecture brief for Greg Riley
 - `continuity-log.md` — BOULON Maintenance AI — Continuity Log
@@ -43,13 +45,7 @@ Open only the line you need. Every child of this folder is listed below.
 - `lessons-2026-11-02.md` — Lessons 2026-11-02
 - `lessons-2026-11-03.md` — Lessons 2026-11-03
 - `lessons-2026-11-04.md` — Lessons 2026-11-04
+- `lessons-2026-11-05.md` — Lessons — 2026-11-05 (Thu)
 - `manuals-inventory-2026-09-23.md` — Manuals inventory and D4 re-check — 2026-09-23
-- `meeting-2026-11-03-dix30.md` — Compte rendu (FR) of the 2026-11-03 DIX30 meeting: decisions D1-D6, actions, open questions, timestamps to re-listen
-- `plan-projet-boulon-poc-scolaire-v1.0.docx` — CURRENT formal project plan v1.0 (FR, Word, 11 p.): school-bus proof of concept, scope, deliverables, method, KPIs, schedule from Azure restart (T0), RACI, budget, risks, decisions D1-D6, alignment with brief 551. Built by `2-projects/transcripts/dix30-work/build-plan-docx.js`
-- `proposition-plan-projet-2026-11.md` — INTERNAL working draft v0.1 of the plan with transcript timestamps for traceability; superseded by the v1.0 .docx, do not send
-- `meeting-2026-09-24-pierre.md` — Meeting 2026-09-24 (Pierre, Henri, Greg): BOULON outcomes
-- `meeting-prep-2026-10-22-ai-maintenance-catalogue.md` — Meeting prep for the "AI maintenance catalogue" call: opener, numbers, pain points, RAG vocabulary (2026-10-22)
-- `memo-henri-cibles-gate-b.md` — Note à Henri : cibles de réussite pour le Gate B
-- `mir-data-map.md` — MIR data map (from Alex's data dictionary)
 
 More: `ROUTER-2.md`

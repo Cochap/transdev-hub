@@ -1,8 +1,31 @@
-# RESUME — hand-off (refreshed 2026-11-04 by end of day)
+# RESUME — hand-off (refreshed 2026-11-05 by end of day)
 Start here in a new session. The map is [CLAUDE.md](CLAUDE.md); truth is [1-boulon/docs/continuity-log.md](1-boulon/docs/continuity-log.md); HQ page [boulon-hq.html](boulon-hq.html).
 
-**All hand-offs in one table: [5-brain/handoffs/INDEX.md](5-brain/handoffs/INDEX.md).** Tomorrow's briefing: [5-brain/handoffs/2026-11-04-eod-handoff.md](5-brain/handoffs/2026-11-04-eod-handoff.md). Digest: [5-brain/logs/eod/2026-11-04/_digest.md](5-brain/logs/eod/2026-11-04/_digest.md). Week list: [5-brain/ideas/2026-W45-ideas-and-tasks.md](5-brain/ideas/2026-W45-ideas-and-tasks.md) §6. No activity today: ZBB, Daily Digest, Workshop ID card, Media (segmentation only pushed to GitHub).
+**All hand-offs in one table: [5-brain/handoffs/INDEX.md](5-brain/handoffs/INDEX.md).** Tomorrow's briefing: [5-brain/handoffs/2026-11-05-eod-handoff.md](5-brain/handoffs/2026-11-05-eod-handoff.md). Digest: [5-brain/logs/eod/2026-11-05/_digest.md](5-brain/logs/eod/2026-11-05/_digest.md). Week list: [5-brain/ideas/2026-W45-ideas-and-tasks.md](5-brain/ideas/2026-W45-ideas-and-tasks.md) §7. No activity today: ZBB, Daily Digest, Workshop segmentation, Workshop ID card, Media, Learning.
 
+## Where we are (2026-11-05)
+- **BOULON MVP (demo Fri 11-06):** Azure-free Phase 0 over the IC electrical manual: 1,529 tables extracted, blind retrieval 82%, held-out 17/22 (77%), refusals 6/6. End-to-end answer test still running in session "Multimodal RAG architecture without Azure". $0 Copilot Studio SharePoint path verified (page citations). Azure subscription still Disabled.
+- **DIX30:** transcript, minutes, formal plan v1.0 (.docx, 11 p.) and v1.1 (.docx, 15 p., adds D7). Not sent.
+- **ThinkStation PGX:** arrived; beginner guide + integration plan written; not booted yet (no keyboard/mouse).
+- **Tools:** Azure MCP CLI works; microsoft/skills + M365 skills installed (81 skills).
+
+## Waiting on Greg (2026-11-05)
+- Review plan v1.0 / v1.1, pick the version, re-listen 10 flagged timestamps, send to Dominique.
+- Yes/no on D7 (Azure-free ingestion for Phase 0) and on targets 85% blind / 97% fidelity / 95% abstain / 0 false refusals.
+- Sign in to Copilot Studio; upload the IC PDF; test 3 electrical questions.
+- PGX: borrow USB keyboard+mouse, guide Parts 1-3; yes for Claude to draft the French IT network request.
+- Pierre: 5 proposed changes to brief 551; Azure payment method.
+- Still open: Claude token as GitHub Actions secret; close the old draft .docx in Word.
+
+## Sessions today (extracts in `C:\TRANSDEV HUB\5-brain\logs\eod\2026-11-05\`)
+| Title | Project | Outcome | Safe to archive |
+|---|---|---|---|
+| Meeting transcript and documentation | BOULON / DIX30 | transcript, minutes, plan v1.0, $0 path, tools | no (send plan, Azure MCP test) |
+| Multimodal RAG architecture without Azure | BOULON | Phase 0 engine, 82% / 77% held-out, plan v1.1 | no (still running; end-to-end test) |
+| ThinkStation PGX integration planning | BOULON / hardware | guide + plan | no (first boot) |
+| (untitled, rag-local auth test) | — | "Reply OK", auth expired | yes |
+
+---
 ## Where we are (2026-11-04)
 - **BOULON MVP:** class = STANDARD SCHOOL (193 vehicles). Scan done: only `IC Leeds/IC bus 2016-2024.pdf` in SharePoint (~136 MB est., > 50 MB Free). Rules: complete manual per tested bus; no maker-website manuals. **Blocked:** "Azure subscription 1" is Disabled and ticket 77048 targets it.
 - **Hub in the cloud:** private repo `Cochap/transdev-hub`, PC sync every 30 min. GitHub Actions routines written, not run (need Greg's Claude token as a repo secret). PC routines stay on until then.

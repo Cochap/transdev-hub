@@ -799,6 +799,7 @@ Labels: ELECTRICAL CIRCUIT DIAGRAM MANUAL / 3.121. BODY GROUND PLATFORM (CONT.),
 On the lift with air brake (key on/off with indicator), which wire (gauge/color) leaves the wheelchair lift solenoid output of the blue J4 body controller, and which pin of the platform/elec panel connector does it go to?
 --- ENGINE STATUS: answer
 ANSWER ROWS:
+| 10301-B12 | B12-A | 15 | BAT | LIFT INTERLOCK |  [fuse chart for FUSE B12-A, PDF p.66]
 PLATFORM /ELEC PANEL (1703)  [PDF p.654]
 BODY CONTROLLER (1601)  [PDF p.654]
 ELEC PANEL (1703)  [PDF p.657]
@@ -1027,6 +1028,7 @@ Sur le circuit du lift, le fil B122E monte au fusible B12-A (CH3_12). Dans le ta
 --- ENGINE STATUS: answer
 ANSWER ROWS:
 | 10312-B4 | R1 | - | - | LIFT LIGHT RELAY |  [PDF p.68]  (option 12-B4: see legend under the table)
+| 10301-B12 | B12-A | 15 | BAT | LIFT INTERLOCK |  [fuse chart for FUSE B12-A, PDF p.66]
 FUSE B12-A (10301)  [PDF p.679]
 | 10312-B4 | R4 | - | - | LIFT INTLK RELAY |  [PDF p.68]  (option 12-B4: see legend under the table)
 | 10312-B4 | R5 | - | - | LIFT INTLK RELAY |  [PDF p.68]  (option 12-B4: see legend under the table)
@@ -1335,6 +1337,7 @@ The alternate entrance door switch circuit is fed from fuse B12-K (CH3_18). What
 --- ENGINE STATUS: answer
 ANSWER ROWS:
 | F44 | ALTERNATE ENTRANCE DOOR ELECTRIC | 7.5A |  [PDF p.1239]
+| 10301-B12 | B12-K | NOTE 4 | IGN | ALTERNATE ENTRANCE DOOR/PTI/AC NOISE |  [fuse chart for FUSE B12-K, PDF p.66]
 | F44 | ALTERNATE ENTRANCE DOOR AIR OPERATED | 3A |  [PDF p.1239]
 FUSE B12-K (10301)  [PDF p.718]
 | F45 | ENTRANCE DOOR | 7.5A |  [PDF p.1239]
@@ -1635,6 +1638,8 @@ ANSWER ROWS:
 | 10301-B12 | B12-V | 7.5 | NS3 | REAR POWER VENT |  [PDF p.66]  (option 01-B12: see legend under the table)
 | F8 E3, F3 | FRONT POWER VENT |  [PDF p.1228]  (option  E3, F3: see legend under the table)
 | F11 E4, F4 | REAR POWER VENT |  [PDF p.1228]  (option  E4, F4: see legend under the table)
+| 10301-B12 | B12-H | 7.5 | NS3 | FRONT POWER VENT |  [fuse chart for FUSE B12-H, PDF p.66]
+| 10301-B12 | B12-V | 7.5 | NS3 | REAR POWER VENT |  [fuse chart for FUSE B12-V, PDF p.66]
 FUSE B12-V (10301)  [PDF p.897]
 | 10301-B12 | B12-X | 7.5 | NS2 | RADIO POWER |  [PDF p.66]  (option 01-B12: see legend under the table)
 --- SOURCE: PDF p.66 / printed p.26 / §2.26 2.26. FUSE GRAPHIC - PLATFORM AND ELECTRICAL PANEL - 4214351C1 (CONT.), P. 26
@@ -2023,6 +2028,8 @@ The booster pump switch circuit with front mounted heater goes to fuse B3-G (CH3
 --- ENGINE STATUS: answer
 ANSWER ROWS:
 | 10303-B6 | B6-B | NOTE 14 | BAT | BOOSTER PUMP/FUEL FIRED HEATER |  [PDF p.67]  (option 03-B6: see legend under the table)
+| 10304-B3 | B3-G | NOTE 20 | MD1 | BOOSTER PUMP |  [fuse chart for FUSE B3-G, PDF p.67]
+| 10303-B6 | B6-B | NOTE 14 | BAT | BOOSTER PUMP/FUEL FIRED HEATER |  [fuse chart for FUSE B6-B, PDF p.67]
 | 10304-B3 | B3-G | NOTE 20 | MD1 | BOOSTER PUMP |  [PDF p.67]  (option 04-B3: see legend under the table)
 FUSE B3-G (10304)  [PDF p.858]
 | 10303-B6 | B6-E | NOTE 15 | BAT | DVR /BOOSTER PUMP/AUDIO & VIDEO |  [PDF p.67]  (option 03-B6: see legend under the table)
@@ -2658,6 +2665,8 @@ On the Child Checkmate/Theft Mate power splice block, cavity A goes to fuse B9-A
 --- ENGINE STATUS: answer
 ANSWER ROWS:
 | F71 | DC POWER SOURCE | 15A |  [PDF p.1242]
+| 10302-B9 | B9-A | NOTE 7 | BAT | POST TRIP INSPECTION |  [fuse chart for FUSE B9-A, PDF p.66]
+| 10302-B9 | B9-H | 15 | BAT | THEFTMATE |  [fuse chart for FUSE B9-H, PDF p.66]
 FUSE B9-A (10302)  [PDF p.816]
 THEFT MATE RED DOT (11642A)  [PDF p.816]
 SPLICE BLOCK (11503)  [PDF p.816]
@@ -3241,6 +3250,10 @@ Labels: ELECTRICAL CIRCUIT DIAGRAM MANUAL / 19.14. ESPAR COOLANT HEATER W/ RSM T
 Au connecteur du Bendix ABS à l'air sur le rail de cadre gauche, cavité D2: quel circuit, calibre et couleur?
 --- ENGINE STATUS: answer
 ANSWER ROWS:
+| 1014-A6 | A6-N | 10 | BAT | BENDIX ABS FUSION DIESEL |  [fuse chart for FUSE A6-N, PDF p.70]
+| 1016-A6 | A3-N | 10 | IGN | AIR DRYER, DRAIN VALVE, FUEL |  [fuse chart for FUSE A6-N, PDF p.70]
+| 1014-A6 | A6-T | 10 | BAT | BENDIX ABS FUSION GAS |  [fuse chart for FUSE A6-T, PDF p.70]
+| 1016-A6 | A3-T | 3 | IGN | ZONAR PREWIRE |  [fuse chart for FUSE A6-T, PDF p.70]
 | D2 | R94A | 16 | DKBL | 3554090C1 |  [PDF p.1134]
 --- SOURCE: PDF p.604 / printed p.564 / §13.72 13.72. BENDIX ABS-8 WITH WINGMAN FUSION OPTIONS WITH 2017 ISB DIESEL &
 Components: CONN XI (9543); DISABLE/ENABLE (10283); ELEC PANEL (10001); ELEC PANEL/PLATFORM (1703); FUSE F16 (1011); FUSE F27 (1011); FUSION CAMERA (10084); FWD CHASSIS (1700); MUTE (1302); PLATFORM (1702); PLATFORM (1703); PLATFORM/ELEC PANEL (1702); PROCESSOR MODULE (10083); SW ILLUM (10399); ZVR SPLICE (10350B)

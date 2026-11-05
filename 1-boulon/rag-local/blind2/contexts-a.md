@@ -719,6 +719,8 @@ Les phares de brouillard s'allument pas, quel fusible faut checker pis de combie
 ANSWER ROWS:
 | 1014-A6 | A6-P | 15 | BAT | FOG LIGHTS |  [PDF p.70]  (option 4-A6: see legend under the table)
 | 1012 -A9 | R1 | - | - | FOG LIGHT RELAY |  [PDF p.71]  (option 2 -A9: see legend under the table)
+| 1014-A6 | A6-P | 15 | BAT | FOG LIGHTS |  [fuse chart for FUSE A6-P, PDF p.70]
+| 1016-A6 | A3-P | 5 | IGN | INSTRUMENT CLUSTER |  [fuse chart for FUSE A6-P, PDF p.70]
 | 1014-A6 | A6-E | 5 | BAT | HYDRAULIC BRAKE/ EV HEADLAMP |  [PDF p.70]  (option 4-A6: see legend under the table)
 --- SOURCE: PDF p.70 / printed p.30 / §2.30 2.30. FUSE GRAPHIC - PLATFORM AND ELECTRICAL PANEL - 4214351C1 (CONT.), P. 30
 2.30. FUSE GRAPHIC - PLATFORM AND ELECTRICAL PANEL - 4214351C1 (CONT.), P. 30 | Figure 30 FUSE GRAPHIC - PLATFORM AND ELECTRICAL PANEL - 4214351C1 (CONT.) | printed page 30
@@ -1353,6 +1355,7 @@ ANSWER ROWS:
 | 10302-B9 | B9-R | 7.5 | ACC2 | STEP LIGHT |  [PDF p.66]  (option 02-B9: see legend under the table)
 | 10309-B8 | R3 | - | - | STEP LIGHT RELAY |  [PDF p.68]  (option 09-B8: see legend under the table)
 | F58 | STEP LIGHT | 7.5A |  [PDF p.1241]
+| 10302-B9 | B9-P | NOTE 12 | ACC2 | LIGHT MONITOR |  [fuse chart for FUSE B9-P, PDF p.66]
 | 10302-B9 | B9-C | 20 | BAT | AUDIO & VIDEO PREWIRE |  [PDF p.66]  (option 02-B9: see legend under the table)
 | 10302-B9 | B9-F | 5 | ACC1 | FRONT CLUSTER LIGHT |  [PDF p.66]  (option 02-B9: see legend under the table)
 | 10302-B9 | B9-K | NOTE 11 | ACC1 | PWL/PEDESTRIAN LIGHT |  [PDF p.66]  (option 02-B9: see legend under the table)
@@ -2700,6 +2703,7 @@ Les miroirs chauffants chauffent pas, c'est quel fusible dans le bloc B3 et comb
 ANSWER ROWS:
 | 10304-B3 | B3-U | 15 | MD2 | HEATED MIRRORS |  [PDF p.67]  (option 04-B3: see legend under the table)
 | F19 | HEATED MIRRORS | 15A |  [PDF p.1231]
+| 10304-B3 | B3-U | 15 | MD2 | HEATED MIRRORS |  [fuse chart for FUSE B3-U, PDF p.67]
 HEATED MIRROR (10293)  [PDF p.470]
 HEATED MIRROR (10295)  [PDF p.470]
 | 10304-B3 | B3-C | DIODE | - | CHILD MONITOR SYSTEM |  [PDF p.67]  (option 04-B3: see legend under the table)
@@ -4470,6 +4474,7 @@ Labels: ELECTRICAL CIRCUIT DIAGRAM MANUAL / 9.13. CROSSING GATE WITH 150A WITH 2
 For the single-switch destination sign, which two wires (name, gauge, color) feed the switch backlight to the illumination splice?
 --- ENGINE STATUS: answer
 ANSWER ROWS:
+| 10304-B3 | B3-M | 7.5/10A | MD3 | DESTINATION SIGN |  [fuse chart for FUSE B3-M, PDF p.67]
 SIGN SWITCH (10267A)  [PDF p.310]
 ILLUMINATION SPLICE (10399)  [PDF p.378]
 GROUND SPLICE (10010)  [PDF p.310]
@@ -4749,6 +4754,7 @@ Le panneau de destination avec interrupteur simple sort sur le fusible B3-M (CH3
 --- ENGINE STATUS: answer
 ANSWER ROWS:
 | 1016-A6 | A3-X | 5 | BAT | PANEL LIGHTS |  [PDF p.70]  (option 6-A6: see legend under the table)
+| 10304-B3 | B3-M | 7.5/10A | MD3 | DESTINATION SIGN |  [fuse chart for FUSE B3-M, PDF p.67]
 FUSE B3-M (10304)  [PDF p.310]
 | 1014-A6 | A6-H | 10 | BAT | KEY SWITCH |  [PDF p.70]  (option 4-A6: see legend under the table)
 | 1016-A6 | A3-W | 5 | ACC | SWITCH PACK / SYSTEM CONTROLLER |  [PDF p.70]  (option 6-A6: see legend under the table)

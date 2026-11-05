@@ -1,0 +1,22 @@
+{"answers":[
+{"id":"C21","answer":"Le fusible HYDROMAX BRAKE PRESSURE FUSE (4046) est de 5 A (fil K90X 14GY; repere @ = avec freins hydrauliques Hydromax).\nSource : manuel IC BE/CE, § 13.46, page imprimée 538 (PDF p. 578)"},
+{"id":"C22","answer":"The brake system fuse (4041), next to the upper mega fuse stud (4000B), is rated 40 A (wires K90A / K90AA, 10GY).\nSource : manuel IC BE/CE, § 13.46, page imprimée 538 (PDF p. 578)"},
+{"id":"C23","answer":"Au connecteur DECU J1 (1826), la masse est la broche 1 : fil A44K-G1, calibre 14, couleur blanche (14WH), vers le ground splice (1003B).\nSource : manuel IC BE/CE, § 13.87, page imprimée 579 (PDF p. 619)"},
+{"id":"C24","answer":"The wire leaving the wheelchair lift solenoid output of the J4 blue body controller (1601) is A122J, 18GY (gauge 18, gray), going to pin 37 of the ELEC PANEL/PLATFORM connector (1702).\nSource : manuel IC BE/CE, § 15.2, page imprimée 614 (PDF p. 654)"},
+{"id":"C25","answer":"Le fusible B12-A (10301) est de 15 A, alimentation BAT (batterie), et sert au LIFT INTERLOCK.\nSource : manuel IC BE/CE, § 2.26, page imprimée 26 (PDF p. 66)"},
+{"id":"C26","answer":"B12-K (10301) : rating entry = NOTE 4 (l'ampérage dépend des options du véhicule, voir les notes de la feuille de référence), alimentation IGN, description ALTERNATE ENTRANCE DOOR/PTI/AC NOISE SUPPRESSION.\nSource : manuel IC BE/CE, § 2.26, page imprimée 26 (PDF p. 66)"},
+{"id":"C27","answer":"Le fusible B12-V (REAR POWER VENT) est de 7,5 A, sur l'alimentation NS3.\nSource : manuel IC BE/CE, § 2.26, page imprimée 26 (PDF p. 66)"},
+{"id":"C28","answer":"B3-G (10304) : rating entry = NOTE 20 (la valeur dépend des options du véhicule), alimentation MD1, description BOOSTER PUMP.\nSource : manuel IC BE/CE, § 2.27, page imprimée 27 (PDF p. 67)"},
+{"id":"C29","answer":"Dans le PDM2, le fusible F3F (6083) est de 20 A (fil K14Q 16RD, alimentation du relais HVAC).\nSource : manuel IC BE/CE, § 27.3, page imprimée 1423 (PDF p. 1467)"},
+{"id":"C30","answer":"B9-A (10302) : description POST TRIP INSPECTION, rating entry = NOTE 7 (l'ampérage dépend des options), alimentation BAT.\nSource : manuel IC BE/CE, § 2.26, page imprimée 26 (PDF p. 66)"},
+{"id":"C31","answer":"Espar fuel pump connector 11341, cavity 2: with option * (checkmate w/ snooze, +9, emergency actuator & lift) circuit B125DM, gauge 18, GY (gray); with option # (checkmate w/ snooze plus 9 w/ emergency actuator) circuit B63, gauge 18, DKBL (dark blue). Note: the manual lists this connector as located in the electrical panel, not at the Hyd ABS on the left frame rail.\nSource : manuel IC BE/CE, § 26.49, page imprimée 1394 (PDF p. 1438)"},
+{"id":"C32","answer":"Au connecteur Bendix Air ABS (9512, situé sur le rail de cadre gauche à l'ABS), cavité D2 : circuit R94A, calibre 16, couleur DKBL (bleu foncé).\nSource : manuel IC BE/CE, § 22.19, page imprimée 1090 (PDF p. 1134)"},
+{"id":"C33","answer":"I don't have that information in the IC manual."},
+{"id":"C34","answer":"Je n'ai pas cette information dans le manuel IC."},
+{"id":"C35","answer":"I don't have that information in the IC manual."},
+{"id":"C36","answer":"Je n'ai pas cette information dans le manuel IC."},
+{"id":"C37","answer":"I don't have that information in the IC manual."},
+{"id":"C38","answer":"Je n'ai pas cette information dans le manuel IC."},
+{"id":"C39","answer":"I don't have that information in the IC manual."},
+{"id":"C40","answer":"Je n'ai pas cette information dans le manuel IC."}
+]}
