@@ -217,28 +217,27 @@ details summary{cursor:pointer;font-weight:600;color:var(--muted)}
 
 /* ===== Claude updates this block after every exchange ===== */
 const S = {
-  "updated": "Wed 2026-11-04 · 17:20 (end of day)",
-  "headline": "BOULON MVP is now one bus class, STANDARD SCHOOL (193 buses). The scan found one complete manual in SharePoint (IC, ~136 MB, too big for Free), and the Azure subscription is Disabled, so the MVP waits on your subscription choice. The hub is on private GitHub; cloud routines need your Claude token.",
+  "updated": "Thu 2026-11-05 · 10:25",
+  "headline": "DIX30 meeting done: transcript, French minutes and the project-plan proposal Dominique asked for are ready for your review. Nothing has been sent. February group presentation is the one firm date; the Azure blocker is the critical path.",
   "progress": {
-    "label": "From-zero segment + medal proposal for the next call: council, system 07, questionnaire, test bench v2, medal example, Pierre's curve data, call prep",
-    "done": 5,
-    "total": 7
+    "label": "DIX30: transcript, war room, minutes, plan proposal, review and send",
+    "done": 4,
+    "total": 5
   },
   "move": {
-    "urgency": "Tomorrow morning (Thu 11-05)",
-    "title": "Choose how to bring the Azure subscription back",
-    "meta": "Takes 5 minutes to look. Nothing is paid until you choose. Pierre approves any spend.",
+    "urgency": "Before noon (Thu 11-05)",
+    "title": "Review the plan proposal, then say who gets it first",
+    "meta": "About 15 minutes. Nothing is sent until you say yes.",
     "steps": [
-      "Open https://portal.azure.com and sign in with your Transdev account.",
-      "In the top search bar type « Subscriptions » (Abonnements) and open it.",
-      "Click « Azure subscription 1 ». Read the State (État) line: it should say Disabled (Désactivé).",
-      "Open « Overview » (Vue d'ensemble) and note the Offer (Offre) name, e.g. Free Trial or Pay-As-You-Go.",
-      "Tell Claude the Offer name and one choice: A = reactivate this subscription (Pierre approves spend), B = move ticket 77048 to a company subscription."
+      "Open C:\\TRANSDEV HUB\\1-boulon\\docs\\proposition-plan-projet-2026-11.docx (Word copy, no internal paths).",
+      "Read section 7 (phases and timing) and section 12 (decisions for Pierre).",
+      "Optional: listen to the flagged timestamps in the minutes (table at the end of 1-boulon\\docs\\meeting-2026-11-03-dix30.md).",
+      "Tell Claude: OK to send, or the changes you want, and who gets it first (Dominique, Henri, or both)."
     ],
-    "paste": "Azure subscription 1 offer is: ___ . My choice: A / B",
+    "paste": "Plan: OK / changes: ___ . First recipient: Dominique / Henri / both",
     "pasteLabel": "Copy the answer for Claude",
-    "pass": "You see State = Disabled and an Offer name.",
-    "fail": "If you cannot open the subscription (no access), tell Claude \"no access\"; Claude drafts a French note to Henri.",
+    "pass": "The Word file opens and sections 1 to 13 are there.",
+    "fail": "If the file does not open, tell Claude \"docx broken\"; the .md version is next to it.",
     "report": "Paste the filled line into Claude."
   },
   "decisions": [
@@ -353,6 +352,10 @@ const S = {
   ],
   "feed": [
     [
+      "Thu 10:25",
+      "DIX30 done: faster-whisper turbo on 3 parallel workers (whisper alone stalled 6 h on 11-04); 926 segments, 4 unclear windows re-run at higher accuracy. War room of 3 reviewers (sponsor, method, delivery) plus advisor review. Wrote the French plan proposal + Word copy, minutes, MVP transcript check; 5 brief-551 conflicts logged as proposed changes. Audit 0 unrouted."
+    ],
+    [
       "Tue 16:35",
       "End of day (automated, first run with the new lock and short form): 5 sessions read. Routed: digest, timeline, lessons 11-03, ideas W45, CLAUDE.md map rows (school-bus MVP, transcripts, Geotab film), hand-off 11-03, INDEX, RESUME. Audit 0 unrouted, 0 stale, 0 map gaps."
     ],
@@ -367,34 +370,6 @@ const S = {
     [
       "Thu 17:30",
       "End of day (automated): 9 sessions read (4 Sonnet helper digests). Routed to the hand-off, RESUME, timeline, lessons, segmentation status, continuity log, ideas W44, memory (3 new), improvements (5 proposals). Audit 0 unrouted, 0 map gaps (1 transient Office lock file). Skills used: boulon-end-of-day, boulon-hq-update."
-    ],
-    [
-      "Thu PM",
-      "Check-in held. Built after it: council verdict, system 07, grid copy v2 GR, questionnaire travaux sur place, test bench v2 (12/12), medal example (120 practices), proposal page v6. ID card: bilingual PowerPoint and web app changes, change list. RAG radar live with the last30days lane; wm certificate fix."
-    ],
-    [
-      "Thu 12:00",
-      "Segmentation prep from the compte rendu: results/05 (no-stock scenario: Chateauguay goes S1 as expected; 6 depots sit exactly on 60/70), results/06 (input dictionary; stock is in euros, targets are self-assessments), compte rendu v0.2 corrections, brief with agenda. Nothing changed in the workbook."
-    ],
-    [
-      "Thu",
-      "Greg decided: harsher conditions and higher complexity both mean a lower segment; AI use is not a factor. Stock reply re-read: Pierre doubts stock as a criterion, so no revert; plan is to take stock out of Resources. Brief and status file updated."
-    ],
-    [
-      "Thu",
-      "Check-in brief written in French: 2-projects/workshop-segmentation/brief-checkin-2026-10-29.md (opening line, 4 decisions to get, questions to confirm, what to bring)."
-    ],
-    [
-      "Thu 09:50",
-      "Morning check: hand-off, digest and open sessions read; v2 workbook diffed against the repo (only two titles changed, stock still per bus); garbled transcript path in the map fixed; inbox empty; search service up. Skills used: boulon-morning-check, boulon-hq-update."
-    ],
-    [
-      "Wed 17:15",
-      "End of day: 4 work sessions read (helpers: 4 haiku digests). Routed to the hand-off, RESUME, segmentation status and wiki, memory (5 files corrected), decision log, improvements backlog. Audit 0 unrouted, 0 stale, 0 map gaps. Skills used: boulon-end-of-day, boulon-hq-update."
-    ],
-    [
-      "Wed 17:20",
-      "End of day: 8 sessions read (3 sonnet helpers; 1 closed session via its digest). Routed: timeline, lessons 11-04, ideas W45 §6, memory (new: no empty replies), continuity log §3, hand-off 2026-11-04, INDEX, RESUME. Audit 0/0/0 after 2 map rows (.git, .github). Flag: D11 segmentation now in the private GitHub repo. Skills used: boulon-end-of-day, boulon-hq-update."
     ]
   ],
   "today": {
@@ -477,7 +452,7 @@ const S = {
     {
       "date": "2026-11-05",
       "d": "Thu",
-      "outcome": "Your choice on the Azure subscription; Claude token as GitHub secret; DIX30 transcript at home.",
+      "outcome": "Your choice on the Azure subscription; Claude token as GitHub secret; DIX30 transcript (done 11-05).",
       "state": "now"
     },
     {
@@ -490,6 +465,12 @@ const S = {
   "top3": [
     {
       "who": "Greg",
+      "what": "Review the DIX30 plan proposal and pick its first recipient",
+      "why": "Dominique asked for it at the 11-03 meeting; Pierre wants the timing; February presentation is firm.",
+      "p": "boulon"
+    },
+    {
+      "who": "Greg",
       "what": "Test one card on the live ID card link, then send Henri the link + PowerPoint",
       "why": "Both are ready since 11-02; only the live page has not generated a full card yet. Henri then sends his logos.",
       "p": "seg"
@@ -499,18 +480,6 @@ const S = {
       "what": "Send Pierre the staffing-curve request and Gabriel the < 50-word summary (drafts in session Good morning (fork))",
       "why": "The from-zero proposal rests on the real curve behind slide 52.",
       "p": "seg"
-    },
-    {
-      "who": "Greg",
-      "what": "Decide the ZBB hourly rate ($65 or $75) and sign off the young-bus gap",
-      "why": "Open since 10-22; it blocks the ZBB demo numbers.",
-      "p": "zbb"
-    },
-    {
-      "who": "Greg",
-      "what": "Give your top 3 bus brands and the mechanics' language",
-      "why": "Open since 10-21; it sets which manuals BOULON loads first when the ticket clears.",
-      "p": "boulon"
     }
   ],
   "projects": [
@@ -541,24 +510,24 @@ const S = {
     {
       "id": "boulon",
       "name": "BOULON (maintenance AI)",
-      "state": "wait",
-      "status": "Waiting on IT ticket 77048 (day 34). Last agent run: 22 of 36 failure tests pass.",
-      "where": "1-boulon/docs/continuity-log.md",
+      "state": "now",
+      "status": "11-03 meeting: school-bus proof of concept v0.1 (manuals first, work orders phase 2), February group presentation firm, 30-min weekly follow-up with Dominique. Plan proposal v0.1 drafted 11-05, not sent. Azure subscription Disabled; ticket 77048 targets it.",
+      "where": "1-boulon/docs/proposition-plan-projet-2026-11.md",
       "moves": [
         {
           "who": "Greg",
-          "what": "Give your top 3 bus brands and the mechanics' language",
-          "why": "Sets the manual load order for the cutover."
-        },
-        {
-          "who": "Claude",
-          "what": "Fix the M6 torque regression (says 12.7 Nm, should be 15 Nm)",
-          "why": "Free, no ticket needed; a wrong torque is the worst failure type."
+          "what": "Review the plan proposal and say who gets it first",
+          "why": "Asked at [1:15:01]; nothing sent yet."
         },
         {
           "who": "Greg",
-          "what": "Check ticket 77048 on the IT portal",
-          "why": "Everything in Gate B waits on it."
+          "what": "Choose how to bring the Azure subscription back (reactivate or move ticket 77048)",
+          "why": "Critical path to February: P1-P3 need about 7-10 weeks after it (Estimate)."
+        },
+        {
+          "who": "Greg",
+          "what": "Ask Pierre: IC-only prototype, or access to Thomas / Blue Bird manuals?",
+          "why": "His own example was a Thomas 2016; only the IC manual is in SharePoint."
         }
       ]
     },
