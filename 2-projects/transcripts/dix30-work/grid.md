@@ -1,0 +1,19 @@
+# War-room grid (working) — speaker = inferred unless named
+
+| ts | item | inferred speaker | existing doc | delta |
+|---|---|---|---|---|
+| 0:01:15 | Dominique, consultant at "ITED" (spelling?), management systems + AI; met ~2-3 weeks ago to see how to support the project; today = decortiquer issues, then go back to "les capitales"(?) | Dominique (named) | none | NEW stakeholder |
+| 0:02:58 | Ultimate goal: chatbot supports mechanics/maintenance agents on diagnosis, info search, troubleshooting. Example: low oil pressure only at idle | Greg (presenting) | brief 551 Objectives | confirms |
+| 0:40:14 | Ultimate objective = help juniors save time on diagnosis + quality; main efficiency loss in workshops = diagnostics; no measurement, from experience; wrong diagnoses, parts changed for nothing | Pierre (inferred) | meeting-2026-09-24 "Why" | confirms; no baseline exists |
+| 0:40:53 | Diagnostic part first given to seniors(?) "seigneur" = senior; always in "aide" stage first; documentation part (fast doc access) useful to everyone quickly | Pierre (inferred) | D16 (experts test first) | confirms |
+| 0:41:13 | Preventive maintenance value? Skeptical: fleet very diversified, conditions differ, urban vs interurban | Q Dominique; A Alex? (inferred) | none | OUT of scope for now |
+| 0:42:42–0:43:52 | US database: objective to learn from the American base, huge, better data quality; maybe later ("deuxième temps"), could help or pollute; analyse that data quality | Pierre (inferred) | D17 (US later) | confirms, later phase |
+| 0:43:59 | Focus first where hardest; "on souffre dans le scolaire"; test on school bus; 2 equipment categories (codes starting 2 and 5?); want something fast even if limited scope by equipment type; must be volume; "soit scolaire, soit [urbain?]"; most pan-Canadian = school | Pierre (inferred) | mvp-school-bus doc | CONFIRMS MVP origin |
+| 0:44:56 | Quebec ~12 models(?) of [?]; school: few particulars by year; same interior, transmission, engine, differential across | Alex? | MVP fleet table | check |
+| 0:45:33 | "Grégory, do you have the tools if we limit like that? Would Azure AI be saturated?" Greg: fewer manuals with school; good for the concept | Henri? asks; Greg answers | continuity log status (Free 50 MB, subscription disabled) | Greg's capacity answer; NOTE: only IC Leeds in SharePoint |
+| 0:46:05 | Pierre OK with school as proof of concept, "version 0.1", first functional prototype; "c'est notre priorité" | Pierre (named) | MVP doc decision | DECISION confirmed |
+| 0:46:32 | **"Il faudrait se faire un plan de projet pour que je voie le timing"**; project ("fiche projet") validated some time ago; need to know when it comes out | Pierre (inferred) | brief 551 (no dates) | **ASK: project plan with timing** |
+| 0:46:53 | "on se concentre sur scolaire ... un mois sur [scolaire]"? unclear (12 mois vs 1 mois) | ? | — | listen-check |
+| 0:47:01 | Integrate electric with gas(diesel)? Must separate, nothing in common; worth it: huge gaps in Quebec between those who know (electric) and those who don't; school database extends strongly to Ontario, more vehicles in Ontario, quality unknown | Q Greg?; A Pierre (inferred) | MVP: eLion OUT | conflict-ish: electric = later separate track |
+| 0:47:51 | Goal: prototype + set of metrics, see progress; "apprivoiser les projets IA" (tame AI projects) from a year ago; start small perimeter; show something basic; at 75% success rate start splitting (brakes work well, engines less) to find where problems are; PoC could fit in Greg's internship ("ton stage") which ends at some point | Dominique? / Pierre? | brief KPI 95% | NEW: 75% threshold idea, metrics by system |
+| 0:49:03 | Prototype deadline? "fin du mois?"; firm deadline: group presentation in February; something that works between now and then, not perfect | Pierre (inferred, addresses Henri) | none | **NEW milestone: Feb group presentation (firm)** |

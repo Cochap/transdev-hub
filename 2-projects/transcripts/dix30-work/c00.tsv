@@ -1,0 +1,89 @@
+0.0	3.0	...
+23.3	45.1	Bonjour Pierre.
+45.1	46.1	Bonjour.
+46.1	57.8	Salut Alex.
+58.8	62.8	Nous voilà désolé, on a eu quelques petits problèmes pour mettre en place la télé.
+62.8	75.1	télé et c'est réglé et tous ici avec dominique que je vais te laisser te présenter ça va être plus simple
+75.1	79.8	parce que comme ça je ne veux pas dire de bêtises non plus. En fait je suis un collaborateur de
+79.8	89.7	ITED, donc consultant avec ITED spécialisé en système de gestion et en IA puis on a mis une rencontre
+89.7	96.2	il y a deux semaines trois semaines avec ITEL pour voir comment on pouvait appuyer
+96.2	100.2	finalement votre projet s'il y avait possibilité d'appuyer donc on fait une
+100.2	105.4	rencontre aujourd'hui c'est vraiment pour pouvoir décortiquer un peu voir un
+105.4	111.6	peu là où il y a des issues comment on peut les aider puis voir donc si ça va
+111.6	117.5	suivre avec un projet ou autrement donc c'est vraiment pour pouvoir
+117.5	126.3	déboursailler et ensuite retourner vers les capitales pour voir comment vous appuyez.
+126.3	133.6	Est-ce que vous avez des questions ? C'est très rapide.
+133.6	147.8	Je vais commencer par préfacer quelque chose. Je ne suis pas du tout un expert en déchartant
+147.8	154.2	ancienne très loin de là j'ai les bases sur la manière dont ça fonctionne mais vous m'excuserez
+154.2	161.0	si je dis des bêtises et si je n'ai parfois pas les bonnes idées ou les bonnes notions mais pour
+161.0	167.1	faire un petit topo de là où on en est et pareil le gré des pavons si tu as des informations
+167.1	173.8	sont plus précises mais juste pour faire un petit récapitulatif du projet je vais commencer
+173.8	178.1	c'est par là où on veut être et quel est le but ultime.
+178.4	189.1	Le but ultime dans un monde parfait, c'est qu'on ait un chatbot qui puisse appuyer les mécaniciens
+189.1	195.7	et les agents de maintenance sur le diagnostic, la recherche d'informations
+195.7	199.7	et le dépannage lors d'activités de maintenance.
+199.7	206.7	Ça, ça pourrait être par exemple des questions qui pourraient être posées à l'agent serait
+206.7	214.3	j'ai tel véhicule de tel modèle qui a une basse pression d'huile uniquement quand le
+214.3	219.0	moteur est au repos mais lorsqu'il roule la pression d'huile revient à l'air normal
+219.0	224.0	et l'erreur s'efface et l'agent pourrait aller chercher plusieurs sources d'information.
+224.0	232.8	La première qui est plutôt statique, qui est donc des références PDF, des manuels PDF,
+232.8	237.6	des plans de maintenance qui viennent du constructeur et qui référencent les différents codes
+237.6	242.3	d'erreur, des diagrammes, des schémas, des guides de dépannage.
+242.3	249.9	Et une autre source de données qui elle serait plus dynamique, c'est à dire une source de
+249.9	257.2	données en fait qui serait notre CMMS, notre logiciel de maintenance où la base de données
+257.2	263.1	contient la liste des véhicules que nous avons avec leurs attributs respectifs modèles, marques,
+263.1	274.2	années, types et que cet agent ait la possibilité d'analyser la base de données pour potentiellement
+274.2	276.2	refaire état d'information du genre
+276.2	279.4	on a un véhicule similaire qui a vécu un problème similaire
+279.4	282.8	une solution a été trouvée par des mécaniciens
+282.8	283.9	il y a 2-3 ans
+283.9	286.6	il faudrait d'abord confirmer
+286.6	288.8	que ce fixe fonctionne encore
+288.8	291.2	mais voilà ce qu'il avait trouvé à l'époque
+291.2	292.9	est-ce que ça s'appliquait ce véhicule
+292.9	295.3	et autour de tout ça
+295.3	296.7	s'ajoute une sorte de couche
+296.7	298.9	un petit peu entreprise
+298.9	301.1	c'est à dire que l'agent rappelle
+301.1	302.7	les bonnes pratiques de sécurité
+302.7	311.5	avant toute manipulation. L'agent rappelle et comme pratique de sécurité avant toute manipulation.
+311.5	318.8	Rappelle aux mécaniciens que ce ne sont uniquement des suggestions mais que ce n'est pas des ordres, ce genre de choses.
+318.8	328.0	Quand vous dites que vous... en fait c'est quand même le chatbot est assez large, vous parlez de diagnostic de l'épanage.
+328.0	341.1	Est-ce que vous voyez ça comme trois agents dont vous avez évalué la performance et la pertinence séparément?
+343.4	345.7	Alors voilà, c'est une question déjà qui est trop technique pour moi.
+347.0	353.4	En fait, je suppose que ce n'est pas la même personne qui va demander une aide sur un diagnostic,
+353.4	357.2	qui va demander un dépannage sur quelque chose qui est entrepris.
+357.9	360.2	L'aide sur le diagnostic est ce que peut-être...
+360.2	373.2	Et dans votre scénario, donc, on parle pas d'aider des plus juniors ou c'est vraiment des situations qui viennent régulièrement?
+373.2	383.2	Si, si. En fait, justement, vous m'entendez, en fait, justement, je crois que je vois la question de vous poser. Je pense qu'il y a deux niveaux.
+383.2	391.1	Le niveau technologique, c'est le niveau, côté métier, c'est le niveau réconnu.
+391.3	394.2	C'est le niveau où on va rentrer ce qu'on voit, on va rentrer ce qu'on a comme information.
+394.5	399.7	On espère obtenir des informations de la part du système.
+400.0	405.3	Donc comme l'a dit Henri, soit par rapport à une base de données constructeurs,
+406.1	409.9	comme un manuel de la PCF en fait, qui vous dit que quand il y a de voyants, machins qui est allumés,
+409.9	414.9	ça veut dire qu'il n'y a plus de produit ou qu'il n'y a plus de rinçage ou que le ventilateur marche pas, je sais pas.
+416.1	427.1	Mais pour aller plus loin, ça c'est donc l'étape diagnostique, il y a prendre l'opportunité de voir ce qu'on peut faire avec la data TransDef.
+428.1	433.6	Donc davantage majeur qu'à TransDef avec des millions de bons travaux qui ont été complétés au-delà des années.
+434.6	437.6	Puis on peut égargir plus tard des bases de données autres que celles au Canada.
+438.4	439.9	Donc ça c'est la partie diagnostique.
+441.0	446.1	Après il y a l'aspect peut-être, Henri, je vais réfléchir un peu, mais il y a l'aspect réparation.
+446.1	455.1	L'aspect réparation, c'est pas tout à fait la même chose, parce que l'aspect réparation, lui, une fois que le diagnostic est établi, la réparation suit un protocole parfaitement élevé.
+455.1	464.1	S'il s'agit de changer une sonde, s'il s'agit de tomber en moteur, s'il s'agit de... il y a des manuettes de réparation extrêmement précis, des règles de sécurité extrêmement précises,
+464.1	471.2	Il n'y a plus de marge du tout, je pense, sur de l'interprétation, de l'analyse d'anciens documents.
+472.1	478.8	C'est plus uniquement un appel à une base de référence qui va apporter les bons éléments.
+479.5	480.1	La partie diagnostique...
+481.0	483.6	Je parle trop, mon détauteur.
+484.9	485.4	C'est la partie.
+486.5	493.5	La partie diagnostique est celle qui est la plus compliquée, je pense, en termes de...
+493.5	506.9	et qui a le plus d'opportunités. Et le projet que je souhaite faire, c'est un projet qui va permettre de britcher, en bon français, un mécanicien junior parce que c'est un mécanicien senior.
+507.4	521.7	Donc comment, grâce à l'appliance artificielle, on est capable d'amener un mécanicien junior et un mécanicien senior dans sa tête.
+521.7	548.7	Mais je pense qu'il y a peut-être deux agents, si on ne veut pas surcharger la machine, parce que l'agent réparation, donc hors diagnostic d'agent réparation, pour reprendre l'exemple que tu as donné Henri sur la pression d'huile, une fois que le diagnostic est établi, et par exemple la conclusion est faite qu'il faut changer les capteurs de pression d'huile,
+548.7	554.7	Le changement du captat de pression-ville, c'est une opération qui existe dans le manuel de réparation du constructeur
+554.7	562.7	et qui n'a absolument rien à voir avec l'IA. À part le fait de gagner peut-être du temps pour aller chercher l'information plus rapidement dans la base référendaire.
+562.7	569.7	Mais tu sais, Pierre, quand on utilise des IA, souvent ils vont nous suggérer des follow-up par la suite.
+569.7	577.7	On peut avoir quand même un seul point d'accès où tout ça passe qui va ensuite être rédigé par différents experts en dessous.
+577.7	582.7	Il faut nous suggérer, il faut nous apporter à ses heures et ensuite quand on a des réponses.
+582.7	586.7	Non mais ce que je voulais dire Alex c'est que moi j'ai pas d'avis du tout sur la question,
+586.7	590.7	je suis encore plus mauvais qu'envie sur la question côté technique.
+590.7	596.7	Mais ce que je veux dire en termes de philosophie, je sais pas si ce seront les mêmes personnes qui utilisent les deux,
+596.7	598.7	mais il y a quelque part...
