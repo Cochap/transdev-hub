@@ -13,7 +13,7 @@ Plain words: a recipe card the agent reads only when the job comes up, so the ma
 ## In this workspace
 - Project skills live in `.claude/skills/<name>/SKILL.md`; the list and what each does is [[skills-catalog]].
 - One skill is Azure-specific: `azure-search-index-projection-parent-fields` (frontmatter name, model haiku, a description saying when to use it) documents the projection trap ([[index-projections]]).
-- Skill repos seen in the brief's tools watch: github.com/microsoft/skills and github.com/microsoft/azure-skills (listed; contents not read for this page).
+- Skill repos seen in the brief's tools watch: github.com/microsoft/skills and github.com/microsoft/azure-skills (crawled 2026-11-04: findings in `1-boulon/docs/azure-copilot-skills-findings-2026-11-04.md`).
 
 ## Related
 [[agent-architecture-map]] · [[agent-harness]] · [[agent-orchestration-patterns]] · [[mcp]] · [[skills-catalog]] · [[claude-operating-model]] · [[azure-ai-stack-map]] · [[greg-interest-map]] · [[copilot-studio-agent]] · [[boulon]]

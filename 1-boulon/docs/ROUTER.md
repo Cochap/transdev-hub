@@ -17,6 +17,7 @@ Open only the line you need. Every child of this folder is listed below.
 - `azure-limits-pricing-2026-09-23.md` — Azure AI Search limits & pricing for BOULON — research notes (2026-09-23)
 - `azure-region-check-2026-09-24.md` — Azure region and compatibility check for the Basic search ticket (2026-09-24, ~16:10)
 - `azure-tiers-verified-2026-09-24.md` — Azure AI Search tiers: verified limits and prices (2026-09-24)
+- `azure-copilot-skills-findings-2026-11-04.md` — what microsoft/azure-skills (installed, 7 plugins) and microsoft/skills (not installed; Azure AI Search + Copilot Studio client skills) offer BOULON, what works, what fails, fixes not tried
 - `boulon-scale-story-2026-10-22.html` — BOULON Scale Story
 - `cloud-ai-architecture-brief-2026-10-22.md` — BOULON: cloud AI architecture brief for Greg Riley
 - `continuity-log.md` — BOULON Maintenance AI — Continuity Log
