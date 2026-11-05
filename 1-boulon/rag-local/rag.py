@@ -186,8 +186,7 @@ class Engine:
         return dict(status="answer", rows=rows, citation=cite, hits=hits, route="+".join(r_['route'] for r_ in routes) or None)
 
     UNITS = {"ohm": r"\d\s*(?:OHMS?|Ω|K?OHM)", "ohms": r"\d\s*(?:OHMS?|Ω)", "résistance": r"\d\s*(?:OHMS?|Ω)", "resistance": r"\d\s*(?:OHMS?|Ω)",
-             "volt": r"\d\s*V(?:OLTS?|DC)?\b", "volts": r"\d\s*V(?:OLTS?|DC)?\b", "voltage": r"\d\s*V(?:OLTS?|DC)?\b", "tension": r"\d\s*V(?:OLTS?|DC)?\b",
-             "°c": r"\d\s*°?\s*C\b", "degrees": r"\d\s*°"}
+             "volt": r"\d\s*V(?:OLTS?|DC)?\b", "volts": r"\d\s*V(?:OLTS?|DC)?\b", "voltage": r"\d\s*V(?:OLTS?|DC)?\b", "tension": r"\d\s*V(?:OLTS?|DC)?\b"}  # temperatures are conditions, not the asked value
     def annotate(self, row):
         """Variant rows: append the legend meaning of the option marker(s) in the first cell (e.g. '1!' -> '! = W/ADDITIONAL BACK UP LT...')."""
         m = re.search(r"\[PDF p\.(\d+)\]", row)
@@ -211,8 +210,11 @@ class Engine:
         qt = {t for t in tokens(expand_query(q)) if t in self.vocab and t not in self.STOP and t not in GENERIC and len(t) > 2}
         for h in hits[:3]:
             for line in h['chunk'].split(chr(10)):
-                if any(re.search(rx, line, re.I) for rx in need) and (qt & set(tokens(line))):
-                    return True
+                subj = qt - set(self.UNITS) - {"isb", "diesel", "engine", "bus", "read", "should", "many"}
+                for rx in need:
+                    for mm in re.finditer(rx, line, re.I):
+                        win = line[max(0, mm.start() - 60): mm.end() + 60]
+                        if subj & set(tokens(win)): return True
         return False
 
     def route_connector(self, q):

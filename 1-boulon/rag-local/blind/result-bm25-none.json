@@ -763,8 +763,8 @@
 "id": "B44",
 "type": "refuse",
 "lang": "en",
-"ok": false,
-"status": "answer"
+"ok": true,
+"status": "abstain_value"
 },
 {
 "id": "B45",
