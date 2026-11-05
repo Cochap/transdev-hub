@@ -63,3 +63,11 @@ Started Mon 2026-11-02 13:45 from `2026-W44-ideas-and-tasks.md`, `5-brain/handof
 - ⬜ DIX30: Greg reruns Whisper at home; then notes + charter (Claude).
 - ⬜ Idea (passing): OpenWispr desktop app install, never answered.
 - ✅ VoiceStudio fixed (one launch). ⬜ Greg: permanent `UV_SYSTEM_CERTS=1`?
+
+## 7. Thu 11-05 (end of day)
+- ✅ DIX30 transcript, minutes, formal plan v1.0 (.docx) and v1.1 (.docx). ⬜ Greg reviews, re-listens 10 timestamps, sends to Dominique. ⬜ Pierre: 5 proposed changes to brief 551.
+- ✅ $0 Copilot Studio SharePoint path verified (page citations). ✅ Azure MCP + microsoft/skills installed. ⬜ Test Azure MCP inside Claude after restart.
+- 🟡 Idea (Greg, 12:59): Azure-free multimodal RAG keeping tables — built as Phase 0 (82% blind retrieval); end-to-end answer test pending; D7 waits on Greg's yes.
+- ⬜ Idea (passing, 13:06): "news deep research" tools scan — not started.
+- 🟡 ThinkStation PGX arrived: Greg borrows USB keyboard/mouse, does guide Parts 1-3; ⬜ French IT network request (Claude drafts on yes).
+- ⬜ Unanswered from the morning: "guide me on the claude github secret again"; "point me back" to open decisions.

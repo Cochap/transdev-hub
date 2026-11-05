@@ -7,32 +7,54 @@
 "page": true,
 "miss": [],
 "got": [
+70,
 1493,
 303,
 302,
-70,
 304
 ],
 "want": [
 70
 ],
-"route": null
+"route": "fuse_lookup"
 },
 {
 "id": "C02",
 "type": "symptom",
 "lang": "en",
-"ok": false,
-"page": false,
-"status": "abstain_low"
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+70,
+67,
+68,
+541,
+544
+],
+"want": [
+70
+],
+"route": "fuse_lookup"
 },
 {
 "id": "C03",
 "type": "symptom",
 "lang": "fr",
-"ok": false,
-"page": false,
-"status": "abstain_low"
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+70,
+71,
+373,
+374,
+1483
+],
+"want": [
+70
+],
+"route": "fuse_lookup"
 },
 {
 "id": "C04",
@@ -59,17 +81,14 @@
 "id": "C05",
 "type": "table",
 "lang": "fr",
-"ok": false,
-"page": false,
-"miss": [
-"B9-R",
-"ACC2"
-],
+"ok": true,
+"page": true,
+"miss": [],
 "got": [
-1241,
+66,
+68,
 279,
 432,
-651,
 282
 ],
 "want": [
@@ -81,17 +100,15 @@
 "id": "C06",
 "type": "symptom",
 "lang": "en",
-"ok": false,
-"page": false,
-"miss": [
-"NS1"
-],
+"ok": true,
+"page": true,
+"miss": [],
 "got": [
+66,
 1228,
 771,
 775,
-867,
-1535
+867
 ],
 "want": [
 66
@@ -102,26 +119,34 @@
 "id": "C07",
 "type": "symptom",
 "lang": "fr",
-"ok": false,
-"page": false,
-"status": "abstain_low"
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+66,
+67,
+473,
+470,
+386
+],
+"want": [
+66
+],
+"route": "fuse_lookup"
 },
 {
 "id": "C08",
 "type": "symptom",
 "lang": "en",
-"ok": false,
-"page": false,
-"miss": [
-"B6-M",
-"ACC2"
-],
+"ok": true,
+"page": true,
+"miss": [],
 "got": [
-1231,
-1235,
+67,
 682,
 434,
-432
+432,
+402
 ],
 "want": [
 67
@@ -132,9 +157,20 @@
 "id": "C09",
 "type": "symptom",
 "lang": "fr",
-"ok": false,
-"page": false,
-"status": "abstain_low"
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+67,
+1231,
+470,
+472,
+84
+],
+"want": [
+67
+],
+"route": "fuse_lookup"
 },
 {
 "id": "C10",
@@ -144,11 +180,11 @@
 "page": true,
 "miss": [],
 "got": [
-1231,
-904,
-68,
 67,
-66
+68,
+904,
+66,
+69
 ],
 "want": [
 67
@@ -220,7 +256,7 @@
 "page": true,
 "miss": [],
 "got": [
-1239,
+70,
 269,
 933,
 468,
@@ -261,11 +297,11 @@
 "MD3"
 ],
 "got": [
-1228,
-1231,
+70,
 310,
 309,
-84
+84,
+311
 ],
 "want": [
 310,
@@ -281,8 +317,8 @@
 "page": true,
 "miss": [],
 "got": [
-1239,
-1242,
+67,
+72,
 416,
 410,
 409
@@ -300,8 +336,8 @@
 "page": true,
 "miss": [],
 "got": [
-1231,
-1235,
+66,
+69,
 398,
 396,
 182
@@ -359,16 +395,16 @@
 "page": true,
 "miss": [],
 "got": [
+68,
 578,
 1513,
 538,
-663,
-537
+663
 ],
 "want": [
 578
 ],
-"route": null
+"route": "fuse_lookup"
 },
 {
 "id": "C22",
@@ -378,11 +414,11 @@
 "page": true,
 "miss": [],
 "got": [
-1231,
-1235,
+70,
 578,
 577,
-684
+684,
+576
 ],
 "want": [
 578
@@ -435,11 +471,11 @@
 "page": false,
 "miss": [],
 "got": [
-1228,
-1235,
+68,
 679,
 653,
-656
+656,
+659
 ],
 "want": [
 654,
@@ -477,10 +513,10 @@
 "page": true,
 "miss": [],
 "got": [
+66,
 1228,
 897,
 692,
-66,
 100
 ],
 "want": [
@@ -493,18 +529,15 @@
 "id": "C28",
 "type": "multipage",
 "lang": "en",
-"ok": false,
+"ok": true,
 "page": true,
-"miss": [
-"NOTE 20",
-"MD1"
-],
+"miss": [],
 "got": [
-1228,
-1242,
+67,
 858,
 861,
-859
+859,
+860
 ],
 "want": [
 859,
@@ -520,11 +553,11 @@
 "page": true,
 "miss": [],
 "got": [
+67,
 1228,
 1467,
 1533,
-1497,
-1498
+1497
 ],
 "want": [
 1533,
@@ -622,7 +655,7 @@
 "K97KB"
 ],
 "got": [
-1241,
+72,
 146,
 145,
 543,

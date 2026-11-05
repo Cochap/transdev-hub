@@ -1,0 +1,13 @@
+{"answers":[
+{"id":"C21","answer":"Le fusible HYDROMAX BRAKE PRESSURE FUSE (4046) est de 5 A (fil K90X 14GY, marqueur @ = W/HYDROMAX HYDRAULIC BRAKES).\nSource : manuel IC BE/CE, § 13.46, page imprimée 538 (PDF p. 578)"},
+{"id":"C22","answer":"The BRAKE SYSTEM FUSE (4041) next to the UPPER MEGA FUSE STUD (4000B) is rated 40 A (wires K90A / K90AA 10GY).\nSource : manuel IC BE/CE, § 13.46, page imprimée 538 (PDF p. 578)"},
+{"id":"C23","answer":"Au connecteur DECU J1 (1826), la broche de masse est la broche 1, avec le fil A44K-G1, calibre 14, couleur blanche (14WH), qui va au ground splice 1003B.\nSource : manuel IC BE/CE, § 13.87, page imprimée 579 (PDF p. 619)"},
+{"id":"C24","answer":"The wheelchair lift solenoid output (E1) of the J4-blue body controller (1601) uses wire A122J 18GY (18 gauge, gray), which goes to pin 37 of the ELEC PANEL/PLATFORM connector (1702).\nSource : manuel IC BE/CE, § 15.2, page imprimée 614 (PDF p. 654)"},
+{"id":"C25","answer":"Je n'ai pas cette information dans le manuel IC."},
+{"id":"C26","answer":"I don't have that information in the IC manual."},
+{"id":"C27","answer":"Le fusible B12-V (REAR POWER VENT, bloc 10301-B12, bloc MTA) est de 7,5 A, sur l'alimentation NS3.\nSource : manuel IC BE/CE, § 2.26, page imprimée 26 (PDF p. 66)"},
+{"id":"C28","answer":"B3-G (bloc 10304-B3) : rating entry = NOTE 20 (la valeur en ampères est dans la note de la feuille AE08090653_032, pas sur cette page), alimentation MD1, description BOOSTER PUMP.\nSource : manuel IC BE/CE, § 2.27, page imprimée 27 (PDF p. 67)"},
+{"id":"C29","answer":"Dans le PDM2 (batterie), le fusible F3F est de 20 A (circuit K14Q 16RD).\nSource : manuel IC BE/CE, § 27.3, page imprimée 1423 (PDF p. 1467)"},
+{"id":"C30","answer":"I don't have that information in the IC manual."},
+{"id":"C31","answer":"I don't have that information in the IC manual."}
+]}
