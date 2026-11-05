@@ -488,3 +488,4 @@
 {"ts":"2026-11-04T14:42:49","skill":"boulon-skill-finder","mode":"pinned","tier":"haiku","model":null,"ms":66,"cost_usd":0,"reason":"fixed-step skill, pinned to smallest size"}
 {"ts":"2026-11-05T10:23:24","skill":"boulon-hq-update","mode":"pinned","tier":"haiku","model":null,"ms":18,"cost_usd":0,"reason":"fixed-step skill, pinned to smallest size"}
 {"ts":"2026-11-05T10:43:01","skill":"anthropic-skills:docx","mode":"routed","tier":"sonnet","model":"openai/gpt-6.1-sol","ms":3809,"cost_usd":0.000198,"reason":"jev-router picked openai/gpt-6.1-sol (size before floor: sonnet)"}
+{"ts":"2026-11-05T11:32:02","skill":"boulon-morning-check","mode":"routed","tier":"sonnet","model":"openai/gpt-6.1-sol","ms":3696,"cost_usd":0.000194,"reason":"jev-router picked openai/gpt-6.1-sol (size before floor: sonnet)"}
