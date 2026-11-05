@@ -1,0 +1,930 @@
+# Transcription — réunion Quartier DIX30, 2026-11-03 (76 min)
+# Source : C:\Users\rilg01\Downloads\Quartier DIX30 2.m4a
+# Outil : faster-whisper large-v3-turbo (int8, CPU), français, transcrit le 2026-11-05. Brut, non relu : noms propres et termes techniques à vérifier.
+
+[0:00:00] ...
+[0:00:23] Bonjour Pierre.
+[0:00:45] Bonjour.
+[0:00:46] Salut Alex.
+[0:00:58] Nous voilà désolé, on a eu quelques petits problèmes pour mettre en place la télé.
+[0:01:02] télé et c'est réglé et tous ici avec dominique que je vais te laisser te présenter ça va être plus simple
+[0:01:15] parce que comme ça je ne veux pas dire de bêtises non plus. En fait je suis un collaborateur de
+[0:01:19] ITED, donc consultant avec ITED spécialisé en système de gestion et en IA puis on a mis une rencontre
+[0:01:29] il y a deux semaines trois semaines avec ITEL pour voir comment on pouvait appuyer
+[0:01:36] finalement votre projet s'il y avait possibilité d'appuyer donc on fait une
+[0:01:40] rencontre aujourd'hui c'est vraiment pour pouvoir décortiquer un peu voir un
+[0:01:45] peu là où il y a des issues comment on peut les aider puis voir donc si ça va
+[0:01:51] suivre avec un projet ou autrement donc c'est vraiment pour pouvoir
+[0:01:57] déboursailler et ensuite retourner vers les capitales pour voir comment vous appuyez.
+[0:02:06] Est-ce que vous avez des questions ? C'est très rapide.
+[0:02:13] Je vais commencer par préfacer quelque chose. Je ne suis pas du tout un expert en déchartant
+[0:02:27] ancienne très loin de là j'ai les bases sur la manière dont ça fonctionne mais vous m'excuserez
+[0:02:34] si je dis des bêtises et si je n'ai parfois pas les bonnes idées ou les bonnes notions mais pour
+[0:02:41] faire un petit topo de là où on en est et pareil le gré des pavons si tu as des informations
+[0:02:47] sont plus précises mais juste pour faire un petit récapitulatif du projet je vais commencer
+[0:02:53] c'est par là où on veut être et quel est le but ultime.
+[0:02:58] Le but ultime dans un monde parfait, c'est qu'on ait un chatbot qui puisse appuyer les mécaniciens
+[0:03:09] et les agents de maintenance sur le diagnostic, la recherche d'informations
+[0:03:15] et le dépannage lors d'activités de maintenance.
+[0:03:19] Ça, ça pourrait être par exemple des questions qui pourraient être posées à l'agent serait
+[0:03:26] j'ai tel véhicule de tel modèle qui a une basse pression d'huile uniquement quand le
+[0:03:34] moteur est au repos mais lorsqu'il roule la pression d'huile revient à l'air normal
+[0:03:39] et l'erreur s'efface et l'agent pourrait aller chercher plusieurs sources d'information.
+[0:03:44] La première qui est plutôt statique, qui est donc des références PDF, des manuels PDF,
+[0:03:52] des plans de maintenance qui viennent du constructeur et qui référencent les différents codes
+[0:03:57] d'erreur, des diagrammes, des schémas, des guides de dépannage.
+[0:04:02] Et une autre source de données qui elle serait plus dynamique, c'est à dire une source de
+[0:04:09] données en fait qui serait notre CMMS, notre logiciel de maintenance où la base de données
+[0:04:17] contient la liste des véhicules que nous avons avec leurs attributs respectifs modèles, marques,
+[0:04:23] années, types et que cet agent ait la possibilité d'analyser la base de données pour potentiellement
+[0:04:34] refaire état d'information du genre
+[0:04:36] on a un véhicule similaire qui a vécu un problème similaire
+[0:04:39] une solution a été trouvée par des mécaniciens
+[0:04:42] il y a 2-3 ans
+[0:04:43] il faudrait d'abord confirmer
+[0:04:46] que ce fixe fonctionne encore
+[0:04:48] mais voilà ce qu'il avait trouvé à l'époque
+[0:04:51] est-ce que ça s'appliquait ce véhicule
+[0:04:52] et autour de tout ça
+[0:04:55] s'ajoute une sorte de couche
+[0:04:56] un petit peu entreprise
+[0:04:58] c'est à dire que l'agent rappelle
+[0:05:01] les bonnes pratiques de sécurité
+[0:05:02] avant toute manipulation. L'agent rappelle et comme pratique de sécurité avant toute manipulation.
+[0:05:11] Rappelle aux mécaniciens que ce ne sont uniquement des suggestions mais que ce n'est pas des ordres, ce genre de choses.
+[0:05:18] Quand vous dites que vous... en fait c'est quand même le chatbot est assez large, vous parlez de diagnostic de l'épanage.
+[0:05:28] Est-ce que vous voyez ça comme trois agents dont vous avez évalué la performance et la pertinence séparément?
+[0:05:43] Alors voilà, c'est une question déjà qui est trop technique pour moi.
+[0:05:47] En fait, je suppose que ce n'est pas la même personne qui va demander une aide sur un diagnostic,
+[0:05:53] qui va demander un dépannage sur quelque chose qui est entrepris.
+[0:05:57] L'aide sur le diagnostic est ce que peut-être...
+[0:06:00] Et dans votre scénario, donc, on parle pas d'aider des plus juniors ou c'est vraiment des situations qui viennent régulièrement?
+[0:06:13] Si, si. En fait, justement, vous m'entendez, en fait, justement, je crois que je vois la question de vous poser. Je pense qu'il y a deux niveaux.
+[0:06:23] Le niveau technologique, c'est le niveau, côté métier, c'est le niveau réconnu.
+[0:06:31] C'est le niveau où on va rentrer ce qu'on voit, on va rentrer ce qu'on a comme information.
+[0:06:34] On espère obtenir des informations de la part du système.
+[0:06:40] Donc comme l'a dit Henri, soit par rapport à une base de données constructeurs,
+[0:06:46] comme un manuel de la PCF en fait, qui vous dit que quand il y a de voyants, machins qui est allumés,
+[0:06:49] ça veut dire qu'il n'y a plus de produit ou qu'il n'y a plus de rinçage ou que le ventilateur marche pas, je sais pas.
+[0:06:56] Mais pour aller plus loin, ça c'est donc l'étape diagnostique, il y a prendre l'opportunité de voir ce qu'on peut faire avec la data TransDef.
+[0:07:08] Donc davantage majeur qu'à TransDef avec des millions de bons travaux qui ont été complétés au-delà des années.
+[0:07:14] Puis on peut égargir plus tard des bases de données autres que celles au Canada.
+[0:07:18] Donc ça c'est la partie diagnostique.
+[0:07:21] Après il y a l'aspect peut-être, Henri, je vais réfléchir un peu, mais il y a l'aspect réparation.
+[0:07:26] L'aspect réparation, c'est pas tout à fait la même chose, parce que l'aspect réparation, lui, une fois que le diagnostic est établi, la réparation suit un protocole parfaitement élevé.
+[0:07:35] S'il s'agit de changer une sonde, s'il s'agit de tomber en moteur, s'il s'agit de... il y a des manuettes de réparation extrêmement précis, des règles de sécurité extrêmement précises,
+[0:07:44] Il n'y a plus de marge du tout, je pense, sur de l'interprétation, de l'analyse d'anciens documents.
+[0:07:52] C'est plus uniquement un appel à une base de référence qui va apporter les bons éléments.
+[0:07:59] La partie diagnostique...
+[0:08:01] Je parle trop, mon détauteur.
+[0:08:04] C'est la partie.
+[0:08:06] La partie diagnostique est celle qui est la plus compliquée, je pense, en termes de...
+[0:08:13] et qui a le plus d'opportunités. Et le projet que je souhaite faire, c'est un projet qui va permettre de britcher, en bon français, un mécanicien junior parce que c'est un mécanicien senior.
+[0:08:27] Donc comment, grâce à l'appliance artificielle, on est capable d'amener un mécanicien junior et un mécanicien senior dans sa tête.
+[0:08:41] Mais je pense qu'il y a peut-être deux agents, si on ne veut pas surcharger la machine, parce que l'agent réparation, donc hors diagnostic d'agent réparation, pour reprendre l'exemple que tu as donné Henri sur la pression d'huile, une fois que le diagnostic est établi, et par exemple la conclusion est faite qu'il faut changer les capteurs de pression d'huile,
+[0:09:08] Le changement du captat de pression-ville, c'est une opération qui existe dans le manuel de réparation du constructeur
+[0:09:14] et qui n'a absolument rien à voir avec l'IA. À part le fait de gagner peut-être du temps pour aller chercher l'information plus rapidement dans la base référendaire.
+[0:09:22] Mais tu sais, Pierre, quand on utilise des IA, souvent ils vont nous suggérer des follow-up par la suite.
+[0:09:29] On peut avoir quand même un seul point d'accès où tout ça passe qui va ensuite être rédigé par différents experts en dessous.
+[0:09:37] Il faut nous suggérer, il faut nous apporter à ses heures et ensuite quand on a des réponses.
+[0:09:42] Non mais ce que je voulais dire Alex c'est que moi j'ai pas d'avis du tout sur la question,
+[0:09:46] je suis encore plus mauvais qu'envie sur la question côté technique.
+[0:09:50] Mais ce que je veux dire en termes de philosophie, je sais pas si ce seront les mêmes personnes qui utilisent les deux,
+[0:09:56] mais il y a quelque part...
+[0:10:00] Pour faire une réparation sur un véhicule, la réparation devient ta diacoustique. Donc la diacoustique il nous a fait pour faire une réparation.
+[0:10:08] T'as pas vraiment besoin d'aller consulter un historique de maintenance, t'as besoin d'avoir la bonne information pour faire l'action.
+[0:10:18] Ah, donc t'as vraiment d'accord, on peut passer le kiosque, tu peux lui dire je veux la prestature pour ça, puis l'orchestrateur de plus haut niveau lui va t'envoyer vers la bonne presse pour lui tomber la bonne information.
+[0:10:28] Je distingue juste les deux en disant qu'il y en a un qui est plus une gestion de base dont il faut une pertinence très performante,
+[0:10:38] et l'autre qui est plus quelque chose d'ailleurs qui est beaucoup plus intéressant pour moi, pardon, le premier diagnostic c'est le cœur de la femme, c'est le cœur du vainqueur.
+[0:10:46] Et là, je le trouve dans les manuels, mais là, je ne sais pas qu'il est...
+[0:10:51] Je suis d'accord qu'une fois que l'agent a fait le diagnostic, il pourrait apporter la documentation et qu'il y aurait un gain.
+[0:11:02] Moi, c'est plus au niveau de séparer les mesures d'efficacité, les mesures de réussite.
+[0:11:07] Autrement dit, si j'ai un agent qui est excellent pour aller chercher les documents de réparation, mais qui se trompe dans le diagnostic à chaque fois,
+[0:11:16] le projet a échoué, c'est ce que je viens d'entendre.
+[0:11:18] Donc il faudrait focaliser les métriques initialement, les métriques de mesure de performance de l'IA ou de l'agent,
+[0:11:26] devraient être focalisés sur la partie diagnostique pour ensuite améliorer dans le retrieval.
+[0:11:34] C'est comme ça que je le vois, là? C'est pas nécessairement...
+[0:11:36] Et enfin, juste aussi pour clarifier, on parle pas nécessairement de charge sur la machine quand il s'agit d'avoir ces deux étapes-là.
+[0:11:45] Non, c'est ça.
+[0:11:46] Mais je focalise vraiment sur le projet qu'il y a comme tel plutôt que sur la charge de
+[0:11:52] machines.
+[0:11:53] Ça, c'est l'optimisation sur la...
+[0:11:55] Si je me torpe, le gros du travail va être sur la préparation de la donnée.
+[0:11:59] Préparation de la donnée possiblement et préparation donc de l'agent.
+[0:12:06] C'est à voir si on découpe en multiples petits agents aussi.
+[0:12:09] Est-ce qu'on a besoin des agents spécialisés?
+[0:12:12] On avait parlé d'ailleurs la dernière fois d'agents spécialisés par modèle.
+[0:12:16] Je sais pas comment vos ateliers…
+[0:12:18] J'irais peut-être beaucoup plus pointu que ça, tu sais.
+[0:12:21] Tu me ramènerais si je me trompe, mais moi j'irais peut-être avec une armée, littéralement une armée d'agents,
+[0:12:28] parce qu'on peut même descendre par composante pour les fins de diagnostic.
+[0:12:31] En fait, ce que j'imagine, et je ne connais absolument rien en mécanique,
+[0:12:35] même mon auto, j'ai jamais pu faire pour que ce soit dessus.
+[0:12:39] Mais en fait je pense que c'est organisé plus par composantes ou par groupes de composantes.
+[0:12:48] C'est à dire, votre atelier, probablement qu'il y a une équipe qui s'occupe du moteur, une équipe qui s'occupe des freins, ou qui sont plus spécialisés.
+[0:12:55] C'est pas un truc de généralisme.
+[0:12:57] C'est du généralisme, mais tu vas retrouver un moteur commis qui peut être différent, un moteur Volvo dans différents types de véhicules,
+[0:13:04] ou tel type de transmission, de transmission en résumé dans 3 ou 4 types de véhicules.
+[0:13:08] Là-dedans encore, tu as plein de modèles différents.
+[0:13:11] J'imagine qu'à fin d'obtenir des résultats plus pointus, plus précis,
+[0:13:17] il faudrait vraiment automatiser la création des agents,
+[0:13:21] automatiser la création, le traitement des documents qu'on va charger.
+[0:13:24] Parce que nous, on parle de charger 900 manuels autour.
+[0:13:27] C'est-à-dire qu'automatiser qu'il y a des supports,
+[0:13:29] il y a même des guides pour pré-éclater cette information-là,
+[0:13:32] pour changer les bases de données. Là je suis dans le détail.
+[0:13:37] C'est un point juste pour ce sujet. Je pense que c'est compliqué de se faire avec l'idée avant d'avoir démarré sur le plan.
+[0:13:47] Parce qu'à la fois, il y a beaucoup de particularités, il y a des éléments communs.
+[0:13:54] Vous ne connaissez pas la maintenance, mais en fait c'est un peu comme chez Dodge, vous avez une bonne voiture qui est comptée sur 4 modèles différents pour rien avoir.
+[0:14:04] On a le même sujet. En revanche, je pense qu'il y a plus une commonalité par rapport au métier qu'on fait, c'était un début sur 20, début scolaire, les autres cars, ça peut être.
+[0:14:14] Je pense qu'il ne faut pas qu'on descendre trop dans la gramédiaire avec les clés, parce que le risque étant qu'on n'aura pas assez de véhicules, je parle bien dans la partie diag et pas dans la partie manuelle, excusez-moi.
+[0:14:23] La partie manuelle pour moi franchement c'est...
+[0:14:26] qu'il se fait quelque chose.
+[0:14:28] Je veux dire, je suis capable de faire la congestion documentaire.
+[0:14:31] Là on est pas sujet, si l'IA peut nous aider à des publics, très bien.
+[0:14:35] Mais dans la partie technostique, si on ségrère trop,
+[0:14:38] le risque est qu'on ait pas assez de données
+[0:14:42] pour avoir quelque chose de relativement ferme,
+[0:14:46] un peu comme quand on a fait le 0% budget.
+[0:14:49] Dans tes manuels, tu as du troubleshooting qui sert à ça.
+[0:14:53] Afin d'aller chercher les bonnes informations, tu ne peux pas avoir trop de données dans un même spécialiste.
+[0:15:00] Je pense que c'est là qu'on doit garder pour faire une ségrégation assez pointueuse.
+[0:15:04] Ça n'a pas un impact négatif, autant que je sache.
+[0:15:09] Si on l'automatise via des scripts, on va pouvoir planter un nouveau manuel
+[0:15:15] et il va recharger tout ça dans le système que les experts vont créer automatiquement.
+[0:15:19] Et ils vont en fait surtout l'absorber, ils vont absorber aussi les updates des manuels.
+[0:15:25] C'est ça. C'est ça. C'est ça.
+[0:15:28] C'est une voie pour les montrer. J'en reviens encore une fois aux diagnostics.
+[0:15:32] Excusez, moi c'est mon focus, les diagnostics c'est pas la réparation.
+[0:15:36] La réparation je le redis, c'est très intéressant d'avoir de l'assistance
+[0:15:42] On pouvait plus rapidement la donnée, je pense qu'on a déjà regardé un peu ça Henri, ça fonctionne.
+[0:15:46] Mais l'important c'est qu'il y a des surdiadres qui n'ont plus que ça en entrée.
+[0:15:50] Il y a des notices de rappel des constructeurs qui vont faire comprenner comme données d'entrée.
+[0:15:54] Les constructeurs émettent des bulletins de rappel, vous connaissez sans l'autocopine,
+[0:15:57] je vous parlais dans ce clobus.
+[0:16:03] Tu as raison avec ce qu'il y a dans le manuel de réparation des modules de diagnostic.
+[0:16:07] Je te dis si tu as telle lumière, c'est ça qu'il faut que tu regardes.
+[0:16:10] évidemment on espère que le système est capable de posttraiter cette donnée.
+[0:16:14] Et ça effectivement c'est à regarder le détail des manuels qui ne le connaît pas suffisamment,
+[0:16:19] en tout cas ça fait pas mal de temps que je ne vais pas garder les manuels ici au Canada,
+[0:16:23] s'ils sont en marque de votre détail, ça peut créer un... il ne faut pas qu'on...
+[0:16:27] on génère de la confusion avec des indications via l'agent qui n'a rien à voir avec le véhicule sur lequel la personne est,
+[0:16:34] Il dit « Tiens, si tu as un voyeur-là, faut-il regarder là, tu as un voyeur-là et n'existe pas parce que c'est un modèle que système. »
+[0:16:40] Donc, si on intègre nos bases de données de véhicules avec la liste des composantes, il y a moyen d'intégrer ça, je pense.
+[0:16:49] Tu veux dire, je travaille sur tel véhicule, il va prendre la liste des composantes et passer dans la requête pour dire « Écoute, il faut chercher des manuels pertinents. »
+[0:16:57] Il doit y avoir des bases de données sur les éléments de ça.
+[0:17:00] Tu pourrais même prendre la tabasse de données, c'est avec les véhicules qui ont des composantes similaires pour l'expert qui va traiter le ou les experts qui vont traiter tes données que t'as déjà chargées.
+[0:17:10] Je dirais aussi, en point d'entrée, c'est pas partir sur un truc trop compliqué qu'on aura dans trois ans, c'est partir sur un truc récent qu'on aura tout de suite.
+[0:17:19] le complexifier après, mais déjà voir c'est sûr le principe, c'est intéressant.
+[0:17:25] Parce que tout le monde a entrepris par deux liens dans le monde entier, mais en fait les
+[0:17:32] applications opérationnelles concrètes sont limitées. Je crois beaucoup à la base de données
+[0:17:39] qu'on possède en plus des données. Je crois beaucoup, mais là il y a un autre problème,
+[0:17:43] la qualité de la donnée. Je pense que les docteurs d'Abriel ont bien compris le problème.
+[0:17:47] T'as déjà vu les commentaires des mécaniciens dans la main, là, c'est…
+[0:17:51] Mais les arts n'est pas mon avis.
+[0:17:53] Les arts n'ont pas été pressés dans la question.
+[0:17:55] Alors, dans ce cas, tu as une prépression de la question ou de l'enquête, d'ailleurs,
+[0:17:57] parce que c'est vrai que je vais parler en anglais,
+[0:17:59] il y a des gens qui ne font pas le système en anglais,
+[0:18:00] mais je parle aussi des erreurs d'entrée, des choses qui ne sont pas toujours précises,
+[0:18:06] là, de pouvoir se contribuer à aller ça.
+[0:18:10] Oui, puis en fait, il n'y a peut-être moyen aussi de…
+[0:18:14] sans nécessairement aller donner le diagnostic complet,
+[0:18:17] complet au moins identifié quelles ont été les interventions similaires. Déjà ça pourrait être une première étape de faire un retrieval d'interventions similaires et laisser le mécanicien interpréter le commentaire peut-être un peu compliqué de ce qui a été fait.
+[0:18:33] ça peut être une approche
+[0:18:35] j'aime bien cette première approche
+[0:18:38] de toute façon
+[0:18:39] on a une approche de validation
+[0:18:41] sur un process
+[0:18:42] donc je ne veux pas donner du tout
+[0:18:45] cuit aux gens de pieds et dents
+[0:18:47] qui suivent ce qu'on leur dit
+[0:18:48] c'est pas parce que c'est marqué
+[0:18:51] sur Wikipédia que c'est correct
+[0:18:53] c'est la même logique qu'on doit avoir
+[0:18:55] c'est même pas parce que c'est issu
+[0:18:57] d'ordre de travail du passé
+[0:18:59] tout ce qui a été inventé par des prédécesseurs
+[0:19:01] est correct
+[0:19:02] Ça peut avoir rien à voir, ça peut être une mauvaise réparation, et ainsi de suite.
+[0:19:09] Donc on doit bien parler une petite page de la neuve.
+[0:19:15] Et si déjà la partie documentaire, puisque je reviens, je dis la partie des deux, c'est celle qui a le plus de potentiel pour moi,
+[0:19:27] la partie documentaire a énormément de potentiel à malheur.
+[0:19:30] Le fait de pouvoir fournir un document de travail à un mécanicien qui doit changer les freins sur tel véhicule au lieu qu'il cherche,
+[0:19:42] pendant trois mois on va essayer de retrouver où est-ce que se trouve le manuel pour savoir l'écartement des plaquettes quand ils montent des plaquettes de freins,
+[0:19:50] avoir accès à une formation certifiée, c'est-à-dire l'information d'un lien qui peut être une réponse.
+[0:19:56] Ainsi on peut consulter le manuel et c'est certain si bien le bon manuel.
+[0:20:01] On a un sujet de conformité ici aussi. Dominique je vous le dis parce que c'est important. C'est pas que l'automne personnel.
+[0:20:14] Là je peux pas donner une information à un mécanicien qui n'est pas correct dans le sens où elle est rattachée à un document qui va pouvoir ouvrir pour s'assurer par lui-même que le document qu'il est en train de transmuter le nom, que ça pourrait aboutir à des erreurs.
+[0:20:40] bien noté et ça vous avez pris une approche vague qui permet justement de ramener ça.
+[0:20:45] Donc ça c'est la bonne approche. En fait Henri, je vais commencer, je ne sais pas si tu avais
+[0:20:56] fini de présenter l'état des lieux. Alors l'état des lieux, l'état des lieux pour l'instant
+[0:21:04] et rudimentaire, même s'il n'est pas nul. L'état des lieux, comme on avait dit, comme
+[0:21:12] on était un petit peu parlé au début, lorsqu'on s'était rencontré la première fois, en fait
+[0:21:18] le projet a été lancé à titre vraiment d'essai et je qualifierais ça, alors c'est pas vraiment
+[0:21:27] un genre de mot professionnel, mais c'est ce qu'on appelle un essai un peu en freestyle,
+[0:21:29] c'est à dire qu'on a pris Copyout Studio par voie de facilité parce que c'est intégré dans Office
+[0:21:39] et comme la majorité des manuels qu'on possède au format numérique, donc au format PDF, étaient stockés sur SharePoint,
+[0:21:48] c'était un moyen très facile de laisser l'agent tourner dans un premier lieu, découvrir un petit peu la documentation qui existait
+[0:21:58] mais ça s'est à peu près arrêté là de ce que j'ai compris.
+[0:22:02] Moi j'ai assez rapidement passé un peu le flambeau à Grégory quand il a rejoint l'entreté pour son stage.
+[0:22:11] Mais pour l'instant, je pense qu'il est capable de donner des réponses sur le contenu documentaire, sur le contenu des documents.
+[0:22:19] Oui, il est capable de diagnostiquer avec à l'aide de à peu près 50 manuels.
+[0:22:25] Il était aussi capable de pointer si c'était dans quel document exact et rapporté à la page exacte.
+[0:22:31] L'affaire, c'est que juste en créant l'intcription, le vectorisation, l'index des manuels,
+[0:22:40] j'ai juste été capable de prendre à peu près 50-900.
+[0:22:44] Le premier blocage, c'était juste encrypter toutes les données.
+[0:22:52] puis après ça j'ai fait ce que j'étais capable avec ce que j'étais capable de
+[0:22:57] vectoriser
+[0:23:00] entre temps une nouvelle avenue va être explorée qui est celle de
+[0:23:07] utiliser un ordinateur dédié
+[0:23:14] on dit ce que je sais mais ça va utiliser un ordinateur dédié et alors comment ça
+[0:23:20] fonctionnent sur l'ordinateur dédié je ne sais pas parce que j'ai vraiment un rôle technique
+[0:23:25] extrême ou limité. Oui bien l'ordinateur dédié en fait c'est ça. C'est 120 gig, je pense.
+[0:23:33] Au niveau de 46 ou 128 mais c'est ça. Oui c'est ça donc ça permet tout.
+[0:23:41] Ou un certain nombre d'agents parallèles. Oui c'est ça.
+[0:23:45] Ça a des bases à tester. Si jamais il y a un retour sur l'investissement intéressant de la solution, on pourra regarder pour migrer sur quelque chose d'un peu plus solide, plus costaud pour rouler.
+[0:23:57] Ou ça a un array.
+[0:23:58] Le but serait au moins de se tester. S'il y a deux, trois mécanos qui font des requêtes, au moins un, est-ce que c'est ça?
+[0:24:04] C'est de la bonne information. On est sur le target à chaque fois qu'on fait le requête.
+[0:24:08] Le GV10 servait principalement selon Paul, réutilisé par la suite dans d'autres tests.
+[0:24:13] Puis la limite de 50 documents sur la base vectorielle, c'est une limite de Azure AI?
+[0:24:24] Oui, c'était pour le plan qu'on avait, c'était une limite sur l'index.
+[0:24:28] Mais sur les documents de base, je n'ai pas encore atteint, mais sur l'index que ça a créé, ça a frappé la limite.
+[0:24:36] Mais si on cherche tous les documents dans la même base de données vectorie, dans le même contexte, on va avoir un document ?
+[0:24:41] Ça aussi. Ça aussi. Je ne pouvais pas...
+[0:24:43] On risque d'avoir des problèmes d'hallucination et de recrubre qui ne sortira pas les bonnes choses.
+[0:24:47] J'ai même pas pu me rendre à ces tests-là parce que...
+[0:24:49] Oui, je ne sais pas...
+[0:24:51] Le système manuel, c'est des manuels, c'est des briques.
+[0:24:54] Oui, ça je le comprends. D'un autre côté, vu qu'on utilise une base vectorielle, il va quand même interpréter un peu mieux.
+[0:25:03] Mais effectivement...
+[0:25:05] Si on s'agimente, ça va être beaucoup plus facile, c'est pas automatisé par après.
+[0:25:09] Oui, oui, mais c'est ça, c'est qu'on pourrait avoir aussi des agents spécialisés sur différentes composantes, sur différents modèles, lignes, etc.
+[0:25:18] Là, effectivement, on n'a pas besoin d'avoir 900 documents dans un seul.
+[0:25:22] Est-ce que vous avez essayé de focaliser sur un aspect spécifique?
+[0:25:27] Non, j'essaie de mélanger le plus possible pour ne pas avoir…
+[0:25:31] justement si j'avais juste une marque d'autobus, je ne pourrais pas voir si tu étais capable de correctement préciser.
+[0:25:40] Pour mes tests, avec le nombre limité que j'avais, je pense que c'était meilleur d'essayer sur la variété d'autobus au lieu de mettre un en spécifique.
+[0:25:49] parce que si j'en mettais juste un, ça ne disait pas beaucoup sur la précision d'être capable de récolter de différentes marques d'autobus.
+[0:26:02] Je ne sais pas si tu comprends.
+[0:26:05] Oui, je vois. C'est que tu as du pour et du contre parce qu'effectivement, on ne peut pas voir s'il va chercher tous les documents.
+[0:26:15] côté, j'en reviens encore à bâtir des métriques pour pouvoir avancer graduellement. Parce
+[0:26:21] que le danger dans des projets comme ça, c'est qu'on essaie de bâtir un outil qui
+[0:26:25] est très très large. Si on essaie de l'attaquer avec toute la largeur, bien ça va éclos,
+[0:26:30] ça va prendre de l'énergie. Si on s'assure de pouvoir couvrir certains aspects, puis
+[0:26:37] d'augmenter le scope graduellement, bien à ce moment-là, on peut tout de suite voir
+[0:26:40] ou est-ce que ça bloque, est-ce que c'est par exemple mes manuelles d'entretien qui finalement sont inutilisables
+[0:26:48] ou ma base de données sur laquelle il faut que je fasse un pré-traitement pour mieux l'optimiser.
+[0:26:54] Ça permettrait vraiment de focaliser certains aspects pour ensuite l'élargir parce qu'on a pu identifier des problèmes.
+[0:27:03] Le danger justement d'avancer large, c'est qu'il y en a tellement qu'on ne peut pas identifier sur lesquels de focaliser.
+[0:27:09] c'est la gestion de projet de base
+[0:27:12] l'IA c'est pas magique
+[0:27:14] c'est la gestion de projet
+[0:27:15] mais
+[0:27:16] donc en ce moment c'est ça que vous y allez large
+[0:27:20] potentiellement
+[0:27:23] sur toute la
+[0:27:24] flotte
+[0:27:25] à la fois
+[0:27:27] est-ce qu'il y aurait moyen de découper ça
+[0:27:29] logiquement
+[0:27:30] oui je pense que
+[0:27:33] ça va être le problème à rien de découper
+[0:27:35] par modèle
+[0:27:35] par type
+[0:27:37] Henri, selon la classification transdème, donc plus scolaire, plus urbain.
+[0:27:42] Et on peut même commencer avec un travail, par exemple, que sur les urbains, si l'on veut.
+[0:27:49] Parce qu'en fait, il y a quelques éléments communs,
+[0:27:52] et qui sont bien plus mineurs que les éléments non communs.
+[0:27:54] Donc en fait, la part de communalité entre un bus scolaire et un urbain, elle est quasi nulle.
+[0:28:00] Donc, un, on est capable de sortir les mêmes lettres complètement séparément.
+[0:28:05] sur l'historique de maintenance, on est capable de sortir l'intégralité de l'avenir séparément également,
+[0:28:11] puisque les numéros sont différents. Ça permettrait de réduire dans les trois grandes familles, je pense.
+[0:28:18] En fait, on a en bien la même logique que les européens du tout. C'est quasiment les mêmes familles.
+[0:28:23] D'ailleurs, c'est à se demander si ça fait que les mêmes familles. Donc du type A, du micro, du type A, du type C,
+[0:28:29] et ensuite du LFS Grand But Sur Pain et ensuite coach.
+[0:28:39] Et on n'est pas obligé de démarrer tout en même temps,
+[0:28:41] on peut démarrer ce qui a de la valeur à noter,
+[0:28:42] donc ce serait du scolaire et du repas.
+[0:28:46] Le reste est en plus...
+[0:28:50] Historieusement était majeur, mais maintenant un peu moins,
+[0:28:53] donc ça ne pourrait pas rendre compte de démarrer comme ça,
+[0:28:56] plutôt d'attaquer le projet en s'entourer des...
+[0:29:02] Je sais pas, parce qu'après si ça fonctionne, on en revient à ce que tu disais Alexandre tout à l'heure, c'est juste qu'après c'est juste des systèmes en parallèle parce qu'ils ont pas besoin d'être ensemble.
+[0:29:11] Ils ont pas besoin de, ils ont même pas besoin de se parler.
+[0:29:15] Je sens pas ça.
+[0:29:16] Parce qu'il y a la volonté d'entreprise, c'est pas nécessairement de réparer les plus surpeintes à un endroit pour réparer des scolaires.
+[0:29:20] C'est des métiers qu'on fait, on fait tous ces métiers, on fait séparer.
+[0:29:23] Ouais tout à fait.
+[0:29:24] Après on n'est pas maintenu le même endroit qu'on a le même endroit, donc ils auront pas besoin d'avoir des bêtises.
+[0:29:28] Par contre ils peuvent très bien avoir des bêtises.
+[0:29:30] De point de vue structure, c'est la même structure si on le montre directement par temps.
+[0:29:35] Merci pour la terminologie.
+[0:29:37] D'avoir un extra 1, bon ça y est, j'ai oublié.
+[0:29:41] Un coordonnateur.
+[0:29:42] Un coordonnateur qui accède à des sous-agents spécialisés.
+[0:29:45] On peut monter des choses comme ça tout de suite, d'un point de vue architecture correctement.
+[0:29:50] Comme les gestions des documents, on peut skiriter tout de suite pour avoir des bases de données vecteurs séparées.
+[0:29:55] Même si on en a très peu pour commencer.
+[0:29:57] Ça ne devrait pas être compliqué de faire 100 pitons pré-traité.
+[0:30:00] Et dans une toute première étape, ça va peut-être même la peine d'analyser ses PDF par un humain.
+[0:30:24] plutôt que par un IA.
+[0:30:26] Le découper, s'assurer
+[0:30:28] qu'un PDF bien analysé
+[0:30:30] de ça peut être bien interprété.
+[0:30:31] Puis tant qu'un projet qui est
+[0:30:33] va être ici de l'image ou ici du texte.
+[0:30:35] Oui, exactement. Puis aller découper les régions.
+[0:30:38] Je ne sais pas si vous avez des tableaux.
+[0:30:40] Ben, je parle aujourd'hui.
+[0:30:41] On avait à l'Université d'Aval,
+[0:30:43] on avait un projet, ça paraît super simple,
+[0:30:46] c'est d'interpréter les étiquettes
+[0:30:47] alimentaires
+[0:30:50] sur les aliments.
+[0:30:52] Puis parce que c'est sous forme de tableaux,
+[0:30:53] On avait les PDF, c'était l'enfer de faire interpréter ça parce que justement c'était des tableaux et c'était pas structuré de la même façon et se mélangeait.
+[0:31:03] C'était un des problèmes qu'on avait eu justement parce que je voulais faire le multimodial rag,
+[0:31:08] justement être capable d'interpréter PDF ainsi que le texte puis HE&S ça le ferait,
+[0:31:13] mais est-ce qu'il y avait une limite sur le nombre de lectures qu'on pouvait faire avec le mode multimodial?
+[0:31:19] Tu es mieux de...
+[0:31:21] Je me trompe toujours là.
+[0:31:23] Je suis pas un expert dans la série.
+[0:31:25] Non, non, non. D'un point de vue fonctionnel, tu es mieux de prendre ton PDF et de générer des blocs pour ta base de données vecteurs.
+[0:31:32] Puis le chargement à base de données vecteurs.
+[0:31:34] Puis quand tu arrives avec des graphiques, tu utilises des modèles spécialisés en vision.
+[0:31:37] Exactement, c'est ça.
+[0:31:39] Il faudrait deux reads.
+[0:31:41] Pour ça, ça me coûtait beaucoup plus cher parce qu'ils faisaient la lecture initiale juste de texte.
+[0:31:46] tu pouvais, tu sais, avec l'autre modèle pour les tableaux, pour les images, il fallait que tu fasses un deuxième read, puis vu que c'était plus de contexte riche.
+[0:31:54] Si on crée un script d'ingestion, on peut prendre ton PDF, le découpe en page, ensuite découper des sections, c'est des PDF textes,
+[0:32:01] puis à se séparer les images, les traiter comme les images avec un langage modèle, et après ça les charge dans ta base de données d'acteurs pour pouvoir les faire.
+[0:32:08] Mais c'est genre avec le nombre limité de documents que j'avais rentré, ça le faisait.
+[0:32:12] C'est exactement comme tu viens de t'expliquer, ça l'avait fait mais sur un si nombre de documents.
+[0:32:20] En le faisant avec un script qu'on contrôle?
+[0:32:22] Ben pas, c'était avec Ape, excusez-moi.
+[0:32:24] Si on fait avec un script qu'on contrôle, le même processus, on peut le contrôler et dire, selon le contenu, tu vas créer des tags.
+[0:32:30] dire c'est un moteur, c'est un tel modèle de véhicule telle année, le mettre dans
+[0:32:35] la base de données, qu'ensuite si on crée plusieurs experts, ils vont à chacun la base
+[0:32:40] de données vecteur, ils vont chercher les documents, ils vont vraiment ce qui se précise
+[0:32:43] fait, ils vont en dire « est-ce-tu pas moi? Oui, qu'est-ce que j'ai là-dedans?
+[0:32:46] » pour sortir des bonnes choses, puis après ça être analysé par ton orchestrateur.
+[0:32:49] Oui, à 900 documents, tu peux quand même faire un contrôle de qualité de vieille.
+[0:32:54] Si on n'est pas dans les 8000, 15000, 20 000 documents qui parlaient, quelqu'un que
+[0:32:58] tu pourrais mettre une couple de personnes en quelques jours pour au moins valider que
+[0:33:03] ces scripts-là justement…
+[0:33:05] On n'a pas quelques personnes, mais…
+[0:33:06] Non, non, mais ce n'est pas un défi incroyable.
+[0:33:11] Une autre chose dont on n'a pas parlé, c'est l'objectif.
+[0:33:17] En ce sens, les chiffres, c'est-à-dire est-ce que vous avez un problème de mauvais diagnostic
+[0:33:24] et vous voulez l'améliorer?
+[0:33:25] Est-ce que c'est, là on a parlé de faire un junior et un senior, c'est quoi la différence entre un junior et un senior au niveau de la qualité des diagnostics, si on focalise sur les diagnostics.
+[0:33:36] Donc, comment on peut mesurer le succès du projet? Est-ce que vous l'avez quantifié?
+[0:33:43] Alors, c'est une très bonne question. Je dirais que vu que vous m'avez dit que vous y connaissez en mécanique, vous allez servir de mesure du succès.
+[0:33:56] Donc si je vous colle derrière un bus, et que j'exagère quand même, les mécaniciens sont qualifiés, mais l'objectif c'est d'apporter de l'assistance.
+[0:34:08] Comment on mesure le succès dans un premier temps ? On va plutôt utiliser des seniors qui vont utiliser le système et qui vont pouvoir nous faire un retour en disant « Hey, c'est efficace » ou « Non, c'est pas efficace ».
+[0:34:26] Chose qui a dit personnelle, par exemple, quand j'utilise l'IA, il y a des moments où je me raconte que c'est très efficace.
+[0:34:35] Je parle de l'IA normalement, je parle pas d'un agent, mais il y a des moments où je me raconte que c'est pas très efficace.
+[0:34:43] Donc, parce que je suis relativement senior, j'ai la capacité éventuellement de me dire,
+[0:34:47] « Ça, ça, c'est quand même... J'ai gagné beaucoup de temps, ça... »
+[0:34:50] Donc il y a peut-être une première étape qui est une mesure non subjective, on s'entend,
+[0:34:58] de quelques mécaniciens seniors qui vont utiliser l'outil et qui vont nous dire,
+[0:35:02] « Hey, sur ces éléments-là, ça va vous apporter tout de suite la bonne réponse. »
+[0:35:06] Oui, une mesure de la qualité de la sortie.
+[0:35:09] Une mesure, voilà. Et après, on peut vous faire un point de vue de l'intéresse à cette information.
+[0:35:14] Je ne sais pas encore comment. On va peut-être d'ailleurs…
+[0:35:17] On va pas seulement avoir un survey dans...
+[0:35:19] Une boucle de retour.
+[0:35:20] Une boucle de retour.
+[0:35:21] Après, comment on va mesurer...
+[0:35:24] Quand je dis bridger le gap entre ingénieurs et enseignants, on s'entend que l'IA va y contribuer, elle va pas non plus complètement remplacer l'expérience.
+[0:35:32] Il y a aussi un point, c'est la qualité de la donnée qu'on va rentrer dans le système, parce que pour une qualité de diagnostic, il faut une qualité de donnée.
+[0:35:41] Et on sait qu'on est pas nécessairement là.
+[0:35:44] Donc je pense qu'un junior qui est capable de résoudre un problème compliqué sera capable de dire, en tout cas je l'espère, le système, notre outil, les règles, l'aélo.
+[0:36:02] Maintenant ça va être aussi du...
+[0:36:06] Je veux dire qu'il faut quand même que les gens, objectivement, disent, c'est vrai, l'outil m'a aidé, l'outil m'a aidé.
+[0:36:12] C'est compliqué à pourparler, mais il n'y a pas de mesure, il n'y a pas de métrique, je pense.
+[0:36:20] Je ne vois pas bien comment mettre un metric en atelier.
+[0:36:23] Moi, les antithérins, vous avez une idée, c'est d'aller s'envergne.
+[0:36:27] Ouais, mais comme je disais, on pourrait juste faire un survey dans Microsoft, dans 365.
+[0:36:34] Et les gens, quand on lui demande à chaque fois que tu fais ça,
+[0:36:36] on va remplir un survey, tu m'aider, oui, non, peut-être, peut-être sur tel point.
+[0:36:41] Et en fait, pour le développement aussi, ce qu'on peut faire souvent, c'est une grille de tests.
+[0:36:46] c'est-à-dire qu'on va aller prendre des symptômes qui ont été rapportés par des
+[0:36:53] juniors de préférence, le présenter à un senior, lui demander c'est quoi sa réponse,
+[0:37:01] le présenter à l'IA c'est quoi sa réponse, est-ce que le senior avait raison, est-ce que l'IA avait raison,
+[0:37:06] puis se monter une grille, à savoir les faux positifs, les vrais positifs, etc.
+[0:37:12] On va se monter une grille de performance.
+[0:37:14] Dominique, juste un moment, excusez-moi, je suis confirmé.
+[0:37:18] Là, tu es déjà dans l'état qu'on donne accès aux juniors.
+[0:37:21] Je ne devrais pas accès aux juniors avant que les seniors ait été le produit.
+[0:37:25] Non, non.
+[0:37:26] Pour moi, l'état premier, c'est…
+[0:37:28] Le produit n'est même pas sur le plancher à ce point-ci.
+[0:37:31] Ah, ok.
+[0:37:32] Je suis vraiment dans la partie validation qu'on a un produit.
+[0:37:38] Parce qu'il faut pouvoir le relier.
+[0:37:40] qu'est-ce qu'un junior pense que la solution est, qu'est-ce qu'un senior pense que la solution est,
+[0:37:44] puis qu'est-ce que notre système en développement a dit pour pouvoir comparer.
+[0:37:51] Ok, mais je pense que je vais dire par exemple,
+[0:37:52] tu ne vas pas coller un junior sur le problème de diagnostic,
+[0:37:56] et on ne le fera pas juste pour savoir ce qu'il va penser.
+[0:37:58] Ok.
+[0:38:01] Si vous voulez.
+[0:38:02] Si c'est pour que, si aujourd'hui, si je ne veux pas,
+[0:38:05] aujourd'hui mon objectif c'est que, quand on a l'outil,
+[0:38:09] c'est que les seniors le valident.
+[0:38:12] Toutefois, on a compris qu'ils ne vont pas perdre l'emblot parce que l'outil est là pour les aider.
+[0:38:16] Il va falloir faire un petit chemin là-dessus, je vous le dis.
+[0:38:19] C'est qu'il y a comme une crainte légitime.
+[0:38:22] Et donc de leur dire en fait, c'est un outil d'aide, c'est une petite assistance.
+[0:38:26] Une fois qu'on a un bon retour, comme tu le dis Alex, de toute manière ou d'une autre.
+[0:38:33] Sur le fait que d'aide au diagnostic et d'aviter comme important, l'apport nécessaire pour avoir à l'ouvrir un peu plus vulnérabilité.
+[0:38:42] Par atelier, par personne qu'on connaît, parce que là on demande de négatif.
+[0:38:46] Il y a 150, 200 mécanismes en Canada, le Transdell, on décode moins de 1. On décode tous.
+[0:38:56] Mais je ne veux pas... On peut toujours pour s'amuser, si on a le temps, on manque plutôt de temps dans les ateliers,
+[0:39:04] se dire on ferait un test physique, vraiment. On doit être ingénieur, un senior et des gars.
+[0:39:10] Je ne vois pas faire ça. C'est pas mon but, personnellement. OK?
+[0:39:14] Oui, c'est bon. Il y a différentes façons de monter les tests. On peut aussi prendre votre base du CMMS et isoler une partie de la base, isoler les enregistrements pour ensuite utiliser ça comme validation.
+[0:39:37] Le danger de faire ça, c'est que les seniors ont peut-être une façon, vu qu'ils ont des connaissances plus approfondies,
+[0:39:45] ont peut-être une façon de présenter les problèmes. La moitié du diagnostic est déjà fait.
+[0:39:52] Donc ça aussi va falloir le prendre en compte.
+[0:39:55] Il y a aussi un facteur qui va jouer sur la qualité des...
+[0:40:00] Et les résultats vont être qu'un junior ne pose pas nécessairement la même question qu'un senior quand tu vas arriver avec un problème.
+[0:40:07] Mais c'est peut-être aussi pour ça que c'est pas grave en soi.
+[0:40:14] On va se redire que l'objectif ultime c'est d'apporter une aide aux junior pour gagner du temps sur les diagnostics et la qualité,
+[0:40:22] la principale perte d'efficacité dans nos ateliers c'est sur les diagnostics.
+[0:40:28] C'est là où nous perdons le plus. C'est aussi pour ça que je nous concentre.
+[0:40:32] Si vous me demandez pourquoi je le sais, je vous dirais que c'est parfaitement opéré,
+[0:40:35] que c'est mon expérience. Il n'y a pas de mesure, puisque par défaut,
+[0:40:39] les gens qui arrivent au résultat, ils ne vous diront pas qu'ils ont passé 4 heures à faire des diagnostics.
+[0:40:44] Mais je sais, entre les mauvaises diagnostics et les pièces changées pour rien,
+[0:40:47] de sorte de chose, le diagnostic est la partie la plus particulière.
+[0:40:53] Cela dit, dans l'outil, encore une fois, le développement de la partie diagnostique
+[0:40:57] Le diagnostic peut être d'abord donné au seigneur pour les aider, toujours dans l'étape « aide » d'abord.
+[0:41:02] Et le développement de la partie documentation, qui sont documentaires, accès rapide aux documents,
+[0:41:09] ça se respecte tout le monde très rapidement.
+[0:41:13] Puis maintenance préventive, est-ce qu'il y a une valeur avec ce chatbot-là?
+[0:41:56] Moi personnellement je pense que ça va être difficile à cause de la nature de notre flotte qui est très, très diversifiée.
+[0:42:08] Je dis pas que ça se peut pas là, mais je suis sceptique.
+[0:42:12] Parce qu'on a le flotte très diversifié, des conditions très différentes.
+[0:42:16] Vans-Nouvelle, Montréal, je crois que c'est ça, c'est extrêmement différent.
+[0:42:22] On fait l'urbain et l'interurbain, c'est vraiment différent comme...
+[0:42:26] Excusez-moi, j'avais un petit déjeuner qui m'appelait, j'ai pris deux secondes et à 14h, je pourrais vous enregistrer.
+[0:42:35] Je n'ai pas entendu le début, j'ai juste entendu la fin, Alex.
+[0:42:42] Moi, je vais être très clair que sur la partie diag et sur la partie documentaire, on n'est pas un exploiteur d'Amérique du Nord et on n'est pas un exploiteur d'Amérique du Nord.
+[0:42:53] Non, on parle de maintenance pré-rug.
+[0:42:55] Ils nous ont demandé s'il y avait un intérêt.
+[0:42:58] Ah, pardon, excusez-moi.
+[0:43:00] Non, parce que les plans ne sont pas les mêmes.
+[0:43:02] Par contre, sur la base de données, mon objectif est d'apprendre dans la base américaine.
+[0:43:11] Parce que David, c'est énorme parce que c'est énorme.
+[0:43:24] Et je parle bien que pour la partie plus diabète, ils ont un parc de fire et de nomin qui est considérable.
+[0:43:30] Ça pourrait, je le dis dans un deuxième temps, ça pourrait nous aider à apporter encore plus de rafonnement, de quelle facilité, je ne sais pas.
+[0:43:42] Ou peut-être pas d'ailleurs, ou peut-être ça polluera plus, je ne sais pas.
+[0:43:46] Mais en termes de qualité de données aussi, c'était meilleur que nous.
+[0:43:52] faire une analyse sur cette donnée-là, essayer de chercher quand même d'air un peu de qualité.
+[0:43:59] Oui. Et dans un premier temps, je pense que fondamentalement, on se concentrer sur là où c'est plus difficile pour nous,
+[0:44:06] et j'en reviens, on souffre très régulièrement dans le scolaire, donc on pourrait même se dire, ok, on fait le test sur scolaire et revendre,
+[0:44:12] juste deux catégories de matériel, ce qui commence par deux, ce qui commence par cinq.
+[0:44:17] En Europe, Québec, les Gammes, vous pouvez l'agir à l'Ontario.
+[0:44:21] L'Ontario n'a pas de plus de Clamonguer, et l'Ouest, vous savez pas ce que vous.
+[0:44:28] Je veux quelque chose rapidement, même si c'est limité en scope, en scope en type de matériel.
+[0:44:35] Et là, on ne faut pas se concentrer sur un truc qui n'est pas volumique.
+[0:44:40] Donc soit scolaire, soit mur.
+[0:44:43] Le truc le plus pancanadien c'est le scolaire.
+[0:44:47] Idéalement...
+[0:44:48] Je pense que c'est les deux modèles qui vont apporter plus de valeur ajoutée rapidement aux appels.
+[0:44:56] Au Québec on a probablement quoi, 12 modèles d'Ascarad-Sfaire, on aura deux ou trois...
+[0:45:00] Ah c'est pour moi le scolaire où il y aura des petits particuliers en fonction des années mais...
+[0:45:08] T'es limité, après ça t'es l'égo ou A, c'est un scolaire ?
+[0:45:11] Ah oui, c'est l'égo et sur l'égo c'est à peu près la même chose depuis...
+[0:45:15] Et puis ça, globalement, tu penses que tu as tout à marque.
+[0:45:21] Parce qu'en termes d'expérience, c'est le même montage d'un intérieur, c'est la même transmission, c'est le moteur, c'est le même différentiel.
+[0:45:27] C'est que c'est exactement mieux. Sur une main quasiment similaire.
+[0:45:33] Donc Grégory, qu'est-ce que tu en penserais de ça? Est-ce que tu aurais les outils en ce moment, si on se limitait comme ça?
+[0:45:42] Est-ce que tu aurais les outils pour le faire? Est-ce que ton Azure AI serait encore saturé ou bien…
+[0:45:47] Si j'irais pour les urbains, au lieu de partir avec toutes les différentes sortes, je pense que j'aurais l'impression.
+[0:45:55] Ça serait string au scolaire pour commencer?
+[0:45:57] Au scolaire?
+[0:45:58] Ça devrait être encore moins de manuel.
+[0:46:00] Si, c'est encore moins de manuel.
+[0:46:02] Pour le concept, ça peut être bon.
+[0:46:04] Oui.
+[0:46:05] Et ok avec le scolaire comme preuve de concept Pierre?
+[0:46:10] Avec le scolaire?
+[0:46:13] Pour commencer version 1.
+[0:46:15] Version 0.1?
+[0:46:17] Oui? Avec ce qu'on s'est dit tu veux dire?
+[0:46:22] Oui, pour commencer on prend du travail comme premier prototype fonctionnaire.
+[0:46:28] Oui? Ok. De toute façon c'est notre priorité donc ça va.
+[0:46:32] En fait il faudrait se faire un plan de projet pour que je vois le timing.
+[0:46:37] Dominique tu l'as dit tout à l'heure absolument aligné avec toi, moi hier par hier ça reste un projet.
+[0:46:42] Il y a un fixe projet que j'avais validé il y a quelques temps sur le sujet en ligne.
+[0:46:45] Mais je pense qu'il faudra prendre le projet, savoir quand est-ce que ça sort.
+[0:46:49] Mais comment c'est, pour se concentrer sur ce colère ? Oui, très bien.
+[0:46:52] Je suis une petite.
+[0:46:53] Mais on ne se concentre pas assez pas, on se concentre sur ce colère pendant 12 mois.
+[0:46:56] Ok, les gars, juste, je vous donne la consuite.
+[0:46:59] Et un mois sur ce colère.
+[0:47:01] Est-ce qu'on intégrer l'électricité avec le gaz ?
+[0:47:07] Tu peux, de toute façon, tu vas être obligé de me séparer, parce que pour le coup, ça n'a rien à voir.
+[0:47:11] Tu vas avoir des données.
+[0:47:12] mais je pense que ça vaudrait le coup parce qu'on a identifié qu'elle dégâts au Québec monumentaux entre ceux qui savent y faire et ceux qui ne savent pas y faire.
+[0:47:21] Donc peut-être qu'on pourrait bridger aussi là, mais la base de données scolaires, elle s'étend à l'Ontario de manière forte quand même.
+[0:47:31] Je ne sais pas la qualité de la base en Ontario, mais on a quand même beaucoup plus de véhicules en Ontario.
+[0:47:35] Et ça va à l'école, oui, oui.
+[0:47:40] S'il faut choisir un modèle pour démarrer par une catégorie, comment ça va être le scolaire et comment ça va être le scolaire gros ? Comment on peut se faire des lieux d'un coup en vie, ça je ne sais pas.
+[0:47:51] Non, en fait moi ce serait pour, comment on dit, avoir un prototype, monter aussi une série de métriques, voir comment on avance dans ce projet-là, comment on…
+[0:48:03] parce que quand on s'est parlé, il y a quand même un an de ça, si je me souviens bien, on parlait d'apprivoiser les projets IA.
+[0:48:13] Je pense que ça demeure cet objectif-là. Donc, on commence avec un périmètre petit. On s'assure de voir comment on montre quelque chose de basse qui ne fonctionne pas ou qui donne des résultats très moyens.
+[0:48:28] avec 75% de taux de réussite, on commence à pouvoir découper et voir, ok, je reviens
+[0:48:39] à mon idée, les freins fonctionnent bien, les moteurs fonctionnent moins bien parce
+[0:48:43] qu'il y a plus de composantes, je ne sais pas, mais au moins on va pouvoir commencer à
+[0:48:46] identifier où peuvent être les problèmes et focaliser là-dessus pour une preuve de
+[0:48:51] concept qui pourrait se faire dans le cadre possédemment de ton stage qui, je suppose,
+[0:48:57] On se finit à un moment donné.
+[0:48:59] Est-ce qu'on sait ?
+[0:49:03] C'est quoi la deadline du prototype ?
+[0:49:33] Fin du mois ?
+[0:49:35] Avant-hier ?
+[0:49:36] En fait, le truc, c'est que je suis là de parler du concept de simple au Géal, comme tu le sais, Henri.
+[0:49:44] Donc ça, c'est important.
+[0:49:46] On a une deadline ferme pour la présentation de groupe en février.
+[0:49:52] Ça veut dire qu'entre les deux, il va y avoir un truc qui marche.
+[0:49:55] On s'est serré.
+[0:49:56] J'ai pas dit un truc parfait.
+[0:49:59] J'ai dit un truc...
+[0:50:00] Je pense que la partie…
+[0:50:04] Parce que qu'est-ce qu'on a en ce moment, c'est pas mal fonctionnel, juste pas spécifiquement pour le scolaire, mais si je voulais vraiment supporter les tests que je faisais, il me faudrait des questions plus poussées, plus techniques des mécaniciens pour voir si ça le ferait tomber.
+[0:50:27] parce qu'avec les types de questions que moi je pouvais m'imaginer jusqu'à date, la récolte de données...
+[0:50:34] C'est pas mécanique.
+[0:50:35] C'est ça, je suis pas mécanicien.
+[0:50:37] Alors là-dessus, c'est pas dur. Dégorique, là-dessus c'est pas dur. Dégorique, dès lors que le modèle est prêt,
+[0:50:44] admettons qu'on décide d'aller sur scolaire, si dans une semaine le modèle est prêt,
+[0:50:49] Après, je t'envoie à Saint-Jean passer une journée avec l'équipe d'un Mario et avec un Alex dans l'équipe, pas celui-ci ici mais dans l'équipe de Mario ou avec un ou deux médicamenticiens spécialisés au bus.
+[0:51:02] Mais avec eux tu vois, aller en attaque des trucs ou bien en distance.
+[0:51:07] Alors, ok les gars vous allez appeler, vous allez goer et on va tester des choses pour voir ce que ça arrive.
+[0:51:12] Je ne peux pas être trop en P.O. parce que je pense que c'est quand des questions viennent qu'il faut qu'elles soient posées de la façon qu'il les poserait de toute façon.
+[0:51:19] Après il y a toujours un truc qui marche bien qui est de rejouer un scénario qui s'est déjà passé en fait.
+[0:51:27] De dire ok j'ai trouvé ça, je sais ça, explique moi si tu as eu un diagnostic, ok c'était ça la bonne, tiens, testons le système.
+[0:51:35] Normalement si ça a déjà été rentré dans le système, vous n'allez être capable de le retrouver.
+[0:51:39] On veut l'exclure du système, on ne le retrouve pas.
+[0:52:15] mais on peut se faire un comité technique, je peux créer un comité technique avec chaque province qui nous donne deux mécaniciens, tu vois.
+[0:52:25] Donc on crée un comité technique de cinq personnes qui se réunissent actuellement une heure tous les trois jours pour poser des questions au système et voir ce que ça répond.
+[0:52:34] Ça pourrait être juste des choses comme ça, tu vois.
+[0:52:36] Est-ce que le MVP qu'on parle en ce moment, ça intègre les bons travails, les work-holders
+[0:52:44] dans le diagnostic? Parce que ça, je ne l'avais pas fait avec le MVP que j'ai en ce moment,
+[0:52:51] et je pense que ça, je ne l'avais pas compté dans mon scope initial, parce qu'on n'avait
+[0:52:57] pas encore parlé des work-holders initialement. Je l'avais juste fait avec les manuels,
+[0:53:01] je me demande si ça va juste.
+[0:53:02] Je ne sais pas si il faut faire une phase d'acheteur, vraiment, avant de citer de moi là-dessus.
+[0:53:06] Ok.
+[0:53:11] Il y a peut-être une phase en deux étapes.
+[0:53:14] Il est fortement possible qu'on ne soit pas nécessairement si bon diagnostique parce qu'on ne dit pas des manuelles.
+[0:53:20] C'est le principe du lave-vaisselle à la maison.
+[0:53:23] Les gens râlent et ils sont jamais nombreux à la manuelle ou de lave-vaisselle.
+[0:53:27] Et bien voyons la première chose qu'ils font.
+[0:53:29] Aujourd'hui avec Claude c'est formidable.
+[0:53:31] Quand j'ai fait l'expérience, c'est quand même assez extraordinaire.
+[0:53:34] du gabès sel, tu lui dis genre, je vais mettre en route le système de dire.
+[0:53:38] Donc peut-être que les manuels, dans un premier temps,
+[0:53:41] les données sont déjà suffisantes pour apporter
+[0:53:44] un cadre de productivité et d'éfficacité et d'aide à donner quelque chose.
+[0:53:49] Moi, à mon sens, la donnée intrinsèque de Transnet va apporter un plus.
+[0:53:54] Mais est-ce que c'est un plus ou est-ce que c'est un moins ?
+[0:53:57] C'est là où j'ai un doute lié à la même sélimitation de la donnée qu'on lui a.
+[0:54:01] Je veux dire à un moment, malgré toute la qualité de travail, je pense pas que si on rentre dans la merde parce que les données vont rentrer un peu n'importe comment dans le système.
+[0:54:10] Donc là je parle des heures de travail. C'est pas dit qu'on en sente quelque chose de formidable.
+[0:54:14] Donc peut-être faire un modèle d'abord avec juste tous les manuels, tous les types de réparations possibles, ainsi de suite, et le type de diagnostic possible dont vous avez parlé tout à l'heure.
+[0:54:22] C'est une excellente idée de voir si les gens se disent « Non mais ça on sait, c'est
+[0:54:28] si au bout de trois semaines les gens n'avaient pas de tout ça.
+[0:54:30] Non mais ça on savait quoi.
+[0:54:31] C'est bon, c'est bon, on est des italiciens seniors, ton système il est en train de le dire
+[0:54:34] ce que je sais déjà dans la tête.
+[0:54:35] Ok, valeur ajoutée zéro.
+[0:54:37] On peut être dans des juniors, mais sinon valeur ajoutée zéro.
+[0:54:40] Et là, on saura que c'est le truc un peu plus touchy.
+[0:54:47] Et typiquement, en exemple, quand tu as utilisé, tu vas utiliser un symposium, mais quand
+[0:54:52] j'ai le voyant de pression de vide qui s'allume quand je suis au ralenti et puis quand je me mets à rouler
+[0:54:57] et la pression s'éteint, c'est pas écrit dans les manuels.
+[0:55:00] Ça je le sais parce que j'en ai fait du diable quand je reste.
+[0:55:03] Donc c'est typiquement la chose où l'expérience commence à prendre de-dessous.
+[0:55:07] Et la pression monte, tu montes en magie, tu perds la pression, donc tes pertes de pression au ralenti
+[0:55:13] et ça, ça rentre dans des choses que tu vas pas trouver dans les manuels quand t'as rentré dans le système.
+[0:55:21] Donc peut-être en deux étapes.
+[0:55:22] Pardon, pas peut-être.
+[0:55:23] En deux étapes.
+[0:55:24] Qu'on te tranche un peu.
+[0:55:27] Qu'on peut peut-être retrouver dans les bornes d'intervention, ce moment-là.
+[0:55:33] Tout ça, c'est une preuve de concept, elle se fait sur copilote.
+[0:55:49] C'est faisable.
+[0:55:50] Oui, c'est faisable.
+[0:55:51] Pas avec les bornes de travail, mais avec les bornes d'intervention.
+[0:56:05] Ah oui, c'est ça.
+[0:56:07] Au niveau de la performance aussi des seniors, ça vous dit.
+[0:56:10] Ça se peut que les seniors n'y voient pas de la valeur.
+[0:56:16] Jusqu'à quel point les seniors... En fait, est-ce que vous mesurez la qualité des diagnostics qui sont faits au niveau de vos mécaniciens?
+[0:56:27] Est-ce que vous avez des métriques là-dessus?
+[0:56:30] Non, mais justement, en l'avion de la vie empirique, en se disant que c'est pour le mieux.
+[0:56:50] Je ne suis pas d'autre à répondre à ce que ça.
+[0:56:55] Il y a aussi un point que je l'ai mentionné, que je te le mentionne, parce que je vais vous quitter dans le menu,
+[0:56:58] L'aspect documentation dont j'ai parlé tout à l'heure, je le redis, je suis désolé, je tourne un peu en boucle.
+[0:57:04] Pour mes licencières, pour la sécurité, c'est-à-dire que, une des choses que je constate dans notre co-prise,
+[0:57:11] comme on n'est pas dans la R&M, c'est que les gens oublient de consulter les documents en pensant qu'ils savent.
+[0:57:17] Donc il y a un aspect aussi dans l'aspect juste consultation documentaire, c'est-à-dire que l'IA,
+[0:57:23] Je vais simplifier, mais il aide à afficher le bon document pour faire telle réparation.
+[0:57:29] Ça, ça me semble essentiel.
+[0:57:30] Comme une checklist d'aviation, un petit homme l'a fait 150 fois, c'est à 150e minute, il a refaire la même checklist.
+[0:57:38] Je ne la connais pas, il a fait la même checklist.
+[0:57:40] Et bien il l'a refait.
+[0:57:42] Je veux la même chose.
+[0:57:43] Et donc là, tous qui sont en train de chercher le manuel dans un répertoire avec...
+[0:57:48] Alors je suis sur un Thomas 2016, je suis en train de faire des freins, mais à cette page 712, c'est là où je souhaite que le système apporter directement cette information.
+[0:58:01] Ça, ça va être une valeur ajoutée quand même, quand on va remettre un peu cet aspect d'air clé qu'on a maintenant, c'est-à-dire non seulement on vous demande de consulter le document, mais on vous fournit l'outil.
+[0:58:13] Parce que si on leur demande de consulter les documents et qu'on ne fournit pas un outil,
+[0:58:18] il y a une perte énorme en fait par rapport à ce qui flonge en. Et puis sur l'aspect
+[0:58:23] direct, je pense quand même que juste les documents devraient aider, même parfois certains
+[0:58:31] seniors, sur des matériels, sur comme on appelle un parc énorme, des véhicules dont
+[0:58:36] ils n'ont pas souvent la maintenance et qu'ils ne connaissent pas de parc à leur apporter
+[0:58:40] une valeur ajoutée. Je vous laisse parce que je dois s'occuper sur un autre meeting,
+[0:58:43] Je vous laisse terminer. Merci beaucoup.
+[0:58:45] Et puis, on fera un point d'éclatement plus tard.
+[0:58:48] Merci beaucoup.
+[0:58:49] Merci, Yann.
+[0:58:50] Juste une projet en elle-même.
+[0:59:04] Quelles sont l'expérience, un petit peu les étapes de Juste une projet qui pourrait être spécifique à ce genre de développement?
+[0:59:16] En fait, normalement, je travaille sur des projets itératifs dans ce genre de développement.
+[0:59:21] Donc, on se donne un target au niveau des… la qualité de l'information à retenir, qui
+[0:59:30] est généralement pas atteinte dans les premiers cycles. Et on regarde quelle composante doit
+[0:59:38] être améliorée. Est-ce que… puis, encore une fois, c'est d'aller voir… de découper
+[0:59:44] Puis est-ce que les « retrievals » ramènent de l'information non pertinente, je ne sais pas, au niveau des composantes, au niveau des pièces, est-ce que les PDFs sont mal interprétés, ou bien c'est carrément le vocabulaire.
+[1:00:00] Et à ce moment-là, ça veut dire qu'il faut que j'intègre par exemple un glossaire dans mon environnement.
+[1:00:07] Un glossaire pour pouvoir s'enfinculer le modèle, mais pour pouvoir orienter le modèle vers le vocabulaire que j'utilise.
+[1:00:17] Qui évite de me sortir des solutions de reboot Windows si j'arrive pas à ouvrir une fenêtre.
+[1:00:24] Ok.
+[1:00:25] Je vais avoir parlé de l'Ontario au Sénat. C'est un détail qui est important.
+[1:00:32] C'est un système supportant les Français directement.
+[1:00:39] Oui.
+[1:00:40] C'est un détail très important.
+[1:00:42] Mais est-ce que vous pourriez penser le faire en emblède initialement, puis rajouter la
+[1:00:47] traduction par après?
+[1:00:48] En théorie, ça devrait bien être supporté, mais plus on limite les endroits où ça peut
+[1:00:57] des problèmes ou le vocabulaire peut poser des problèmes à ce moment-là on peut s'assurer
+[1:01:02] d'avoir au moins une bonne logique ensuite on peut s'assurer que le français suive
+[1:01:06] à ça s'ajoute aussi une petite particularité de l'Ontario c'est que l'Ontario n'a pas de
+[1:01:13] documentation digitale. Je suis certain qu'on peut rejoindre les fournissages.
+[1:01:23] Non c'est sûr c'est sûr j'avais demandé au Louis Détardif qui m'avait envoyé des liens
+[1:01:28] les sites des fournisseurs ont fait un login et un abonnement annuel pour aller chercher les manuels
+[1:01:32] je me demande si il n'y a pas un moyen facile de récupérer cette documentation là et je crois que
+[1:01:42] si je ne me trompe pas la documentation qui est complètement digital au québec quasiment à 100%
+[1:01:46] parce qu'ils reçoivent toutes les paroles et cetera je me demande si ça c'est pas en français
+[1:01:51] Les Sherpaings avec toutes les... il y en a de tous les langages anglais, français et allemand.
+[1:01:58] Le problème c'est qu'on est dans un langage technique.
+[1:02:26] Les élèves sont excellents pour traduire des choses normales.
+[1:02:30] Dans un langage technique, il y a ça des complexités.
+[1:02:33] Souvent des appréviations.
+[1:02:36] Même des verbes très techniques, des fois il est possible que ton modèle...
+[1:02:41] Je ne sais pas trop, c'est quoi quelque chose de bizarre là?
+[1:02:45] Il y a un exemple, le fédéral a fait traduire des documents
+[1:02:51] Puis, « By Canadian Policy » est traduit par « Acheter une politique canadienne »
+[1:02:57] « Translation Bureau » avec « TMA » a été traduit par « Tuberculose »
+[1:03:07] Donc, il faut faire cette assimilité.
+[1:03:10] Mais artificiel.
+[1:03:11] Les gens s'en disent.
+[1:03:13] Oui, c'est ça.
+[1:03:14] C'est là où ça amène une complexité, si on prend en V, parce qu'il n'y a pas de valeur ajoutée à la base.
+[1:03:24] Si on a le manuel et en anglais et en français, bien quand même on prend celui en anglais et celui en français.
+[1:03:29] On l'ignore dans une première phase parce qu'il faut pouvoir travailler en français après.
+[1:03:33] c'est sûr, mais au moins qu'on ait quelque chose qui fonctionne dans une langue.
+[1:03:39] Puis ensuite on verra si on intègre la traduction dans le processus complet
+[1:03:45] puis il n'y a pas d'impact, c'est minime, tant mieux.
+[1:03:47] Sinon on peut peut-être intégrer à l'entrée puis à la sortie.
+[1:03:51] On se rend à l'heure.
+[1:03:53] Il faut que tu sois fine-tune.
+[1:03:55] Tu peux pas, tu veux pas, tu veux pas, le coût et la puissance de quelqu'un qui est après.
+[1:04:01] Tu peux finir sur les matériaux.
+[1:04:03] Mais avec du rack normalement, c'est pas un chien.
+[1:04:07] Si tu as le modèle en français et en anglais, tu peux toujours mettre dans tes méthadonnées la langue de sortie.
+[1:04:14] Rack va aller chercher le bon...
+[1:04:17] Parce que nos mécanos, ils ont leur jargon à eux.
+[1:04:20] Ils vont avoir le moins, je veux changer les brics.
+[1:04:23] Ils vont pas marquer des fringues.
+[1:04:25] Je pense que là dessus il va falloir vraiment avoir la méthode des gars comme ça.
+[1:04:31] On va écrire Break-BRE-AQ des gens?
+[1:04:33] Exact, il y a des gens qui sont vraiment sur la méthode des deux cas.
+[1:04:39] Mais ça justement on pourrait mettre un glossaire, ou Frame Break, en français Frame Break-BRE-AQ puis BR-AQ-E.
+[1:04:49] On les met comme si même possible.
+[1:04:53] Quelque chose il te disait, break.
+[1:04:55] Oui, c'est ça.
+[1:04:57] En tout cas, mais c'est pas grave.
+[1:04:59] L'LM est pas mauvais pour le contexte.
+[1:05:02] Il peut ficher là-dessus, mais c'est là qu'il te va faire bizarre des fois.
+[1:05:06] Oui, mais c'est ça, tu rentres un peu de sel en standard.
+[1:05:09] J'ai vu le mot taille de l'LM, T-E-R-A-D-E-N-E.
+[1:05:13] C'est taille, T-E-R-O-D-E-N-D.
+[1:05:17] Taille, M.
+[1:05:19] T-E-R-A-D-E-N-D.
+[1:05:21] Donc il y a des défis. Il faut simplifier le projet pour avoir un premier résultat.
+[1:05:28] Puis ensuite, on va en tirer dessus. Donc, itératif, vraiment, c'est ce qui va vous permettre de gagner.
+[1:05:36] Ensuite, c'est de découper les agents là où il y a un besoin.
+[1:05:41] Souvent, on dit « fais-le sur les métiers ». Mais là, si vous dites que tout le monde peut tousser au moteur ou au frein,
+[1:05:48] on n'a pas un métier spécifique on peut toucher n'importe quel modèle
+[1:05:53] mais c'est ça on n'a pas de problème
+[1:05:55] il y a aussi la maquette qu'est-ce qu'il y a d'autres spécialistes pour des choses très
+[1:05:57] correctement mais la plupart sont généralistes
+[1:05:59] ouais c'est ça
+[1:06:02] moi sur les procès de projet juste pour faire un petit point sur les prochaines
+[1:06:06] étapes un petit peu j'ai pris beaucoup de notes
+[1:06:09] pas sûr de mes notes mais bon se concentrer déjà sur une prof de concept
+[1:06:15] sur les véhicules scolaires.
+[1:06:18] Assez fins,
+[1:06:19] utilisez la documentation qu'on a présentement
+[1:06:21] sur les véhicules scolaires.
+[1:06:24] Il y a des types différents,
+[1:06:26] mais ça reste sensiblement
+[1:06:30] un peu tout le temps la même chose.
+[1:06:32] Un châssis de camion avec à peu près
+[1:06:33] toujours le même moteur,
+[1:06:35] à peu près toujours le même différentiel,
+[1:06:36] à peu près toujours la même boîte de vitesse.
+[1:06:43] Donc, dans un premier temps,
+[1:06:45] sur copilote, essayer d'avoir une sorte de preuve de concept sur les véhicules scolaires au Québec, je dirais.
+[1:06:53] C'est ça un petit peu ce qu'on a pour l'instant.
+[1:06:56] Voir comment ils se débrouillent et ensuite partir de là pour essayer d'étendre un petit peu la connaissance.
+[1:07:02] Ça te sera qu'il faut quand même avoir la volumétrie de connaissances et de problèmes sur le Québec.
+[1:07:08] Est-ce que vous l'avez? Il y a assez de véhicules scolaires au Québec avec des problèmes.
+[1:07:17] oh
+[1:07:19] ça
+[1:07:21] avoir des problèmes c'est pas un problème
+[1:07:23] avoir des problèmes c'est pas un problème
+[1:07:25] c'est un problème
+[1:07:27] 15 ans à peu près de l'expertise
+[1:07:29] dans les
+[1:07:31] 9 ans
+[1:07:33] 10 ans peut-être
+[1:07:35] 10 ans
+[1:07:37] une dizaine d'années
+[1:07:39] des véhicules scolaires
+[1:07:41] on a quoi ?
+[1:07:43] 500 qui veulent ?
+[1:07:45] 400...
+[1:07:46] Si on prend juste les tours, on est moins moins que ça, mais...
+[1:07:49] Parce qu'on a vu de mini aussi des problématiques différents.
+[1:07:51] Ouais.
+[1:07:52] Et dans cette première étape sur le programme de conception scolaire,
+[1:07:55] on s'appuierait uniquement sur la documentation, sur la version de l'éliminance?
+[1:07:59] Version 1, documentation.
+[1:08:01] Ok.
+[1:08:02] Ben, c'est en 0.1.
+[1:08:03] Ben, intuitivement, moi je dirais si on peut intégrer quelque chose provenant de la maintenance,
+[1:08:10] de l'historique de maintenance, intuitivement, moi je dirais qu'il y a un peu de valeur,
+[1:08:15] C'est juste une intuition.
+[1:08:18] Comme tu dis, c'est peut-être très mal écrit
+[1:08:19] ou il n'y a peut-être jamais une description de problème,
+[1:08:22] juste des solutions qui ont été apportées.
+[1:08:24] Là, je suis d'accord.
+[1:08:25] J'ai un doute sur la capacité de...
+[1:08:27] Il faut aller chercher les meurtres.
+[1:08:29] Oui.
+[1:08:31] Il faut aller chercher la table.
+[1:08:33] La table des...
+[1:08:34] Il faut aller chercher les bons travaux.
+[1:08:37] Spécifiquement pour ce qu'on a...
+[1:08:38] Ça peut être possible.
+[1:08:39] J'ai peut-être traduit.
+[1:08:40] Tu veux le data dans le transdémissage?
+[1:08:43] Non.
+[1:08:43] Il n'est pas tellement le cas.
+[1:08:44] Oui, honnêtement.
+[1:08:45] Oui.
+[1:08:46] Et j'ai fait traduire.
+[1:08:47] Je l'ai fait détecter le langage puis traduire les deux langues.
+[1:08:49] C'est pas si mal.
+[1:08:50] Oui.
+[1:08:51] Je l'ai fait tout ce qu'on fait.
+[1:08:52] Ah, le langage est impressionnant.
+[1:08:53] Oui, oui, oui.
+[1:08:54] Oh, et ça, ça traduit correctement.
+[1:08:55] Il détecte le langage qui traduit de façon assez correcte en général.
+[1:08:58] Ok.
+[1:08:59] Même quand c'est bizarre.
+[1:09:00] Ok.
+[1:09:01] Donc possiblement, malgré que c'est des termes techniques, dans certains cas, possiblement
+[1:09:05] qu'il va réussir à faire quelque chose de pas mal avec…
+[1:09:08] Moi, j'ai juste un doute sur la capacité de traitement qu'on a avec le copilote pour
+[1:09:12] Non non, je pense pas qu'on va...
+[1:09:14] Non non plus, puis je sais pas comment on ferait pour filtrer uniquement pour les bons travails scolaires.
+[1:09:18] Ah ça, ça va être avec les numéros de véhicules.
+[1:09:20] Oui, ok.
+[1:09:21] Les classes de véhicules, les numéros de véhicules, c'est pas compliqué.
+[1:09:23] Ben je pourrais prendre une petite portion, mais je vais pas les prendre au complet.
+[1:09:28] On pourrait dire sur quel champ filtrer au niveau de la liste des véhicules.
+[1:09:31] T'as la liste des véhicules, tu peux aller tes bons travails,
+[1:09:33] t'as peut-être pas les notes en printemps extraire,
+[1:09:36] les tables de notes qui sont les...
+[1:09:38] et ce qui trouve comme problème sur des véhicules avant d'y parler d'épargation.
+[1:09:42] Et autre question ?
+[1:09:46] Je sais pas du tout comment fonctionne un...
+[1:09:50] un GB10.
+[1:09:52] C'est un servo à Linux ?
+[1:09:55] Ah ok, c'est tout !
+[1:09:57] Enfin c'est tout, pas vrai.
+[1:09:59] Ben, vous êtes des agents déçus.
+[1:10:00] Sur CoPilot, est-ce que ta seule base vectorielle possible c'est Azure AI ou tu pourrais prendre une autre base vectorielle?
+[1:10:10] On peut en prendre d'autres.
+[1:10:11] Ok, parce que tu pourrais mettre ta base vectorielle sur le PB10 à ce moment-là.
+[1:10:15] Je ne sais pas si on peut se connecter à réseau.
+[1:10:18] Mais il semble que oui.
+[1:10:19] On peut mettre une connexion avec les jeux de la genre de commercieuse de BBS.
+[1:10:24] Je ne suis pas sûr qu'elle joue avec la même chose.
+[1:10:27] Si on est à haute, c'est au centre de voir le direct connect.
+[1:10:34] C'est possible, c'est possible de voir.
+[1:10:37] On est pas rendu là mais on va toujours voir s'il y a un gain ou à ce moment-là,
+[1:10:43] déplacer une fois qu'on a un modèle co-pilote qui fonctionne un peu,
+[1:10:47] essayer de déplacer.
+[1:10:49] On peut seulement créer un agent en GPT si facilement à partir de ce que tu as.
+[1:10:54] Parce que je sais qu'il faut que tu ailles changer ta base de vecteur.
+[1:10:57] Bien, c'est ça.
+[1:10:58] À la limite, Claude est super bon Python, honnêtement.
+[1:11:02] On peut créer des scripts Python pour les PVH et les convertir.
+[1:11:06] Je te dis qu'il y a tout un processus qu'on peut faire non seulement pour automatiser
+[1:11:10] des bases de données vecteurs qui sont parallèles pour les agents.
+[1:11:13] On ne peut pas juste faire ça au jour 1, mais une fois qu'on sait comment charger une base de données,
+[1:11:17] on peut le cocher des détalogiques et des mécaniques autour pour dire qu'on fait ça script-là avec tel fichier.
+[1:11:23] C'était détail quand tu jouais de l'agent.
+[1:11:26] Oui, puis c'est sûr une fois que tu as battu ton agent dans le CoPilot Studio,
+[1:11:30] tu peux utiliser l'Inchain pour ramener ça sur ton GB10.
+[1:11:34] Ok, c'est l'expert.
+[1:11:37] Je suis un amateur ou c'est l'expert?
+[1:11:39] Je ne suis pas capable de travailler.
+[1:11:41] J'ai pris des formations CoPilot Studio.
+[1:11:43] C'est super fun.
+[1:11:45] C'est magique.
+[1:11:46] Mais il y a trop de magie pour moi.
+[1:11:48] C'est pas la magie, non.
+[1:11:54] ok sur le suivi un petit peu de l'avancement est ce que ça vous conviendrait
+[1:12:03] je sais pas à quel quel est nécessaire que vous soyez présents à chaque
+[1:12:09] rencontre mais je trouve ça un vrai soit au moins 15 minutes et de ma mère
+[1:12:15] on fait un petit peu le point sur sur sur le mois de novembre et peut-être on
+[1:12:22] pourrait se retrouver pour une prochaine session un petit peu d'avance
+[1:12:29] oui
+[1:12:31] ça prend une journée
+[1:12:36] c'est un peu plus de 5 minutes ça veut plutôt dire 30 minutes
+[1:12:39] alors on a dit 30 minutes hebdo ou t'es pas du un développer ?
+[1:12:42] ah oui non c'est pas du tout
+[1:12:44] 30 minutes
+[1:12:46] 30 minutes c'est pas mal
+[1:12:48] hebdo ?
+[1:12:49] un 30 minutes de matière mais peut-être que nous on peut se retrouver avec Dominique
+[1:12:53] faites pas ça à la pittà
+[1:12:55] non
+[1:12:56] min de l'autre
+[1:12:58] pour moi c'est quelque chose de fin de journée
+[1:13:01] non mais une tête d'eau c'est quelque chose c'est genre volum que j'avais
+[1:13:05] en tête aussi excellent et peut-être que en fonction de
+[1:13:10] 2 de l'aide de ma date on fera la semaine prochaine on verra si dans deux
+[1:13:16] semaines et en fonction de l'avancée aussi que toi tu as si ça veut faire une
+[1:13:20] session un petit peu plus longue
+[1:13:25] cette minute c'est plus comme suivi oui c'est plus du ouest ce qu'on en a
+[1:13:30] mais sur les deux prochaines semaines je dirais la semaine prochaine en 30
+[1:13:36] minutes et dans deux semaines
+[1:13:40] ça c'est pour la poutine donc ça prend un plan de projet
+[1:13:49] Ça prend des métriques pour pouvoir mesurer l'avancement.
+[1:13:55] C'est super difficile. C'est la partie difficile. C'est là où on peut s'asseoir et vraiment faire une session de travail
+[1:14:02] pour voir ce qui est logique de mettre en place comme métrique au niveau de la sortie.
+[1:14:08] Puis ensuite on verra pour les métriques au niveau à l'intérieur même du traitement.
+[1:14:13] Les métriques subjectives ou métriques automatisables?
+[1:14:15] Les deux. Les métriques subjectifs, il y a beaucoup de valeur là-dedans.
+[1:14:21] Puis on en a besoin. Puis souvent les projets...
+[1:14:23] C'est pas du tout la même chose.
+[1:14:25] Mais il faut pouvoir les mettre puis les mesurer.
+[1:14:29] Les mesurer d'une certaine façon.
+[1:14:30] C'est-à-dire dire on a eu 40 bonnes réponses puis 37 mauvaises.
+[1:14:36] Mais déjà on a quelque chose...
+[1:14:38] quitte à ce qu'on n'ait pas le pourcentage d'erreurs dedans.
+[1:14:44] Mais qu'on puisse monter un tableau qui nous permette de voir comment ça avance par rapport aux différents tests.
+[1:14:51] Parce que vu qu'on va être itératif, ça te permet de mesurer tes régressions.
+[1:14:56] Faut pas que j'aille là.
+[1:14:58] J'ai une petite amélioration ici.
+[1:15:01] est-ce que
+[1:15:05] vous seriez en capacité
+[1:15:10] de peut-être même
+[1:15:12] avec l'aide de
+[1:15:13] établir une proposition de plan
+[1:15:16] de projet
+[1:15:18] je vous parlais
+[1:15:22] mais on travaille en duo
+[1:15:23] une proposition de plan de projet
+[1:15:26] un petit peu et ensuite on va l'affiner
+[1:15:28] on va y ajouter tous les éléments métiers
+[1:15:30] un petit peu spécifiques
+[1:15:32] mais qu'on ait une sorte de squelette.
+[1:15:34] Si vous voulez, vous pouvez...
+[1:15:37] On peut faire une petite réunion à l'U3
+[1:15:39] pour affiner le temps de projet.
+[1:15:42] Juste que je revise, puis voir si j'ai des suggestions ou pas.
+[1:15:45] Ouais, moi j'aurais besoin de suggestions quand ça vient à le G2, le Linux.
+[1:15:51] Ça c'est des détails.
+[1:15:53] Mais justement, c'est le danger de...

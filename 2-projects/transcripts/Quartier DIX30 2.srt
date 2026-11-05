@@ -1,0 +1,3704 @@
+1
+00:00:00,000 --> 00:00:03,000
+...
+
+2
+00:00:23,300 --> 00:00:45,100
+Bonjour Pierre.
+
+3
+00:00:45,100 --> 00:00:46,100
+Bonjour.
+
+4
+00:00:46,100 --> 00:00:57,800
+Salut Alex.
+
+5
+00:00:58,800 --> 00:01:02,800
+Nous voilà désolé, on a eu quelques petits problèmes pour mettre en place la télé.
+
+6
+00:01:02,800 --> 00:01:15,100
+télé et c'est réglé et tous ici avec dominique que je vais te laisser te présenter ça va être plus simple
+
+7
+00:01:15,100 --> 00:01:19,800
+parce que comme ça je ne veux pas dire de bêtises non plus. En fait je suis un collaborateur de
+
+8
+00:01:19,800 --> 00:01:29,700
+ITED, donc consultant avec ITED spécialisé en système de gestion et en IA puis on a mis une rencontre
+
+9
+00:01:29,700 --> 00:01:36,200
+il y a deux semaines trois semaines avec ITEL pour voir comment on pouvait appuyer
+
+10
+00:01:36,200 --> 00:01:40,200
+finalement votre projet s'il y avait possibilité d'appuyer donc on fait une
+
+11
+00:01:40,200 --> 00:01:45,400
+rencontre aujourd'hui c'est vraiment pour pouvoir décortiquer un peu voir un
+
+12
+00:01:45,400 --> 00:01:51,600
+peu là où il y a des issues comment on peut les aider puis voir donc si ça va
+
+13
+00:01:51,600 --> 00:01:57,500
+suivre avec un projet ou autrement donc c'est vraiment pour pouvoir
+
+14
+00:01:57,500 --> 00:02:06,300
+déboursailler et ensuite retourner vers les capitales pour voir comment vous appuyez.
+
+15
+00:02:06,300 --> 00:02:13,600
+Est-ce que vous avez des questions ? C'est très rapide.
+
+16
+00:02:13,600 --> 00:02:27,800
+Je vais commencer par préfacer quelque chose. Je ne suis pas du tout un expert en déchartant
+
+17
+00:02:27,800 --> 00:02:34,200
+ancienne très loin de là j'ai les bases sur la manière dont ça fonctionne mais vous m'excuserez
+
+18
+00:02:34,200 --> 00:02:41,000
+si je dis des bêtises et si je n'ai parfois pas les bonnes idées ou les bonnes notions mais pour
+
+19
+00:02:41,000 --> 00:02:47,100
+faire un petit topo de là où on en est et pareil le gré des pavons si tu as des informations
+
+20
+00:02:47,100 --> 00:02:53,800
+sont plus précises mais juste pour faire un petit récapitulatif du projet je vais commencer
+
+21
+00:02:53,800 --> 00:02:58,100
+c'est par là où on veut être et quel est le but ultime.
+
+22
+00:02:58,400 --> 00:03:09,100
+Le but ultime dans un monde parfait, c'est qu'on ait un chatbot qui puisse appuyer les mécaniciens
+
+23
+00:03:09,100 --> 00:03:15,700
+et les agents de maintenance sur le diagnostic, la recherche d'informations
+
+24
+00:03:15,700 --> 00:03:19,700
+et le dépannage lors d'activités de maintenance.
+
+25
+00:03:19,700 --> 00:03:26,700
+Ça, ça pourrait être par exemple des questions qui pourraient être posées à l'agent serait
+
+26
+00:03:26,700 --> 00:03:34,300
+j'ai tel véhicule de tel modèle qui a une basse pression d'huile uniquement quand le
+
+27
+00:03:34,300 --> 00:03:39,000
+moteur est au repos mais lorsqu'il roule la pression d'huile revient à l'air normal
+
+28
+00:03:39,000 --> 00:03:44,000
+et l'erreur s'efface et l'agent pourrait aller chercher plusieurs sources d'information.
+
+29
+00:03:44,000 --> 00:03:52,800
+La première qui est plutôt statique, qui est donc des références PDF, des manuels PDF,
+
+30
+00:03:52,800 --> 00:03:57,600
+des plans de maintenance qui viennent du constructeur et qui référencent les différents codes
+
+31
+00:03:57,600 --> 00:04:02,300
+d'erreur, des diagrammes, des schémas, des guides de dépannage.
+
+32
+00:04:02,300 --> 00:04:09,900
+Et une autre source de données qui elle serait plus dynamique, c'est à dire une source de
+
+33
+00:04:09,900 --> 00:04:17,200
+données en fait qui serait notre CMMS, notre logiciel de maintenance où la base de données
+
+34
+00:04:17,200 --> 00:04:23,100
+contient la liste des véhicules que nous avons avec leurs attributs respectifs modèles, marques,
+
+35
+00:04:23,100 --> 00:04:34,200
+années, types et que cet agent ait la possibilité d'analyser la base de données pour potentiellement
+
+36
+00:04:34,200 --> 00:04:36,200
+refaire état d'information du genre
+
+37
+00:04:36,200 --> 00:04:39,400
+on a un véhicule similaire qui a vécu un problème similaire
+
+38
+00:04:39,400 --> 00:04:42,800
+une solution a été trouvée par des mécaniciens
+
+39
+00:04:42,800 --> 00:04:43,900
+il y a 2-3 ans
+
+40
+00:04:43,900 --> 00:04:46,600
+il faudrait d'abord confirmer
+
+41
+00:04:46,600 --> 00:04:48,800
+que ce fixe fonctionne encore
+
+42
+00:04:48,800 --> 00:04:51,200
+mais voilà ce qu'il avait trouvé à l'époque
+
+43
+00:04:51,200 --> 00:04:52,900
+est-ce que ça s'appliquait ce véhicule
+
+44
+00:04:52,900 --> 00:04:55,300
+et autour de tout ça
+
+45
+00:04:55,300 --> 00:04:56,700
+s'ajoute une sorte de couche
+
+46
+00:04:56,700 --> 00:04:58,900
+un petit peu entreprise
+
+47
+00:04:58,900 --> 00:05:01,100
+c'est à dire que l'agent rappelle
+
+48
+00:05:01,100 --> 00:05:02,700
+les bonnes pratiques de sécurité
+
+49
+00:05:02,700 --> 00:05:11,500
+avant toute manipulation. L'agent rappelle et comme pratique de sécurité avant toute manipulation.
+
+50
+00:05:11,500 --> 00:05:18,800
+Rappelle aux mécaniciens que ce ne sont uniquement des suggestions mais que ce n'est pas des ordres, ce genre de choses.
+
+51
+00:05:18,800 --> 00:05:28,000
+Quand vous dites que vous... en fait c'est quand même le chatbot est assez large, vous parlez de diagnostic de l'épanage.
+
+52
+00:05:28,000 --> 00:05:41,100
+Est-ce que vous voyez ça comme trois agents dont vous avez évalué la performance et la pertinence séparément?
+
+53
+00:05:43,400 --> 00:05:45,700
+Alors voilà, c'est une question déjà qui est trop technique pour moi.
+
+54
+00:05:47,000 --> 00:05:53,400
+En fait, je suppose que ce n'est pas la même personne qui va demander une aide sur un diagnostic,
+
+55
+00:05:53,400 --> 00:05:57,200
+qui va demander un dépannage sur quelque chose qui est entrepris.
+
+56
+00:05:57,900 --> 00:06:00,200
+L'aide sur le diagnostic est ce que peut-être...
+
+57
+00:06:00,200 --> 00:06:13,200
+Et dans votre scénario, donc, on parle pas d'aider des plus juniors ou c'est vraiment des situations qui viennent régulièrement?
+
+58
+00:06:13,200 --> 00:06:23,200
+Si, si. En fait, justement, vous m'entendez, en fait, justement, je crois que je vois la question de vous poser. Je pense qu'il y a deux niveaux.
+
+59
+00:06:23,200 --> 00:06:31,100
+Le niveau technologique, c'est le niveau, côté métier, c'est le niveau réconnu.
+
+60
+00:06:31,300 --> 00:06:34,200
+C'est le niveau où on va rentrer ce qu'on voit, on va rentrer ce qu'on a comme information.
+
+61
+00:06:34,500 --> 00:06:39,700
+On espère obtenir des informations de la part du système.
+
+62
+00:06:40,000 --> 00:06:45,300
+Donc comme l'a dit Henri, soit par rapport à une base de données constructeurs,
+
+63
+00:06:46,100 --> 00:06:49,900
+comme un manuel de la PCF en fait, qui vous dit que quand il y a de voyants, machins qui est allumés,
+
+64
+00:06:49,900 --> 00:06:54,900
+ça veut dire qu'il n'y a plus de produit ou qu'il n'y a plus de rinçage ou que le ventilateur marche pas, je sais pas.
+
+65
+00:06:56,100 --> 00:07:07,100
+Mais pour aller plus loin, ça c'est donc l'étape diagnostique, il y a prendre l'opportunité de voir ce qu'on peut faire avec la data TransDef.
+
+66
+00:07:08,100 --> 00:07:13,600
+Donc davantage majeur qu'à TransDef avec des millions de bons travaux qui ont été complétés au-delà des années.
+
+67
+00:07:14,600 --> 00:07:17,600
+Puis on peut égargir plus tard des bases de données autres que celles au Canada.
+
+68
+00:07:18,400 --> 00:07:19,900
+Donc ça c'est la partie diagnostique.
+
+69
+00:07:21,000 --> 00:07:26,100
+Après il y a l'aspect peut-être, Henri, je vais réfléchir un peu, mais il y a l'aspect réparation.
+
+70
+00:07:26,100 --> 00:07:35,100
+L'aspect réparation, c'est pas tout à fait la même chose, parce que l'aspect réparation, lui, une fois que le diagnostic est établi, la réparation suit un protocole parfaitement élevé.
+
+71
+00:07:35,100 --> 00:07:44,100
+S'il s'agit de changer une sonde, s'il s'agit de tomber en moteur, s'il s'agit de... il y a des manuettes de réparation extrêmement précis, des règles de sécurité extrêmement précises,
+
+72
+00:07:44,100 --> 00:07:51,200
+Il n'y a plus de marge du tout, je pense, sur de l'interprétation, de l'analyse d'anciens documents.
+
+73
+00:07:52,100 --> 00:07:58,800
+C'est plus uniquement un appel à une base de référence qui va apporter les bons éléments.
+
+74
+00:07:59,500 --> 00:08:00,100
+La partie diagnostique...
+
+75
+00:08:01,000 --> 00:08:03,600
+Je parle trop, mon détauteur.
+
+76
+00:08:04,900 --> 00:08:05,400
+C'est la partie.
+
+77
+00:08:06,500 --> 00:08:13,500
+La partie diagnostique est celle qui est la plus compliquée, je pense, en termes de...
+
+78
+00:08:13,500 --> 00:08:26,900
+et qui a le plus d'opportunités. Et le projet que je souhaite faire, c'est un projet qui va permettre de britcher, en bon français, un mécanicien junior parce que c'est un mécanicien senior.
+
+79
+00:08:27,400 --> 00:08:41,700
+Donc comment, grâce à l'appliance artificielle, on est capable d'amener un mécanicien junior et un mécanicien senior dans sa tête.
+
+80
+00:08:41,700 --> 00:09:08,700
+Mais je pense qu'il y a peut-être deux agents, si on ne veut pas surcharger la machine, parce que l'agent réparation, donc hors diagnostic d'agent réparation, pour reprendre l'exemple que tu as donné Henri sur la pression d'huile, une fois que le diagnostic est établi, et par exemple la conclusion est faite qu'il faut changer les capteurs de pression d'huile,
+
+81
+00:09:08,700 --> 00:09:14,700
+Le changement du captat de pression-ville, c'est une opération qui existe dans le manuel de réparation du constructeur
+
+82
+00:09:14,700 --> 00:09:22,700
+et qui n'a absolument rien à voir avec l'IA. À part le fait de gagner peut-être du temps pour aller chercher l'information plus rapidement dans la base référendaire.
+
+83
+00:09:22,700 --> 00:09:29,700
+Mais tu sais, Pierre, quand on utilise des IA, souvent ils vont nous suggérer des follow-up par la suite.
+
+84
+00:09:29,700 --> 00:09:37,700
+On peut avoir quand même un seul point d'accès où tout ça passe qui va ensuite être rédigé par différents experts en dessous.
+
+85
+00:09:37,700 --> 00:09:42,700
+Il faut nous suggérer, il faut nous apporter à ses heures et ensuite quand on a des réponses.
+
+86
+00:09:42,700 --> 00:09:46,700
+Non mais ce que je voulais dire Alex c'est que moi j'ai pas d'avis du tout sur la question,
+
+87
+00:09:46,700 --> 00:09:50,700
+je suis encore plus mauvais qu'envie sur la question côté technique.
+
+88
+00:09:50,700 --> 00:09:56,700
+Mais ce que je veux dire en termes de philosophie, je sais pas si ce seront les mêmes personnes qui utilisent les deux,
+
+89
+00:09:56,700 --> 00:09:58,700
+mais il y a quelque part...
+
+90
+00:10:00,400 --> 00:10:08,400
+Pour faire une réparation sur un véhicule, la réparation devient ta diacoustique. Donc la diacoustique il nous a fait pour faire une réparation.
+
+91
+00:10:08,400 --> 00:10:18,400
+T'as pas vraiment besoin d'aller consulter un historique de maintenance, t'as besoin d'avoir la bonne information pour faire l'action.
+
+92
+00:10:18,400 --> 00:10:28,400
+Ah, donc t'as vraiment d'accord, on peut passer le kiosque, tu peux lui dire je veux la prestature pour ça, puis l'orchestrateur de plus haut niveau lui va t'envoyer vers la bonne presse pour lui tomber la bonne information.
+
+93
+00:10:28,400 --> 00:10:38,400
+Je distingue juste les deux en disant qu'il y en a un qui est plus une gestion de base dont il faut une pertinence très performante,
+
+94
+00:10:38,400 --> 00:10:46,400
+et l'autre qui est plus quelque chose d'ailleurs qui est beaucoup plus intéressant pour moi, pardon, le premier diagnostic c'est le cœur de la femme, c'est le cœur du vainqueur.
+
+95
+00:10:46,400 --> 00:10:51,400
+Et là, je le trouve dans les manuels, mais là, je ne sais pas qu'il est...
+
+96
+00:10:51,400 --> 00:11:01,800
+Je suis d'accord qu'une fois que l'agent a fait le diagnostic, il pourrait apporter la documentation et qu'il y aurait un gain.
+
+97
+00:11:02,200 --> 00:11:07,000
+Moi, c'est plus au niveau de séparer les mesures d'efficacité, les mesures de réussite.
+
+98
+00:11:07,900 --> 00:11:15,100
+Autrement dit, si j'ai un agent qui est excellent pour aller chercher les documents de réparation, mais qui se trompe dans le diagnostic à chaque fois,
+
+99
+00:11:16,000 --> 00:11:18,300
+le projet a échoué, c'est ce que je viens d'entendre.
+
+100
+00:11:18,300 --> 00:11:26,100
+Donc il faudrait focaliser les métriques initialement, les métriques de mesure de performance de l'IA ou de l'agent,
+
+101
+00:11:26,200 --> 00:11:31,900
+devraient être focalisés sur la partie diagnostique pour ensuite améliorer dans le retrieval.
+
+102
+00:11:34,200 --> 00:11:36,600
+C'est comme ça que je le vois, là? C'est pas nécessairement...
+
+103
+00:11:36,600 --> 00:11:45,600
+Et enfin, juste aussi pour clarifier, on parle pas nécessairement de charge sur la machine quand il s'agit d'avoir ces deux étapes-là.
+
+104
+00:11:45,600 --> 00:11:46,600
+Non, c'est ça.
+
+105
+00:11:46,600 --> 00:11:52,200
+Mais je focalise vraiment sur le projet qu'il y a comme tel plutôt que sur la charge de
+
+106
+00:11:52,200 --> 00:11:53,200
+machines.
+
+107
+00:11:53,200 --> 00:11:55,200
+Ça, c'est l'optimisation sur la...
+
+108
+00:11:55,200 --> 00:11:59,800
+Si je me torpe, le gros du travail va être sur la préparation de la donnée.
+
+109
+00:11:59,800 --> 00:12:06,000
+Préparation de la donnée possiblement et préparation donc de l'agent.
+
+110
+00:12:06,000 --> 00:12:09,300
+C'est à voir si on découpe en multiples petits agents aussi.
+
+111
+00:12:09,300 --> 00:12:12,300
+Est-ce qu'on a besoin des agents spécialisés?
+
+112
+00:12:12,300 --> 00:12:16,300
+On avait parlé d'ailleurs la dernière fois d'agents spécialisés par modèle.
+
+113
+00:12:16,300 --> 00:12:18,300
+Je sais pas comment vos ateliers…
+
+114
+00:12:18,300 --> 00:12:21,300
+J'irais peut-être beaucoup plus pointu que ça, tu sais.
+
+115
+00:12:21,300 --> 00:12:28,300
+Tu me ramènerais si je me trompe, mais moi j'irais peut-être avec une armée, littéralement une armée d'agents,
+
+116
+00:12:28,300 --> 00:12:31,300
+parce qu'on peut même descendre par composante pour les fins de diagnostic.
+
+117
+00:12:31,300 --> 00:12:35,300
+En fait, ce que j'imagine, et je ne connais absolument rien en mécanique,
+
+118
+00:12:35,300 --> 00:12:39,300
+même mon auto, j'ai jamais pu faire pour que ce soit dessus.
+
+119
+00:12:39,300 --> 00:12:48,300
+Mais en fait je pense que c'est organisé plus par composantes ou par groupes de composantes.
+
+120
+00:12:48,300 --> 00:12:55,300
+C'est à dire, votre atelier, probablement qu'il y a une équipe qui s'occupe du moteur, une équipe qui s'occupe des freins, ou qui sont plus spécialisés.
+
+121
+00:12:55,300 --> 00:12:57,300
+C'est pas un truc de généralisme.
+
+122
+00:12:57,300 --> 00:13:04,300
+C'est du généralisme, mais tu vas retrouver un moteur commis qui peut être différent, un moteur Volvo dans différents types de véhicules,
+
+123
+00:13:04,300 --> 00:13:08,300
+ou tel type de transmission, de transmission en résumé dans 3 ou 4 types de véhicules.
+
+124
+00:13:08,300 --> 00:13:11,300
+Là-dedans encore, tu as plein de modèles différents.
+
+125
+00:13:11,300 --> 00:13:17,300
+J'imagine qu'à fin d'obtenir des résultats plus pointus, plus précis,
+
+126
+00:13:17,300 --> 00:13:21,300
+il faudrait vraiment automatiser la création des agents,
+
+127
+00:13:21,300 --> 00:13:24,300
+automatiser la création, le traitement des documents qu'on va charger.
+
+128
+00:13:24,300 --> 00:13:27,300
+Parce que nous, on parle de charger 900 manuels autour.
+
+129
+00:13:27,300 --> 00:13:29,300
+C'est-à-dire qu'automatiser qu'il y a des supports,
+
+130
+00:13:29,300 --> 00:13:32,300
+il y a même des guides pour pré-éclater cette information-là,
+
+131
+00:13:32,300 --> 00:13:37,300
+pour changer les bases de données. Là je suis dans le détail.
+
+132
+00:13:37,300 --> 00:13:47,700
+C'est un point juste pour ce sujet. Je pense que c'est compliqué de se faire avec l'idée avant d'avoir démarré sur le plan.
+
+133
+00:13:47,700 --> 00:13:54,700
+Parce qu'à la fois, il y a beaucoup de particularités, il y a des éléments communs.
+
+134
+00:13:54,700 --> 00:14:03,200
+Vous ne connaissez pas la maintenance, mais en fait c'est un peu comme chez Dodge, vous avez une bonne voiture qui est comptée sur 4 modèles différents pour rien avoir.
+
+135
+00:14:04,200 --> 00:14:13,900
+On a le même sujet. En revanche, je pense qu'il y a plus une commonalité par rapport au métier qu'on fait, c'était un début sur 20, début scolaire, les autres cars, ça peut être.
+
+136
+00:14:14,600 --> 00:14:23,200
+Je pense qu'il ne faut pas qu'on descendre trop dans la gramédiaire avec les clés, parce que le risque étant qu'on n'aura pas assez de véhicules, je parle bien dans la partie diag et pas dans la partie manuelle, excusez-moi.
+
+137
+00:14:23,200 --> 00:14:26,200
+La partie manuelle pour moi franchement c'est...
+
+138
+00:14:26,200 --> 00:14:28,200
+qu'il se fait quelque chose.
+
+139
+00:14:28,200 --> 00:14:31,200
+Je veux dire, je suis capable de faire la congestion documentaire.
+
+140
+00:14:31,200 --> 00:14:35,200
+Là on est pas sujet, si l'IA peut nous aider à des publics, très bien.
+
+141
+00:14:35,200 --> 00:14:38,200
+Mais dans la partie technostique, si on ségrère trop,
+
+142
+00:14:38,200 --> 00:14:42,200
+le risque est qu'on ait pas assez de données
+
+143
+00:14:42,200 --> 00:14:46,200
+pour avoir quelque chose de relativement ferme,
+
+144
+00:14:46,200 --> 00:14:49,200
+un peu comme quand on a fait le 0% budget.
+
+145
+00:14:49,200 --> 00:14:53,200
+Dans tes manuels, tu as du troubleshooting qui sert à ça.
+
+146
+00:14:53,200 --> 00:15:00,200
+Afin d'aller chercher les bonnes informations, tu ne peux pas avoir trop de données dans un même spécialiste.
+
+147
+00:15:00,200 --> 00:15:04,200
+Je pense que c'est là qu'on doit garder pour faire une ségrégation assez pointueuse.
+
+148
+00:15:04,200 --> 00:15:09,200
+Ça n'a pas un impact négatif, autant que je sache.
+
+149
+00:15:09,200 --> 00:15:15,200
+Si on l'automatise via des scripts, on va pouvoir planter un nouveau manuel
+
+150
+00:15:15,200 --> 00:15:19,200
+et il va recharger tout ça dans le système que les experts vont créer automatiquement.
+
+151
+00:15:19,200 --> 00:15:25,200
+Et ils vont en fait surtout l'absorber, ils vont absorber aussi les updates des manuels.
+
+152
+00:15:25,200 --> 00:15:28,200
+C'est ça. C'est ça. C'est ça.
+
+153
+00:15:28,200 --> 00:15:32,200
+C'est une voie pour les montrer. J'en reviens encore une fois aux diagnostics.
+
+154
+00:15:32,200 --> 00:15:36,200
+Excusez, moi c'est mon focus, les diagnostics c'est pas la réparation.
+
+155
+00:15:36,200 --> 00:15:42,200
+La réparation je le redis, c'est très intéressant d'avoir de l'assistance
+
+156
+00:15:42,200 --> 00:15:46,200
+On pouvait plus rapidement la donnée, je pense qu'on a déjà regardé un peu ça Henri, ça fonctionne.
+
+157
+00:15:46,200 --> 00:15:50,200
+Mais l'important c'est qu'il y a des surdiadres qui n'ont plus que ça en entrée.
+
+158
+00:15:50,200 --> 00:15:54,200
+Il y a des notices de rappel des constructeurs qui vont faire comprenner comme données d'entrée.
+
+159
+00:15:54,200 --> 00:15:57,200
+Les constructeurs émettent des bulletins de rappel, vous connaissez sans l'autocopine,
+
+160
+00:15:57,200 --> 00:15:59,200
+je vous parlais dans ce clobus.
+
+161
+00:16:03,200 --> 00:16:07,200
+Tu as raison avec ce qu'il y a dans le manuel de réparation des modules de diagnostic.
+
+162
+00:16:07,200 --> 00:16:10,200
+Je te dis si tu as telle lumière, c'est ça qu'il faut que tu regardes.
+
+163
+00:16:10,200 --> 00:16:14,200
+évidemment on espère que le système est capable de posttraiter cette donnée.
+
+164
+00:16:14,200 --> 00:16:19,200
+Et ça effectivement c'est à regarder le détail des manuels qui ne le connaît pas suffisamment,
+
+165
+00:16:19,200 --> 00:16:23,200
+en tout cas ça fait pas mal de temps que je ne vais pas garder les manuels ici au Canada,
+
+166
+00:16:23,200 --> 00:16:27,200
+s'ils sont en marque de votre détail, ça peut créer un... il ne faut pas qu'on...
+
+167
+00:16:27,200 --> 00:16:34,200
+on génère de la confusion avec des indications via l'agent qui n'a rien à voir avec le véhicule sur lequel la personne est,
+
+168
+00:16:34,200 --> 00:16:40,200
+Il dit « Tiens, si tu as un voyeur-là, faut-il regarder là, tu as un voyeur-là et n'existe pas parce que c'est un modèle que système. »
+
+169
+00:16:40,200 --> 00:16:49,200
+Donc, si on intègre nos bases de données de véhicules avec la liste des composantes, il y a moyen d'intégrer ça, je pense.
+
+170
+00:16:49,200 --> 00:16:57,200
+Tu veux dire, je travaille sur tel véhicule, il va prendre la liste des composantes et passer dans la requête pour dire « Écoute, il faut chercher des manuels pertinents. »
+
+171
+00:16:57,200 --> 00:17:00,200
+Il doit y avoir des bases de données sur les éléments de ça.
+
+172
+00:17:00,200 --> 00:17:09,300
+Tu pourrais même prendre la tabasse de données, c'est avec les véhicules qui ont des composantes similaires pour l'expert qui va traiter le ou les experts qui vont traiter tes données que t'as déjà chargées.
+
+173
+00:17:10,700 --> 00:17:19,900
+Je dirais aussi, en point d'entrée, c'est pas partir sur un truc trop compliqué qu'on aura dans trois ans, c'est partir sur un truc récent qu'on aura tout de suite.
+
+174
+00:17:19,900 --> 00:17:25,900
+le complexifier après, mais déjà voir c'est sûr le principe, c'est intéressant.
+
+175
+00:17:25,900 --> 00:17:32,900
+Parce que tout le monde a entrepris par deux liens dans le monde entier, mais en fait les
+
+176
+00:17:32,900 --> 00:17:39,900
+applications opérationnelles concrètes sont limitées. Je crois beaucoup à la base de données
+
+177
+00:17:39,900 --> 00:17:43,900
+qu'on possède en plus des données. Je crois beaucoup, mais là il y a un autre problème,
+
+178
+00:17:43,900 --> 00:17:47,900
+la qualité de la donnée. Je pense que les docteurs d'Abriel ont bien compris le problème.
+
+179
+00:17:47,900 --> 00:17:51,900
+T'as déjà vu les commentaires des mécaniciens dans la main, là, c'est…
+
+180
+00:17:51,900 --> 00:17:53,900
+Mais les arts n'est pas mon avis.
+
+181
+00:17:53,900 --> 00:17:55,900
+Les arts n'ont pas été pressés dans la question.
+
+182
+00:17:55,900 --> 00:17:57,900
+Alors, dans ce cas, tu as une prépression de la question ou de l'enquête, d'ailleurs,
+
+183
+00:17:57,900 --> 00:17:59,900
+parce que c'est vrai que je vais parler en anglais,
+
+184
+00:17:59,900 --> 00:18:00,900
+il y a des gens qui ne font pas le système en anglais,
+
+185
+00:18:00,900 --> 00:18:06,900
+mais je parle aussi des erreurs d'entrée, des choses qui ne sont pas toujours précises,
+
+186
+00:18:06,900 --> 00:18:10,300
+là, de pouvoir se contribuer à aller ça.
+
+187
+00:18:10,300 --> 00:18:14,300
+Oui, puis en fait, il n'y a peut-être moyen aussi de…
+
+188
+00:18:14,300 --> 00:18:17,300
+sans nécessairement aller donner le diagnostic complet,
+
+189
+00:18:17,300 --> 00:18:33,200
+complet au moins identifié quelles ont été les interventions similaires. Déjà ça pourrait être une première étape de faire un retrieval d'interventions similaires et laisser le mécanicien interpréter le commentaire peut-être un peu compliqué de ce qui a été fait.
+
+190
+00:18:33,200 --> 00:18:35,700
+ça peut être une approche
+
+191
+00:18:35,700 --> 00:18:38,700
+j'aime bien cette première approche
+
+192
+00:18:38,700 --> 00:18:39,700
+de toute façon
+
+193
+00:18:39,700 --> 00:18:41,500
+on a une approche de validation
+
+194
+00:18:41,500 --> 00:18:42,900
+sur un process
+
+195
+00:18:42,900 --> 00:18:45,900
+donc je ne veux pas donner du tout
+
+196
+00:18:45,900 --> 00:18:47,600
+cuit aux gens de pieds et dents
+
+197
+00:18:47,600 --> 00:18:48,700
+qui suivent ce qu'on leur dit
+
+198
+00:18:48,700 --> 00:18:51,900
+c'est pas parce que c'est marqué
+
+199
+00:18:51,900 --> 00:18:53,200
+sur Wikipédia que c'est correct
+
+200
+00:18:53,200 --> 00:18:55,000
+c'est la même logique qu'on doit avoir
+
+201
+00:18:55,000 --> 00:18:57,100
+c'est même pas parce que c'est issu
+
+202
+00:18:57,100 --> 00:18:59,300
+d'ordre de travail du passé
+
+203
+00:18:59,300 --> 00:19:01,900
+tout ce qui a été inventé par des prédécesseurs
+
+204
+00:19:01,900 --> 00:19:02,400
+est correct
+
+205
+00:19:02,400 --> 00:19:09,400
+Ça peut avoir rien à voir, ça peut être une mauvaise réparation, et ainsi de suite.
+
+206
+00:19:09,400 --> 00:19:15,400
+Donc on doit bien parler une petite page de la neuve.
+
+207
+00:19:15,400 --> 00:19:27,900
+Et si déjà la partie documentaire, puisque je reviens, je dis la partie des deux, c'est celle qui a le plus de potentiel pour moi,
+
+208
+00:19:27,900 --> 00:19:30,900
+la partie documentaire a énormément de potentiel à malheur.
+
+209
+00:19:30,900 --> 00:19:40,800
+Le fait de pouvoir fournir un document de travail à un mécanicien qui doit changer les freins sur tel véhicule au lieu qu'il cherche,
+
+210
+00:19:42,700 --> 00:19:48,200
+pendant trois mois on va essayer de retrouver où est-ce que se trouve le manuel pour savoir l'écartement des plaquettes quand ils montent des plaquettes de freins,
+
+211
+00:19:50,300 --> 00:19:55,100
+avoir accès à une formation certifiée, c'est-à-dire l'information d'un lien qui peut être une réponse.
+
+212
+00:19:56,000 --> 00:19:59,100
+Ainsi on peut consulter le manuel et c'est certain si bien le bon manuel.
+
+213
+00:20:01,400 --> 00:20:14,300
+On a un sujet de conformité ici aussi. Dominique je vous le dis parce que c'est important. C'est pas que l'automne personnel.
+
+214
+00:20:14,300 --> 00:20:40,700
+Là je peux pas donner une information à un mécanicien qui n'est pas correct dans le sens où elle est rattachée à un document qui va pouvoir ouvrir pour s'assurer par lui-même que le document qu'il est en train de transmuter le nom, que ça pourrait aboutir à des erreurs.
+
+215
+00:20:40,700 --> 00:20:45,100
+bien noté et ça vous avez pris une approche vague qui permet justement de ramener ça.
+
+216
+00:20:45,100 --> 00:20:56,800
+Donc ça c'est la bonne approche. En fait Henri, je vais commencer, je ne sais pas si tu avais
+
+217
+00:20:56,800 --> 00:21:04,000
+fini de présenter l'état des lieux. Alors l'état des lieux, l'état des lieux pour l'instant
+
+218
+00:21:04,000 --> 00:21:12,500
+et rudimentaire, même s'il n'est pas nul. L'état des lieux, comme on avait dit, comme
+
+219
+00:21:12,500 --> 00:21:18,500
+on était un petit peu parlé au début, lorsqu'on s'était rencontré la première fois, en fait
+
+220
+00:21:18,500 --> 00:21:27,000
+le projet a été lancé à titre vraiment d'essai et je qualifierais ça, alors c'est pas vraiment
+
+221
+00:21:27,000 --> 00:21:29,200
+un genre de mot professionnel, mais c'est ce qu'on appelle un essai un peu en freestyle,
+
+222
+00:21:29,200 --> 00:21:39,700
+c'est à dire qu'on a pris Copyout Studio par voie de facilité parce que c'est intégré dans Office
+
+223
+00:21:39,700 --> 00:21:48,100
+et comme la majorité des manuels qu'on possède au format numérique, donc au format PDF, étaient stockés sur SharePoint,
+
+224
+00:21:48,100 --> 00:21:58,200
+c'était un moyen très facile de laisser l'agent tourner dans un premier lieu, découvrir un petit peu la documentation qui existait
+
+225
+00:21:58,200 --> 00:22:02,800
+mais ça s'est à peu près arrêté là de ce que j'ai compris.
+
+226
+00:22:02,800 --> 00:22:09,400
+Moi j'ai assez rapidement passé un peu le flambeau à Grégory quand il a rejoint l'entreté pour son stage.
+
+227
+00:22:11,900 --> 00:22:18,500
+Mais pour l'instant, je pense qu'il est capable de donner des réponses sur le contenu documentaire, sur le contenu des documents.
+
+228
+00:22:19,000 --> 00:22:25,300
+Oui, il est capable de diagnostiquer avec à l'aide de à peu près 50 manuels.
+
+229
+00:22:25,300 --> 00:22:31,600
+Il était aussi capable de pointer si c'était dans quel document exact et rapporté à la page exacte.
+
+230
+00:22:31,600 --> 00:22:40,400
+L'affaire, c'est que juste en créant l'intcription, le vectorisation, l'index des manuels,
+
+231
+00:22:40,400 --> 00:22:44,900
+j'ai juste été capable de prendre à peu près 50-900.
+
+232
+00:22:44,900 --> 00:22:52,500
+Le premier blocage, c'était juste encrypter toutes les données.
+
+233
+00:22:52,500 --> 00:22:57,400
+puis après ça j'ai fait ce que j'étais capable avec ce que j'étais capable de
+
+234
+00:22:57,400 --> 00:23:00,100
+vectoriser
+
+235
+00:23:00,100 --> 00:23:07,800
+entre temps une nouvelle avenue va être explorée qui est celle de
+
+236
+00:23:07,800 --> 00:23:12,700
+utiliser un ordinateur dédié
+
+237
+00:23:14,900 --> 00:23:20,000
+on dit ce que je sais mais ça va utiliser un ordinateur dédié et alors comment ça
+
+238
+00:23:20,000 --> 00:23:25,700
+fonctionnent sur l'ordinateur dédié je ne sais pas parce que j'ai vraiment un rôle technique
+
+239
+00:23:25,700 --> 00:23:33,400
+extrême ou limité. Oui bien l'ordinateur dédié en fait c'est ça. C'est 120 gig, je pense.
+
+240
+00:23:33,400 --> 00:23:41,900
+Au niveau de 46 ou 128 mais c'est ça. Oui c'est ça donc ça permet tout.
+
+241
+00:23:41,900 --> 00:23:45,500
+Ou un certain nombre d'agents parallèles. Oui c'est ça.
+
+242
+00:23:45,500 --> 00:23:56,300
+Ça a des bases à tester. Si jamais il y a un retour sur l'investissement intéressant de la solution, on pourra regarder pour migrer sur quelque chose d'un peu plus solide, plus costaud pour rouler.
+
+243
+00:23:57,000 --> 00:23:57,800
+Ou ça a un array.
+
+244
+00:23:58,100 --> 00:24:03,900
+Le but serait au moins de se tester. S'il y a deux, trois mécanos qui font des requêtes, au moins un, est-ce que c'est ça?
+
+245
+00:24:04,000 --> 00:24:07,400
+C'est de la bonne information. On est sur le target à chaque fois qu'on fait le requête.
+
+246
+00:24:08,600 --> 00:24:13,700
+Le GV10 servait principalement selon Paul, réutilisé par la suite dans d'autres tests.
+
+247
+00:24:13,700 --> 00:24:24,700
+Puis la limite de 50 documents sur la base vectorielle, c'est une limite de Azure AI?
+
+248
+00:24:24,700 --> 00:24:28,700
+Oui, c'était pour le plan qu'on avait, c'était une limite sur l'index.
+
+249
+00:24:28,700 --> 00:24:36,700
+Mais sur les documents de base, je n'ai pas encore atteint, mais sur l'index que ça a créé, ça a frappé la limite.
+
+250
+00:24:36,700 --> 00:24:41,700
+Mais si on cherche tous les documents dans la même base de données vectorie, dans le même contexte, on va avoir un document ?
+
+251
+00:24:41,700 --> 00:24:43,700
+Ça aussi. Ça aussi. Je ne pouvais pas...
+
+252
+00:24:43,700 --> 00:24:47,700
+On risque d'avoir des problèmes d'hallucination et de recrubre qui ne sortira pas les bonnes choses.
+
+253
+00:24:47,700 --> 00:24:49,700
+J'ai même pas pu me rendre à ces tests-là parce que...
+
+254
+00:24:49,700 --> 00:24:51,700
+Oui, je ne sais pas...
+
+255
+00:24:51,700 --> 00:24:54,700
+Le système manuel, c'est des manuels, c'est des briques.
+
+256
+00:24:54,700 --> 00:25:03,700
+Oui, ça je le comprends. D'un autre côté, vu qu'on utilise une base vectorielle, il va quand même interpréter un peu mieux.
+
+257
+00:25:03,700 --> 00:25:05,700
+Mais effectivement...
+
+258
+00:25:05,700 --> 00:25:09,700
+Si on s'agimente, ça va être beaucoup plus facile, c'est pas automatisé par après.
+
+259
+00:25:09,700 --> 00:25:18,000
+Oui, oui, mais c'est ça, c'est qu'on pourrait avoir aussi des agents spécialisés sur différentes composantes, sur différents modèles, lignes, etc.
+
+260
+00:25:18,700 --> 00:25:22,200
+Là, effectivement, on n'a pas besoin d'avoir 900 documents dans un seul.
+
+261
+00:25:22,600 --> 00:25:27,000
+Est-ce que vous avez essayé de focaliser sur un aspect spécifique?
+
+262
+00:25:27,400 --> 00:25:31,700
+Non, j'essaie de mélanger le plus possible pour ne pas avoir…
+
+263
+00:25:31,700 --> 00:25:40,700
+justement si j'avais juste une marque d'autobus, je ne pourrais pas voir si tu étais capable de correctement préciser.
+
+264
+00:25:40,700 --> 00:25:49,700
+Pour mes tests, avec le nombre limité que j'avais, je pense que c'était meilleur d'essayer sur la variété d'autobus au lieu de mettre un en spécifique.
+
+265
+00:25:49,700 --> 00:26:02,700
+parce que si j'en mettais juste un, ça ne disait pas beaucoup sur la précision d'être capable de récolter de différentes marques d'autobus.
+
+266
+00:26:02,700 --> 00:26:05,700
+Je ne sais pas si tu comprends.
+
+267
+00:26:05,700 --> 00:26:15,700
+Oui, je vois. C'est que tu as du pour et du contre parce qu'effectivement, on ne peut pas voir s'il va chercher tous les documents.
+
+268
+00:26:15,700 --> 00:26:21,600
+côté, j'en reviens encore à bâtir des métriques pour pouvoir avancer graduellement. Parce
+
+269
+00:26:21,600 --> 00:26:25,600
+que le danger dans des projets comme ça, c'est qu'on essaie de bâtir un outil qui
+
+270
+00:26:25,600 --> 00:26:30,900
+est très très large. Si on essaie de l'attaquer avec toute la largeur, bien ça va éclos,
+
+271
+00:26:30,900 --> 00:26:37,100
+ça va prendre de l'énergie. Si on s'assure de pouvoir couvrir certains aspects, puis
+
+272
+00:26:37,100 --> 00:26:40,700
+d'augmenter le scope graduellement, bien à ce moment-là, on peut tout de suite voir
+
+273
+00:26:40,700 --> 00:26:48,000
+ou est-ce que ça bloque, est-ce que c'est par exemple mes manuelles d'entretien qui finalement sont inutilisables
+
+274
+00:26:48,000 --> 00:26:54,100
+ou ma base de données sur laquelle il faut que je fasse un pré-traitement pour mieux l'optimiser.
+
+275
+00:26:54,500 --> 00:27:02,400
+Ça permettrait vraiment de focaliser certains aspects pour ensuite l'élargir parce qu'on a pu identifier des problèmes.
+
+276
+00:27:03,600 --> 00:27:09,700
+Le danger justement d'avancer large, c'est qu'il y en a tellement qu'on ne peut pas identifier sur lesquels de focaliser.
+
+277
+00:27:09,700 --> 00:27:12,500
+c'est la gestion de projet de base
+
+278
+00:27:12,500 --> 00:27:14,200
+l'IA c'est pas magique
+
+279
+00:27:14,200 --> 00:27:15,900
+c'est la gestion de projet
+
+280
+00:27:15,900 --> 00:27:16,700
+mais
+
+281
+00:27:16,700 --> 00:27:20,500
+donc en ce moment c'est ça que vous y allez large
+
+282
+00:27:20,500 --> 00:27:23,000
+potentiellement
+
+283
+00:27:23,000 --> 00:27:24,600
+sur toute la
+
+284
+00:27:24,600 --> 00:27:25,700
+flotte
+
+285
+00:27:25,700 --> 00:27:27,400
+à la fois
+
+286
+00:27:27,400 --> 00:27:29,400
+est-ce qu'il y aurait moyen de découper ça
+
+287
+00:27:29,400 --> 00:27:30,500
+logiquement
+
+288
+00:27:30,500 --> 00:27:33,300
+oui je pense que
+
+289
+00:27:33,300 --> 00:27:35,100
+ça va être le problème à rien de découper
+
+290
+00:27:35,100 --> 00:27:35,800
+par modèle
+
+291
+00:27:35,800 --> 00:27:37,500
+par type
+
+292
+00:27:37,500 --> 00:27:41,600
+Henri, selon la classification transdème, donc plus scolaire, plus urbain.
+
+293
+00:27:42,500 --> 00:27:47,800
+Et on peut même commencer avec un travail, par exemple, que sur les urbains, si l'on veut.
+
+294
+00:27:49,900 --> 00:27:51,500
+Parce qu'en fait, il y a quelques éléments communs,
+
+295
+00:27:52,400 --> 00:27:54,800
+et qui sont bien plus mineurs que les éléments non communs.
+
+296
+00:27:54,900 --> 00:28:00,200
+Donc en fait, la part de communalité entre un bus scolaire et un urbain, elle est quasi nulle.
+
+297
+00:28:00,800 --> 00:28:05,600
+Donc, un, on est capable de sortir les mêmes lettres complètement séparément.
+
+298
+00:28:05,600 --> 00:28:11,600
+sur l'historique de maintenance, on est capable de sortir l'intégralité de l'avenir séparément également,
+
+299
+00:28:11,600 --> 00:28:18,100
+puisque les numéros sont différents. Ça permettrait de réduire dans les trois grandes familles, je pense.
+
+300
+00:28:18,700 --> 00:28:22,900
+En fait, on a en bien la même logique que les européens du tout. C'est quasiment les mêmes familles.
+
+301
+00:28:23,100 --> 00:28:29,200
+D'ailleurs, c'est à se demander si ça fait que les mêmes familles. Donc du type A, du micro, du type A, du type C,
+
+302
+00:28:29,200 --> 00:28:38,000
+et ensuite du LFS Grand But Sur Pain et ensuite coach.
+
+303
+00:28:39,400 --> 00:28:41,000
+Et on n'est pas obligé de démarrer tout en même temps,
+
+304
+00:28:41,100 --> 00:28:42,700
+on peut démarrer ce qui a de la valeur à noter,
+
+305
+00:28:42,800 --> 00:28:44,800
+donc ce serait du scolaire et du repas.
+
+306
+00:28:46,800 --> 00:28:50,900
+Le reste est en plus...
+
+307
+00:28:50,900 --> 00:28:53,600
+Historieusement était majeur, mais maintenant un peu moins,
+
+308
+00:28:53,600 --> 00:28:56,800
+donc ça ne pourrait pas rendre compte de démarrer comme ça,
+
+309
+00:28:56,800 --> 00:29:02,200
+plutôt d'attaquer le projet en s'entourer des...
+
+310
+00:29:02,200 --> 00:29:10,900
+Je sais pas, parce qu'après si ça fonctionne, on en revient à ce que tu disais Alexandre tout à l'heure, c'est juste qu'après c'est juste des systèmes en parallèle parce qu'ils ont pas besoin d'être ensemble.
+
+311
+00:29:11,300 --> 00:29:13,800
+Ils ont pas besoin de, ils ont même pas besoin de se parler.
+
+312
+00:29:15,800 --> 00:29:16,400
+Je sens pas ça.
+
+313
+00:29:16,400 --> 00:29:20,400
+Parce qu'il y a la volonté d'entreprise, c'est pas nécessairement de réparer les plus surpeintes à un endroit pour réparer des scolaires.
+
+314
+00:29:20,400 --> 00:29:23,600
+C'est des métiers qu'on fait, on fait tous ces métiers, on fait séparer.
+
+315
+00:29:23,900 --> 00:29:24,500
+Ouais tout à fait.
+
+316
+00:29:24,500 --> 00:29:28,100
+Après on n'est pas maintenu le même endroit qu'on a le même endroit, donc ils auront pas besoin d'avoir des bêtises.
+
+317
+00:29:28,700 --> 00:29:30,200
+Par contre ils peuvent très bien avoir des bêtises.
+
+318
+00:29:30,200 --> 00:29:35,200
+De point de vue structure, c'est la même structure si on le montre directement par temps.
+
+319
+00:29:35,200 --> 00:29:37,200
+Merci pour la terminologie.
+
+320
+00:29:37,200 --> 00:29:41,200
+D'avoir un extra 1, bon ça y est, j'ai oublié.
+
+321
+00:29:41,200 --> 00:29:42,200
+Un coordonnateur.
+
+322
+00:29:42,200 --> 00:29:45,200
+Un coordonnateur qui accède à des sous-agents spécialisés.
+
+323
+00:29:45,200 --> 00:29:50,200
+On peut monter des choses comme ça tout de suite, d'un point de vue architecture correctement.
+
+324
+00:29:50,200 --> 00:29:55,200
+Comme les gestions des documents, on peut skiriter tout de suite pour avoir des bases de données vecteurs séparées.
+
+325
+00:29:55,200 --> 00:29:57,200
+Même si on en a très peu pour commencer.
+
+326
+00:29:57,200 --> 00:29:59,200
+Ça ne devrait pas être compliqué de faire 100 pitons pré-traité.
+
+327
+00:30:00,000 --> 00:30:24,000
+Et dans une toute première étape, ça va peut-être même la peine d'analyser ses PDF par un humain.
+
+328
+00:30:24,000 --> 00:30:26,100
+plutôt que par un IA.
+
+329
+00:30:26,700 --> 00:30:28,200
+Le découper, s'assurer
+
+330
+00:30:28,200 --> 00:30:30,200
+qu'un PDF bien analysé
+
+331
+00:30:30,200 --> 00:30:31,700
+de ça peut être bien interprété.
+
+332
+00:30:31,900 --> 00:30:33,100
+Puis tant qu'un projet qui est
+
+333
+00:30:33,100 --> 00:30:35,300
+va être ici de l'image ou ici du texte.
+
+334
+00:30:35,500 --> 00:30:38,100
+Oui, exactement. Puis aller découper les régions.
+
+335
+00:30:38,200 --> 00:30:39,600
+Je ne sais pas si vous avez des tableaux.
+
+336
+00:30:40,500 --> 00:30:41,500
+Ben, je parle aujourd'hui.
+
+337
+00:30:41,600 --> 00:30:43,600
+On avait à l'Université d'Aval,
+
+338
+00:30:43,600 --> 00:30:46,200
+on avait un projet, ça paraît super simple,
+
+339
+00:30:46,300 --> 00:30:47,700
+c'est d'interpréter les étiquettes
+
+340
+00:30:47,700 --> 00:30:50,400
+alimentaires
+
+341
+00:30:50,400 --> 00:30:51,500
+sur les aliments.
+
+342
+00:30:52,200 --> 00:30:53,700
+Puis parce que c'est sous forme de tableaux,
+
+343
+00:30:53,700 --> 00:31:03,700
+On avait les PDF, c'était l'enfer de faire interpréter ça parce que justement c'était des tableaux et c'était pas structuré de la même façon et se mélangeait.
+
+344
+00:31:03,700 --> 00:31:08,700
+C'était un des problèmes qu'on avait eu justement parce que je voulais faire le multimodial rag,
+
+345
+00:31:08,700 --> 00:31:13,700
+justement être capable d'interpréter PDF ainsi que le texte puis HE&S ça le ferait,
+
+346
+00:31:13,700 --> 00:31:19,700
+mais est-ce qu'il y avait une limite sur le nombre de lectures qu'on pouvait faire avec le mode multimodial?
+
+347
+00:31:19,700 --> 00:31:21,700
+Tu es mieux de...
+
+348
+00:31:21,700 --> 00:31:23,700
+Je me trompe toujours là.
+
+349
+00:31:23,700 --> 00:31:25,700
+Je suis pas un expert dans la série.
+
+350
+00:31:25,700 --> 00:31:32,700
+Non, non, non. D'un point de vue fonctionnel, tu es mieux de prendre ton PDF et de générer des blocs pour ta base de données vecteurs.
+
+351
+00:31:32,700 --> 00:31:34,700
+Puis le chargement à base de données vecteurs.
+
+352
+00:31:34,700 --> 00:31:37,700
+Puis quand tu arrives avec des graphiques, tu utilises des modèles spécialisés en vision.
+
+353
+00:31:37,700 --> 00:31:39,700
+Exactement, c'est ça.
+
+354
+00:31:39,700 --> 00:31:41,700
+Il faudrait deux reads.
+
+355
+00:31:41,700 --> 00:31:46,700
+Pour ça, ça me coûtait beaucoup plus cher parce qu'ils faisaient la lecture initiale juste de texte.
+
+356
+00:31:46,700 --> 00:31:54,400
+tu pouvais, tu sais, avec l'autre modèle pour les tableaux, pour les images, il fallait que tu fasses un deuxième read, puis vu que c'était plus de contexte riche.
+
+357
+00:31:54,400 --> 00:32:01,800
+Si on crée un script d'ingestion, on peut prendre ton PDF, le découpe en page, ensuite découper des sections, c'est des PDF textes,
+
+358
+00:32:01,800 --> 00:32:08,200
+puis à se séparer les images, les traiter comme les images avec un langage modèle, et après ça les charge dans ta base de données d'acteurs pour pouvoir les faire.
+
+359
+00:32:08,200 --> 00:32:12,800
+Mais c'est genre avec le nombre limité de documents que j'avais rentré, ça le faisait.
+
+360
+00:32:12,800 --> 00:32:20,200
+C'est exactement comme tu viens de t'expliquer, ça l'avait fait mais sur un si nombre de documents.
+
+361
+00:32:20,200 --> 00:32:22,500
+En le faisant avec un script qu'on contrôle?
+
+362
+00:32:22,500 --> 00:32:24,900
+Ben pas, c'était avec Ape, excusez-moi.
+
+363
+00:32:24,900 --> 00:32:30,900
+Si on fait avec un script qu'on contrôle, le même processus, on peut le contrôler et dire, selon le contenu, tu vas créer des tags.
+
+364
+00:32:30,900 --> 00:32:35,400
+dire c'est un moteur, c'est un tel modèle de véhicule telle année, le mettre dans
+
+365
+00:32:35,400 --> 00:32:40,900
+la base de données, qu'ensuite si on crée plusieurs experts, ils vont à chacun la base
+
+366
+00:32:40,900 --> 00:32:43,900
+de données vecteur, ils vont chercher les documents, ils vont vraiment ce qui se précise
+
+367
+00:32:43,900 --> 00:32:46,900
+fait, ils vont en dire « est-ce-tu pas moi? Oui, qu'est-ce que j'ai là-dedans?
+
+368
+00:32:46,900 --> 00:32:49,900
+» pour sortir des bonnes choses, puis après ça être analysé par ton orchestrateur.
+
+369
+00:32:49,900 --> 00:32:54,900
+Oui, à 900 documents, tu peux quand même faire un contrôle de qualité de vieille.
+
+370
+00:32:54,900 --> 00:32:58,900
+Si on n'est pas dans les 8000, 15000, 20 000 documents qui parlaient, quelqu'un que
+
+371
+00:32:58,900 --> 00:33:03,200
+tu pourrais mettre une couple de personnes en quelques jours pour au moins valider que
+
+372
+00:33:03,200 --> 00:33:05,100
+ces scripts-là justement…
+
+373
+00:33:05,100 --> 00:33:06,700
+On n'a pas quelques personnes, mais…
+
+374
+00:33:06,700 --> 00:33:10,300
+Non, non, mais ce n'est pas un défi incroyable.
+
+375
+00:33:11,900 --> 00:33:16,200
+Une autre chose dont on n'a pas parlé, c'est l'objectif.
+
+376
+00:33:17,000 --> 00:33:24,300
+En ce sens, les chiffres, c'est-à-dire est-ce que vous avez un problème de mauvais diagnostic
+
+377
+00:33:24,300 --> 00:33:25,900
+et vous voulez l'améliorer?
+
+378
+00:33:25,900 --> 00:33:36,400
+Est-ce que c'est, là on a parlé de faire un junior et un senior, c'est quoi la différence entre un junior et un senior au niveau de la qualité des diagnostics, si on focalise sur les diagnostics.
+
+379
+00:33:36,800 --> 00:33:43,100
+Donc, comment on peut mesurer le succès du projet? Est-ce que vous l'avez quantifié?
+
+380
+00:33:43,100 --> 00:33:55,500
+Alors, c'est une très bonne question. Je dirais que vu que vous m'avez dit que vous y connaissez en mécanique, vous allez servir de mesure du succès.
+
+381
+00:33:56,300 --> 00:34:08,700
+Donc si je vous colle derrière un bus, et que j'exagère quand même, les mécaniciens sont qualifiés, mais l'objectif c'est d'apporter de l'assistance.
+
+382
+00:34:08,700 --> 00:34:26,700
+Comment on mesure le succès dans un premier temps ? On va plutôt utiliser des seniors qui vont utiliser le système et qui vont pouvoir nous faire un retour en disant « Hey, c'est efficace » ou « Non, c'est pas efficace ».
+
+383
+00:34:26,700 --> 00:34:35,200
+Chose qui a dit personnelle, par exemple, quand j'utilise l'IA, il y a des moments où je me raconte que c'est très efficace.
+
+384
+00:34:35,600 --> 00:34:42,900
+Je parle de l'IA normalement, je parle pas d'un agent, mais il y a des moments où je me raconte que c'est pas très efficace.
+
+385
+00:34:43,800 --> 00:34:47,400
+Donc, parce que je suis relativement senior, j'ai la capacité éventuellement de me dire,
+
+386
+00:34:47,500 --> 00:34:50,700
+« Ça, ça, c'est quand même... J'ai gagné beaucoup de temps, ça... »
+
+387
+00:34:50,700 --> 00:34:58,300
+Donc il y a peut-être une première étape qui est une mesure non subjective, on s'entend,
+
+388
+00:34:58,700 --> 00:35:01,700
+de quelques mécaniciens seniors qui vont utiliser l'outil et qui vont nous dire,
+
+389
+00:35:02,500 --> 00:35:06,500
+« Hey, sur ces éléments-là, ça va vous apporter tout de suite la bonne réponse. »
+
+390
+00:35:06,500 --> 00:35:08,200
+Oui, une mesure de la qualité de la sortie.
+
+391
+00:35:09,200 --> 00:35:14,500
+Une mesure, voilà. Et après, on peut vous faire un point de vue de l'intéresse à cette information.
+
+392
+00:35:14,500 --> 00:35:17,500
+Je ne sais pas encore comment. On va peut-être d'ailleurs…
+
+393
+00:35:17,500 --> 00:35:19,500
+On va pas seulement avoir un survey dans...
+
+394
+00:35:19,500 --> 00:35:20,500
+Une boucle de retour.
+
+395
+00:35:20,500 --> 00:35:21,500
+Une boucle de retour.
+
+396
+00:35:21,500 --> 00:35:24,500
+Après, comment on va mesurer...
+
+397
+00:35:24,500 --> 00:35:32,500
+Quand je dis bridger le gap entre ingénieurs et enseignants, on s'entend que l'IA va y contribuer, elle va pas non plus complètement remplacer l'expérience.
+
+398
+00:35:32,500 --> 00:35:41,500
+Il y a aussi un point, c'est la qualité de la donnée qu'on va rentrer dans le système, parce que pour une qualité de diagnostic, il faut une qualité de donnée.
+
+399
+00:35:41,500 --> 00:35:44,500
+Et on sait qu'on est pas nécessairement là.
+
+400
+00:35:44,500 --> 00:36:00,700
+Donc je pense qu'un junior qui est capable de résoudre un problème compliqué sera capable de dire, en tout cas je l'espère, le système, notre outil, les règles, l'aélo.
+
+401
+00:36:02,200 --> 00:36:03,800
+Maintenant ça va être aussi du...
+
+402
+00:36:06,900 --> 00:36:12,300
+Je veux dire qu'il faut quand même que les gens, objectivement, disent, c'est vrai, l'outil m'a aidé, l'outil m'a aidé.
+
+403
+00:36:12,300 --> 00:36:20,200
+C'est compliqué à pourparler, mais il n'y a pas de mesure, il n'y a pas de métrique, je pense.
+
+404
+00:36:20,200 --> 00:36:23,200
+Je ne vois pas bien comment mettre un metric en atelier.
+
+405
+00:36:23,200 --> 00:36:27,200
+Moi, les antithérins, vous avez une idée, c'est d'aller s'envergne.
+
+406
+00:36:27,200 --> 00:36:34,200
+Ouais, mais comme je disais, on pourrait juste faire un survey dans Microsoft, dans 365.
+
+407
+00:36:34,200 --> 00:36:36,200
+Et les gens, quand on lui demande à chaque fois que tu fais ça,
+
+408
+00:36:36,200 --> 00:36:41,200
+on va remplir un survey, tu m'aider, oui, non, peut-être, peut-être sur tel point.
+
+409
+00:36:41,200 --> 00:36:46,200
+Et en fait, pour le développement aussi, ce qu'on peut faire souvent, c'est une grille de tests.
+
+410
+00:36:46,200 --> 00:36:53,400
+c'est-à-dire qu'on va aller prendre des symptômes qui ont été rapportés par des
+
+411
+00:36:53,400 --> 00:37:01,000
+juniors de préférence, le présenter à un senior, lui demander c'est quoi sa réponse,
+
+412
+00:37:01,000 --> 00:37:06,100
+le présenter à l'IA c'est quoi sa réponse, est-ce que le senior avait raison, est-ce que l'IA avait raison,
+
+413
+00:37:06,100 --> 00:37:12,500
+puis se monter une grille, à savoir les faux positifs, les vrais positifs, etc.
+
+414
+00:37:12,500 --> 00:37:14,500
+On va se monter une grille de performance.
+
+415
+00:37:14,500 --> 00:37:18,500
+Dominique, juste un moment, excusez-moi, je suis confirmé.
+
+416
+00:37:18,500 --> 00:37:21,500
+Là, tu es déjà dans l'état qu'on donne accès aux juniors.
+
+417
+00:37:21,500 --> 00:37:25,500
+Je ne devrais pas accès aux juniors avant que les seniors ait été le produit.
+
+418
+00:37:25,500 --> 00:37:26,500
+Non, non.
+
+419
+00:37:26,500 --> 00:37:28,500
+Pour moi, l'état premier, c'est…
+
+420
+00:37:28,500 --> 00:37:31,500
+Le produit n'est même pas sur le plancher à ce point-ci.
+
+421
+00:37:31,500 --> 00:37:32,500
+Ah, ok.
+
+422
+00:37:32,500 --> 00:37:38,500
+Je suis vraiment dans la partie validation qu'on a un produit.
+
+423
+00:37:38,500 --> 00:37:40,500
+Parce qu'il faut pouvoir le relier.
+
+424
+00:37:40,500 --> 00:37:43,700
+qu'est-ce qu'un junior pense que la solution est, qu'est-ce qu'un senior pense que la solution est,
+
+425
+00:37:44,000 --> 00:37:47,100
+puis qu'est-ce que notre système en développement a dit pour pouvoir comparer.
+
+426
+00:37:51,200 --> 00:37:52,700
+Ok, mais je pense que je vais dire par exemple,
+
+427
+00:37:52,900 --> 00:37:55,100
+tu ne vas pas coller un junior sur le problème de diagnostic,
+
+428
+00:37:56,000 --> 00:37:57,900
+et on ne le fera pas juste pour savoir ce qu'il va penser.
+
+429
+00:37:58,200 --> 00:38:01,000
+Ok.
+
+430
+00:38:01,000 --> 00:38:01,800
+Si vous voulez.
+
+431
+00:38:02,600 --> 00:38:04,700
+Si c'est pour que, si aujourd'hui, si je ne veux pas,
+
+432
+00:38:05,300 --> 00:38:08,000
+aujourd'hui mon objectif c'est que, quand on a l'outil,
+
+433
+00:38:09,300 --> 00:38:10,900
+c'est que les seniors le valident.
+
+434
+00:38:12,600 --> 00:38:15,900
+Toutefois, on a compris qu'ils ne vont pas perdre l'emblot parce que l'outil est là pour les aider.
+
+435
+00:38:16,300 --> 00:38:18,700
+Il va falloir faire un petit chemin là-dessus, je vous le dis.
+
+436
+00:38:19,600 --> 00:38:21,200
+C'est qu'il y a comme une crainte légitime.
+
+437
+00:38:22,700 --> 00:38:26,300
+Et donc de leur dire en fait, c'est un outil d'aide, c'est une petite assistance.
+
+438
+00:38:26,500 --> 00:38:30,800
+Une fois qu'on a un bon retour, comme tu le dis Alex, de toute manière ou d'une autre.
+
+439
+00:38:33,700 --> 00:38:41,700
+Sur le fait que d'aide au diagnostic et d'aviter comme important, l'apport nécessaire pour avoir à l'ouvrir un peu plus vulnérabilité.
+
+440
+00:38:42,900 --> 00:38:46,900
+Par atelier, par personne qu'on connaît, parce que là on demande de négatif.
+
+441
+00:38:46,900 --> 00:38:56,900
+Il y a 150, 200 mécanismes en Canada, le Transdell, on décode moins de 1. On décode tous.
+
+442
+00:38:56,900 --> 00:39:04,600
+Mais je ne veux pas... On peut toujours pour s'amuser, si on a le temps, on manque plutôt de temps dans les ateliers,
+
+443
+00:39:04,600 --> 00:39:10,600
+se dire on ferait un test physique, vraiment. On doit être ingénieur, un senior et des gars.
+
+444
+00:39:10,600 --> 00:39:14,600
+Je ne vois pas faire ça. C'est pas mon but, personnellement. OK?
+
+445
+00:39:14,600 --> 00:39:37,300
+Oui, c'est bon. Il y a différentes façons de monter les tests. On peut aussi prendre votre base du CMMS et isoler une partie de la base, isoler les enregistrements pour ensuite utiliser ça comme validation.
+
+446
+00:39:37,300 --> 00:39:45,400
+Le danger de faire ça, c'est que les seniors ont peut-être une façon, vu qu'ils ont des connaissances plus approfondies,
+
+447
+00:39:45,400 --> 00:39:52,100
+ont peut-être une façon de présenter les problèmes. La moitié du diagnostic est déjà fait.
+
+448
+00:39:52,100 --> 00:39:55,500
+Donc ça aussi va falloir le prendre en compte.
+
+449
+00:39:55,500 --> 00:40:00,100
+Il y a aussi un facteur qui va jouer sur la qualité des...
+
+450
+00:40:00,000 --> 00:40:07,000
+Et les résultats vont être qu'un junior ne pose pas nécessairement la même question qu'un senior quand tu vas arriver avec un problème.
+
+451
+00:40:07,000 --> 00:40:14,000
+Mais c'est peut-être aussi pour ça que c'est pas grave en soi.
+
+452
+00:40:14,000 --> 00:40:22,000
+On va se redire que l'objectif ultime c'est d'apporter une aide aux junior pour gagner du temps sur les diagnostics et la qualité,
+
+453
+00:40:22,000 --> 00:40:28,000
+la principale perte d'efficacité dans nos ateliers c'est sur les diagnostics.
+
+454
+00:40:28,000 --> 00:40:32,000
+C'est là où nous perdons le plus. C'est aussi pour ça que je nous concentre.
+
+455
+00:40:32,000 --> 00:40:35,000
+Si vous me demandez pourquoi je le sais, je vous dirais que c'est parfaitement opéré,
+
+456
+00:40:35,000 --> 00:40:39,000
+que c'est mon expérience. Il n'y a pas de mesure, puisque par défaut,
+
+457
+00:40:39,000 --> 00:40:44,000
+les gens qui arrivent au résultat, ils ne vous diront pas qu'ils ont passé 4 heures à faire des diagnostics.
+
+458
+00:40:44,000 --> 00:40:47,000
+Mais je sais, entre les mauvaises diagnostics et les pièces changées pour rien,
+
+459
+00:40:47,000 --> 00:40:53,400
+de sorte de chose, le diagnostic est la partie la plus particulière.
+
+460
+00:40:53,400 --> 00:40:57,400
+Cela dit, dans l'outil, encore une fois, le développement de la partie diagnostique
+
+461
+00:40:57,400 --> 00:41:02,400
+Le diagnostic peut être d'abord donné au seigneur pour les aider, toujours dans l'étape « aide » d'abord.
+
+462
+00:41:02,400 --> 00:41:09,400
+Et le développement de la partie documentation, qui sont documentaires, accès rapide aux documents,
+
+463
+00:41:09,400 --> 00:41:13,400
+ça se respecte tout le monde très rapidement.
+
+464
+00:41:13,400 --> 00:41:56,800
+Puis maintenance préventive, est-ce qu'il y a une valeur avec ce chatbot-là?
+
+465
+00:41:56,800 --> 00:42:08,400
+Moi personnellement je pense que ça va être difficile à cause de la nature de notre flotte qui est très, très diversifiée.
+
+466
+00:42:08,400 --> 00:42:12,400
+Je dis pas que ça se peut pas là, mais je suis sceptique.
+
+467
+00:42:12,400 --> 00:42:16,400
+Parce qu'on a le flotte très diversifié, des conditions très différentes.
+
+468
+00:42:16,400 --> 00:42:22,400
+Vans-Nouvelle, Montréal, je crois que c'est ça, c'est extrêmement différent.
+
+469
+00:42:22,400 --> 00:42:26,400
+On fait l'urbain et l'interurbain, c'est vraiment différent comme...
+
+470
+00:42:26,400 --> 00:42:33,800
+Excusez-moi, j'avais un petit déjeuner qui m'appelait, j'ai pris deux secondes et à 14h, je pourrais vous enregistrer.
+
+471
+00:42:35,200 --> 00:42:42,100
+Je n'ai pas entendu le début, j'ai juste entendu la fin, Alex.
+
+472
+00:42:42,500 --> 00:42:53,600
+Moi, je vais être très clair que sur la partie diag et sur la partie documentaire, on n'est pas un exploiteur d'Amérique du Nord et on n'est pas un exploiteur d'Amérique du Nord.
+
+473
+00:42:53,600 --> 00:42:55,300
+Non, on parle de maintenance pré-rug.
+
+474
+00:42:55,900 --> 00:42:57,500
+Ils nous ont demandé s'il y avait un intérêt.
+
+475
+00:42:58,800 --> 00:42:59,800
+Ah, pardon, excusez-moi.
+
+476
+00:43:00,000 --> 00:43:02,000
+Non, parce que les plans ne sont pas les mêmes.
+
+477
+00:43:02,000 --> 00:43:11,900
+Par contre, sur la base de données, mon objectif est d'apprendre dans la base américaine.
+
+478
+00:43:11,900 --> 00:43:24,700
+Parce que David, c'est énorme parce que c'est énorme.
+
+479
+00:43:24,700 --> 00:43:30,700
+Et je parle bien que pour la partie plus diabète, ils ont un parc de fire et de nomin qui est considérable.
+
+480
+00:43:30,700 --> 00:43:42,300
+Ça pourrait, je le dis dans un deuxième temps, ça pourrait nous aider à apporter encore plus de rafonnement, de quelle facilité, je ne sais pas.
+
+481
+00:43:42,300 --> 00:43:46,300
+Ou peut-être pas d'ailleurs, ou peut-être ça polluera plus, je ne sais pas.
+
+482
+00:43:46,300 --> 00:43:52,900
+Mais en termes de qualité de données aussi, c'était meilleur que nous.
+
+483
+00:43:52,900 --> 00:43:59,900
+faire une analyse sur cette donnée-là, essayer de chercher quand même d'air un peu de qualité.
+
+484
+00:43:59,900 --> 00:44:06,900
+Oui. Et dans un premier temps, je pense que fondamentalement, on se concentrer sur là où c'est plus difficile pour nous,
+
+485
+00:44:06,900 --> 00:44:12,900
+et j'en reviens, on souffre très régulièrement dans le scolaire, donc on pourrait même se dire, ok, on fait le test sur scolaire et revendre,
+
+486
+00:44:12,900 --> 00:44:17,900
+juste deux catégories de matériel, ce qui commence par deux, ce qui commence par cinq.
+
+487
+00:44:17,900 --> 00:44:21,900
+En Europe, Québec, les Gammes, vous pouvez l'agir à l'Ontario.
+
+488
+00:44:21,900 --> 00:44:28,700
+L'Ontario n'a pas de plus de Clamonguer, et l'Ouest, vous savez pas ce que vous.
+
+489
+00:44:28,700 --> 00:44:35,700
+Je veux quelque chose rapidement, même si c'est limité en scope, en scope en type de matériel.
+
+490
+00:44:35,700 --> 00:44:40,100
+Et là, on ne faut pas se concentrer sur un truc qui n'est pas volumique.
+
+491
+00:44:40,100 --> 00:44:43,700
+Donc soit scolaire, soit mur.
+
+492
+00:44:43,700 --> 00:44:47,700
+Le truc le plus pancanadien c'est le scolaire.
+
+493
+00:44:47,700 --> 00:44:48,700
+Idéalement...
+
+494
+00:44:48,700 --> 00:44:56,600
+Je pense que c'est les deux modèles qui vont apporter plus de valeur ajoutée rapidement aux appels.
+
+495
+00:44:56,600 --> 00:45:00,600
+Au Québec on a probablement quoi, 12 modèles d'Ascarad-Sfaire, on aura deux ou trois...
+
+496
+00:45:00,600 --> 00:45:08,600
+Ah c'est pour moi le scolaire où il y aura des petits particuliers en fonction des années mais...
+
+497
+00:45:08,600 --> 00:45:11,600
+T'es limité, après ça t'es l'égo ou A, c'est un scolaire ?
+
+498
+00:45:11,600 --> 00:45:15,600
+Ah oui, c'est l'égo et sur l'égo c'est à peu près la même chose depuis...
+
+499
+00:45:15,600 --> 00:45:21,600
+Et puis ça, globalement, tu penses que tu as tout à marque.
+
+500
+00:45:21,600 --> 00:45:27,600
+Parce qu'en termes d'expérience, c'est le même montage d'un intérieur, c'est la même transmission, c'est le moteur, c'est le même différentiel.
+
+501
+00:45:27,600 --> 00:45:33,000
+C'est que c'est exactement mieux. Sur une main quasiment similaire.
+
+502
+00:45:33,000 --> 00:45:42,400
+Donc Grégory, qu'est-ce que tu en penserais de ça? Est-ce que tu aurais les outils en ce moment, si on se limitait comme ça?
+
+503
+00:45:42,400 --> 00:45:47,400
+Est-ce que tu aurais les outils pour le faire? Est-ce que ton Azure AI serait encore saturé ou bien…
+
+504
+00:45:47,400 --> 00:45:55,400
+Si j'irais pour les urbains, au lieu de partir avec toutes les différentes sortes, je pense que j'aurais l'impression.
+
+505
+00:45:55,400 --> 00:45:57,400
+Ça serait string au scolaire pour commencer?
+
+506
+00:45:57,400 --> 00:45:58,400
+Au scolaire?
+
+507
+00:45:58,400 --> 00:46:00,400
+Ça devrait être encore moins de manuel.
+
+508
+00:46:00,400 --> 00:46:02,400
+Si, c'est encore moins de manuel.
+
+509
+00:46:02,400 --> 00:46:04,400
+Pour le concept, ça peut être bon.
+
+510
+00:46:04,400 --> 00:46:05,400
+Oui.
+
+511
+00:46:05,400 --> 00:46:10,400
+Et ok avec le scolaire comme preuve de concept Pierre?
+
+512
+00:46:10,400 --> 00:46:13,800
+Avec le scolaire?
+
+513
+00:46:13,800 --> 00:46:15,800
+Pour commencer version 1.
+
+514
+00:46:15,800 --> 00:46:17,800
+Version 0.1?
+
+515
+00:46:17,800 --> 00:46:22,900
+Oui? Avec ce qu'on s'est dit tu veux dire?
+
+516
+00:46:22,900 --> 00:46:27,900
+Oui, pour commencer on prend du travail comme premier prototype fonctionnaire.
+
+517
+00:46:28,900 --> 00:46:31,900
+Oui? Ok. De toute façon c'est notre priorité donc ça va.
+
+518
+00:46:32,900 --> 00:46:36,900
+En fait il faudrait se faire un plan de projet pour que je vois le timing.
+
+519
+00:46:37,900 --> 00:46:41,900
+Dominique tu l'as dit tout à l'heure absolument aligné avec toi, moi hier par hier ça reste un projet.
+
+520
+00:46:42,900 --> 00:46:45,900
+Il y a un fixe projet que j'avais validé il y a quelques temps sur le sujet en ligne.
+
+521
+00:46:45,900 --> 00:46:49,000
+Mais je pense qu'il faudra prendre le projet, savoir quand est-ce que ça sort.
+
+522
+00:46:49,600 --> 00:46:51,800
+Mais comment c'est, pour se concentrer sur ce colère ? Oui, très bien.
+
+523
+00:46:52,300 --> 00:46:53,000
+Je suis une petite.
+
+524
+00:46:53,100 --> 00:46:56,000
+Mais on ne se concentre pas assez pas, on se concentre sur ce colère pendant 12 mois.
+
+525
+00:46:56,200 --> 00:46:58,900
+Ok, les gars, juste, je vous donne la consuite.
+
+526
+00:46:59,900 --> 00:47:01,300
+Et un mois sur ce colère.
+
+527
+00:47:01,800 --> 00:47:07,000
+Est-ce qu'on intégrer l'électricité avec le gaz ?
+
+528
+00:47:07,000 --> 00:47:10,400
+Tu peux, de toute façon, tu vas être obligé de me séparer, parce que pour le coup, ça n'a rien à voir.
+
+529
+00:47:11,100 --> 00:47:12,100
+Tu vas avoir des données.
+
+530
+00:47:12,100 --> 00:47:20,400
+mais je pense que ça vaudrait le coup parce qu'on a identifié qu'elle dégâts au Québec monumentaux entre ceux qui savent y faire et ceux qui ne savent pas y faire.
+
+531
+00:47:21,200 --> 00:47:29,100
+Donc peut-être qu'on pourrait bridger aussi là, mais la base de données scolaires, elle s'étend à l'Ontario de manière forte quand même.
+
+532
+00:47:31,200 --> 00:47:34,700
+Je ne sais pas la qualité de la base en Ontario, mais on a quand même beaucoup plus de véhicules en Ontario.
+
+533
+00:47:35,200 --> 00:47:40,400
+Et ça va à l'école, oui, oui.
+
+534
+00:47:40,400 --> 00:47:51,200
+S'il faut choisir un modèle pour démarrer par une catégorie, comment ça va être le scolaire et comment ça va être le scolaire gros ? Comment on peut se faire des lieux d'un coup en vie, ça je ne sais pas.
+
+535
+00:47:51,200 --> 00:48:03,800
+Non, en fait moi ce serait pour, comment on dit, avoir un prototype, monter aussi une série de métriques, voir comment on avance dans ce projet-là, comment on…
+
+536
+00:48:03,800 --> 00:48:13,800
+parce que quand on s'est parlé, il y a quand même un an de ça, si je me souviens bien, on parlait d'apprivoiser les projets IA.
+
+537
+00:48:13,800 --> 00:48:28,400
+Je pense que ça demeure cet objectif-là. Donc, on commence avec un périmètre petit. On s'assure de voir comment on montre quelque chose de basse qui ne fonctionne pas ou qui donne des résultats très moyens.
+
+538
+00:48:28,400 --> 00:48:39,200
+avec 75% de taux de réussite, on commence à pouvoir découper et voir, ok, je reviens
+
+539
+00:48:39,200 --> 00:48:43,100
+à mon idée, les freins fonctionnent bien, les moteurs fonctionnent moins bien parce
+
+540
+00:48:43,100 --> 00:48:46,400
+qu'il y a plus de composantes, je ne sais pas, mais au moins on va pouvoir commencer à
+
+541
+00:48:46,400 --> 00:48:51,900
+identifier où peuvent être les problèmes et focaliser là-dessus pour une preuve de
+
+542
+00:48:51,900 --> 00:48:57,100
+concept qui pourrait se faire dans le cadre possédemment de ton stage qui, je suppose,
+
+543
+00:48:57,100 --> 00:48:58,200
+On se finit à un moment donné.
+
+544
+00:48:59,300 --> 00:49:03,000
+Est-ce qu'on sait ?
+
+545
+00:49:03,000 --> 00:49:32,500
+C'est quoi la deadline du prototype ?
+
+546
+00:49:33,100 --> 00:49:34,500
+Fin du mois ?
+
+547
+00:49:35,100 --> 00:49:36,300
+Avant-hier ?
+
+548
+00:49:36,300 --> 00:49:44,700
+En fait, le truc, c'est que je suis là de parler du concept de simple au Géal, comme tu le sais, Henri.
+
+549
+00:49:44,900 --> 00:49:45,700
+Donc ça, c'est important.
+
+550
+00:49:46,700 --> 00:49:50,400
+On a une deadline ferme pour la présentation de groupe en février.
+
+551
+00:49:52,200 --> 00:49:54,300
+Ça veut dire qu'entre les deux, il va y avoir un truc qui marche.
+
+552
+00:49:55,000 --> 00:49:55,600
+On s'est serré.
+
+553
+00:49:56,800 --> 00:49:58,000
+J'ai pas dit un truc parfait.
+
+554
+00:49:59,600 --> 00:50:00,100
+J'ai dit un truc...
+
+555
+00:50:00,000 --> 00:50:04,000
+Je pense que la partie…
+
+556
+00:50:04,000 --> 00:50:27,000
+Parce que qu'est-ce qu'on a en ce moment, c'est pas mal fonctionnel, juste pas spécifiquement pour le scolaire, mais si je voulais vraiment supporter les tests que je faisais, il me faudrait des questions plus poussées, plus techniques des mécaniciens pour voir si ça le ferait tomber.
+
+557
+00:50:27,000 --> 00:50:34,000
+parce qu'avec les types de questions que moi je pouvais m'imaginer jusqu'à date, la récolte de données...
+
+558
+00:50:34,000 --> 00:50:35,000
+C'est pas mécanique.
+
+559
+00:50:35,000 --> 00:50:37,000
+C'est ça, je suis pas mécanicien.
+
+560
+00:50:37,000 --> 00:50:44,000
+Alors là-dessus, c'est pas dur. Dégorique, là-dessus c'est pas dur. Dégorique, dès lors que le modèle est prêt,
+
+561
+00:50:44,000 --> 00:50:49,000
+admettons qu'on décide d'aller sur scolaire, si dans une semaine le modèle est prêt,
+
+562
+00:50:49,000 --> 00:51:02,000
+Après, je t'envoie à Saint-Jean passer une journée avec l'équipe d'un Mario et avec un Alex dans l'équipe, pas celui-ci ici mais dans l'équipe de Mario ou avec un ou deux médicamenticiens spécialisés au bus.
+
+563
+00:51:02,000 --> 00:51:07,000
+Mais avec eux tu vois, aller en attaque des trucs ou bien en distance.
+
+564
+00:51:07,000 --> 00:51:12,000
+Alors, ok les gars vous allez appeler, vous allez goer et on va tester des choses pour voir ce que ça arrive.
+
+565
+00:51:12,000 --> 00:51:19,000
+Je ne peux pas être trop en P.O. parce que je pense que c'est quand des questions viennent qu'il faut qu'elles soient posées de la façon qu'il les poserait de toute façon.
+
+566
+00:51:19,000 --> 00:51:27,000
+Après il y a toujours un truc qui marche bien qui est de rejouer un scénario qui s'est déjà passé en fait.
+
+567
+00:51:27,000 --> 00:51:35,000
+De dire ok j'ai trouvé ça, je sais ça, explique moi si tu as eu un diagnostic, ok c'était ça la bonne, tiens, testons le système.
+
+568
+00:51:35,000 --> 00:51:39,000
+Normalement si ça a déjà été rentré dans le système, vous n'allez être capable de le retrouver.
+
+569
+00:51:39,000 --> 00:51:43,400
+On veut l'exclure du système, on ne le retrouve pas.
+
+570
+00:52:15,600 --> 00:52:25,000
+mais on peut se faire un comité technique, je peux créer un comité technique avec chaque province qui nous donne deux mécaniciens, tu vois.
+
+571
+00:52:25,600 --> 00:52:33,800
+Donc on crée un comité technique de cinq personnes qui se réunissent actuellement une heure tous les trois jours pour poser des questions au système et voir ce que ça répond.
+
+572
+00:52:34,800 --> 00:52:36,200
+Ça pourrait être juste des choses comme ça, tu vois.
+
+573
+00:52:36,200 --> 00:52:44,200
+Est-ce que le MVP qu'on parle en ce moment, ça intègre les bons travails, les work-holders
+
+574
+00:52:44,200 --> 00:52:51,200
+dans le diagnostic? Parce que ça, je ne l'avais pas fait avec le MVP que j'ai en ce moment,
+
+575
+00:52:51,200 --> 00:52:57,200
+et je pense que ça, je ne l'avais pas compté dans mon scope initial, parce qu'on n'avait
+
+576
+00:52:57,200 --> 00:53:01,200
+pas encore parlé des work-holders initialement. Je l'avais juste fait avec les manuels,
+
+577
+00:53:01,200 --> 00:53:02,200
+je me demande si ça va juste.
+
+578
+00:53:02,200 --> 00:53:06,200
+Je ne sais pas si il faut faire une phase d'acheteur, vraiment, avant de citer de moi là-dessus.
+
+579
+00:53:06,200 --> 00:53:11,200
+Ok.
+
+580
+00:53:11,200 --> 00:53:14,200
+Il y a peut-être une phase en deux étapes.
+
+581
+00:53:14,200 --> 00:53:20,200
+Il est fortement possible qu'on ne soit pas nécessairement si bon diagnostique parce qu'on ne dit pas des manuelles.
+
+582
+00:53:20,200 --> 00:53:23,200
+C'est le principe du lave-vaisselle à la maison.
+
+583
+00:53:23,200 --> 00:53:27,200
+Les gens râlent et ils sont jamais nombreux à la manuelle ou de lave-vaisselle.
+
+584
+00:53:27,200 --> 00:53:29,200
+Et bien voyons la première chose qu'ils font.
+
+585
+00:53:29,200 --> 00:53:31,200
+Aujourd'hui avec Claude c'est formidable.
+
+586
+00:53:31,200 --> 00:53:34,200
+Quand j'ai fait l'expérience, c'est quand même assez extraordinaire.
+
+587
+00:53:34,200 --> 00:53:36,800
+du gabès sel, tu lui dis genre, je vais mettre en route le système de dire.
+
+588
+00:53:38,100 --> 00:53:40,600
+Donc peut-être que les manuels, dans un premier temps,
+
+589
+00:53:41,000 --> 00:53:44,200
+les données sont déjà suffisantes pour apporter
+
+590
+00:53:44,200 --> 00:53:48,300
+un cadre de productivité et d'éfficacité et d'aide à donner quelque chose.
+
+591
+00:53:49,900 --> 00:53:53,500
+Moi, à mon sens, la donnée intrinsèque de Transnet va apporter un plus.
+
+592
+00:53:54,500 --> 00:53:57,200
+Mais est-ce que c'est un plus ou est-ce que c'est un moins ?
+
+593
+00:53:57,200 --> 00:54:01,300
+C'est là où j'ai un doute lié à la même sélimitation de la donnée qu'on lui a.
+
+594
+00:54:01,300 --> 00:54:10,200
+Je veux dire à un moment, malgré toute la qualité de travail, je pense pas que si on rentre dans la merde parce que les données vont rentrer un peu n'importe comment dans le système.
+
+595
+00:54:10,200 --> 00:54:14,200
+Donc là je parle des heures de travail. C'est pas dit qu'on en sente quelque chose de formidable.
+
+596
+00:54:14,200 --> 00:54:22,800
+Donc peut-être faire un modèle d'abord avec juste tous les manuels, tous les types de réparations possibles, ainsi de suite, et le type de diagnostic possible dont vous avez parlé tout à l'heure.
+
+597
+00:54:22,800 --> 00:54:28,800
+C'est une excellente idée de voir si les gens se disent « Non mais ça on sait, c'est
+
+598
+00:54:28,800 --> 00:54:30,800
+si au bout de trois semaines les gens n'avaient pas de tout ça.
+
+599
+00:54:30,800 --> 00:54:31,800
+Non mais ça on savait quoi.
+
+600
+00:54:31,800 --> 00:54:34,800
+C'est bon, c'est bon, on est des italiciens seniors, ton système il est en train de le dire
+
+601
+00:54:34,800 --> 00:54:35,800
+ce que je sais déjà dans la tête.
+
+602
+00:54:35,800 --> 00:54:37,800
+Ok, valeur ajoutée zéro.
+
+603
+00:54:37,800 --> 00:54:40,800
+On peut être dans des juniors, mais sinon valeur ajoutée zéro.
+
+604
+00:54:40,800 --> 00:54:47,100
+Et là, on saura que c'est le truc un peu plus touchy.
+
+605
+00:54:47,100 --> 00:54:52,100
+Et typiquement, en exemple, quand tu as utilisé, tu vas utiliser un symposium, mais quand
+
+606
+00:54:52,100 --> 00:54:57,100
+j'ai le voyant de pression de vide qui s'allume quand je suis au ralenti et puis quand je me mets à rouler
+
+607
+00:54:57,100 --> 00:55:00,100
+et la pression s'éteint, c'est pas écrit dans les manuels.
+
+608
+00:55:00,100 --> 00:55:03,100
+Ça je le sais parce que j'en ai fait du diable quand je reste.
+
+609
+00:55:03,100 --> 00:55:07,100
+Donc c'est typiquement la chose où l'expérience commence à prendre de-dessous.
+
+610
+00:55:07,100 --> 00:55:13,100
+Et la pression monte, tu montes en magie, tu perds la pression, donc tes pertes de pression au ralenti
+
+611
+00:55:13,100 --> 00:55:21,000
+et ça, ça rentre dans des choses que tu vas pas trouver dans les manuels quand t'as rentré dans le système.
+
+612
+00:55:21,000 --> 00:55:22,800
+Donc peut-être en deux étapes.
+
+613
+00:55:22,800 --> 00:55:23,700
+Pardon, pas peut-être.
+
+614
+00:55:23,700 --> 00:55:24,400
+En deux étapes.
+
+615
+00:55:24,400 --> 00:55:25,400
+Qu'on te tranche un peu.
+
+616
+00:55:27,000 --> 00:55:30,300
+Qu'on peut peut-être retrouver dans les bornes d'intervention, ce moment-là.
+
+617
+00:55:33,200 --> 00:55:48,200
+Tout ça, c'est une preuve de concept, elle se fait sur copilote.
+
+618
+00:55:49,500 --> 00:55:50,100
+C'est faisable.
+
+619
+00:55:50,300 --> 00:55:51,100
+Oui, c'est faisable.
+
+620
+00:55:51,500 --> 00:55:53,700
+Pas avec les bornes de travail, mais avec les bornes d'intervention.
+
+621
+00:56:05,900 --> 00:56:06,700
+Ah oui, c'est ça.
+
+622
+00:56:07,100 --> 00:56:10,500
+Au niveau de la performance aussi des seniors, ça vous dit.
+
+623
+00:56:10,900 --> 00:56:14,100
+Ça se peut que les seniors n'y voient pas de la valeur.
+
+624
+00:56:16,500 --> 00:56:26,900
+Jusqu'à quel point les seniors... En fait, est-ce que vous mesurez la qualité des diagnostics qui sont faits au niveau de vos mécaniciens?
+
+625
+00:56:27,700 --> 00:56:29,200
+Est-ce que vous avez des métriques là-dessus?
+
+626
+00:56:30,300 --> 00:56:48,800
+Non, mais justement, en l'avion de la vie empirique, en se disant que c'est pour le mieux.
+
+627
+00:56:50,000 --> 00:56:51,600
+Je ne suis pas d'autre à répondre à ce que ça.
+
+628
+00:56:55,300 --> 00:56:58,400
+Il y a aussi un point que je l'ai mentionné, que je te le mentionne, parce que je vais vous quitter dans le menu,
+
+629
+00:56:58,400 --> 00:57:04,400
+L'aspect documentation dont j'ai parlé tout à l'heure, je le redis, je suis désolé, je tourne un peu en boucle.
+
+630
+00:57:04,400 --> 00:57:11,400
+Pour mes licencières, pour la sécurité, c'est-à-dire que, une des choses que je constate dans notre co-prise,
+
+631
+00:57:11,400 --> 00:57:17,400
+comme on n'est pas dans la R&M, c'est que les gens oublient de consulter les documents en pensant qu'ils savent.
+
+632
+00:57:17,400 --> 00:57:23,400
+Donc il y a un aspect aussi dans l'aspect juste consultation documentaire, c'est-à-dire que l'IA,
+
+633
+00:57:23,400 --> 00:57:29,100
+Je vais simplifier, mais il aide à afficher le bon document pour faire telle réparation.
+
+634
+00:57:29,100 --> 00:57:30,900
+Ça, ça me semble essentiel.
+
+635
+00:57:30,900 --> 00:57:38,800
+Comme une checklist d'aviation, un petit homme l'a fait 150 fois, c'est à 150e minute, il a refaire la même checklist.
+
+636
+00:57:38,800 --> 00:57:40,600
+Je ne la connais pas, il a fait la même checklist.
+
+637
+00:57:40,600 --> 00:57:42,300
+Et bien il l'a refait.
+
+638
+00:57:42,300 --> 00:57:43,700
+Je veux la même chose.
+
+639
+00:57:43,700 --> 00:57:48,800
+Et donc là, tous qui sont en train de chercher le manuel dans un répertoire avec...
+
+640
+00:57:48,800 --> 00:58:00,300
+Alors je suis sur un Thomas 2016, je suis en train de faire des freins, mais à cette page 712, c'est là où je souhaite que le système apporter directement cette information.
+
+641
+00:58:01,400 --> 00:58:13,500
+Ça, ça va être une valeur ajoutée quand même, quand on va remettre un peu cet aspect d'air clé qu'on a maintenant, c'est-à-dire non seulement on vous demande de consulter le document, mais on vous fournit l'outil.
+
+642
+00:58:13,500 --> 00:58:18,500
+Parce que si on leur demande de consulter les documents et qu'on ne fournit pas un outil,
+
+643
+00:58:18,500 --> 00:58:23,500
+il y a une perte énorme en fait par rapport à ce qui flonge en. Et puis sur l'aspect
+
+644
+00:58:23,500 --> 00:58:31,500
+direct, je pense quand même que juste les documents devraient aider, même parfois certains
+
+645
+00:58:31,500 --> 00:58:36,500
+seniors, sur des matériels, sur comme on appelle un parc énorme, des véhicules dont
+
+646
+00:58:36,500 --> 00:58:40,500
+ils n'ont pas souvent la maintenance et qu'ils ne connaissent pas de parc à leur apporter
+
+647
+00:58:40,500 --> 00:58:43,500
+une valeur ajoutée. Je vous laisse parce que je dois s'occuper sur un autre meeting,
+
+648
+00:58:43,500 --> 00:58:45,500
+Je vous laisse terminer. Merci beaucoup.
+
+649
+00:58:45,500 --> 00:58:48,500
+Et puis, on fera un point d'éclatement plus tard.
+
+650
+00:58:48,500 --> 00:58:49,500
+Merci beaucoup.
+
+651
+00:58:49,500 --> 00:58:50,500
+Merci, Yann.
+
+652
+00:58:50,500 --> 00:59:04,300
+Juste une projet en elle-même.
+
+653
+00:59:04,300 --> 00:59:16,200
+Quelles sont l'expérience, un petit peu les étapes de Juste une projet qui pourrait être spécifique à ce genre de développement?
+
+654
+00:59:16,200 --> 00:59:21,200
+En fait, normalement, je travaille sur des projets itératifs dans ce genre de développement.
+
+655
+00:59:21,200 --> 00:59:30,600
+Donc, on se donne un target au niveau des… la qualité de l'information à retenir, qui
+
+656
+00:59:30,600 --> 00:59:38,500
+est généralement pas atteinte dans les premiers cycles. Et on regarde quelle composante doit
+
+657
+00:59:38,500 --> 00:59:44,700
+être améliorée. Est-ce que… puis, encore une fois, c'est d'aller voir… de découper
+
+658
+00:59:44,700 --> 01:00:00,000
+Puis est-ce que les « retrievals » ramènent de l'information non pertinente, je ne sais pas, au niveau des composantes, au niveau des pièces, est-ce que les PDFs sont mal interprétés, ou bien c'est carrément le vocabulaire.
+
+659
+01:00:00,000 --> 01:00:07,000
+Et à ce moment-là, ça veut dire qu'il faut que j'intègre par exemple un glossaire dans mon environnement.
+
+660
+01:00:07,000 --> 01:00:17,000
+Un glossaire pour pouvoir s'enfinculer le modèle, mais pour pouvoir orienter le modèle vers le vocabulaire que j'utilise.
+
+661
+01:00:17,000 --> 01:00:24,000
+Qui évite de me sortir des solutions de reboot Windows si j'arrive pas à ouvrir une fenêtre.
+
+662
+01:00:24,000 --> 01:00:25,000
+Ok.
+
+663
+01:00:25,000 --> 01:00:32,800
+Je vais avoir parlé de l'Ontario au Sénat. C'est un détail qui est important.
+
+664
+01:00:32,800 --> 01:00:39,600
+C'est un système supportant les Français directement.
+
+665
+01:00:39,600 --> 01:00:40,600
+Oui.
+
+666
+01:00:40,600 --> 01:00:42,600
+C'est un détail très important.
+
+667
+01:00:42,600 --> 01:00:47,600
+Mais est-ce que vous pourriez penser le faire en emblède initialement, puis rajouter la
+
+668
+01:00:47,600 --> 01:00:48,600
+traduction par après?
+
+669
+01:00:48,600 --> 01:00:57,600
+En théorie, ça devrait bien être supporté, mais plus on limite les endroits où ça peut
+
+670
+01:00:57,600 --> 01:01:02,200
+des problèmes ou le vocabulaire peut poser des problèmes à ce moment-là on peut s'assurer
+
+671
+01:01:02,200 --> 01:01:06,100
+d'avoir au moins une bonne logique ensuite on peut s'assurer que le français suive
+
+672
+01:01:06,100 --> 01:01:13,200
+à ça s'ajoute aussi une petite particularité de l'Ontario c'est que l'Ontario n'a pas de
+
+673
+01:01:13,200 --> 01:01:23,600
+documentation digitale. Je suis certain qu'on peut rejoindre les fournissages.
+
+674
+01:01:23,600 --> 01:01:28,700
+Non c'est sûr c'est sûr j'avais demandé au Louis Détardif qui m'avait envoyé des liens
+
+675
+01:01:28,700 --> 01:01:32,900
+les sites des fournisseurs ont fait un login et un abonnement annuel pour aller chercher les manuels
+
+676
+01:01:32,900 --> 01:01:42,000
+je me demande si il n'y a pas un moyen facile de récupérer cette documentation là et je crois que
+
+677
+01:01:42,000 --> 01:01:46,400
+si je ne me trompe pas la documentation qui est complètement digital au québec quasiment à 100%
+
+678
+01:01:46,400 --> 01:01:51,600
+parce qu'ils reçoivent toutes les paroles et cetera je me demande si ça c'est pas en français
+
+679
+01:01:51,600 --> 01:01:58,600
+Les Sherpaings avec toutes les... il y en a de tous les langages anglais, français et allemand.
+
+680
+01:01:58,600 --> 01:02:26,500
+Le problème c'est qu'on est dans un langage technique.
+
+681
+01:02:26,500 --> 01:02:30,500
+Les élèves sont excellents pour traduire des choses normales.
+
+682
+01:02:30,500 --> 01:02:33,500
+Dans un langage technique, il y a ça des complexités.
+
+683
+01:02:33,500 --> 01:02:36,500
+Souvent des appréviations.
+
+684
+01:02:36,500 --> 01:02:41,500
+Même des verbes très techniques, des fois il est possible que ton modèle...
+
+685
+01:02:41,500 --> 01:02:45,500
+Je ne sais pas trop, c'est quoi quelque chose de bizarre là?
+
+686
+01:02:45,500 --> 01:02:51,500
+Il y a un exemple, le fédéral a fait traduire des documents
+
+687
+01:02:51,500 --> 01:02:57,500
+Puis, « By Canadian Policy » est traduit par « Acheter une politique canadienne »
+
+688
+01:02:57,500 --> 01:03:07,500
+« Translation Bureau » avec « TMA » a été traduit par « Tuberculose »
+
+689
+01:03:07,500 --> 01:03:10,200
+Donc, il faut faire cette assimilité.
+
+690
+01:03:10,200 --> 01:03:11,500
+Mais artificiel.
+
+691
+01:03:11,500 --> 01:03:13,300
+Les gens s'en disent.
+
+692
+01:03:13,300 --> 01:03:14,300
+Oui, c'est ça.
+
+693
+01:03:14,300 --> 01:03:23,100
+C'est là où ça amène une complexité, si on prend en V, parce qu'il n'y a pas de valeur ajoutée à la base.
+
+694
+01:03:24,300 --> 01:03:29,500
+Si on a le manuel et en anglais et en français, bien quand même on prend celui en anglais et celui en français.
+
+695
+01:03:29,600 --> 01:03:33,300
+On l'ignore dans une première phase parce qu'il faut pouvoir travailler en français après.
+
+696
+01:03:33,300 --> 01:03:39,300
+c'est sûr, mais au moins qu'on ait quelque chose qui fonctionne dans une langue.
+
+697
+01:03:39,300 --> 01:03:45,300
+Puis ensuite on verra si on intègre la traduction dans le processus complet
+
+698
+01:03:45,300 --> 01:03:47,300
+puis il n'y a pas d'impact, c'est minime, tant mieux.
+
+699
+01:03:47,300 --> 01:03:51,300
+Sinon on peut peut-être intégrer à l'entrée puis à la sortie.
+
+700
+01:03:51,300 --> 01:03:53,300
+On se rend à l'heure.
+
+701
+01:03:53,300 --> 01:03:55,300
+Il faut que tu sois fine-tune.
+
+702
+01:03:55,300 --> 01:04:01,300
+Tu peux pas, tu veux pas, tu veux pas, le coût et la puissance de quelqu'un qui est après.
+
+703
+01:04:01,300 --> 01:04:03,300
+Tu peux finir sur les matériaux.
+
+704
+01:04:03,300 --> 01:04:07,300
+Mais avec du rack normalement, c'est pas un chien.
+
+705
+01:04:07,300 --> 01:04:14,300
+Si tu as le modèle en français et en anglais, tu peux toujours mettre dans tes méthadonnées la langue de sortie.
+
+706
+01:04:14,300 --> 01:04:17,300
+Rack va aller chercher le bon...
+
+707
+01:04:17,300 --> 01:04:20,300
+Parce que nos mécanos, ils ont leur jargon à eux.
+
+708
+01:04:20,300 --> 01:04:23,300
+Ils vont avoir le moins, je veux changer les brics.
+
+709
+01:04:23,300 --> 01:04:25,300
+Ils vont pas marquer des fringues.
+
+710
+01:04:25,300 --> 01:04:31,300
+Je pense que là dessus il va falloir vraiment avoir la méthode des gars comme ça.
+
+711
+01:04:31,300 --> 01:04:33,300
+On va écrire Break-BRE-AQ des gens?
+
+712
+01:04:33,300 --> 01:04:39,300
+Exact, il y a des gens qui sont vraiment sur la méthode des deux cas.
+
+713
+01:04:39,300 --> 01:04:49,300
+Mais ça justement on pourrait mettre un glossaire, ou Frame Break, en français Frame Break-BRE-AQ puis BR-AQ-E.
+
+714
+01:04:49,300 --> 01:04:53,300
+On les met comme si même possible.
+
+715
+01:04:53,300 --> 01:04:55,300
+Quelque chose il te disait, break.
+
+716
+01:04:55,300 --> 01:04:57,300
+Oui, c'est ça.
+
+717
+01:04:57,300 --> 01:04:59,300
+En tout cas, mais c'est pas grave.
+
+718
+01:04:59,300 --> 01:05:02,300
+L'LM est pas mauvais pour le contexte.
+
+719
+01:05:02,300 --> 01:05:06,300
+Il peut ficher là-dessus, mais c'est là qu'il te va faire bizarre des fois.
+
+720
+01:05:06,300 --> 01:05:09,300
+Oui, mais c'est ça, tu rentres un peu de sel en standard.
+
+721
+01:05:09,300 --> 01:05:13,300
+J'ai vu le mot taille de l'LM, T-E-R-A-D-E-N-E.
+
+722
+01:05:13,300 --> 01:05:17,300
+C'est taille, T-E-R-O-D-E-N-D.
+
+723
+01:05:17,300 --> 01:05:19,300
+Taille, M.
+
+724
+01:05:19,300 --> 01:05:21,300
+T-E-R-A-D-E-N-D.
+
+725
+01:05:21,300 --> 01:05:28,300
+Donc il y a des défis. Il faut simplifier le projet pour avoir un premier résultat.
+
+726
+01:05:28,300 --> 01:05:36,100
+Puis ensuite, on va en tirer dessus. Donc, itératif, vraiment, c'est ce qui va vous permettre de gagner.
+
+727
+01:05:36,600 --> 01:05:41,000
+Ensuite, c'est de découper les agents là où il y a un besoin.
+
+728
+01:05:41,800 --> 01:05:48,700
+Souvent, on dit « fais-le sur les métiers ». Mais là, si vous dites que tout le monde peut tousser au moteur ou au frein,
+
+729
+01:05:48,700 --> 01:05:53,200
+on n'a pas un métier spécifique on peut toucher n'importe quel modèle
+
+730
+01:05:53,200 --> 01:05:55,100
+mais c'est ça on n'a pas de problème
+
+731
+01:05:55,100 --> 01:05:57,500
+il y a aussi la maquette qu'est-ce qu'il y a d'autres spécialistes pour des choses très
+
+732
+01:05:57,500 --> 01:05:59,800
+correctement mais la plupart sont généralistes
+
+733
+01:05:59,800 --> 01:06:02,600
+ouais c'est ça
+
+734
+01:06:02,600 --> 01:06:06,600
+moi sur les procès de projet juste pour faire un petit point sur les prochaines
+
+735
+01:06:06,600 --> 01:06:09,400
+étapes un petit peu j'ai pris beaucoup de notes
+
+736
+01:06:09,400 --> 01:06:15,200
+pas sûr de mes notes mais bon se concentrer déjà sur une prof de concept
+
+737
+01:06:15,200 --> 01:06:17,000
+sur les véhicules scolaires.
+
+738
+01:06:18,500 --> 01:06:19,000
+Assez fins,
+
+739
+01:06:19,800 --> 01:06:21,400
+utilisez la documentation qu'on a présentement
+
+740
+01:06:21,400 --> 01:06:22,700
+sur les véhicules scolaires.
+
+741
+01:06:24,200 --> 01:06:25,400
+Il y a des types différents,
+
+742
+01:06:26,200 --> 01:06:30,000
+mais ça reste sensiblement
+
+743
+01:06:30,000 --> 01:06:31,700
+un peu tout le temps la même chose.
+
+744
+01:06:32,100 --> 01:06:33,800
+Un châssis de camion avec à peu près
+
+745
+01:06:33,800 --> 01:06:34,700
+toujours le même moteur,
+
+746
+01:06:35,300 --> 01:06:36,800
+à peu près toujours le même différentiel,
+
+747
+01:06:36,800 --> 01:06:39,600
+à peu près toujours la même boîte de vitesse.
+
+748
+01:06:43,200 --> 01:06:44,400
+Donc, dans un premier temps,
+
+749
+01:06:45,200 --> 01:06:53,100
+sur copilote, essayer d'avoir une sorte de preuve de concept sur les véhicules scolaires au Québec, je dirais.
+
+750
+01:06:53,100 --> 01:06:55,100
+C'est ça un petit peu ce qu'on a pour l'instant.
+
+751
+01:06:56,100 --> 01:07:01,200
+Voir comment ils se débrouillent et ensuite partir de là pour essayer d'étendre un petit peu la connaissance.
+
+752
+01:07:02,500 --> 01:07:08,900
+Ça te sera qu'il faut quand même avoir la volumétrie de connaissances et de problèmes sur le Québec.
+
+753
+01:07:08,900 --> 01:07:17,300
+Est-ce que vous l'avez? Il y a assez de véhicules scolaires au Québec avec des problèmes.
+
+754
+01:07:17,300 --> 01:07:19,300
+oh
+
+755
+01:07:19,300 --> 01:07:21,300
+ça
+
+756
+01:07:21,300 --> 01:07:23,300
+avoir des problèmes c'est pas un problème
+
+757
+01:07:23,300 --> 01:07:25,300
+avoir des problèmes c'est pas un problème
+
+758
+01:07:25,300 --> 01:07:27,300
+c'est un problème
+
+759
+01:07:27,300 --> 01:07:29,300
+15 ans à peu près de l'expertise
+
+760
+01:07:29,300 --> 01:07:31,300
+dans les
+
+761
+01:07:31,300 --> 01:07:33,300
+9 ans
+
+762
+01:07:33,300 --> 01:07:35,300
+10 ans peut-être
+
+763
+01:07:35,300 --> 01:07:37,300
+10 ans
+
+764
+01:07:37,300 --> 01:07:39,300
+une dizaine d'années
+
+765
+01:07:39,300 --> 01:07:41,300
+des véhicules scolaires
+
+766
+01:07:41,300 --> 01:07:43,300
+on a quoi ?
+
+767
+01:07:43,300 --> 01:07:45,300
+500 qui veulent ?
+
+768
+01:07:45,300 --> 01:07:46,300
+400...
+
+769
+01:07:46,300 --> 01:07:49,300
+Si on prend juste les tours, on est moins moins que ça, mais...
+
+770
+01:07:49,300 --> 01:07:51,300
+Parce qu'on a vu de mini aussi des problématiques différents.
+
+771
+01:07:51,300 --> 01:07:52,300
+Ouais.
+
+772
+01:07:52,300 --> 01:07:55,300
+Et dans cette première étape sur le programme de conception scolaire,
+
+773
+01:07:55,300 --> 01:07:59,300
+on s'appuierait uniquement sur la documentation, sur la version de l'éliminance?
+
+774
+01:07:59,300 --> 01:08:01,300
+Version 1, documentation.
+
+775
+01:08:01,300 --> 01:08:02,300
+Ok.
+
+776
+01:08:02,300 --> 01:08:03,300
+Ben, c'est en 0.1.
+
+777
+01:08:03,300 --> 01:08:10,800
+Ben, intuitivement, moi je dirais si on peut intégrer quelque chose provenant de la maintenance,
+
+778
+01:08:10,800 --> 01:08:15,800
+de l'historique de maintenance, intuitivement, moi je dirais qu'il y a un peu de valeur,
+
+779
+01:08:15,800 --> 01:08:17,700
+C'est juste une intuition.
+
+780
+01:08:18,100 --> 01:08:19,800
+Comme tu dis, c'est peut-être très mal écrit
+
+781
+01:08:19,800 --> 01:08:22,000
+ou il n'y a peut-être jamais une description de problème,
+
+782
+01:08:22,200 --> 01:08:23,800
+juste des solutions qui ont été apportées.
+
+783
+01:08:24,000 --> 01:08:24,500
+Là, je suis d'accord.
+
+784
+01:08:25,000 --> 01:08:27,000
+J'ai un doute sur la capacité de...
+
+785
+01:08:27,000 --> 01:08:28,900
+Il faut aller chercher les meurtres.
+
+786
+01:08:29,600 --> 01:08:29,800
+Oui.
+
+787
+01:08:31,800 --> 01:08:33,400
+Il faut aller chercher la table.
+
+788
+01:08:33,400 --> 01:08:34,300
+La table des...
+
+789
+01:08:34,300 --> 01:08:36,000
+Il faut aller chercher les bons travaux.
+
+790
+01:08:37,300 --> 01:08:38,300
+Spécifiquement pour ce qu'on a...
+
+791
+01:08:38,300 --> 01:08:38,900
+Ça peut être possible.
+
+792
+01:08:39,400 --> 01:08:40,400
+J'ai peut-être traduit.
+
+793
+01:08:40,900 --> 01:08:42,300
+Tu veux le data dans le transdémissage?
+
+794
+01:08:43,200 --> 01:08:43,400
+Non.
+
+795
+01:08:43,800 --> 01:08:44,700
+Il n'est pas tellement le cas.
+
+796
+01:08:44,700 --> 01:08:45,700
+Oui, honnêtement.
+
+797
+01:08:45,700 --> 01:08:46,700
+Oui.
+
+798
+01:08:46,700 --> 01:08:47,700
+Et j'ai fait traduire.
+
+799
+01:08:47,700 --> 01:08:49,700
+Je l'ai fait détecter le langage puis traduire les deux langues.
+
+800
+01:08:49,700 --> 01:08:50,700
+C'est pas si mal.
+
+801
+01:08:50,700 --> 01:08:51,700
+Oui.
+
+802
+01:08:51,700 --> 01:08:52,700
+Je l'ai fait tout ce qu'on fait.
+
+803
+01:08:52,700 --> 01:08:53,700
+Ah, le langage est impressionnant.
+
+804
+01:08:53,700 --> 01:08:54,700
+Oui, oui, oui.
+
+805
+01:08:54,700 --> 01:08:55,700
+Oh, et ça, ça traduit correctement.
+
+806
+01:08:55,700 --> 01:08:58,700
+Il détecte le langage qui traduit de façon assez correcte en général.
+
+807
+01:08:58,700 --> 01:08:59,700
+Ok.
+
+808
+01:08:59,700 --> 01:09:00,700
+Même quand c'est bizarre.
+
+809
+01:09:00,700 --> 01:09:01,700
+Ok.
+
+810
+01:09:01,700 --> 01:09:05,700
+Donc possiblement, malgré que c'est des termes techniques, dans certains cas, possiblement
+
+811
+01:09:05,700 --> 01:09:08,700
+qu'il va réussir à faire quelque chose de pas mal avec…
+
+812
+01:09:08,700 --> 01:09:12,700
+Moi, j'ai juste un doute sur la capacité de traitement qu'on a avec le copilote pour
+
+813
+01:09:12,700 --> 01:09:14,700
+Non non, je pense pas qu'on va...
+
+814
+01:09:14,700 --> 01:09:18,700
+Non non plus, puis je sais pas comment on ferait pour filtrer uniquement pour les bons travails scolaires.
+
+815
+01:09:18,700 --> 01:09:20,700
+Ah ça, ça va être avec les numéros de véhicules.
+
+816
+01:09:20,700 --> 01:09:21,700
+Oui, ok.
+
+817
+01:09:21,700 --> 01:09:23,700
+Les classes de véhicules, les numéros de véhicules, c'est pas compliqué.
+
+818
+01:09:23,700 --> 01:09:28,700
+Ben je pourrais prendre une petite portion, mais je vais pas les prendre au complet.
+
+819
+01:09:28,700 --> 01:09:31,700
+On pourrait dire sur quel champ filtrer au niveau de la liste des véhicules.
+
+820
+01:09:31,700 --> 01:09:33,700
+T'as la liste des véhicules, tu peux aller tes bons travails,
+
+821
+01:09:33,700 --> 01:09:36,700
+t'as peut-être pas les notes en printemps extraire,
+
+822
+01:09:36,700 --> 01:09:38,700
+les tables de notes qui sont les...
+
+823
+01:09:38,700 --> 01:09:42,700
+et ce qui trouve comme problème sur des véhicules avant d'y parler d'épargation.
+
+824
+01:09:42,700 --> 01:09:46,000
+Et autre question ?
+
+825
+01:09:46,000 --> 01:09:50,000
+Je sais pas du tout comment fonctionne un...
+
+826
+01:09:50,000 --> 01:09:52,000
+un GB10.
+
+827
+01:09:52,000 --> 01:09:55,000
+C'est un servo à Linux ?
+
+828
+01:09:55,000 --> 01:09:57,000
+Ah ok, c'est tout !
+
+829
+01:09:57,000 --> 01:09:59,000
+Enfin c'est tout, pas vrai.
+
+830
+01:09:59,000 --> 01:10:01,000
+Ben, vous êtes des agents déçus.
+
+831
+01:10:00,100 --> 01:10:10,100
+Sur CoPilot, est-ce que ta seule base vectorielle possible c'est Azure AI ou tu pourrais prendre une autre base vectorielle?
+
+832
+01:10:10,100 --> 01:10:11,100
+On peut en prendre d'autres.
+
+833
+01:10:11,100 --> 01:10:15,100
+Ok, parce que tu pourrais mettre ta base vectorielle sur le PB10 à ce moment-là.
+
+834
+01:10:15,100 --> 01:10:18,100
+Je ne sais pas si on peut se connecter à réseau.
+
+835
+01:10:18,100 --> 01:10:19,100
+Mais il semble que oui.
+
+836
+01:10:19,100 --> 01:10:24,100
+On peut mettre une connexion avec les jeux de la genre de commercieuse de BBS.
+
+837
+01:10:24,100 --> 01:10:27,100
+Je ne suis pas sûr qu'elle joue avec la même chose.
+
+838
+01:10:27,100 --> 01:10:34,100
+Si on est à haute, c'est au centre de voir le direct connect.
+
+839
+01:10:34,100 --> 01:10:37,100
+C'est possible, c'est possible de voir.
+
+840
+01:10:37,100 --> 01:10:43,100
+On est pas rendu là mais on va toujours voir s'il y a un gain ou à ce moment-là,
+
+841
+01:10:43,100 --> 01:10:47,100
+déplacer une fois qu'on a un modèle co-pilote qui fonctionne un peu,
+
+842
+01:10:47,100 --> 01:10:49,100
+essayer de déplacer.
+
+843
+01:10:49,100 --> 01:10:54,100
+On peut seulement créer un agent en GPT si facilement à partir de ce que tu as.
+
+844
+01:10:54,100 --> 01:10:57,100
+Parce que je sais qu'il faut que tu ailles changer ta base de vecteur.
+
+845
+01:10:57,100 --> 01:10:58,100
+Bien, c'est ça.
+
+846
+01:10:58,100 --> 01:11:02,100
+À la limite, Claude est super bon Python, honnêtement.
+
+847
+01:11:02,100 --> 01:11:06,100
+On peut créer des scripts Python pour les PVH et les convertir.
+
+848
+01:11:06,100 --> 01:11:10,100
+Je te dis qu'il y a tout un processus qu'on peut faire non seulement pour automatiser
+
+849
+01:11:10,100 --> 01:11:13,100
+des bases de données vecteurs qui sont parallèles pour les agents.
+
+850
+01:11:13,100 --> 01:11:17,100
+On ne peut pas juste faire ça au jour 1, mais une fois qu'on sait comment charger une base de données,
+
+851
+01:11:17,100 --> 01:11:23,100
+on peut le cocher des détalogiques et des mécaniques autour pour dire qu'on fait ça script-là avec tel fichier.
+
+852
+01:11:23,100 --> 01:11:26,100
+C'était détail quand tu jouais de l'agent.
+
+853
+01:11:26,100 --> 01:11:30,100
+Oui, puis c'est sûr une fois que tu as battu ton agent dans le CoPilot Studio,
+
+854
+01:11:30,100 --> 01:11:34,100
+tu peux utiliser l'Inchain pour ramener ça sur ton GB10.
+
+855
+01:11:34,100 --> 01:11:37,100
+Ok, c'est l'expert.
+
+856
+01:11:37,100 --> 01:11:39,100
+Je suis un amateur ou c'est l'expert?
+
+857
+01:11:39,100 --> 01:11:41,100
+Je ne suis pas capable de travailler.
+
+858
+01:11:41,100 --> 01:11:43,100
+J'ai pris des formations CoPilot Studio.
+
+859
+01:11:43,100 --> 01:11:45,100
+C'est super fun.
+
+860
+01:11:45,100 --> 01:11:46,100
+C'est magique.
+
+861
+01:11:46,100 --> 01:11:48,100
+Mais il y a trop de magie pour moi.
+
+862
+01:11:48,100 --> 01:11:54,200
+C'est pas la magie, non.
+
+863
+01:11:54,200 --> 01:12:03,200
+ok sur le suivi un petit peu de l'avancement est ce que ça vous conviendrait
+
+864
+01:12:03,200 --> 01:12:09,100
+je sais pas à quel quel est nécessaire que vous soyez présents à chaque
+
+865
+01:12:09,100 --> 01:12:15,800
+rencontre mais je trouve ça un vrai soit au moins 15 minutes et de ma mère
+
+866
+01:12:15,800 --> 01:12:22,400
+on fait un petit peu le point sur sur sur le mois de novembre et peut-être on
+
+867
+01:12:22,400 --> 01:12:29,900
+pourrait se retrouver pour une prochaine session un petit peu d'avance
+
+868
+01:12:29,900 --> 01:12:31,900
+oui
+
+869
+01:12:31,900 --> 01:12:36,000
+ça prend une journée
+
+870
+01:12:36,000 --> 01:12:39,000
+c'est un peu plus de 5 minutes ça veut plutôt dire 30 minutes
+
+871
+01:12:39,000 --> 01:12:42,000
+alors on a dit 30 minutes hebdo ou t'es pas du un développer ?
+
+872
+01:12:42,000 --> 01:12:44,000
+ah oui non c'est pas du tout
+
+873
+01:12:44,000 --> 01:12:46,000
+30 minutes
+
+874
+01:12:46,000 --> 01:12:48,000
+30 minutes c'est pas mal
+
+875
+01:12:48,000 --> 01:12:49,000
+hebdo ?
+
+876
+01:12:49,000 --> 01:12:53,000
+un 30 minutes de matière mais peut-être que nous on peut se retrouver avec Dominique
+
+877
+01:12:53,000 --> 01:12:55,000
+faites pas ça à la pittà
+
+878
+01:12:55,000 --> 01:12:56,000
+non
+
+879
+01:12:56,000 --> 01:12:58,000
+min de l'autre
+
+880
+01:12:58,000 --> 01:13:01,000
+pour moi c'est quelque chose de fin de journée
+
+881
+01:13:01,000 --> 01:13:05,300
+non mais une tête d'eau c'est quelque chose c'est genre volum que j'avais
+
+882
+01:13:05,300 --> 01:13:10,900
+en tête aussi excellent et peut-être que en fonction de
+
+883
+01:13:10,900 --> 01:13:16,700
+2 de l'aide de ma date on fera la semaine prochaine on verra si dans deux
+
+884
+01:13:16,700 --> 01:13:20,500
+semaines et en fonction de l'avancée aussi que toi tu as si ça veut faire une
+
+885
+01:13:20,500 --> 01:13:25,700
+session un petit peu plus longue
+
+886
+01:13:25,700 --> 01:13:30,400
+cette minute c'est plus comme suivi oui c'est plus du ouest ce qu'on en a
+
+887
+01:13:30,400 --> 01:13:36,800
+mais sur les deux prochaines semaines je dirais la semaine prochaine en 30
+
+888
+01:13:36,800 --> 01:13:40,700
+minutes et dans deux semaines
+
+889
+01:13:40,700 --> 01:13:49,200
+ça c'est pour la poutine donc ça prend un plan de projet
+
+890
+01:13:49,200 --> 01:13:55,200
+Ça prend des métriques pour pouvoir mesurer l'avancement.
+
+891
+01:13:55,200 --> 01:14:02,600
+C'est super difficile. C'est la partie difficile. C'est là où on peut s'asseoir et vraiment faire une session de travail
+
+892
+01:14:02,600 --> 01:14:08,600
+pour voir ce qui est logique de mettre en place comme métrique au niveau de la sortie.
+
+893
+01:14:08,600 --> 01:14:13,600
+Puis ensuite on verra pour les métriques au niveau à l'intérieur même du traitement.
+
+894
+01:14:13,600 --> 01:14:15,600
+Les métriques subjectives ou métriques automatisables?
+
+895
+01:14:15,600 --> 01:14:21,600
+Les deux. Les métriques subjectifs, il y a beaucoup de valeur là-dedans.
+
+896
+01:14:21,600 --> 01:14:23,600
+Puis on en a besoin. Puis souvent les projets...
+
+897
+01:14:23,600 --> 01:14:25,600
+C'est pas du tout la même chose.
+
+898
+01:14:25,600 --> 01:14:29,600
+Mais il faut pouvoir les mettre puis les mesurer.
+
+899
+01:14:29,600 --> 01:14:30,600
+Les mesurer d'une certaine façon.
+
+900
+01:14:30,600 --> 01:14:36,600
+C'est-à-dire dire on a eu 40 bonnes réponses puis 37 mauvaises.
+
+901
+01:14:36,600 --> 01:14:38,600
+Mais déjà on a quelque chose...
+
+902
+01:14:38,600 --> 01:14:43,600
+quitte à ce qu'on n'ait pas le pourcentage d'erreurs dedans.
+
+903
+01:14:44,400 --> 01:14:50,400
+Mais qu'on puisse monter un tableau qui nous permette de voir comment ça avance par rapport aux différents tests.
+
+904
+01:14:51,200 --> 01:14:55,600
+Parce que vu qu'on va être itératif, ça te permet de mesurer tes régressions.
+
+905
+01:14:56,400 --> 01:14:57,700
+Faut pas que j'aille là.
+
+906
+01:14:58,400 --> 01:15:01,400
+J'ai une petite amélioration ici.
+
+907
+01:15:01,400 --> 01:15:05,600
+est-ce que
+
+908
+01:15:05,600 --> 01:15:10,800
+vous seriez en capacité
+
+909
+01:15:10,800 --> 01:15:12,800
+de peut-être même
+
+910
+01:15:12,800 --> 01:15:13,800
+avec l'aide de
+
+911
+01:15:13,800 --> 01:15:16,600
+établir une proposition de plan
+
+912
+01:15:16,600 --> 01:15:18,400
+de projet
+
+913
+01:15:18,400 --> 01:15:22,200
+je vous parlais
+
+914
+01:15:22,200 --> 01:15:23,900
+mais on travaille en duo
+
+915
+01:15:23,900 --> 01:15:26,600
+une proposition de plan de projet
+
+916
+01:15:26,600 --> 01:15:28,100
+un petit peu et ensuite on va l'affiner
+
+917
+01:15:28,100 --> 01:15:30,800
+on va y ajouter tous les éléments métiers
+
+918
+01:15:30,800 --> 01:15:32,900
+un petit peu spécifiques
+
+919
+01:15:32,900 --> 01:15:34,900
+mais qu'on ait une sorte de squelette.
+
+920
+01:15:34,900 --> 01:15:37,900
+Si vous voulez, vous pouvez...
+
+921
+01:15:37,900 --> 01:15:39,900
+On peut faire une petite réunion à l'U3
+
+922
+01:15:39,900 --> 01:15:42,900
+pour affiner le temps de projet.
+
+923
+01:15:42,900 --> 01:15:45,900
+Juste que je revise, puis voir si j'ai des suggestions ou pas.
+
+924
+01:15:45,900 --> 01:15:51,900
+Ouais, moi j'aurais besoin de suggestions quand ça vient à le G2, le Linux.
+
+925
+01:15:51,900 --> 01:15:53,900
+Ça c'est des détails.
+
+926
+01:15:53,900 --> 01:15:56,900
+Mais justement, c'est le danger de...
+
