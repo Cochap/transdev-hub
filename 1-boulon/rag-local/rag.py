@@ -35,7 +35,11 @@ GLOSS = {
  "coupe-batterie": "master disconnect", "sectionneur": "master disconnect", "urgence": "emergency", "sortie de secours": "emergency exit",
  "toit": "roof hatch", "trappe": "hatch", "siège": "seat", "chauffe-moteur": "block heater coolant heater", "pédale": "pedal",
  "accélérateur": "accelerator throttle", "vitesse": "speed", "compteur": "speedometer gauge", "jauge": "gauge", "carburant": "fuel",
- "électrique": "electric", "électrovanne": "solenoid", "solénoïde": "solenoid", "diode": "diode", "résistance": "resistor",
+ "électrique": "electric", "électrovanne": "solenoid", "stroboscopique": "strobe", "strobe": "strobe", "gyrophare": "strobe beacon",
+ "ampoule": "bulb lamp", "lumière": "light lamp", "lumières": "lights", "feux stop": "stop lamp brake light", "plaque": "license plate",
+ "disjoncteur": "breaker circuit breaker", "disjoncteurs": "breaker", "contrôleur": "controller", "module": "module",
+ "embrayage": "clutch", "ventilo": "fan", "alimentation": "feed power", "alimente": "feeds power", "marche pas": "inoperative",
+ "chauffeur": "driver", "conducteur": "driver", "pin": "cav", "pine": "cav", "plug": "connector", "terre": "ground", "solénoïde": "solenoid", "diode": "diode", "résistance": "resistor",
 }
 COLORS = {"BK","WH","RD","GN","LTGN","DKGN","BL","LTBL","DKBL","OR","YE","BN","GY","PK","VI","TN","PU"}
 OTHER_MAKES = re.compile(r"\b(thomas|blue ?bird|freightliner|saf-?t-?liner|lion ?c?|elion|micro ?bird|girardin|nova ?bus|new ?flyer|prevost|mci)\b", re.I)
@@ -71,6 +75,8 @@ def chunks_from_page(r):
     out.append(("page", "\n".join(summ)))
     for t in r['tables']:
         out.append(("table", head + "\n" + t))
+    if r.get('layout'):  # independent poppler -layout rendering: fallback for anything the table parser missed
+        out.append(("layout", head + "\n" + re.sub(r"[ ]{3,}", "  |  ", r['layout'])[:6000]))
     return out
 
 def load_pages(path=os.path.join(HERE, "pages.jsonl")):
@@ -131,15 +137,26 @@ class Engine:
         """Deterministic answer card: scope guard, retrieval, best table/relay rows, citation. No LLM."""
         if OTHER_MAKES.search(q) and not re.search(r"\bic\b", q, re.I):
             return dict(status="abstain_scope", text="Je n'ai pas cette information : le corpus MVP couvre seulement le manuel IC Bus BE/CE (2016-2024). / I don't have that information for that make.")
-        if INJECTION.search(q):
+        anchored = bool(ELEC_ANCHOR.search(q))
+        if INJECTION.search(q) and not (anchored and not OVERRIDE.search(q) and re.search(r"\b(switch|interrupteur|relay|relais|circuit)\b", q, re.I)):
             return dict(status="abstain_refuse", text="Je réponds seulement à partir des manuels approuvés, avec citation. Je ne peux pas ignorer ces règles ni expliquer comment contourner un dispositif de sécurité. / I only answer from the approved manuals and cannot bypass safety devices.")
-        if OUT_OF_DOMAIN.search(q):
+        if OUT_OF_DOMAIN.search(q) and not anchored:
             return dict(status="abstain_domain", text="Je n'ai pas cette information : le manuel IC disponible est un manuel de schémas électriques (fusibles, relais, connecteurs, fils). Il ne contient pas de couples de serrage, capacités, pressions ni procédures mécaniques. / Not in the electrical circuit manual.")
-        routed = self.route_connector(q) or self.route_fuse(q) or self.route_relay_slot(q)
-        if routed: return routed
+        routes = [r_ for r_ in (self.route_connector(q), self.route_fuse(q), self.route_relay_slot(q)) if r_]
         hits = self.search(q, k, mode=mode)
-        if not hits or self.low_confidence(q, hits):
+        if not routes and (not hits or self.low_confidence(q, hits)):
             return dict(status="abstain_low", text="Je n'ai pas cette information dans le manuel IC. / I don't have that information.", hits=hits)
+        if not self.unit_evidence(q, hits, routes):
+            return dict(status="abstain_value", text="Je n'ai pas cette valeur dans le manuel IC (aucune valeur avec cette unité dans les pages trouvées). / That value is not printed in the IC manual.", hits=hits)
+        if routes:
+            # routes ADD precise rows; retrieval still supplies context (routes alone were too greedy on the blind set)
+            rp = []
+            for r_ in routes:
+                for h in r_['hits'][:2]:
+                    if h['pdf_page'] not in rp: rp.append(h['pdf_page'])
+            merged = [dict(pdf_page=p, score=1.0, chunk="\n".join(t for pp, _, t in self.chunks if pp == p), kind="routed", bm25=None) for p in rp[:3]]
+            merged += [h for h in hits if h['pdf_page'] not in rp][:max(0, k - len(merged))]
+            hits = merged
         qx = expand_query(q); qt = set(tokens(qx)); strong = {t for t in qt if re.search(r"\d", t)} | {t for t in qt if t not in self.STOP and len(t) > 2}
         cav = re.search(r"(?:cavity|cavit[ée]|cav|pin|broche)\s*#?\s*([a-z]?\d{1,2}[a-z]?)\b", q, re.I)
         cand = []
@@ -162,9 +179,25 @@ class Engine:
             if part in seen: continue
             seen.add(part); rows.append(f"{part}  [PDF p.{p}]")
             if len(rows) >= 4: break
+        rrows = [x for r_ in routes for x in r_['rows']]
+        rows = list(dict.fromkeys(rrows + rows))[:8]
         top = hits[0]; r = self.pages[top['pdf_page']]
         cite = f"{MANUAL}, §{r['section']} « {r['title']} », page imprimée {r['printed_page']} (PDF p. {r['pdf_page']})"
-        return dict(status="answer", rows=rows, citation=cite, hits=hits)
+        return dict(status="answer", rows=rows, citation=cite, hits=hits, route="+".join(r_['route'] for r_ in routes) or None)
+
+    UNITS = {"ohm": r"\d\s*(?:OHMS?|Ω|K?OHM)", "ohms": r"\d\s*(?:OHMS?|Ω)", "résistance": r"\d\s*(?:OHMS?|Ω)", "resistance": r"\d\s*(?:OHMS?|Ω)",
+             "volt": r"\d\s*V(?:OLTS?|DC)?\b", "volts": r"\d\s*V(?:OLTS?|DC)?\b", "voltage": r"\d\s*V(?:OLTS?|DC)?\b", "tension": r"\d\s*V(?:OLTS?|DC)?\b",
+             "°c": r"\d\s*°?\s*C\b", "degrees": r"\d\s*°"}
+    def unit_evidence(self, q, hits, routes):
+        """Value questions (ohms, volts, temperatures): the unit must be printed near a query term in retrieved context; else abstain."""
+        ql = q.lower(); need = [rx for u, rx in self.UNITS.items() if re.search(r"(?<![a-zà-ÿ])" + re.escape(u) + r"(?![a-zà-ÿ])", ql)]
+        if not need: return True
+        qt = {t for t in tokens(expand_query(q)) if t in self.vocab and t not in self.STOP and t not in GENERIC and len(t) > 2}
+        for h in hits[:3]:
+            for line in h['chunk'].split(chr(10)):
+                if any(re.search(rx, line, re.I) for rx in need) and (qt & set(tokens(line))):
+                    return True
+        return False
 
     def route_connector(self, q):
         """Structured lookup: connector id (5 digits) + cavity/wire code -> exact rows from that connector's composite tables."""
@@ -256,7 +289,9 @@ class Engine:
         return len(overlap) == 0 or (len(qt) >= 3 and len(overlap) / len(qt) < 0.34)
 
 INJECTION = re.compile(r"(ignore|oublie|forget|disregard).{0,30}(instruction|consigne|rule|règle)|developer mode|mode développeur|\b(bypass|contourner|désactiver la sécurité|shunt(er)? (le|la|the) (sécurité|safety|interlock))\b", re.I)
-OUT_OF_DOMAIN = re.compile(r"\b(torque|couple de serrage|couple|lug nut|écrou|huile|oil|lubricant|graisse|grease|capacity|capacité|pressure|pression|tire|pneu|pneus|brake pads?|plaquettes?|garnitures?|pushrod|course de tige|replace|remplacer|démonter|remove the|install the|téléphone|phone number|concessionnaire|dealer|price|prix|warranty|garantie|interval|intervalle|vidange)\b", re.I)
+ELEC_ANCHOR = re.compile(r"\b(sensor|sender|switch|connector|wire|wiring|wired|circuit|fuse|amp|relay|pin|cavity|splice|harness|solenoid|capteur|sonde|interrupteur|connecteur|fil|fils|fusible|relais|broche|cavité|faisceau)\b", re.I)
+OVERRIDE = re.compile(r"(ignore|oublie|forget|disregard).{0,30}(instruction|consigne|rule|règle)|developer mode|mode développeur|how (do|can) i bypass|comment contourner", re.I)
+OUT_OF_DOMAIN = re.compile(r"\b(clear(ing)? (the )?(fault )?codes?|effacer|efface|reset (the )?codes?|réinitialiser|à quelle fréquence|how often|torque|couple de serrage|couple|lug nut|écrou|huile|oil|lubricant|graisse|grease|capacity|capacité|pressure|pression|tire|pneu|pneus|brake pads?|plaquettes?|garnitures?|pushrod|course de tige|replace|remplacer|démonter|remove the|install the|téléphone|phone number|concessionnaire|dealer|price|prix|warranty|garantie|interval|intervalle|vidange)\b", re.I)
 
 GENERIC = {"how","does","do","can","bus","autobus","the","what","where","when","replace","use","utiliser","quoi","comment","with","from","and","pour","une","des","est","quel","quelle","quels","sont","dans","this","that","your","you","answer","question","manual","manuel","page","general","knowledge"}
 

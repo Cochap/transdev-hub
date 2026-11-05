@@ -1,0 +1,645 @@
+{
+ "version": "blind-v0",
+ "created": "2026-11-05",
+ "author": "blind subagent, images only",
+ "questions": [
+  {
+   "id": "B01",
+   "lang": "en",
+   "type": "table",
+   "ask": "What bulb trade number do I need for the back-up light?",
+   "answer": "GE1156 (32 CP) - lamp bulb chart, printed p.10",
+   "must_contain": [
+    "GE1156"
+   ],
+   "pages": [
+    50
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B02",
+   "lang": "fr",
+   "type": "table",
+   "ask": "C'est quoi l'ampoule pour les feux stop / clignotant / arrière / plaque?",
+   "answer": "3157 (32/3 CP) - printed p.10",
+   "must_contain": [
+    "3157"
+   ],
+   "pages": [
+    50
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B03",
+   "lang": "en",
+   "type": "symptom",
+   "ask": "No power to the stop arm (front and rear stop arm), which fuse feeds the stop arm power connector?",
+   "answer": "Fuse F38 (10304) via circuit B119 16GY to stop arm power connector 10359 cavity A; switched by stop arm relay 10310 - printed p.417",
+   "must_contain": [
+    "F38"
+   ],
+   "pages": [
+    457
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B04",
+   "lang": "en",
+   "type": "table",
+   "ask": "On the MTA electrical panel, where is the stop arm relay located?",
+   "answer": "Relay block 10310-B5, position R1 = STOP ARM RELAY - printed p.28",
+   "must_contain": [
+    "10310",
+    "R1"
+   ],
+   "pages": [
+    68
+   ],
+   "option_note": "MTA fuse block (W/0508108)"
+  },
+  {
+   "id": "B05",
+   "lang": "fr",
+   "type": "table",
+   "ask": "Le relais des feux de recul sur le panneau MTA, il est où?",
+   "answer": "Bloc relais 10308-B11, position R2 = BACK UP LIGHTS RELAY - printed p.28",
+   "must_contain": [
+    "10308",
+    "R2"
+   ],
+   "pages": [
+    68
+   ],
+   "option_note": "MTA fuse block (W/0508108)"
+  },
+  {
+   "id": "B06",
+   "lang": "fr",
+   "type": "symptom",
+   "ask": "Les feux de recul marchent pas sur un bus Eaton avec ISB 2017, c'est quel fusible pis quel relais?",
+   "answer": "Fuse F20 (1011) feeding the backup light relay #R4 (1011); also back up light check relay (1016) - printed p.478",
+   "must_contain": [
+    "F20",
+    "R4"
+   ],
+   "pages": [
+    518
+   ],
+   "option_note": "Non-MTA fuse block (N/0508108)"
+  },
+  {
+   "id": "B07",
+   "lang": "en",
+   "type": "table",
+   "ask": "What breaker rating is used for the parking brake buzzer with Bendix on the MTA panel?",
+   "answer": "Breaker 23, 30A (parking brake buzzer W/Bendix); 10A is N/Bendix - printed p.32",
+   "must_contain": [
+    "30A"
+   ],
+   "pages": [
+    72
+   ],
+   "option_note": "MTA fuse block (W/0508108)"
+  },
+  {
+   "id": "B08",
+   "lang": "fr",
+   "type": "table",
+   "ask": "Sur le bloc fusibles du harnais platform (pas MTA), le F7 c'est pour quoi?",
+   "answer": "F7 = BAT KEY SWITCH - printed p.34",
+   "must_contain": [
+    "KEY SWITCH"
+   ],
+   "pages": [
+    74
+   ],
+   "option_note": "N/0508108 not MTA fuse block"
+  },
+  {
+   "id": "B09",
+   "lang": "en",
+   "type": "table",
+   "ask": "Which fuse on the platform harness fuse block is the ignition feed for the back-up lights?",
+   "answer": "F20 IGN BACK-UP LIGHTS - printed p.34",
+   "must_contain": [
+    "F20"
+   ],
+   "pages": [
+    74
+   ],
+   "option_note": "N/0508108 not MTA fuse block"
+  },
+  {
+   "id": "B10",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "Master disconnect circuit (MTA): what wire runs from ACC 1 relay pin 87 to fuse B12-F, color and gauge?",
+   "answer": "B12HL 10BK - printed p.61",
+   "must_contain": [
+    "B12HL",
+    "10BK"
+   ],
+   "pages": [
+    101
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B11",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "Sur le master disconnect (bloc pas MTA), le relais 3 du master disconnect alimente quels fusibles?",
+   "answer": "Master disconnect relay 3 (10320) feeds fuse F20 via B12E 12BK and fuse F23 via B12F 10BK (10302) - printed p.152",
+   "must_contain": [
+    "F20",
+    "F23"
+   ],
+   "pages": [
+    192
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B12",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "On the 2017 ISB with WTEC trans, which pins on the 500K diagnostic connector are J1939 high and low?",
+   "answer": "Pin C = J1939+ (A5M(+) 18YL), pin D = J1939- (A5M(-) 18GN), connector 1651 - printed p.187",
+   "must_contain": [
+    "C",
+    "D",
+    "A5M"
+   ],
+   "pages": [
+    227
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B13",
+   "lang": "en",
+   "type": "symptom",
+   "ask": "Key switch has no battery feed on the 2017 ISB diesel, what fuse and wire feed it?",
+   "answer": "Fuse F7 (1011) via wire A15 16RD to key switch (1100) cavity A - printed p.213",
+   "must_contain": [
+    "F7",
+    "A15"
+   ],
+   "pages": [
+    253
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B14",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "Le câble de l'alternateur (borne B) vers le démarreur, c'est quoi le numéro pis la grosseur?",
+   "answer": "K2B 1RD, then fusible link K2BA-FL 6TN to starter power (6313) - printed p.213",
+   "must_contain": [
+    "K2B",
+    "1RD"
+   ],
+   "pages": [
+    253
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B15",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "Seat belt alarm switch: which wire goes to the body controller and on which pin?",
+   "answer": "A79 18GY to J3-RED body controller (1600) pin A3 (seat belt alarm I/P); other side A9BB 18GY to zero volt reference - printed p.230",
+   "must_contain": [
+    "A79",
+    "A3"
+   ],
+   "pages": [
+    270
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B16",
+   "lang": "fr",
+   "type": "multipage",
+   "ask": "Sur le schéma du bras d'arrêt (feuille 1A), le fil B119P part vers le 'stop arm extend' CH9_03. Sur cette feuille-là, il arrive sur quelle cavité?",
+   "answer": "B119P 16GY arrives at stop arm extend connector 10358A cavity A (CH9_03), splices to B119D to stop arm relay 10310 - printed p.417 and p.419",
+   "must_contain": [
+    "10358A",
+    "A"
+   ],
+   "pages": [
+    457,
+    459
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B17",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "On the stop arm extend sheet, what wire goes to the crossing gate relay with the MTA fuse block?",
+   "answer": "!B119L 16GY from 10358A cavity E to crossing gate relay 10313-R1 (CH9_06) - printed p.419",
+   "must_contain": [
+    "B119L",
+    "10313"
+   ],
+   "pages": [
+    459
+   ],
+   "option_note": "! = W/0508108 MTA fuse block"
+  },
+  {
+   "id": "B18",
+   "lang": "fr",
+   "type": "symptom",
+   "ask": "Le fan clutch embraye pas sur un ISB 2017 / B6.7, c'est quel fusible pis quel relais?",
+   "answer": "Fan fuse (4115) 10A and fan drive relay (4116); IGN fan fuse (4111) 20A with IGN fan relay (4014) - printed p.444",
+   "must_contain": [
+    "4115",
+    "10A",
+    "4116"
+   ],
+   "pages": [
+    484
+   ],
+   "option_note": "# W/electric clutch fan W/BCM 4th gen"
+  },
+  {
+   "id": "B19",
+   "lang": "en",
+   "type": "symptom",
+   "ask": "Turn signals not working on a bus with the remote hazard switch: which body controller inputs and wires should I check?",
+   "answer": "J3-RED body controller (1600): A7 left turn signal input (A56B 18OR), A6 right turn signal input (A57B 18OR) - printed p.502",
+   "must_contain": [
+    "A7",
+    "A6"
+   ],
+   "pages": [
+    542
+   ],
+   "option_note": "MTA fuse block (W/0508108)"
+  },
+  {
+   "id": "B20",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "La résistance de terminaison du Bendix Fusion 3, c'est combien d'ohms?",
+   "answer": "120 ohms, terminating resistor (19390) - printed p.575",
+   "must_contain": [
+    "120"
+   ],
+   "pages": [
+    615
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B21",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "Child Checkmate / Theft Mate with snooze and lift: which fuse powers the Theft Mate red dot?",
+   "answer": "Fuse F3 (30304) via B13A 18PK - printed p.800",
+   "must_contain": [
+    "F3",
+    "B13A"
+   ],
+   "pages": [
+    840
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B22",
+   "lang": "en",
+   "type": "table",
+   "ask": "Next gen hydraulic park brake wheelchair relay: what circuit is on cavity 5?",
+   "answer": "KA122A, 18 GY - printed p.890",
+   "must_contain": [
+    "KA122A"
+   ],
+   "pages": [
+    930
+   ],
+   "option_note": "# = N/0508108 not MTA fuse block W/F-2017-ISB-engine & F-2018 propane/gasoline"
+  },
+  {
+   "id": "B23",
+   "lang": "fr",
+   "type": "table",
+   "ask": "Le relais de la valve de drain auto, il est où pis c'est quoi le fil sur la cavité 3 avec un ISB 2017?",
+   "answer": "Left side of vehicle at flasher plate (%1018); cav 3 = A39D 16 GY (terminal 1661709C1) - printed p.907",
+   "must_contain": [
+    "A39D",
+    "flasher plate"
+   ],
+   "pages": [
+    947
+   ],
+   "option_note": "* = W/F-2017-ISB-ENG"
+  },
+  {
+   "id": "B24",
+   "lang": "en",
+   "type": "table",
+   "ask": "Emergency exit relay, cavity 2, on a propane/gasoline engine bus: circuit, gauge, color?",
+   "answer": "A117E, 16 GA, GY - printed p.907",
+   "must_contain": [
+    "A117E",
+    "16"
+   ],
+   "pages": [
+    947
+   ],
+   "option_note": "# = W/F-2018-PROPANE/GASOLINE-ENG"
+  },
+  {
+   "id": "B25",
+   "lang": "fr",
+   "type": "table",
+   "ask": "Connecteur feu stop #1, cavité C, avec ABS-8 ESP/Wingman/Fusion: quel fil?",
+   "answer": "A70CA 16 GY - printed p.991",
+   "must_contain": [
+    "A70CA",
+    "16"
+   ],
+   "pages": [
+    1031
+   ],
+   "option_note": "# = W/Bendix ABS-8 W/ESP/Wingman/Fusion (* ABS-6 & ABS-8 = 18 OR)"
+  },
+  {
+   "id": "B26",
+   "lang": "en",
+   "type": "table",
+   "ask": "Redundant power fuse holder in the engine compartment: what's on cavity A?",
+   "answer": "M14HA, 8 GA, RD (4041A) - printed p.1016",
+   "must_contain": [
+    "M14HA",
+    "8"
+   ],
+   "pages": [
+    1056
+   ],
+   "option_note": "* = common for vehicle W/0508108 MTA and N/0508108 not MTA W/F-2017-ISB, F-2021-B6.7"
+  },
+  {
+   "id": "B27",
+   "lang": "en",
+   "type": "table",
+   "ask": "Haldex drain valve on a propane/gas bus: circuit on cavity A?",
+   "answer": "M39B 14 BK (*9527) - printed p.1104",
+   "must_contain": [
+    "M39B"
+   ],
+   "pages": [
+    1148
+   ],
+   "option_note": "* = common W/0508108 MTA and N/0508108 not MTA W/F-2018-PROP/GAS-ENG"
+  },
+  {
+   "id": "B28",
+   "lang": "fr",
+   "type": "table",
+   "ask": "L'alarme frein de stationnement pas mis (park brake not set alarm), quel fil sur la cavité 1?",
+   "answer": "A79B 16 RD (*9999) - printed p.1122",
+   "must_contain": [
+    "A79B",
+    "RD"
+   ],
+   "pages": [
+    1166
+   ],
+   "option_note": "* = common for vehicle W/ MTA and N/ MTA fuse block"
+  },
+  {
+   "id": "B29",
+   "lang": "en",
+   "type": "table",
+   "ask": "LH rear cap ground splice: what's on cavity A and what gauge?",
+   "answer": "D11-GA, 10 GA, WH (%10160) - printed p.1155",
+   "must_contain": [
+    "D11-GA",
+    "10"
+   ],
+   "pages": [
+    1199
+   ],
+   "option_note": "% = common W/0508108 MTA and N/0508108 not MTA"
+  },
+  {
+   "id": "B30",
+   "lang": "fr",
+   "type": "table",
+   "ask": "C'est quoi le fusible pour le chauffage du chauffeur dans le bloc fusible au flasher plate (10301)?",
+   "answer": "F1, 20A, cavities A1,B1 - printed p.1184",
+   "must_contain": [
+    "F1",
+    "20A"
+   ],
+   "pages": [
+    1228
+   ],
+   "option_note": "@@ = N/0508108 not MTA fuse block"
+  },
+  {
+   "id": "B31",
+   "lang": "en",
+   "type": "symptom",
+   "ask": "Hazard flashers are dead (non-MTA fuse block at the flasher plate). Which fuse and rating?",
+   "answer": "F27 HAZARD LIGHTS 3A, fuse block 10303 - printed p.1191",
+   "must_contain": [
+    "F27",
+    "3A"
+   ],
+   "pages": [
+    1235
+   ],
+   "option_note": "@@ = N/0508108 not MTA fuse block"
+  },
+  {
+   "id": "B32",
+   "lang": "fr",
+   "type": "symptom",
+   "ask": "Le capteur de recul (reverse motion sensor) marche pas, c'est quel fusible?",
+   "answer": "F33 REVERSE MOTION SENSOR 5A, fuse block 10303 - printed p.1191",
+   "must_contain": [
+    "F33",
+    "5A"
+   ],
+   "pages": [
+    1235
+   ],
+   "option_note": "@@ = N/0508108 not MTA fuse block"
+  },
+  {
+   "id": "B33",
+   "lang": "fr",
+   "type": "symptom",
+   "ask": "La lumière stroboscopique fonctionne pas, quel fusible je check au bloc fusible du flasher plate?",
+   "answer": "F62 STROBE LIGHT 7.5A, fuse block 10306 - printed p.1198",
+   "must_contain": [
+    "F62",
+    "7.5A"
+   ],
+   "pages": [
+    1242
+   ],
+   "option_note": "@@ = N/0508108 not MTA fuse block"
+  },
+  {
+   "id": "B34",
+   "lang": "en",
+   "type": "multipage",
+   "ask": "Relay block 10310 at the flasher plate: which cavities hold the stop arm relay, and with a front stop arm what circuit is in A1?",
+   "answer": "Stop arm relay at A1,A2,B1,B2 (sheet 15C); A1# = B119B 18 GY (sheet 15A, chart continued on 15B/15C) - printed p.1213 and p.1215",
+   "must_contain": [
+    "A1",
+    "B119B"
+   ],
+   "pages": [
+    1257,
+    1259
+   ],
+   "option_note": "# = W/FRONT STOP ARM; @@ = N/0508108 not MTA"
+  },
+  {
+   "id": "B35",
+   "lang": "fr",
+   "type": "multipage",
+   "ask": "Sur le panneau MTA, la feuille des fusibles A1 dit de voir une autre feuille pour les ratings. C'est quelle feuille, pis le breaker stop arm/crossing gate c'est combien?",
+   "answer": "Refer sheet AE08090653_032; breaker 16 = 7.5A STOP ARM/CROSSING GATE - printed p.28 and p.32",
+   "must_contain": [
+    "032",
+    "7.5A"
+   ],
+   "pages": [
+    68,
+    72
+   ],
+   "option_note": "MTA fuse block (W/0508108)"
+  },
+  {
+   "id": "B36",
+   "lang": "en",
+   "type": "table",
+   "ask": "Where is the heated air seat connector and what's on cavity B?",
+   "answer": "Located at electrical panel (&10368); cav B = B105 16 LTGN - printed p.1255",
+   "must_contain": [
+    "B105",
+    "LTGN"
+   ],
+   "pages": [
+    1299
+   ],
+   "option_note": "& = common W/0508108 MTA and N/0508108 not MTA"
+  },
+  {
+   "id": "B37",
+   "lang": "fr",
+   "type": "table",
+   "ask": "La lumière de direction latérale avant de la roue arrière (side dir lt 10779), pin A c'est quoi?",
+   "answer": "F57J 18 LTGN, located at body - printed p.1374",
+   "must_contain": [
+    "F57J"
+   ],
+   "pages": [
+    1418
+   ],
+   "option_note": "@ = common W/MTA and N/MTA W/5,7,9,11 RH WDO"
+  },
+  {
+   "id": "B38",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "Sur la charge AC haute tension (PB10E00), la mise à la terre du chargeur OBC c'est quel fil?",
+   "answer": "12YL/GN from OBC J1 cavity G to frame ground - printed p.1477",
+   "must_contain": [
+    "12YL/GN"
+   ],
+   "pages": [
+    1523
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B39",
+   "lang": "en",
+   "type": "table",
+   "ask": "EV booster pump switch at the driver control panel: what's on cavity 2?",
+   "answer": "B62GF 18 GY (10255A) - printed p.1519",
+   "must_contain": [
+    "B62GF"
+   ],
+   "pages": [
+    1565
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "B40",
+   "lang": "en",
+   "type": "refuse",
+   "ask": "What's the resistance spec of the stop arm solenoid (10219) when cold?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "B41",
+   "lang": "fr",
+   "type": "refuse",
+   "ask": "C'est quoi le fusible du bras d'arrêt sur un Blue Bird Vision 2019?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "B42",
+   "lang": "en",
+   "type": "refuse",
+   "ask": "What torque do I put on the battery terminal / power stud nuts?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "B43",
+   "lang": "fr",
+   "type": "refuse",
+   "ask": "L'alternateur doit sortir combien d'ampères au ralenti pour être correct?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "B44",
+   "lang": "en",
+   "type": "refuse",
+   "ask": "How many ohms should the coolant temperature sensor read at 80 C on the ISB?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "B45",
+   "lang": "fr",
+   "type": "refuse",
+   "ask": "Comment on efface les codes de défaut J1939 du module Allison avec l'outil de diag?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  }
+ ]
+}

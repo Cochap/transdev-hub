@@ -50,6 +50,12 @@ def page_record(d,i):
         n_table_rows=sum(len(t['rows']) for t in tabs),relay_slots=relays,label_groups=cl,text=body)
 if __name__=='__main__':
     src,out=sys.argv[1],sys.argv[2]; d=pymupdf.open(src); t0=time.time()
+    lay=open(sys.argv[3],encoding='utf-8',errors='replace').read().split('\f') if len(sys.argv)>3 else None
     with open(out,'w',encoding='utf-8') as f:
-        for i in range(d.page_count): f.write(json.dumps(page_record(d,i),ensure_ascii=False)+'\n')
+        for i in range(d.page_count):
+            r=page_record(d,i)
+            if lay:
+                r['layout']='\n'.join(l.rstrip() for l in lay[i].split('\n')
+                                      if l.strip() and l.strip() not in BOILER and 'RESTRICTED BASIS' not in l and 'DETRIMENTAL' not in l)
+            f.write(json.dumps(r,ensure_ascii=False)+'\n')
     print('pages',d.page_count,'secs',round(time.time()-t0))

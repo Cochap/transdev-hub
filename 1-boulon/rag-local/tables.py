@@ -1,5 +1,5 @@
 import re
-HDR={'CAV','CIRCUIT','GA','COLOR','TERMINAL','SEAL/SLV','FUSE','RELAY','DESCRIPTION','LOCATION','RATING','WIRE','R/D','FUSE/RELAY','RATING(A)','CONNECTED','BREAKERS','NOTES','CURRENT'}
+HDR={'CAV','CIRCUIT','GA','GAUGE','COLOR','TERMINAL','SEAL/SLV','FUSE','RELAY','DESCRIPTION','LOCATION','RATING','WIRE','R/D','FUSE/RELAY','RATING(A)','CONNECTED','BREAKERS','NOTES','CURRENT'}
 CAVRE=re.compile(r'^[A-Z]{0,2}\d{0,3}[A-Z]?[!*#&%$+@^?]*(-[A-Z]{0,2}\d{1,3})?$')
 NOTE=('@','*','#','!','&','%','$','+')
 def lines_of(ws,tol=2.0):
@@ -34,7 +34,9 @@ def extract(p):
     for i,r in enumerate(rows):
         hdr=[w for w in r['w'] if w[4].upper() in HDR]
         if len(hdr)<3: continue
-        for g in _groups(hdr):
+        GG=_groups(hdr)
+        for gi,g in enumerate(GG):
+            nxt=GG[gi+1][0][0] if gi+1<len(GG) else None
             m=[g[0]]
             for w in g[1:]:
                 if (m[-1][4],w[4]) in (('CURRENT','RATING'),('FUSE','DESCRIPTION')) and w[0]-m[-1][2]<12: m[-1]=(m[-1][0],min(m[-1][1],w[1]),w[2],max(m[-1][3],w[3]),m[-1][4]+' '+w[4])+tuple(m[-1][5:])
@@ -42,9 +44,16 @@ def extract(p):
             g=m
             cols=[w[4] for w in g]; xs=[w[0] for w in g]; cs=[(w[0]+w[2])/2 for w in g]
             left=g[0][0]-15; right=g[-1][2]+45
+            if nxt is not None: right=min(right,nxt-3)          # side-by-side table on the same header row
+            if VL is None: VL=vlines(p)
+            # own right border: nearest vertical rule right of the last header that crosses the header row
+            rb=[x for (x,a,b) in VL if g[-1][2]-1<=x<=g[-1][2]+60 and a-2<=r['yc']<=b+2]
+            if rb: right=min(right,min(rb)+1)
+            lb=[x for (x,a,b) in VL if g[0][0]-40<=x<=g[0][0]+1 and a-2<=r['yc']<=b+2]
+            lclip=max(lb)-1 if lb else left-30
             body=[]; notes=[]; lasty=r['yc']; rh=None; innotes=False
             for r2 in rows[i+1:]:
-                ins=[w for w in r2['w'] if left-30<=w[0]<=right]
+                ins=[w for w in r2['w'] if max(left-30,lclip)<=w[0] and w[2]<=right+2]
                 if not ins:
                     if r2['yc']-lasty>(rh or 12)*2.5: break
                     continue
@@ -85,7 +94,9 @@ def extract(p):
                             if m and not c[-1]: c[-1]=m.group(1); c[-2]=c[-2][:m.start()]
                             m=re.search(r'^(.*?)\s*(\d+(?:\.\d+)?A)$',c[-1])
                             if m and m.group(1): c[-2]=(c[-2]+' '+m.group(1)).strip(); c[-1]=m.group(2)
-                            if c[-1] and not re.match(r'^\d+(\.\d+)?A$',c[-1]): c[-2]=(c[-2]+' '+c[-1]).strip(); c[-1]=''
+                            mm=re.search(r'\s([\d.]+A?/)$',c[-2])
+                            if mm and c[-1]: c[-1]=mm.group(1)+c[-1]; c[-2]=c[-2][:mm.start()]
+                            if c[-1] and not re.match(r'^[\d.]+A?(/[\d.]+A?)*$',c[-1]): c[-2]=(c[-2]+' '+c[-1]).strip(); c[-1]=''
                 for j,cn in enumerate(cols[:-1]):
                     if 'RATING' in cn:
                         for c in body:
