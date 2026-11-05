@@ -1,0 +1,678 @@
+[
+{
+"id": "C01",
+"type": "symptom",
+"lang": "fr",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+1493,
+303,
+302,
+70,
+304
+],
+"want": [
+70
+],
+"route": null
+},
+{
+"id": "C02",
+"type": "symptom",
+"lang": "en",
+"ok": false,
+"page": false,
+"status": "abstain_low"
+},
+{
+"id": "C03",
+"type": "symptom",
+"lang": "fr",
+"ok": false,
+"page": false,
+"status": "abstain_low"
+},
+{
+"id": "C04",
+"type": "table",
+"lang": "en",
+"ok": false,
+"page": false,
+"miss": [
+"A6-H"
+],
+"got": [
+1242,
+775,
+771,
+69,
+71
+],
+"want": [
+70
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C05",
+"type": "table",
+"lang": "fr",
+"ok": false,
+"page": false,
+"miss": [
+"B9-R",
+"ACC2"
+],
+"got": [
+1241,
+279,
+432,
+651,
+282
+],
+"want": [
+66
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C06",
+"type": "symptom",
+"lang": "en",
+"ok": false,
+"page": false,
+"miss": [
+"NS1"
+],
+"got": [
+1228,
+771,
+775,
+867,
+1535
+],
+"want": [
+66
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C07",
+"type": "symptom",
+"lang": "fr",
+"ok": false,
+"page": false,
+"status": "abstain_low"
+},
+{
+"id": "C08",
+"type": "symptom",
+"lang": "en",
+"ok": false,
+"page": false,
+"miss": [
+"B6-M",
+"ACC2"
+],
+"got": [
+1231,
+1235,
+682,
+434,
+432
+],
+"want": [
+67
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C09",
+"type": "symptom",
+"lang": "fr",
+"ok": false,
+"page": false,
+"status": "abstain_low"
+},
+{
+"id": "C10",
+"type": "symptom",
+"lang": "en",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+1231,
+904,
+68,
+67,
+66
+],
+"want": [
+67
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C11",
+"type": "diagram",
+"lang": "en",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+143,
+274,
+142,
+272,
+276
+],
+"want": [
+143
+],
+"route": null
+},
+{
+"id": "C12",
+"type": "diagram",
+"lang": "fr",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+165,
+229,
+166,
+222,
+224
+],
+"want": [
+165
+],
+"route": null
+},
+{
+"id": "C13",
+"type": "diagram",
+"lang": "en",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+169,
+519,
+231,
+520,
+212
+],
+"want": [
+169
+],
+"route": null
+},
+{
+"id": "C14",
+"type": "diagram",
+"lang": "fr",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+1239,
+269,
+933,
+468,
+175
+],
+"want": [
+269
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C15",
+"type": "diagram",
+"lang": "en",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+310,
+309,
+378,
+431,
+425
+],
+"want": [
+310
+],
+"route": null
+},
+{
+"id": "C16",
+"type": "multipage",
+"lang": "fr",
+"ok": false,
+"page": true,
+"miss": [
+"7.5/10A",
+"MD3"
+],
+"got": [
+1228,
+1231,
+310,
+309,
+84
+],
+"want": [
+310,
+67
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C17",
+"type": "diagram",
+"lang": "en",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+1239,
+1242,
+416,
+410,
+409
+],
+"want": [
+416
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C18",
+"type": "diagram",
+"lang": "fr",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+1231,
+1235,
+398,
+396,
+182
+],
+"want": [
+398
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C19",
+"type": "diagram",
+"lang": "en",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+479,
+480,
+477,
+478,
+483
+],
+"want": [
+479
+],
+"route": null
+},
+{
+"id": "C20",
+"type": "diagram",
+"lang": "fr",
+"ok": false,
+"page": false,
+"miss": [
+"78"
+],
+"got": [
+884,
+887,
+885,
+905,
+484
+],
+"want": [
+479
+],
+"route": null
+},
+{
+"id": "C21",
+"type": "diagram",
+"lang": "fr",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+578,
+1513,
+538,
+663,
+537
+],
+"want": [
+578
+],
+"route": null
+},
+{
+"id": "C22",
+"type": "diagram",
+"lang": "en",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+1231,
+1235,
+578,
+577,
+684
+],
+"want": [
+578
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C23",
+"type": "diagram",
+"lang": "fr",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+620,
+619,
+246,
+198,
+1033
+],
+"want": [
+619
+],
+"route": null
+},
+{
+"id": "C24",
+"type": "diagram",
+"lang": "en",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+654,
+657,
+686,
+659,
+683
+],
+"want": [
+654
+],
+"route": null
+},
+{
+"id": "C25",
+"type": "multipage",
+"lang": "fr",
+"ok": true,
+"page": false,
+"miss": [],
+"got": [
+1228,
+1235,
+679,
+653,
+656
+],
+"want": [
+654,
+66
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C26",
+"type": "multipage",
+"lang": "en",
+"ok": false,
+"page": true,
+"miss": [
+"NOTE 4"
+],
+"got": [
+1239,
+718,
+717,
+809,
+895
+],
+"want": [
+717,
+66
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C27",
+"type": "multipage",
+"lang": "fr",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+1228,
+897,
+692,
+66,
+100
+],
+"want": [
+897,
+66
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C28",
+"type": "multipage",
+"lang": "en",
+"ok": false,
+"page": true,
+"miss": [
+"NOTE 20",
+"MD1"
+],
+"got": [
+1228,
+1242,
+858,
+861,
+859
+],
+"want": [
+859,
+67
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C29",
+"type": "multipage",
+"lang": "fr",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+1228,
+1467,
+1533,
+1497,
+1498
+],
+"want": [
+1533,
+1467
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C30",
+"type": "multipage",
+"lang": "en",
+"ok": false,
+"page": true,
+"miss": [
+"POST TRIP INSPECTION",
+"NOTE 7"
+],
+"got": [
+1242,
+816,
+819,
+817,
+800
+],
+"want": [
+816,
+66
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C31",
+"type": "table",
+"lang": "en",
+"ok": true,
+"page": false,
+"miss": [],
+"got": [
+1438,
+871,
+1491,
+870,
+865
+],
+"want": [
+1116
+],
+"route": "connector_name"
+},
+{
+"id": "C32",
+"type": "table",
+"lang": "fr",
+"ok": true,
+"page": true,
+"miss": [],
+"got": [
+604,
+1134,
+603,
+565,
+1562
+],
+"want": [
+1134
+],
+"route": null
+},
+{
+"id": "C33",
+"type": "table",
+"lang": "en",
+"ok": true,
+"page": false,
+"miss": [],
+"got": [
+1452,
+372,
+371,
+49,
+776
+],
+"want": [
+987
+],
+"route": "connector_name"
+},
+{
+"id": "C34",
+"type": "table",
+"lang": "fr",
+"ok": false,
+"page": false,
+"miss": [
+"K97KB"
+],
+"got": [
+1241,
+146,
+145,
+543,
+541
+],
+"want": [
+1065
+],
+"route": "fuse_lookup"
+},
+{
+"id": "C35",
+"type": "refuse",
+"lang": "en",
+"ok": true,
+"status": "abstain_domain"
+},
+{
+"id": "C36",
+"type": "refuse",
+"lang": "fr",
+"ok": true,
+"status": "abstain_value"
+},
+{
+"id": "C37",
+"type": "refuse",
+"lang": "en",
+"ok": true,
+"status": "abstain_domain"
+},
+{
+"id": "C38",
+"type": "refuse",
+"lang": "fr",
+"ok": true,
+"status": "abstain_scope"
+},
+{
+"id": "C39",
+"type": "refuse",
+"lang": "en",
+"ok": true,
+"status": "abstain_value"
+},
+{
+"id": "C40",
+"type": "refuse",
+"lang": "fr",
+"ok": true,
+"status": "abstain_domain"
+}
+]

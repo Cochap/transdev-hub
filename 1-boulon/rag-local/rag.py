@@ -35,6 +35,9 @@ GLOSS = {
  "coupe-batterie": "master disconnect", "sectionneur": "master disconnect", "urgence": "emergency", "sortie de secours": "emergency exit",
  "toit": "roof hatch", "trappe": "hatch", "siège": "seat", "chauffe-moteur": "block heater coolant heater", "pédale": "pedal",
  "accélérateur": "accelerator throttle", "vitesse": "speed", "compteur": "speedometer gauge", "jauge": "gauge", "carburant": "fuel",
+ "brouillard": "fog", "antibrouillard": "fog", "miroir": "mirror", "miroirs": "mirror", "chauffant": "heated", "chauffants": "heated",
+ "motorisé": "power", "motorisés": "power", "lumière de marche": "step light", "marche": "step", "marchepied": "step",
+ "essuie": "wiper", "dégivrage": "defrost defog", "buée": "defog", "lecture": "reading", "intérieur": "interior dome",
  "électrique": "electric", "électrovanne": "solenoid", "stroboscopique": "strobe", "strobe": "strobe", "gyrophare": "strobe beacon",
  "ampoule": "bulb lamp", "lumière": "light lamp", "lumières": "lights", "feux stop": "stop lamp brake light", "plaque": "license plate",
  "disjoncteur": "breaker circuit breaker", "disjoncteurs": "breaker", "contrôleur": "controller", "module": "module",
@@ -289,12 +292,15 @@ class Engine:
         if not qt: return None
         best = []
         for (p, kind, txt) in self.chunks:
-            if kind != "table" or "FUSE DESCRIPTION" not in txt: continue
+            rd = "| R/D | FUSE/RELAY" in txt or "| BREAKERS |" in txt
+            if kind != "table" or ("FUSE DESCRIPTION" not in txt and not rd): continue
             for line in txt.split(chr(10)):
-                if not line.startswith("| F") and not re.match(r"^\| [A-Z]?\d", line): continue
+                if not line.startswith("|") or line.startswith(("|---", "| R/D", "| BREAKERS", "| LOCATION")): continue
+                if not rd and not line.startswith("| F") and not re.match(r"^\| [A-Z]?\d", line): continue
                 cells = [c.strip() for c in line.strip("|").split("|")]
                 if len(cells) < 2: continue
-                dt = [t for t in tokens(cells[1]) if t not in self.STOP] or tokens(cells[1])
+                desc = cells[-1] if rd else cells[1]
+                dt = [t for t in tokens(desc) if t not in self.STOP] or tokens(desc)
                 if not dt: continue
                 sc = 0.0
                 for t in qt:

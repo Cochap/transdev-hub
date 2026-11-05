@@ -36,11 +36,11 @@ def summary(res, label):
     return by
 
 if __name__ == "__main__":
-    G = json.load(open(os.path.join(HERE, "blind", "golden-blind-v0.json"), encoding="utf-8"))
+    G = json.load(open(os.path.join(HERE, os.environ.get("BSET","blind"), os.environ.get("BGOLD","golden-blind-v0.json")), encoding="utf-8"))
     emb = os.environ.get("EMB"); modes = (sys.argv[1] if len(sys.argv) > 1 else "bm25").split(",")
     e = Engine(load_pages(), *(CFG[emb] if emb else (None, None)), cache=os.path.join(HERE, f"emb-{emb}.npy") if emb else None)
     for m in modes:
         t0 = time.time(); res = score(e, G, m); summary(res, f"{m} {emb or ''} ({(time.time()-t0)/len(res)*1000:.0f} ms/q)")
-        json.dump(res, open(os.path.join(HERE, "blind", f"result-{m}-{emb or 'none'}.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+        json.dump(res, open(os.path.join(HERE, os.environ.get("BSET","blind"), f"result-{m}-{emb or 'none'}.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=0)
         for r in res:
             if not r['ok']: print("  FAIL", r['id'], r['type'], r['lang'], r.get('status', ''), 'miss=', r.get('miss'), 'got=', r.get('got'), 'want=', r.get('want'))

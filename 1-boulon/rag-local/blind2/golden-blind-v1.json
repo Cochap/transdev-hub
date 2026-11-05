@@ -1,0 +1,604 @@
+{
+ "version": "blind-v1",
+ "created": "2026-11-05",
+ "author": "blind subagent 2, images only",
+ "questions": [
+  {
+   "id": "C01",
+   "lang": "fr",
+   "type": "symptom",
+   "ask": "Mes feux de recul marchent plus, c'est quel fusible dans le panneau A3 pis c'est combien d'ampères?",
+   "answer": "A3-M, 10 A, connected IGN (BACK-UP LIGHTS)",
+   "must_contain": [
+    "A3-M",
+    "10"
+   ],
+   "pages": [
+    70
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C02",
+   "lang": "en",
+   "type": "symptom",
+   "ask": "The windshield washer pump is dead. Which fuse feeds it and what is the rating?",
+   "answer": "A3-H, 10 A, IGN (WINDSHIELD WASHER PUMP)",
+   "must_contain": [
+    "A3-H",
+    "10"
+   ],
+   "pages": [
+    70
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C03",
+   "lang": "fr",
+   "type": "symptom",
+   "ask": "Les phares de brouillard s'allument pas, quel fusible faut checker pis de combien?",
+   "answer": "A6-P, 15 A, BAT (FOG LIGHTS)",
+   "must_contain": [
+    "A6-P",
+    "15"
+   ],
+   "pages": [
+    70
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C04",
+   "lang": "en",
+   "type": "table",
+   "ask": "Which fuse powers the key switch and what is its rating and power source?",
+   "answer": "A6-H, 10 A, BAT (KEY SWITCH)",
+   "must_contain": [
+    "A6-H",
+    "10",
+    "BAT"
+   ],
+   "pages": [
+    70
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C05",
+   "lang": "fr",
+   "type": "table",
+   "ask": "Le fusible de la lumière de marche (step light), c'est lequel dans le bloc B9 et quelle alimentation?",
+   "answer": "B9-R, 7.5 A, ACC2 (STEP LIGHT)",
+   "must_contain": [
+    "B9-R",
+    "7.5",
+    "ACC2"
+   ],
+   "pages": [
+    66
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C06",
+   "lang": "en",
+   "type": "symptom",
+   "ask": "Driver's heater blows nothing. Which fuse, what amp rating, and which power feed is it on?",
+   "answer": "B9-L, 25 A, NS1 (DRIVERS HEATER)",
+   "must_contain": [
+    "B9-L",
+    "25",
+    "NS1"
+   ],
+   "pages": [
+    66
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C07",
+   "lang": "fr",
+   "type": "symptom",
+   "ask": "Les miroirs motorisés bougent plus, quel fusible pis quel calibre?",
+   "answer": "B9-N, 10 A, ACC2 (MOTORIZED MIRRORS)",
+   "must_contain": [
+    "B9-N",
+    "10"
+   ],
+   "pages": [
+    66
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C08",
+   "lang": "en",
+   "type": "symptom",
+   "ask": "The driver's dome light won't come on. Which fuse is it, what rating, and which feed?",
+   "answer": "B6-M, 5 A, ACC2 (DRIVERS DOME LIGHT)",
+   "must_contain": [
+    "B6-M",
+    "5",
+    "ACC2"
+   ],
+   "pages": [
+    67
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C09",
+   "lang": "fr",
+   "type": "symptom",
+   "ask": "Les miroirs chauffants chauffent pas, c'est quel fusible dans le bloc B3 et combien d'ampères?",
+   "answer": "B3-U, 15 A, MD2 (HEATED MIRRORS)",
+   "must_contain": [
+    "B3-U",
+    "15",
+    "MD2"
+   ],
+   "pages": [
+    67
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C10",
+   "lang": "en",
+   "type": "symptom",
+   "ask": "The step warmer isn't heating. Which fuse, what rating, and what is it connected to?",
+   "answer": "B3-W, 25 A, MD1 (STEP WARMER)",
+   "must_contain": [
+    "B3-W",
+    "25",
+    "MD1"
+   ],
+   "pages": [
+    67
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C11",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "On the F 2018 gasoline engine ground sheet, which wire leaves the upper ground stud toward the fuel pump relay, and what gauge and color is it at the stud end?",
+   "answer": "K10-GC, 10WH (continues as K10-GD 10WH, then K10E-G 18WH to fuel pump relay 4103)",
+   "must_contain": [
+    "K10-GC",
+    "10WH"
+   ],
+   "pages": [
+    143
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C12",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "Sur le datalink J1939 avec WTEC et Bendix Fusion, au connecteur de diagnostic 500K baud, quelle broche est le J1939 plus pis quel fil, quelle couleur?",
+   "answer": "Pin C, J1939+, wire A5MA(+) 18YL",
+   "must_contain": [
+    "A5MA(+)",
+    "18YL"
+   ],
+   "pages": [
+    165
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C13",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "On the J1939 datalink with Eaton Procision transmission, what wire and color is on the J1939 minus pin (pin 8) of the PAM module?",
+   "answer": "K5L(-), 18GN",
+   "must_contain": [
+    "K5L(-)",
+    "18GN"
+   ],
+   "pages": [
+    169
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C14",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "Sur le schéma du crossing gate (barrière d'arrêt) avec ammeter 150A, le relais passe par quel fusible, pis le fil A119B est de quel calibre et couleur?",
+   "answer": "Fuse F4-B, wire A119B is 16GY",
+   "must_contain": [
+    "F4-B",
+    "16GY"
+   ],
+   "pages": [
+    269
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C15",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "For the single-switch destination sign, which two wires (name, gauge, color) feed the switch backlight to the illumination splice?",
+   "answer": "B62AE 18LTBL and B62-GAE 18WH",
+   "must_contain": [
+    "B62AE",
+    "18LTBL",
+    "B62-GAE"
+   ],
+   "pages": [
+    310
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C16",
+   "lang": "fr",
+   "type": "multipage",
+   "ask": "Le panneau de destination avec interrupteur simple sort sur le fusible B3-M (CH3_07,25). Dans le tableau des fusibles, c'est combien d'ampères, quelle alimentation, pis ça sert à quoi?",
+   "answer": "B3-M, 7.5/10A, MD3, DESTINATION SIGN",
+   "must_contain": [
+    "B3-M",
+    "7.5/10A",
+    "MD3"
+   ],
+   "pages": [
+    310,
+    67
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C17",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "On the 2-minute dome light timer with rear row and emergency exit, which fuse feeds the dome light timer relay coil wire B63B and what is the wire gauge/color?",
+   "answer": "Fuse F25, B63B 16DKBL",
+   "must_contain": [
+    "F25",
+    "16DKBL"
+   ],
+   "pages": [
+    416
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C18",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "Sur le circuit des dome lights de la rangée arrière, le fil B63L vient de quel fusible, pis c'est quelle couleur et calibre?",
+   "answer": "Fuse F26, B63L 16DKBL",
+   "must_contain": [
+    "F26",
+    "16DKBL"
+   ],
+   "pages": [
+    398
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C19",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "On the electronic engine control (2017 ISB / B6.7, cont. p.3), which ECM pin goes to the A/C pressure switch and what wire, gauge and color?",
+   "answer": "ECM pin 43, K77B 20LTGN",
+   "must_contain": [
+    "43",
+    "K77B",
+    "20LTGN"
+   ],
+   "pages": [
+    479
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C20",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "Le relais d'entraînement du ventilateur (fan drive relay) vient de quelle broche de l'ECM avec quel fil, pis c'est pour quelle option?",
+   "answer": "ECM pin 78, wire #K23A 20TN; # = with electric clutch fan with BCM 4th gen",
+   "must_contain": [
+    "78",
+    "K23A",
+    "20TN"
+   ],
+   "pages": [
+    479
+   ],
+   "option_note": "# W/ ELECTRIC CLUTCH FAN W/BCM 4TH GEN"
+  },
+  {
+   "id": "C21",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "Sur le Hydromax avec frein de stationnement manuel, le fusible de la pression de frein Hydromax est de combien d'ampères?",
+   "answer": "5A (hydromax brake pressure fuse 4046)",
+   "must_contain": [
+    "5A"
+   ],
+   "pages": [
+    578
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C22",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "On the Hydromax hydraulic brake sheet, what is the rating of the brake system fuse next to the upper mega fuse stud?",
+   "answer": "40A (brake system fuse 4041)",
+   "must_contain": [
+    "40A"
+   ],
+   "pages": [
+    578
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C23",
+   "lang": "fr",
+   "type": "diagram",
+   "ask": "Intellipark avec PVM: au connecteur DECU J1, la broche de masse c'est laquelle pis quel fil, calibre et couleur?",
+   "answer": "Pin 1, A44K-G1 14WH (to ground splice 1003B)",
+   "must_contain": [
+    "A44K-G1",
+    "14WH"
+   ],
+   "pages": [
+    619
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C24",
+   "lang": "en",
+   "type": "diagram",
+   "ask": "On the lift with air brake (key on/off with indicator), which wire (gauge/color) leaves the wheelchair lift solenoid output of the blue J4 body controller, and which pin of the platform/elec panel connector does it go to?",
+   "answer": "A122J 18GY, to platform/elec panel connector pin 37 (body controller pin E1)",
+   "must_contain": [
+    "A122J",
+    "18GY",
+    "37"
+   ],
+   "pages": [
+    654
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C25",
+   "lang": "fr",
+   "type": "multipage",
+   "ask": "Sur le circuit du lift, le fil B122E monte au fusible B12-A (CH3_12). Dans le tableau des fusibles, c'est combien d'ampères, quelle alimentation, pis ça sert à quoi?",
+   "answer": "B12-A, 15 A, BAT, LIFT INTERLOCK",
+   "must_contain": [
+    "B12-A",
+    "15",
+    "BAT",
+    "LIFT INTERLOCK"
+   ],
+   "pages": [
+    654,
+    66
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C26",
+   "lang": "en",
+   "type": "multipage",
+   "ask": "The alternate entrance door switch circuit is fed from fuse B12-K (CH3_18). What does the fuse table list for B12-K: rating entry, power source and description?",
+   "answer": "B12-K, rating NOTE 4, IGN, ALTERNATE ENTRANCE DOOR/PTI/AC NOISE SUPPRESION",
+   "must_contain": [
+    "B12-K",
+    "NOTE 4",
+    "IGN"
+   ],
+   "pages": [
+    717,
+    66
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C27",
+   "lang": "fr",
+   "type": "multipage",
+   "ask": "Sur un bus avec bloc de fusibles MTA, l'interrupteur du power vent arrière prend son alim au fusible B12-V (CH3_23). C'est combien d'ampères et sur quelle alimentation?",
+   "answer": "B12-V, 7.5 A, NS3 (REAR POWER VENT); the B12-V branch (^B76B) is for vehicles with 0508108 MTA fuse block",
+   "must_contain": [
+    "B12-V",
+    "7.5",
+    "NS3"
+   ],
+   "pages": [
+    897,
+    66
+   ],
+   "option_note": "^ W/0508108 - MTA FUSE BLOCK"
+  },
+  {
+   "id": "C28",
+   "lang": "en",
+   "type": "multipage",
+   "ask": "The booster pump switch circuit with front mounted heater goes to fuse B3-G (CH3_10). In the fuse table, what is B3-G's rating entry, power source and description?",
+   "answer": "B3-G, rating NOTE 20, MD1, BOOSTER PUMP",
+   "must_contain": [
+    "B3-G",
+    "NOTE 20",
+    "MD1"
+   ],
+   "pages": [
+    859,
+    67
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C29",
+   "lang": "fr",
+   "type": "multipage",
+   "ask": "Sur l'enable de la clim (body air conditioning enable, PB10E00), le relais HVAC prend son alim du fusible F3F (6083). Dans le PDM2, c'est un fusible de combien?",
+   "answer": "F3F is 20A (PDM2)",
+   "must_contain": [
+    "F3F",
+    "20A"
+   ],
+   "pages": [
+    1533,
+    1467
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C30",
+   "lang": "en",
+   "type": "multipage",
+   "ask": "On the Child Checkmate/Theft Mate power splice block, cavity A goes to fuse B9-A (CH3_12). In the fuse table, what is B9-A's description, rating entry and power source?",
+   "answer": "B9-A, POST TRIP INSPECTION, NOTE 7, BAT",
+   "must_contain": [
+    "B9-A",
+    "POST TRIP INSPECTION",
+    "NOTE 7",
+    "BAT"
+   ],
+   "pages": [
+    816,
+    66
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C31",
+   "lang": "en",
+   "type": "table",
+   "ask": "Connector for the Espar heater fuel pump located at the Hyd ABS on the left frame rail: what circuit, gauge and color in cavity 2?",
+   "answer": "M75-GB, 18, WH",
+   "must_contain": [
+    "M75-GB",
+    "18",
+    "WH"
+   ],
+   "pages": [
+    1116
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C32",
+   "lang": "fr",
+   "type": "table",
+   "ask": "Au connecteur du Bendix ABS à l'air sur le rail de cadre gauche, cavité D2: quel circuit, calibre et couleur?",
+   "answer": "R94A, 16, DKBL",
+   "must_contain": [
+    "R94A",
+    "16",
+    "DKBL"
+   ],
+   "pages": [
+    1134
+   ],
+   "option_note": ""
+  },
+  {
+   "id": "C33",
+   "lang": "en",
+   "type": "table",
+   "ask": "Chassis connector (black, inside left side dash panel), cavity 4 on a bus WITH the child reminder system: circuit, gauge, color?",
+   "answer": "A53B, 16, YL (cavity 4*)",
+   "must_contain": [
+    "A53B",
+    "16",
+    "YL"
+   ],
+   "pages": [
+    987
+   ],
+   "option_note": "* W/CHILD REMINDER SYSTEM"
+  },
+  {
+   "id": "C34",
+   "lang": "fr",
+   "type": "table",
+   "ask": "Connecteur du fusible ECM dans le compartiment moteur, cavité B: quel circuit, calibre et couleur, pis pour quelles motorisations?",
+   "answer": "K97KB, 12, RD; option * = with F-2018-PROP-ENG / F-2018-GAS-ENG",
+   "must_contain": [
+    "K97KB",
+    "12",
+    "RD"
+   ],
+   "pages": [
+    1065
+   ],
+   "option_note": "* W/F-2018-PROP-ENG, W/F-2018-GAS-ENG"
+  },
+  {
+   "id": "C35",
+   "lang": "en",
+   "type": "refuse",
+   "ask": "What is the torque spec for the alternator B+ terminal nut on the ISB engine?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "C36",
+   "lang": "fr",
+   "type": "refuse",
+   "ask": "C'est combien de volts que le capteur de pression PVM devrait sortir sur sa broche 2 quand ça marche bien?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "C37",
+   "lang": "en",
+   "type": "refuse",
+   "ask": "Give me the step-by-step procedure to replace the J1939 terminating resistor.",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "C38",
+   "lang": "fr",
+   "type": "refuse",
+   "ask": "Sur un Blue Bird Vision, c'est quel fusible qui contrôle les feux de brouillard?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "C39",
+   "lang": "en",
+   "type": "refuse",
+   "ask": "What resistance in ohms should the Hydromax boost pump motor winding read when it is good?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  },
+  {
+   "id": "C40",
+   "lang": "fr",
+   "type": "refuse",
+   "ask": "C'est quoi le couple de serrage du boulon du upper ground stud (3G)?",
+   "answer": "REFUSE",
+   "must_contain": [],
+   "pages": [],
+   "option_note": ""
+  }
+ ]
+}
