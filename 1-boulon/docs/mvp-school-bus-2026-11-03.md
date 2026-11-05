@@ -54,3 +54,8 @@ Already in the pilot index: 16 Lion "RP-01-…" procedure sheets (`1-boulon/docs
 - Scan pattern flaws to fix next run: "IC Bus" also matches "electrIC BUS" (52 files), "Vision" matches the word vision (122 files).
 - Index estimate (Estimate, pilot rate 87 KB/page): IC Leeds manual alone about 136 MB, so it does not fit the 50 MB Free index. A Free-tier sample would be about 570 pages (chosen chapters).
 - 2026-11-04: Greg rules out external manuals for good; corpus = SharePoint only. MVP corpus = IC Leeds manual (sample to fit Free 50 MB, rest on Basic).
+
+## Transcript check (2026-11-05, `2-projects/transcripts/Quartier DIX30 2.txt`)
+- **Confirmed:** school bus as proof of concept v0.1, Pierre agrees ("c'est notre priorité") `[0:46:05]`; Quebec first `[1:06:45]`; documentation only in v0.1 `[1:07:59]`; work orders are phase 2 ("En deux étapes") `[0:55:21]`. The old wording "work orders optional" is superseded by phase 2.
+- **New:** firm group presentation in February `[0:49:46]`; seniors validate before juniors get access `[0:37:18]`; test day at Saint-Jean with Mario's team `[0:50:37]`; 75% threshold to split results by system `[0:48:28]`; one language first `[1:03:33]`.
+- **Tension (open):** Pierre's example is "Thomas 2016, brakes, page 712" `[0:57:48]`, but Thomas manuals are on maker portals, which Greg ruled out on 11-04. Decision asked in `1-boulon/docs/proposition-plan-projet-2026-11.md` §12.

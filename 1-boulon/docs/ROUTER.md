@@ -43,6 +43,9 @@ Open only the line you need. Every child of this folder is listed below.
 - `lessons-2026-11-03.md` — Lessons 2026-11-03
 - `lessons-2026-11-04.md` — Lessons 2026-11-04
 - `manuals-inventory-2026-09-23.md` — Manuals inventory and D4 re-check — 2026-09-23
+- `meeting-2026-11-03-dix30.md` — Compte rendu (FR) of the 2026-11-03 DIX30 meeting: decisions D1-D6, actions, open questions, timestamps to re-listen
+- `proposition-plan-projet-2026-11.md` — Proposition de plan de projet v0.1 (FR skeleton) asked by Dominique: school-bus PoC, metrics, phases to the February presentation, blockers, decisions for Pierre (+ .docx copy)
+- `proposition-plan-projet-2026-11.docx` — Word copy of the plan proposal
 - `meeting-2026-09-24-pierre.md` — Meeting 2026-09-24 (Pierre, Henri, Greg): BOULON outcomes
 - `meeting-prep-2026-10-22-ai-maintenance-catalogue.md` — Meeting prep for the "AI maintenance catalogue" call: opener, numbers, pain points, RAG vocabulary (2026-10-22)
 - `memo-henri-cibles-gate-b.md` — Note à Henri : cibles de réussite pour le Gate B

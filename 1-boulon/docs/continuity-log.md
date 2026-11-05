@@ -353,3 +353,8 @@ After the meeting with Pierre, Seb, Alex, Henri and the new AI consultant: the M
 
 ### 2026-11-04 — MVP bus type locked
 Greg: MVP = ZBB class STANDARD SCHOOL (MIR SCOLAIRE + SCOLAIRE ADAPTÉ, 193 vehicles). MINI SCHOOL and electric LionC excluded. School-bus scan resumed (output now 1-boulon/tests/results/school-scan.jsonl).
+
+## 2026-11-05 — DIX30 transcript done; plan proposal drafted (Claude)
+- Transcript of the 2026-11-03 meeting: `2-projects/transcripts/Quartier DIX30 2.txt` (926 segments, 0:00 to 1:15:56, not proofread). Minutes: `1-boulon/docs/meeting-2026-11-03-dix30.md`. Asked deliverable (Dominique, `[1:15:01]`): `1-boulon/docs/proposition-plan-projet-2026-11.md` (French skeleton, v0.1, for Greg to review before sending).
+- **Conflicts with brief 551, logged as PROPOSED changes (brief wins until Pierre decides):** (1) sites: 3 workshops → school-bus proof of concept, Quebec first, test at Saint-Jean; (2) languages FR/EN/ES → one language first; (3) KPI 95% → 75% intermediate threshold to split by system (95% kept); (4) manuals + histories together → manuals v0.1, work orders phase 2; (5) budget: Azure line still missing.
+- New firm milestone said in the meeting: group presentation in February `[0:49:46]`. New cadence: 30 min weekly follow-up with Dominique `[1:12:39]`.
