@@ -38,5 +38,13 @@
     },
     "installLocation": "C:\\TRANSDEV HUB\\5-brain\\plugins\\marketplaces\\azure-skills",
     "lastUpdated": "2026-11-04T15:48:45.972Z"
+  },
+  "skills": {
+    "source": {
+      "source": "github",
+      "repo": "microsoft/skills"
+    },
+    "installLocation": "C:\\TRANSDEV HUB\\5-brain\\plugins\\marketplaces\\skills",
+    "lastUpdated": "2026-11-05T17:25:26.804Z"
   }
 }

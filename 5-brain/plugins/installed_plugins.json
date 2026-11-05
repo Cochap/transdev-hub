@@ -91,6 +91,36 @@
         "lastUpdated": "2026-11-04T15:48:50.424Z",
         "gitCommitSha": "33200af2901bce6da01ce37498aa2b68e0c43f7c"
       }
+    ],
+    "azure-sdk-python@skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\skills\\azure-sdk-python\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T17:25:31.216Z",
+        "lastUpdated": "2026-11-05T17:25:31.216Z",
+        "gitCommitSha": "ddb78d131836a93109beb91f1d65b5f0e5ec2763"
+      }
+    ],
+    "azure-sdk-typescript@skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\skills\\azure-sdk-typescript\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-11-05T17:25:35.304Z",
+        "lastUpdated": "2026-11-05T17:25:35.304Z",
+        "gitCommitSha": "ddb78d131836a93109beb91f1d65b5f0e5ec2763"
+      }
+    ],
+    "deep-wiki@skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\TRANSDEV HUB\\5-brain\\plugins\\cache\\skills\\deep-wiki\\2.0.0",
+        "version": "2.0.0",
+        "installedAt": "2026-11-05T17:25:39.052Z",
+        "lastUpdated": "2026-11-05T17:25:39.052Z",
+        "gitCommitSha": "ddb78d131836a93109beb91f1d65b5f0e5ec2763"
+      }
     ]
   }
 }
