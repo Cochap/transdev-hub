@@ -1,6 +1,7 @@
 """Ingest IC electrical manual -> per-page enriched records (jsonl). $0, offline, deterministic."""
 import pymupdf, re, json, sys, time
 from tables import extract
+from graphic import relay_map
 BOILER=set("""ELECTRICAL CIRCUIT DIAGRAM MANUAL|THIS PRINT IS PROVIDED ON A RESTRICTED BASIS AND IS NOT TO|BE USED IN ANY WAY DETRIMENTAL TO THE INTEREST OF|NAVISTAR, INC.|REFERENCE|RELEASE NO.|SHEET|CHK|DRAWN|NAME|PART NO.|DATE|CHANGE|REV|CIRCUIT DIAGRAM, BE,CE BUS MODELS""".split('|'))
 COMP=re.compile(r'\((\d{4,5}[A-Z]?(?:-[A-Z]\d(?:/[A-Z]\d)?)?)\)')
 WIRE=re.compile(r'\b([A-Z]{1,3}\d{1,4}[A-Z0-9]*(?:-[A-Z0-9]+)?)\s+(\d{1,2})(BK|WH|RD|GN|LTGN|DKGN|BL|LTBL|DKBL|OR|YE|BN|GY|PK|VI|TN|PU)\b')
@@ -41,11 +42,12 @@ def page_record(d,i):
     flat=re.sub(r'\n',' ',body)
     wires=sorted(set(f'{a} {b}{c}' for a,b,c in WIRE.findall(re.sub(r'\n(\d{1,2}[A-Z]{2,4})\b',r' \1',body).replace('\n',' '))))
     xrefs=sorted(set(f'CH{a}_{b}' for a,b in XREF.findall(raw)))
+    relays=relay_map(p)
     cl=[] if tabs and sum(len(t['rows']) for t in tabs)>8 else clusters(p)
     return dict(pdf_page=i+1,printed_page=printed,section=sec,chapter=chap,title=title,
         figure=(f'Figure {fig.group(1)} {fig.group(2).strip()}' if fig else ''),
         components=comps,wires=wires,xrefs=xrefs,tables=[t['md'] for t in tabs],
-        n_table_rows=sum(len(t['rows']) for t in tabs),label_groups=cl,text=body)
+        n_table_rows=sum(len(t['rows']) for t in tabs),relay_slots=relays,label_groups=cl,text=body)
 if __name__=='__main__':
     src,out=sys.argv[1],sys.argv[2]; d=pymupdf.open(src); t0=time.time()
     with open(out,'w',encoding='utf-8') as f:
