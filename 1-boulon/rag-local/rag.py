@@ -142,7 +142,7 @@ class Engine:
             return dict(status="abstain_refuse", text="Je réponds seulement à partir des manuels approuvés, avec citation. Je ne peux pas ignorer ces règles ni expliquer comment contourner un dispositif de sécurité. / I only answer from the approved manuals and cannot bypass safety devices.")
         if OUT_OF_DOMAIN.search(q) and not anchored:
             return dict(status="abstain_domain", text="Je n'ai pas cette information : le manuel IC disponible est un manuel de schémas électriques (fusibles, relais, connecteurs, fils). Il ne contient pas de couples de serrage, capacités, pressions ni procédures mécaniques. / Not in the electrical circuit manual.")
-        routes = [r_ for r_ in (self.route_connector(q), self.route_fuse(q), self.route_relay_slot(q)) if r_]
+        routes = [r_ for r_ in (self.route_connector(q) or self.route_connector_name(q), self.route_fuse(q), self.route_relay_slot(q)) if r_]
         hits = self.search(q, k, mode=mode)
         if not routes and (not hits or self.low_confidence(q, hits)):
             return dict(status="abstain_low", text="Je n'ai pas cette information dans le manuel IC. / I don't have that information.", hits=hits)
@@ -189,7 +189,7 @@ class Engine:
              "volt": r"\d\s*V(?:OLTS?|DC)?\b", "volts": r"\d\s*V(?:OLTS?|DC)?\b", "voltage": r"\d\s*V(?:OLTS?|DC)?\b", "tension": r"\d\s*V(?:OLTS?|DC)?\b"}  # temperatures are conditions, not the asked value
     def annotate(self, row):
         """Variant rows: append the legend meaning of the option marker(s) in the first cell (e.g. '1!' -> '! = W/ADDITIONAL BACK UP LT...')."""
-        m = re.search(r"\[PDF p\.(\d+)\]", row)
+        m = re.search(r"\[(?:connector \w+, )?PDF p\.(\d+)\]", row)
         if not m or not row.startswith("|"): return row
         first = row.strip("|").split("|")[0].strip(); mk = re.sub(r"^[A-Z]{0,2}\d{0,3}[A-Z]?", "", first)
         if not mk: return row
@@ -250,6 +250,35 @@ class Engine:
         hits = [dict(pdf_page=p, score=1.0, chunk="\n".join(l for pp, l in rows if pp == p), kind="table", bm25=None) for p in pages]
         return dict(status="answer", route="connector_lookup", rows=[f"{l}  [PDF p.{p}]" for p, l in rows[:8]], legend=sorted(set(legend))[:3],
                     citation=f"{MANUAL}, {cite}", hits=hits)
+
+    def route_connector_name(self, q):
+        """No connector number: match question words against each table's bound connector name/location, then the cavity row."""
+        cav = re.search(r"(?:cavity|cavit[ée]|cav|pin|pine|broche|position)\s*#?\s*([a-z]{0,2}\d{1,3}[a-z]?)\b", q, re.I)
+        if not cav or re.search(r"\b\d{5}\b", q): return None
+        import difflib
+        qt = [t for t in dict.fromkeys(tokens(expand_query(q))) if t in self.vocab and t not in self.STOP and t not in GENERIC and len(t) > 2 and not re.search(r"\d", t)]
+        if not qt: return None
+        scored = []
+        for (p, kind, txt) in self.chunks:
+            if kind != "table": continue
+            m = re.search(r"^Connector (\d{5}[A-Z]?): (.*)$", txt, re.M)
+            if not m: continue
+            nt = set(tokens(m.group(2))) - {"connector", "located", "at"}
+            if not nt: continue
+            sc = sum(1 for t in qt if t in nt or any(difflib.SequenceMatcher(None, t, x).ratio() >= 0.85 for x in nt))
+            if sc >= 2: scored.append((sc, p, txt, m.group(1)))
+        if not scored: return None
+        scored.sort(key=lambda x: -x[0]); top = scored[0][0]
+        rows = []
+        for sc, p, txt, cid in [s for s in scored if s[0] == top][:3]:
+            for line in txt.split(chr(10)):
+                if line.startswith("|") and not line.startswith(("|---", "| CAV")):
+                    c0 = line.strip("|").split("|")[0].strip()
+                    if re.sub(r"[^A-Z0-9]", "", c0.upper()) == cav.group(1).upper(): rows.append((p, f"{line}  [connector {cid}, PDF p.{p}]"))
+        if not rows: return None
+        pages = list(dict.fromkeys(p for p, _ in rows))
+        return dict(status="answer", route="connector_name", rows=[r_ for _, r_ in rows][:6],
+                    hits=[dict(pdf_page=p, score=1.0, chunk="", kind="table", bm25=None) for p in pages])
 
     def route_fuse(self, q):
         """Fuse-chart lookup: fuzzy match of query terms against FUSE DESCRIPTION rows (typo tolerant, FR via glossary)."""

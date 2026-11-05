@@ -714,22 +714,20 @@
 "id": "B39",
 "type": "table",
 "lang": "en",
-"ok": false,
-"page": false,
-"miss": [
-"B62GF"
-],
+"ok": true,
+"page": true,
+"miss": [],
 "got": [
+1565,
 867,
 1519,
 1518,
-858,
-860
+858
 ],
 "want": [
 1565
 ],
-"route": null
+"route": "connector_name"
 },
 {
 "id": "B40",
